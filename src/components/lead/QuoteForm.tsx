@@ -71,6 +71,17 @@ export function QuoteForm({
 
   const started = useRef(false);
 
+  const STEP_ONE_FIELDS = ["serviceSlug", "postalCode"] as const;
+
+  function clearError(key: string) {
+    setErrors((previous) => {
+      if (!(key in previous)) return previous;
+      const next = { ...previous };
+      delete next[key];
+      return next;
+    });
+  }
+
   function set<K extends keyof typeof values>(
     key: K,
     value: (typeof values)[K],
@@ -80,6 +91,10 @@ export function QuoteForm({
       track("quote_start", { form_instance: baseId });
     }
     setValues((previous) => ({ ...previous, [key]: value }));
+    // Correcting a field clears its message immediately, and retires a stale
+    // submit-failure banner so it cannot outlive the input that caused it.
+    clearError(key);
+    setStatus((previous) => (previous === "api_failure" ? "idle" : previous));
   }
 
   function focusSummary() {
@@ -99,12 +114,15 @@ export function QuoteForm({
     if (values.fullName.trim().length < 2)
       next.fullName = "Enter your full name.";
     const digits = values.phone.replace(/\D/g, "");
+    // Must mirror the server rule exactly: 10 digits, or 11 starting with 1.
+    const validPhone =
+      digits.length === 10 || (digits.length === 11 && digits.startsWith("1"));
     if (
       (values.contactPreference === "call" ||
         values.contactPreference === "text") &&
-      digits.length !== 10
+      !validPhone
     ) {
-      next.phone = "Enter a 10-digit phone number.";
+      next.phone = "Enter a 10-digit US phone number, with or without the leading 1.";
     }
     if (
       values.contactPreference === "email" &&
@@ -142,6 +160,9 @@ export function QuoteForm({
         step: 2,
         fields: Object.keys(found).join(","),
       });
+      // Send the user to the step that owns the problem, otherwise the
+      // summary links point at inputs that are not currently rendered.
+      if (STEP_ONE_FIELDS.some((field) => field in found)) setStep(1);
       focusSummary();
       return;
     }
@@ -199,6 +220,7 @@ export function QuoteForm({
         }
         setErrors(serverErrors);
         setStatus("idle");
+        if (STEP_ONE_FIELDS.some((field) => field in serverErrors)) setStep(1);
         focusSummary();
         return;
       }
@@ -459,13 +481,17 @@ export function QuoteForm({
               id={`${baseId}-contactPreference`}
               className="field mt-2"
               value={values.contactPreference}
-              onChange={(event) =>
+              onChange={(event) => {
                 set(
                   "contactPreference",
                   event.target
                     .value as (typeof contactOptions)[number]["value"],
-                )
-              }
+                );
+                // The other channel's input is about to unmount; its error
+                // would otherwise sit in the summary behind a dead anchor.
+                clearError("phone");
+                clearError("email");
+              }}
             >
               {contactOptions.map((option) => (
                 <option key={option.value} value={option.value}>
