@@ -1,0 +1,97 @@
+import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/JsonLd";
+import {
+  HowMatchingWorks,
+  ReferralDisclosureStrip,
+  Section,
+  VettingProcess,
+} from "@/components/marketing/sections";
+import { Breadcrumbs, CtaBand } from "@/components/marketing/service-sections";
+import { pageMetadata } from "@/lib/seo/metadata";
+import { breadcrumbNode, buildGraph, webPageNode } from "@/lib/schema/graph";
+import { site } from "@/lib/env";
+import { FULL_DISCLOSURE } from "@/lib/seo/disclosure";
+
+const TITLE = `How Our Concrete Contractor Referrals Work | ${site.brand}`;
+const DESCRIPTION =
+  "How a request is validated, checked against partner eligibility, routed to one independent contractor, and what our role is and is not.";
+
+export const metadata: Metadata = pageMetadata({
+  title: TITLE,
+  description: DESCRIPTION,
+  path: "/how-it-works",
+});
+
+export default function HowItWorksPage() {
+  const graph = buildGraph([
+    webPageNode("/how-it-works", TITLE, DESCRIPTION),
+    breadcrumbNode("/how-it-works", [
+      { name: "Home", path: "/" },
+      { name: "How it works", path: "/how-it-works" },
+    ]),
+  ]);
+
+  return (
+    <>
+      <JsonLd data={graph} />
+      <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "How it works" }]} />
+      <div
+        className="border-b"
+        style={{
+          borderColor: "var(--color-line-soft)",
+          backgroundColor: "var(--color-surface)",
+        }}
+      >
+        <div className="container-page py-12 md:py-16">
+          <p className="eyebrow">Our process</p>
+          <h1 className="h1 mt-5 max-w-3xl">
+            How Our Concrete Contractor Referrals Work
+          </h1>
+          <p className="lede mt-5 max-w-2xl">
+            What happens between the moment you submit a request and the moment
+            an independent contractor calls you — including the checks that stop
+            a request from being routed at all.
+          </p>
+        </div>
+      </div>
+      <ReferralDisclosureStrip />
+      <Section eyebrow="Process" title="Three steps, no obligation">
+        <HowMatchingWorks />
+      </Section>
+      <Section tone="soft" eyebrow="Eligibility" title="What blocks a contractor from receiving your request">
+        <VettingProcess />
+      </Section>
+      <CtaBand
+        title="Ready to start?"
+        body="Submit a request and we will route it to one eligible independent contractor, or call the referral team first to check coverage."
+      />
+
+      <Section eyebrow="Our role" title="What we are, and what we are not">
+        <div className="card max-w-3xl p-7">
+          <p className="eyebrow-plain">Required disclosure</p>
+          <p className="mt-4 text-[15px] leading-relaxed text-[color:var(--color-muted)]">{FULL_DISCLOSURE}</p>
+        </div>
+        <div className="mt-6 grid max-w-3xl gap-4 sm:grid-cols-2">
+          <div className="card p-6">
+            <p className="font-semibold">We do</p>
+            <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm text-[color:var(--color-muted)]">
+              <li>Collect and validate your request</li>
+              <li>Check partner licence, insurance, coverage, and capacity records</li>
+              <li>Route the request to one eligible contractor</li>
+              <li>Reassign once if the first contractor does not acknowledge</li>
+            </ul>
+          </div>
+          <div className="card p-6">
+            <p className="font-semibold">We do not</p>
+            <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm text-[color:var(--color-muted)]">
+              <li>Pour, supervise, inspect, or warrant any concrete work</li>
+              <li>Set prices, schedules, or scope</li>
+              <li>Become a party to your contract</li>
+              <li>Guarantee a contractor is available in your area</li>
+            </ul>
+          </div>
+        </div>
+      </Section>
+    </>
+  );
+}
