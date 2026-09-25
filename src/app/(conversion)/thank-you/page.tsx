@@ -5,7 +5,8 @@ import { site } from "@/lib/env";
 
 export const metadata: Metadata = pageMetadata({
   title: "Request received",
-  description: "Your concrete project request has been received.",
+  description:
+    "Your concrete project request has been received. One independent contractor serving your approved ZIP code will contact you directly to arrange a site visit.",
   path: "/thank-you",
   noindex: true,
 });

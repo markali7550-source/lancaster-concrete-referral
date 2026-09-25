@@ -17,11 +17,24 @@ export const metadata: Metadata = pageMetadata({
 
 export default function LocationsPage() {
   return (
-    <Section
-      eyebrow="Service areas"
-      title="Where we currently publish"
-      lead="One published area today. Additional cities appear only after coverage, content, and compliance gates pass."
-    >
+    <>
+      <div
+        className="border-b"
+        style={{
+          borderColor: "var(--color-line-soft)",
+          backgroundColor: "var(--color-surface)",
+        }}
+      >
+        <div className="container-page py-12 md:py-16">
+          <p className="eyebrow">Service areas</p>
+          <h1 className="h1 mt-5 max-w-3xl">Where We Currently Publish</h1>
+          <p className="lede mt-5 max-w-2xl">
+            One published service area today. Additional South Carolina cities
+            appear here only after coverage, content, and compliance gates pass.
+          </p>
+        </div>
+      </div>
+      <Section>
       <ul className="flex flex-wrap gap-3">
         {publishedLocations.map((location) => (
           <li key={location.slug}>
@@ -31,6 +44,7 @@ export default function LocationsPage() {
           </li>
         ))}
       </ul>
-    </Section>
+      </Section>
+    </>
   );
 }
