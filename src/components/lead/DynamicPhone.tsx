@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Icon } from "@/components/ui/Icon";
+import { track } from "@/lib/analytics/events";
 
 interface DynamicPhoneProps {
   fallbackDisplay: string;
@@ -72,15 +73,10 @@ export function DynamicPhone({
       data-number-type={allocation ? "session" : "fallback"}
       className={className}
       onClick={() => {
-        window.dispatchEvent(
-          new CustomEvent("cta_call_click", {
-            detail: {
-              placement,
-              path: window.location.pathname,
-              numberType: allocation ? "session" : "fallback",
-            },
-          }),
-        );
+        track("cta_call_click", {
+          placement,
+          number_type: allocation ? "session" : "fallback",
+        });
       }}
     >
       {showIcon ? <Icon name="phone" /> : null}

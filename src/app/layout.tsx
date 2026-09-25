@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { UtilityHeader } from "@/components/layout/UtilityHeader";
 import { ComplianceFooter } from "@/components/layout/ComplianceFooter";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { ConsentBanner } from "@/components/consent/ConsentBanner";
+import { AttributionBootstrap } from "@/components/consent/AttributionBootstrap";
 import { rootGraph } from "@/lib/schema/graph";
 import { site } from "@/lib/env";
 import { geistSans } from "@/lib/fonts";
@@ -41,6 +43,8 @@ export default function RootLayout({
         <UtilityHeader />
         <main id="main">{children}</main>
         <ComplianceFooter />
+        <AttributionBootstrap />
+        <ConsentBanner />
       </body>
     </html>
   );

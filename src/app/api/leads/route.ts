@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { approvedZips } from "@/content/locations";
+import { intakeEnabled } from "@/lib/env/flags";
 import {
   commitLead,
   findByIdempotencyKey,
@@ -34,6 +35,17 @@ function rateLimited(key: string): boolean {
 const noStore = { "Cache-Control": "no-store" } as const;
 
 export async function POST(request: Request) {
+  if (!intakeEnabled()) {
+    return NextResponse.json(
+      {
+        result: "intake_disabled",
+        message:
+          "Online requests are temporarily unavailable. Please call us instead.",
+      },
+      { status: 503, headers: noStore },
+    );
+  }
+
   const clientKey =
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "local";
   if (rateLimited(clientKey)) {

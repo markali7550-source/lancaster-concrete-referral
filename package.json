@@ -10,7 +10,10 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "assert:routes": "tsx scripts/assert-seo-routes.ts",
-    "assert:geos": "tsx scripts/assert-no-excluded-geos.ts"
+    "assert:geos": "tsx scripts/assert-no-excluded-geos.ts",
+    "assert:content": "tsx scripts/assert-content-uniqueness.ts",
+    "assert:schema": "tsx scripts/assert-schema-parity.ts",
+    "verify": "npm run typecheck && npm run test && npm run assert:routes && npm run assert:geos && npm run assert:content && npm run assert:schema && npm run build"
   },
   "dependencies": {
     "next": "^15.5.4",

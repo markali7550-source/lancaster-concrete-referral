@@ -3,6 +3,8 @@
 import { useId, useRef, useState } from "react";
 import { Icon } from "@/components/ui/Icon";
 import { MARKETING_CONSENT, SERVICE_CONSENT } from "@/lib/seo/disclosure";
+import { track } from "@/lib/analytics/events";
+import { attributionForLead } from "@/domain/attribution/client";
 
 export interface QuoteFormServiceOption {
   slug: string;
@@ -67,10 +69,16 @@ export function QuoteForm({
     marketingConsent: false,
   });
 
+  const started = useRef(false);
+
   function set<K extends keyof typeof values>(
     key: K,
     value: (typeof values)[K],
   ) {
+    if (!started.current) {
+      started.current = true;
+      track("quote_start", { form_instance: baseId });
+    }
     setValues((previous) => ({ ...previous, [key]: value }));
   }
 
@@ -113,9 +121,14 @@ export function QuoteForm({
     const found = validateStepOne();
     setErrors(found);
     if (Object.keys(found).length > 0) {
+      track("quote_validation_error", {
+        step: 1,
+        fields: Object.keys(found).join(","),
+      });
       focusSummary();
       return;
     }
+    track("quote_step_complete", { step: 1 });
     setStep(2);
   }
 
@@ -125,11 +138,16 @@ export function QuoteForm({
     const found = { ...validateStepOne(), ...validateStepTwo() };
     setErrors(found);
     if (Object.keys(found).length > 0) {
+      track("quote_validation_error", {
+        step: 2,
+        fields: Object.keys(found).join(","),
+      });
       focusSummary();
       return;
     }
 
     setStatus("submitting");
+    track("lead_submit_attempt", { request_id: idempotencyKey.current.slice(0, 8) });
     try {
       const response = await fetch("/api/leads", {
         method: "POST",
@@ -150,11 +168,7 @@ export function QuoteForm({
           consentVersion,
           sourcePath:
             typeof window === "undefined" ? "/" : window.location.pathname,
-          attribution: {
-            landingPath:
-              typeof window === "undefined" ? "/" : window.location.pathname,
-            referrer: typeof document === "undefined" ? "" : document.referrer,
-          },
+          attribution: attributionForLead(),
         }),
       });
 
@@ -162,10 +176,17 @@ export function QuoteForm({
         const data = (await response.json()) as { leadId: string };
         setLeadId(data.leadId);
         setStatus("success");
+        track("lead_accepted", { lead_id: data.leadId });
         return;
       }
       if (response.status === 422) {
         setStatus("no_coverage");
+        track("lead_no_coverage", { zip_provided: true });
+        return;
+      }
+      if (response.status === 503) {
+        setStatus("api_failure");
+        track("lead_submit_failure", { error_class: "intake_disabled", retryable: false });
         return;
       }
       if (response.status === 400) {
@@ -182,8 +203,10 @@ export function QuoteForm({
         return;
       }
       setStatus("api_failure");
+      track("lead_submit_failure", { error_class: "http_error", retryable: true });
     } catch {
       setStatus("api_failure");
+      track("lead_submit_failure", { error_class: "network", retryable: true });
     }
   }
 
