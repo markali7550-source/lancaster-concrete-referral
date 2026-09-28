@@ -3,8 +3,7 @@ import { publishedLocations } from "@/content/locations";
 import { publishedServices } from "@/content/services";
 import { site } from "@/lib/env";
 import {
-  CALL_DISCLOSURE,
-  FULL_DISCLOSURE,
+  SHORT_DISCLOSURE,
   SC_LLR_URL,
 } from "@/lib/seo/disclosure";
 
@@ -148,21 +147,16 @@ export function ComplianceFooter() {
           </nav>
         </div>
 
-        <div
-          className="mt-12 rounded-[16px] border p-5"
-          style={{
-            borderColor: "var(--color-line-soft)",
-            backgroundColor: "var(--color-page)",
-          }}
-        >
-          <p className="eyebrow-plain">Required disclosure</p>
-          <p className="mt-3 text-[13px] leading-relaxed text-[color:var(--color-muted)]">
-            {FULL_DISCLOSURE}
-          </p>
-          <p className="mt-3 text-[13px] leading-relaxed text-[color:var(--color-muted)]">
-            {CALL_DISCLOSURE}
-          </p>
-        </div>
+        <p className="mt-12 text-[13px] leading-relaxed text-[color:var(--color-muted)]">
+          {SHORT_DISCLOSURE}{" "}
+          <Link
+            href="/referral-disclosure"
+            className="underline underline-offset-2"
+          >
+            Read the full disclosure
+          </Link>
+          .
+        </p>
 
         <div className="mt-8 flex flex-col gap-2 text-[12.5px] text-[color:var(--color-muted)] sm:flex-row sm:items-center sm:justify-between">
           <p>
