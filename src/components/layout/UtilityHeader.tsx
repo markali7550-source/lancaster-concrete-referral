@@ -100,6 +100,13 @@ export function UtilityHeader() {
                   {service.name}
                 </Link>
               ))}
+              <Link
+                href="/services"
+                className="block rounded-[10px] px-3 py-2.5 text-[15px] font-semibold"
+                style={{ color: "var(--color-accent)" }}
+              >
+                All services →
+              </Link>
               <p className="eyebrow-plain px-3 pb-1 pt-3">Company</p>
               <Link href="/locations/lancaster-sc" className="block rounded-[10px] px-3 py-2.5 text-[15px]">
                 Lancaster, SC

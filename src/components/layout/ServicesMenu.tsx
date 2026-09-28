@@ -83,29 +83,38 @@ export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {
       onPointerEnter={handlePointerEnter}
       onPointerLeave={handlePointerLeave}
     >
-      <button
-        type="button"
-        className="btn btn-ghost cursor-pointer text-[15px] font-medium transition-colors duration-150 hover:bg-[color:var(--color-accent-soft)] hover:text-[color:var(--color-accent)]"
-        aria-expanded={open}
-        aria-haspopup="true"
-        onClick={() => {
-          if (pinned) {
-            closeAll();
-            return;
-          }
-          cancelClose();
-          setPinned(true);
-          setOpen(true);
-        }}
-      >
-        Services
-        <Icon
-          name="arrow"
-          className={`h-3.5 w-3.5 transition-transform duration-150 ${
-            open ? "-rotate-90" : "rotate-90"
-          }`}
-        />
-      </button>
+      <div className="flex items-center">
+        {/* The label navigates; the caret only toggles the panel. */}
+        <Link
+          href="/services"
+          className="btn btn-ghost pr-1.5 text-[15px] font-medium transition-colors duration-150 hover:bg-[color:var(--color-accent-soft)] hover:text-[color:var(--color-accent)]"
+        >
+          Services
+        </Link>
+        <button
+          type="button"
+          className="btn btn-ghost cursor-pointer px-1.5 transition-colors duration-150 hover:bg-[color:var(--color-accent-soft)] hover:text-[color:var(--color-accent)]"
+          aria-expanded={open}
+          aria-haspopup="true"
+          aria-label={open ? "Hide services" : "Show services"}
+          onClick={() => {
+            if (pinned) {
+              closeAll();
+              return;
+            }
+            cancelClose();
+            setPinned(true);
+            setOpen(true);
+          }}
+        >
+          <Icon
+            name="arrow"
+            className={`h-3.5 w-3.5 transition-transform duration-150 ${
+              open ? "-rotate-90" : "rotate-90"
+            }`}
+          />
+        </button>
+      </div>
       {open ? (
         <div
           className="card absolute left-0 top-12 w-80 p-2"

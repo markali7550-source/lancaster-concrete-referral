@@ -7,9 +7,7 @@ test.use({ viewport: DESKTOP });
 test.describe("desktop Services menu", () => {
   test("opens on click", async ({ page }) => {
     await page.goto("/");
-    const button = page.locator('nav[aria-label="Primary"] button', {
-      hasText: "Services",
-    });
+    const button = page.locator('nav[aria-label="Primary"] button[aria-haspopup="true"]');
     await button.click();
     await expect(page.locator('nav[aria-label="Primary"] div.card')).toBeVisible();
     await expect(button).toHaveAttribute("aria-expanded", "true");
@@ -18,7 +16,7 @@ test.describe("desktop Services menu", () => {
   test("closes on Escape", async ({ page }) => {
     await page.goto("/");
     await page
-      .locator('nav[aria-label="Primary"] button', { hasText: "Services" })
+      .locator('nav[aria-label="Primary"] button[aria-haspopup="true"]')
       .click();
     await page.keyboard.press("Escape");
     await expect(page.locator('nav[aria-label="Primary"] div.card')).toHaveCount(0);
@@ -27,7 +25,7 @@ test.describe("desktop Services menu", () => {
   test("closes on outside click", async ({ page }) => {
     await page.goto("/");
     await page
-      .locator('nav[aria-label="Primary"] button', { hasText: "Services" })
+      .locator('nav[aria-label="Primary"] button[aria-haspopup="true"]')
       .click();
     await page.mouse.click(700, 750);
     await expect(page.locator('nav[aria-label="Primary"] div.card')).toHaveCount(0);
@@ -36,7 +34,7 @@ test.describe("desktop Services menu", () => {
   test("closes after client-side navigation (regression)", async ({ page }) => {
     await page.goto("/");
     await page
-      .locator('nav[aria-label="Primary"] button', { hasText: "Services" })
+      .locator('nav[aria-label="Primary"] button[aria-haspopup="true"]')
       .click();
     await page.getByRole("link", { name: /concrete patios/i }).first().click();
     await page.waitForURL("**/services/concrete-patios");
@@ -60,7 +58,7 @@ test.describe("Services menu hover", () => {
   test("opens on hover and reveals every published service", async ({ page }) => {
     await page.goto("/");
     await page
-      .locator('nav[aria-label="Primary"] button', { hasText: "Services" })
+      .locator('nav[aria-label="Primary"] button[aria-haspopup="true"]')
       .hover();
     await expect(page.locator(panel)).toBeVisible();
     for (const name of [
@@ -77,7 +75,7 @@ test.describe("Services menu hover", () => {
   test("stays open while moving the cursor into the panel", async ({ page }) => {
     await page.goto("/");
     await page
-      .locator('nav[aria-label="Primary"] button', { hasText: "Services" })
+      .locator('nav[aria-label="Primary"] button[aria-haspopup="true"]')
       .hover();
     await page.locator(panel).getByText("Concrete Patios", { exact: true }).hover();
     await expect(page.locator(panel)).toBeVisible();
@@ -86,7 +84,7 @@ test.describe("Services menu hover", () => {
   test("closes when the cursor leaves", async ({ page }) => {
     await page.goto("/");
     await page
-      .locator('nav[aria-label="Primary"] button', { hasText: "Services" })
+      .locator('nav[aria-label="Primary"] button[aria-haspopup="true"]')
       .hover();
     await expect(page.locator(panel)).toBeVisible();
     await page.mouse.move(700, 800);
@@ -96,9 +94,39 @@ test.describe("Services menu hover", () => {
   test("each item shows its project types", async ({ page }) => {
     await page.goto("/");
     await page
-      .locator('nav[aria-label="Primary"] button', { hasText: "Services" })
+      .locator('nav[aria-label="Primary"] button[aria-haspopup="true"]')
       .hover();
     const first = page.locator(`${panel} a`).first();
     await expect(first).toContainText("·");
+  });
+});
+
+test.describe("Services label links to the hub", () => {
+  test("clicking the Services label navigates to /services", async ({ page }) => {
+    await page.goto("/");
+    await page
+      .locator('nav[aria-label="Primary"] a[href="/services"]')
+      .first()
+      .click();
+    await page.waitForURL("**/services");
+    await expect(page.locator("h1")).toContainText(/service/i);
+  });
+
+  test("the label is a real link, not a button", async ({ page }) => {
+    await page.goto("/");
+    const label = page
+      .locator('nav[aria-label="Primary"] a[href="/services"]')
+      .first();
+    await expect(label).toHaveAttribute("href", "/services");
+    await expect(label).toHaveText("Services");
+  });
+
+  test("the caret still opens the panel without navigating", async ({ page }) => {
+    await page.goto("/");
+    await page
+      .locator('nav[aria-label="Primary"] button[aria-haspopup="true"]')
+      .click();
+    await expect(page.locator('nav[aria-label="Primary"] div.card')).toBeVisible();
+    expect(new URL(page.url()).pathname).toBe("/");
   });
 });
