@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { DynamicPhone } from "@/components/lead/DynamicPhone";
 import { Icon } from "@/components/ui/Icon";
+import { ServicesMenu } from "@/components/layout/ServicesMenu";
 import { publishedServices } from "@/content/services";
 import { site } from "@/lib/env";
 
@@ -83,38 +84,13 @@ export function UtilityHeader() {
             aria-label="Primary"
             className="hidden items-center gap-1 lg:flex"
           >
-            <details className="group relative">
-              <summary className="btn btn-ghost list-none cursor-pointer text-[15px] font-medium">
-                Services
-                <Icon name="arrow" className="h-3.5 w-3.5 rotate-90" />
-              </summary>
-              <div
-                className="card absolute left-0 top-12 w-80 p-2"
-                style={{ boxShadow: "var(--shadow-raised)" }}
-              >
-                {publishedServices.map((service) => (
-                  <Link
-                    key={service.slug}
-                    href={`/services/${service.slug}`}
-                    className="block rounded-[10px] p-3 hover:bg-[color:var(--color-accent-soft)]"
-                  >
-                    <span className="block text-[15px] font-semibold">
-                      {service.name}
-                    </span>
-                    <span className="mt-0.5 block text-[13px] leading-snug text-[color:var(--color-muted)]">
-                      {service.projectTypes.join(" · ")}
-                    </span>
-                  </Link>
-                ))}
-                <Link
-                  href="/services"
-                  className="block rounded-[10px] p-3 text-[14px] font-semibold"
-                  style={{ color: "var(--color-accent)" }}
-                >
-                  All services →
-                </Link>
-              </div>
-            </details>
+            <ServicesMenu
+              items={publishedServices.map((service) => ({
+                slug: service.slug,
+                name: service.name,
+                projectTypes: service.projectTypes,
+              }))}
+            />
             <Link href="/locations/lancaster-sc" className="btn btn-ghost text-[15px] font-medium">
               Lancaster
             </Link>
