@@ -33,42 +33,6 @@ function Wordmark() {
 export function UtilityHeader() {
   return (
     <header className="sticky top-0 z-30">
-      {/* Tier 1 — context strip */}
-      <div
-        className="hidden border-b md:block"
-        style={{
-          backgroundColor: "var(--color-ink)",
-          borderColor: "var(--color-ink)",
-        }}
-      >
-        <div className="container-page flex h-9 items-center justify-between text-[12.5px]">
-          <p style={{ color: "var(--color-page)" }} className="opacity-80">
-            Independent contractor referrals · Coverage today: Lancaster, SC
-            29720 &amp; 29721
-          </p>
-          <div className="flex items-center gap-5">
-            <Link
-              href="/referral-disclosure"
-              className="opacity-80 hover:opacity-100"
-              style={{ color: "var(--color-page)" }}
-            >
-              We are not the contractor
-            </Link>
-            <span className="opacity-30" style={{ color: "var(--color-page)" }}>
-              |
-            </span>
-            <a
-              href={`mailto:${site.email}`}
-              className="opacity-80 hover:opacity-100"
-              style={{ color: "var(--color-page)" }}
-            >
-              {site.email}
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Tier 2 — primary navigation */}
       <div
         className="border-b backdrop-blur"
         style={{
