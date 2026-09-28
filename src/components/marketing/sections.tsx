@@ -136,10 +136,6 @@ export function Hero({
                 className="h-auto w-full object-cover"
               />
             </div>
-            <figcaption className="mt-2.5 text-xs text-[color:var(--color-muted)]">
-              Illustrative image. Not a claim of work performed by this
-              publisher.
-            </figcaption>
           </figure>
         </div>
       </div>

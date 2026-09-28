@@ -104,9 +104,6 @@ export function ServiceHero({
               className="h-auto w-full object-cover"
             />
           </div>
-          <p className="mt-2 text-xs text-[color:var(--color-muted)]">
-            Illustrative image. Not a claim of work performed by this publisher.
-          </p>
         </div>
       </div>
     </section>
