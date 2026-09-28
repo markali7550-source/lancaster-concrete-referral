@@ -53,3 +53,52 @@ test.describe("desktop Services menu", () => {
     ).toBeHidden();
   });
 });
+
+test.describe("Services menu hover", () => {
+  const panel = 'nav[aria-label="Primary"] div.card';
+
+  test("opens on hover and reveals every published service", async ({ page }) => {
+    await page.goto("/");
+    await page
+      .locator('nav[aria-label="Primary"] button', { hasText: "Services" })
+      .hover();
+    await expect(page.locator(panel)).toBeVisible();
+    for (const name of [
+      "Concrete Driveways",
+      "Concrete Patios",
+      "Concrete Slabs",
+      "Concrete Repair",
+    ]) {
+      await expect(page.locator(panel).getByText(name, { exact: true })).toBeVisible();
+    }
+    await expect(page.locator(panel).getByText(/all services/i)).toBeVisible();
+  });
+
+  test("stays open while moving the cursor into the panel", async ({ page }) => {
+    await page.goto("/");
+    await page
+      .locator('nav[aria-label="Primary"] button', { hasText: "Services" })
+      .hover();
+    await page.locator(panel).getByText("Concrete Patios", { exact: true }).hover();
+    await expect(page.locator(panel)).toBeVisible();
+  });
+
+  test("closes when the cursor leaves", async ({ page }) => {
+    await page.goto("/");
+    await page
+      .locator('nav[aria-label="Primary"] button', { hasText: "Services" })
+      .hover();
+    await expect(page.locator(panel)).toBeVisible();
+    await page.mouse.move(700, 800);
+    await expect(page.locator(panel)).toHaveCount(0);
+  });
+
+  test("each item shows its project types", async ({ page }) => {
+    await page.goto("/");
+    await page
+      .locator('nav[aria-label="Primary"] button', { hasText: "Services" })
+      .hover();
+    const first = page.locator(`${panel} a`).first();
+    await expect(first).toContainText("·");
+  });
+});

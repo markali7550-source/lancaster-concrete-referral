@@ -18,10 +18,43 @@ export interface ServicesMenuItem {
  */
 export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {
   const [open, setOpen] = useState(false);
+  // Hover opens transiently; a click pins the menu so it survives the cursor
+  // leaving, and clicking again (or Escape / outside / navigation) unpins it.
+  const [pinned, setPinned] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pathname = usePathname();
 
+  function cancelClose() {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  }
+
+  /** Hover-open, mouse only: touch would otherwise fire on first tap. */
+  function handlePointerEnter(event: React.PointerEvent) {
+    if (event.pointerType !== "mouse") return;
+    cancelClose();
+    setOpen(true);
+  }
+
+  /** Small grace period so moving the cursor into the panel does not close it. */
+  function handlePointerLeave(event: React.PointerEvent) {
+    if (event.pointerType !== "mouse" || pinned) return;
+    cancelClose();
+    closeTimer.current = setTimeout(() => setOpen(false), 180);
+  }
+
+  useEffect(() => cancelClose, []);
+
+  function closeAll() {
+    setPinned(false);
+    setOpen(false);
+  }
+
   useEffect(() => {
+    setPinned(false);
     setOpen(false);
   }, [pathname]);
 
@@ -29,10 +62,10 @@ export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {
     if (!open) return;
 
     function onPointerDown(event: PointerEvent) {
-      if (!containerRef.current?.contains(event.target as Node)) setOpen(false);
+      if (!containerRef.current?.contains(event.target as Node)) closeAll();
     }
     function onKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") setOpen(false);
+      if (event.key === "Escape") closeAll();
     }
 
     document.addEventListener("pointerdown", onPointerDown);
@@ -44,18 +77,33 @@ export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {
   }, [open]);
 
   return (
-    <div className="relative" ref={containerRef}>
+    <div
+      className="relative"
+      ref={containerRef}
+      onPointerEnter={handlePointerEnter}
+      onPointerLeave={handlePointerLeave}
+    >
       <button
         type="button"
-        className="btn btn-ghost cursor-pointer text-[15px] font-medium"
+        className="btn btn-ghost cursor-pointer text-[15px] font-medium transition-colors duration-150 hover:bg-[color:var(--color-accent-soft)] hover:text-[color:var(--color-accent)]"
         aria-expanded={open}
         aria-haspopup="true"
-        onClick={() => setOpen((previous) => !previous)}
+        onClick={() => {
+          if (pinned) {
+            closeAll();
+            return;
+          }
+          cancelClose();
+          setPinned(true);
+          setOpen(true);
+        }}
       >
         Services
         <Icon
           name="arrow"
-          className={`h-3.5 w-3.5 ${open ? "-rotate-90" : "rotate-90"}`}
+          className={`h-3.5 w-3.5 transition-transform duration-150 ${
+            open ? "-rotate-90" : "rotate-90"
+          }`}
         />
       </button>
       {open ? (
@@ -67,9 +115,9 @@ export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {
             <Link
               key={service.slug}
               href={`/services/${service.slug}`}
-              className="block rounded-[10px] p-3 hover:bg-[color:var(--color-accent-soft)]"
+              className="group/item block rounded-[10px] p-3 transition-colors duration-150 hover:bg-[color:var(--color-accent-soft)]"
             >
-              <span className="block text-[15px] font-semibold">
+              <span className="block text-[15px] font-semibold transition-colors duration-150 group-hover/item:text-[color:var(--color-accent)]">
                 {service.name}
               </span>
               <span className="mt-0.5 block text-[13px] leading-snug text-[color:var(--color-muted)]">
@@ -79,7 +127,7 @@ export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {
           ))}
           <Link
             href="/services"
-            className="block rounded-[10px] p-3 text-[14px] font-semibold"
+            className="block rounded-[10px] p-3 text-[14px] font-semibold transition-colors duration-150 hover:bg-[color:var(--color-accent-soft)]"
             style={{ color: "var(--color-accent)" }}
           >
             All services →
