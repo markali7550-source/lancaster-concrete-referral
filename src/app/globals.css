@@ -338,48 +338,21 @@
     );
   }
 
-  /* Centred ornament that separates stacked sections: two tapering rules
-     flanking a rotated diamond. */
-  .divider-ornament {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.875rem;
-  }
-
-  .divider-ornament::before,
-  .divider-ornament::after {
-    content: "";
+  /* Short centred rule used to separate stacked sections. */
+  .divider-center {
+    border: 0;
     height: 2px;
-    width: clamp(90px, 22%, 240px);
+    width: clamp(200px, 48%, 520px);
+    margin-inline: auto;
     border-radius: 2px;
-  }
-
-  .divider-ornament::before {
     background: linear-gradient(
       90deg,
       transparent,
-      color-mix(in srgb, var(--color-accent) 80%, transparent)
-    );
-  }
-
-  .divider-ornament::after {
-    background: linear-gradient(
-      90deg,
-      color-mix(in srgb, var(--color-accent) 80%, transparent),
+      color-mix(in srgb, var(--color-accent) 70%, transparent) 30%,
+      var(--color-accent) 50%,
+      color-mix(in srgb, var(--color-accent) 70%, transparent) 70%,
       transparent
     );
-  }
-
-  .divider-mark {
-    width: 10px;
-    height: 10px;
-    flex-shrink: 0;
-    rotate: 45deg;
-    border-radius: 2px;
-    background-color: var(--color-accent);
-    box-shadow: 0 0 0 4px
-      color-mix(in srgb, var(--color-accent) 18%, transparent);
   }
 
   .rule {

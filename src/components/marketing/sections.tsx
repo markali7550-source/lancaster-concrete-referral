@@ -74,9 +74,7 @@ export function Section({
 export function SectionDivider() {
   return (
     <div className="container-page" aria-hidden="true">
-      <div className="divider-ornament">
-        <span className="divider-mark" />
-      </div>
+      <hr className="divider-center" />
     </div>
   );
 }
