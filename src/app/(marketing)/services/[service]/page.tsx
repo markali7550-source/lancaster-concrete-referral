@@ -5,7 +5,6 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { QuoteForm } from "@/components/lead/QuoteForm";
 import { MobileActionBar } from "@/components/lead/MobileActionBar";
 import {
-  DecisionSupport,
   FaqSection,
   ReferralDisclosureStrip,
   Section,
@@ -271,16 +270,6 @@ export default async function ServicePage({ params }: { params: Params }) {
           </ul>
         </Section>
       ) : null}
-
-      <Section
-        tone="soft"
-        eyebrow="Before you call"
-        title="Worth settling first"
-      >
-        <div className="max-w-3xl">
-          <DecisionSupport items={service.considerations} />
-        </div>
-      </Section>
 
       <section id="faq" className="scroll-mt-32">
         <Section eyebrow="FAQ" title={`${service.name} questions`}>
