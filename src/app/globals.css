@@ -341,13 +341,16 @@
   /* Short centred rule used to separate stacked sections. */
   .divider-center {
     border: 0;
-    height: 1px;
-    width: clamp(140px, 34%, 360px);
+    height: 2px;
+    width: clamp(200px, 48%, 520px);
     margin-inline: auto;
+    border-radius: 2px;
     background: linear-gradient(
       90deg,
       transparent,
-      var(--color-line),
+      color-mix(in srgb, var(--color-accent) 70%, transparent) 30%,
+      var(--color-accent) 50%,
+      color-mix(in srgb, var(--color-accent) 70%, transparent) 70%,
       transparent
     );
   }
