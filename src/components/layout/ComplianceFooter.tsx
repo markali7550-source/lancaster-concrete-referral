@@ -2,11 +2,7 @@ import Link from "next/link";
 import { publishedLocations } from "@/content/locations";
 import { publishedServices } from "@/content/services";
 import { site } from "@/lib/env";
-import {
-  FOOTER_DISCLOSURE,
-  SHORT_DISCLOSURE,
-  SC_LLR_URL,
-} from "@/lib/seo/disclosure";
+import { FOOTER_DISCLOSURE, SC_LLR_URL } from "@/lib/seo/disclosure";
 
 export function ComplianceFooter() {
   return (
@@ -154,17 +150,6 @@ export function ComplianceFooter() {
           style={{ borderColor: "var(--color-line)" }}
         >
           {FOOTER_DISCLOSURE}
-        </p>
-
-        <p className="mt-5 text-[13px] leading-relaxed text-[color:var(--color-muted)]">
-          {SHORT_DISCLOSURE}{" "}
-          <Link
-            href="/referral-disclosure"
-            className="underline underline-offset-2"
-          >
-            Read the full disclosure
-          </Link>
-          .
         </p>
 
         <div className="mt-8 flex flex-col gap-2 text-[12.5px] text-[color:var(--color-muted)] sm:flex-row sm:items-center sm:justify-between">
