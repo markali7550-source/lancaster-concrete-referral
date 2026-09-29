@@ -2,7 +2,7 @@
 
 import { useId, useRef, useState } from "react";
 import { Icon } from "@/components/ui/Icon";
-import { MARKETING_CONSENT, SERVICE_CONSENT } from "@/lib/seo/disclosure";
+import { SERVICE_CONSENT } from "@/lib/seo/disclosure";
 import { track } from "@/lib/analytics/events";
 import { attributionForLead } from "@/domain/attribution/client";
 import { serviceAreaOptions } from "@/content/locations";
@@ -65,7 +65,6 @@ export function QuoteForm({
     email: "",
     note: "",
     serviceConsent: false,
-    marketingConsent: false,
   });
 
   const started = useRef(false);
@@ -174,7 +173,8 @@ export function QuoteForm({
           email: values.email || undefined,
           note: values.note || undefined,
           serviceConsent: true,
-          marketingConsent: values.marketingConsent,
+          // No marketing opt-in is offered on the form.
+          marketingConsent: false,
           consentVersion,
           sourcePath:
             typeof window === "undefined" ? "/" : window.location.pathname,
@@ -546,21 +546,6 @@ export function QuoteForm({
                 {errors.serviceConsent}
               </p>
             ) : null}
-            <label
-              className="flex gap-3 text-sm text-[color:var(--color-muted)]"
-              htmlFor={`${baseId}-marketingConsent`}
-            >
-              <input
-                id={`${baseId}-marketingConsent`}
-                type="checkbox"
-                className="mt-1 h-4 w-4 shrink-0"
-                checked={values.marketingConsent}
-                onChange={(event) =>
-                  set("marketingConsent", event.target.checked)
-                }
-              />
-              <span>{MARKETING_CONSENT}</span>
-            </label>
           </div>
 
           {status === "api_failure" ? (
