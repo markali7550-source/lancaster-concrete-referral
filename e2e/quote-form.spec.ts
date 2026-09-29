@@ -24,9 +24,8 @@ function serviceConsent(page: Page) {
   return page.locator("#consent-section input[type=checkbox]").first();
 }
 
-function uniquePhone(): string {
-  const tail = String(Date.now()).slice(-4);
-  return `803555${tail}`;
+function uniqueEmail(): string {
+  return `owner${Date.now()}@example.com`;
 }
 
 async function fillStepOne(page: Page, zip: string) {
@@ -57,13 +56,13 @@ test.describe("quote form", () => {
     await expect(page.getByText(/step 1 of 2/i)).toBeVisible();
   });
 
-  test("accepts a phone number typed with the leading 1 (regression)", async ({
+  test("accepts an email with a plus tag (regression)", async ({
     page,
   }) => {
     await page.goto("/");
     await fillStepOne(page, APPROVED_ZIP);
     await page.getByLabel(/full name/i).fill("Jane Homeowner");
-    await page.getByLabel(/^phone$/i).fill(`1-${uniquePhone().slice(0, 3)}-555-0142`);
+    await page.getByLabel(/^email$/i).fill(`tagged+${Date.now()}@example.com`);
     await serviceConsent(page).check();
     await page.getByRole("button", { name: /request my quote/i }).click();
     await expect(page.getByText(/request received/i)).toBeVisible({
@@ -76,7 +75,7 @@ test.describe("quote form", () => {
     await page.goto("/");
     await fillStepOne(page, APPROVED_ZIP);
     await page.getByLabel(/full name/i).fill("Sam Owner");
-    await page.getByLabel(/^phone$/i).fill(uniquePhone());
+    await page.getByLabel(/^email$/i).fill(uniqueEmail());
     await serviceConsent(page).check();
     await page.getByRole("button", { name: /request my quote/i }).click();
     await expect(page.getByText(/routing team/i)).toBeVisible({
@@ -94,24 +93,20 @@ test.describe("quote form", () => {
     await expect(page.getByText(/choose your location/i)).toHaveCount(0);
   });
 
-  test("switching contact method drops the retired channel's error (regression)", async ({
-    page,
-  }) => {
+  test("email is the only contact method offered", async ({ page }) => {
     await page.goto("/");
     await fillStepOne(page, APPROVED_ZIP);
-    await page.getByLabel(/full name/i).fill("Jane Homeowner");
-    await page.getByLabel(/^phone$/i).fill("123");
-    await page.getByRole("button", { name: /request my quote/i }).click();
-    await expect(page.getByText(/10-digit us phone/i).first()).toBeVisible();
-    await page.getByLabel(/preferred contact method/i).selectOption("email");
-    await expect(page.getByText(/10-digit us phone/i)).toHaveCount(0);
+    const method = page.getByLabel(/preferred contact method/i);
+    await expect(method.locator("option")).toHaveText([/email/i]);
+    await expect(method).toHaveValue("email");
+    await expect(page.getByLabel(/^email$/i)).toBeVisible();
   });
 
   test("requires the service consent checkbox", async ({ page }) => {
     await page.goto("/");
     await fillStepOne(page, APPROVED_ZIP);
     await page.getByLabel(/full name/i).fill("Jane Homeowner");
-    await page.getByLabel(/^phone$/i).fill(uniquePhone());
+    await page.getByLabel(/^email$/i).fill(uniqueEmail());
     await page.getByRole("button", { name: /request my quote/i }).click();
     await expect(page.getByText(/consent is required/i).first()).toBeVisible();
   });
@@ -122,7 +117,7 @@ test.describe("quote form", () => {
     await page.goto("/");
     await fillStepOne(page, UNAPPROVED_ZIP);
     await page.getByLabel(/full name/i).fill("Out Of Area");
-    await page.getByLabel(/^phone$/i).fill(uniquePhone());
+    await page.getByLabel(/^email$/i).fill(uniqueEmail());
     await serviceConsent(page).check();
     await page.getByRole("button", { name: /request my quote/i }).click();
     await expect(page.getByText(/do not cover that area/i)).toBeVisible({

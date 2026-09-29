@@ -29,11 +29,7 @@ type Status =
 
 type Errors = Record<string, string>;
 
-const contactOptions = [
-  { value: "call", label: "Phone call" },
-  { value: "text", label: "Text message" },
-  { value: "email", label: "Email" },
-] as const;
+const contactOptions = [{ value: "email", label: "Email" }] as const;
 
 function newIdempotencyKey(): string {
   if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
@@ -62,7 +58,7 @@ export function QuoteForm({
     serviceSlug: defaultServiceSlug ?? services[0]?.slug ?? "",
     postalCode: "",
     fullName: "",
-    contactPreference: "call" as (typeof contactOptions)[number]["value"],
+    contactPreference: "email" as (typeof contactOptions)[number]["value"],
     phone: "",
     email: "",
     note: "",
@@ -113,21 +109,7 @@ export function QuoteForm({
     const next: Errors = {};
     if (values.fullName.trim().length < 2)
       next.fullName = "Enter your full name.";
-    const digits = values.phone.replace(/\D/g, "");
-    // Must mirror the server rule exactly: 10 digits, or 11 starting with 1.
-    const validPhone =
-      digits.length === 10 || (digits.length === 11 && digits.startsWith("1"));
-    if (
-      (values.contactPreference === "call" ||
-        values.contactPreference === "text") &&
-      !validPhone
-    ) {
-      next.phone = "Enter a 10-digit US phone number, with or without the leading 1.";
-    }
-    if (
-      values.contactPreference === "email" &&
-      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)
-    ) {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
       next.email = "Enter a valid email address.";
     }
     if (!values.serviceConsent)
@@ -503,54 +485,28 @@ export function QuoteForm({
             </select>
           </div>
 
-          {values.contactPreference === "email" ? (
-            <div>
-              <label htmlFor={`${baseId}-email`} className="text-sm font-semibold">
-                Email
-              </label>
-              <input
-                id={`${baseId}-email`}
-                type="email"
-                autoComplete="email"
-                className="field mt-2"
-                value={values.email}
-                aria-invalid={Boolean(errors.email)}
-                onChange={(event) => set("email", event.target.value)}
-              />
-              {errors.email ? (
-                <p
-                  className="mt-1.5 text-sm"
-                  style={{ color: "var(--color-danger)" }}
-                >
-                  {errors.email}
-                </p>
-              ) : null}
-            </div>
-          ) : (
-            <div>
-              <label htmlFor={`${baseId}-phone`} className="text-sm font-semibold">
-                Phone
-              </label>
-              <input
-                id={`${baseId}-phone`}
-                type="tel"
-                inputMode="tel"
-                autoComplete="tel"
-                className="field mt-2"
-                value={values.phone}
-                aria-invalid={Boolean(errors.phone)}
-                onChange={(event) => set("phone", event.target.value)}
-              />
-              {errors.phone ? (
-                <p
-                  className="mt-1.5 text-sm"
-                  style={{ color: "var(--color-danger)" }}
-                >
-                  {errors.phone}
-                </p>
-              ) : null}
-            </div>
-          )}
+          <div>
+            <label htmlFor={`${baseId}-email`} className="text-sm font-semibold">
+              Email
+            </label>
+            <input
+              id={`${baseId}-email`}
+              type="email"
+              autoComplete="email"
+              className="field mt-2"
+              value={values.email}
+              aria-invalid={Boolean(errors.email)}
+              onChange={(event) => set("email", event.target.value)}
+            />
+            {errors.email ? (
+              <p
+                className="mt-1.5 text-sm"
+                style={{ color: "var(--color-danger)" }}
+              >
+                {errors.email}
+              </p>
+            ) : null}
+          </div>
 
           <div>
             <label htmlFor={`${baseId}-note`} className="text-sm font-semibold">
