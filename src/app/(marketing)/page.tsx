@@ -71,7 +71,7 @@ const FAQS = [
   {
     question: "Which areas can you actually match right now?",
     answer:
-      "Lancaster, South Carolina, ZIP codes 29720 and 29721. Requests outside approved coverage receive an honest no-coverage answer instead of being forwarded to a contractor who does not serve the area.",
+      "Lancaster, South Carolina, covering the 29720 and 29721 areas. Requests outside approved coverage receive an honest no-coverage answer instead of being forwarded to a contractor who does not serve the area.",
   },
   {
     question: "Do you check licences and insurance?",
