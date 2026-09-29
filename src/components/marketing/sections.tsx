@@ -306,7 +306,7 @@ export function VettingProcess() {
           >
             <div className="flex items-start gap-3.5">
               <span
-                className="grid h-7 w-7 shrink-0 place-items-center rounded-full text-[12px] font-bold"
+                className="marker-count grid h-7 w-7 shrink-0 place-items-center rounded-full text-[12px] font-bold"
                 style={{
                   backgroundColor: "var(--color-accent-soft)",
                   color: "var(--color-accent)",
@@ -378,7 +378,7 @@ export function HowMatchingWorks() {
         <li key={step.verb} className="relative">
           <div className="flex items-center gap-3">
             <span
-              className="grid h-10 w-10 place-items-center rounded-full text-[15px] font-bold"
+              className="marker-step grid h-10 w-10 place-items-center rounded-full text-[15px] font-bold"
               style={{
                 backgroundColor: "var(--color-accent)",
                 color: "var(--color-page)",
@@ -418,7 +418,7 @@ export function DecisionSupport({
     >
       {items.map((item) => (
         <details key={item.question} className="group">
-          <summary className="flex cursor-pointer list-none items-center justify-between gap-6 p-6 font-medium">
+          <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-6 p-6 font-medium">
             {item.question}
             <span
               className="grid h-7 w-7 shrink-0 place-items-center rounded-full transition-transform group-open:rotate-90"
