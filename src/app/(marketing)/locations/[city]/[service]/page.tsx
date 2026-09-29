@@ -216,7 +216,7 @@ export default async function ComboPage({ params }: { params: Params }) {
           </div>
 
           <aside className="lg:col-span-5 xl:col-span-4">
-            <div className="lg:sticky lg:top-[11rem] lg:py-16">
+            <div className="lg:sticky lg:top-[5.5rem] lg:pt-6 lg:pb-16">
               <QuoteForm
                 services={publishedServices.map((s) => ({
                   slug: s.slug,
