@@ -170,7 +170,7 @@ export default function HomePage() {
             <p className="eyebrow-plain">What happens after you submit</p>
             <ol className="mt-5 space-y-5">
               {[
-                "Your ZIP and project type are checked against partners with written coverage.",
+                "Your location and project type are checked against partners with written coverage.",
                 "Licence status, insurance, and current capacity are checked before anything is sent.",
                 "One eligible independent contractor receives the request and contacts you.",
                 "If they do not acknowledge in time, it is reassigned once to an approved backup.",
@@ -195,7 +195,7 @@ export default function HomePage() {
               <p className="text-sm font-semibold">Rather just talk?</p>
               <p className="mt-1.5 text-[14px] text-[color:var(--color-muted)]">
                 Call the referral team and we will tell you in one minute
-                whether we cover your ZIP code.
+                whether we cover your area.
               </p>
               <a
                 href={`tel:${site.phoneE164}`}
