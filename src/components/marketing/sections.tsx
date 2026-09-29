@@ -17,6 +17,7 @@ export function Section({
   children,
   tone = "page",
   align = "left",
+  compact = false,
 }: {
   id?: string;
   eyebrow?: string;
@@ -25,6 +26,8 @@ export function Section({
   children: React.ReactNode;
   tone?: "page" | "soft" | "surface";
   align?: "left" | "center";
+  /** Short sections (a single row of links) do not need full section rhythm. */
+  compact?: boolean;
 }) {
   const background =
     tone === "soft"
@@ -36,7 +39,9 @@ export function Section({
   return (
     <section
       id={id}
-      className="scroll-mt-32 py-16 md:py-20"
+      className={
+        compact ? "scroll-mt-32 py-8 md:py-9" : "scroll-mt-32 py-11 md:py-14"
+      }
       style={background ? { backgroundColor: background } : undefined}
     >
       <div className="container-page">
@@ -47,11 +52,15 @@ export function Section({
             }
           >
             {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
-            {title ? <h2 className="h2 mt-4">{title}</h2> : null}
+            {title ? <h2 className="h2 mt-3">{title}</h2> : null}
             {lead ? <p className="lede mt-4">{lead}</p> : null}
           </div>
         ) : null}
-        <div className={eyebrow || title || lead ? "mt-10" : undefined}>
+        <div
+          className={
+            eyebrow || title || lead ? (compact ? "mt-5" : "mt-7") : undefined
+          }
+        >
           {children}
         </div>
       </div>

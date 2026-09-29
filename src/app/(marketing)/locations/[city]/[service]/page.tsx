@@ -127,7 +127,7 @@ export default async function ComboPage({ params }: { params: Params }) {
       <div className="container-page">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-7 xl:col-span-8">
-            <section className="scroll-mt-36 py-16">
+            <section className="scroll-mt-36 py-11 md:py-14">
               <p className="eyebrow">{`${serviceRecord.name} · ${location.city}`}</p>
               <h2 className="h2 mt-4">
                 What we see on {location.city}{" "}
@@ -158,7 +158,7 @@ export default async function ComboPage({ params }: { params: Params }) {
             </section>
 
             <section
-              className="scroll-mt-36 border-t py-16"
+              className="scroll-mt-36 border-t py-11 md:py-14"
               style={{ borderColor: "var(--color-line-soft)" }}
             >
               <p className="eyebrow">Process</p>
@@ -175,7 +175,7 @@ export default async function ComboPage({ params }: { params: Params }) {
             </section>
 
             <section
-              className="scroll-mt-36 border-t py-16"
+              className="scroll-mt-36 border-t py-11 md:py-14"
               style={{ borderColor: "var(--color-line-soft)" }}
             >
               <p className="eyebrow">Pricing</p>
@@ -190,7 +190,7 @@ export default async function ComboPage({ params }: { params: Params }) {
             </section>
 
             <section
-              className="scroll-mt-36 border-t py-16"
+              className="scroll-mt-36 border-t py-11 md:py-14"
               style={{ borderColor: "var(--color-line-soft)" }}
             >
               <p className="eyebrow">Preparation</p>
@@ -204,7 +204,7 @@ export default async function ComboPage({ params }: { params: Params }) {
             </section>
 
             <section
-              className="scroll-mt-36 border-t py-16"
+              className="scroll-mt-36 border-t py-11 md:py-14"
               style={{ borderColor: "var(--color-line-soft)" }}
             >
               <p className="eyebrow">Partner checks</p>
