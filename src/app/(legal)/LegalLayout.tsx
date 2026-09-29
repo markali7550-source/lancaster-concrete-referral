@@ -35,7 +35,7 @@ export function LegalPage({
             {children}
           </article>
           <aside className="lg:pt-2">
-            <div className="card p-6 lg:sticky lg:top-[5.5rem]">
+            <div className="card p-6 lg:sticky lg:top-[4.5rem]">
               <p className="eyebrow-plain">Related</p>
               <ul className="mt-4 space-y-3 text-sm">
                 <li>
