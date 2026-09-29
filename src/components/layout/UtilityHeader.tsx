@@ -2,6 +2,7 @@ import Link from "next/link";
 import { DynamicPhone } from "@/components/lead/DynamicPhone";
 import { Icon } from "@/components/ui/Icon";
 import { Logo } from "@/components/layout/Logo";
+import { MobileMenu } from "@/components/layout/MobileMenu";
 import { ServicesMenu } from "@/components/layout/ServicesMenu";
 import { publishedServices } from "@/content/services";
 import { site } from "@/lib/env";
@@ -63,8 +64,8 @@ export function UtilityHeader() {
             </Link>
           </div>
 
-          {/* Mobile menu — native details, no client JS */}
-          <details className="relative lg:hidden">
+          {/* Mobile menu — native <details>, closed on navigation by MobileMenu */}
+          <MobileMenu>
             <summary
               className="btn btn-secondary list-none cursor-pointer px-3"
               aria-label="Open menu"
@@ -111,7 +112,7 @@ export function UtilityHeader() {
                 />
               </div>
             </div>
-          </details>
+          </MobileMenu>
         </div>
       </div>
     </header>
