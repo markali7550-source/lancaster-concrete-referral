@@ -377,9 +377,13 @@ export function PrepColumns({
 export function RelatedServices({
   services,
   currentSlug,
+  basePath = "/services",
 }: {
   services: readonly ServiceRecord[];
   currentSlug: string;
+  /** Link target prefix. Combo pages pass their own location so these cards
+   *  stay inside the local set instead of bouncing out to the service hubs. */
+  basePath?: string;
 }) {
   const others = services.filter((service) => service.slug !== currentSlug);
   return (
@@ -387,7 +391,7 @@ export function RelatedServices({
       {others.map((service) => (
         <li key={service.slug}>
           <Link
-            href={`/services/${service.slug}`}
+            href={`${basePath}/${service.slug}`}
             className="card card-interactive flex h-full flex-col overflow-hidden"
           >
             <Image

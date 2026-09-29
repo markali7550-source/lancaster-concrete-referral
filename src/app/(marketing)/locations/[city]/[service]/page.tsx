@@ -272,8 +272,14 @@ export default async function ComboPage({ params }: { params: Params }) {
 
       <Section eyebrow="Other services" title={`Also routed in ${location.city}`}>
         <RelatedServices
-          services={publishedServices}
+          services={publishedServices.filter((s) =>
+            publishedLocationServices.some(
+              (r) =>
+                r.locationSlug === location.slug && r.serviceSlug === s.slug,
+            ),
+          )}
           currentSlug={serviceRecord.slug}
+          basePath={`/locations/${location.slug}`}
         />
       </Section>
 
