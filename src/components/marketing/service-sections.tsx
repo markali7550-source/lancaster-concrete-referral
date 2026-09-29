@@ -138,10 +138,12 @@ export function InPageNav({ items }: { items: { id: string; label: string }[] })
   return (
     <nav
       aria-label="On this page"
-      className="sticky top-16 z-20 border-b backdrop-blur md:top-[6.25rem]"
+      className="sticky top-16 z-20 border-b"
       style={{
         borderColor: "var(--color-line)",
-        backgroundColor: "color-mix(in srgb, var(--color-page) 90%, transparent)",
+        // Fully opaque: a translucent bar lets the headings scrolling beneath
+        // it show through, which reads as broken text.
+        backgroundColor: "var(--color-page)",
       }}
     >
       <div className="container-page">

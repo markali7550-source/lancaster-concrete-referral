@@ -34,11 +34,12 @@ export function UtilityHeader() {
   return (
     <header className="sticky top-0 z-30">
       <div
-        className="border-b backdrop-blur"
+        className="border-b"
         style={{
           borderColor: "var(--color-line-soft)",
-          backgroundColor:
-            "color-mix(in srgb, var(--color-surface) 90%, transparent)",
+          // Fully opaque: a translucent sticky bar lets the content scrolling
+          // beneath it show through, which reads as broken text.
+          backgroundColor: "var(--color-surface)",
         }}
       >
         <div className="container-page flex h-16 items-center justify-between gap-4">
