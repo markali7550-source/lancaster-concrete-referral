@@ -1,15 +1,28 @@
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/marketing/service-sections";
 
+/** Every legal surface links to the others. The current page is filtered out
+ *  so the Related card never links to itself. */
+const RELATED_LINKS = [
+  { href: "/referral-disclosure", label: "Referral disclosure" },
+  { href: "/privacy", label: "Privacy policy" },
+  { href: "/terms", label: "Terms of use" },
+  { href: "/how-it-works", label: "How the referral works" },
+] as const;
+
 export function LegalPage({
   title,
   updated,
+  currentPath,
   children,
 }: {
   title: string;
   updated: string;
+  /** Path of the page being rendered, so it can be excluded from Related. */
+  currentPath: string;
   children: React.ReactNode;
 }) {
+  const related = RELATED_LINKS.filter((link) => link.href !== currentPath);
   return (
     <>
       <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: title }]} />
@@ -38,18 +51,11 @@ export function LegalPage({
             <div className="card p-6 lg:sticky lg:top-[4.5rem]">
               <p className="eyebrow-plain">Related</p>
               <ul className="mt-4 space-y-3 text-sm">
-                <li>
-                  <Link href="/referral-disclosure">Referral disclosure</Link>
-                </li>
-                <li>
-                  <Link href="/privacy">Privacy policy</Link>
-                </li>
-                <li>
-                  <Link href="/terms">Terms of use</Link>
-                </li>
-                <li>
-                  <Link href="/how-it-works">How the referral works</Link>
-                </li>
+                {related.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href}>{link.label}</Link>
+                  </li>
+                ))}
               </ul>
               <p className="mt-6 border-t pt-5 text-[13px] leading-relaxed text-[color:var(--color-muted)] hairline">
                 We are a referral service, not a concrete contractor. Nothing on

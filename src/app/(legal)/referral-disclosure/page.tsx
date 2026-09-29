@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMetadata({
 
 export default function ReferralDisclosurePage() {
   return (
-    <LegalPage title="Referral disclosure" updated="24 September 2026">
+    <LegalPage title="Referral disclosure" updated="24 September 2026" currentPath="/referral-disclosure">
       <p className="text-[color:var(--color-ink)]">{FULL_DISCLOSURE}</p>
 
       <h2>Our role</h2>

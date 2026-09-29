@@ -12,7 +12,7 @@ export const metadata: Metadata = pageMetadata({
 
 export default function PrivacyPage() {
   return (
-    <LegalPage title="Privacy policy" updated="24 September 2026">
+    <LegalPage title="Privacy policy" updated="24 September 2026" currentPath="/privacy">
       <h2>What we collect</h2>
       <ul>
         <li>Project details you submit: project type, location, name, contact method, and any note.</li>
