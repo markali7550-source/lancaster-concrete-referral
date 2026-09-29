@@ -4,25 +4,25 @@
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
-  --color-page: #f5f7f5;
+  --color-page: #f2f5f3;
   --color-surface: #ffffff;
   --color-raised: #ffffff;
-  --color-ink: #17201c;
-  --color-muted: #59655f;
-  --color-line: #cbd3ce;
-  --color-line-soft: #e2e8e4;
-  --color-accent: #1f6b4e;
-  --color-accent-hover: #195a41;
-  --color-accent-soft: #e3f0e9;
-  --color-danger: #a12626;
+  --color-ink: #0c1310;
+  --color-muted: #4d5a54;
+  --color-line: #b7c3bc;
+  --color-line-soft: #dde5e0;
+  --color-accent: #0e7a4c;
+  --color-accent-hover: #0a613b;
+  --color-accent-soft: #d8efe3;
+  --color-danger: #b01d1d;
 
-  --radius-card: 16px;
+  --radius-card: 18px;
   --radius-control: 12px;
 
-  --shadow-card: 0 1px 2px rgba(23, 32, 28, 0.04),
-    0 1px 3px rgba(23, 32, 28, 0.03);
-  --shadow-raised: 0 4px 12px rgba(23, 32, 28, 0.07),
-    0 1px 3px rgba(23, 32, 28, 0.05);
+  --shadow-card: 0 1px 2px rgba(12, 19, 16, 0.06),
+    0 2px 6px rgba(12, 19, 16, 0.04);
+  --shadow-raised: 0 10px 28px rgba(12, 19, 16, 0.12),
+    0 2px 6px rgba(12, 19, 16, 0.06);
 }
 
 @layer theme {
@@ -33,19 +33,19 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-page: #111713;
-    --color-surface: #18201b;
-    --color-raised: #1d2721;
-    --color-ink: #f1f5f2;
-    --color-muted: #b6c0ba;
-    --color-line: #35413a;
-    --color-line-soft: #27312b;
-    --color-accent: #55b58b;
-    --color-accent-hover: #76c9a4;
-    --color-accent-soft: #18392b;
-    --color-danger: #ff9a9a;
-    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3);
-    --shadow-raised: 0 6px 18px rgba(0, 0, 0, 0.35);
+    --color-page: #0b100d;
+    --color-surface: #141c17;
+    --color-raised: #1b241e;
+    --color-ink: #f5f9f6;
+    --color-muted: #a8b5ae;
+    --color-line: #313d36;
+    --color-line-soft: #232d27;
+    --color-accent: #3ed99a;
+    --color-accent-hover: #63e6b1;
+    --color-accent-soft: #12332557;
+    --color-danger: #ff8f8f;
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.45);
+    --shadow-raised: 0 14px 34px rgba(0, 0, 0, 0.55);
   }
 }
 
@@ -75,12 +75,13 @@
   h2,
   h3 {
     text-wrap: balance;
-    letter-spacing: -0.02em;
-    font-weight: 600;
+    letter-spacing: -0.03em;
+    font-weight: 700;
   }
 
   h1 {
-    letter-spacing: -0.03em;
+    letter-spacing: -0.045em;
+    font-weight: 800;
   }
 
   p {
@@ -127,7 +128,7 @@
   .card-interactive:hover {
     border-color: var(--color-accent);
     box-shadow: var(--shadow-raised);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -143,11 +144,11 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    min-height: 48px;
-    padding-inline: 1.35rem;
+    min-height: 52px;
+    padding-inline: 1.6rem;
     border-radius: var(--radius-control);
-    font-size: 0.9375rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 700;
     line-height: 1.2;
     letter-spacing: -0.01em;
     text-align: center;
@@ -175,7 +176,7 @@
   .btn-secondary {
     background-color: var(--color-surface);
     color: var(--color-ink);
-    border: 1px solid var(--color-line);
+    border: 2px solid var(--color-line);
   }
 
   .btn-secondary:hover {
@@ -184,8 +185,9 @@
   }
 
   .btn-ghost {
-    min-height: 40px;
-    padding-inline: 0.85rem;
+    min-height: 42px;
+    padding-inline: 0.9rem;
+    font-weight: 600;
     color: var(--color-muted);
   }
 
@@ -196,10 +198,10 @@
 
   .field {
     width: 100%;
-    min-height: 48px;
-    padding: 0.75rem 0.875rem;
+    min-height: 52px;
+    padding: 0.8rem 0.95rem;
     border-radius: var(--radius-control);
-    border: 1px solid var(--color-line);
+    border: 2px solid var(--color-line);
     background-color: var(--color-page);
     color: var(--color-ink);
     font-size: 0.9375rem;
@@ -209,6 +211,8 @@
   .field:focus {
     border-color: var(--color-accent);
     background-color: var(--color-surface);
+    box-shadow: 0 0 0 4px var(--color-accent-soft);
+    outline: none;
   }
 
   .field[aria-invalid="true"] {
@@ -221,52 +225,52 @@
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--color-accent);
   }
 
   .eyebrow::before {
     content: "";
-    width: 1.5rem;
-    height: 1px;
+    width: 1.75rem;
+    height: 2px;
     background-color: currentColor;
     opacity: 0.6;
   }
 
   .eyebrow-plain {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--color-muted);
   }
 
   .h2 {
-    font-size: clamp(1.5rem, 1.15rem + 1.5vw, 2.125rem);
-    line-height: 1.15;
-    font-weight: 600;
-    letter-spacing: -0.025em;
-  }
-
-  .h1 {
-    font-size: clamp(2rem, 1.35rem + 3vw, 3.25rem);
-    line-height: 1.06;
-    font-weight: 600;
+    font-size: clamp(1.625rem, 1.2rem + 1.8vw, 2.375rem);
+    line-height: 1.1;
+    font-weight: 700;
     letter-spacing: -0.035em;
   }
 
+  .h1 {
+    font-size: clamp(2.25rem, 1.45rem + 2.6vw, 3.5rem);
+    line-height: 1.04;
+    font-weight: 800;
+    letter-spacing: -0.045em;
+  }
+
   .lede {
-    font-size: 1.0625rem;
-    line-height: 1.65;
+    font-size: 1.125rem;
+    line-height: 1.6;
     color: var(--color-muted);
   }
 
   @media (min-width: 768px) {
     .lede {
-      font-size: 1.125rem;
+      font-size: 1.25rem;
     }
   }
 
