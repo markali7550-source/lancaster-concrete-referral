@@ -15,6 +15,9 @@ const PUBLISHED = [
   "/services/concrete-repair",
   "/locations/lancaster-sc",
   "/locations/lancaster-sc/concrete-driveways",
+  "/locations/lancaster-sc/concrete-patios",
+  "/locations/lancaster-sc/concrete-slabs",
+  "/locations/lancaster-sc/concrete-repair",
   "/how-it-works",
   "/contact",
   "/privacy",
@@ -25,9 +28,6 @@ const PUBLISHED = [
 const NOINDEX_OK = ["/locations", "/thank-you"];
 
 const MUST_404 = [
-  "/locations/lancaster-sc/concrete-patios",
-  "/locations/lancaster-sc/concrete-slabs",
-  "/locations/lancaster-sc/concrete-repair",
   "/locations/indian-land-sc",
   "/locations/indian-land-sc/concrete-driveways",
   "/locations/elgin-sc",
