@@ -17,7 +17,6 @@ import {
   RoutingControls,
 } from "@/components/marketing/sections";
 import { CtaBand } from "@/components/marketing/service-sections";
-import { publishedLocationServices } from "@/content/location-services";
 import { publishedLocations } from "@/content/locations";
 import { publishedServices } from "@/content/services";
 import { site } from "@/lib/env";
@@ -249,32 +248,9 @@ export default function HomePage() {
         tone="surface"
         eyebrow="Service area"
         title="Where we publish"
-        lead="Every area and local service page we currently publish. Service availability depends on participating providers."
+        lead="Every area we currently publish. Service availability depends on participating providers."
       >
         <AdjacentAreas locations={publishedLocations} />
-
-        <p className="eyebrow-plain mt-9">Local service pages</p>
-        <ul className="mt-4 flex flex-wrap gap-3">
-          {publishedLocationServices.map((record) => {
-            const location = publishedLocations.find(
-              (item) => item.slug === record.locationSlug,
-            );
-            const service = publishedServices.find(
-              (item) => item.slug === record.serviceSlug,
-            );
-            if (!location || !service) return null;
-            return (
-              <li key={`${record.locationSlug}-${record.serviceSlug}`}>
-                <Link
-                  href={`/locations/${record.locationSlug}/${record.serviceSlug}`}
-                  className="btn btn-secondary"
-                >
-                  {service.name} in {location.city}, {location.region}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
 
         <p className="mt-7 max-w-2xl text-[14px] leading-relaxed text-[color:var(--color-muted)]">
           Additional South Carolina areas are added one at a time, and only once
