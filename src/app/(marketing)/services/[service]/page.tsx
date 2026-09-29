@@ -250,11 +250,6 @@ export default async function ServicePage({ params }: { params: Params }) {
         </div>
       </div>
 
-      <CtaBand
-        title={`Ready to get matched for ${service.nameLower}?`}
-        body="One request, one eligible independent contractor, no charge to you. If nobody approved for your area can take it, we will say so plainly."
-      />
-
       {cityLinks.length > 0 ? (
         <Section eyebrow="Local pages" title={`${service.name} by city`} compact>
           <ul className="flex flex-wrap gap-3">
@@ -287,6 +282,12 @@ export default async function ServicePage({ params }: { params: Params }) {
       <Section eyebrow="Other services" title="Also routed in Lancaster">
         <RelatedServices services={publishedServices} currentSlug={service.slug} />
       </Section>
+
+
+      <CtaBand
+        title={`Ready to get matched for ${service.nameLower}?`}
+        body="One request, one eligible independent contractor, no charge to you. If nobody approved for your area can take it, we will say so plainly."
+      />
 
       <MobileActionBar
         fallbackDisplay={site.phoneDisplay}

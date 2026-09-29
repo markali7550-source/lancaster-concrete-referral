@@ -251,11 +251,6 @@ export default async function ComboPage({ params }: { params: Params }) {
         <HowMatchingWorks />
       </Section>
 
-      <CtaBand
-        title={`${serviceRecord.name} in ${location.city}, SC`}
-        body="One request, one eligible independent contractor. If nobody approved for your area can take it, we will tell you plainly."
-      />
-
       <Section eyebrow="Before you call" title="Worth settling first">
         <div className="max-w-3xl">
           <DecisionSupport items={serviceRecord.considerations} />
@@ -282,6 +277,12 @@ export default async function ComboPage({ params }: { params: Params }) {
           basePath={`/locations/${location.slug}`}
         />
       </Section>
+
+
+      <CtaBand
+        title={`${serviceRecord.name} in ${location.city}, SC`}
+        body="One request, one eligible independent contractor. If nobody approved for your area can take it, we will tell you plainly."
+      />
 
       <MobileActionBar
         fallbackDisplay={site.phoneDisplay}

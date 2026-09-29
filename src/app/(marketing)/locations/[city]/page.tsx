@@ -238,11 +238,6 @@ export default async function LocationPage({ params }: { params: Params }) {
         </div>
       </Section>
 
-      <CtaBand
-        title={`Get matched with a ${location.city} concrete contractor`}
-        body="One request, one eligible independent contractor, no charge and no obligation."
-      />
-
       <Section eyebrow="FAQ" title={`${location.city} questions`}>
         <FaqSection faqs={faqs} />
       </Section>
@@ -252,6 +247,12 @@ export default async function LocationPage({ params }: { params: Params }) {
           locations={publishedLocations.filter((l) => l.slug !== location.slug)}
         />
       </Section>
+
+
+      <CtaBand
+        title={`Get matched with a ${location.city} concrete contractor`}
+        body="One request, one eligible independent contractor, no charge and no obligation."
+      />
 
       <MobileActionBar
         fallbackDisplay={site.phoneDisplay}

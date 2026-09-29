@@ -61,11 +61,6 @@ export default function HowItWorksPage() {
       <Section tone="soft" eyebrow="Eligibility" title="What blocks a provider from receiving your request">
         <RoutingControls />
       </Section>
-      <CtaBand
-        title="Ready to start?"
-        body="Submit a request and we will route it to one eligible independent contractor, or call the referral team first to check coverage."
-      />
-
       <Section eyebrow="Our role" title="What we are, and what we are not">
         <div className="card max-w-3xl p-7">
           <p className="eyebrow-plain">Required disclosure</p>
@@ -92,6 +87,12 @@ export default function HowItWorksPage() {
           </div>
         </div>
       </Section>
+
+      <CtaBand
+        title="Ready to start?"
+        body="Submit a request and we will route it to one eligible independent contractor, or call the referral team first to check coverage."
+      />
+
     </>
   );
 }

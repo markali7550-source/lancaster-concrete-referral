@@ -119,11 +119,6 @@ export default function ServicesPage() {
         <HowMatchingWorks />
       </Section>
 
-      <CtaBand
-        title="Not sure which service fits?"
-        body="Describe the project in the quote form and we will route it on the closest match, or call and our referral team will tell you whether we cover it at all."
-      />
-
       <Section eyebrow="Out of scope" title="What we decline outright">
         <div className="card max-w-3xl p-6">
           <p className="text-[color:var(--color-muted)]">
@@ -144,6 +139,12 @@ export default function ServicesPage() {
           <FaqSection faqs={FAQS} />
         </div>
       </Section>
+
+      <CtaBand
+        title="Not sure which service fits?"
+        body="Describe the project in the quote form and we will route it on the closest match, or call and our referral team will tell you whether we cover it at all."
+      />
+
     </>
   );
 }

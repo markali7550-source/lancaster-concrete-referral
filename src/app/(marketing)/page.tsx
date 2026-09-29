@@ -235,11 +235,6 @@ export default function HomePage() {
         <ProjectExamples />
       </Section>
 
-      <CtaBand
-        title="Ready to connect with an independent concrete service provider?"
-        body="One request, one independent third-party service provider, no charge to you and no obligation to proceed."
-      />
-
       <Section eyebrow="FAQ" title="Straight answers">
         <FaqSection faqs={FAQS} />
       </Section>
@@ -257,6 +252,12 @@ export default function HomePage() {
           a participating provider has approved coverage there in writing.
         </p>
       </Section>
+
+
+      <CtaBand
+        title="Ready to connect with an independent concrete service provider?"
+        body="One request, one independent third-party service provider, no charge to you and no obligation to proceed."
+      />
 
       <MobileActionBar
         fallbackDisplay={site.phoneDisplay}
