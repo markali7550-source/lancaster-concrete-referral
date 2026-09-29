@@ -74,7 +74,7 @@ test.describe("quote form", () => {
     await page.getByLabel(/full name/i).fill("Jane Homeowner");
     await fillContact(page, `tagged+${Date.now()}@example.com`);
     await serviceConsent(page).check();
-    await page.getByRole("button", { name: /request my quote/i }).click();
+    await page.getByRole("button", { name: /request a referral/i }).click();
     await expect(page.getByText(/request received/i)).toBeVisible({
       timeout: 15000,
     });
@@ -87,7 +87,7 @@ test.describe("quote form", () => {
     await page.getByLabel(/full name/i).fill("Sam Owner");
     await fillContact(page);
     await serviceConsent(page).check();
-    await page.getByRole("button", { name: /request my quote/i }).click();
+    await page.getByRole("button", { name: /request a referral/i }).click();
     await expect(page.getByText(/routing team/i)).toBeVisible({
       timeout: 15000,
     });
@@ -120,7 +120,7 @@ test.describe("quote form", () => {
     await page.getByLabel(/^email$/i).fill(uniqueEmail());
     await page.getByLabel(/^phone$/i).fill("123");
     await serviceConsent(page).check();
-    await page.getByRole("button", { name: /request my quote/i }).click();
+    await page.getByRole("button", { name: /request a referral/i }).click();
     await expect(page.getByText(/10-digit us phone/i).first()).toBeVisible();
   });
 
@@ -129,7 +129,7 @@ test.describe("quote form", () => {
     await fillStepOne(page, APPROVED_ZIP);
     await page.getByLabel(/full name/i).fill("Jane Homeowner");
     await fillContact(page);
-    await page.getByRole("button", { name: /request my quote/i }).click();
+    await page.getByRole("button", { name: /request a referral/i }).click();
     await expect(page.getByText(/consent is required/i).first()).toBeVisible();
   });
 
@@ -141,7 +141,7 @@ test.describe("quote form", () => {
     await page.getByLabel(/full name/i).fill("Out Of Area");
     await fillContact(page);
     await serviceConsent(page).check();
-    await page.getByRole("button", { name: /request my quote/i }).click();
+    await page.getByRole("button", { name: /request a referral/i }).click();
     await expect(page.getByText(/do not cover that area/i)).toBeVisible({
       timeout: 15000,
     });

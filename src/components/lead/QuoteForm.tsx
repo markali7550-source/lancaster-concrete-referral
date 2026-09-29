@@ -2,7 +2,7 @@
 
 import { useId, useRef, useState } from "react";
 import { Icon } from "@/components/ui/Icon";
-import { SERVICE_CONSENT } from "@/lib/seo/disclosure";
+import { LEAD_FORM_DISCLOSURE, SERVICE_CONSENT } from "@/lib/seo/disclosure";
 import { track } from "@/lib/analytics/events";
 import { attributionForLead } from "@/domain/attribution/client";
 import { serviceAreaOptions } from "@/content/locations";
@@ -569,7 +569,7 @@ export function QuoteForm({
               disabled={status === "submitting"}
               aria-busy={status === "submitting"}
             >
-              {status === "submitting" ? "Sending…" : "Request my quote"}
+              {status === "submitting" ? "Sending…" : "Request a referral"}
             </button>
             <button
               type="button"
@@ -584,6 +584,9 @@ export function QuoteForm({
       )}
 
       <p className="mt-5 text-xs leading-relaxed text-[color:var(--color-muted)]">
+        {LEAD_FORM_DISCLOSURE}
+      </p>
+      <p className="mt-3 text-xs leading-relaxed text-[color:var(--color-muted)]">
         Submitting this form does not create a contract, a price, or a booking.
         We are a referral service, not a concrete contractor.
       </p>

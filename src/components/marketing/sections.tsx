@@ -116,7 +116,7 @@ export function Hero({
               className="btn btn-primary"
             />
             <a href="#quote-form" className="btn btn-secondary">
-              Request a quote
+              Request a referral
               <Icon name="arrow" />
             </a>
           </div>
@@ -124,8 +124,8 @@ export function Hero({
           <ul className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-[13px] text-[color:var(--color-muted)]">
             {[
               "Free for homeowners",
-              "One contractor, not five",
-              "Licence and insurance checked",
+              "One independent provider, not five",
+              "Written coverage areas only",
             ].map((item) => (
               <li key={item} className="flex items-center gap-1.5">
                 <span style={{ color: "var(--color-accent)" }}>
@@ -279,28 +279,28 @@ export function ProjectTypeChooser({
   );
 }
 
-/* ----------------------------------------------------------- VettingProcess */
+/* ---------------------------------------------------------- RoutingControls */
 
-const VETTING_CHECKS = [
-  {
-    title: "Licence record checked",
-    body: "Legal business name, licence or registration number, board, classification, status, and expiry — plus who checked it and when.",
-  },
-  {
-    title: "Insurance evidence on file",
-    body: "A current certificate meeting our approved limits. An expired certificate blocks the partner from receiving any request.",
-  },
+const ROUTING_CONTROLS = [
   {
     title: "Written coverage area",
-    body: "Partners approve specific areas in writing. Coverage is never inferred from a radius drawn on a map.",
+    body: "Participating providers confirm in writing which areas they accept work in. Coverage is never inferred from a radius drawn on a map.",
   },
   {
     title: "Signed referral agreement",
-    body: "Requests are only routed to contractors under an active agreement with documented response expectations.",
+    body: "Requests are only passed to independent service providers operating under an active referral agreement with documented response expectations.",
+  },
+  {
+    title: "Project type match",
+    body: "Your project type is matched against the categories a provider has agreed to receive. A category nobody has accepted produces an honest no-coverage answer.",
+  },
+  {
+    title: "One request at a time",
+    body: "Your details go to a single participating provider rather than a list of companies bidding against each other.",
   },
 ];
 
-export function VettingProcess() {
+export function RoutingControls() {
   return (
     <>
       <ul className="grid gap-px overflow-hidden rounded-[16px] border sm:grid-cols-2"
@@ -309,7 +309,7 @@ export function VettingProcess() {
           backgroundColor: "var(--color-line-soft)",
         }}
       >
-        {VETTING_CHECKS.map((check, index) => (
+        {ROUTING_CONTROLS.map((check, index) => (
           <li
             key={check.title}
             className="p-6"
@@ -337,8 +337,11 @@ export function VettingProcess() {
         ))}
       </ul>
       <p className="mt-6 max-w-prose text-[13.5px] leading-relaxed text-[color:var(--color-muted)]">
-        These are the only checks we perform. They are routing controls, not a
-        warranty, an endorsement, or a substitute for your own verification.
+        These are routing controls only. They are not a verification of any
+        provider&apos;s licence, insurance, or workmanship, and they are not a
+        warranty, an endorsement, or a substitute for your own checks. Confirm
+        licence status, insurance, and credentials directly with the provider
+        and through SC LLR before you hire.
         Confirm licence status yourself through SC LLR before you sign anything.
       </p>
     </>
@@ -373,7 +376,7 @@ const STEPS = [
     body: "Two fields to start: what you need poured or repaired, and where the property is.",
   },
   {
-    verb: "We check partner eligibility",
+    verb: "We check participating provider eligibility",
     body: "Location, project type, licence status, insurance, and current capacity are all checked before anything is sent.",
   },
   {

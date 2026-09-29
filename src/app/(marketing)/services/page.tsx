@@ -16,7 +16,7 @@ import { site } from "@/lib/env";
 
 const TITLE = `Concrete Services in Lancaster, SC | ${site.brand}`;
 const DESCRIPTION =
-  "Driveways, patios, slabs, and non-structural repair in Lancaster, SC. See what each referral covers, what is out of scope, and how requests reach an independent contractor.";
+  "Driveways, patios, slabs, and non-structural repair in Lancaster, SC. See what each referral covers, what is out of scope, and how requests reach an independent service provider.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,
@@ -28,17 +28,17 @@ const FAQS = [
   {
     question: "Why are only four services listed?",
     answer:
-      "Each service here has at least one partner with written coverage for Lancaster areas and an approved content and compliance review. We add a service when that is true, not when there is search demand for it.",
+      "Each service here has at least one participating provider with written coverage for Lancaster areas and an approved content and compliance review. We add a service when that is true, not when there is search demand for it.",
   },
   {
     question: "What happens if my project spans two services?",
     answer:
-      "Pick the closest match and describe the rest in the project note. The contractor scopes the whole job on site — the category only affects which partners are eligible to receive it.",
+      "Pick the closest match and describe the rest in the project note. The contractor scopes the whole job on site — the category only affects which participating providers are eligible to receive it.",
   },
   {
     question: "Do you charge for the referral?",
     answer:
-      "No. Contractors pay us a commission on revenue they actually collect from completed work. Nothing is charged to the homeowner, and that arrangement does not make us a party to your contract.",
+      "No. Service providers pay us a commission on revenue they actually collect from completed work. Nothing is charged to the homeowner, and that arrangement does not make us a party to your contract.",
   },
 ];
 
@@ -65,9 +65,9 @@ export default function ServicesPage() {
           </h1>
           <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-[color:var(--color-muted)]">
             Four residential concrete services, each with at least one
-            independent contractor holding written coverage for the Lancaster
+            independent service provider holding written coverage for the Lancaster
             area. Pick the closest match and we route your
-            request to one eligible partner.
+            request to one eligible participating provider.
           </p>
         </div>
       </section>
@@ -115,7 +115,7 @@ export default function ServicesPage() {
         </div>
       </Section>
 
-      <Section eyebrow="Process" title="How a request reaches a contractor">
+      <Section eyebrow="Process" title="How a request reaches an independent service provider">
         <HowMatchingWorks />
       </Section>
 
@@ -129,7 +129,7 @@ export default function ServicesPage() {
           <p className="text-[color:var(--color-muted)]">
             Foundation repair, structural engineering assessments, retaining
             walls, slab jacking, material supply, and commercial contracts are
-            not routed in Phase 1. These need separate demand, partner, and
+            not routed in Phase 1. These need separate demand, provider, and
             compliance approval, and several of them need a licensed
             professional we do not currently work with. We would rather tell you
             no than hand your project to the wrong trade.

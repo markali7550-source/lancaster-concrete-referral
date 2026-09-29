@@ -43,10 +43,10 @@ export const locations: readonly LocationRecord[] = [
     localEvidence: [
       "Lancaster County sits on the Carolina Slate Belt, so sub-base prep and drainage handling vary noticeably between in-town lots and rural parcels off Highway 9.",
       "Older in-town properties near Main Street frequently have narrow drive access, which affects truck staging and pour sequencing.",
-      "Red clay subsoil common through the county holds water, so partners are asked about drainage handling before a driveway or slab quote is confirmed.",
+      "Red clay subsoil common through the county holds water, so participating providers are asked about drainage handling before a driveway or slab quote is confirmed.",
     ],
     intro:
-      "Lancaster is our core market and the regional centre for this referral service. Enquiries from the Lancaster area are matched against partners who have explicitly approved that coverage.",
+      "Looking for concrete services in Lancaster, SC? We help connect homeowners with independent concrete service providers who may be available for projects in the area. Lancaster is the core market for this referral service, and enquiries are matched against participating providers who have explicitly approved that coverage in writing.",
     adjacent: [],
   },
   {
@@ -106,7 +106,7 @@ export const serviceAreaOptions: readonly ServiceAreaOption[] = [
     .filter((l) => l.zips.length > 0)
     .map((l) => ({
       // One entry per served place. The wire value stays a postal code the
-      // partner registry already approves, so routing is unchanged.
+      // participating provider registry already approves, so routing is unchanged.
       value: l.zips[0] as string,
       label: `${l.city}, ${l.region}`,
     })),
@@ -125,7 +125,7 @@ export const gatedRouteInventory: readonly GatedRouteRecord[] = [
     path: "/locations/indian-land-sc",
     state: "gated",
     requirement:
-      "Fresh demand data, verified city record, unique copy, partner coverage.",
+      "Fresh demand data, verified city record, unique copy, participating provider coverage.",
   },
   {
     path: "/locations/elgin-sc",

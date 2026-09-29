@@ -4,7 +4,7 @@ import {
   HowMatchingWorks,
   ReferralDisclosureStrip,
   Section,
-  VettingProcess,
+  RoutingControls,
 } from "@/components/marketing/sections";
 import { Breadcrumbs, CtaBand } from "@/components/marketing/service-sections";
 import { pageMetadata } from "@/lib/seo/metadata";
@@ -12,9 +12,9 @@ import { breadcrumbNode, buildGraph, webPageNode } from "@/lib/schema/graph";
 import { site } from "@/lib/env";
 import { FULL_DISCLOSURE } from "@/lib/seo/disclosure";
 
-const TITLE = `How Our Concrete Contractor Referrals Work | ${site.brand}`;
+const TITLE = `How Our Concrete Referrals Work | ${site.brand}`;
 const DESCRIPTION =
-  "How a request is validated, checked against partner eligibility, routed to one independent contractor, and what our role is and is not.";
+  "How a request is validated, checked against participating provider eligibility, routed to one independent contractor, and what our role is and is not.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,
@@ -45,7 +45,7 @@ export default function HowItWorksPage() {
         <div className="container-page py-12 md:py-16">
           <p className="eyebrow">Our process</p>
           <h1 className="h1 mt-5 max-w-3xl">
-            How Our Concrete Contractor Referrals Work
+            How Our Concrete Service Provider Referrals Work
           </h1>
           <p className="lede mt-5 max-w-2xl">
             What happens between the moment you submit a request and the moment
@@ -58,8 +58,8 @@ export default function HowItWorksPage() {
       <Section eyebrow="Process" title="Three steps, no obligation">
         <HowMatchingWorks />
       </Section>
-      <Section tone="soft" eyebrow="Eligibility" title="What blocks a contractor from receiving your request">
-        <VettingProcess />
+      <Section tone="soft" eyebrow="Eligibility" title="What blocks a provider from receiving your request">
+        <RoutingControls />
       </Section>
       <CtaBand
         title="Ready to start?"
@@ -76,7 +76,7 @@ export default function HowItWorksPage() {
             <p className="font-semibold">We do</p>
             <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm text-[color:var(--color-muted)]">
               <li>Collect and validate your request</li>
-              <li>Check partner licence, insurance, coverage, and capacity records</li>
+              <li>Match your request to a participating provider with written coverage</li>
               <li>Route the request to one eligible contractor</li>
               <li>Reassign once if the first contractor does not acknowledge</li>
             </ul>

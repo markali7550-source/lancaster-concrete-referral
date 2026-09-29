@@ -17,9 +17,9 @@ const records: readonly LocationServiceRecord[] = [
     state: "published",
     localBody: [
       "Driveway enquiries from Lancaster split fairly evenly between replacement of 1970s-to-1990s pours in the older neighbourhoods off Chesterfield Avenue and first-time pours on rural parcels where a gravel drive has become unworkable.",
-      "The two questions partners raise most often on Lancaster driveways are truck access and water. Narrow in-town lots restrict where a mixer can stage, and the county's clay subsoil holds water long enough that sub-base preparation and edge drainage change the price of the job more than the square footage does.",
-      "Seasonality matters here too. Requests cluster in late spring and early autumn, which is when partner capacity tightens and acknowledgement times stretch. If your driveway is already failing, an enquiry in the quieter winter weeks usually gets a faster site visit, even though the pour itself may be scheduled for milder weather.",
-      "We do not pour concrete. When your request matches an approved partner for the Lancaster area, that independent contractor contacts you to inspect the site, confirm scope, and quote the work directly. We stay out of the pricing conversation entirely, and we do not take a position on which finish, thickness, or reinforcement your property needs.",
+      "The two questions participating providers raise most often on Lancaster driveways are truck access and water. Narrow in-town lots restrict where a mixer can stage, and the county's clay subsoil holds water long enough that sub-base preparation and edge drainage change the price of the job more than the square footage does.",
+      "Seasonality matters here too. Requests cluster in late spring and early autumn, which is when provider capacity tightens and acknowledgement times stretch. If your driveway is already failing, an enquiry in the quieter winter weeks usually gets a faster site visit, even though the pour itself may be scheduled for milder weather.",
+      "We do not pour concrete. When your request matches an approved participating provider for the Lancaster area, that independent contractor contacts you to inspect the site, confirm scope, and quote the work directly. We stay out of the pricing conversation entirely, and we do not take a position on which finish, thickness, or reinforcement your property needs.",
     ],
     localFaqs: [
       {
@@ -46,9 +46,9 @@ const records: readonly LocationServiceRecord[] = [
     state: "published",
     localBody: [
       "Patio enquiries in Lancaster are dominated by rear-yard slabs behind single-storey ranch houses built between the 1960s and the 1990s, and by homeowners converting a tired screened porch footprint into an open entertaining surface.",
-      "Shade is the variable homeowners underestimate here. Mature oaks and loblolly pines keep much of the back of a Lancaster lot damp well into the morning, and a smooth trowelled finish in that microclimate grows algae and turns slippery within a couple of seasons. Partners routinely steer these projects toward a broom or exposed-aggregate finish for grip, and they will ask where the tree canopy actually sits before recommending one.",
-      "Humidity drives scheduling more than temperature does. A July pour in Lancaster County can skin over faster than the crew can finish it, so partners often start at first light or push the date rather than fight the slab. Expect a contractor to talk about curing and moisture protection, not just the pour day itself.",
-      "Tying a new patio into an existing porch footing or stoop is the other recurring detail. The old footing and the new slab move independently unless the joint is detailed deliberately, which is why partners inspect the existing structure before quoting rather than pricing from a square-foot figure over the phone.",
+      "Shade is the variable homeowners underestimate here. Mature oaks and loblolly pines keep much of the back of a Lancaster lot damp well into the morning, and a smooth trowelled finish in that microclimate grows algae and turns slippery within a couple of seasons. Participating providers routinely steer these projects toward a broom or exposed-aggregate finish for grip, and they will ask where the tree canopy actually sits before recommending one.",
+      "Humidity drives scheduling more than temperature does. A July pour in Lancaster County can skin over faster than the crew can finish it, so participating providers often start at first light or push the date rather than fight the slab. Expect a contractor to talk about curing and moisture protection, not just the pour day itself.",
+      "Tying a new patio into an existing porch footing or stoop is the other recurring detail. The old footing and the new slab move independently unless the joint is detailed deliberately, which is why participating providers inspect the existing structure before quoting rather than pricing from a square-foot figure over the phone.",
     ],
     localFaqs: [
       {
@@ -64,7 +64,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         question: "Is summer a bad time to pour a patio here?",
         answer:
-          "It is workable but less forgiving. Lancaster humidity and heat shorten finishing time, so partners often schedule early-morning pours or move the date. That is a contractor decision, not ours.",
+          "It is workable but less forgiving. Lancaster humidity and heat shorten finishing time, so participating providers often schedule early-morning pours or move the date. That is a contractor decision, not ours.",
       },
     ],
   },
@@ -74,8 +74,8 @@ const records: readonly LocationServiceRecord[] = [
     state: "published",
     localBody: [
       "Slab requests around Lancaster are mostly outbuilding pads: detached workshops, equipment and mower storage, carports, hot tub bases, and pads for replacement HVAC condensers. Rural parcels outside the town limits account for most of the larger ones.",
-      "Load is the first question a partner asks, because it changes the slab rather than just its price. A pad that will carry a lifted truck, a tractor, or a loaded workshop bench needs thickened edges and different reinforcement from a simple storage floor, and retrofitting that later means breaking out the slab.",
-      "On rural Lancaster parcels, siting is the second question. Septic fields, well heads, and their setbacks constrain where a pad can legally and sensibly go, and partners will want those locations identified before they quote. Homeowners frequently discover the obvious flat spot is the one place the pad cannot sit.",
+      "Load is the first question a participating provider asks, because it changes the slab rather than just its price. A pad that will carry a lifted truck, a tractor, or a loaded workshop bench needs thickened edges and different reinforcement from a simple storage floor, and retrofitting that later means breaking out the slab.",
+      "On rural Lancaster parcels, siting is the second question. Septic fields, well heads, and their setbacks constrain where a pad can legally and sensibly go, and participating providers will want those locations identified before they quote. Homeowners frequently discover the obvious flat spot is the one place the pad cannot sit.",
       "If the building on top will be heated or used as a workshop, expect the contractor to raise a vapour barrier beneath the slab. Lancaster County clay stays wet, and moisture migrating up through an unprotected pad ruins stored tools, flooring, and anything left on the floor. Ask whether a permit is required for your structure as well, since the pad and the building are often assessed together.",
     ],
     localFaqs: [
@@ -92,7 +92,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         question: "Do I need a vapour barrier under an outbuilding slab?",
         answer:
-          "For a heated or finished space, partners generally recommend one because the clay subsoil here holds moisture. For an open carport it is usually unnecessary. The assigned contractor specifies it, not us.",
+          "For a heated or finished space, participating providers generally recommend one because the clay subsoil here holds moisture. For an open carport it is usually unnecessary. The assigned contractor specifies it, not us.",
       },
     ],
   },
@@ -103,8 +103,8 @@ const records: readonly LocationServiceRecord[] = [
     localBody: [
       "Repair enquiries from Lancaster arrive in three recognisable shapes: surface spalling and flaking on slabs poured decades ago, joints that have opened and now trap water, and sections that have dropped out of level at an apron, walkway, or garage threshold.",
       "Settlement here is usually a soil story rather than a concrete one. Red clay shrinks in a dry summer and swells again with the autumn rain, and where stormwater has been running along an edge for years it washes fines out from under the slab until a void forms. Grinding the lip flush without addressing the water simply resets the clock.",
-      "Mature hardwoods cause the opposite problem. Roots from oaks planted close to older in-town walkways lift panels from below, and cutting the root to level the slab can destabilise the tree. Partners will tell you plainly when that trade-off is the real decision.",
-      "The honest answer is sometimes that repair is not worth it. Once a slab is cracked across multiple panels, has lost significant surface depth, or sits on a compromised sub-base, resurfacing buys a few seasons at a meaningful fraction of replacement cost. We do not perform or price the work, and we do not lean on partners either way, but a contractor who tells you to replace rather than patch is usually not upselling you.",
+      "Mature hardwoods cause the opposite problem. Roots from oaks planted close to older in-town walkways lift panels from below, and cutting the root to level the slab can destabilise the tree. Participating providers will tell you plainly when that trade-off is the real decision.",
+      "The honest answer is sometimes that repair is not worth it. Once a slab is cracked across multiple panels, has lost significant surface depth, or sits on a compromised sub-base, resurfacing buys a few seasons at a meaningful fraction of replacement cost. We do not perform or price the work, and we do not lean on participating providers either way, but a contractor who tells you to replace rather than patch is usually not upselling you.",
     ],
     localFaqs: [
       {

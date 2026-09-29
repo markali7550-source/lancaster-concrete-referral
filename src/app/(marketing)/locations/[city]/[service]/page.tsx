@@ -11,7 +11,7 @@ import {
   HowMatchingWorks,
   ReferralDisclosureStrip,
   Section,
-  VettingProcess,
+  RoutingControls,
 } from "@/components/marketing/sections";
 import {
   Breadcrumbs,
@@ -166,7 +166,7 @@ export default async function ComboPage({ params }: { params: Params }) {
                 How the project usually runs here
               </h2>
               <p className="lede mt-4 max-w-prose">
-                Typical ranges reported by partners, not commitments. Your
+                Typical ranges reported by participating providers, not commitments. Your
                 contractor sets the actual schedule for your site.
               </p>
               <div className="mt-8">
@@ -207,10 +207,10 @@ export default async function ComboPage({ params }: { params: Params }) {
               className="scroll-mt-36 border-t py-11 md:py-14"
               style={{ borderColor: "var(--color-line-soft)" }}
             >
-              <p className="eyebrow">Partner checks</p>
-              <h2 className="h2 mt-4">Before your request is routed</h2>
+              <p className="eyebrow">How routing works</p>
+              <h2 className="h2 mt-4">Before your request is passed on</h2>
               <div className="mt-8">
-                <VettingProcess />
+                <RoutingControls />
               </div>
             </section>
           </div>

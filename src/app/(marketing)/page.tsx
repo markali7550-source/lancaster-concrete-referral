@@ -14,17 +14,18 @@ import {
   ReferralDisclosureStrip,
   Section,
   StatStrip,
-  VettingProcess,
+  RoutingControls,
 } from "@/components/marketing/sections";
 import { CtaBand } from "@/components/marketing/service-sections";
 import { publishedServices } from "@/content/services";
 import { site } from "@/lib/env";
+import { REFERRAL_SERVICE_DISCLOSURE } from "@/lib/seo/disclosure";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { buildGraph, faqNode, webPageNode } from "@/lib/schema/graph";
 
-const TITLE = `Concrete Contractor Referrals in Lancaster, SC | ${site.brand}`;
+const TITLE = `Concrete Referrals in Lancaster, SC | ${site.brand}`;
 const DESCRIPTION =
-  "We match Lancaster, SC homeowners with independent concrete contractors for driveways, patios, slabs, and repair. Call or request a quote. We are a referral service, not a contractor.";
+  "We help Lancaster, SC homeowners connect with independent concrete service providers for driveways, patios, slabs, and repair. We are a referral service, not a contractor.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,
@@ -34,8 +35,8 @@ export const metadata: Metadata = pageMetadata({
 
 const STATS = [
   { value: "4", label: "Concrete services routed in Lancaster County" },
-  { value: "Lancaster, SC", label: "Area with written partner coverage" },
-  { value: "1", label: "Contractor contacts you, not a phone bank" },
+  { value: "Lancaster, SC", label: "Area with written provider coverage" },
+  { value: "1", label: "Independent provider contacts you, not a phone bank" },
   { value: "$0", label: "Cost to the homeowner, always" },
 ];
 
@@ -43,7 +44,7 @@ const DECISION_ITEMS = [
   {
     question: "Repair the slab or replace it?",
     answer:
-      "Isolated surface cracking on an otherwise sound slab is usually a repair conversation. Panel-wide settlement, heaving, or a failing sub-base usually is not. Only the contractor who inspects the slab can tell you which one you have.",
+      "Isolated surface cracking on an otherwise sound slab is usually a repair conversation. Panel-wide settlement, heaving, or a failing sub-base usually is not. Only the independent provider who inspects the slab can tell you which one you have.",
   },
   {
     question: "What changes the price of a Lancaster pour?",
@@ -53,35 +54,40 @@ const DECISION_ITEMS = [
   {
     question: "Do I need more than one quote?",
     answer:
-      "Comparing quotes is sensible. We route your request to one eligible contractor at a time so you are not called by five companies, and you remain completely free to seek other quotes independently.",
+      "Comparing quotes is sensible. We route your request to one participating provider at a time so you are not called by five companies, and you remain completely free to seek other quotes independently.",
   },
   {
     question: "What does this service cost me?",
     answer:
-      "Nothing. We are paid by the contractor on completed and collected work. That arrangement does not change the price you negotiate, and it does not make us a party to your contract.",
+      "Nothing. We are paid by the service provider on completed and collected work. That arrangement does not change the price you negotiate, and it does not make us a party to your contract.",
   },
 ];
 
 const FAQS = [
   {
-    question: "Are you the concrete contractor?",
+    question: "Do you perform concrete work?",
     answer:
-      "No. We are a marketing and referral service. We do not perform, supervise, warrant, or guarantee construction work. The independent contractor you are matched with holds the relationship, the contract, and the responsibility for the work.",
+      "No. We are a referral service that connects homeowners with independent third-party concrete service providers. The actual services are performed by the selected service provider. We do not perform, supervise, warrant, or guarantee construction work.",
   },
   {
-    question: "Which areas can you actually match right now?",
+    question: "Who performs the work?",
     answer:
-      "Lancaster, South Carolina. Requests outside approved coverage receive an honest no-coverage answer instead of being forwarded to a contractor who does not serve the area.",
+      "Concrete work is performed by an independent third-party service provider. Availability and services depend on the provider serving the requested area. That provider holds the relationship, the contract, and the responsibility for the work.",
   },
   {
-    question: "Do you check licences and insurance?",
+    question: "Which areas can you route right now?",
     answer:
-      "We record licence or registration details and current insurance evidence for each partner, and a partner whose record is expired, suspended, or incompatible with the work cannot receive your request. That is a routing control, not a warranty. Verify credentials through SC LLR before hiring.",
+      "Lancaster, South Carolina. Service availability depends on participating providers, so requests outside covered areas receive an honest no-coverage answer instead of being forwarded to a provider who does not serve the area.",
+  },
+  {
+    question: "Are the service providers licensed and insured?",
+    answer:
+      "Licensing and insurance are the responsibility of each independent service provider, and we make no representation about any provider's credentials. Confirm licence status, insurance, and credentials directly with the provider and through SC LLR before you hire.",
   },
   {
     question: "What happens to my details?",
     answer:
-      "Your request is stored by us and shared with the independent contractor assigned to your area so they can contact you. Marketing contact is a separate, optional consent. See the Privacy Policy for retention and your choices.",
+      "Your request is stored by us and shared with the independent service provider covering your area so they can contact you. Marketing contact is a separate, optional consent. See the Privacy Policy for retention and your choices.",
   },
 ];
 
@@ -97,8 +103,8 @@ export default function HomePage() {
 
       <Hero
         locationCue="Lancaster County, South Carolina"
-        h1="Get Matched With Independent Concrete Contractors in Lancaster, SC"
-        summary="Tell us your project and location. We check licence status, insurance, coverage, and capacity, then pass your request to one independent local contractor. We are a referral service, not a concrete contractor."
+        h1="Connect With Independent Concrete Service Providers in Lancaster, SC"
+        summary="Tell us your project and location and we will pass your request to one independent local service provider who has written coverage for your area. We are a referral service, not a concrete contractor, and we do not perform concrete work ourselves."
       />
       <StatStrip items={STATS} />
       <ReferralDisclosureStrip />
@@ -107,7 +113,7 @@ export default function HomePage() {
         tone="surface"
         eyebrow="Project types"
         title="What we can route in Lancaster today"
-        lead="Four residential concrete services, each with at least one partner holding written coverage for Lancaster areas. Foundation repair, structural engineering, and retaining walls sit outside this scope."
+        lead="Four residential concrete service categories, each with at least one participating provider holding written coverage for Lancaster areas. Foundation repair, structural engineering, and retaining walls sit outside this scope."
       >
         <ProjectTypeChooser />
         <p className="mt-8 text-sm">
@@ -124,18 +130,18 @@ export default function HomePage() {
       <Section
         eyebrow="Process"
         title="Three steps, no obligation"
-        lead="You are never passed to a call centre, and your details are never sold to a list of contractors who bid against each other."
+        lead="You are never passed to a call centre, and your details are never sold to a list of providers who bid against each other."
       >
         <HowMatchingWorks />
       </Section>
 
       <Section
         tone="soft"
-        eyebrow="Partner checks"
-        title="What we verify before a request is routed"
-        lead="Every check below is recorded with a source, a timestamp, and the reviewer who performed it."
+        eyebrow="How routing works"
+        title="How your request reaches a service provider"
+        lead="These are routing controls, not credential verification. Licence, insurance, and workmanship remain matters to confirm directly with the independent provider who contacts you."
       >
-        <VettingProcess />
+        <RoutingControls />
       </Section>
 
       <Section
@@ -150,10 +156,26 @@ export default function HomePage() {
 
       <Section
         tone="surface"
-        eyebrow="Request a quote"
+        eyebrow="Request a referral"
         title="Start with your project type and location"
-        lead="Two short steps. You will hear from one independent contractor, and if nobody approved for your area can take it, we will say so plainly."
+        lead="Two short steps. A participating service provider may contact you, and if no provider covering your area can take it, we will say so plainly."
       >
+        <p
+          className="mb-8 max-w-3xl rounded-[12px] border p-4 text-[13.5px] leading-relaxed"
+          style={{
+            borderColor: "var(--color-line)",
+            color: "var(--color-muted)",
+          }}
+        >
+          <strong className="font-semibold text-[color:var(--color-ink)]">
+            Referral Service Disclosure:
+          </strong>{" "}
+          {REFERRAL_SERVICE_DISCLOSURE.replace(
+            "Referral Service Disclosure: ",
+            "",
+          )}
+        </p>
+
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
           <div className="max-w-xl">
             <QuoteForm
@@ -170,10 +192,10 @@ export default function HomePage() {
             <p className="eyebrow-plain">What happens after you submit</p>
             <ol className="mt-5 space-y-5">
               {[
-                "Your location and project type are checked against partners with written coverage.",
-                "Licence status, insurance, and current capacity are checked before anything is sent.",
-                "One eligible independent contractor receives the request and contacts you.",
-                "If they do not acknowledge in time, it is reassigned once to an approved backup.",
+                "Your location and project type are checked against participating providers with written coverage.",
+                "Service availability depends on participating providers, so coverage and current capacity are checked before anything is sent.",
+                "One independent third-party service provider receives the request and may contact you.",
+                "If they do not acknowledge in time, it is reassigned once to another participating provider.",
               ].map((item, index) => (
                 <li key={item} className="flex gap-4">
                   <span
@@ -195,7 +217,7 @@ export default function HomePage() {
               <p className="text-sm font-semibold">Rather just talk?</p>
               <p className="mt-1.5 text-[14px] text-[color:var(--color-muted)]">
                 Call the referral team and we will tell you in one minute
-                whether we cover your area.
+                whether a participating provider covers your area.
               </p>
               <a
                 href={`tel:${site.phoneE164}`}
@@ -213,8 +235,8 @@ export default function HomePage() {
       </Section>
 
       <CtaBand
-        title="Ready to be matched with a Lancaster concrete contractor?"
-        body="One request, one eligible independent contractor, no charge to you and no obligation to proceed."
+        title="Ready to connect with an independent concrete service provider?"
+        body="One request, one independent third-party service provider, no charge to you and no obligation to proceed."
       />
 
       <Section eyebrow="FAQ" title="Straight answers">

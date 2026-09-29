@@ -9,7 +9,7 @@ import {
   ReferralDisclosureStrip,
   Section,
   SectionDivider,
-  VettingProcess,
+  RoutingControls,
 } from "@/components/marketing/sections";
 import {
   Breadcrumbs,
@@ -91,7 +91,7 @@ export default async function ServicePage({ params }: { params: Params }) {
     { id: "process", label: "Process" },
     { id: "cost", label: "What drives cost" },
     { id: "prepare", label: "Prepare" },
-    { id: "vetting", label: "Partner checks" },
+    { id: "vetting", label: "How routing works" },
     { id: "quote-form", label: "Get a quote" },
     { id: "faq", label: "FAQ" },
   ];
@@ -209,12 +209,12 @@ export default async function ServicePage({ params }: { params: Params }) {
             </section>
 
             <section id="vetting" className="scroll-mt-36 border-t py-11 md:py-14" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="eyebrow">Partner checks</p>
+              <p className="eyebrow">How routing works</p>
               <h2 className="h2 mt-4">
-                What we verify before routing your request
+                How your request reaches a service provider
               </h2>
               <div className="mt-8">
-                <VettingProcess />
+                <RoutingControls />
               </div>
             </section>
           </div>

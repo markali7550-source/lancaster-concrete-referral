@@ -11,7 +11,7 @@ import { CALL_DISCLOSURE } from "@/lib/seo/disclosure";
 
 const TITLE = `Contact ${site.brand} | Lancaster, SC Concrete Referrals`;
 const DESCRIPTION =
-  "Call or send a request and we will route it to an independent concrete contractor serving your approved area.";
+  "Call or send a request and we will route it to an independent third-party concrete service provider serving your covered area.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,
@@ -53,7 +53,7 @@ export default function ContactPage() {
         <div className="grid gap-10 lg:grid-cols-2">
           <div>
             <p className="lede max-w-prose">
-              We are the referral service, not the contractor. Our team can tell
+              We are the referral service, not the contractor. Our referral team can tell
               you whether we have approved coverage for your area and what
               happens after you submit a request. Questions about a quote, a
               schedule, or completed work belong with the contractor assigned to

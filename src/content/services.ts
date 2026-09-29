@@ -50,7 +50,7 @@ export const services: readonly ServiceRecord[] = [
     summary:
       "New pours and full replacements, including tear-out of failed slabs and the drainage questions that come with Lancaster County clay.",
     heroSummary:
-      "Whether you are replacing a cracked 1980s pour or putting concrete where gravel has stopped working, we route your enquiry to one independent contractor who holds written coverage for your area. We are the referral service — they quote, schedule, and perform the work.",
+      "Looking for a concrete driveway contractor in Lancaster, SC? We help homeowners connect with independent local service providers who may be able to assist with new pours and full replacements. Submit your project details to request a referral. We are a referral service and do not perform concrete work ourselves — the provider quotes, schedules, and performs the work.",
     image: "/services/concrete-driveways.jpg",
     imageAlt:
       "Newly poured residential concrete driveway with saw-cut control joints and a broom finish",
@@ -58,7 +58,7 @@ export const services: readonly ServiceRecord[] = [
     keyFacts: [
       { label: "Routed for", value: "Residential driveways and aprons" },
       { label: "Coverage today", value: "Lancaster, SC" },
-      { label: "Typical site visit", value: "Within the partner's contracted response window" },
+      { label: "Typical site visit", value: "Within the participating provider's contracted response window" },
       { label: "Cost to you", value: "No charge for the referral" },
     ],
     covered: [
@@ -68,7 +68,7 @@ export const services: readonly ServiceRecord[] = [
       },
       {
         title: "Full replacement",
-        body: "Demolition and haul-away of a failed slab, re-grading, and a new pour. Partners quote demolition separately so you can see what you are paying for.",
+        body: "Demolition and haul-away of a failed slab, re-grading, and a new pour. Participating providers quote demolition separately so you can see what you are paying for.",
       },
       {
         title: "Widening and extensions",
@@ -104,7 +104,7 @@ export const services: readonly ServiceRecord[] = [
       {
         name: "Exposed aggregate or stamped edge",
         description:
-          "Decorative options are only routed when a partner has documented that capability. Otherwise the request goes through as a standard pour.",
+          "Decorative options are only routed when a participating provider has documented that capability. Otherwise the request goes through as a standard pour.",
       },
     ],
     process: [
@@ -201,6 +201,11 @@ export const services: readonly ServiceRecord[] = [
     ],
     considerations: [
       {
+        question: "Do you pour the driveway yourselves?",
+        answer:
+          "No. We are a referral service that connects homeowners with independent third-party concrete service providers. Excavation, sub-base preparation, forming, and the pour itself are carried out by the provider you engage, and your contract is with them.",
+      },
+      {
         question: "How long does a residential driveway pour take?",
         answer:
           "Most residential driveways are placed in one working day once demolition and sub-base prep are complete. Prep and curing are separate from that day. Your assigned contractor gives the schedule for your site.",
@@ -218,7 +223,7 @@ export const services: readonly ServiceRecord[] = [
       {
         question: "Why does clay soil keep coming up?",
         answer:
-          "Red clay holds water and moves with moisture content. That makes compaction, base depth, and drainage the three details most likely to decide whether a driveway lasts, which is why partners ask about them before quoting.",
+          "Red clay holds water and moves with moisture content. That makes compaction, base depth, and drainage the three details most likely to decide whether a driveway lasts, which is why participating providers ask about them before quoting.",
       },
     ],
   },
@@ -230,9 +235,9 @@ export const services: readonly ServiceRecord[] = [
     state: "published",
     intent: "Residential patio enquiries",
     summary:
-      "New patio pours, replacements, and stamped finishes where a partner has documented that capability.",
+      "New patio pours, replacements, and stamped finishes where a participating provider has documented that capability.",
     heroSummary:
-      "A patio is the one concrete project where finish and layout matter as much as the slab. We route your enquiry to an independent contractor with written coverage for your area, who will walk the space with you and quote it directly.",
+      "Looking for a concrete patio contractor in Lancaster, SC? A patio is the one concrete project where finish and layout matter as much as the slab. We help homeowners connect with independent service providers who may be able to assist, and the provider walks the space with you and quotes it directly. Submit your project details to request a referral.",
     image: "/services/concrete-patios.jpg",
     imageAlt:
       "Rectangular concrete backyard patio with a smooth troweled finish and control joints",
@@ -240,7 +245,7 @@ export const services: readonly ServiceRecord[] = [
     keyFacts: [
       { label: "Routed for", value: "Residential patios and walkway tie-ins" },
       { label: "Coverage today", value: "Lancaster, SC" },
-      { label: "Decorative work", value: "Only where a partner documents the capability" },
+      { label: "Decorative work", value: "Only where a participating provider documents the capability" },
       { label: "Cost to you", value: "No charge for the referral" },
     ],
     covered: [
@@ -258,7 +263,7 @@ export const services: readonly ServiceRecord[] = [
       },
       {
         title: "Stamped and coloured finishes",
-        body: "Pattern-stamped or integrally coloured slabs, routed only to partners who have documented that capability for your area.",
+        body: "Pattern-stamped or integrally coloured slabs, routed only to participating providers who have documented that capability for your area.",
       },
     ],
     outOfScope: [
@@ -281,7 +286,7 @@ export const services: readonly ServiceRecord[] = [
       {
         name: "Stamped pattern",
         description:
-          "Stone, slate, or plank patterns pressed into the fresh slab. Availability depends on the partner and adds cost and cure-time sensitivity.",
+          "Stone, slate, or plank patterns pressed into the fresh slab. Availability depends on the participating provider and adds cost and cure-time sensitivity.",
       },
       {
         name: "Integral colour and release",
@@ -376,9 +381,14 @@ export const services: readonly ServiceRecord[] = [
     ],
     considerations: [
       {
+        question: "Who designs and builds the patio?",
+        answer:
+          "An independent third-party service provider does. We connect you with a provider who may be able to assist; layout, finish selection, scheduling, and construction are entirely their work, and availability depends on participating providers.",
+      },
+      {
         question: "Is a stamped finish always available?",
         answer:
-          "No. Stamped work is routed only when a partner has documented that capability for your area. If it is not supported, your request goes through as a standard patio enquiry and we say so rather than promising a finish nobody can deliver.",
+          "No. Stamped work is routed only when a participating provider has documented that capability for your area. If it is not supported, your request goes through as a standard patio enquiry and we say so rather than promising a finish nobody can deliver.",
       },
       {
         question: "What size should a usable patio be?",
@@ -407,7 +417,7 @@ export const services: readonly ServiceRecord[] = [
     summary:
       "Residential slabs and pads for sheds, equipment, vehicles, and outbuildings — non-structural work only.",
     heroSummary:
-      "Shed bases, equipment pads, RV and boat parking, and similar flatwork. This is the narrowest of our referrals on purpose: anything that carries a building load or needs an engineer is declined rather than routed.",
+      "Looking for a concrete slab contractor in Lancaster, SC? Shed bases, equipment pads, RV and boat parking, and similar flatwork. We help homeowners connect with independent service providers who may be able to assist with this category. This is the narrowest of our referrals on purpose: anything that carries a building load or needs an engineer is declined rather than routed.",
     image: "/services/concrete-slabs.jpg",
     imageAlt:
       "Finished flat concrete slab pad in a residential backyard with a small storage shed",
@@ -546,6 +556,11 @@ export const services: readonly ServiceRecord[] = [
     ],
     considerations: [
       {
+        question: "Is the slab poured by your own crew?",
+        answer:
+          "We have no crew. We are a referral service, and slab work is performed by an independent third-party service provider serving the requested area. We do not perform, supervise, or guarantee that work.",
+      },
+      {
         question: "Do you handle foundations or structural slabs?",
         answer:
           "No. Foundation repair, structural engineering, and retaining walls are outside this referral scope. Those enquiries are declined rather than routed to a concrete finisher who should not be taking them on.",
@@ -577,7 +592,7 @@ export const services: readonly ServiceRecord[] = [
     summary:
       "Non-structural crack repair, surface repair, and resurfacing. Structural assessment is out of scope.",
     heroSummary:
-      "Surface-level problems on otherwise sound concrete: crazing, spalling, shrinkage cracks, and tired finishes. If what you are describing sounds like movement or load failure instead, we will tell you plainly that you need a different professional.",
+      "Looking for a concrete repair contractor in Lancaster, SC? We help homeowners connect with independent service providers who may be able to assist with surface-level problems on otherwise sound concrete: crazing, spalling, shrinkage cracks, and tired finishes. If what you are describing sounds like movement or load failure instead, we will tell you plainly that you need a different professional.",
     image: "/services/concrete-repair.jpg",
     imageAlt:
       "Residential walkway half weathered and cracked, half freshly resurfaced with smooth concrete",
@@ -710,6 +725,11 @@ export const services: readonly ServiceRecord[] = [
       "What temperature or weather conditions do you need to do the work?",
     ],
     considerations: [
+      {
+        question: "Do you carry out the repair?",
+        answer:
+          "No. Repairs are carried out by an independent third-party service provider. We connect homeowners with providers who may be able to assist, and the assessment, method, and result remain the provider's responsibility.",
+      },
       {
         question: "What counts as non-structural?",
         answer:

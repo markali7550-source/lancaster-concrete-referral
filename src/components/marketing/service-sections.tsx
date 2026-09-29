@@ -80,7 +80,7 @@ export function ServiceHero({
               className="btn btn-primary"
             />
             <a href="#quote-form" className="btn btn-secondary">
-              Request a quote
+              Request a referral
               <Icon name="arrow" />
             </a>
           </div>
@@ -447,7 +447,7 @@ export function CtaBand({
             className="btn btn-primary"
           />
           <a href="#quote-form" className="btn btn-secondary">
-            Request a quote
+            Request a referral
           </a>
         </div>
       </div>

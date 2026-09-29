@@ -14,7 +14,7 @@ import {
   ReferralDisclosureStrip,
   Section,
   StatStrip,
-  VettingProcess,
+  RoutingControls,
 } from "@/components/marketing/sections";
 import {
   Breadcrumbs,
@@ -69,7 +69,7 @@ export default async function LocationPage({ params }: { params: Params }) {
   const faqs = [
     {
       question: `Which ${location.city} areas do you cover?`,
-      answer: `${location.city}, ${location.region}. Partners approve this area in writing. A request from outside them returns an honest no-coverage response rather than being forwarded to someone who does not work there.`,
+      answer: `${location.city}, ${location.region}. Participating providers approve this area in writing. A request from outside them returns an honest no-coverage response rather than being forwarded to someone who does not work there.`,
     },
     {
       question: `Do you employ concrete crews in ${location.city}?`,
@@ -79,7 +79,7 @@ export default async function LocationPage({ params }: { params: Params }) {
     {
       question: `How quickly does a ${location.city} contractor respond?`,
       answer:
-        "Partners work to a contracted acknowledgement window. If the assigned contractor does not acknowledge in time, the request is reassigned once to an approved backup rather than sitting unattended.",
+        "Participating providers work to a contracted acknowledgement window. If the assigned contractor does not acknowledge in time, the request is reassigned once to an approved backup rather than sitting unattended.",
     },
     {
       question: `Is there a ${location.city} office I can visit?`,
@@ -130,7 +130,7 @@ export default async function LocationPage({ params }: { params: Params }) {
       <Section
         eyebrow="Local conditions"
         title={`What shapes concrete work in ${location.city}`}
-        lead="Notes gathered from partner conversations about this specific market — not generic filler with a city name dropped in."
+        lead="Notes gathered from participating provider conversations about this specific market — not generic filler with a city name dropped in."
       >
         <ul className="grid gap-5 lg:grid-cols-3">
           {location.localEvidence.map((item, index) => (
@@ -157,7 +157,7 @@ export default async function LocationPage({ params }: { params: Params }) {
         tone="surface"
         eyebrow="Services"
         title={`Concrete services routed in ${location.city}`}
-        lead="Pick the closest match. The category only decides which partners are eligible — the contractor scopes the whole job on site."
+        lead="Pick the closest match. The category only decides which participating providers are eligible — the contractor scopes the whole job on site."
       >
         <ProjectTypeChooser />
         {comboSlugs.length > 0 ? (
@@ -189,15 +189,15 @@ export default async function LocationPage({ params }: { params: Params }) {
 
       <Section
         tone="soft"
-        eyebrow="Partner checks"
-        title="What we verify before routing"
+        eyebrow="How routing works"
+        title="How a request is matched to a provider"
       >
-        <VettingProcess />
+        <RoutingControls />
       </Section>
 
       <Section
         tone="surface"
-        eyebrow="Request a quote"
+        eyebrow="Request a referral"
         title={`Tell us about your ${location.city} project`}
       >
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16">

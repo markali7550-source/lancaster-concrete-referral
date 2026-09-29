@@ -3,6 +3,7 @@ import { publishedLocations } from "@/content/locations";
 import { publishedServices } from "@/content/services";
 import { site } from "@/lib/env";
 import {
+  FOOTER_DISCLOSURE,
   SHORT_DISCLOSURE,
   SC_LLR_URL,
 } from "@/lib/seo/disclosure";
@@ -34,9 +35,10 @@ export function ComplianceFooter() {
               <span className="text-[15px] font-semibold">{site.brand}</span>
             </div>
             <p className="mt-4 text-[13.5px] leading-relaxed text-[color:var(--color-muted)]">
-              An online referral service connecting South Carolina homeowners
-              with independent concrete contractors. We hold no contractor
-              licence and perform no construction work.
+              An online referral service that connects South Carolina
+              homeowners with independent third-party concrete service
+              providers. We hold no contractor licence and perform no
+              concrete work.
             </p>
             <div className="mt-5 space-y-1.5 text-sm">
               <a href={`tel:${site.phoneE164}`} className="block font-semibold">
@@ -147,7 +149,14 @@ export function ComplianceFooter() {
           </nav>
         </div>
 
-        <p className="mt-12 text-[13px] leading-relaxed text-[color:var(--color-muted)]">
+        <p
+          className="mt-12 rounded-[12px] border p-4 text-[13px] font-medium leading-relaxed"
+          style={{ borderColor: "var(--color-line)" }}
+        >
+          {FOOTER_DISCLOSURE}
+        </p>
+
+        <p className="mt-5 text-[13px] leading-relaxed text-[color:var(--color-muted)]">
           {SHORT_DISCLOSURE}{" "}
           <Link
             href="/referral-disclosure"

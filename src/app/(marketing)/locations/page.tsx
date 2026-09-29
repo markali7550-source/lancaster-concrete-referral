@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/seo/metadata";
  */
 export const metadata: Metadata = pageMetadata({
   title: "Service areas",
-  description: "Published service areas for our concrete contractor referrals.",
+  description: "Published service areas for our concrete service provider referrals.",
   path: "/locations",
   noindex: true,
 });

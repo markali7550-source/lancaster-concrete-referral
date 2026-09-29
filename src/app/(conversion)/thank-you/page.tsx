@@ -6,15 +6,15 @@ import { site } from "@/lib/env";
 export const metadata: Metadata = pageMetadata({
   title: "Request received",
   description:
-    "Your concrete project request has been received. One independent contractor serving your approved area will contact you directly to arrange a site visit.",
+    "Your referral request has been received. A participating service provider serving your covered area may contact you directly to arrange a site visit.",
   path: "/thank-you",
   noindex: true,
 });
 
 const NEXT_STEPS = [
-  "We check your location and project type against partners with approved coverage.",
-  "One eligible independent contractor is assigned and receives your request.",
-  "That contractor contacts you directly to arrange a site visit and quote.",
+  "We check your location and project type against participating providers with approved coverage.",
+  "One independent third-party service provider is assigned and receives your request.",
+  "That provider contacts you directly to arrange a site visit and quote.",
   "If they do not acknowledge within our contracted window, the request is reassigned once to an approved backup.",
 ];
 
@@ -27,7 +27,7 @@ export default function ThankYouPage() {
           Thanks — your request is in the routing queue
         </h1>
         <p className="lede mt-5">
-          You will be contacted by one independent contractor, not by a call
+          You will be contacted by one independent service provider, not by a call
           centre and not by us pretending to be the crew. Here is exactly what
           happens next.
         </p>
