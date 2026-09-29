@@ -491,9 +491,10 @@ export function AdjacentAreas({
       <div className="card max-w-2xl p-6">
         <p className="font-semibold">Lancaster only, for now</p>
         <p className="mt-2.5 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
-          Additional South Carolina areas are added one at a time, and only once
-          a contractor has approved coverage there in writing. We would rather
-          publish one honest service area than a coverage map we cannot support.
+          Additional South Carolina areas are added one at a time, and only
+          once a participating provider has approved coverage there in writing.
+          We would rather publish one honest service area than a coverage map we
+          cannot support.
         </p>
       </div>
     );
