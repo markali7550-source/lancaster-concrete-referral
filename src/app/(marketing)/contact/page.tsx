@@ -11,7 +11,7 @@ import { CALL_DISCLOSURE } from "@/lib/seo/disclosure";
 
 const TITLE = `Contact ${site.brand} | Lancaster, SC Concrete Referrals`;
 const DESCRIPTION =
-  "Call or send a request and we will route it to an independent concrete contractor serving your approved ZIP code.";
+  "Call or send a request and we will route it to an independent concrete contractor serving your approved area.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,
@@ -43,7 +43,7 @@ export default function ContactPage() {
           <p className="eyebrow">Contact</p>
           <h1 className="h1 mt-5 max-w-3xl">Talk to our referral team</h1>
           <p className="lede mt-5 max-w-2xl">
-            We can confirm whether we have approved coverage for your ZIP code
+            We can confirm whether we have approved coverage for your area
             before you go any further.
           </p>
         </div>
@@ -54,7 +54,7 @@ export default function ContactPage() {
           <div>
             <p className="lede max-w-prose">
               We are the referral service, not the contractor. Our team can tell
-              you whether we have approved coverage for your ZIP code and what
+              you whether we have approved coverage for your area and what
               happens after you submit a request. Questions about a quote, a
               schedule, or completed work belong with the contractor assigned to
               you.
@@ -77,7 +77,7 @@ export default function ContactPage() {
               <div>
                 <dt className="eyebrow">Coverage today</dt>
                 <dd className="mt-1 text-[color:var(--color-muted)]">
-                  Lancaster, SC — ZIP 29720 and 29721.
+                  Lancaster, SC — areas 29720 and 29721.
                 </dd>
               </div>
             </dl>

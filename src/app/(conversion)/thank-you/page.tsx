@@ -6,13 +6,13 @@ import { site } from "@/lib/env";
 export const metadata: Metadata = pageMetadata({
   title: "Request received",
   description:
-    "Your concrete project request has been received. One independent contractor serving your approved ZIP code will contact you directly to arrange a site visit.",
+    "Your concrete project request has been received. One independent contractor serving your approved area will contact you directly to arrange a site visit.",
   path: "/thank-you",
   noindex: true,
 });
 
 const NEXT_STEPS = [
-  "We check your ZIP code and project type against partners with approved coverage.",
+  "We check your location and project type against partners with approved coverage.",
   "One eligible independent contractor is assigned and receives your request.",
   "That contractor contacts you directly to arrange a site visit and quote.",
   "If they do not acknowledge within our contracted window, the request is reassigned once to an approved backup.",

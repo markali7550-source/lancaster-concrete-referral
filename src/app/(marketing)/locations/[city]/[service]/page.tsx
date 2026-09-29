@@ -108,7 +108,7 @@ export default async function ComboPage({ params }: { params: Params }) {
         ]}
       />
       <Hero
-        locationCue={`${location.city}, ${location.region} · ZIP ${location.zips.join(" & ")}`}
+        locationCue={`${location.city}, ${location.region} · areas ${location.zips.join(" & ")}`}
         h1={h1}
         summary={description}
         imageSrc={serviceRecord.image}
@@ -253,7 +253,7 @@ export default async function ComboPage({ params }: { params: Params }) {
 
       <CtaBand
         title={`${serviceRecord.name} in ${location.city}, SC`}
-        body="One request, one eligible independent contractor. If nobody approved for your ZIP code can take it, we will tell you plainly."
+        body="One request, one eligible independent contractor. If nobody approved for your area can take it, we will tell you plainly."
       />
 
       <Section eyebrow="Before you call" title="Worth settling first">

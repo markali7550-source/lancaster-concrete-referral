@@ -46,7 +46,7 @@ export const locations: readonly LocationRecord[] = [
       "Red clay subsoil common through the county holds water, so partners are asked about drainage handling before a driveway or slab quote is confirmed.",
     ],
     intro:
-      "Lancaster is our core market and the regional centre for this referral service. Enquiries from Lancaster ZIP codes 29720 and 29721 are matched against partners who have explicitly approved that coverage.",
+      "Lancaster is our core market and the regional centre for this referral service. Enquiries from the Lancaster 29720 and 29721 areas are matched against partners who have explicitly approved that coverage.",
     adjacent: [],
   },
   {

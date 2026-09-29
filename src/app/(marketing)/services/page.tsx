@@ -27,7 +27,7 @@ const FAQS = [
   {
     question: "Why are only four services listed?",
     answer:
-      "Each service here has at least one partner with written coverage for Lancaster ZIP codes and an approved content and compliance review. We add a service when that is true, not when there is search demand for it.",
+      "Each service here has at least one partner with written coverage for Lancaster areas and an approved content and compliance review. We add a service when that is true, not when there is search demand for it.",
   },
   {
     question: "What happens if my project spans two services?",
@@ -64,8 +64,8 @@ export default function ServicesPage() {
           </h1>
           <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-[color:var(--color-muted)]">
             Four residential concrete services, each with at least one
-            independent contractor holding written coverage for Lancaster ZIP
-            codes 29720 and 29721. Pick the closest match and we route your
+            independent contractor holding written coverage for the Lancaster
+            29720 and 29721 areas. Pick the closest match and we route your
             request to one eligible partner.
           </p>
         </div>

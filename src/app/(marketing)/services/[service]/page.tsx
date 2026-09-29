@@ -236,7 +236,7 @@ export default async function ServicePage({ params }: { params: Params }) {
                 <p className="text-sm font-semibold">Prefer to talk it through?</p>
                 <p className="mt-1.5 text-sm text-[color:var(--color-muted)]">
                   Our referral team can confirm whether we have approved
-                  coverage for your ZIP code before you go any further.
+                  coverage for your area before you go any further.
                 </p>
                 <a
                   href={`tel:${site.phoneE164}`}

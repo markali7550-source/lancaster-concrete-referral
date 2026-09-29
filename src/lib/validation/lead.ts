@@ -22,7 +22,7 @@ export const attributionSchema = z.object({
 export const leadRequestSchema = z
   .object({
     serviceSlug: z.enum(serviceSlugs),
-    postalCode: z.string().regex(/^\d{5}$/, "Enter a five-digit ZIP code."),
+    postalCode: z.string().regex(/^\d{5}$/, "Select a valid location."),
     fullName: z.string().trim().min(2).max(120),
     contactPreference: z.enum(["call", "text", "email"]),
     phone: z.string().trim().max(32).optional().or(z.literal("")),

@@ -272,7 +272,7 @@ const VETTING_CHECKS = [
   },
   {
     title: "Written coverage area",
-    body: "Partners approve specific ZIP codes in writing. Coverage is never inferred from a radius drawn on a map.",
+    body: "Partners approve specific areas in writing. Coverage is never inferred from a radius drawn on a map.",
   },
   {
     title: "Signed referral agreement",
@@ -349,12 +349,12 @@ export function ProjectExamples() {
 
 const STEPS = [
   {
-    verb: "Tell us the project and ZIP",
+    verb: "Tell us the project and location",
     body: "Two fields to start: what you need poured or repaired, and where the property is.",
   },
   {
     verb: "We check partner eligibility",
-    body: "ZIP, project type, licence status, insurance, and current capacity are all checked before anything is sent.",
+    body: "Location, project type, licence status, insurance, and current capacity are all checked before anything is sent.",
   },
   {
     verb: "The contractor contacts you",

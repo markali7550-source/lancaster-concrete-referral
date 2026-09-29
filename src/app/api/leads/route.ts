@@ -112,7 +112,7 @@ export async function POST(request: Request) {
       {
         result: "no_coverage",
         message:
-          "We do not have an approved contractor for that ZIP code yet. Nothing was sent to a contractor.",
+          "We do not have an approved contractor for that area yet. Nothing was sent to a contractor.",
       },
       { status: 422, headers: noStore },
     );

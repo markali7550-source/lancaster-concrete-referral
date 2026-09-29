@@ -98,7 +98,7 @@ export default function HomePage() {
       <Hero
         locationCue="Lancaster County, South Carolina"
         h1="Get Matched With Independent Concrete Contractors in Lancaster, SC"
-        summary="Tell us your project and ZIP code. We check licence status, insurance, coverage, and capacity, then pass your request to one independent local contractor. We are a referral service, not a concrete contractor."
+        summary="Tell us your project and location. We check licence status, insurance, coverage, and capacity, then pass your request to one independent local contractor. We are a referral service, not a concrete contractor."
       />
       <StatStrip items={STATS} />
       <ReferralDisclosureStrip />
@@ -107,7 +107,7 @@ export default function HomePage() {
         tone="surface"
         eyebrow="Project types"
         title="What we can route in Lancaster today"
-        lead="Four residential concrete services, each with at least one partner holding written coverage for Lancaster ZIP codes. Foundation repair, structural engineering, and retaining walls sit outside this scope."
+        lead="Four residential concrete services, each with at least one partner holding written coverage for Lancaster areas. Foundation repair, structural engineering, and retaining walls sit outside this scope."
       >
         <ProjectTypeChooser />
         <p className="mt-8 text-sm">
@@ -151,7 +151,7 @@ export default function HomePage() {
       <Section
         tone="surface"
         eyebrow="Request a quote"
-        title="Start with your project type and ZIP code"
+        title="Start with your project type and location"
         lead="Two short steps. You will hear from one independent contractor, and if nobody approved for your area can take it, we will say so plainly."
       >
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16">

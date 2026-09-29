@@ -68,8 +68,8 @@ export default async function LocationPage({ params }: { params: Params }) {
 
   const faqs = [
     {
-      question: `Which ${location.city} ZIP codes do you cover?`,
-      answer: `${location.zips.join(" and ")}. Partners approve these ZIP codes in writing. A request from outside them returns an honest no-coverage response rather than being forwarded to someone who does not work there.`,
+      question: `Which ${location.city} areas do you cover?`,
+      answer: `${location.zips.join(" and ")}. Partners approve these areas in writing. A request from outside them returns an honest no-coverage response rather than being forwarded to someone who does not work there.`,
     },
     {
       question: `Do you employ concrete crews in ${location.city}?`,
@@ -119,7 +119,7 @@ export default async function LocationPage({ params }: { params: Params }) {
       />
       <KeyFacts
         facts={[
-          { label: "Approved ZIP codes", value: location.zips.join(" · ") },
+          { label: "Approved areas", value: location.zips.join(" · ") },
           { label: "County", value: location.county },
           { label: "Services routed", value: `${publishedServices.length} residential services` },
           { label: "Cost to you", value: "No charge for the referral" },
@@ -218,7 +218,7 @@ export default async function LocationPage({ params }: { params: Params }) {
               <DecisionSupport
                 items={[
                   {
-                    question: "Is my ZIP code covered?",
+                    question: "Is my area covered?",
                     answer: `We route ${location.zips.join(" and ")} today. Anything else returns a no-coverage response and nothing is shared with a contractor.`,
                   },
                   {

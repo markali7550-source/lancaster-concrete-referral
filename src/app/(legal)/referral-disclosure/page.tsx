@@ -21,7 +21,7 @@ export default function ReferralDisclosurePage() {
         {site.brand} operates an online referral service. We collect project
         enquiries from homeowners and route them to independent contractors who
         hold an active agreement with us and who have approved coverage for the
-        relevant ZIP code and project type.
+        relevant area and project type.
       </p>
 
       <h2>What we do not do</h2>

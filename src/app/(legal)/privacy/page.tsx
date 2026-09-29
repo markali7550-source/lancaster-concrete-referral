@@ -15,7 +15,7 @@ export default function PrivacyPage() {
     <LegalPage title="Privacy policy" updated="24 September 2026">
       <h2>What we collect</h2>
       <ul>
-        <li>Project details you submit: project type, ZIP code, name, contact method, and any note.</li>
+        <li>Project details you submit: project type, location, name, contact method, and any note.</li>
         <li>Consent records: the consent text version you accepted, the timestamp, and the page you accepted it on.</li>
         <li>Attribution data: referring source, campaign parameters, landing page, and an opaque session identifier.</li>
         <li>Call events where telephone tracking is active: time, duration, and routing outcome.</li>

@@ -50,7 +50,7 @@ export const services: readonly ServiceRecord[] = [
     summary:
       "New pours and full replacements, including tear-out of failed slabs and the drainage questions that come with Lancaster County clay.",
     heroSummary:
-      "Whether you are replacing a cracked 1980s pour or putting concrete where gravel has stopped working, we route your enquiry to one independent contractor who holds written coverage for your ZIP code. We are the referral service — they quote, schedule, and perform the work.",
+      "Whether you are replacing a cracked 1980s pour or putting concrete where gravel has stopped working, we route your enquiry to one independent contractor who holds written coverage for your area. We are the referral service — they quote, schedule, and perform the work.",
     image: "/services/concrete-driveways.jpg",
     imageAlt:
       "Newly poured residential concrete driveway with saw-cut control joints and a broom finish",
@@ -232,7 +232,7 @@ export const services: readonly ServiceRecord[] = [
     summary:
       "New patio pours, replacements, and stamped finishes where a partner has documented that capability.",
     heroSummary:
-      "A patio is the one concrete project where finish and layout matter as much as the slab. We route your enquiry to an independent contractor with written coverage for your ZIP code, who will walk the space with you and quote it directly.",
+      "A patio is the one concrete project where finish and layout matter as much as the slab. We route your enquiry to an independent contractor with written coverage for your area, who will walk the space with you and quote it directly.",
     image: "/services/concrete-patios.jpg",
     imageAlt:
       "Rectangular concrete backyard patio with a smooth troweled finish and control joints",
