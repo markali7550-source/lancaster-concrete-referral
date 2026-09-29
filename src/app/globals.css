@@ -232,8 +232,8 @@
 
   .field {
     width: 100%;
-    min-height: 52px;
-    padding: 0.8rem 0.95rem;
+    min-height: 46px;
+    padding: 0.6rem 0.9rem;
     border-radius: var(--radius-control);
     border: 2px solid var(--color-line);
     background-color: var(--color-page);

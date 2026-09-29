@@ -287,7 +287,7 @@ export function QuoteForm({
 
   return (
     <form
-      className="card p-5 md:p-8"
+      className="card p-5 md:p-6"
       onSubmit={onSubmit}
       noValidate
       id="quote-form"
@@ -352,10 +352,10 @@ export function QuoteForm({
       </div>
 
       {step === 1 ? (
-        <div className="mt-5 space-y-5">
+        <div className="mt-4 space-y-3.5">
           <fieldset>
             <legend className="text-sm font-semibold">Project type</legend>
-            <div className="mt-2 grid grid-cols-1 gap-2 min-[380px]:grid-cols-2">
+            <div className="mt-1.5 grid grid-cols-1 gap-2 min-[380px]:grid-cols-2">
               {services.map((service) => {
                 const checked = values.serviceSlug === service.slug;
                 return (
@@ -401,7 +401,7 @@ export function QuoteForm({
             <select
               id={`${baseId}-postalCode`}
               name="postalCode"
-              className="field mt-2"
+              className="field mt-1.5"
               value={values.postalCode}
               aria-invalid={Boolean(errors.postalCode)}
               aria-describedby={
@@ -437,7 +437,7 @@ export function QuoteForm({
           </button>
         </div>
       ) : (
-        <div className="mt-5 space-y-5">
+        <div className="mt-4 space-y-3.5">
           <div>
             <label
               htmlFor={`${baseId}-fullName`}
@@ -449,7 +449,7 @@ export function QuoteForm({
               id={`${baseId}-fullName`}
               name="fullName"
               autoComplete="name"
-              className="field mt-2"
+              className="field mt-1.5"
               value={values.fullName}
               aria-invalid={Boolean(errors.fullName)}
               onChange={(event) => set("fullName", event.target.value)}
@@ -469,7 +469,7 @@ export function QuoteForm({
               id={`${baseId}-email`}
               type="email"
               autoComplete="email"
-              className="field mt-2"
+              className="field mt-1.5"
               value={values.email}
               aria-invalid={Boolean(errors.email)}
               onChange={(event) => set("email", event.target.value)}
@@ -493,7 +493,7 @@ export function QuoteForm({
               type="tel"
               inputMode="tel"
               autoComplete="tel"
-              className="field mt-2"
+              className="field mt-1.5"
               value={values.phone}
               aria-invalid={Boolean(errors.phone)}
               onChange={(event) => set("phone", event.target.value)}
@@ -517,14 +517,14 @@ export function QuoteForm({
             </label>
             <textarea
               id={`${baseId}-note`}
-              rows={3}
-              className="field mt-2"
+              rows={2}
+              className="field mt-1.5"
               value={values.note}
               onChange={(event) => set("note", event.target.value)}
             />
           </div>
 
-          <div id="consent-section" className="space-y-3">
+          <div id="consent-section" className="space-y-2">
             <label
               className="flex gap-3 text-sm"
               htmlFor={`${baseId}-serviceConsent`}
@@ -583,10 +583,10 @@ export function QuoteForm({
         </div>
       )}
 
-      <p className="mt-5 text-xs leading-relaxed text-[color:var(--color-muted)]">
+      <p className="mt-4 text-xs leading-relaxed text-[color:var(--color-muted)]">
         {LEAD_FORM_DISCLOSURE}
       </p>
-      <p className="mt-3 text-xs leading-relaxed text-[color:var(--color-muted)]">
+      <p className="mt-2 text-xs leading-relaxed text-[color:var(--color-muted)]">
         Submitting this form does not create a contract, a price, or a booking.
         We are a referral service, not a concrete contractor.
       </p>
