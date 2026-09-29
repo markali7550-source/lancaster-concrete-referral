@@ -68,6 +68,17 @@ export function Section({
   );
 }
 
+/* ---------------------------------------------------------- SectionDivider */
+
+/** Centred hairline that separates two stacked sections. */
+export function SectionDivider() {
+  return (
+    <div className="container-page" aria-hidden="true">
+      <hr className="divider-center" />
+    </div>
+  );
+}
+
 /* ------------------------------------------------------------------- Hero */
 
 export function Hero({

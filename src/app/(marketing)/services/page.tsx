@@ -6,6 +6,7 @@ import {
   ProjectTypeChooser,
   ReferralDisclosureStrip,
   Section,
+  SectionDivider,
 } from "@/components/marketing/sections";
 import { Breadcrumbs, CtaBand } from "@/components/marketing/service-sections";
 import { publishedServices } from "@/content/services";
@@ -135,6 +136,8 @@ export default function ServicesPage() {
           </p>
         </div>
       </Section>
+
+      <SectionDivider />
 
       <Section eyebrow="FAQ" title="About these services">
         <div className="max-w-3xl">

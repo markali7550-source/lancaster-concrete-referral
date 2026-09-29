@@ -8,6 +8,7 @@ import {
   FaqSection,
   ReferralDisclosureStrip,
   Section,
+  SectionDivider,
   VettingProcess,
 } from "@/components/marketing/sections";
 import {
@@ -271,6 +272,8 @@ export default async function ServicePage({ params }: { params: Params }) {
         </Section>
       ) : null}
 
+      <SectionDivider />
+
       <section id="faq" className="scroll-mt-32">
         <Section eyebrow="FAQ" title={`${service.name} questions`}>
           <div className="max-w-3xl">
@@ -278,6 +281,8 @@ export default async function ServicePage({ params }: { params: Params }) {
           </div>
         </Section>
       </section>
+
+      <SectionDivider />
 
       <Section eyebrow="Other services" title="Also routed in Lancaster">
         <RelatedServices services={publishedServices} currentSlug={service.slug} />
