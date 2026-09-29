@@ -355,6 +355,22 @@
     );
   }
 
+  /* Brand logo: the wordmark ships in a dark-ink and a light-ink variant so
+     it stays legible in both colour schemes. */
+  .logo-dark {
+    display: none;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .logo-light {
+      display: none;
+    }
+
+    .logo-dark {
+      display: block;
+    }
+  }
+
   .rule {
     border-top: 1px solid var(--color-line-soft);
   }

@@ -1,31 +1,15 @@
 import Link from "next/link";
 import { DynamicPhone } from "@/components/lead/DynamicPhone";
 import { Icon } from "@/components/ui/Icon";
+import { Logo } from "@/components/layout/Logo";
 import { ServicesMenu } from "@/components/layout/ServicesMenu";
 import { publishedServices } from "@/content/services";
 import { site } from "@/lib/env";
 
 function Wordmark() {
   return (
-    <Link href="/" className="flex items-center gap-2.5">
-      <span
-        className="grid h-9 w-9 shrink-0 place-items-center rounded-[10px] text-[13px] font-bold tracking-tight"
-        style={{
-          backgroundColor: "var(--color-accent)",
-          color: "var(--color-page)",
-        }}
-        aria-hidden="true"
-      >
-        LC
-      </span>
-      <span className="flex flex-col leading-none">
-        <span className="text-[15px] font-semibold tracking-tight">
-          {site.brand}
-        </span>
-        <span className="mt-1 text-[11px] font-medium text-[color:var(--color-muted)]">
-          Referral service · Lancaster, SC
-        </span>
-      </span>
+    <Link href="/" className="flex items-center" aria-label={site.brand}>
+      <Logo height={44} />
     </Link>
   );
 }

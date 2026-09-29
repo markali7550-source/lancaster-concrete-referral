@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Logo } from "@/components/layout/Logo";
 import { publishedLocations } from "@/content/locations";
 import { publishedServices } from "@/content/services";
 import { site } from "@/lib/env";
@@ -17,18 +18,8 @@ export function ComplianceFooter() {
       <div className="container-page py-14">
         <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div className="max-w-sm">
-            <div className="flex items-center gap-2.5">
-              <span
-                className="grid h-9 w-9 place-items-center rounded-[10px] text-[13px] font-bold"
-                style={{
-                  backgroundColor: "var(--color-accent)",
-                  color: "var(--color-page)",
-                }}
-                aria-hidden="true"
-              >
-                LC
-              </span>
-              <span className="text-[15px] font-semibold">{site.brand}</span>
+            <div className="flex items-center">
+              <Logo height={52} />
             </div>
             <p className="mt-4 text-[13.5px] leading-relaxed text-[color:var(--color-muted)]">
               An online referral service that connects South Carolina
