@@ -34,7 +34,7 @@ export const metadata: Metadata = pageMetadata({
 
 const STATS = [
   { value: "4", label: "Concrete services routed in Lancaster County" },
-  { value: "29720 · 29721", label: "ZIP codes with written partner coverage" },
+  { value: "29720 · 29721", label: "Areas with written partner coverage" },
   { value: "1", label: "Contractor contacts you, not a phone bank" },
   { value: "$0", label: "Cost to the homeowner, always" },
 ];
