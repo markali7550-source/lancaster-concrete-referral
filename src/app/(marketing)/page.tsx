@@ -104,8 +104,8 @@ export default function HomePage() {
 
       <Hero
         locationCue="Lancaster County, South Carolina"
-        h1="Connect With Independent Concrete Service Providers in Lancaster, SC"
-        summary="Tell us your project and location and we will pass your request to one independent local service provider who has written coverage for your area. We are a referral service, not a concrete contractor, and we do not perform concrete work ourselves."
+        h1="Connect With a Local Concrete Service Provider in Lancaster, SC"
+        summary="Tell us your project and location, and we’ll pass your request to an independent local service provider who serves your area. We are a referral service, not a concrete contractor, and we do not perform concrete work ourselves."
       />
       <StatStrip items={STATS} />
       <ReferralDisclosureStrip />
