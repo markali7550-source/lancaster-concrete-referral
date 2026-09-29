@@ -77,7 +77,7 @@ export default function ContactPage() {
               <div>
                 <dt className="eyebrow">Coverage today</dt>
                 <dd className="mt-1 text-[color:var(--color-muted)]">
-                  Lancaster, SC — areas 29720 and 29721.
+                  Lancaster, SC.
                 </dd>
               </div>
             </dl>

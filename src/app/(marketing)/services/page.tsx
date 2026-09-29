@@ -65,7 +65,7 @@ export default function ServicesPage() {
           <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-[color:var(--color-muted)]">
             Four residential concrete services, each with at least one
             independent contractor holding written coverage for the Lancaster
-            29720 and 29721 areas. Pick the closest match and we route your
+            area. Pick the closest match and we route your
             request to one eligible partner.
           </p>
         </div>

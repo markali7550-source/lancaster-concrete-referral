@@ -34,7 +34,7 @@ export const metadata: Metadata = pageMetadata({
 
 const STATS = [
   { value: "4", label: "Concrete services routed in Lancaster County" },
-  { value: "29720 · 29721", label: "Areas with written partner coverage" },
+  { value: "Lancaster, SC", label: "Area with written partner coverage" },
   { value: "1", label: "Contractor contacts you, not a phone bank" },
   { value: "$0", label: "Cost to the homeowner, always" },
 ];
@@ -71,7 +71,7 @@ const FAQS = [
   {
     question: "Which areas can you actually match right now?",
     answer:
-      "Lancaster, South Carolina, covering the 29720 and 29721 areas. Requests outside approved coverage receive an honest no-coverage answer instead of being forwarded to a contractor who does not serve the area.",
+      "Lancaster, South Carolina. Requests outside approved coverage receive an honest no-coverage answer instead of being forwarded to a contractor who does not serve the area.",
   },
   {
     question: "Do you check licences and insurance?",

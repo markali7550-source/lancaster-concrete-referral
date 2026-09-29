@@ -19,7 +19,7 @@ const records: readonly LocationServiceRecord[] = [
       "Driveway enquiries from Lancaster split fairly evenly between replacement of 1970s-to-1990s pours in the older neighbourhoods off Chesterfield Avenue and first-time pours on rural parcels where a gravel drive has become unworkable.",
       "The two questions partners raise most often on Lancaster driveways are truck access and water. Narrow in-town lots restrict where a mixer can stage, and the county's clay subsoil holds water long enough that sub-base preparation and edge drainage change the price of the job more than the square footage does.",
       "Seasonality matters here too. Requests cluster in late spring and early autumn, which is when partner capacity tightens and acknowledgement times stretch. If your driveway is already failing, an enquiry in the quieter winter weeks usually gets a faster site visit, even though the pour itself may be scheduled for milder weather.",
-      "We do not pour concrete. When your request matches an approved partner for 29720 or 29721, that independent contractor contacts you to inspect the site, confirm scope, and quote the work directly. We stay out of the pricing conversation entirely, and we do not take a position on which finish, thickness, or reinforcement your property needs.",
+      "We do not pour concrete. When your request matches an approved partner for the Lancaster area, that independent contractor contacts you to inspect the site, confirm scope, and quote the work directly. We stay out of the pricing conversation entirely, and we do not take a position on which finish, thickness, or reinforcement your property needs.",
     ],
     localFaqs: [
       {
@@ -31,7 +31,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         question: "Which Lancaster areas can you match right now?",
         answer:
-          "29720 and 29721 are the approved coverage areas at launch. Requests from other areas return an honest no-coverage response rather than being routed to a contractor who does not serve the area.",
+          "Lancaster, South Carolina is the approved coverage area at launch. Requests from outside it return an honest no-coverage response rather than being routed to a contractor who does not serve the area.",
       },
       {
         question: "Can you guarantee a price before anyone visits?",

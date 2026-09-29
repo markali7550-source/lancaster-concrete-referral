@@ -57,7 +57,7 @@ export const services: readonly ServiceRecord[] = [
     projectTypes: ["New driveway", "Driveway replacement"],
     keyFacts: [
       { label: "Routed for", value: "Residential driveways and aprons" },
-      { label: "Coverage today", value: "Lancaster, SC — 29720, 29721" },
+      { label: "Coverage today", value: "Lancaster, SC" },
       { label: "Typical site visit", value: "Within the partner's contracted response window" },
       { label: "Cost to you", value: "No charge for the referral" },
     ],
@@ -239,7 +239,7 @@ export const services: readonly ServiceRecord[] = [
     projectTypes: ["New patio", "Patio replacement", "Stamped patio"],
     keyFacts: [
       { label: "Routed for", value: "Residential patios and walkway tie-ins" },
-      { label: "Coverage today", value: "Lancaster, SC — 29720, 29721" },
+      { label: "Coverage today", value: "Lancaster, SC" },
       { label: "Decorative work", value: "Only where a partner documents the capability" },
       { label: "Cost to you", value: "No charge for the referral" },
     ],
@@ -414,7 +414,7 @@ export const services: readonly ServiceRecord[] = [
     projectTypes: ["Residential slab", "Concrete pad"],
     keyFacts: [
       { label: "Routed for", value: "Non-structural residential slabs and pads" },
-      { label: "Coverage today", value: "Lancaster, SC — 29720, 29721" },
+      { label: "Coverage today", value: "Lancaster, SC" },
       { label: "Never routed", value: "Foundations and engineered structural slabs" },
       { label: "Cost to you", value: "No charge for the referral" },
     ],
@@ -584,7 +584,7 @@ export const services: readonly ServiceRecord[] = [
     projectTypes: ["Crack and surface repair", "Resurfacing"],
     keyFacts: [
       { label: "Routed for", value: "Non-structural repair and resurfacing" },
-      { label: "Coverage today", value: "Lancaster, SC — 29720, 29721" },
+      { label: "Coverage today", value: "Lancaster, SC" },
       { label: "Never routed", value: "Structural, heaving, or load-failure assessment" },
       { label: "Cost to you", value: "No charge for the referral" },
     ],

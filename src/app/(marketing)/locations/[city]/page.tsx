@@ -69,7 +69,7 @@ export default async function LocationPage({ params }: { params: Params }) {
   const faqs = [
     {
       question: `Which ${location.city} areas do you cover?`,
-      answer: `${location.zips.join(" and ")}. Partners approve these areas in writing. A request from outside them returns an honest no-coverage response rather than being forwarded to someone who does not work there.`,
+      answer: `${location.city}, ${location.region}. Partners approve this area in writing. A request from outside them returns an honest no-coverage response rather than being forwarded to someone who does not work there.`,
     },
     {
       question: `Do you employ concrete crews in ${location.city}?`,
@@ -119,7 +119,7 @@ export default async function LocationPage({ params }: { params: Params }) {
       />
       <KeyFacts
         facts={[
-          { label: "Approved areas", value: location.zips.join(" · ") },
+          { label: "Approved area", value: `${location.city}, ${location.region}` },
           { label: "County", value: location.county },
           { label: "Services routed", value: `${publishedServices.length} residential services` },
           { label: "Cost to you", value: "No charge for the referral" },
@@ -219,7 +219,7 @@ export default async function LocationPage({ params }: { params: Params }) {
                 items={[
                   {
                     question: "Is my area covered?",
-                    answer: `We route ${location.zips.join(" and ")} today. Anything else returns a no-coverage response and nothing is shared with a contractor.`,
+                    answer: `We route ${location.city}, ${location.region} today. Anything else returns a no-coverage response and nothing is shared with a contractor.`,
                   },
                   {
                     question: "Will I be called repeatedly?",

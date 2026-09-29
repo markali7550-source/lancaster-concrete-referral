@@ -46,7 +46,7 @@ export const locations: readonly LocationRecord[] = [
       "Red clay subsoil common through the county holds water, so partners are asked about drainage handling before a driveway or slab quote is confirmed.",
     ],
     intro:
-      "Lancaster is our core market and the regional centre for this referral service. Enquiries from the Lancaster 29720 and 29721 areas are matched against partners who have explicitly approved that coverage.",
+      "Lancaster is our core market and the regional centre for this referral service. Enquiries from the Lancaster area are matched against partners who have explicitly approved that coverage.",
     adjacent: [],
   },
   {
@@ -102,12 +102,14 @@ export interface ServiceAreaOption {
 
 /** Selectable locations for the quote form. Derived from published records only. */
 export const serviceAreaOptions: readonly ServiceAreaOption[] = [
-  ...publishedLocations.flatMap((l) =>
-    l.zips.map((zip) => ({
-      value: zip,
-      label: `${l.city}, ${l.region} ${zip}`,
+  ...publishedLocations
+    .filter((l) => l.zips.length > 0)
+    .map((l) => ({
+      // One entry per served place. The wire value stays a postal code the
+      // partner registry already approves, so routing is unchanged.
+      value: l.zips[0] as string,
+      label: `${l.city}, ${l.region}`,
     })),
-  ),
   { value: OUT_OF_AREA_POSTAL_CODE, label: "My area is not listed" },
 ];
 

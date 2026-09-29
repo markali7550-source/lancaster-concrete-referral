@@ -108,7 +108,7 @@ export default async function ComboPage({ params }: { params: Params }) {
         ]}
       />
       <Hero
-        locationCue={`${location.city}, ${location.region} · areas ${location.zips.join(" & ")}`}
+        locationCue={`${location.city}, ${location.region}`}
         h1={h1}
         summary={description}
         imageSrc={serviceRecord.image}
@@ -232,7 +232,7 @@ export default async function ComboPage({ params }: { params: Params }) {
                   Checking coverage first?
                 </p>
                 <p className="mt-1.5 text-[14px] text-[color:var(--color-muted)]">
-                  We route {location.zips.join(" and ")} today. Call and we will
+                  We route {`${location.city}, ${location.region}`} today. Call and we will
                   confirm in a minute.
                 </p>
                 <a
