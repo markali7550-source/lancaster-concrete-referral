@@ -87,6 +87,30 @@ export const approvedZips: ReadonlySet<string> = new Set(
   publishedLocations.flatMap((l) => l.zips),
 );
 
+/**
+ * Sentinel submitted when a visitor selects "My area is not listed".
+ * It is a structurally valid postal code that is never an approved ZIP,
+ * so the routing engine returns no-coverage without any special casing.
+ */
+export const OUT_OF_AREA_POSTAL_CODE = "00000";
+
+export interface ServiceAreaOption {
+  /** Wire value: still a postal code, so the lead contract is unchanged. */
+  value: string;
+  label: string;
+}
+
+/** Selectable locations for the quote form. Derived from published records only. */
+export const serviceAreaOptions: readonly ServiceAreaOption[] = [
+  ...publishedLocations.flatMap((l) =>
+    l.zips.map((zip) => ({
+      value: zip,
+      label: `${l.city}, ${l.region} ${zip}`,
+    })),
+  ),
+  { value: OUT_OF_AREA_POSTAL_CODE, label: "My area is not listed" },
+];
+
 export interface GatedRouteRecord {
   path: string;
   state: Extract<PublicationState, "gated" | "blocked">;

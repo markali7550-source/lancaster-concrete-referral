@@ -6,7 +6,7 @@ import { expect, test, type ConsoleMessage, type Page } from "@playwright/test";
  */
 
 const APPROVED_ZIP = "29720";
-const UNAPPROVED_ZIP = "28202";
+const UNAPPROVED_ZIP = "00000";
 
 function collectPageErrors(page: Page) {
   const errors: string[] = [];
@@ -31,7 +31,7 @@ function uniquePhone(): string {
 
 async function fillStepOne(page: Page, zip: string) {
   await page.getByRole("radio", { name: /driveway/i }).first().check();
-  await page.getByLabel(/zip code/i).fill(zip);
+  await page.getByLabel(/^location$/i).selectOption(zip);
   await page.getByRole("button", { name: /continue/i }).click();
 }
 
@@ -50,11 +50,10 @@ test.describe("quote form", () => {
     await expect(page.getByText(/step 2 of 2/i)).toBeVisible();
   });
 
-  test("blocks an invalid ZIP and does not advance", async ({ page }) => {
+  test("blocks a missing location and does not advance", async ({ page }) => {
     await page.goto("/");
-    await page.getByLabel(/zip code/i).fill("297");
     await page.getByRole("button", { name: /continue/i }).click();
-    await expect(page.getByText(/five-digit zip/i).first()).toBeVisible();
+    await expect(page.getByText(/choose your location/i).first()).toBeVisible();
     await expect(page.getByText(/step 1 of 2/i)).toBeVisible();
   });
 
@@ -89,11 +88,10 @@ test.describe("quote form", () => {
     page,
   }) => {
     await page.goto("/");
-    await page.getByLabel(/zip code/i).fill("297");
     await page.getByRole("button", { name: /continue/i }).click();
-    await expect(page.getByText(/five-digit zip/i).first()).toBeVisible();
-    await page.getByLabel(/zip code/i).fill(APPROVED_ZIP);
-    await expect(page.getByText(/five-digit zip/i)).toHaveCount(0);
+    await expect(page.getByText(/choose your location/i).first()).toBeVisible();
+    await page.getByLabel(/^location$/i).selectOption(APPROVED_ZIP);
+    await expect(page.getByText(/choose your location/i)).toHaveCount(0);
   });
 
   test("switching contact method drops the retired channel's error (regression)", async ({
@@ -118,7 +116,7 @@ test.describe("quote form", () => {
     await expect(page.getByText(/consent is required/i).first()).toBeVisible();
   });
 
-  test("unapproved ZIP shows the no-coverage screen, not a failure", async ({
+  test("unlisted location shows the no-coverage screen, not a failure", async ({
     page,
   }) => {
     await page.goto("/");
@@ -127,10 +125,12 @@ test.describe("quote form", () => {
     await page.getByLabel(/^phone$/i).fill(uniquePhone());
     await serviceConsent(page).check();
     await page.getByRole("button", { name: /request my quote/i }).click();
-    await expect(page.getByText(/do not cover that zip/i)).toBeVisible({
+    await expect(page.getByText(/do not cover that area/i)).toBeVisible({
       timeout: 15000,
     });
-    await expect(page.getByRole("button", { name: /change zip/i })).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: /change location/i }),
+    ).toBeVisible();
   });
 
   test("static fallback phone is present and dialable", async ({ page }) => {

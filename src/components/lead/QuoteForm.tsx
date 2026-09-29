@@ -5,6 +5,7 @@ import { Icon } from "@/components/ui/Icon";
 import { MARKETING_CONSENT, SERVICE_CONSENT } from "@/lib/seo/disclosure";
 import { track } from "@/lib/analytics/events";
 import { attributionForLead } from "@/domain/attribution/client";
+import { serviceAreaOptions } from "@/content/locations";
 
 export interface QuoteFormServiceOption {
   slug: string;
@@ -104,8 +105,7 @@ export function QuoteForm({
   function validateStepOne(): Errors {
     const next: Errors = {};
     if (!values.serviceSlug) next.serviceSlug = "Choose a project type.";
-    if (!/^\d{5}$/.test(values.postalCode))
-      next.postalCode = "Enter a five-digit ZIP code.";
+    if (!values.postalCode) next.postalCode = "Choose your location.";
     return next;
   }
 
@@ -242,7 +242,7 @@ export function QuoteForm({
           Your request is with our routing team
         </h3>
         <p className="mt-3 text-[color:var(--color-muted)]">
-          An independent contractor serving your ZIP code will contact you
+          An independent contractor serving your area will contact you
           directly. We are not the contractor and do not set pricing or
           schedules.
         </p>
@@ -265,7 +265,7 @@ export function QuoteForm({
       <div className="card p-6 md:p-8" role="status">
         <p className="eyebrow">No approved contractor yet</p>
         <h3 className="mt-2 text-2xl font-semibold">
-          We do not cover that ZIP code today
+          We do not cover that area today
         </h3>
         <p className="mt-3 text-[color:var(--color-muted)]">
           Nothing was sent to a contractor. We only route requests to partners
@@ -289,7 +289,7 @@ export function QuoteForm({
               setStep(1);
             }}
           >
-            Change ZIP code
+            Change location
           </button>
         </div>
       </div>
@@ -307,7 +307,7 @@ export function QuoteForm({
         <div>
           <p className="eyebrow">Step {step} of 2</p>
           <h3 className="mt-1 text-xl font-semibold md:text-2xl">
-            {step === 1 ? "Your project and ZIP code" : "How to reach you"}
+            {step === 1 ? "Your project and location" : "How to reach you"}
           </h3>
         </div>
         <div className="flex gap-1.5" aria-hidden="true">
@@ -407,24 +407,26 @@ export function QuoteForm({
               htmlFor={`${baseId}-postalCode`}
               className="text-sm font-semibold"
             >
-              ZIP code
+              Location
             </label>
-            <input
+            <select
               id={`${baseId}-postalCode`}
               name="postalCode"
-              inputMode="numeric"
-              autoComplete="postal-code"
-              maxLength={5}
               className="field mt-2"
               value={values.postalCode}
               aria-invalid={Boolean(errors.postalCode)}
               aria-describedby={
                 errors.postalCode ? `${baseId}-postalCode-error` : undefined
               }
-              onChange={(event) =>
-                set("postalCode", event.target.value.replace(/\D/g, ""))
-              }
-            />
+              onChange={(event) => set("postalCode", event.target.value)}
+            >
+              <option value="">Select your location</option>
+              {serviceAreaOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
             {errors.postalCode ? (
               <p
                 id={`${baseId}-postalCode-error`}
