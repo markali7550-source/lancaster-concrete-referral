@@ -126,7 +126,7 @@ export default async function ComboPage({ params }: { params: Params }) {
 
       <div className="container-page">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
-          <div className="lg:col-span-7 xl:col-span-8">
+          <div className="min-w-0 lg:col-span-7 xl:col-span-8">
             <section className="scroll-mt-36 py-11 md:py-14">
               <p className="eyebrow">{`${serviceRecord.name} · ${location.city}`}</p>
               <h2 className="h2 mt-4">
@@ -215,7 +215,7 @@ export default async function ComboPage({ params }: { params: Params }) {
             </section>
           </div>
 
-          <aside className="lg:col-span-5 xl:col-span-4">
+          <aside className="min-w-0 lg:col-span-5 xl:col-span-4">
             <div className="lg:sticky lg:top-[4.5rem] lg:pt-2 lg:pb-16">
               <QuoteForm
                 services={publishedServices.map((s) => ({

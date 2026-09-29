@@ -80,7 +80,7 @@ export default function ServicesPage() {
 
       <Section tone="soft" eyebrow="Compare" title="Scope at a glance">
         <div
-          className="overflow-x-auto rounded-[16px] border"
+          className="max-w-full overflow-x-auto rounded-[16px] border"
           style={{ borderColor: "var(--color-line)", backgroundColor: "var(--color-surface)" }}
         >
           <table className="w-full min-w-[42rem] border-collapse text-left text-sm">

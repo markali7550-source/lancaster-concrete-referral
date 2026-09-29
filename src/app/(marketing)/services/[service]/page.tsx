@@ -135,7 +135,7 @@ export default async function ServicePage({ params }: { params: Params }) {
       <div className="container-page">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
           {/* ---------------------------------------------------- Main column */}
-          <div className="lg:col-span-7 xl:col-span-8">
+          <div className="min-w-0 lg:col-span-7 xl:col-span-8">
             <section id="scope" className="scroll-mt-36 py-11 md:py-14">
               <p className="eyebrow">Scope</p>
               <h2 className="h2 mt-4">
@@ -220,7 +220,7 @@ export default async function ServicePage({ params }: { params: Params }) {
           </div>
 
           {/* ------------------------------------------------------- Sidebar */}
-          <aside className="lg:col-span-5 xl:col-span-4">
+          <aside className="min-w-0 lg:col-span-5 xl:col-span-4">
             <div className="lg:sticky lg:top-[7.5rem] lg:pt-2 lg:pb-12">
               <QuoteForm
                 services={publishedServices.map((s) => ({

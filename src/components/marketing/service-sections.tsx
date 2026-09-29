@@ -147,7 +147,7 @@ export function InPageNav({ items }: { items: { id: string; label: string }[] })
       }}
     >
       <div className="container-page">
-        <ul className="-mx-1 flex gap-1 overflow-x-auto py-2 text-sm [scrollbar-width:none]">
+        <ul className="-mx-1 flex min-w-0 max-w-full gap-1 overflow-x-auto py-2 text-sm [scrollbar-width:none]">
           {items.map((item) => (
             <li key={item.id}>
               <a
@@ -283,7 +283,7 @@ export function CostTable({
   rows: { factor: string; impact: string; note: string }[];
 }) {
   return (
-    <div className="overflow-x-auto rounded-[16px] border" style={{ borderColor: "var(--color-line)" }}>
+    <div className="max-w-full overflow-x-auto rounded-[16px] border" style={{ borderColor: "var(--color-line)" }}>
       <table className="w-full min-w-[34rem] border-collapse text-left text-sm">
         <caption className="sr-only">
           Factors that affect the price quoted by the contractor
