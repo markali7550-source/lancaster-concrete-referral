@@ -29,6 +29,8 @@ type Status =
 
 type Errors = Record<string, string>;
 
+/** The form collects name, email, phone and details. The server contract still
+ *  carries a preference, so it is pinned rather than asked for. */
 const contactOptions = [{ value: "email", label: "Email" }] as const;
 
 function newIdempotencyKey(): string {
@@ -111,6 +113,11 @@ export function QuoteForm({
       next.fullName = "Enter your full name.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
       next.email = "Enter a valid email address.";
+    }
+    // Must mirror the server rule exactly: 10 digits, or 11 starting with 1.
+    const digits = values.phone.replace(/\D/g, "");
+    if (!(digits.length === 10 || (digits.length === 11 && digits.startsWith("1")))) {
+      next.phone = "Enter a 10-digit US phone number, with or without the leading 1.";
     }
     if (!values.serviceConsent)
       next.serviceConsent = "Consent is required so a contractor can contact you.";
@@ -455,37 +462,6 @@ export function QuoteForm({
           </div>
 
           <div>
-            <label
-              htmlFor={`${baseId}-contactPreference`}
-              className="text-sm font-semibold"
-            >
-              Preferred contact method
-            </label>
-            <select
-              id={`${baseId}-contactPreference`}
-              className="field mt-2"
-              value={values.contactPreference}
-              onChange={(event) => {
-                set(
-                  "contactPreference",
-                  event.target
-                    .value as (typeof contactOptions)[number]["value"],
-                );
-                // The other channel's input is about to unmount; its error
-                // would otherwise sit in the summary behind a dead anchor.
-                clearError("phone");
-                clearError("email");
-              }}
-            >
-              {contactOptions.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div>
             <label htmlFor={`${baseId}-email`} className="text-sm font-semibold">
               Email
             </label>
@@ -504,6 +480,30 @@ export function QuoteForm({
                 style={{ color: "var(--color-danger)" }}
               >
                 {errors.email}
+              </p>
+            ) : null}
+          </div>
+
+          <div>
+            <label htmlFor={`${baseId}-phone`} className="text-sm font-semibold">
+              Phone
+            </label>
+            <input
+              id={`${baseId}-phone`}
+              type="tel"
+              inputMode="tel"
+              autoComplete="tel"
+              className="field mt-2"
+              value={values.phone}
+              aria-invalid={Boolean(errors.phone)}
+              onChange={(event) => set("phone", event.target.value)}
+            />
+            {errors.phone ? (
+              <p
+                className="mt-1.5 text-sm"
+                style={{ color: "var(--color-danger)" }}
+              >
+                {errors.phone}
               </p>
             ) : null}
           </div>
