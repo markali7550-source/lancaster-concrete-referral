@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Section } from "@/components/marketing/sections";
+import {
+  OverlayHeader,
+  overlayBody,
+  overlayEyebrow,
+  overlayHeading,
+  Section,
+} from "@/components/marketing/sections";
 import { publishedLocations } from "@/content/locations";
 import { pageMetadata } from "@/lib/seo/metadata";
 
@@ -18,22 +24,24 @@ export const metadata: Metadata = pageMetadata({
 export default function LocationsPage() {
   return (
     <>
-      <div
-        className="border-b"
-        style={{
-          borderColor: "var(--color-line-soft)",
-          backgroundColor: "var(--color-surface)",
-        }}
+      <OverlayHeader
+        imageSrc="/service-areas-hero.webp"
+        imageAlt="Elevated view of a South Carolina residential neighbourhood with concrete driveways and sidewalks along a quiet street"
       >
-        <div className="container-page py-12 text-center md:py-16 lg:text-left">
-          <p className="eyebrow before:hidden lg:before:block">Service areas</p>
-          <h1 className="h1 mx-auto mt-5 max-w-3xl lg:mx-0">Where We Currently Publish</h1>
-          <p className="lede mx-auto mt-5 max-w-2xl lg:mx-0">
-            One published service area today. Additional South Carolina cities
-            appear here only after coverage, content, and compliance gates pass.
-          </p>
-        </div>
-      </div>
+        <p
+          className="eyebrow before:hidden lg:before:block"
+          style={{ color: overlayEyebrow }}
+        >
+          Service areas
+        </p>
+        <h1 className="h1 mx-auto mt-5 max-w-3xl lg:mx-0" style={{ color: overlayHeading }}>
+          Where We Currently Publish
+        </h1>
+        <p className="lede mx-auto mt-5 max-w-2xl lg:mx-0" style={{ color: overlayBody }}>
+          One published service area today. Additional South Carolina cities
+          appear here only after coverage, content, and compliance gates pass.
+        </p>
+      </OverlayHeader>
       <Section>
       <ul className="flex flex-wrap gap-3">
         {publishedLocations.map((location) => (
