@@ -16,9 +16,9 @@ export function ComplianceFooter() {
       }}
     >
       <div className="container-page py-14">
-        <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
-          <div className="max-w-sm">
-            <div className="flex items-center">
+        <div className="grid gap-10 text-center lg:grid-cols-[1.5fr_1fr_1fr_1fr] lg:text-left">
+          <div className="mx-auto max-w-sm lg:mx-0">
+            <div className="flex items-center justify-center lg:justify-start">
               <Logo height={52} />
             </div>
             <p className="mt-4 text-[13.5px] leading-relaxed text-[color:var(--color-muted)]">
@@ -42,7 +42,7 @@ export function ComplianceFooter() {
               href={SC_LLR_URL}
               rel="noopener noreferrer nofollow"
               target="_blank"
-              className="mt-5 inline-flex text-sm font-semibold underline underline-offset-4"
+              className="mt-5 inline-flex justify-center text-sm font-semibold underline underline-offset-4"
               style={{ color: "var(--color-accent)" }}
             >
               Verify a licence with SC LLR
@@ -137,13 +137,13 @@ export function ComplianceFooter() {
         </div>
 
         <p
-          className="mt-12 rounded-[12px] border p-4 text-[13px] font-medium leading-relaxed"
+          className="mt-12 rounded-[12px] border p-4 text-center text-[13px] font-medium leading-relaxed lg:text-left"
           style={{ borderColor: "var(--color-line)" }}
         >
           {FOOTER_DISCLOSURE}
         </p>
 
-        <div className="mt-8 flex flex-col gap-2 text-[12.5px] text-[color:var(--color-muted)] sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-8 flex flex-col gap-2 text-center text-[12.5px] text-[color:var(--color-muted)] lg:flex-row lg:items-center lg:justify-between lg:text-left">
           <p>
             © {new Date().getFullYear()} {site.brand}. All rights reserved.
           </p>
