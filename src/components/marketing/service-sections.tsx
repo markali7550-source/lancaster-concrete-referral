@@ -260,14 +260,22 @@ export function Timeline({
   phases: { phase: string; duration: string; detail: string }[];
 }) {
   return (
-    <ol
-      className="relative space-y-5 border-l pl-6 pr-6 lg:pr-0"
-      style={{ borderColor: "var(--color-line)" }}
-    >
+    /* Two-column grid per row: a fixed marker track and the card. The rail is a
+       single element spanning the whole list, centred on the marker track, so
+       every circle lands on the same axis at every width. */
+    <ol className="relative grid gap-5">
+      <span
+        aria-hidden="true"
+        className="absolute bottom-0 left-[0.75rem] top-0 w-px -translate-x-1/2"
+        style={{ backgroundColor: "var(--color-line)" }}
+      />
       {phases.map((phase, index) => (
-        <li key={phase.phase} className="relative">
+        <li
+          key={phase.phase}
+          className="grid grid-cols-[1.5rem_minmax(0,1fr)] items-center gap-3 sm:gap-4"
+        >
           <span
-            className="absolute -left-[31px] grid h-6 w-6 place-items-center rounded-full text-xs font-bold"
+            className="relative z-10 grid h-6 w-6 shrink-0 place-items-center rounded-full text-xs font-bold"
             style={{
               backgroundColor: "var(--color-accent)",
               color: "var(--color-page)",
@@ -276,7 +284,7 @@ export function Timeline({
           >
             {index + 1}
           </span>
-          <div className="card p-5">
+          <div className="card min-w-0 p-5">
             <div className="flex flex-wrap items-baseline justify-center gap-x-4 gap-y-1 lg:justify-between">
               <p className="font-semibold">{phase.phase}</p>
               <p className="text-xs font-medium text-[color:var(--color-muted)]">
