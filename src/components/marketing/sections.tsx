@@ -115,7 +115,7 @@ export function Hero({
       }}
     >
       <div className="container-page grid min-h-[calc(100dvh-6.25rem)] items-center gap-10 py-12 lg:grid-cols-12 lg:gap-14 lg:py-16">
-        <div className="text-center lg:col-span-5 lg:text-left">
+        <div className="text-center lg:col-span-6 lg:text-left">
           <p className="eyebrow before:hidden lg:before:block">
             {locationCue}
           </p>
@@ -154,7 +154,7 @@ export function Hero({
           </ul>
         </div>
 
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-6">
           <figure className="mx-auto w-full max-w-md sm:max-w-lg lg:max-w-none">
             <div
               className="overflow-hidden rounded-[20px] border"
@@ -169,7 +169,7 @@ export function Hero({
                 width={1200}
                 height={800}
                 priority
-                sizes="(min-width: 1024px) 58vw, 100vw"
+                sizes="(min-width: 1024px) 48vw, 100vw"
                 className="h-auto w-full object-cover"
               />
             </div>
