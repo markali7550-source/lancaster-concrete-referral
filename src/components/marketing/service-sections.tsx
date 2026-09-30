@@ -260,20 +260,23 @@ export function Timeline({
   phases: { phase: string; duration: string; detail: string }[];
 }) {
   return (
-    <ol className="relative space-y-5 border-l pl-6" style={{ borderColor: "var(--color-line)" }}>
+    <ol
+      className="relative space-y-5 lg:border-l lg:pl-6"
+      style={{ borderColor: "var(--color-line)" }}
+    >
       {phases.map((phase, index) => (
         <li key={phase.phase} className="relative">
-          <span
-            className="absolute -left-[31px] grid h-6 w-6 place-items-center rounded-full text-xs font-bold"
-            style={{
-              backgroundColor: "var(--color-accent)",
-              color: "var(--color-page)",
-            }}
-            aria-hidden="true"
-          >
-            {index + 1}
-          </span>
           <div className="card p-5">
+            <span
+              className="mx-auto mb-3 grid h-6 w-6 place-items-center rounded-full text-xs font-bold lg:absolute lg:-left-[31px] lg:top-5 lg:mx-0 lg:mb-0"
+              style={{
+                backgroundColor: "var(--color-accent)",
+                color: "var(--color-page)",
+              }}
+              aria-hidden="true"
+            >
+              {index + 1}
+            </span>
             <div className="flex flex-wrap items-baseline justify-center gap-x-4 gap-y-1 lg:justify-between">
               <p className="font-semibold">{phase.phase}</p>
               <p className="text-xs font-medium text-[color:var(--color-muted)]">
