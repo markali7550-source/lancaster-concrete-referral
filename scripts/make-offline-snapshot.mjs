@@ -37,6 +37,7 @@ const ROUTE_MAP = new Map(ROUTES);
 
 const MIME = {
   ".jpg": "image/jpeg",
+  ".webp": "image/webp",
   ".jpeg": "image/jpeg",
   ".png": "image/png",
   ".svg": "image/svg+xml",

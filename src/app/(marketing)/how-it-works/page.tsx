@@ -59,8 +59,8 @@ export default function HowItWorksPage() {
             <Image
               src="/how-it-works-hero.webp"
               alt="Two concrete workers screeding and floating a freshly poured residential driveway slab between timber forms outside a brick home"
-              width={1200}
-              height={896}
+              width={860}
+              height={642}
               priority
               sizes="(min-width: 1024px) 40vw, 100vw"
               className="h-auto w-full rounded-[18px] border object-cover"

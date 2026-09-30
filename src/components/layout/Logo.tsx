@@ -3,7 +3,7 @@ import { site } from "@/lib/env";
 
 /**
  * Brand logo. Two files are shipped because the supplied wordmark is dark ink:
- * `logo.png` for light pages, `logo-dark.png` for dark pages. CSS picks one.
+ * `logo.webp` for light pages, `logo-dark.webp` for dark pages. CSS picks one.
  */
 export function Logo({ height = 36 }: { height?: number }) {
   const width = Math.round((height * 1808) / 556);
@@ -11,7 +11,7 @@ export function Logo({ height = 36 }: { height?: number }) {
   return (
     <>
       <Image
-        src="/logo.png"
+        src="/logo.webp"
         alt={alt}
         width={width}
         height={height}
@@ -20,7 +20,7 @@ export function Logo({ height = 36 }: { height?: number }) {
         style={{ height, width: "auto" }}
       />
       <Image
-        src="/logo-dark.png"
+        src="/logo-dark.webp"
         alt=""
         aria-hidden="true"
         width={width}
