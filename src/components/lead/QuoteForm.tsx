@@ -225,7 +225,7 @@ export function QuoteForm({
 
   if (status === "success") {
     return (
-      <div className="card p-6 md:p-8" role="status">
+      <div id="quote-form" className="card scroll-mt-32 p-6 md:p-8" role="status">
         <p className="eyebrow">Request received</p>
         <h3 className="mt-2 text-2xl font-semibold">
           Your request is with our routing team
@@ -251,7 +251,7 @@ export function QuoteForm({
 
   if (status === "no_coverage") {
     return (
-      <div className="card p-6 md:p-8" role="status">
+      <div id="quote-form" className="card scroll-mt-32 p-6 md:p-8" role="status">
         <p className="eyebrow">No approved contractor yet</p>
         <h3 className="mt-2 text-2xl font-semibold">
           We do not cover that area today
@@ -287,7 +287,7 @@ export function QuoteForm({
 
   return (
     <form
-      className="card p-5 md:p-6"
+      className="card scroll-mt-32 p-5 md:p-6"
       onSubmit={onSubmit}
       noValidate
       id="quote-form"
@@ -467,6 +467,7 @@ export function QuoteForm({
             </label>
             <input
               id={`${baseId}-email`}
+              name="email"
               type="email"
               autoComplete="email"
               className="field mt-1.5"
@@ -490,6 +491,7 @@ export function QuoteForm({
             </label>
             <input
               id={`${baseId}-phone`}
+              name="phone"
               type="tel"
               inputMode="tel"
               autoComplete="tel"
@@ -517,6 +519,7 @@ export function QuoteForm({
             </label>
             <textarea
               id={`${baseId}-note`}
+              name="note"
               rows={2}
               className="field mt-1.5"
               value={values.note}
@@ -531,8 +534,9 @@ export function QuoteForm({
             >
               <input
                 id={`${baseId}-serviceConsent`}
+                name="serviceConsent"
                 type="checkbox"
-                className="mt-1 h-4 w-4 shrink-0"
+                className="mt-0.5 h-5 w-5 shrink-0"
                 checked={values.serviceConsent}
                 aria-invalid={Boolean(errors.serviceConsent)}
                 onChange={(event) =>
