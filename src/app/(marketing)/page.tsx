@@ -242,8 +242,8 @@ export default function HomePage() {
       <Section
         tone="surface"
         eyebrow="Service area"
-        title="Where we publish"
-        lead="Every area we currently publish. Service availability depends on participating providers."
+        title="Areas we currently serve"
+        lead="Every area we currently serve. Service availability depends on participating providers."
       >
         <AdjacentAreas locations={publishedLocations} />
 
