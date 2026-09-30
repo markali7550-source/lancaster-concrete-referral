@@ -2,7 +2,6 @@ import Link from "next/link";
 import { DynamicPhone } from "@/components/lead/DynamicPhone";
 import { Icon } from "@/components/ui/Icon";
 import { Logo } from "@/components/layout/Logo";
-import { HeaderCta } from "@/components/layout/HeaderCta";
 import { MobileMenu } from "@/components/layout/MobileMenu";
 import { ServicesMenu } from "@/components/layout/ServicesMenu";
 import { publishedServices } from "@/content/services";
@@ -60,7 +59,9 @@ export function UtilityHeader() {
               placement="header"
               className="btn btn-secondary"
             />
-            <HeaderCta />
+            <Link href="/contact" className="btn btn-primary">
+              Request a referral
+            </Link>
           </div>
 
           {/* Mobile menu — native <details>, closed on navigation by MobileMenu */}
