@@ -42,7 +42,7 @@ export default function LocationsPage() {
           appear here only after coverage, content, and compliance gates pass.
         </p>
       </OverlayHeader>
-      <Section>
+      <Section title="Published service areas">
       <ul className="flex flex-wrap gap-3">
         {publishedLocations.map((location) => (
           <li key={location.slug}>
