@@ -9,7 +9,7 @@ export function ComplianceFooter() {
   return (
     <footer
       id="site-footer"
-      className="mt-24 border-t"
+      className="border-t"
       style={{
         borderColor: "var(--color-line-soft)",
         backgroundColor: "var(--color-surface)",
