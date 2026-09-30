@@ -204,8 +204,11 @@ export function ScopeColumns({
         <p className="font-semibold">Not routed under this service</p>
         <ul className="mt-3 space-y-2.5 text-sm text-[color:var(--color-muted)]">
           {outOfScope.map((item) => (
-            <li key={item} className="flex justify-center gap-2.5 lg:justify-start">
-              <span aria-hidden="true" className="mt-px font-semibold">
+            <li
+              key={item}
+              className="block text-center lg:flex lg:justify-start lg:gap-2.5 lg:text-left"
+            >
+              <span aria-hidden="true" className="mt-px hidden font-semibold lg:block">
                 —
               </span>
               <span>{item}</span>
@@ -351,8 +354,11 @@ export function PrepColumns({
         <p className="font-semibold">Before the estimate visit</p>
         <ul className="mt-4 space-y-3 text-sm">
           {checklist.map((item) => (
-            <li key={item} className="flex justify-center gap-3 lg:justify-start">
-              <span style={{ color: "var(--color-accent)" }}>
+            <li
+              key={item}
+              className="block text-center lg:flex lg:justify-start lg:gap-3 lg:text-left"
+            >
+              <span className="hidden lg:block" style={{ color: "var(--color-accent)" }}>
                 <Icon name="check" className="mt-0.5 h-4 w-4" />
               </span>
               <span className="text-[color:var(--color-muted)]">{item}</span>
@@ -364,8 +370,15 @@ export function PrepColumns({
         <p className="font-semibold">Ask the contractor, not us</p>
         <ul className="mt-4 space-y-3 text-sm">
           {questions.map((item) => (
-            <li key={item} className="flex justify-center gap-3 lg:justify-start">
-              <span aria-hidden="true" style={{ color: "var(--color-accent)" }}>
+            <li
+              key={item}
+              className="block text-center lg:flex lg:justify-start lg:gap-3 lg:text-left"
+            >
+              <span
+                aria-hidden="true"
+                className="hidden lg:block"
+                style={{ color: "var(--color-accent)" }}
+              >
                 ?
               </span>
               <span className="text-[color:var(--color-muted)]">{item}</span>
