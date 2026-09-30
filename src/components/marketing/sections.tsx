@@ -97,8 +97,8 @@ export function Hero({
   locationCue,
   h1,
   summary,
-  imageSrc = "/hero-driveway.webp",
-  imageAlt = "Finished broom-finish concrete driveway at a single-story home",
+  imageSrc = "/home-hero.webp",
+  imageAlt = "Broom-finished concrete front walkway and entry steps at a two-storey home",
 }: {
   locationCue: string;
   h1: string;

@@ -115,6 +115,8 @@ export default async function LocationPage({ params }: { params: Params }) {
         locationCue={`${location.county}, South Carolina`}
         h1={`Concrete Contractor Referrals in ${location.city}, SC`}
         summary={location.intro}
+        imageSrc="/lancaster-hero.webp"
+        imageAlt={`Tree-lined residential street in ${location.city}, ${location.region}, with concrete driveways and a sidewalk running past single-family homes`}
       />
       <KeyFacts
         facts={[
