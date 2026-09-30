@@ -112,6 +112,7 @@ export default async function ComboPage({ params }: { params: Params }) {
         summary={description}
         imageSrc={serviceRecord.image}
         imageAlt={serviceRecord.imageAlt}
+        overlay
       />
       <KeyFacts
         facts={[

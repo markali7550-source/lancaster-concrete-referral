@@ -93,6 +93,50 @@ export function SectionDivider() {
 
 /* ------------------------------------------------------------------- Hero */
 
+/**
+ * Full-bleed photo header: the photo fills the band, a dark scrim keeps the
+ * copy legible, and the copy sits on top of it.
+ */
+export function OverlayHeader({
+  imageSrc,
+  imageAlt,
+  children,
+}: {
+  imageSrc: string;
+  imageAlt: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section
+      className="relative isolate overflow-hidden border-b"
+      style={{ borderColor: "var(--color-line-soft)" }}
+    >
+      <Image
+        src={imageSrc}
+        alt={imageAlt}
+        fill
+        priority
+        sizes="100vw"
+        className="-z-20 object-cover"
+      />
+      <div
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-[#070b09]/85 via-[#070b09]/75 to-[#070b09]/85 lg:bg-gradient-to-r lg:from-[#070b09]/92 lg:via-[#070b09]/78 lg:to-[#070b09]/35"
+        aria-hidden="true"
+      />
+      <div className="container-page flex items-center py-14 md:py-20 lg:py-24">
+        <div className="mx-auto w-full max-w-2xl text-center lg:mx-0 lg:text-left">
+          {children}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export const overlayEyebrow = "#5fe3a8";
+export const overlayHeading = "#ffffff";
+export const overlayBody = "rgba(255,255,255,0.88)";
+export const overlayMuted = "rgba(255,255,255,0.82)";
+
 const HERO_TRUST = [
   "Free for homeowners",
   "One independent provider, not five",

@@ -4,6 +4,13 @@ import { DynamicPhone } from "@/components/lead/DynamicPhone";
 import { Icon } from "@/components/ui/Icon";
 import type { ServiceRecord } from "@/content/services";
 import { site } from "@/lib/env";
+import {
+  OverlayHeader,
+  overlayBody,
+  overlayEyebrow,
+  overlayHeading,
+  overlayMuted,
+} from "@/components/marketing/sections";
 
 /* ------------------------------------------------------------ Breadcrumbs */
 
@@ -50,66 +57,55 @@ export function ServiceHero({
   summary: string;
 }) {
   return (
-    <section className="border-b" style={{ borderColor: "var(--color-line)" }}>
-      <div className="container-page grid items-center gap-8 py-10 lg:grid-cols-12 lg:gap-12 lg:py-14">
-        <div className="text-center lg:col-span-6 lg:text-left">
-          <p className="eyebrow before:hidden lg:before:block">{cityLabel}</p>
-          <h1 className="h1 mt-5">
-            {h1}
-          </h1>
-          <p className="lede mx-auto mt-5 max-w-prose lg:mx-0">{summary}</p>
-          <ul className="mt-5 flex flex-wrap justify-center gap-2 lg:justify-start">
-            {service.projectTypes.map((type) => (
-              <li
-                key={type}
-                className="rounded-full px-3 py-1.5 text-sm font-medium"
-                style={{
-                  backgroundColor: "var(--color-accent-soft)",
-                  color: "var(--color-accent)",
-                }}
-              >
-                {type}
-              </li>
-            ))}
-          </ul>
-          <div
-            id="hero-actions"
-            className="mx-auto mt-7 grid w-full max-w-sm gap-3 lg:mx-0 lg:max-w-none lg:grid-cols-2"
+    <OverlayHeader imageSrc={service.image} imageAlt={service.imageAlt}>
+      <p
+        className="eyebrow before:hidden lg:before:block"
+        style={{ color: overlayEyebrow }}
+      >
+        {cityLabel}
+      </p>
+      <h1 className="h1 mt-5" style={{ color: overlayHeading }}>
+        {h1}
+      </h1>
+      <p
+        className="lede mx-auto mt-5 max-w-prose lg:mx-0"
+        style={{ color: overlayBody }}
+      >
+        {summary}
+      </p>
+      <ul className="mt-5 flex flex-wrap justify-center gap-2 lg:justify-start">
+        {service.projectTypes.map((type) => (
+          <li
+            key={type}
+            className="rounded-full px-3 py-1.5 text-sm font-medium"
+            style={{
+              backgroundColor: "rgba(255,255,255,0.12)",
+              color: "#ffffff",
+            }}
           >
-            <DynamicPhone
-              fallbackDisplay={site.phoneDisplay}
-              fallbackE164={site.phoneE164}
-              placement="service_hero"
-              className="btn btn-primary"
-            />
-            <a href="#quote-form" className="btn btn-secondary">
-              Request a referral
-              <Icon name="arrow" />
-            </a>
-          </div>
-          <p className="mt-3 text-xs text-[color:var(--color-muted)]">
-            Free referral. We are not the contractor and do not set prices.
-          </p>
-        </div>
-
-        <div className="lg:col-span-6">
-          <div
-            className="mx-auto w-full max-w-md overflow-hidden rounded-[20px] border sm:max-w-lg lg:max-w-none"
-            style={{ borderColor: "var(--color-line-soft)", boxShadow: "var(--shadow-raised)" }}
-          >
-            <Image
-              src={service.image}
-              alt={service.imageAlt}
-              width={1200}
-              height={800}
-              priority
-              sizes="(min-width: 1024px) 48vw, 100vw"
-              className="h-auto w-full object-cover"
-            />
-          </div>
-        </div>
+            {type}
+          </li>
+        ))}
+      </ul>
+      <div
+        id="hero-actions"
+        className="mx-auto mt-7 grid w-full max-w-sm gap-3 lg:mx-0 lg:max-w-none lg:grid-cols-[repeat(2,minmax(0,15rem))]"
+      >
+        <DynamicPhone
+          fallbackDisplay={site.phoneDisplay}
+          fallbackE164={site.phoneE164}
+          placement="service_hero"
+          className="btn btn-primary"
+        />
+        <a href="#quote-form" className="btn btn-secondary">
+          Request a referral
+          <Icon name="arrow" />
+        </a>
       </div>
-    </section>
+      <p className="mt-3 text-xs" style={{ color: overlayMuted }}>
+        Free referral. We are not the contractor and do not set prices.
+      </p>
+    </OverlayHeader>
   );
 }
 

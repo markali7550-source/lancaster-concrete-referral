@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   HowMatchingWorks,
+  OverlayHeader,
+  overlayBody,
+  overlayEyebrow,
+  overlayHeading,
   ReferralDisclosureStrip,
   Section,
   RoutingControls,
@@ -36,39 +39,28 @@ export default function HowItWorksPage() {
     <>
       <JsonLd data={graph} />
       <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "How it works" }]} />
-      <div
-        className="border-b"
-        style={{
-          borderColor: "var(--color-line-soft)",
-          backgroundColor: "var(--color-surface)",
-        }}
+      <OverlayHeader
+        imageSrc="/how-it-works-hero.webp"
+        imageAlt="Two concrete workers screeding and floating a freshly poured residential driveway slab between timber forms outside a brick home"
       >
-        <div className="container-page grid items-center gap-8 py-12 text-center md:py-16 lg:grid-cols-2 lg:gap-12 lg:text-left">
-          <div className="min-w-0">
-            <p className="eyebrow before:hidden lg:before:block">Our process</p>
-            <h1 className="h1 mx-auto mt-5 max-w-3xl lg:mx-0">
-              How Our Concrete Service Provider Referrals Work
-            </h1>
-            <p className="lede mx-auto mt-5 max-w-2xl lg:mx-0">
-              What happens between the moment you submit a request and the
-              moment an independent contractor calls you — including the checks
-              that stop a request from being routed at all.
-            </p>
-          </div>
-          <div className="min-w-0">
-            <Image
-              src="/how-it-works-hero.webp"
-              alt="Two concrete workers screeding and floating a freshly poured residential driveway slab between timber forms outside a brick home"
-              width={860}
-              height={642}
-              priority
-              sizes="(min-width: 1024px) 40vw, 100vw"
-              className="h-auto w-full rounded-[18px] border object-cover"
-              style={{ borderColor: "var(--color-line-soft)" }}
-            />
-          </div>
-        </div>
-      </div>
+        <p
+          className="eyebrow before:hidden lg:before:block"
+          style={{ color: overlayEyebrow }}
+        >
+          Our process
+        </p>
+        <h1 className="h1 mx-auto mt-5 max-w-3xl lg:mx-0" style={{ color: overlayHeading }}>
+          How Our Concrete Service Provider Referrals Work
+        </h1>
+        <p
+          className="lede mx-auto mt-5 max-w-2xl lg:mx-0"
+          style={{ color: overlayBody }}
+        >
+          What happens between the moment you submit a request and the
+          moment an independent contractor calls you — including the checks
+          that stop a request from being routed at all.
+        </p>
+      </OverlayHeader>
       <ReferralDisclosureStrip />
       <Section eyebrow="Process" title="Three steps, no obligation">
         <HowMatchingWorks />
