@@ -40,7 +40,7 @@ export function Section({
     <section
       id={id}
       className={
-        compact ? "scroll-mt-32 py-8 md:py-9" : "scroll-mt-32 py-11 md:py-14"
+        compact ? "scroll-mt-32 py-6 md:py-9" : "scroll-mt-32 py-8 md:py-14"
       }
       style={background ? { backgroundColor: background } : undefined}
     >

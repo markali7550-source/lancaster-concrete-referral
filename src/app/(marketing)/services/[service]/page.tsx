@@ -132,10 +132,10 @@ export default async function ServicePage({ params }: { params: Params }) {
       <InPageNav items={navItems} />
 
       <div className="container-page">
-        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
+        <div className="grid gap-6 lg:grid-cols-12 lg:gap-12">
           {/* ---------------------------------------------------- Main column */}
           <div className="min-w-0 lg:col-span-7 xl:col-span-8">
-            <section id="scope" className="scroll-mt-36 py-11 md:py-14">
+            <section id="scope" className="scroll-mt-36 py-8 md:py-14">
               <p className="eyebrow">Scope</p>
               <h2 className="h2 mt-4">
                 What we route under {service.name.toLowerCase()}
@@ -151,7 +151,7 @@ export default async function ServicePage({ params }: { params: Params }) {
               </div>
             </section>
 
-            <section id="options" className="scroll-mt-36 border-t py-11 md:py-14" style={{ borderColor: "var(--color-line-soft)" }}>
+            <section id="options" className="scroll-mt-36 border-t py-8 md:py-14" style={{ borderColor: "var(--color-line-soft)" }}>
               <p className="eyebrow">Specification</p>
               <h2 className="h2 mt-4">
                 Choices your contractor will raise
@@ -165,7 +165,7 @@ export default async function ServicePage({ params }: { params: Params }) {
               </div>
             </section>
 
-            <section id="process" className="scroll-mt-36 border-t py-11 md:py-14" style={{ borderColor: "var(--color-line-soft)" }}>
+            <section id="process" className="scroll-mt-36 border-t py-8 md:py-14" style={{ borderColor: "var(--color-line-soft)" }}>
               <p className="eyebrow">Process</p>
               <h2 className="h2 mt-4">
                 How a {service.shortName.toLowerCase().replace(/s$/, "")} project usually runs
@@ -179,7 +179,7 @@ export default async function ServicePage({ params }: { params: Params }) {
               </div>
             </section>
 
-            <section id="cost" className="scroll-mt-36 border-t py-11 md:py-14" style={{ borderColor: "var(--color-line-soft)" }}>
+            <section id="cost" className="scroll-mt-36 border-t py-8 md:py-14" style={{ borderColor: "var(--color-line-soft)" }}>
               <p className="eyebrow">Pricing</p>
               <h2 className="h2 mt-4">
                 What actually drives the price
@@ -194,7 +194,7 @@ export default async function ServicePage({ params }: { params: Params }) {
               </div>
             </section>
 
-            <section id="prepare" className="scroll-mt-36 border-t py-11 md:py-14" style={{ borderColor: "var(--color-line-soft)" }}>
+            <section id="prepare" className="scroll-mt-36 border-t py-8 md:py-14" style={{ borderColor: "var(--color-line-soft)" }}>
               <p className="eyebrow">Preparation</p>
               <h2 className="h2 mt-4">
                 Get more out of the estimate visit
@@ -207,7 +207,7 @@ export default async function ServicePage({ params }: { params: Params }) {
               </div>
             </section>
 
-            <section id="vetting" className="scroll-mt-36 border-t py-11 md:py-14" style={{ borderColor: "var(--color-line-soft)" }}>
+            <section id="vetting" className="scroll-mt-36 border-t py-8 md:py-14" style={{ borderColor: "var(--color-line-soft)" }}>
               <p className="eyebrow">How routing works</p>
               <h2 className="h2 mt-4">
                 How your request reaches a service provider

@@ -50,7 +50,7 @@ export default function ContactPage() {
       </div>
       <ReferralDisclosureStrip />
       <Section>
-        <div className="grid gap-10 lg:grid-cols-2">
+        <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
           <div>
             <p className="lede max-w-prose">
               We are the referral service, not the contractor. Our referral team can tell

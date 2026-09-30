@@ -199,7 +199,7 @@ export default async function LocationPage({ params }: { params: Params }) {
         eyebrow="Request a referral"
         title={`Tell us about your ${location.city} project`}
       >
-        <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+        <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
           <div className="max-w-xl">
             <QuoteForm
               services={publishedServices.map((s) => ({
