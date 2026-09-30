@@ -6,7 +6,7 @@ import {
   Section,
   RoutingControls,
 } from "@/components/marketing/sections";
-import { Breadcrumbs } from "@/components/marketing/service-sections";
+import { Breadcrumbs, CtaBand } from "@/components/marketing/service-sections";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { breadcrumbNode, buildGraph, webPageNode } from "@/lib/schema/graph";
 import { site } from "@/lib/env";
@@ -87,6 +87,11 @@ export default function HowItWorksPage() {
           </div>
         </div>
       </Section>
+
+      <CtaBand
+        title="Ready to start?"
+        body="Submit a request and we will route it to one eligible independent contractor, or call the referral team first to check coverage."
+      />
 
     </>
   );
