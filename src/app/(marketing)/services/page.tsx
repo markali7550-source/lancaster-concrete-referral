@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   FaqSection,
@@ -58,17 +59,31 @@ export default function ServicesPage() {
       <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Services" }]} />
 
       <section className="border-b" style={{ borderColor: "var(--color-line)" }}>
-        <div className="container-page py-12 text-center md:py-16 lg:text-left">
-          <p className="eyebrow before:hidden lg:before:block">Service directory</p>
-          <h1 className="mx-auto mt-3 max-w-3xl text-[2rem] font-semibold leading-[1.12] md:text-[2.75rem] lg:mx-0">
-            Concrete Services We Route in Lancaster County, SC
-          </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-[17px] leading-relaxed text-[color:var(--color-muted)] lg:mx-0">
-            Four residential concrete services, each with at least one
-            independent service provider holding written coverage for the Lancaster
-            area. Pick the closest match and we route your
-            request to one eligible participating provider.
-          </p>
+        <div className="container-page grid items-center gap-8 py-12 text-center md:py-16 lg:grid-cols-2 lg:gap-12 lg:text-left">
+          <div className="min-w-0">
+            <p className="eyebrow before:hidden lg:before:block">Service directory</p>
+            <h1 className="mx-auto mt-3 max-w-3xl text-[2rem] font-semibold leading-[1.12] md:text-[2.75rem] lg:mx-0">
+              Concrete Services We Route in Lancaster County, SC
+            </h1>
+            <p className="mx-auto mt-4 max-w-2xl text-[17px] leading-relaxed text-[color:var(--color-muted)] lg:mx-0">
+              Four residential concrete services, each with at least one
+              independent service provider holding written coverage for the
+              Lancaster area. Pick the closest match and we route your
+              request to one eligible participating provider.
+            </p>
+          </div>
+          <div className="min-w-0">
+            <Image
+              src="/services-overview.webp"
+              alt="Broom-finished residential concrete surface in Lancaster SC with a tooled edge and control joint beside a lawn"
+              width={1280}
+              height={714}
+              priority
+              sizes="(min-width: 1024px) 45vw, 100vw"
+              className="h-auto w-full rounded-[18px] border object-cover"
+              style={{ borderColor: "var(--color-line-soft)" }}
+            />
+          </div>
         </div>
       </section>
 

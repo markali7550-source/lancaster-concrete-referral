@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { DynamicPhone } from "@/components/lead/DynamicPhone";
 import { Icon } from "@/components/ui/Icon";
 import type { ServiceDetail } from "@/content/service-details";
@@ -33,13 +34,19 @@ export function MoreInformation({ blocks }: { blocks: ServiceDetail["moreInfo"] 
 export function MayInclude({
   items,
   serviceName,
+  imageSrc,
+  imageAlt,
 }: {
   items: string[];
   serviceName: string;
+  /** Supporting photo of the work this scope list describes. */
+  imageSrc?: string;
+  imageAlt?: string;
 }) {
   return (
-    <div>
-      <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
+      <div className="min-w-0 lg:col-span-7">
+      <ul className="grid gap-3 sm:grid-cols-2">
         {items.map((item) => (
           <li key={item} className="card flex items-start gap-3 p-4">
             <span className="mt-0.5 shrink-0" style={{ color: "var(--color-accent)" }}>
@@ -50,11 +57,25 @@ export function MayInclude({
         ))}
       </ul>
       <p className="mt-5 text-center text-[13px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
-        This list describes components commonly associated with{" "}
-        {serviceName.toLowerCase()} projects. It is informational only, and not
-        every participating provider offers every item. Confirm scope directly
-        with the provider who contacts you.
+        This list describes components commonly associated with {serviceName}{" "}
+        project. It is informational only, and not every participating provider
+        offers every item. Confirm scope directly with the provider who contacts
+        you.
       </p>
+      </div>
+      {imageSrc ? (
+        <figure className="mx-auto w-full max-w-md min-w-0 lg:col-span-5 lg:mx-0 lg:max-w-none">
+          <Image
+            src={imageSrc}
+            alt={imageAlt ?? ""}
+            width={1100}
+            height={614}
+            sizes="(min-width: 1024px) 40vw, 100vw"
+            className="h-auto w-full rounded-[18px] border object-cover"
+            style={{ borderColor: "var(--color-line-soft)" }}
+          />
+        </figure>
+      ) : null}
     </div>
   );
 }

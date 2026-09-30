@@ -93,6 +93,13 @@ export default async function ServicePage({ params }: { params: Params }) {
 
   const detail = serviceDetails[service.slug];
 
+  // `nameLower` carries its own article for countable services ("a concrete
+  // driveway") but not for mass nouns ("concrete repair"), so add one only
+  // when it is missing.
+  const projectPhrase = service.nameLower.startsWith("a ")
+    ? service.nameLower
+    : `a ${service.nameLower}`;
+
   const navItems = [
     { id: "scope", label: "What's covered" },
     { id: "more-information", label: "More information" },
@@ -266,8 +273,8 @@ export default async function ServicePage({ params }: { params: Params }) {
       <section id="more-information" className="scroll-mt-32">
         <Section
           eyebrow="More information"
-          title={`Understanding ${service.nameLower} in Lancaster, SC`}
-          lead={`A plain-language look at what ${service.nameLower} projects involve, what homeowners in Lancaster County typically ask about, and what is worth settling before any work begins.`}
+          title={`Understanding ${projectPhrase} project in Lancaster, SC`}
+          lead={`A plain-language look at what ${projectPhrase} project involves, what homeowners in Lancaster County typically ask about, and what is worth settling before any work begins.`}
         >
           <MoreInformation blocks={detail.moreInfo} />
         </Section>
@@ -278,9 +285,14 @@ export default async function ServicePage({ params }: { params: Params }) {
       <section id="may-include" className="scroll-mt-32">
         <Section
           eyebrow="Scope"
-          title={`What ${service.nameLower} work may include`}
+          title={`What ${projectPhrase} project may include`}
         >
-          <MayInclude items={detail.mayInclude} serviceName={service.name} />
+          <MayInclude
+            items={detail.mayInclude}
+            serviceName={projectPhrase}
+            imageSrc={detail.detailImage}
+            imageAlt={detail.detailImageAlt}
+          />
         </Section>
       </section>
 
