@@ -136,11 +136,11 @@ export default async function ServicePage({ params }: { params: Params }) {
           {/* ---------------------------------------------------- Main column */}
           <div className="min-w-0 lg:col-span-7 xl:col-span-8">
             <section id="scope" className="scroll-mt-36 py-8 md:py-14">
-              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Scope</p>
-              <h2 className="h2 mt-4 text-center lg:text-left">
+              <p className="eyebrow">Scope</p>
+              <h2 className="h2 mt-4">
                 What we route under {service.name.toLowerCase()}
               </h2>
-              <p className="lede mx-auto mt-4 max-w-prose text-center lg:mx-0 lg:text-left">
+              <p className="lede mt-4 max-w-prose">
                 {service.summary}
               </p>
               <div className="mt-8">
@@ -152,11 +152,11 @@ export default async function ServicePage({ params }: { params: Params }) {
             </section>
 
             <section id="options" className="scroll-mt-36 border-t py-8 md:py-14" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Specification</p>
-              <h2 className="h2 mt-4 text-center lg:text-left">
+              <p className="eyebrow">Specification</p>
+              <h2 className="h2 mt-4">
                 Choices your contractor will raise
               </h2>
-              <p className="lede mx-auto mt-4 max-w-prose text-center lg:mx-0 lg:text-left">
+              <p className="lede mt-4 max-w-prose">
                 We do not specify your project. These are the decisions that
                 come up so you are not hearing them for the first time on site.
               </p>
@@ -166,11 +166,11 @@ export default async function ServicePage({ params }: { params: Params }) {
             </section>
 
             <section id="process" className="scroll-mt-36 border-t py-8 md:py-14" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Process</p>
-              <h2 className="h2 mt-4 text-center lg:text-left">
+              <p className="eyebrow">Process</p>
+              <h2 className="h2 mt-4">
                 How a {service.shortName.toLowerCase().replace(/s$/, "")} project usually runs
               </h2>
-              <p className="lede mx-auto mt-4 max-w-prose text-center lg:mx-0 lg:text-left">
+              <p className="lede mt-4 max-w-prose">
                 Durations below are typical ranges reported by partners, not
                 commitments. Your contractor sets the actual schedule.
               </p>
@@ -180,11 +180,11 @@ export default async function ServicePage({ params }: { params: Params }) {
             </section>
 
             <section id="cost" className="scroll-mt-36 border-t py-8 md:py-14" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Pricing</p>
-              <h2 className="h2 mt-4 text-center lg:text-left">
+              <p className="eyebrow">Pricing</p>
+              <h2 className="h2 mt-4">
                 What actually drives the price
               </h2>
-              <p className="lede mx-auto mt-4 max-w-prose text-center lg:mx-0 lg:text-left">
+              <p className="lede mt-4 max-w-prose">
                 We publish no prices, ranges, or per-foot figures. Doing so
                 would be a guess on a project nobody has seen. What we can do is
                 tell you which variables move the number.
@@ -195,8 +195,8 @@ export default async function ServicePage({ params }: { params: Params }) {
             </section>
 
             <section id="prepare" className="scroll-mt-36 border-t py-8 md:py-14" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Preparation</p>
-              <h2 className="h2 mt-4 text-center lg:text-left">
+              <p className="eyebrow">Preparation</p>
+              <h2 className="h2 mt-4">
                 Get more out of the estimate visit
               </h2>
               <div className="mt-8">
@@ -208,8 +208,8 @@ export default async function ServicePage({ params }: { params: Params }) {
             </section>
 
             <section id="vetting" className="scroll-mt-36 border-t py-8 md:py-14" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">How routing works</p>
-              <h2 className="h2 mt-4 text-center lg:text-left">
+              <p className="eyebrow">How routing works</p>
+              <h2 className="h2 mt-4">
                 How your request reaches a service provider
               </h2>
               <div className="mt-8">

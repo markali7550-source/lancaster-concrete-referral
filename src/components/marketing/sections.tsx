@@ -48,17 +48,13 @@ export function Section({
         {eyebrow || title || lead ? (
           <div
             className={
-              align === "center"
-                ? "mx-auto max-w-2xl text-center"
-                : "mx-auto max-w-3xl text-center lg:mx-0 lg:text-left"
+              align === "center" ? "mx-auto max-w-2xl text-center" : "max-w-3xl"
             }
           >
             {eyebrow ? (
               <p
                 className={
-                  align === "center"
-                    ? "eyebrow before:hidden"
-                    : "eyebrow before:hidden lg:before:block"
+                  align === "center" ? "eyebrow before:hidden" : "eyebrow"
                 }
               >
                 {eyebrow}
