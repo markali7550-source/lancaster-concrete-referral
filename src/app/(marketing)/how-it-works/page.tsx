@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   HowMatchingWorks,
@@ -42,16 +43,30 @@ export default function HowItWorksPage() {
           backgroundColor: "var(--color-surface)",
         }}
       >
-        <div className="container-page py-12 text-center md:py-16 lg:text-left">
-          <p className="eyebrow before:hidden lg:before:block">Our process</p>
-          <h1 className="h1 mx-auto mt-5 max-w-3xl lg:mx-0">
-            How Our Concrete Service Provider Referrals Work
-          </h1>
-          <p className="lede mx-auto mt-5 max-w-2xl lg:mx-0">
-            What happens between the moment you submit a request and the moment
-            an independent contractor calls you — including the checks that stop
-            a request from being routed at all.
-          </p>
+        <div className="container-page grid items-center gap-8 py-12 text-center md:py-16 lg:grid-cols-2 lg:gap-12 lg:text-left">
+          <div className="min-w-0">
+            <p className="eyebrow before:hidden lg:before:block">Our process</p>
+            <h1 className="h1 mx-auto mt-5 max-w-3xl lg:mx-0">
+              How Our Concrete Service Provider Referrals Work
+            </h1>
+            <p className="lede mx-auto mt-5 max-w-2xl lg:mx-0">
+              What happens between the moment you submit a request and the
+              moment an independent contractor calls you — including the checks
+              that stop a request from being routed at all.
+            </p>
+          </div>
+          <div className="min-w-0">
+            <Image
+              src="/how-it-works-hero.webp"
+              alt="Two concrete workers screeding and floating a freshly poured residential driveway slab between timber forms outside a brick home"
+              width={1200}
+              height={896}
+              priority
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              className="h-auto w-full rounded-[18px] border object-cover"
+              style={{ borderColor: "var(--color-line-soft)" }}
+            />
+          </div>
         </div>
       </div>
       <ReferralDisclosureStrip />
