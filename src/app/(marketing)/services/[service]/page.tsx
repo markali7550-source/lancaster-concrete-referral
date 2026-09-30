@@ -13,7 +13,6 @@ import {
 import {
   Breadcrumbs,
   CostTable,
-  CtaBand,
   InPageNav,
   KeyFacts,
   OptionsList,
@@ -23,6 +22,14 @@ import {
   ServiceHero,
   Timeline,
 } from "@/components/marketing/service-sections";
+import {
+  MayInclude,
+  MoreInformation,
+  ReferralSteps,
+  ServiceCtaBand,
+  ServiceDisclosureBlock,
+} from "@/components/marketing/service-detail-sections";
+import { serviceDetails } from "@/content/service-details";
 import { getService, publishedServices } from "@/content/services";
 import { publishedLocationServices } from "@/content/location-services";
 import { getLocation } from "@/content/locations";
@@ -84,13 +91,18 @@ export default async function ServicePage({ params }: { params: Params }) {
         Boolean(entry.location),
     );
 
+  const detail = serviceDetails[service.slug];
+
   const navItems = [
     { id: "scope", label: "What's covered" },
+    { id: "more-information", label: "More information" },
+    { id: "may-include", label: "May include" },
     { id: "options", label: "Options" },
     { id: "process", label: "Process" },
     { id: "cost", label: "What drives cost" },
     { id: "prepare", label: "Prepare" },
     { id: "vetting", label: "How routing works" },
+    { id: "how-it-works", label: "How it works" },
     { id: "quote-form", label: "Get a quote" },
     { id: "faq", label: "FAQ" },
   ];
@@ -136,11 +148,11 @@ export default async function ServicePage({ params }: { params: Params }) {
           {/* ---------------------------------------------------- Main column */}
           <div className="min-w-0 lg:col-span-7 xl:col-span-8">
             <section id="scope" className="scroll-mt-36 py-8 md:py-14">
-              <p className="eyebrow">Scope</p>
-              <h2 className="h2 mt-4">
+              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Scope</p>
+              <h2 className="h2 mt-4 text-center lg:text-left">
                 What we route under {service.name.toLowerCase()}
               </h2>
-              <p className="lede mt-4 max-w-prose">
+              <p className="lede mx-auto mt-4 max-w-prose text-center lg:mx-0 lg:text-left">
                 {service.summary}
               </p>
               <div className="mt-8">
@@ -152,11 +164,11 @@ export default async function ServicePage({ params }: { params: Params }) {
             </section>
 
             <section id="options" className="scroll-mt-36 border-t py-8 md:py-14" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="eyebrow">Specification</p>
-              <h2 className="h2 mt-4">
+              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Specification</p>
+              <h2 className="h2 mt-4 text-center lg:text-left">
                 Choices your contractor will raise
               </h2>
-              <p className="lede mt-4 max-w-prose">
+              <p className="lede mx-auto mt-4 max-w-prose text-center lg:mx-0 lg:text-left">
                 We do not specify your project. These are the decisions that
                 come up so you are not hearing them for the first time on site.
               </p>
@@ -166,11 +178,11 @@ export default async function ServicePage({ params }: { params: Params }) {
             </section>
 
             <section id="process" className="scroll-mt-36 border-t py-8 md:py-14" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="eyebrow">Process</p>
-              <h2 className="h2 mt-4">
+              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Process</p>
+              <h2 className="h2 mt-4 text-center lg:text-left">
                 How a {service.shortName.toLowerCase().replace(/s$/, "")} project usually runs
               </h2>
-              <p className="lede mt-4 max-w-prose">
+              <p className="lede mx-auto mt-4 max-w-prose text-center lg:mx-0 lg:text-left">
                 Durations below are typical ranges reported by partners, not
                 commitments. Your contractor sets the actual schedule.
               </p>
@@ -180,11 +192,11 @@ export default async function ServicePage({ params }: { params: Params }) {
             </section>
 
             <section id="cost" className="scroll-mt-36 border-t py-8 md:py-14" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="eyebrow">Pricing</p>
-              <h2 className="h2 mt-4">
+              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Pricing</p>
+              <h2 className="h2 mt-4 text-center lg:text-left">
                 What actually drives the price
               </h2>
-              <p className="lede mt-4 max-w-prose">
+              <p className="lede mx-auto mt-4 max-w-prose text-center lg:mx-0 lg:text-left">
                 We publish no prices, ranges, or per-foot figures. Doing so
                 would be a guess on a project nobody has seen. What we can do is
                 tell you which variables move the number.
@@ -195,8 +207,8 @@ export default async function ServicePage({ params }: { params: Params }) {
             </section>
 
             <section id="prepare" className="scroll-mt-36 border-t py-8 md:py-14" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="eyebrow">Preparation</p>
-              <h2 className="h2 mt-4">
+              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Preparation</p>
+              <h2 className="h2 mt-4 text-center lg:text-left">
                 Get more out of the estimate visit
               </h2>
               <div className="mt-8">
@@ -208,8 +220,8 @@ export default async function ServicePage({ params }: { params: Params }) {
             </section>
 
             <section id="vetting" className="scroll-mt-36 border-t py-8 md:py-14" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="eyebrow">How routing works</p>
-              <h2 className="h2 mt-4">
+              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">How routing works</p>
+              <h2 className="h2 mt-4 text-center lg:text-left">
                 How your request reaches a service provider
               </h2>
               <div className="mt-8">
@@ -249,6 +261,43 @@ export default async function ServicePage({ params }: { params: Params }) {
         </div>
       </div>
 
+      <SectionDivider />
+
+      <section id="more-information" className="scroll-mt-32">
+        <Section
+          eyebrow="More information"
+          title={`Understanding ${service.nameLower} in Lancaster, SC`}
+          lead={`A plain-language look at what ${service.nameLower} projects involve, what homeowners in Lancaster County typically ask about, and what is worth settling before any work begins.`}
+        >
+          <MoreInformation blocks={detail.moreInfo} />
+        </Section>
+      </section>
+
+      <SectionDivider />
+
+      <section id="may-include" className="scroll-mt-32">
+        <Section
+          eyebrow="Scope"
+          title={`What ${service.nameLower} work may include`}
+        >
+          <MayInclude items={detail.mayInclude} serviceName={service.name} />
+        </Section>
+      </section>
+
+      <SectionDivider />
+
+      <section id="how-it-works" className="scroll-mt-32">
+        <Section
+          eyebrow="How it works"
+          title="Three steps to a referral"
+          lead="Requesting a referral takes a few minutes. Here is what happens after you submit your project details."
+        >
+          <ReferralSteps />
+        </Section>
+      </section>
+
+      <ServiceDisclosureBlock />
+
       {cityLinks.length > 0 ? (
         <Section eyebrow="Local pages" title={`${service.name} by city`} compact>
           <ul className="flex flex-wrap gap-3">
@@ -283,10 +332,7 @@ export default async function ServicePage({ params }: { params: Params }) {
       </Section>
 
 
-      <CtaBand
-        title={`Ready to get matched for ${service.nameLower}?`}
-        body="One request, one eligible independent contractor, no charge to you. If nobody approved for your area can take it, we will say so plainly."
-      />
+      <ServiceCtaBand />
 
     </>
   );

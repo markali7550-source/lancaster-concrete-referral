@@ -10,6 +10,9 @@ export const REFERRAL_SERVICE_DISCLOSURE = `Referral Service Disclosure: We are 
 /** Shown inside the lead form, visually secondary to the fields. */
 export const LEAD_FORM_DISCLOSURE = `By submitting this form, you are requesting to be connected with an independent concrete service provider. Your project information and contact details may be shared with a participating provider for the purpose of responding to your request.`;
 
+/** Verbatim disclosure required on every service page. */
+export const SERVICE_PAGE_DISCLOSURE = `We are a referral service, not a concrete contractor. We connect homeowners with independent third-party concrete service providers. We do not perform, supervise, or guarantee the services provided by third parties.`;
+
 export const SHORT_DISCLOSURE = `We are a referral service, not a concrete contractor. We connect homeowners with independent third-party concrete service providers.`;
 
 export const CALL_DISCLOSURE = `Calls may be routed to an independent contractor and call details may be recorded for routing and quality purposes where permitted.`;

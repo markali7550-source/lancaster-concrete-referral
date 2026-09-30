@@ -127,8 +127,8 @@ export default async function ComboPage({ params }: { params: Params }) {
         <div className="grid gap-6 lg:grid-cols-12 lg:gap-14">
           <div className="min-w-0 lg:col-span-7 xl:col-span-8">
             <section className="scroll-mt-36 py-8 md:py-14">
-              <p className="eyebrow">{`${serviceRecord.name} · ${location.city}`}</p>
-              <h2 className="h2 mt-4">
+              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">{`${serviceRecord.name} · ${location.city}`}</p>
+              <h2 className="h2 mt-4 text-center lg:text-left">
                 What we see on {location.city}{" "}
                 {serviceRecord.shortName.toLowerCase()} requests
               </h2>
@@ -160,11 +160,11 @@ export default async function ComboPage({ params }: { params: Params }) {
               className="scroll-mt-36 border-t py-8 md:py-14"
               style={{ borderColor: "var(--color-line-soft)" }}
             >
-              <p className="eyebrow">Process</p>
-              <h2 className="h2 mt-4">
+              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Process</p>
+              <h2 className="h2 mt-4 text-center lg:text-left">
                 How the project usually runs here
               </h2>
-              <p className="lede mt-4 max-w-prose">
+              <p className="lede mx-auto mt-4 max-w-prose text-center lg:mx-0 lg:text-left">
                 Typical ranges reported by participating providers, not commitments. Your
                 contractor sets the actual schedule for your site.
               </p>
@@ -177,9 +177,9 @@ export default async function ComboPage({ params }: { params: Params }) {
               className="scroll-mt-36 border-t py-8 md:py-14"
               style={{ borderColor: "var(--color-line-soft)" }}
             >
-              <p className="eyebrow">Pricing</p>
-              <h2 className="h2 mt-4">What drives the price locally</h2>
-              <p className="lede mt-4 max-w-prose">
+              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Pricing</p>
+              <h2 className="h2 mt-4 text-center lg:text-left">What drives the price locally</h2>
+              <p className="lede mx-auto mt-4 max-w-prose text-center lg:mx-0 lg:text-left">
                 We publish no figures. These are the variables that move the
                 number on a {location.city} property.
               </p>
@@ -192,8 +192,8 @@ export default async function ComboPage({ params }: { params: Params }) {
               className="scroll-mt-36 border-t py-8 md:py-14"
               style={{ borderColor: "var(--color-line-soft)" }}
             >
-              <p className="eyebrow">Preparation</p>
-              <h2 className="h2 mt-4">Get more out of the estimate visit</h2>
+              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Preparation</p>
+              <h2 className="h2 mt-4 text-center lg:text-left">Get more out of the estimate visit</h2>
               <div className="mt-8">
                 <PrepColumns
                   checklist={serviceRecord.prepChecklist}
@@ -206,8 +206,8 @@ export default async function ComboPage({ params }: { params: Params }) {
               className="scroll-mt-36 border-t py-8 md:py-14"
               style={{ borderColor: "var(--color-line-soft)" }}
             >
-              <p className="eyebrow">How routing works</p>
-              <h2 className="h2 mt-4">Before your request is passed on</h2>
+              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">How routing works</p>
+              <h2 className="h2 mt-4 text-center lg:text-left">Before your request is passed on</h2>
               <div className="mt-8">
                 <RoutingControls />
               </div>
