@@ -52,7 +52,7 @@ export function ServiceHero({
   return (
     <section className="border-b" style={{ borderColor: "var(--color-line)" }}>
       <div className="container-page grid items-center gap-8 py-10 lg:grid-cols-12 lg:gap-12 lg:py-14">
-        <div className="text-center lg:col-span-5 lg:text-left">
+        <div className="text-center lg:col-span-6 lg:text-left">
           <p className="eyebrow before:hidden lg:before:block">{cityLabel}</p>
           <h1 className="h1 mt-5">
             {h1}
@@ -92,7 +92,7 @@ export function ServiceHero({
           </p>
         </div>
 
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-6">
           <div
             className="mx-auto w-full max-w-md overflow-hidden rounded-[20px] border sm:max-w-lg lg:max-w-none"
             style={{ borderColor: "var(--color-line-soft)", boxShadow: "var(--shadow-raised)" }}
@@ -103,7 +103,7 @@ export function ServiceHero({
               width={1200}
               height={800}
               priority
-              sizes="(min-width: 1024px) 58vw, 100vw"
+              sizes="(min-width: 1024px) 48vw, 100vw"
               className="h-auto w-full object-cover"
             />
           </div>
