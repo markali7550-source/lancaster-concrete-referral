@@ -16,7 +16,7 @@ import { pageMetadata } from "@/lib/seo/metadata";
  */
 export const metadata: Metadata = pageMetadata({
   title: "Service areas",
-  description: "Published service areas for our concrete service provider referrals.",
+  description: "Service areas for our concrete service provider referrals.",
   path: "/locations",
   noindex: true,
 });
@@ -35,14 +35,14 @@ export default function LocationsPage() {
           Service areas
         </p>
         <h1 className="h1 mx-auto mt-5 max-w-3xl lg:mx-0" style={{ color: overlayHeading }}>
-          Where We Currently Publish
+          Areas We Currently Serve
         </h1>
         <p className="lede mx-auto mt-5 max-w-2xl lg:mx-0" style={{ color: overlayBody }}>
-          One published service area today. Additional South Carolina cities
-          appear here only after coverage, content, and compliance gates pass.
+          One service area today. Additional South Carolina cities appear
+          here only after coverage, content, and compliance gates pass.
         </p>
       </OverlayHeader>
-      <Section title="Published service areas">
+      <Section title="Current service areas">
       <ul className="flex flex-wrap gap-3">
         {publishedLocations.map((location) => (
           <li key={location.slug}>
