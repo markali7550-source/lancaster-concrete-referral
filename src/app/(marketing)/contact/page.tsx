@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/seo/metadata";
 import { breadcrumbNode, buildGraph, webPageNode } from "@/lib/schema/graph";
 import { CALL_DISCLOSURE } from "@/lib/seo/disclosure";
 
-const TITLE = `Contact ${site.brand} | Lancaster, SC Concrete Referrals`;
+const TITLE = "Contact Us | Concrete Referrals in Lancaster, SC";
 const DESCRIPTION =
   "Call or send a request and we will route it to an independent third party concrete service provider serving your covered area.";
 
@@ -41,7 +41,9 @@ export default function ContactPage() {
       >
         <div className="container-page py-12 text-center md:py-16 lg:text-left">
           <p className="eyebrow before:hidden lg:before:block">Contact</p>
-          <h1 className="h1 mx-auto mt-5 max-w-3xl lg:mx-0">Talk to our referral team</h1>
+          <h1 className="h1 mx-auto mt-5 max-w-3xl lg:mx-0">
+            Contact Our Lancaster, SC Concrete Referral Team
+          </h1>
           <p className="lede mx-auto mt-5 max-w-2xl lg:mx-0">
             We can confirm whether we have approved coverage for your area
             before you go any further.

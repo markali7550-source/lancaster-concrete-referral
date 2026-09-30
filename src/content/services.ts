@@ -417,7 +417,7 @@ export const services: readonly ServiceRecord[] = [
     summary:
       "Residential slabs and pads for sheds, equipment, vehicles, and outbuildings, nonstructural work only.",
     heroSummary:
-      "Looking for a concrete slab contractor in Lancaster, SC? Shed bases, equipment pads, RV and boat parking, and similar flatwork. We help homeowners connect with independent service providers who may be able to assist with this category. This is the narrowest of our referrals on purpose: anything that carries a building load or needs an engineer is declined rather than routed.",
+      "Looking for a concrete slab contractor in Lancaster, SC? Shed bases, equipment pads, RV and boat parking, and similar flatwork. We connect homeowners with independent service providers who may be able to help. Anything carrying a building load or needing an engineer is declined rather than routed.",
     image: "/services/concrete-slabs.webp",
     imageAlt:
       "Finished flat concrete slab pad in a residential backyard with a small storage shed",
@@ -592,7 +592,7 @@ export const services: readonly ServiceRecord[] = [
     summary:
       "Nonstructural crack repair, surface repair, and resurfacing. Structural assessment is out of scope.",
     heroSummary:
-      "Looking for a concrete repair contractor in Lancaster, SC? We help homeowners connect with independent service providers who may be able to assist with surface level problems on otherwise sound concrete: crazing, spalling, shrinkage cracks, and tired finishes. If what you are describing sounds like movement or load failure instead, we will tell you plainly that you need a different professional.",
+      "Looking for a concrete repair contractor in Lancaster, SC? We connect homeowners with independent service providers who may be able to help with surface level problems on sound concrete: crazing, spalling, shrinkage cracks, and tired finishes. If it sounds like movement or load failure, we will say so plainly.",
     image: "/services/concrete-repair.webp",
     imageAlt:
       "Residential walkway half weathered and cracked, half freshly resurfaced with smooth concrete",

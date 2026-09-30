@@ -426,7 +426,7 @@ export function RelatedServices({
           >
             <Image
               src={service.image}
-              alt=""
+              alt={service.imageAlt}
               width={600}
               height={400}
               sizes="(min-width: 640px) 30vw, 100vw"

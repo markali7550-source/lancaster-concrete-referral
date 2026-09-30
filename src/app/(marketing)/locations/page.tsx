@@ -15,8 +15,9 @@ import { pageMetadata } from "@/lib/seo/metadata";
  * provides distinct value beyond one published city.
  */
 export const metadata: Metadata = pageMetadata({
-  title: "Service areas",
-  description: "Service areas for our concrete service provider referrals.",
+  title: "Concrete Referral Service Areas in South Carolina",
+  description:
+    "The South Carolina areas where we currently route concrete referrals. Coverage is added only once a participating provider approves it in writing.",
   path: "/locations",
   noindex: true,
 });

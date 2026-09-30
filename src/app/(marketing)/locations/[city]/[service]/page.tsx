@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { QuoteForm } from "@/components/lead/QuoteForm";
 import {
-  DecisionSupport,
   FaqSection,
   Hero,
   HowMatchingWorks,
@@ -251,8 +250,18 @@ export default async function ComboPage({ params }: { params: Params }) {
         <HowMatchingWorks />
       </Section>
 
-      <Section eyebrow="Before you call" title="Worth settling first">
-        <DecisionSupport items={serviceRecord.considerations} />
+      <Section
+        eyebrow="Before you call"
+        title="Worth settling first"
+        lead={`The questions worth answering before any ${serviceRecord.name.toLowerCase()} quote apply wherever the work happens, so we keep them in one place rather than repeating them on every local page.`}
+      >
+        <Link
+          href={`/services/${serviceRecord.slug}#prepare`}
+          className="btn btn-secondary"
+        >
+          What to settle before quoting{" "}
+          {serviceRecord.name.toLowerCase()} in {location.city}
+        </Link>
       </Section>
 
       <Section

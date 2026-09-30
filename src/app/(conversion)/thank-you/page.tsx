@@ -4,7 +4,7 @@ import { pageMetadata } from "@/lib/seo/metadata";
 import { site } from "@/lib/env";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Request received",
+  title: "Request Received | Next Steps for Your Concrete Referral",
   description:
     "Your referral request has been received. A participating service provider serving your covered area may contact you directly to arrange a site visit.",
   path: "/thank-you",

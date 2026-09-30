@@ -390,7 +390,7 @@ export function ProjectTypeChooser({
           >
             <Image
               src={service.image}
-              alt=""
+              alt={service.imageAlt}
               width={800}
               height={500}
               sizes="(min-width: 640px) 45vw, 100vw"

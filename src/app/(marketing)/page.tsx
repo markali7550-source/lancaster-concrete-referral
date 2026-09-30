@@ -23,9 +23,9 @@ import { REFERRAL_SERVICE_DISCLOSURE } from "@/lib/seo/disclosure";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { buildGraph, faqNode, webPageNode } from "@/lib/schema/graph";
 
-const TITLE = `Concrete Referrals in Lancaster, SC | ${site.brand}`;
+const TITLE = `Lancaster SC Concrete Referrals | ${site.brand}`;
 const DESCRIPTION =
-  "We help Lancaster, SC homeowners connect with independent concrete service providers for driveways, patios, slabs, and repair. We are a referral service, not a contractor.";
+  "Connect with independent concrete service providers in Lancaster, SC for driveways, patios, slabs and repair. We are a referral service, not a contractor.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,

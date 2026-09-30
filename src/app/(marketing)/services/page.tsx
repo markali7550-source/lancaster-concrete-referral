@@ -18,9 +18,9 @@ import { pageMetadata } from "@/lib/seo/metadata";
 import { breadcrumbNode, buildGraph, faqNode, webPageNode } from "@/lib/schema/graph";
 import { site } from "@/lib/env";
 
-const TITLE = `Concrete Services in Lancaster, SC | ${site.brand}`;
+const TITLE = "Concrete Services in Lancaster, SC | Driveways to Repair";
 const DESCRIPTION =
-  "Driveways, patios, slabs, and nonstructural repair in Lancaster, SC. See what each referral covers, what is out of scope, and how requests reach an independent service provider.";
+  "Driveways, patios, slabs and nonstructural repair in Lancaster, SC. See what each referral covers and how your request reaches an independent provider.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,
