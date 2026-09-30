@@ -119,7 +119,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
   "concrete-slabs": {
     detailImage: "/services/concrete-slabs-detail.webp",
     detailImageAlt:
-      "Concrete slab construction project in Lancaster SC with timber forms and reinforcing mesh",
+      "Finished residential concrete slab and equipment pad in Lancaster SC beside a brick home, with an HVAC condenser on the pad",
     mayInclude: [
       "Residential slabs",
       "Garage slabs",
