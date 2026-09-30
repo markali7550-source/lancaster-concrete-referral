@@ -438,8 +438,15 @@ export function HowMatchingWorks() {
 
 export function DecisionSupport({
   items,
+  name = "decision-support",
 }: {
   items: { question: string; answer: string }[];
+  /**
+   * Shared name that makes the group an exclusive accordion: opening one row
+   * closes the row that was open. Pass a distinct value if two groups ever
+   * render on the same page.
+   */
+  name?: string;
 }) {
   return (
     <div
@@ -447,7 +454,7 @@ export function DecisionSupport({
       style={{ borderColor: "var(--color-line-soft)", backgroundColor: "var(--color-surface)" }}
     >
       {items.map((item) => (
-        <details key={item.question} className="group">
+        <details key={item.question} name={name} className="group">
           <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-6 p-6 font-medium">
             {item.question}
             <span
