@@ -132,7 +132,7 @@ export default async function LocationPage({ params }: { params: Params }) {
       <Section
         eyebrow="Local conditions"
         title={`What shapes concrete work in ${location.city}`}
-        lead="Notes gathered from participating provider conversations about this specific market — not generic filler with a city name dropped in."
+        lead="Notes gathered from participating provider conversations about this specific market, not generic filler with a city name dropped in."
       >
         <ul className="grid gap-5 lg:grid-cols-3">
           {location.localEvidence.map((item, index) => (
@@ -159,7 +159,7 @@ export default async function LocationPage({ params }: { params: Params }) {
         tone="surface"
         eyebrow="Services"
         title={`Concrete services routed in ${location.city}`}
-        lead="Pick the closest match. The category only decides which participating providers are eligible — the contractor scopes the whole job on site."
+        lead="Pick the closest match. The category only decides which participating providers are eligible. The contractor scopes the whole job on site."
       >
         <ProjectTypeChooser />
         {comboSlugs.length > 0 ? (

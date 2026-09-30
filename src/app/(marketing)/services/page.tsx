@@ -37,7 +37,7 @@ const FAQS = [
   {
     question: "What happens if my project spans two services?",
     answer:
-      "Pick the closest match and describe the rest in the project note. The contractor scopes the whole job on site — the category only affects which participating providers are eligible to receive it.",
+      "Pick the closest match and describe the rest in the project note. The contractor scopes the whole job on site. The category only affects which participating providers are eligible to receive it.",
   },
   {
     question: "Do you charge for the referral?",

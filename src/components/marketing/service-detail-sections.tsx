@@ -113,7 +113,7 @@ export function ReferralSteps() {
               {index + 1}
             </span>
             <p className="mt-4 text-center text-[16px] font-semibold md:text-left">
-              Step {index + 1} — {step.title}
+              Step {index + 1}: {step.title}
             </p>
             <p className="mt-2 text-center text-[14px] leading-relaxed text-[color:var(--color-muted)] md:text-left">
               {step.body}
@@ -123,7 +123,7 @@ export function ReferralSteps() {
       </ol>
       <p className="mt-5 text-center text-[13px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
         This platform routes requests only. We do not perform the work
-        ourselves — the independent provider quotes, schedules, and carries out
+        ourselves. The independent provider quotes, schedules, and carries out
         any project you agree to.
       </p>
     </div>

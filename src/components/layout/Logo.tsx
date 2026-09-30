@@ -7,7 +7,7 @@ import { site } from "@/lib/env";
  */
 export function Logo({ height = 36 }: { height?: number }) {
   const width = Math.round((height * 1808) / 556);
-  const alt = `${site.brand} — concrete referral platform`;
+  const alt = `${site.brand}, concrete referral platform`;
   return (
     <>
       <Image

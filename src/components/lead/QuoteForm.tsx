@@ -561,8 +561,8 @@ export function QuoteForm({
                 color: "var(--color-danger)",
               }}
             >
-              We could not submit your request. Your details are still here —
-              try again, or call {fallbackDisplay}.
+              We could not submit your request. Your details are still here.
+              Try again, or call {fallbackDisplay}.
             </p>
           ) : null}
 

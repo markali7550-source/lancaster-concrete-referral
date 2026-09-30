@@ -204,17 +204,8 @@ export function ScopeColumns({
         <p className="font-semibold">Not routed under this service</p>
         <ul className="mt-3 space-y-2.5 text-sm text-[color:var(--color-muted)]">
           {outOfScope.map((item) => (
-            <li
-              key={item}
-              className="block text-center lg:flex lg:justify-start lg:gap-2.5 lg:text-left"
-            >
-              <span
-                aria-hidden="true"
-                className="mr-1.5 inline font-semibold lg:mr-0 lg:mt-px lg:inline-block"
-              >
-                —
-              </span>
-              <span>{item}</span>
+            <li key={item} className="text-center lg:text-left">
+              {item}
             </li>
           ))}
         </ul>

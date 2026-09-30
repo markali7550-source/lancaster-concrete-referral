@@ -26,7 +26,7 @@ export default function ThankYouPage() {
           Request received
         </p>
         <h1 className="h1 mt-4">
-          Thanks — your request is in the routing queue
+          Thanks, your request is in the routing queue
         </h1>
         <p className="lede mt-5">
           You will be contacted by one independent service provider, not by a call

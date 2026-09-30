@@ -50,7 +50,7 @@ export const services: readonly ServiceRecord[] = [
     summary:
       "New pours and full replacements, including tear-out of failed slabs and the drainage questions that come with Lancaster County clay.",
     heroSummary:
-      "Looking for a concrete driveway contractor in Lancaster, SC? We help homeowners connect with independent local service providers who may be able to assist with new pours and full replacements. Submit your project details to request a referral. We are a referral service and do not perform concrete work ourselves — the provider quotes, schedules, and performs the work.",
+      "Looking for a concrete driveway contractor in Lancaster, SC? We help homeowners connect with independent local service providers who may be able to assist with new pours and full replacements. Submit your project details to request a referral. We are a referral service and do not perform concrete work ourselves. The provider quotes, schedules, and performs the work.",
     image: "/services/concrete-driveways.webp",
     imageAlt:
       "Newly poured residential concrete driveway with saw-cut control joints and a broom finish",
@@ -142,7 +142,7 @@ export const services: readonly ServiceRecord[] = [
         phase: "Cure and return to use",
         duration: "Ask the contractor",
         detail:
-          "Foot and vehicle traffic timing depend on mix, weather, and thickness. Your contractor gives the figures for your pour — we do not.",
+          "Foot and vehicle traffic timing depend on mix, weather, and thickness. Your contractor gives the figures for your pour. We do not.",
       },
     ],
     costFactors: [
@@ -328,7 +328,7 @@ export const services: readonly ServiceRecord[] = [
         phase: "Joints, cure, and sealing",
         duration: "Ask the contractor",
         detail:
-          "Joints are cut, the slab cures, and any sealer is applied on the contractor's schedule — not before it is ready.",
+          "Joints are cut, the slab cures, and any sealer is applied on the contractor's schedule, not before it is ready.",
       },
     ],
     costFactors: [
@@ -415,7 +415,7 @@ export const services: readonly ServiceRecord[] = [
     state: "published",
     intent: "Residential slab and pad enquiries",
     summary:
-      "Residential slabs and pads for sheds, equipment, vehicles, and outbuildings — non-structural work only.",
+      "Residential slabs and pads for sheds, equipment, vehicles, and outbuildings, non-structural work only.",
     heroSummary:
       "Looking for a concrete slab contractor in Lancaster, SC? Shed bases, equipment pads, RV and boat parking, and similar flatwork. We help homeowners connect with independent service providers who may be able to assist with this category. This is the narrowest of our referrals on purpose: anything that carries a building load or needs an engineer is declined rather than routed.",
     image: "/services/concrete-slabs.webp",
@@ -573,7 +573,7 @@ export const services: readonly ServiceRecord[] = [
       {
         question: "Does the site need to be cleared first?",
         answer:
-          "Clearing, access, and spoil removal are priced per site. Tell the contractor about slope, trees, and access width early — those three things change the quote more than the slab size does.",
+          "Clearing, access, and spoil removal are priced per site. Tell the contractor about slope, trees, and access width early. Those three things change the quote more than the slab size does.",
       },
       {
         question: "My shed supplier says I need a level base. Is that all?",
@@ -636,7 +636,7 @@ export const services: readonly ServiceRecord[] = [
       {
         name: "Partial-depth patching",
         description:
-          "Damaged surface material is removed back to sound concrete and replaced. Colour match is never perfect — expect a visible repair.",
+          "Damaged surface material is removed back to sound concrete and replaced. Colour match is never perfect. Expect a visible repair.",
       },
       {
         name: "Cementitious overlay",

@@ -57,7 +57,7 @@ export default function HowItWorksPage() {
           style={{ color: overlayBody }}
         >
           What happens between the moment you submit a request and the
-          moment an independent contractor calls you — including the checks
+          moment an independent contractor calls you, including the checks
           that stop a request from being routed at all.
         </p>
       </OverlayHeader>
