@@ -107,6 +107,7 @@ export default function HomePage() {
         summary="Tell us your project and location, and we’ll pass your request to an independent local service provider who serves your area. We are a referral service, not a concrete contractor, and we do not perform concrete work ourselves."
         imageSrc="/home-hero.webp"
         imageAlt="Broom-finished concrete front walkway and entry steps leading to the porch of a two-storey home"
+        overlay
       />
       <StatStrip items={STATS} />
       <ReferralDisclosureStrip />

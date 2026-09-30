@@ -93,19 +93,99 @@ export function SectionDivider() {
 
 /* ------------------------------------------------------------------- Hero */
 
+const HERO_TRUST = [
+  "Free for homeowners",
+  "One independent provider, not five",
+  "Written coverage areas only",
+];
+
 export function Hero({
   locationCue,
   h1,
   summary,
   imageSrc = "/home-hero.webp",
   imageAlt = "Broom-finished concrete front walkway and entry steps at a two-storey home",
+  overlay = false,
 }: {
   locationCue: string;
   h1: string;
   summary: string;
   imageSrc?: string;
   imageAlt?: string;
+  /** Full-bleed photo behind the copy instead of a photo beside it. */
+  overlay?: boolean;
 }) {
+  if (overlay) {
+    return (
+      <section
+        className="relative isolate overflow-hidden border-b"
+        style={{ borderColor: "var(--color-line-soft)" }}
+      >
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          fill
+          priority
+          sizes="100vw"
+          className="-z-20 object-cover"
+        />
+        <div
+          className="absolute inset-0 -z-10 bg-gradient-to-b from-[#070b09]/85 via-[#070b09]/75 to-[#070b09]/85 lg:bg-gradient-to-r lg:from-[#070b09]/92 lg:via-[#070b09]/78 lg:to-[#070b09]/35"
+          aria-hidden="true"
+        />
+        <div className="container-page flex min-h-[calc(100dvh-6.25rem)] items-center py-14 lg:py-20">
+          <div className="mx-auto w-full max-w-2xl text-center lg:mx-0 lg:text-left">
+            <p
+              className="eyebrow before:hidden lg:before:block"
+              style={{ color: "#5fe3a8" }}
+            >
+              {locationCue}
+            </p>
+            <h1 className="h1 mt-5" style={{ color: "#ffffff" }}>
+              {h1}
+            </h1>
+            <p
+              className="lede mx-auto mt-5 max-w-prose lg:mx-0"
+              style={{ color: "rgba(255,255,255,0.88)" }}
+            >
+              {summary}
+            </p>
+
+            <div
+              id="hero-actions"
+              className="mx-auto mt-8 grid w-full max-w-sm gap-3 lg:mx-0 lg:max-w-none lg:grid-cols-[repeat(2,minmax(0,15rem))]"
+            >
+              <DynamicPhone
+                fallbackDisplay={site.phoneDisplay}
+                fallbackE164={site.phoneE164}
+                placement="hero"
+                className="btn btn-primary"
+              />
+              <a href="#quote-form" className="btn btn-secondary">
+                Request a referral
+                <Icon name="arrow" />
+              </a>
+            </div>
+
+            <ul
+              className="mt-7 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[13px] lg:justify-start"
+              style={{ color: "rgba(255,255,255,0.82)" }}
+            >
+              {HERO_TRUST.map((item) => (
+                <li key={item} className="flex items-center gap-1.5">
+                  <span style={{ color: "#5fe3a8" }}>
+                    <Icon name="check" className="h-4 w-4" />
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section
       className="border-b"
@@ -139,11 +219,7 @@ export function Hero({
           </div>
 
           <ul className="mt-7 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[13px] text-[color:var(--color-muted)] lg:justify-start">
-            {[
-              "Free for homeowners",
-              "One independent provider, not five",
-              "Written coverage areas only",
-            ].map((item) => (
+            {HERO_TRUST.map((item) => (
               <li key={item} className="flex items-center gap-1.5">
                 <span style={{ color: "var(--color-accent)" }}>
                   <Icon name="check" className="h-4 w-4" />
