@@ -353,13 +353,12 @@ export function RoutingControls() {
           </li>
         ))}
       </ul>
-      <p className="mt-6 max-w-prose text-[13.5px] leading-relaxed text-[color:var(--color-muted)]">
+      <p className="mt-6 text-[13.5px] leading-relaxed text-[color:var(--color-muted)]">
         These are routing controls only. They are not a verification of any
         provider&apos;s licence, insurance, or workmanship, and they are not a
         warranty, an endorsement, or a substitute for your own checks. Confirm
         licence status, insurance, and credentials directly with the provider
         and through SC LLR before you hire.
-        Confirm licence status yourself through SC LLR before you sign anything.
       </p>
     </>
   );
