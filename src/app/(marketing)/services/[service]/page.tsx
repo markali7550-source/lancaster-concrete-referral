@@ -3,7 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { QuoteForm } from "@/components/lead/QuoteForm";
-import { MobileActionBar } from "@/components/lead/MobileActionBar";
 import {
   FaqSection,
   ReferralDisclosureStrip,
@@ -289,10 +288,6 @@ export default async function ServicePage({ params }: { params: Params }) {
         body="One request, one eligible independent contractor, no charge to you. If nobody approved for your area can take it, we will say so plainly."
       />
 
-      <MobileActionBar
-        fallbackDisplay={site.phoneDisplay}
-        fallbackE164={site.phoneE164}
-      />
     </>
   );
 }

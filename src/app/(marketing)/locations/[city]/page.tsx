@@ -3,7 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { QuoteForm } from "@/components/lead/QuoteForm";
-import { MobileActionBar } from "@/components/lead/MobileActionBar";
 import {
   AdjacentAreas,
   DecisionSupport,
@@ -254,10 +253,6 @@ export default async function LocationPage({ params }: { params: Params }) {
         body="One request, one eligible independent contractor, no charge and no obligation."
       />
 
-      <MobileActionBar
-        fallbackDisplay={site.phoneDisplay}
-        fallbackE164={site.phoneE164}
-      />
     </>
   );
 }

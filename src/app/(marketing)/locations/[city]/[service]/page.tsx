@@ -3,7 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { QuoteForm } from "@/components/lead/QuoteForm";
-import { MobileActionBar } from "@/components/lead/MobileActionBar";
 import {
   DecisionSupport,
   FaqSection,
@@ -284,10 +283,6 @@ export default async function ComboPage({ params }: { params: Params }) {
         body="One request, one eligible independent contractor. If nobody approved for your area can take it, we will tell you plainly."
       />
 
-      <MobileActionBar
-        fallbackDisplay={site.phoneDisplay}
-        fallbackE164={site.phoneE164}
-      />
     </>
   );
 }

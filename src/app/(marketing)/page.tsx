@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { QuoteForm } from "@/components/lead/QuoteForm";
-import { MobileActionBar } from "@/components/lead/MobileActionBar";
 import {
   AdjacentAreas,
   DecisionSupport,
@@ -259,10 +258,6 @@ export default function HomePage() {
         body="One request, one independent third-party service provider, no charge to you and no obligation to proceed."
       />
 
-      <MobileActionBar
-        fallbackDisplay={site.phoneDisplay}
-        fallbackE164={site.phoneE164}
-      />
     </>
   );
 }
