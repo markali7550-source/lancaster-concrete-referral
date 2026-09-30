@@ -50,6 +50,7 @@ export default function ContactPage() {
       </div>
       <ReferralDisclosureStrip />
       <Section>
+        <h2 className="sr-only">Contact details and referral request</h2>
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
           <div>
             <p className="lede max-w-prose">

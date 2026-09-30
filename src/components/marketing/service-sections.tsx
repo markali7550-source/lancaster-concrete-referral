@@ -74,7 +74,7 @@ export function ServiceHero({
           </ul>
           <div
             id="hero-actions"
-            className="mx-auto mt-7 grid w-full max-w-sm gap-3 min-[380px]:grid-cols-2 lg:mx-0 lg:max-w-none"
+            className="mx-auto mt-7 grid w-full max-w-sm gap-3 lg:mx-0 lg:max-w-none lg:grid-cols-2"
           >
             <DynamicPhone
               fallbackDisplay={site.phoneDisplay}
@@ -452,7 +452,7 @@ export function CtaBand({
         <div
           className={
             showFormLink
-              ? "grid w-full max-w-sm shrink-0 gap-3 min-[380px]:grid-cols-2 md:w-auto md:max-w-none"
+              ? "grid w-full max-w-sm shrink-0 gap-3 md:w-auto md:max-w-none md:grid-cols-2"
               : "grid w-full max-w-sm shrink-0 gap-3 md:w-auto md:max-w-none"
           }
         >

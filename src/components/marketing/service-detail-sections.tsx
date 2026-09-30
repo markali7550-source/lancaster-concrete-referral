@@ -176,7 +176,7 @@ export function ServiceCtaBand() {
             an independent concrete service provider serving your area.
           </p>
         </div>
-        <div className="grid w-full max-w-sm shrink-0 gap-3 min-[380px]:grid-cols-2 md:w-auto md:max-w-none">
+        <div className="grid w-full max-w-sm shrink-0 gap-3 md:w-auto md:max-w-none md:grid-cols-2">
           <DynamicPhone
             fallbackDisplay={site.phoneDisplay}
             fallbackE164={site.phoneE164}

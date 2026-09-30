@@ -124,7 +124,7 @@ export function Hero({
 
           <div
             id="hero-actions"
-            className="mx-auto mt-8 grid w-full max-w-sm gap-3 min-[380px]:grid-cols-2 lg:mx-0 lg:max-w-none"
+            className="mx-auto mt-8 grid w-full max-w-sm gap-3 lg:mx-0 lg:max-w-none lg:grid-cols-2"
           >
             <DynamicPhone
               fallbackDisplay={site.phoneDisplay}
