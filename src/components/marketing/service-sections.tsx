@@ -427,9 +427,12 @@ export function RelatedServices({
 export function CtaBand({
   title,
   body,
+  showFormLink = true,
 }: {
   title: string;
   body: string;
+  /** Pages without a quote form have nothing to jump to, so they omit it. */
+  showFormLink?: boolean;
 }) {
   return (
     <section
@@ -446,16 +449,24 @@ export function CtaBand({
             {body}
           </p>
         </div>
-        <div className="grid w-full max-w-sm shrink-0 gap-3 min-[380px]:grid-cols-2 md:w-auto md:max-w-none">
+        <div
+          className={
+            showFormLink
+              ? "grid w-full max-w-sm shrink-0 gap-3 min-[380px]:grid-cols-2 md:w-auto md:max-w-none"
+              : "grid w-full max-w-sm shrink-0 gap-3 md:w-auto md:max-w-none"
+          }
+        >
           <DynamicPhone
             fallbackDisplay={site.phoneDisplay}
             fallbackE164={site.phoneE164}
             placement="cta_band"
             className="btn btn-primary"
           />
-          <a href="#quote-form" className="btn btn-secondary">
-            Request a referral
-          </a>
+          {showFormLink ? (
+            <a href="#quote-form" className="btn btn-secondary">
+              Request a referral
+            </a>
+          ) : null}
         </div>
       </div>
     </section>

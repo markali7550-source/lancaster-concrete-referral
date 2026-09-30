@@ -91,6 +91,7 @@ export default function HowItWorksPage() {
       <CtaBand
         title="Ready to start?"
         body="Submit a request and we will route it to one eligible independent contractor, or call the referral team first to check coverage."
+        showFormLink={false}
       />
 
     </>
