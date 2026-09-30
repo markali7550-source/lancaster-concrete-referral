@@ -319,9 +319,7 @@ export default async function ServicePage({ params }: { params: Params }) {
 
       <section id="faq" className="scroll-mt-32">
         <Section eyebrow="FAQ" title={`${service.name} questions`}>
-          <div className="max-w-3xl">
-            <FaqSection faqs={service.considerations} />
-          </div>
+          <FaqSection faqs={service.considerations} />
         </Section>
       </section>
 

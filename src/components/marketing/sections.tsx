@@ -486,7 +486,7 @@ export function FaqSection({
           style={{ borderColor: "var(--color-line-soft)" }}
         >
           <dt className="text-[16px] font-semibold">{faq.question}</dt>
-          <dd className="max-w-prose text-[15px] leading-relaxed text-[color:var(--color-muted)]">
+          <dd className="text-[15px] leading-relaxed text-[color:var(--color-muted)]">
             {faq.answer}
           </dd>
         </div>
