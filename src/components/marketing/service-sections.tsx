@@ -52,13 +52,13 @@ export function ServiceHero({
   return (
     <section className="border-b" style={{ borderColor: "var(--color-line)" }}>
       <div className="container-page grid items-center gap-8 py-10 lg:grid-cols-12 lg:gap-12 lg:py-14">
-        <div className="lg:col-span-5">
-          <p className="eyebrow">{cityLabel}</p>
+        <div className="text-center lg:col-span-5 lg:text-left">
+          <p className="eyebrow before:hidden lg:before:block">{cityLabel}</p>
           <h1 className="h1 mt-5">
             {h1}
           </h1>
-          <p className="lede mt-5 max-w-prose">{summary}</p>
-          <ul className="mt-5 flex flex-wrap gap-2">
+          <p className="lede mx-auto mt-5 max-w-prose lg:mx-0">{summary}</p>
+          <ul className="mt-5 flex flex-wrap justify-center gap-2 lg:justify-start">
             {service.projectTypes.map((type) => (
               <li
                 key={type}
@@ -72,7 +72,10 @@ export function ServiceHero({
               </li>
             ))}
           </ul>
-          <div id="hero-actions" className="mt-7 grid gap-3 min-[380px]:grid-cols-2">
+          <div
+            id="hero-actions"
+            className="mx-auto mt-7 grid w-full max-w-sm gap-3 min-[380px]:grid-cols-2 lg:mx-0 lg:max-w-none"
+          >
             <DynamicPhone
               fallbackDisplay={site.phoneDisplay}
               fallbackE164={site.phoneE164}
@@ -91,7 +94,7 @@ export function ServiceHero({
 
         <div className="lg:col-span-7">
           <div
-            className="overflow-hidden rounded-[20px] border"
+            className="mx-auto w-full max-w-md overflow-hidden rounded-[20px] border sm:max-w-lg lg:max-w-none"
             style={{ borderColor: "var(--color-line-soft)", boxShadow: "var(--shadow-raised)" }}
           >
             <Image
@@ -436,14 +439,14 @@ export function CtaBand({
         backgroundColor: "var(--color-accent-soft)",
       }}
     >
-      <div className="container-page flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+      <div className="container-page flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
         <div className="max-w-xl">
           <h2 className="text-xl font-semibold md:text-2xl">{title}</h2>
           <p className="mt-2 text-sm leading-relaxed text-[color:var(--color-muted)]">
             {body}
           </p>
         </div>
-        <div className="grid shrink-0 gap-3 min-[380px]:grid-cols-2 md:w-auto">
+        <div className="grid w-full max-w-sm shrink-0 gap-3 min-[380px]:grid-cols-2 md:w-auto md:max-w-none">
           <DynamicPhone
             fallbackDisplay={site.phoneDisplay}
             fallbackE164={site.phoneE164}

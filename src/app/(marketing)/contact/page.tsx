@@ -39,10 +39,10 @@ export default function ContactPage() {
           backgroundColor: "var(--color-surface)",
         }}
       >
-        <div className="container-page py-12 md:py-16">
-          <p className="eyebrow">Contact</p>
-          <h1 className="h1 mt-5 max-w-3xl">Talk to our referral team</h1>
-          <p className="lede mt-5 max-w-2xl">
+        <div className="container-page py-12 text-center md:py-16 lg:text-left">
+          <p className="eyebrow before:hidden lg:before:block">Contact</p>
+          <h1 className="h1 mx-auto mt-5 max-w-3xl lg:mx-0">Talk to our referral team</h1>
+          <p className="lede mx-auto mt-5 max-w-2xl lg:mx-0">
             We can confirm whether we have approved coverage for your area
             before you go any further.
           </p>

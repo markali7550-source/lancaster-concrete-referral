@@ -25,10 +25,10 @@ export default function LocationsPage() {
           backgroundColor: "var(--color-surface)",
         }}
       >
-        <div className="container-page py-12 md:py-16">
-          <p className="eyebrow">Service areas</p>
-          <h1 className="h1 mt-5 max-w-3xl">Where We Currently Publish</h1>
-          <p className="lede mt-5 max-w-2xl">
+        <div className="container-page py-12 text-center md:py-16 lg:text-left">
+          <p className="eyebrow before:hidden lg:before:block">Service areas</p>
+          <h1 className="h1 mx-auto mt-5 max-w-3xl lg:mx-0">Where We Currently Publish</h1>
+          <p className="lede mx-auto mt-5 max-w-2xl lg:mx-0">
             One published service area today. Additional South Carolina cities
             appear here only after coverage, content, and compliance gates pass.
           </p>

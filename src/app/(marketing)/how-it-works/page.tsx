@@ -42,12 +42,12 @@ export default function HowItWorksPage() {
           backgroundColor: "var(--color-surface)",
         }}
       >
-        <div className="container-page py-12 md:py-16">
-          <p className="eyebrow">Our process</p>
-          <h1 className="h1 mt-5 max-w-3xl">
+        <div className="container-page py-12 text-center md:py-16 lg:text-left">
+          <p className="eyebrow before:hidden lg:before:block">Our process</p>
+          <h1 className="h1 mx-auto mt-5 max-w-3xl lg:mx-0">
             How Our Concrete Service Provider Referrals Work
           </h1>
-          <p className="lede mt-5 max-w-2xl">
+          <p className="lede mx-auto mt-5 max-w-2xl lg:mx-0">
             What happens between the moment you submit a request and the moment
             an independent contractor calls you — including the checks that stop
             a request from being routed at all.

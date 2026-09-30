@@ -58,12 +58,12 @@ export default function ServicesPage() {
       <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Services" }]} />
 
       <section className="border-b" style={{ borderColor: "var(--color-line)" }}>
-        <div className="container-page py-12 md:py-16">
-          <p className="eyebrow">Service directory</p>
-          <h1 className="mt-3 max-w-3xl text-[2rem] font-semibold leading-[1.12] md:text-[2.75rem]">
+        <div className="container-page py-12 text-center md:py-16 lg:text-left">
+          <p className="eyebrow before:hidden lg:before:block">Service directory</p>
+          <h1 className="mx-auto mt-3 max-w-3xl text-[2rem] font-semibold leading-[1.12] md:text-[2.75rem] lg:mx-0">
             Concrete Services We Route in Lancaster County, SC
           </h1>
-          <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-[color:var(--color-muted)]">
+          <p className="mx-auto mt-4 max-w-2xl text-[17px] leading-relaxed text-[color:var(--color-muted)] lg:mx-0">
             Four residential concrete services, each with at least one
             independent service provider holding written coverage for the Lancaster
             area. Pick the closest match and we route your
