@@ -208,7 +208,10 @@ export function ScopeColumns({
               key={item}
               className="block text-center lg:flex lg:justify-start lg:gap-2.5 lg:text-left"
             >
-              <span aria-hidden="true" className="mt-px hidden font-semibold lg:block">
+              <span
+                aria-hidden="true"
+                className="mr-1.5 inline font-semibold lg:mr-0 lg:mt-px lg:inline-block"
+              >
                 —
               </span>
               <span>{item}</span>
@@ -358,7 +361,10 @@ export function PrepColumns({
               key={item}
               className="block text-center lg:flex lg:justify-start lg:gap-3 lg:text-left"
             >
-              <span className="hidden lg:block" style={{ color: "var(--color-accent)" }}>
+              <span
+                className="mr-1.5 inline-block align-[-3px] lg:mr-0 lg:align-baseline"
+                style={{ color: "var(--color-accent)" }}
+              >
                 <Icon name="check" className="mt-0.5 h-4 w-4" />
               </span>
               <span className="text-[color:var(--color-muted)]">{item}</span>
@@ -376,7 +382,7 @@ export function PrepColumns({
             >
               <span
                 aria-hidden="true"
-                className="hidden lg:block"
+                className="mr-1.5 inline lg:mr-0 lg:inline-block"
                 style={{ color: "var(--color-accent)" }}
               >
                 ?
