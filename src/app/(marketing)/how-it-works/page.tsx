@@ -62,11 +62,11 @@ export default function HowItWorksPage() {
         <RoutingControls />
       </Section>
       <Section eyebrow="Our role" title="What we are, and what we are not">
-        <div className="card max-w-3xl p-7">
+        <div className="card p-7">
           <p className="eyebrow-plain">Required disclosure</p>
           <p className="mt-4 text-[15px] leading-relaxed text-[color:var(--color-muted)]">{FULL_DISCLOSURE}</p>
         </div>
-        <div className="mt-6 grid max-w-3xl gap-4 sm:grid-cols-2">
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <div className="card p-6">
             <p className="font-semibold">We do</p>
             <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm text-[color:var(--color-muted)]">
