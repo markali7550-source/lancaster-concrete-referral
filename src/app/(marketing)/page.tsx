@@ -162,7 +162,7 @@ export default function HomePage() {
         lead="Two short steps. A participating service provider may contact you, and if no provider covering your area can take it, we will say so plainly."
       >
         <p
-          className="mx-auto mb-8 max-w-3xl rounded-[12px] border p-4 text-center text-[13.5px] leading-relaxed lg:mx-0 lg:text-left"
+          className="mb-8 rounded-[12px] border p-4 text-center text-[13.5px] leading-relaxed lg:text-left"
           style={{
             borderColor: "var(--color-line)",
             color: "var(--color-muted)",
