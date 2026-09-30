@@ -20,7 +20,7 @@ export function MoreInformation({ blocks }: { blocks: ServiceDetail["moreInfo"] 
           <h3 className="text-center text-[17px] font-semibold lg:text-left">
             {block.heading}
           </h3>
-          <p className="mt-3 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
+          <p className="mt-3 text-center text-[14.5px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
             {block.body}
           </p>
         </article>
@@ -48,7 +48,7 @@ export function MayInclude({
       <div className="min-w-0 lg:col-span-7">
       <ul className="grid gap-3 sm:grid-cols-2">
         {items.map((item) => (
-          <li key={item} className="card flex items-start gap-3 p-4">
+          <li key={item} className="card flex items-start justify-center gap-3 p-4 text-center lg:justify-start lg:text-left">
             <span className="mt-0.5 shrink-0" style={{ color: "var(--color-accent)" }}>
               <Icon name="check" className="h-4 w-4" />
             </span>

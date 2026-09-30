@@ -136,9 +136,9 @@ export default async function LocationPage({ params }: { params: Params }) {
       >
         <ul className="grid gap-5 lg:grid-cols-3">
           {location.localEvidence.map((item, index) => (
-            <li key={item} className="card p-6">
+            <li key={item} className="card p-6 text-center lg:text-left">
               <span
-                className="grid h-8 w-8 place-items-center rounded-full text-[12px] font-bold"
+                className="mx-auto grid h-8 w-8 place-items-center rounded-full text-[12px] font-bold lg:mx-0"
                 style={{
                   backgroundColor: "var(--color-accent-soft)",
                   color: "var(--color-accent)",
@@ -163,9 +163,9 @@ export default async function LocationPage({ params }: { params: Params }) {
       >
         <ProjectTypeChooser />
         {comboSlugs.length > 0 ? (
-          <div className="mt-10">
+          <div className="mt-10 text-center lg:text-left">
             <p className="eyebrow-plain">Areas service pages</p>
-            <ul className="mt-4 flex flex-wrap gap-3">
+            <ul className="mt-4 flex flex-wrap justify-center gap-3 lg:justify-start">
               {comboSlugs.map((slug) => {
                 const service = publishedServices.find((s) => s.slug === slug);
                 if (!service) return null;
@@ -214,9 +214,9 @@ export default async function LocationPage({ params }: { params: Params }) {
               fallbackE164={site.phoneE164}
             />
           </div>
-          <div className="lg:pt-4">
+          <div className="text-center lg:pt-4 lg:text-left">
             <p className="eyebrow-plain">Before you send it</p>
-            <div className="mt-5 max-w-xl">
+            <div className="mx-auto mt-5 max-w-xl lg:mx-0">
               <DecisionSupport
                 items={[
                   {

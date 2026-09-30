@@ -69,23 +69,23 @@ export default function HowItWorksPage() {
         <RoutingControls />
       </Section>
       <Section eyebrow="Our role" title="What we are, and what we are not">
-        <div className="card p-7">
+        <div className="card p-7 text-center lg:text-left">
           <p className="eyebrow-plain">Required disclosure</p>
           <p className="mt-4 text-[15px] leading-relaxed text-[color:var(--color-muted)]">{FULL_DISCLOSURE}</p>
         </div>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          <div className="card p-6">
+          <div className="card p-6 text-center lg:text-left">
             <p className="font-semibold">We do</p>
-            <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm text-[color:var(--color-muted)]">
+            <ul className="mt-2 inline-block list-disc space-y-1.5 pl-5 text-left text-sm text-[color:var(--color-muted)] lg:block">
               <li>Collect and validate your request</li>
               <li>Match your request to a participating provider with written coverage</li>
               <li>Route the request to one eligible contractor</li>
               <li>Reassign once if the first contractor does not acknowledge</li>
             </ul>
           </div>
-          <div className="card p-6">
+          <div className="card p-6 text-center lg:text-left">
             <p className="font-semibold">We do not</p>
-            <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm text-[color:var(--color-muted)]">
+            <ul className="mt-2 inline-block list-disc space-y-1.5 pl-5 text-left text-sm text-[color:var(--color-muted)] lg:block">
               <li>Pour, supervise, inspect, or warrant any concrete work</li>
               <li>Set prices, schedules, or scope</li>
               <li>Become a party to your contract</li>

@@ -136,7 +136,7 @@ export default function ServicesPage() {
       </Section>
 
       <Section eyebrow="Out of scope" title="What we decline outright">
-        <div className="card p-6">
+        <div className="card p-6 text-center lg:text-left">
           <p className="text-[color:var(--color-muted)]">
             Foundation repair, structural engineering assessments, retaining
             walls, slab jacking, material supply, and commercial contracts are

@@ -250,7 +250,7 @@ export default async function ServicePage({ params }: { params: Params }) {
                 fallbackDisplay={site.phoneDisplay}
                 fallbackE164={site.phoneE164}
               />
-              <div className="card mt-4 p-5">
+              <div className="card mt-4 p-5 text-center lg:text-left">
                 <p className="text-sm font-semibold">Prefer to talk it through?</p>
                 <p className="mt-1.5 text-sm text-[color:var(--color-muted)]">
                   Our referral team can confirm whether we have approved
@@ -312,7 +312,7 @@ export default async function ServicePage({ params }: { params: Params }) {
 
       {cityLinks.length > 0 ? (
         <Section eyebrow="Local pages" title={`${service.name} by city`} compact>
-          <ul className="flex flex-wrap gap-3">
+          <ul className="flex flex-wrap justify-center gap-3 lg:justify-start">
             {cityLinks.map(({ record, location }) => (
               <li key={record.locationSlug}>
                 <Link

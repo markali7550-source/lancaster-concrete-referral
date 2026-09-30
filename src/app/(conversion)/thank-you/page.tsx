@@ -21,8 +21,10 @@ const NEXT_STEPS = [
 export default function ThankYouPage() {
   return (
     <div className="container-page py-16 md:py-24">
-      <div className="max-w-2xl">
-        <p className="eyebrow">Request received</p>
+      <div className="mx-auto max-w-2xl text-center lg:mx-0 lg:text-left">
+        <p className="eyebrow justify-center before:hidden lg:justify-start lg:before:block">
+          Request received
+        </p>
         <h1 className="h1 mt-4">
           Thanks — your request is in the routing queue
         </h1>
@@ -33,7 +35,7 @@ export default function ThankYouPage() {
         </p>
         <ol className="mt-8 space-y-4">
           {NEXT_STEPS.map((step, index) => (
-            <li key={step} className="card flex gap-4 p-6">
+            <li key={step} className="card flex justify-center gap-4 p-6 text-left">
               <span
                 className="grid h-8 w-8 shrink-0 place-items-center rounded-full font-semibold"
                 style={{
@@ -47,7 +49,7 @@ export default function ThankYouPage() {
             </li>
           ))}
         </ol>
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+        <div className="mx-auto mt-8 flex w-full max-w-sm flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center lg:mx-0 lg:justify-start">
           <a href={`tel:${site.phoneE164}`} className="btn btn-primary">
             Call {site.phoneDisplay}
           </a>

@@ -314,7 +314,7 @@ export function StatStrip({
           {items.map((item) => (
             <div
               key={item.label}
-              className="py-6 sm:px-6 sm:first:pl-0 lg:py-7"
+              className="py-6 text-center sm:px-6 sm:first:pl-0 lg:py-7 lg:text-left"
               style={{ borderColor: "var(--color-line-soft)" }}
             >
               <dt className="sr-only">{item.label}</dt>
@@ -349,7 +349,7 @@ export function ReferralDisclosureStrip() {
       }}
     >
       <div className="container-page flex flex-col gap-2 py-3.5 text-[13.5px] sm:flex-row sm:items-center sm:justify-between">
-        <p className="flex items-start gap-2.5">
+        <p className="flex items-start justify-center gap-2.5 text-center sm:justify-start sm:text-left">
           <span style={{ color: "var(--color-accent)" }}>
             <Icon name="shield" className="mt-px h-[18px] w-[18px]" />
           </span>
@@ -357,7 +357,7 @@ export function ReferralDisclosureStrip() {
         </p>
         <Link
           href="/referral-disclosure"
-          className="shrink-0 font-semibold underline underline-offset-4"
+          className="shrink-0 self-center font-semibold underline underline-offset-4 sm:self-auto"
           style={{ color: "var(--color-accent)" }}
         >
           Full disclosure
@@ -396,19 +396,19 @@ export function ProjectTypeChooser({
               sizes="(min-width: 640px) 45vw, 100vw"
               className="h-44 w-full object-cover"
             />
-            <span className="flex flex-1 flex-col p-6">
-              <span className="text-[17px] font-semibold">{service.name}</span>
-              <span className="mt-2 flex-1 text-[14px] leading-relaxed text-[color:var(--color-muted)]">
+            <div className="flex flex-1 flex-col p-6 text-center lg:text-left">
+              <h3 className="text-[17px] font-semibold">{service.name}</h3>
+              <p className="mt-2 flex-1 text-[14px] leading-relaxed text-[color:var(--color-muted)]">
                 {service.summary}
-              </span>
+              </p>
               <span
-                className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold"
+                className="mt-5 inline-flex items-center justify-center gap-1.5 text-[14px] font-semibold lg:justify-start"
                 style={{ color: "var(--color-accent)" }}
               >
                 View {service.shortName.toLowerCase()} referrals
                 <Icon name="arrow" className="h-4 w-4" />
               </span>
-            </span>
+            </div>
           </Link>
         </li>
       ))}
@@ -452,7 +452,7 @@ export function RoutingControls() {
             className="p-6"
             style={{ backgroundColor: "var(--color-surface)" }}
           >
-            <div className="flex items-start gap-3.5">
+            <div className="flex flex-col items-center gap-3 text-center lg:flex-row lg:items-start lg:gap-3.5 lg:text-left">
               <span
                 className="marker-count grid h-7 w-7 shrink-0 place-items-center rounded-full text-[12px] font-bold"
                 style={{
@@ -473,7 +473,7 @@ export function RoutingControls() {
           </li>
         ))}
       </ul>
-      <p className="mt-6 text-[13.5px] leading-relaxed text-[color:var(--color-muted)]">
+      <p className="mt-6 text-center text-[13.5px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
         These are routing controls only. They are not a verification of any
         provider&apos;s licence, insurance, or workmanship, and they are not a
         warranty, an endorsement, or a substitute for your own checks. Confirm
@@ -525,7 +525,7 @@ export function HowMatchingWorks() {
   return (
     <ol className="grid gap-5 md:grid-cols-3">
       {STEPS.map((step, index) => (
-        <li key={step.verb} className="card flex h-full flex-col p-6">
+        <li key={step.verb} className="card flex h-full flex-col p-6 text-center lg:text-left">
           <span
             className="text-[13px] font-bold uppercase tracking-[0.18em]"
             style={{ color: "var(--color-accent)" }}
@@ -533,7 +533,7 @@ export function HowMatchingWorks() {
             {String(index + 1).padStart(2, "0")}
           </span>
           <span
-            className="mt-4 block h-px w-10"
+            className="mx-auto mt-4 block h-px w-10 lg:mx-0"
             style={{ backgroundColor: "var(--color-line)" }}
             aria-hidden="true"
           />
@@ -568,10 +568,12 @@ export function DecisionSupport({
     >
       {items.map((item) => (
         <details key={item.question} name={name} className="group">
-          <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-6 p-6 font-medium">
-            {item.question}
+          <summary className="disclosure-row relative flex cursor-pointer list-none items-center justify-center gap-6 px-14 py-6 font-medium lg:justify-between lg:px-6">
+            <span className="text-center lg:flex-1 lg:text-left">
+              {item.question}
+            </span>
             <span
-              className="grid h-7 w-7 shrink-0 place-items-center rounded-full transition-transform group-open:rotate-90"
+              className="absolute right-6 top-1/2 grid h-7 w-7 shrink-0 -translate-y-1/2 place-items-center rounded-full transition-transform group-open:rotate-90 lg:static lg:translate-y-0"
               style={{
                 backgroundColor: "var(--color-accent-soft)",
                 color: "var(--color-accent)",
@@ -581,7 +583,7 @@ export function DecisionSupport({
               <Icon name="arrow" className="h-3.5 w-3.5" />
             </span>
           </summary>
-          <p className="px-6 pb-6 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
+          <p className="px-6 pb-6 text-center text-[14.5px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
             {item.answer}
           </p>
         </details>
@@ -605,8 +607,10 @@ export function FaqSection({
           className="grid gap-2 py-7 first:pt-0 md:grid-cols-[1fr_1.4fr] md:gap-10"
           style={{ borderColor: "var(--color-line-soft)" }}
         >
-          <dt className="text-[16px] font-semibold">{faq.question}</dt>
-          <dd className="text-[15px] leading-relaxed text-[color:var(--color-muted)]">
+          <dt className="text-center text-[16px] font-semibold lg:text-left">
+            {faq.question}
+          </dt>
+          <dd className="text-center text-[15px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
             {faq.answer}
           </dd>
         </div>
@@ -624,7 +628,7 @@ export function AdjacentAreas({
 }) {
   if (locations.length === 0) {
     return (
-      <div className="card p-6">
+      <div className="card p-6 text-center lg:text-left">
         <p className="font-semibold">Lancaster only, for now</p>
         <p className="mt-2.5 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
           Additional South Carolina areas are added one at a time, and only

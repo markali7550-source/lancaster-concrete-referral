@@ -33,9 +33,11 @@ export function LegalPage({
           backgroundColor: "var(--color-surface)",
         }}
       >
-        <div className="container-page py-12 md:py-16">
-          <p className="eyebrow">Legal</p>
-          <h1 className="h1 mt-5 max-w-3xl">{title}</h1>
+        <div className="container-page py-12 text-center md:py-16 lg:text-left">
+          <p className="eyebrow justify-center before:hidden lg:justify-start lg:before:block">
+            Legal
+          </p>
+          <h1 className="h1 mx-auto mt-5 max-w-3xl lg:mx-0">{title}</h1>
           <p className="mt-4 text-sm text-[color:var(--color-muted)]">
             Last updated {updated}. Draft language pending counsel review.
           </p>
@@ -48,7 +50,7 @@ export function LegalPage({
             {children}
           </article>
           <aside className="lg:pt-2">
-            <div className="card p-6 lg:sticky lg:top-[4.5rem]">
+            <div className="card p-6 text-center lg:sticky lg:top-[4.5rem] lg:text-left">
               <p className="eyebrow-plain">Related</p>
               <ul className="mt-4 space-y-3 text-sm">
                 {related.map((link) => (

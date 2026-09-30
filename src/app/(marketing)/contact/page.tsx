@@ -52,8 +52,8 @@ export default function ContactPage() {
       <Section>
         <h2 className="sr-only">Contact details and referral request</h2>
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
-          <div>
-            <p className="lede max-w-prose">
+          <div className="text-center lg:text-left">
+            <p className="lede mx-auto max-w-prose lg:mx-0">
               We are the referral service, not the contractor. Our referral team can tell
               you whether we have approved coverage for your area and what
               happens after you submit a request. Questions about a quote, a
@@ -62,7 +62,9 @@ export default function ContactPage() {
             </p>
             <dl className="mt-8 space-y-5">
               <div>
-                <dt className="eyebrow">Phone</dt>
+                <dt className="eyebrow justify-center before:hidden lg:justify-start lg:before:block">
+                  Phone
+                </dt>
                 <dd className="mt-1">
                   <a href={`tel:${site.phoneE164}`} className="text-xl font-semibold">
                     {site.phoneDisplay}
@@ -70,19 +72,23 @@ export default function ContactPage() {
                 </dd>
               </div>
               <div>
-                <dt className="eyebrow">Email</dt>
+                <dt className="eyebrow justify-center before:hidden lg:justify-start lg:before:block">
+                  Email
+                </dt>
                 <dd className="mt-1">
                   <a href={`mailto:${site.email}`} className="text-lg">{site.email}</a>
                 </dd>
               </div>
               <div>
-                <dt className="eyebrow">Coverage today</dt>
+                <dt className="eyebrow justify-center before:hidden lg:justify-start lg:before:block">
+                  Coverage today
+                </dt>
                 <dd className="mt-1 text-[color:var(--color-muted)]">
                   Lancaster, SC.
                 </dd>
               </div>
             </dl>
-            <p className="mt-8 max-w-prose text-xs leading-relaxed text-[color:var(--color-muted)]">
+            <p className="mx-auto mt-8 max-w-prose text-xs leading-relaxed text-[color:var(--color-muted)] lg:mx-0">
               {CALL_DISCLOSURE} We publish no street address because we are an
               online referral business, not a contracting premises.
             </p>

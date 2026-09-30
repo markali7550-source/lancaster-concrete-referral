@@ -133,14 +133,14 @@ export default async function ComboPage({ params }: { params: Params }) {
                 What we see on {location.city}{" "}
                 {serviceRecord.shortName.toLowerCase()} requests
               </h2>
-              <div className="mt-8 max-w-prose space-y-5 text-[16px] leading-relaxed text-[color:var(--color-muted)]">
+              <div className="mx-auto mt-8 max-w-prose space-y-5 text-center text-[16px] leading-relaxed text-[color:var(--color-muted)] lg:mx-0 lg:text-left">
                 {record.localBody.map((paragraph) => (
                   <p key={paragraph.slice(0, 40)}>{paragraph}</p>
                 ))}
               </div>
               <nav
                 aria-label="Related pages"
-                className="mt-9 flex flex-wrap gap-3"
+                className="mt-9 flex flex-wrap justify-center gap-3 lg:justify-start"
               >
                 <Link
                   href={`/services/${serviceRecord.slug}`}
@@ -227,7 +227,7 @@ export default async function ComboPage({ params }: { params: Params }) {
                 fallbackDisplay={site.phoneDisplay}
                 fallbackE164={site.phoneE164}
               />
-              <div className="card mt-4 p-5">
+              <div className="card mt-4 p-5 text-center lg:text-left">
                 <p className="text-sm font-semibold">
                   Checking coverage first?
                 </p>

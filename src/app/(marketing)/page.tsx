@@ -119,7 +119,7 @@ export default function HomePage() {
         lead="Four residential concrete service categories, each with at least one participating provider holding written coverage for Lancaster areas. Foundation repair, structural engineering, and retaining walls sit outside this scope."
       >
         <ProjectTypeChooser />
-        <p className="mt-8 text-sm">
+        <p className="mt-8 text-center text-sm lg:text-left">
           <Link
             href="/services"
             className="font-semibold underline underline-offset-4"
@@ -162,7 +162,7 @@ export default function HomePage() {
         lead="Two short steps. A participating service provider may contact you, and if no provider covering your area can take it, we will say so plainly."
       >
         <p
-          className="mb-8 max-w-3xl rounded-[12px] border p-4 text-[13.5px] leading-relaxed"
+          className="mx-auto mb-8 max-w-3xl rounded-[12px] border p-4 text-center text-[13.5px] leading-relaxed lg:mx-0 lg:text-left"
           style={{
             borderColor: "var(--color-line)",
             color: "var(--color-muted)",
@@ -189,7 +189,7 @@ export default function HomePage() {
               fallbackE164={site.phoneE164}
             />
           </div>
-          <div className="lg:pt-4">
+          <div className="text-center lg:pt-4 lg:text-left">
             <p className="eyebrow-plain">What happens after you submit</p>
             <ol className="mt-5 space-y-5">
               {[
@@ -198,7 +198,7 @@ export default function HomePage() {
                 "One independent third-party service provider receives the request and may contact you.",
                 "If they do not acknowledge in time, it is reassigned once to another participating provider.",
               ].map((item, index) => (
-                <li key={item} className="flex gap-4">
+                <li key={item} className="flex justify-center gap-4 text-left lg:justify-start">
                   <span
                     className="grid h-7 w-7 shrink-0 place-items-center rounded-full text-[12px] font-bold"
                     style={{

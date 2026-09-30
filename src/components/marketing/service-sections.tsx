@@ -122,10 +122,12 @@ export function KeyFacts({ facts }: { facts: { label: string; value: string }[] 
           {facts.map((fact) => (
             <div
               key={fact.label}
-              className="flex h-full flex-col rounded-[12px] border p-4"
+              className="flex h-full flex-col rounded-[12px] border p-4 text-center lg:text-left"
               style={{ borderColor: "var(--color-line-soft)" }}
             >
-              <dt className="eyebrow">{fact.label}</dt>
+              <dt className="eyebrow justify-center before:hidden lg:justify-start lg:before:block">
+                {fact.label}
+              </dt>
               <dd className="mt-auto pt-2 text-sm font-medium">{fact.value}</dd>
             </div>
           ))}
@@ -181,7 +183,7 @@ export function ScopeColumns({
       <ul className="grid gap-4 sm:grid-cols-2">
         {covered.map((item) => (
           <li key={item.title} className="card p-6">
-            <div className="flex items-start gap-3">
+            <div className="flex flex-col items-center gap-2.5 text-center lg:flex-row lg:items-start lg:gap-3 lg:text-left">
               <span style={{ color: "var(--color-accent)" }}>
                 <Icon name="check" className="mt-0.5 h-5 w-5" />
               </span>
@@ -196,13 +198,13 @@ export function ScopeColumns({
         ))}
       </ul>
       <aside
-        className="rounded-[16px] border p-5"
+        className="rounded-[16px] border p-5 text-center lg:text-left"
         style={{ borderColor: "var(--color-line)" }}
       >
         <p className="font-semibold">Not routed under this service</p>
         <ul className="mt-3 space-y-2.5 text-sm text-[color:var(--color-muted)]">
           {outOfScope.map((item) => (
-            <li key={item} className="flex gap-2.5">
+            <li key={item} className="flex justify-center gap-2.5 lg:justify-start">
               <span aria-hidden="true" className="mt-px font-semibold">
                 —
               </span>
@@ -229,7 +231,11 @@ export function OptionsList({
   return (
     <dl className="grid gap-x-10 gap-y-6 md:grid-cols-2">
       {options.map((option) => (
-        <div key={option.name} className="border-l-2 pl-4" style={{ borderColor: "var(--color-accent)" }}>
+        <div
+          key={option.name}
+          className="border-t-2 pt-4 text-center lg:border-l-2 lg:border-t-0 lg:pl-4 lg:pt-0 lg:text-left"
+          style={{ borderColor: "var(--color-accent)" }}
+        >
           <dt className="font-semibold">{option.name}</dt>
           <dd className="mt-1.5 text-sm leading-relaxed text-[color:var(--color-muted)]">
             {option.description}
@@ -262,13 +268,13 @@ export function Timeline({
             {index + 1}
           </span>
           <div className="card p-5">
-            <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+            <div className="flex flex-wrap items-baseline justify-center gap-x-4 gap-y-1 lg:justify-between">
               <p className="font-semibold">{phase.phase}</p>
               <p className="text-xs font-medium text-[color:var(--color-muted)]">
                 {phase.duration}
               </p>
             </div>
-            <p className="mt-2 text-sm leading-relaxed text-[color:var(--color-muted)]">
+            <p className="mt-2 text-center text-sm leading-relaxed text-[color:var(--color-muted)] lg:text-left">
               {phase.detail}
             </p>
           </div>
@@ -341,11 +347,11 @@ export function PrepColumns({
 }) {
   return (
     <div className="grid gap-6 md:grid-cols-2">
-      <div className="card p-6">
+      <div className="card p-6 text-center lg:text-left">
         <p className="font-semibold">Before the estimate visit</p>
         <ul className="mt-4 space-y-3 text-sm">
           {checklist.map((item) => (
-            <li key={item} className="flex gap-3">
+            <li key={item} className="flex justify-center gap-3 lg:justify-start">
               <span style={{ color: "var(--color-accent)" }}>
                 <Icon name="check" className="mt-0.5 h-4 w-4" />
               </span>
@@ -354,11 +360,11 @@ export function PrepColumns({
           ))}
         </ul>
       </div>
-      <div className="card p-6">
+      <div className="card p-6 text-center lg:text-left">
         <p className="font-semibold">Ask the contractor, not us</p>
         <ul className="mt-4 space-y-3 text-sm">
           {questions.map((item) => (
-            <li key={item} className="flex gap-3">
+            <li key={item} className="flex justify-center gap-3 lg:justify-start">
               <span aria-hidden="true" style={{ color: "var(--color-accent)" }}>
                 ?
               </span>
@@ -405,12 +411,12 @@ export function RelatedServices({
               sizes="(min-width: 640px) 30vw, 100vw"
               className="h-32 w-full object-cover"
             />
-            <span className="flex flex-1 flex-col p-4">
-              <span className="font-semibold">{service.name}</span>
-              <span className="mt-1.5 text-sm text-[color:var(--color-muted)]">
+            <div className="flex flex-1 flex-col p-4 text-center lg:text-left">
+              <h3 className="font-semibold">{service.name}</h3>
+              <p className="mt-1.5 text-sm text-[color:var(--color-muted)]">
                 {service.summary}
-              </span>
-            </span>
+              </p>
+            </div>
           </Link>
         </li>
       ))}
