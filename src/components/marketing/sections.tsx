@@ -636,7 +636,7 @@ export function AdjacentAreas({
     );
   }
   return (
-    <ul className="flex flex-wrap gap-3">
+    <ul className="flex flex-wrap justify-center gap-3 lg:justify-start">
       {locations.map((location) => (
         <li key={location.slug}>
           <Link href={`/locations/${location.slug}`} className="btn btn-secondary">

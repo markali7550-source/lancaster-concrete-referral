@@ -247,7 +247,7 @@ export default function HomePage() {
       >
         <AdjacentAreas locations={publishedLocations} />
 
-        <p className="mt-7 text-[14px] leading-relaxed text-[color:var(--color-muted)]">
+        <p className="mt-7 text-center text-[14px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
           Additional South Carolina areas are added one at a time, and only once
           a participating provider has approved coverage there in writing.
         </p>
