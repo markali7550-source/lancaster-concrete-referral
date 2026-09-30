@@ -320,12 +320,12 @@ export function StatStrip({
               <dt className="sr-only">{item.label}</dt>
               <dd>
                 <span
-                  className="block text-2xl font-semibold tracking-tight"
+                  className="block text-[2rem] font-extrabold leading-none tracking-[-0.03em] md:text-[2.5rem]"
                   style={{ color: "var(--color-accent)" }}
                 >
                   {item.value}
                 </span>
-                <span className="mt-1.5 block text-sm text-[color:var(--color-muted)]">
+                <span className="mt-3 block text-[11px] font-semibold uppercase tracking-[0.14em] text-[color:var(--color-muted)]">
                   {item.label}
                 </span>
               </dd>
@@ -523,28 +523,21 @@ const STEPS = [
 
 export function HowMatchingWorks() {
   return (
-    <ol className="grid gap-6 md:grid-cols-3">
+    <ol className="grid gap-5 md:grid-cols-3">
       {STEPS.map((step, index) => (
-        <li key={step.verb} className="relative">
-          <div className="flex items-center gap-3">
-            <span
-              className="marker-step grid h-10 w-10 place-items-center rounded-full text-[15px] font-bold"
-              style={{
-                backgroundColor: "var(--color-accent)",
-                color: "var(--color-page)",
-              }}
-            >
-              {index + 1}
-            </span>
-            {index < STEPS.length - 1 ? (
-              <span
-                className="hidden h-px flex-1 md:block"
-                style={{ backgroundColor: "var(--color-line)" }}
-                aria-hidden="true"
-              />
-            ) : null}
-          </div>
-          <p className="mt-5 text-[17px] font-semibold">{step.verb}</p>
+        <li key={step.verb} className="card flex h-full flex-col p-6">
+          <span
+            className="text-[13px] font-bold uppercase tracking-[0.18em]"
+            style={{ color: "var(--color-accent)" }}
+          >
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          <span
+            className="mt-4 block h-px w-10"
+            style={{ backgroundColor: "var(--color-line)" }}
+            aria-hidden="true"
+          />
+          <p className="mt-4 text-[17px] font-semibold">{step.verb}</p>
           <p className="mt-2 text-[14px] leading-relaxed text-[color:var(--color-muted)]">
             {step.body}
           </p>
