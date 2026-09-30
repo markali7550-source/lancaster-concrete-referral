@@ -163,7 +163,7 @@ export default async function LocationPage({ params }: { params: Params }) {
         <ProjectTypeChooser />
         {comboSlugs.length > 0 ? (
           <div className="mt-10">
-            <p className="eyebrow-plain">Local service pages</p>
+            <p className="eyebrow-plain">Areas service pages</p>
             <ul className="mt-4 flex flex-wrap gap-3">
               {comboSlugs.map((slug) => {
                 const service = publishedServices.find((s) => s.slug === slug);
