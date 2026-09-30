@@ -149,9 +149,7 @@ export default function HomePage() {
         title="Questions worth settling before you call"
         lead="Straight answers, including the ones that tell you we are not the right service for your project."
       >
-        <div className="max-w-3xl">
-          <DecisionSupport items={DECISION_ITEMS} />
-        </div>
+        <DecisionSupport items={DECISION_ITEMS} />
       </Section>
 
       <Section

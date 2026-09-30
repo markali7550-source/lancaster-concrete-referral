@@ -461,7 +461,7 @@ export function DecisionSupport({
               <Icon name="arrow" className="h-3.5 w-3.5" />
             </span>
           </summary>
-          <p className="max-w-prose px-6 pb-6 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
+          <p className="max-w-[85ch] px-6 pb-6 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
             {item.answer}
           </p>
         </details>

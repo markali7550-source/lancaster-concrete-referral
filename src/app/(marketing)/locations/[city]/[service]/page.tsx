@@ -251,9 +251,7 @@ export default async function ComboPage({ params }: { params: Params }) {
       </Section>
 
       <Section eyebrow="Before you call" title="Worth settling first">
-        <div className="max-w-3xl">
-          <DecisionSupport items={serviceRecord.considerations} />
-        </div>
+        <DecisionSupport items={serviceRecord.considerations} />
       </Section>
 
       <Section
