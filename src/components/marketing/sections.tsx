@@ -50,7 +50,7 @@ export function Section({
             className={
               align === "center"
                 ? "mx-auto max-w-2xl text-center"
-                : "mx-auto max-w-3xl text-center lg:mx-0 lg:text-left"
+                : "text-center lg:text-left"
             }
           >
             {eyebrow ? (
@@ -511,7 +511,7 @@ export function AdjacentAreas({
 }) {
   if (locations.length === 0) {
     return (
-      <div className="card max-w-2xl p-6">
+      <div className="card p-6">
         <p className="font-semibold">Lancaster only, for now</p>
         <p className="mt-2.5 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
           Additional South Carolina areas are added one at a time, and only
