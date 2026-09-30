@@ -20,7 +20,7 @@ import { site } from "@/lib/env";
 
 const TITLE = `Concrete Services in Lancaster, SC | ${site.brand}`;
 const DESCRIPTION =
-  "Driveways, patios, slabs, and non-structural repair in Lancaster, SC. See what each referral covers, what is out of scope, and how requests reach an independent service provider.";
+  "Driveways, patios, slabs, and nonstructural repair in Lancaster, SC. See what each referral covers, what is out of scope, and how requests reach an independent service provider.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,
@@ -63,7 +63,7 @@ export default function ServicesPage() {
 
       <OverlayHeader
         imageSrc="/services-overview.webp"
-        imageAlt="Broom-finished residential concrete surface in Lancaster SC with a tooled edge and control joint beside a lawn"
+        imageAlt="Broom finished residential concrete surface in Lancaster SC with a tooled edge and control joint beside a lawn"
       >
         <p
           className="eyebrow before:hidden lg:before:block"

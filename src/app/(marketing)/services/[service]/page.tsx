@@ -204,7 +204,7 @@ export default async function ServicePage({ params }: { params: Params }) {
                 What actually drives the price
               </h2>
               <p className="lede mx-auto mt-4 max-w-prose text-center lg:mx-0 lg:text-left">
-                We publish no prices, ranges, or per-foot figures. Doing so
+                We publish no prices, ranges, or per foot figures. Doing so
                 would be a guess on a project nobody has seen. What we can do is
                 tell you which variables move the number.
               </p>
@@ -274,7 +274,7 @@ export default async function ServicePage({ params }: { params: Params }) {
         <Section
           eyebrow="More information"
           title={`Understanding ${projectPhrase} project in Lancaster, SC`}
-          lead={`A plain-language look at what ${projectPhrase} project involves, what homeowners in Lancaster County typically ask about, and what is worth settling before any work begins.`}
+          lead={`A plain language look at what ${projectPhrase} project involves, what homeowners in Lancaster County typically ask about, and what is worth settling before any work begins.`}
         >
           <MoreInformation blocks={detail.moreInfo} />
         </Section>

@@ -23,7 +23,7 @@ export function ComplianceFooter() {
             </div>
             <p className="mt-4 text-[13.5px] leading-relaxed text-[color:var(--color-muted)]">
               An online referral service that connects South Carolina
-              homeowners with independent third-party concrete service
+              homeowners with independent third party concrete service
               providers. We hold no contractor licence and perform no
               concrete work.
             </p>

@@ -148,7 +148,7 @@ export function Hero({
   h1,
   summary,
   imageSrc = "/home-hero.webp",
-  imageAlt = "Broom-finished concrete front walkway and entry steps at a two-storey home",
+  imageAlt = "Broom finished concrete front walkway and entry steps at a two storey home",
   overlay = false,
 }: {
   locationCue: string;
@@ -429,7 +429,7 @@ const ROUTING_CONTROLS = [
   },
   {
     title: "Project type match",
-    body: "Your project type is matched against the categories a provider has agreed to receive. A category nobody has accepted produces an honest no-coverage answer.",
+    body: "Your project type is matched against the categories a provider has agreed to receive. A category nobody has accepted produces an honest no coverage answer.",
   },
   {
     title: "One request at a time",

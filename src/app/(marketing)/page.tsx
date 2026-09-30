@@ -44,12 +44,12 @@ const DECISION_ITEMS = [
   {
     question: "Repair the slab or replace it?",
     answer:
-      "Isolated surface cracking on an otherwise sound slab is usually a repair conversation. Panel-wide settlement, heaving, or a failing sub-base usually is not. Only the independent provider who inspects the slab can tell you which one you have.",
+      "Isolated surface cracking on an otherwise sound slab is usually a repair conversation. Settlement across a whole panel, heaving, or a failing subbase usually is not. Only the independent provider who inspects the slab can tell you which one you have.",
   },
   {
     question: "What changes the price of a Lancaster pour?",
     answer:
-      "Access for a mixer, demolition and haul-away of the old slab, sub-base preparation on clay soil, thickness, reinforcement, and finish. Square footage alone is a poor predictor, which is why we publish no price ranges.",
+      "Access for a mixer, demolition and haul away of the old slab, subbase preparation on clay soil, thickness, reinforcement, and finish. Square footage alone is a poor predictor, which is why we publish no price ranges.",
   },
   {
     question: "Do I need more than one quote?",
@@ -67,17 +67,17 @@ const FAQS = [
   {
     question: "Do you perform concrete work?",
     answer:
-      "No. We are a referral service that connects homeowners with independent third-party concrete service providers. The actual services are performed by the selected service provider. We do not perform, supervise, warrant, or guarantee construction work.",
+      "No. We are a referral service that connects homeowners with independent third party concrete service providers. The actual services are performed by the selected service provider. We do not perform, supervise, warrant, or guarantee construction work.",
   },
   {
     question: "Who performs the work?",
     answer:
-      "Concrete work is performed by an independent third-party service provider. Availability and services depend on the provider serving the requested area. That provider holds the relationship, the contract, and the responsibility for the work.",
+      "Concrete work is performed by an independent third party service provider. Availability and services depend on the provider serving the requested area. That provider holds the relationship, the contract, and the responsibility for the work.",
   },
   {
     question: "Which areas can you route right now?",
     answer:
-      "Lancaster, South Carolina. Service availability depends on participating providers, so requests outside covered areas receive an honest no-coverage answer instead of being forwarded to a provider who does not serve the area.",
+      "Lancaster, South Carolina. Service availability depends on participating providers, so requests outside covered areas receive an honest no coverage answer instead of being forwarded to a provider who does not serve the area.",
   },
   {
     question: "Are the service providers licensed and insured?",
@@ -106,7 +106,7 @@ export default function HomePage() {
         h1="Connect With a Local Concrete Service Provider in Lancaster, SC"
         summary="Tell us your project and location, and we’ll pass your request to an independent local service provider who serves your area. We are a referral service, not a concrete contractor, and we do not perform concrete work ourselves."
         imageSrc="/home-hero.webp"
-        imageAlt="Broom-finished concrete front walkway and entry steps leading to the porch of a two-storey home"
+        imageAlt="Broom finished concrete front walkway and entry steps leading to the porch of a two storey home"
         overlay
       />
       <StatStrip items={STATS} />
@@ -195,7 +195,7 @@ export default function HomePage() {
               {[
                 "Your location and project type are checked against participating providers with written coverage.",
                 "Service availability depends on participating providers, so coverage and current capacity are checked before anything is sent.",
-                "One independent third-party service provider receives the request and may contact you.",
+                "One independent third party service provider receives the request and may contact you.",
                 "If they do not acknowledge in time, it is reassigned once to another participating provider.",
               ].map((item, index) => (
                 <li key={item} className="flex justify-center gap-4 text-left lg:justify-start">
@@ -256,7 +256,7 @@ export default function HomePage() {
 
       <CtaBand
         title="Ready to connect with an independent concrete service provider?"
-        body="One request, one independent third-party service provider, no charge to you and no obligation to proceed."
+        body="One request, one independent third party service provider, no charge to you and no obligation to proceed."
       />
 
     </>

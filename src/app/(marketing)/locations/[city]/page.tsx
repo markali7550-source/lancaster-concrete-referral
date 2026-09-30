@@ -68,7 +68,7 @@ export default async function LocationPage({ params }: { params: Params }) {
   const faqs = [
     {
       question: `Which ${location.city} areas do you cover?`,
-      answer: `${location.city}, ${location.region}. Participating providers approve this area in writing. A request from outside them returns an honest no-coverage response rather than being forwarded to someone who does not work there.`,
+      answer: `${location.city}, ${location.region}. Participating providers approve this area in writing. A request from outside them returns an honest no coverage response rather than being forwarded to someone who does not work there.`,
     },
     {
       question: `Do you employ concrete crews in ${location.city}?`,
@@ -116,7 +116,7 @@ export default async function LocationPage({ params }: { params: Params }) {
         h1={`Concrete Contractor Referrals in ${location.city}, SC`}
         summary={location.intro}
         imageSrc="/lancaster-hero.webp"
-        imageAlt={`Tree-lined residential street in ${location.city}, ${location.region}, with concrete driveways and a sidewalk running past single-family homes`}
+        imageAlt={`Tree lined residential street in ${location.city}, ${location.region}, with concrete driveways and a sidewalk running past single family homes`}
         overlay
       />
       <KeyFacts
@@ -221,7 +221,7 @@ export default async function LocationPage({ params }: { params: Params }) {
                 items={[
                   {
                     question: "Is my area covered?",
-                    answer: `We route ${location.city}, ${location.region} today. Anything else returns a no-coverage response and nothing is shared with a contractor.`,
+                    answer: `We route ${location.city}, ${location.region} today. Anything else returns a no coverage response and nothing is shared with a contractor.`,
                   },
                   {
                     question: "Will I be called repeatedly?",

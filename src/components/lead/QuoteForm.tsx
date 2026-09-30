@@ -116,7 +116,7 @@ export function QuoteForm({
     // Must mirror the server rule exactly: 10 digits, or 11 starting with 1.
     const digits = values.phone.replace(/\D/g, "");
     if (!(digits.length === 10 || (digits.length === 11 && digits.startsWith("1")))) {
-      next.phone = "Enter a 10-digit US phone number, with or without the leading 1.";
+      next.phone = "Enter a 10 digit US phone number, with or without the leading 1.";
     }
     if (!values.serviceConsent)
       next.serviceConsent = "Consent is required so a contractor can contact you.";

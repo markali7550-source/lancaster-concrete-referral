@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMetadata({
 
 const NEXT_STEPS = [
   "We check your location and project type against participating providers with approved coverage.",
-  "One independent third-party service provider is assigned and receives your request.",
+  "One independent third party service provider is assigned and receives your request.",
   "That provider contacts you directly to arrange a site visit and quote.",
   "If they do not acknowledge within our contracted window, the request is reassigned once to an approved backup.",
 ];

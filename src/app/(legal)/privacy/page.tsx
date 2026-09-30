@@ -41,7 +41,7 @@ export default function PrivacyPage() {
       <ul>
         <li>Contact values are stored with access controls and hashed for duplicate detection.</li>
         <li>Raw contact fields are not written to application logs.</li>
-        <li>Provider tokens and secrets remain server-side only.</li>
+        <li>Provider tokens and secrets remain server side only.</li>
       </ul>
 
       <h2>Retention</h2>
@@ -54,7 +54,7 @@ export default function PrivacyPage() {
       <h2>Call recording</h2>
       <p>
         Call recording is disabled. It will not be enabled until notice,
-        consent, access, retention, and cross-state handling have been approved.
+        consent, access, retention, and cross state handling have been approved.
       </p>
     </LegalPage>
   );

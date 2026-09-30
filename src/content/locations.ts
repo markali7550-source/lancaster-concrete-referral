@@ -41,8 +41,8 @@ export const locations: readonly LocationRecord[] = [
     zips: ["29720", "29721"],
     coordinates: { lat: 34.737, lng: -80.771 },
     localEvidence: [
-      "Lancaster County sits on the Carolina Slate Belt, so sub-base prep and drainage handling vary noticeably between in-town lots and rural parcels off Highway 9.",
-      "Older in-town properties near Main Street frequently have narrow drive access, which affects truck staging and pour sequencing.",
+      "Lancaster County sits on the Carolina Slate Belt, so subbase prep and drainage handling vary noticeably between in town lots and rural parcels off Highway 9.",
+      "Older in town properties near Main Street frequently have narrow drive access, which affects truck staging and pour sequencing.",
       "Red clay subsoil common through the county holds water, so participating providers are asked about drainage handling before a driveway or slab quote is confirmed.",
     ],
     intro:
@@ -90,7 +90,7 @@ export const approvedZips: ReadonlySet<string> = new Set(
 /**
  * Sentinel submitted when a visitor selects "My area is not listed".
  * It is a structurally valid postal code that is never an approved ZIP,
- * so the routing engine returns no-coverage without any special casing.
+ * so the routing engine returns no coverage without any special casing.
  */
 export const OUT_OF_AREA_POSTAL_CODE = "00000";
 

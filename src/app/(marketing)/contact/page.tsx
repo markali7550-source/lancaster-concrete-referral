@@ -11,7 +11,7 @@ import { CALL_DISCLOSURE } from "@/lib/seo/disclosure";
 
 const TITLE = `Contact ${site.brand} | Lancaster, SC Concrete Referrals`;
 const DESCRIPTION =
-  "Call or send a request and we will route it to an independent third-party concrete service provider serving your covered area.";
+  "Call or send a request and we will route it to an independent third party concrete service provider serving your covered area.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,

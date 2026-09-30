@@ -48,12 +48,12 @@ export const services: readonly ServiceRecord[] = [
     state: "published",
     intent: "New and replacement driveway enquiries",
     summary:
-      "New pours and full replacements, including tear-out of failed slabs and the drainage questions that come with Lancaster County clay.",
+      "New pours and full replacements, including tear out of failed slabs and the drainage questions that come with Lancaster County clay.",
     heroSummary:
       "Looking for a concrete driveway contractor in Lancaster, SC? We help homeowners connect with independent local service providers who may be able to assist with new pours and full replacements. Submit your project details to request a referral. We are a referral service and do not perform concrete work ourselves. The provider quotes, schedules, and performs the work.",
     image: "/services/concrete-driveways.webp",
     imageAlt:
-      "Newly poured residential concrete driveway with saw-cut control joints and a broom finish",
+      "Newly poured residential concrete driveway with saw cut control joints and a broom finish",
     projectTypes: ["New driveway", "Driveway replacement"],
     keyFacts: [
       { label: "Routed for", value: "Residential driveways and aprons" },
@@ -64,18 +64,18 @@ export const services: readonly ServiceRecord[] = [
     covered: [
       {
         title: "New driveway pours",
-        body: "First-time concrete over an existing gravel or dirt drive, including the excavation, sub-base, and apron tie-in to the street or existing approach.",
+        body: "First time concrete over an existing gravel or dirt drive, including the excavation, subbase, and apron connection to the street or existing approach.",
       },
       {
         title: "Full replacement",
-        body: "Demolition and haul-away of a failed slab, re-grading, and a new pour. Participating providers quote demolition separately so you can see what you are paying for.",
+        body: "Demolition and haul away of a failed slab, regrading, and a new pour. Participating providers quote demolition separately so you can see what you are paying for.",
       },
       {
         title: "Widening and extensions",
-        body: "Adding a parking pad, a turnaround, or extra width alongside an existing drive, where the tie-in and joint layout can be done cleanly.",
+        body: "Adding a parking pad, a turnaround, or extra width alongside an existing drive, where the connection and joint layout can be done cleanly.",
       },
       {
-        title: "Drainage-driven rebuilds",
+        title: "Rebuilds driven by drainage",
         body: "Pours where standing water, a low spot, or a downhill approach is the actual problem and grade correction is part of the scope.",
       },
     ],
@@ -99,7 +99,7 @@ export const services: readonly ServiceRecord[] = [
       {
         name: "Control joint layout",
         description:
-          "Saw-cut joints placed on a grid to control where the slab cracks. Joint spacing is a workmanship detail worth asking about.",
+          "Saw cut joints placed on a grid to control where the slab cracks. Joint spacing is a workmanship detail worth asking about.",
       },
       {
         name: "Exposed aggregate or stamped edge",
@@ -118,16 +118,16 @@ export const services: readonly ServiceRecord[] = [
         phase: "Written quote and scheduling",
         duration: "Varies by contractor",
         detail:
-          "You receive their quote directly. Demolition, haul-away, sub-base, and reinforcement should each be visible as line items.",
+          "You receive their quote directly. Demolition, haul away, subbase, and reinforcement should each be visible as line items.",
       },
       {
         phase: "Demolition and excavation",
         duration: "Typically one day",
         detail:
-          "Old slab out, spoil removed, sub-grade cut to the specified depth. This is where access width matters most.",
+          "Old slab out, spoil removed, subgrade cut to the specified depth. This is where access width matters most.",
       },
       {
-        phase: "Sub-base, forms, and reinforcement",
+        phase: "Subbase, forms, and reinforcement",
         duration: "Typically one day",
         detail:
           "Compacted base material, formwork set to grade, and reinforcement placed. On clay, compaction is the step that decides how the slab ages.",
@@ -136,7 +136,7 @@ export const services: readonly ServiceRecord[] = [
         phase: "Pour and finish",
         duration: "Usually one working day",
         detail:
-          "Placement, screeding, floating, broom finish, and saw-cut joints once the slab has set enough to cut.",
+          "Placement, screeding, floating, broom finish, and saw cut joints once the slab has set enough to cut.",
       },
       {
         phase: "Cure and return to use",
@@ -147,19 +147,19 @@ export const services: readonly ServiceRecord[] = [
     ],
     costFactors: [
       {
-        factor: "Demolition and haul-away",
+        factor: "Demolition and haul away",
         impact: "High",
         note: "Removing and disposing of an existing slab is a separate cost from the new pour.",
       },
       {
-        factor: "Sub-base preparation",
+        factor: "Subbase preparation",
         impact: "High",
         note: "Clay subsoil holding water often means more excavation and imported base material.",
       },
       {
         factor: "Site access",
         impact: "High",
-        note: "Narrow in-town lots restrict mixer staging and can force wheelbarrow or pump placement.",
+        note: "Narrow lots in town restrict mixer staging and can force wheelbarrow or pump placement.",
       },
       {
         factor: "Thickness and reinforcement",
@@ -179,7 +179,7 @@ export const services: readonly ServiceRecord[] = [
       {
         factor: "Drainage correction",
         impact: "Medium",
-        note: "Re-grading, a channel drain, or a culvert tie-in is extra scope.",
+        note: "Regrading, a channel drain, or a culvert connection is extra scope.",
       },
     ],
     prepChecklist: [
@@ -203,22 +203,22 @@ export const services: readonly ServiceRecord[] = [
       {
         question: "Do you pour the driveway yourselves?",
         answer:
-          "No. We are a referral service that connects homeowners with independent third-party concrete service providers. Excavation, sub-base preparation, forming, and the pour itself are carried out by the provider you engage, and your contract is with them.",
+          "No. We are a referral service that connects homeowners with independent third party concrete service providers. Excavation, subbase preparation, forming, and the pour itself are carried out by the provider you engage, and your contract is with them.",
       },
       {
         question: "How long does a residential driveway pour take?",
         answer:
-          "Most residential driveways are placed in one working day once demolition and sub-base prep are complete. Prep and curing are separate from that day. Your assigned contractor gives the schedule for your site.",
+          "Most residential driveways are placed in one working day once demolition and subbase prep are complete. Prep and curing are separate from that day. Your assigned contractor gives the schedule for your site.",
       },
       {
         question: "When is replacement discussed instead of repair?",
         answer:
-          "Widespread settlement, a failing sub-base, or cracking across most panels usually moves the conversation toward replacement. Isolated surface cracking on a sound slab often does not. Only the contractor who inspects the slab can make that call.",
+          "Widespread settlement, a failing subbase, or cracking across most panels usually moves the conversation toward replacement. Isolated surface cracking on a sound slab often does not. Only the contractor who inspects the slab can make that call.",
       },
       {
         question: "Do I need a permit in Lancaster County?",
         answer:
-          "Requirements vary by project type, scope, and total cost, and an apron tie-in to a public road may involve the road authority. Confirm permitting with your contractor and the authority having jurisdiction before work starts.",
+          "Requirements vary by project type, scope, and total cost, and an apron connection to a public road may involve the road authority. Confirm permitting with your contractor and the authority having jurisdiction before work starts.",
       },
       {
         question: "Why does clay soil keep coming up?",
@@ -243,7 +243,7 @@ export const services: readonly ServiceRecord[] = [
       "Rectangular concrete backyard patio with a smooth troweled finish and control joints",
     projectTypes: ["New patio", "Patio replacement", "Stamped patio"],
     keyFacts: [
-      { label: "Routed for", value: "Residential patios and walkway tie-ins" },
+      { label: "Routed for", value: "Residential patios and walkway connections" },
       { label: "Coverage today", value: "Lancaster, SC" },
       { label: "Decorative work", value: "Only where a participating provider documents the capability" },
       { label: "Cost to you", value: "No charge for the referral" },
@@ -251,19 +251,19 @@ export const services: readonly ServiceRecord[] = [
     covered: [
       {
         title: "New patio pours",
-        body: "Ground-level slabs off a rear door, around a grill area, or as a standalone seating pad, with grade set to shed water away from the house.",
+        body: "Ground level slabs off a rear door, around a grill area, or as a standalone seating pad, with grade set to shed water away from the house.",
       },
       {
         title: "Patio replacement",
-        body: "Removing a cracked, settled, or badly sloped patio and re-pouring with corrected grade and fresh joint layout.",
+        body: "Removing a cracked, settled, or badly sloped patio and pouring again with corrected grade and fresh joint layout.",
       },
       {
-        title: "Extensions and tie-ins",
+        title: "Extensions and connections",
         body: "Enlarging an existing patio or connecting it to a walkway, where the existing slab is sound enough to tie into.",
       },
       {
         title: "Stamped and coloured finishes",
-        body: "Pattern-stamped or integrally coloured slabs, routed only to participating providers who have documented that capability for your area.",
+        body: "Pattern stamped or integrally coloured slabs, routed only to participating providers who have documented that capability for your area.",
       },
     ],
     outOfScope: [
@@ -276,7 +276,7 @@ export const services: readonly ServiceRecord[] = [
       {
         name: "Broom finish",
         description:
-          "Textured and slip-resistant. The straightforward, lowest-cost choice for a working patio.",
+          "Textured and slip resistant. The straightforward, lowest cost choice for a working patio.",
       },
       {
         name: "Smooth trowel finish",
@@ -286,7 +286,7 @@ export const services: readonly ServiceRecord[] = [
       {
         name: "Stamped pattern",
         description:
-          "Stone, slate, or plank patterns pressed into the fresh slab. Availability depends on the participating provider and adds cost and cure-time sensitivity.",
+          "Stone, slate, or plank patterns pressed into the fresh slab. Availability depends on the participating provider and adds cost and cure time sensitivity.",
       },
       {
         name: "Integral colour and release",
@@ -296,12 +296,12 @@ export const services: readonly ServiceRecord[] = [
       {
         name: "Sealing",
         description:
-          "Decorative work is normally sealed, and sealer is re-applied periodically. Ask who does that and how often.",
+          "Decorative work is normally sealed, and sealer is reapplied periodically. Ask who does that and how often.",
       },
     ],
     process: [
       {
-        phase: "Layout walk-through",
+        phase: "Layout walkthrough",
         duration: "Usually under an hour",
         detail:
           "The contractor checks the footprint against door swings, furniture, downspouts, and the fall away from the house.",
@@ -322,7 +322,7 @@ export const services: readonly ServiceRecord[] = [
         phase: "Pour and finishing",
         duration: "Usually one working day",
         detail:
-          "Placement, screeding, and the chosen finish. Stamping is time-critical and is done as the slab sets.",
+          "Placement, screeding, and the chosen finish. Stamping is time critical and is done as the slab sets.",
       },
       {
         phase: "Joints, cure, and sealing",
@@ -335,12 +335,12 @@ export const services: readonly ServiceRecord[] = [
       {
         factor: "Finish type",
         impact: "High",
-        note: "Stamped and coloured work is substantially more labour-intensive than a broom finish.",
+        note: "Stamped and coloured work is substantially more labour intensive than a broom finish.",
       },
       {
         factor: "Footprint and shape",
         impact: "High",
-        note: "Curves, multiple levels, and cut-outs cost more per square foot than a simple rectangle.",
+        note: "Curves, multiple levels, and cutouts cost more per square foot than a simple rectangle.",
       },
       {
         factor: "Demolition of an old patio",
@@ -360,30 +360,30 @@ export const services: readonly ServiceRecord[] = [
       {
         factor: "Sealing and maintenance",
         impact: "Low",
-        note: "A recurring cost on decorative slabs rather than a one-off.",
+        note: "A recurring cost on decorative slabs rather than a single job.",
       },
     ],
     prepChecklist: [
       "Mark the rough footprint with a hose or spray paint",
       "Note where rainwater currently runs and where downspouts discharge",
-      "Check gate and side-yard access width for equipment",
+      "Check gate and side yard access width for equipment",
       "Think about furniture layout and door clearance before sizing",
       "Photograph any existing slab you want removed or tied into",
-      "Locate irrigation lines and low-voltage cabling in the area",
+      "Locate irrigation lines and low voltage cabling in the area",
     ],
     quoteQuestions: [
       "Which way will the finished slab drain, and at what fall?",
       "Is the stamped or coloured option priced separately?",
       "How will you tie into the existing slab or threshold height?",
       "Where will joints fall, and how will they look in the pattern?",
-      "Do you seal it, and when is the first re-seal due?",
+      "Do you seal it, and when is the first reseal due?",
       "How long before furniture can go back on it?",
     ],
     considerations: [
       {
         question: "Who designs and builds the patio?",
         answer:
-          "An independent third-party service provider does. We connect you with a provider who may be able to assist; layout, finish selection, scheduling, and construction are entirely their work, and availability depends on participating providers.",
+          "An independent third party service provider does. We connect you with a provider who may be able to assist; layout, finish selection, scheduling, and construction are entirely their work, and availability depends on participating providers.",
       },
       {
         question: "Is a stamped finish always available?",
@@ -398,7 +398,7 @@ export const services: readonly ServiceRecord[] = [
       {
         question: "Can a patio tie into an existing slab?",
         answer:
-          "Sometimes. Tie-ins depend on the condition of the existing slab, its elevation, and where joints can be placed. The contractor confirms this on site.",
+          "Sometimes. Connections depend on the condition of the existing slab, its elevation, and where joints can be placed. The contractor confirms this on site.",
       },
       {
         question: "Will a new patio crack?",
@@ -415,7 +415,7 @@ export const services: readonly ServiceRecord[] = [
     state: "published",
     intent: "Residential slab and pad enquiries",
     summary:
-      "Residential slabs and pads for sheds, equipment, vehicles, and outbuildings, non-structural work only.",
+      "Residential slabs and pads for sheds, equipment, vehicles, and outbuildings, nonstructural work only.",
     heroSummary:
       "Looking for a concrete slab contractor in Lancaster, SC? Shed bases, equipment pads, RV and boat parking, and similar flatwork. We help homeowners connect with independent service providers who may be able to assist with this category. This is the narrowest of our referrals on purpose: anything that carries a building load or needs an engineer is declined rather than routed.",
     image: "/services/concrete-slabs.webp",
@@ -423,7 +423,7 @@ export const services: readonly ServiceRecord[] = [
       "Finished flat concrete slab pad in a residential backyard with a small storage shed",
     projectTypes: ["Residential slab", "Concrete pad"],
     keyFacts: [
-      { label: "Routed for", value: "Non-structural residential slabs and pads" },
+      { label: "Routed for", value: "Nonstructural residential slabs and pads" },
       { label: "Coverage today", value: "Lancaster, SC" },
       { label: "Never routed", value: "Foundations and engineered structural slabs" },
       { label: "Cost to you", value: "No charge for the referral" },
@@ -448,9 +448,9 @@ export const services: readonly ServiceRecord[] = [
     ],
     outOfScope: [
       "House foundations, footings, and stem walls",
-      "Engineered or load-bearing structural slabs",
+      "Engineered or load bearing structural slabs",
       "Garage foundations forming part of a permitted structure",
-      "Retaining walls and any earth-retention design",
+      "Retaining walls and any earth retention design",
     ],
     options: [
       {
@@ -466,7 +466,7 @@ export const services: readonly ServiceRecord[] = [
       {
         name: "Vapour barrier",
         description:
-          "Relevant where anything moisture-sensitive will sit on or be enclosed above the slab.",
+          "Relevant where anything moisture sensitive will sit on or be enclosed above the slab.",
       },
       {
         name: "Thickened edge",
@@ -525,7 +525,7 @@ export const services: readonly ServiceRecord[] = [
       {
         factor: "Access to the location",
         impact: "High",
-        note: "Rear-yard pads that cannot be chuted from the truck need barrowing or pumping.",
+        note: "Rear yard pads that cannot be chuted from the truck need barrowing or pumping.",
       },
       {
         factor: "Reinforcement specification",
@@ -558,7 +558,7 @@ export const services: readonly ServiceRecord[] = [
       {
         question: "Is the slab poured by your own crew?",
         answer:
-          "We have no crew. We are a referral service, and slab work is performed by an independent third-party service provider serving the requested area. We do not perform, supervise, or guarantee that work.",
+          "We have no crew. We are a referral service, and slab work is performed by an independent third party service provider serving the requested area. We do not perform, supervise, or guarantee that work.",
       },
       {
         question: "Do you handle foundations or structural slabs?",
@@ -588,19 +588,19 @@ export const services: readonly ServiceRecord[] = [
     shortName: "Repair",
     nameLower: "concrete repair",
     state: "published",
-    intent: "Non-structural repair enquiries",
+    intent: "Nonstructural repair enquiries",
     summary:
-      "Non-structural crack repair, surface repair, and resurfacing. Structural assessment is out of scope.",
+      "Nonstructural crack repair, surface repair, and resurfacing. Structural assessment is out of scope.",
     heroSummary:
-      "Looking for a concrete repair contractor in Lancaster, SC? We help homeowners connect with independent service providers who may be able to assist with surface-level problems on otherwise sound concrete: crazing, spalling, shrinkage cracks, and tired finishes. If what you are describing sounds like movement or load failure instead, we will tell you plainly that you need a different professional.",
+      "Looking for a concrete repair contractor in Lancaster, SC? We help homeowners connect with independent service providers who may be able to assist with surface level problems on otherwise sound concrete: crazing, spalling, shrinkage cracks, and tired finishes. If what you are describing sounds like movement or load failure instead, we will tell you plainly that you need a different professional.",
     image: "/services/concrete-repair.webp",
     imageAlt:
       "Residential walkway half weathered and cracked, half freshly resurfaced with smooth concrete",
     projectTypes: ["Crack and surface repair", "Resurfacing"],
     keyFacts: [
-      { label: "Routed for", value: "Non-structural repair and resurfacing" },
+      { label: "Routed for", value: "Nonstructural repair and resurfacing" },
       { label: "Coverage today", value: "Lancaster, SC" },
-      { label: "Never routed", value: "Structural, heaving, or load-failure assessment" },
+      { label: "Never routed", value: "Structural, heaving, or load failure assessment" },
       { label: "Cost to you", value: "No charge for the referral" },
     ],
     covered: [
@@ -618,7 +618,7 @@ export const services: readonly ServiceRecord[] = [
       },
       {
         title: "Joint maintenance",
-        body: "Cleaning out and re-sealing control joints so water stops getting into the sub-base.",
+        body: "Cleaning out and resealing control joints so water stops getting into the subbase.",
       },
     ],
     outOfScope: [
@@ -634,7 +634,7 @@ export const services: readonly ServiceRecord[] = [
           "The crack is opened slightly, cleaned, and filled so the repair bonds instead of sitting on the surface.",
       },
       {
-        name: "Partial-depth patching",
+        name: "Partial depth patching",
         description:
           "Damaged surface material is removed back to sound concrete and replaced. Colour match is never perfect. Expect a visible repair.",
       },
@@ -644,9 +644,9 @@ export const services: readonly ServiceRecord[] = [
           "A thin resurfacing layer over the whole slab. Requires a clean, sound, properly prepared substrate to bond.",
       },
       {
-        name: "Joint re-sealing",
+        name: "Joint resealing",
         description:
-          "Low-cost preventative work that keeps water out of the base. Often the most useful thing to do on an ageing slab.",
+          "Low cost preventative work that keeps water out of the base. Often the most useful thing to do on an ageing slab.",
       },
     ],
     process: [
@@ -660,7 +660,7 @@ export const services: readonly ServiceRecord[] = [
         phase: "Written quote and honest limits",
         duration: "Varies by contractor",
         detail:
-          "A good repair quote says what it will not fix. If the sub-base is the cause, resurfacing only buys time.",
+          "A good repair quote says what it will not fix. If the subbase is the cause, resurfacing only buys time.",
       },
       {
         phase: "Surface preparation",
@@ -672,7 +672,7 @@ export const services: readonly ServiceRecord[] = [
         phase: "Repair or overlay application",
         duration: "Typically one day",
         detail:
-          "Product-specific and weather-sensitive. Temperature limits are set by the material, not by the calendar.",
+          "Product specific and weather sensitive. Temperature limits are set by the material, not by the calendar.",
       },
       {
         phase: "Cure and sealing",
@@ -728,17 +728,17 @@ export const services: readonly ServiceRecord[] = [
       {
         question: "Do you carry out the repair?",
         answer:
-          "No. Repairs are carried out by an independent third-party service provider. We connect homeowners with providers who may be able to assist, and the assessment, method, and result remain the provider's responsibility.",
+          "No. Repairs are carried out by an independent third party service provider. We connect homeowners with providers who may be able to assist, and the assessment, method, and result remain the provider's responsibility.",
       },
       {
-        question: "What counts as non-structural?",
+        question: "What counts as nonstructural?",
         answer:
-          "Surface spalling, shrinkage cracking, and cosmetic deterioration on a slab that is not moving. Movement, heaving, a height difference across a crack, or load-bearing failure needs a licensed professional assessment instead, and we will not route it as a repair job.",
+          "Surface spalling, shrinkage cracking, and cosmetic deterioration on a slab that is not moving. Movement, heaving, a height difference across a crack, or load bearing failure needs a licensed professional assessment instead, and we will not route it as a repair job.",
       },
       {
         question: "Is resurfacing a permanent fix?",
         answer:
-          "Resurfacing addresses the wearing surface. If the sub-base is the cause, the same failure returns through the new surface. Your contractor should tell you which situation you are in before taking the work.",
+          "Resurfacing addresses the wearing surface. If the subbase is the cause, the same failure returns through the new surface. Your contractor should tell you which situation you are in before taking the work.",
       },
       {
         question: "Can repair be scheduled in cold weather?",

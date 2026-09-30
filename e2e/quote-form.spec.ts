@@ -121,7 +121,7 @@ test.describe("quote form", () => {
     await page.getByLabel(/^phone$/i).fill("123");
     await serviceConsent(page).check();
     await page.getByRole("button", { name: /request a referral/i }).click();
-    await expect(page.getByText(/10-digit us phone/i).first()).toBeVisible();
+    await expect(page.getByText(/10 digit us phone/i).first()).toBeVisible();
   });
 
   test("requires the service consent checkbox", async ({ page }) => {

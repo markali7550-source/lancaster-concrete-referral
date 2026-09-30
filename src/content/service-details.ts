@@ -34,13 +34,13 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
       "Concrete driveway expansion",
       "Driveway slab work",
       "Removal and replacement of damaged concrete",
-      "Aprons and street tie-ins",
+      "Aprons and street connections",
       "Parking pads and turnarounds",
     ],
     moreInfo: [
       {
         heading: "What a concrete driveway project is",
-        body: "A concrete driveway is a poured, reinforced surface built to carry vehicle loads over many years. The work is more than the visible slab: it involves clearing the area, shaping and compacting a stable sub-base, setting forms to the correct fall, placing reinforcement, pouring, finishing the surface, and cutting control joints so the slab cracks where it is meant to. Driveways in Lancaster, SC are often poured over clay-heavy soils, which makes the preparation underneath the concrete just as important as the pour itself.",
+        body: "A concrete driveway is a poured, reinforced surface built to carry vehicle loads over many years. The work is more than the visible slab: it involves clearing the area, shaping and compacting a stable subbase, setting forms to the correct fall, placing reinforcement, pouring, finishing the surface, and cutting control joints so the slab cracks where it is meant to. Driveways in Lancaster, SC are often poured over heavy clay soils, which makes the preparation underneath the concrete just as important as the pour itself.",
       },
       {
         heading: "Common reasons homeowners request it",
@@ -48,11 +48,11 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
       },
       {
         heading: "Typical project types",
-        body: "Projects generally fall into new pours over an unpaved drive, full replacement of a failed slab including demolition and haul-away, widening or extending an existing driveway, and drainage-driven rebuilds where grade correction is the real objective. Each of these carries different site work, and the difference between them usually matters more to scheduling and cost than the square footage alone.",
+        body: "Projects generally fall into new pours over an unpaved drive, full replacement of a failed slab including demolition and haul away, widening or extending an existing driveway, and rebuilds driven by drainage where grade correction is the real objective. Each of these carries different site work, and the difference between them usually matters more to scheduling and cost than the square footage alone.",
       },
       {
         heading: "Important considerations",
-        body: "Thickness and reinforcement should suit the vehicles that will actually use the surface, since a drive that will see a heavy truck is not built like one serving a single sedan. Joint layout, slope away from the house and garage, and the transition at the street all affect how the surface performs over time. Concrete is also a material that cracks; well-placed control joints manage where that happens rather than preventing it entirely.",
+        body: "Thickness and reinforcement should suit the vehicles that will actually use the surface, since a drive that will see a heavy truck is not built like one serving a single sedan. Joint layout, slope away from the house and garage, and the transition at the street all affect how the surface performs over time. Concrete is also a material that cracks; well placed control joints manage where that happens rather than preventing it entirely.",
       },
       {
         heading: "What to know before starting",
@@ -60,11 +60,11 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
       },
       {
         heading: "How a project generally runs",
-        body: "A typical sequence is an on-site look at the area and its drainage, a written scope and quote from the provider, removal of any existing surface, excavation and sub-base preparation, forming and reinforcement, the pour and surface finish, joint cutting, then a curing period before use. Weather influences both the pour and the finish, so dates commonly shift with conditions.",
+        body: "A typical sequence is an on site look at the area and its drainage, a written scope and quote from the provider, removal of any existing surface, excavation and subbase preparation, forming and reinforcement, the pour and surface finish, joint cutting, then a curing period before use. Weather influences both the pour and the finish, so dates commonly shift with conditions.",
       },
       {
         heading: "Why planning matters",
-        body: "Nearly every driveway problem that shows up years later traces back to something decided before the pour: a sub-base that was not compacted, a slope that moved water the wrong way, joints placed too far apart, or a thickness chosen for lighter use than the drive actually sees. Settling those details in writing at quote stage is the single most useful thing a homeowner can do.",
+        body: "Nearly every driveway problem that shows up years later traces back to something decided before the pour: a subbase that was not compacted, a slope that moved water the wrong way, joints placed too far apart, or a thickness chosen for lighter use than the drive actually sees. Settling those details in writing at quote stage is the single most useful thing a homeowner can do.",
       },
     ],
   },
@@ -102,15 +102,15 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
       },
       {
         heading: "What to know before starting",
-        body: "Useful details to gather include rough dimensions, how the space will be furnished, whether a cover or structure is planned later, where downspouts discharge, and how the patio should meet doors and steps. Note any irrigation, low-voltage lighting, or drainage lines crossing the area. Confirm finish, jointing, and edge details with the provider before work begins rather than during the pour.",
+        body: "Useful details to gather include rough dimensions, how the space will be furnished, whether a cover or structure is planned later, where downspouts discharge, and how the patio should meet doors and steps. Note any irrigation, low voltage lighting, or drainage lines crossing the area. Confirm finish, jointing, and edge details with the provider before work begins rather than during the pour.",
       },
       {
         heading: "How a project generally runs",
-        body: "Work usually begins with a site visit to check grade and drainage, followed by a written scope and quote. Then comes layout and excavation, sub-base preparation, forming, reinforcement where specified, the pour, finishing to the agreed texture, joint placement, and a curing period. Furniture and heavy planters should stay off until the provider says the surface is ready.",
+        body: "Work usually begins with a site visit to check grade and drainage, followed by a written scope and quote. Then comes layout and excavation, subbase preparation, forming, reinforcement where specified, the pour, finishing to the agreed texture, joint placement, and a curing period. Furniture and heavy planters should stay off until the provider says the surface is ready.",
       },
       {
         heading: "Why planning matters",
-        body: "Patios are easy to under-size and hard to enlarge neatly afterwards, because an addition poured later rarely matches the original in colour or texture. Deciding dimensions, finish, and drainage before the forms go in avoids the two most common regrets: a slab that feels cramped once furnished, and water that collects near the house.",
+        body: "Patios are easy to undersize and hard to enlarge neatly afterwards, because an addition poured later rarely matches the original in colour or texture. Deciding dimensions, finish, and drainage before the forms go in avoids the two most common regrets: a slab that feels cramped once furnished, and water that collects near the house.",
       },
     ],
   },
@@ -124,7 +124,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
       "Residential slabs",
       "Garage slabs",
       "Shed and outbuilding slabs",
-      "Foundation-related slab projects where appropriate",
+      "Foundation related slab projects where appropriate",
       "Replacement of damaged slabs",
       "Equipment and HVAC pads",
       "Slabs prepared for a future structure",
@@ -132,7 +132,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
     moreInfo: [
       {
         heading: "What a concrete slab project is",
-        body: "A slab is a flat, reinforced concrete element poured to support something specific: a building, a vehicle, stored equipment, or a structure planned for later. Because the slab's job is defined by what sits on it, the important decisions are thickness, reinforcement, sub-base preparation, and edge detail rather than appearance. A shed slab and a garage slab can look similar and still be built quite differently.",
+        body: "A slab is a flat, reinforced concrete element poured to support something specific: a building, a vehicle, stored equipment, or a structure planned for later. Because the slab's job is defined by what sits on it, the important decisions are thickness, reinforcement, subbase preparation, and edge detail rather than appearance. A shed slab and a garage slab can look similar and still be built quite differently.",
       },
       {
         heading: "Common reasons homeowners request it",
@@ -140,11 +140,11 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
       },
       {
         heading: "Typical project types",
-        body: "Work commonly covers new residential slabs, garage and outbuilding slabs, small equipment pads, foundation-related slab work where that falls within a provider's scope, and removal and replacement of slabs that have failed. Where a slab supports a permanent structure, the project may involve requirements that go beyond flatwork.",
+        body: "Work commonly covers new residential slabs, garage and outbuilding slabs, small equipment pads, foundation related slab work where that falls within a provider's scope, and removal and replacement of slabs that have failed. Where a slab supports a permanent structure, the project may involve requirements that go beyond flatwork.",
       },
       {
         heading: "Important considerations",
-        body: "The intended load should drive thickness and reinforcement, and the sub-base needs to be properly compacted, since most slab problems begin below the concrete. Edge thickening, vapour control under enclosed spaces, anchor placement for a structure, and how the slab drains at its perimeter are all worth settling early. Some slab work may be subject to permitting or inspection depending on scope, which should be confirmed locally.",
+        body: "The intended load should drive thickness and reinforcement, and the subbase needs to be properly compacted, since most slab problems begin below the concrete. Edge thickening, vapour control under enclosed spaces, anchor placement for a structure, and how the slab drains at its perimeter are all worth settling early. Some slab work may be subject to permitting or inspection depending on scope, which should be confirmed locally.",
       },
       {
         heading: "What to know before starting",
@@ -152,7 +152,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
       },
       {
         heading: "How a project generally runs",
-        body: "The usual sequence is a site assessment, a written scope and quote, layout and excavation, sub-base placement and compaction, forming, reinforcement, any under-slab provisions, the pour and finish, joint cutting where applicable, and curing. Squareness and level are checked before the pour, because they are effectively fixed once concrete is placed.",
+        body: "The usual sequence is a site assessment, a written scope and quote, layout and excavation, subbase placement and compaction, forming, reinforcement, any under slab provisions, the pour and finish, joint cutting where applicable, and curing. Squareness and level are checked before the pour, because they are effectively fixed once concrete is placed.",
       },
       {
         heading: "Why planning matters",
@@ -190,7 +190,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
       },
       {
         heading: "Important considerations",
-        body: "Repairs are rarely invisible: patched concrete generally differs in colour and texture from the surrounding slab, and that difference tends to remain. Where the underlying cause is active, such as soil movement or poor drainage, a surface-only repair may not hold. It is also worth being realistic about the age and overall condition of a slab, because repeated patching of a surface near the end of its life can cost more than a single replacement.",
+        body: "Repairs are rarely invisible: patched concrete generally differs in colour and texture from the surrounding slab, and that difference tends to remain. Where the underlying cause is active, such as soil movement or poor drainage, a surface only repair may not hold. It is also worth being realistic about the age and overall condition of a slab, because repeated patching of a surface near the end of its life can cost more than a single replacement.",
       },
       {
         heading: "What to know before starting",
@@ -198,7 +198,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
       },
       {
         heading: "How a project generally runs",
-        body: "A repair generally starts with an on-site assessment of the damage and its likely cause, followed by a written scope setting out the approach, then preparation of the affected area, the repair work itself, and a curing period before normal use. Where the assessment points toward replacement, the provider should explain why and what that scope would involve.",
+        body: "A repair generally starts with an on site assessment of the damage and its likely cause, followed by a written scope setting out the approach, then preparation of the affected area, the repair work itself, and a curing period before normal use. Where the assessment points toward replacement, the provider should explain why and what that scope would involve.",
       },
       {
         heading: "Why planning matters",
