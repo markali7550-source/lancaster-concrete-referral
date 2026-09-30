@@ -48,10 +48,22 @@ export function Section({
         {eyebrow || title || lead ? (
           <div
             className={
-              align === "center" ? "mx-auto max-w-2xl text-center" : "max-w-3xl"
+              align === "center"
+                ? "mx-auto max-w-2xl text-center"
+                : "mx-auto max-w-3xl text-center lg:mx-0 lg:text-left"
             }
           >
-            {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
+            {eyebrow ? (
+              <p
+                className={
+                  align === "center"
+                    ? "eyebrow before:hidden"
+                    : "eyebrow before:hidden lg:before:block"
+                }
+              >
+                {eyebrow}
+              </p>
+            ) : null}
             {title ? <h2 className="h2 mt-3">{title}</h2> : null}
             {lead ? <p className="lede mt-4">{lead}</p> : null}
           </div>
@@ -103,12 +115,17 @@ export function Hero({
       }}
     >
       <div className="container-page grid min-h-[calc(100dvh-6.25rem)] items-center gap-10 py-12 lg:grid-cols-12 lg:gap-14 lg:py-16">
-        <div className="lg:col-span-5">
-          <p className="eyebrow">{locationCue}</p>
+        <div className="text-center lg:col-span-5 lg:text-left">
+          <p className="eyebrow before:hidden lg:before:block">
+            {locationCue}
+          </p>
           <h1 className="h1 mt-5">{h1}</h1>
-          <p className="lede mt-5 max-w-prose">{summary}</p>
+          <p className="lede mx-auto mt-5 max-w-prose lg:mx-0">{summary}</p>
 
-          <div id="hero-actions" className="mt-8 grid gap-3 min-[380px]:grid-cols-2">
+          <div
+            id="hero-actions"
+            className="mx-auto mt-8 grid w-full max-w-sm gap-3 min-[380px]:grid-cols-2 lg:mx-0 lg:max-w-none"
+          >
             <DynamicPhone
               fallbackDisplay={site.phoneDisplay}
               fallbackE164={site.phoneE164}
@@ -121,7 +138,7 @@ export function Hero({
             </a>
           </div>
 
-          <ul className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-[13px] text-[color:var(--color-muted)]">
+          <ul className="mt-7 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[13px] text-[color:var(--color-muted)] lg:justify-start">
             {[
               "Free for homeowners",
               "One independent provider, not five",
@@ -138,7 +155,7 @@ export function Hero({
         </div>
 
         <div className="lg:col-span-7">
-          <figure>
+          <figure className="mx-auto w-full max-w-md sm:max-w-lg lg:max-w-none">
             <div
               className="overflow-hidden rounded-[20px] border"
               style={{

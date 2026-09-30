@@ -119,11 +119,15 @@ export function KeyFacts({ facts }: { facts: { label: string; value: string }[] 
       style={{ borderColor: "var(--color-line)", backgroundColor: "var(--color-surface)" }}
     >
       <div className="container-page">
-        <dl className="grid gap-x-8 gap-y-5 py-6 sm:grid-cols-2 lg:grid-cols-4">
+        <dl className="grid auto-rows-fr gap-3 py-6 sm:grid-cols-2 lg:grid-cols-4">
           {facts.map((fact) => (
-            <div key={fact.label}>
+            <div
+              key={fact.label}
+              className="flex h-full flex-col rounded-[12px] border p-4"
+              style={{ borderColor: "var(--color-line-soft)" }}
+            >
               <dt className="eyebrow">{fact.label}</dt>
-              <dd className="mt-1 text-sm font-medium">{fact.value}</dd>
+              <dd className="mt-auto pt-2 text-sm font-medium">{fact.value}</dd>
             </div>
           ))}
         </dl>

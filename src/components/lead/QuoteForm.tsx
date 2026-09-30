@@ -292,7 +292,7 @@ export function QuoteForm({
       noValidate
       id="quote-form"
     >
-      <div className="flex items-center justify-between gap-4">
+      <div className="flex flex-col items-center gap-3 text-center sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:text-left">
         <div>
           <p className="eyebrow">Step {step} of 2</p>
           <h3 className="mt-1 text-xl font-semibold md:text-2xl">

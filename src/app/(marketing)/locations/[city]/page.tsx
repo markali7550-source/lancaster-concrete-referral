@@ -200,7 +200,7 @@ export default async function LocationPage({ params }: { params: Params }) {
         title={`Tell us about your ${location.city} project`}
       >
         <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
-          <div className="max-w-xl">
+          <div className="mx-auto w-full max-w-xl lg:mx-0">
             <QuoteForm
               services={publishedServices.map((s) => ({
                 slug: s.slug,
