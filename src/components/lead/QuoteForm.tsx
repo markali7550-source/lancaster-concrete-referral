@@ -237,7 +237,7 @@ export function QuoteForm({
         </p>
         <p className="mt-4 text-sm text-[color:var(--color-muted)]">
           Reference:{" "}
-          <span className="font-mono text-[color:var(--color-ink)]">
+          <span className="font-semibold tabular-nums tracking-wide text-[color:var(--color-ink)]">
             {leadId}
           </span>
         </p>

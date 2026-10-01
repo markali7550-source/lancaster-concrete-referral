@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system,
-    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* Geist Sans is the only family. next/font appends its own metric matched
+     fallback inside --font-geist-sans, so no system stack is needed here. */
+  --font-sans: var(--font-geist-sans), sans-serif;
+  --font-mono: var(--font-geist-sans), sans-serif;
+  --font-serif: var(--font-geist-sans), sans-serif;
 
   --color-page: #f2f5f3;
   --color-surface: #ffffff;
