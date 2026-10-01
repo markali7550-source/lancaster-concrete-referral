@@ -581,12 +581,10 @@ export function DecisionSupport({
     >
       {items.map((item) => (
         <details key={item.question} name={name} className="group">
-          <summary className="disclosure-row relative flex cursor-pointer list-none items-center justify-center gap-6 px-14 py-6 font-medium lg:justify-between lg:px-6">
-            <span className="text-center lg:flex-1 lg:text-left">
-              {item.question}
-            </span>
+          <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-6 font-medium md:px-6">
+            <span className="flex-1 text-left">{item.question}</span>
             <span
-              className="absolute right-6 top-1/2 grid h-7 w-7 shrink-0 -translate-y-1/2 place-items-center rounded-full transition-transform group-open:rotate-90 lg:static lg:translate-y-0"
+              className="grid h-7 w-7 shrink-0 place-items-center rounded-full transition-transform group-open:rotate-90"
               style={{
                 backgroundColor: "var(--color-accent-soft)",
                 color: "var(--color-accent)",
@@ -596,7 +594,7 @@ export function DecisionSupport({
               <Icon name="arrow" className="h-3.5 w-3.5" />
             </span>
           </summary>
-          <p className="px-6 pb-6 text-center text-[14.5px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
+          <p className="px-5 pb-6 pr-16 text-left text-[14.5px] leading-relaxed text-[color:var(--color-muted)] md:px-6 md:pr-16">
             {item.answer}
           </p>
         </details>
@@ -620,10 +618,10 @@ export function FaqSection({
           className="grid gap-2 py-7 first:pt-0 md:grid-cols-[1fr_1.4fr] md:gap-10"
           style={{ borderColor: "var(--color-line-soft)" }}
         >
-          <dt className="text-center text-[16px] font-semibold lg:text-left">
+          <dt className="text-left text-[16px] font-semibold">
             {faq.question}
           </dt>
-          <dd className="text-center text-[15px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
+          <dd className="text-left text-[15px] leading-relaxed text-[color:var(--color-muted)]">
             {faq.answer}
           </dd>
         </div>
