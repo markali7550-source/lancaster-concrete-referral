@@ -295,7 +295,10 @@ export function Timeline({
       <span
         aria-hidden="true"
         className="absolute bottom-0 left-[0.75rem] top-0 w-px -translate-x-1/2"
-        style={{ backgroundColor: "var(--color-line)" }}
+        style={{
+          backgroundColor:
+            "color-mix(in srgb, var(--color-accent) 42%, transparent)",
+        }}
       />
       {phases.map((phase, index) => (
         <li

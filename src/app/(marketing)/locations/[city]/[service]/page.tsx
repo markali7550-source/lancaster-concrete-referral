@@ -176,62 +176,6 @@ export default async function ComboPage({ params }: { params: Params }) {
               </nav>
             </section>
 
-            <section
-              className="scroll-mt-36 border-t py-12 md:py-20"
-              style={{ borderColor: "var(--color-line-soft)" }}
-            >
-              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Process</p>
-              <h2 className="h2 mt-4 text-center lg:text-left">
-                How the project usually runs here
-              </h2>
-              <p className="lede mx-auto mt-4 max-w-prose text-center lg:mx-0 lg:text-left">
-                Typical ranges reported by participating providers, not commitments. Your
-                contractor sets the actual schedule for your site.
-              </p>
-              <div className="mt-8">
-                <Timeline phases={serviceRecord.process} />
-              </div>
-            </section>
-
-            <section
-              className="scroll-mt-36 border-t py-12 md:py-20"
-              style={{ borderColor: "var(--color-line-soft)" }}
-            >
-              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Pricing</p>
-              <h2 className="h2 mt-4 text-center lg:text-left">What drives the price locally</h2>
-              <p className="lede mx-auto mt-4 max-w-prose text-center lg:mx-0 lg:text-left">
-                We publish no figures. These are the variables that move the
-                number on a {location.city} property.
-              </p>
-              <div className="mt-8">
-                <CostTable rows={serviceRecord.costFactors} />
-              </div>
-            </section>
-
-            <section
-              className="scroll-mt-36 border-t py-12 md:py-20"
-              style={{ borderColor: "var(--color-line-soft)" }}
-            >
-              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Preparation</p>
-              <h2 className="h2 mt-4 text-center lg:text-left">Get more out of the estimate visit</h2>
-              <div className="mt-8">
-                <PrepColumns
-                  checklist={serviceRecord.prepChecklist}
-                  questions={serviceRecord.quoteQuestions}
-                />
-              </div>
-            </section>
-
-            <section
-              className="scroll-mt-36 border-t py-12 md:py-20"
-              style={{ borderColor: "var(--color-line-soft)" }}
-            >
-              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">How routing works</p>
-              <h2 className="h2 mt-4 text-center lg:text-left">Before your request is passed on</h2>
-              <div className="mt-8">
-                <RoutingControls />
-              </div>
-            </section>
           </div>
 
           <aside className="min-w-0 lg:col-span-5 xl:col-span-4">
@@ -264,6 +208,65 @@ export default async function ComboPage({ params }: { params: Params }) {
             </div>
           </aside>
         </div>
+      </div>
+
+      <div className="container-page">
+        <section
+          className="scroll-mt-36 border-t py-12 md:py-20"
+          style={{ borderColor: "var(--color-line-soft)" }}
+        >
+          <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Process</p>
+          <h2 className="h2 mt-4 text-center lg:text-left">
+            How the project usually runs here
+          </h2>
+          <p className="lede mx-auto mt-4 max-w-prose text-center lg:mx-0 lg:text-left">
+            Typical ranges reported by participating providers, not commitments. Your
+            contractor sets the actual schedule for your site.
+          </p>
+          <div className="mt-8">
+            <Timeline phases={serviceRecord.process} />
+          </div>
+        </section>
+
+        <section
+          className="scroll-mt-36 border-t py-12 md:py-20"
+          style={{ borderColor: "var(--color-line-soft)" }}
+        >
+          <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Pricing</p>
+          <h2 className="h2 mt-4 text-center lg:text-left">What drives the price locally</h2>
+          <p className="lede mx-auto mt-4 max-w-prose text-center lg:mx-0 lg:text-left">
+            We publish no figures. These are the variables that move the
+            number on a {location.city} property.
+          </p>
+          <div className="mt-8">
+            <CostTable rows={serviceRecord.costFactors} />
+          </div>
+        </section>
+
+        <section
+          className="scroll-mt-36 border-t py-12 md:py-20"
+          style={{ borderColor: "var(--color-line-soft)" }}
+        >
+          <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Preparation</p>
+          <h2 className="h2 mt-4 text-center lg:text-left">Get more out of the estimate visit</h2>
+          <div className="mt-8">
+            <PrepColumns
+              checklist={serviceRecord.prepChecklist}
+              questions={serviceRecord.quoteQuestions}
+            />
+          </div>
+        </section>
+
+        <section
+          className="scroll-mt-36 border-t py-12 md:py-20"
+          style={{ borderColor: "var(--color-line-soft)" }}
+        >
+          <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">How routing works</p>
+          <h2 className="h2 mt-4 text-center lg:text-left">Before your request is passed on</h2>
+          <div className="mt-8">
+            <RoutingControls />
+          </div>
+        </section>
       </div>
 
       <Section tone="surface" eyebrow="Process" title="Three steps, no obligation">
@@ -307,6 +310,7 @@ export default async function ComboPage({ params }: { params: Params }) {
 
 
       <CtaBand
+        tone="section"
         title={`${serviceRecord.name} in ${location.city}, SC`}
         body="One request, one eligible independent contractor. If nobody approved for your area can take it, we will tell you plainly."
       />
