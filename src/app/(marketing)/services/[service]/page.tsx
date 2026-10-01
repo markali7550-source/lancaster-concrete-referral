@@ -292,7 +292,7 @@ export default async function ServicePage({ params }: { params: Params }) {
 
       <section id="may-include" className="scroll-mt-32">
         <Section
-          eyebrow="Scope"
+          eyebrow="Include"
           title={`What ${projectPhrase} project may include`}
         >
           <MayInclude
