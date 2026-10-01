@@ -212,7 +212,7 @@ export function ScopeColumns({
             </li>
           ))}
         </ul>
-        <p className="mt-4 text-xs leading-relaxed text-[color:var(--color-muted)]">
+        <p className="mt-5 border-t pt-4 text-xs leading-relaxed text-[color:var(--color-muted)] hairline">
           These requests are declined rather than forwarded to a contractor who
           should not be taking them on.
         </p>
@@ -396,7 +396,7 @@ export function PrepColumns({
             </li>
           ))}
         </ul>
-        <p className="mt-4 text-xs leading-relaxed text-[color:var(--color-muted)]">
+        <p className="mt-5 border-t pt-4 text-xs leading-relaxed text-[color:var(--color-muted)] hairline">
           Pricing, specification, scheduling, and warranty sit with the
           independent contractor assigned to your project.
         </p>
