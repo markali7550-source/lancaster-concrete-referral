@@ -40,7 +40,7 @@ export function Section({
     <section
       id={id}
       className={
-        compact ? "scroll-mt-32 py-6 md:py-9" : "scroll-mt-32 py-8 md:py-14"
+        compact ? "scroll-mt-32 py-8 md:py-12" : "scroll-mt-32 py-12 md:py-20"
       }
       style={background ? { backgroundColor: background } : undefined}
     >
@@ -419,7 +419,7 @@ export function ProjectTypeChooser({
                 {cityLabel
                   ? `View ${service.shortName.toLowerCase()} in ${cityLabel}`
                   : `View ${service.shortName.toLowerCase()} referrals`}
-                <Icon name="arrow" className="h-4 w-4" />
+                <Icon name="arrow" className="card-go h-4 w-4" />
               </span>
             </div>
           </Link>

@@ -9,11 +9,7 @@ export function ComplianceFooter() {
   return (
     <footer
       id="site-footer"
-      className="border-t"
-      style={{
-        borderColor: "var(--color-line-soft)",
-        backgroundColor: "var(--color-surface)",
-      }}
+      className="footer-band"
     >
       <div className="container-page py-14">
         <div className="grid gap-10 text-center lg:grid-cols-[1.5fr_1fr_1fr_1fr] lg:text-left">

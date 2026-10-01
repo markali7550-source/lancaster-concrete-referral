@@ -89,7 +89,7 @@ export default function LocationsPage() {
                   style={{ color: "var(--color-accent)" }}
                 >
                   View {location.city} referrals
-                  <Icon name="arrow" className="h-4 w-4" />
+                  <Icon name="arrow" className="card-go h-4 w-4" />
                 </span>
               </Link>
             </li>
