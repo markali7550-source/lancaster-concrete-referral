@@ -279,7 +279,7 @@ export function Timeline({
             {index + 1}
           </span>
           <div className="card min-w-0 p-5">
-            <div className="flex flex-wrap items-baseline justify-center gap-x-4 gap-y-1 lg:justify-between">
+            <div className="flex flex-col items-center gap-0.5 lg:flex-row lg:flex-wrap lg:items-baseline lg:justify-between lg:gap-x-4 lg:gap-y-1">
               <p className="font-semibold">{phase.phase}</p>
               <p className="text-xs font-medium text-[color:var(--color-muted)]">
                 {phase.duration}
