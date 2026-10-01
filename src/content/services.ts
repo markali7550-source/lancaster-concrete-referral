@@ -11,6 +11,8 @@ export interface ServiceRecord {
   name: string;
   shortName: string;
   nameLower: string;
+  /** Singular noun for sentence templating, e.g. "How a driveway project usually runs". */
+  projectNoun: string;
   state: PublicationState;
   intent: string;
   /** One-line card summary. */
@@ -45,6 +47,7 @@ export const services: readonly ServiceRecord[] = [
     name: "Concrete Driveways",
     shortName: "Driveways",
     nameLower: "a concrete driveway",
+    projectNoun: "driveway",
     state: "published",
     intent: "New and replacement driveway enquiries",
     summary:
@@ -232,6 +235,7 @@ export const services: readonly ServiceRecord[] = [
     name: "Concrete Patios",
     shortName: "Patios",
     nameLower: "a concrete patio",
+    projectNoun: "patio",
     state: "published",
     intent: "Residential patio enquiries",
     summary:
@@ -412,6 +416,7 @@ export const services: readonly ServiceRecord[] = [
     name: "Concrete Slabs",
     shortName: "Slabs and pads",
     nameLower: "a concrete slab",
+    projectNoun: "slab",
     state: "published",
     intent: "Residential slab and pad enquiries",
     summary:
@@ -587,6 +592,7 @@ export const services: readonly ServiceRecord[] = [
     name: "Concrete Repair",
     shortName: "Repair",
     nameLower: "concrete repair",
+    projectNoun: "repair",
     state: "published",
     intent: "Nonstructural repair enquiries",
     summary:

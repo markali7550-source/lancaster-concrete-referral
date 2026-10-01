@@ -2,6 +2,17 @@
 export const FULL_DISCLOSURE = `This website is a marketing and referral service, not a concrete contractor, residential builder, general contractor, engineer, or government agency. We do not perform, supervise, warrant, or guarantee construction work. Requests may be shared with independent third party service providers serving your area. Contractor availability, licensing, insurance, pricing, and project eligibility must be confirmed with the assigned contractor. South Carolina requirements vary by project type, scope, and total cost. Verify credentials through SC LLR before hiring.`;
 
 /** Footer disclosure. Required verbatim on every page. */
+/**
+ * The mandated disclosure split at a sentence boundary for rendering. The words
+ * are untouched: this is `FULL_DISCLOSURE` itself, sliced, so the legal text
+ * stays verbatim while no single paragraph runs long.
+ */
+const FULL_DISCLOSURE_SPLIT_AT = "Contractor availability,";
+export const FULL_DISCLOSURE_PARAGRAPHS: readonly string[] = [
+  FULL_DISCLOSURE.slice(0, FULL_DISCLOSURE.indexOf(FULL_DISCLOSURE_SPLIT_AT)).trim(),
+  FULL_DISCLOSURE.slice(FULL_DISCLOSURE.indexOf(FULL_DISCLOSURE_SPLIT_AT)).trim(),
+];
+
 export const FOOTER_DISCLOSURE = `This website is a referral service and is not a concrete contractor. We connect consumers with independent third party service providers. We do not perform, supervise, or guarantee services provided by third parties.`;
 
 /** Shown beside the primary lead-generation form. */

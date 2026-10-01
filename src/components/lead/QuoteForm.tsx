@@ -377,7 +377,7 @@ export function QuoteForm({
                       value={service.slug}
                       checked={checked}
                       onChange={() => set("serviceSlug", service.slug)}
-                      className="h-4 w-4"
+                      className="h-5 w-5 shrink-0"
                       id={
                         service.slug === services[0]?.slug
                           ? `${baseId}-serviceSlug`

@@ -55,8 +55,13 @@ function titleFor(name: string) {
   return `${name} in Lancaster, SC | Contractor Referrals`;
 }
 
-function descriptionFor(nameLower: string) {
-  return `Need ${nameLower} in Lancaster, SC? Call now or request a quote. We connect you with an independent local concrete contractor. Availability varies.`;
+/**
+ * Hub pages answer "what does this cover"; the Lancaster pages answer "who can
+ * do this near me". Keeping the two descriptions distinct avoids duplicate meta
+ * between /services/[service] and /locations/lancaster-sc/[service].
+ */
+function descriptionFor(nameLower: string, projectNoun: string) {
+  return `What ${nameLower} referral covers in Lancaster, SC, what falls outside it, and how your ${projectNoun} request reaches an independent service provider.`;
 }
 
 export async function generateMetadata({
@@ -69,7 +74,7 @@ export async function generateMetadata({
   if (!service) return {};
   return pageMetadata({
     title: titleFor(service.name),
-    description: descriptionFor(service.nameLower),
+    description: descriptionFor(service.nameLower, service.projectNoun),
     path: `/services/${service.slug}`,
   });
 }
@@ -81,7 +86,7 @@ export default async function ServicePage({ params }: { params: Params }) {
 
   const path = `/services/${service.slug}`;
   const h1 = `${service.name} in Lancaster County, SC`;
-  const description = descriptionFor(service.nameLower);
+  const description = descriptionFor(service.nameLower, service.projectNoun);
 
   const cityLinks = publishedLocationServices
     .filter((record) => record.serviceSlug === service.slug)
@@ -187,7 +192,7 @@ export default async function ServicePage({ params }: { params: Params }) {
             <section id="process" className="scroll-mt-36 border-t py-8 md:py-14" style={{ borderColor: "var(--color-line-soft)" }}>
               <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Process</p>
               <h2 className="h2 mt-4 text-center lg:text-left">
-                How a {service.shortName.toLowerCase().replace(/s$/, "")} project usually runs
+                How a {service.projectNoun} project usually runs
               </h2>
               <p className="lede mx-auto mt-4 max-w-prose text-center lg:mx-0 lg:text-left">
                 Durations below are typical ranges reported by partners, not

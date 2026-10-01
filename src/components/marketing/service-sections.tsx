@@ -27,7 +27,10 @@ export function Breadcrumbs({
             <li key={item.name} className="flex items-center gap-2">
               {index > 0 ? <span aria-hidden="true">/</span> : null}
               {item.path ? (
-                <Link href={item.path} className="hover:underline">
+                <Link
+                  href={item.path}
+                  className="-my-1 inline-block py-1 hover:underline"
+                >
                   {item.name}
                 </Link>
               ) : (

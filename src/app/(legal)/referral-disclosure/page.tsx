@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { LegalPage } from "../LegalLayout";
 import { pageMetadata } from "@/lib/seo/metadata";
-import { FULL_DISCLOSURE, SC_LLR_URL } from "@/lib/seo/disclosure";
+import { FULL_DISCLOSURE_PARAGRAPHS, SC_LLR_URL } from "@/lib/seo/disclosure";
 import { site } from "@/lib/env";
 
 export const metadata: Metadata = pageMetadata({
@@ -14,7 +14,11 @@ export const metadata: Metadata = pageMetadata({
 export default function ReferralDisclosurePage() {
   return (
     <LegalPage title="Referral disclosure" updated="24 September 2026" currentPath="/referral-disclosure">
-      <p className="text-[color:var(--color-ink)]">{FULL_DISCLOSURE}</p>
+      {FULL_DISCLOSURE_PARAGRAPHS.map((paragraph) => (
+        <p key={paragraph} className="text-[color:var(--color-ink)]">
+          {paragraph}
+        </p>
+      ))}
 
       <h2>Our role</h2>
       <p>
