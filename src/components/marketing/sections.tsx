@@ -31,7 +31,7 @@ export function Section({
 }) {
   const background =
     tone === "soft"
-      ? "var(--color-accent-soft)"
+      ? "var(--color-section)"
       : tone === "surface"
         ? "var(--color-surface)"
         : undefined;
@@ -328,12 +328,12 @@ export function StatStrip({
               <dt className="sr-only">{item.label}</dt>
               <dd>
                 <span
-                  className="block text-[2rem] font-extrabold leading-none tracking-[-0.03em] md:text-[2.5rem]"
+                  className="block text-[2.4rem] font-extrabold leading-none tracking-[-0.03em] md:text-[3rem]"
                   style={{ color: "var(--color-accent)" }}
                 >
                   {item.value}
                 </span>
-                <span className="mt-3 block text-[11px] font-semibold uppercase tracking-[0.14em] text-[color:var(--color-muted)]">
+                <span className="mt-3 block text-[13px] font-semibold uppercase tracking-[0.12em] text-[color:var(--color-subtle)]">
                   {item.label}
                 </span>
               </dd>
@@ -467,7 +467,7 @@ export function RoutingControls() {
           >
             <div className="flex flex-col items-center gap-3 text-center lg:flex-row lg:items-start lg:gap-3.5 lg:text-left">
               <span
-                className="marker-count grid h-7 w-7 shrink-0 place-items-center rounded-full text-[12px] font-bold"
+                className="marker-count grid h-8 w-8 shrink-0 place-items-center rounded-full text-[13px] font-bold"
                 style={{
                   backgroundColor: "var(--color-accent-soft)",
                   color: "var(--color-accent)",
@@ -584,17 +584,17 @@ export function DecisionSupport({
           <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-6 font-medium md:px-6">
             <span className="flex-1 text-left">{item.question}</span>
             <span
-              className="grid h-7 w-7 shrink-0 place-items-center rounded-full transition-transform group-open:rotate-90"
+              className="grid h-8 w-8 shrink-0 place-items-center rounded-[10px] transition-colors"
               style={{
                 backgroundColor: "var(--color-accent-soft)",
                 color: "var(--color-accent)",
               }}
               aria-hidden="true"
             >
-              <Icon name="arrow" className="h-3.5 w-3.5" />
+              <Icon name="plus" className="h-4 w-4" />
             </span>
           </summary>
-          <p className="px-5 pb-6 text-left text-[14.5px] leading-relaxed text-[color:var(--color-muted)] md:px-6">
+          <p className="px-5 pb-6 text-left text-[15px] leading-relaxed text-[color:var(--color-muted)] md:px-6">
             {item.answer}
           </p>
         </details>
@@ -629,14 +629,14 @@ export function FaqSection({
           <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-5 font-semibold md:px-6">
             <span className="flex-1 text-left text-[16px]">{faq.question}</span>
             <span
-              className="grid h-7 w-7 shrink-0 place-items-center rounded-full transition-transform group-open:rotate-90"
+              className="grid h-8 w-8 shrink-0 place-items-center rounded-[10px] transition-colors"
               style={{
                 backgroundColor: "var(--color-accent-soft)",
                 color: "var(--color-accent)",
               }}
               aria-hidden="true"
             >
-              <Icon name="arrow" className="h-3.5 w-3.5" />
+              <Icon name="plus" className="h-4 w-4" />
             </span>
           </summary>
           <p className="px-5 pb-6 text-left text-[15px] leading-relaxed text-[color:var(--color-muted)] md:px-6">

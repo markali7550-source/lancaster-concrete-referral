@@ -200,7 +200,7 @@ export default function HomePage() {
               ].map((item, index) => (
                 <li key={item} className="flex justify-center gap-4 text-left lg:justify-start">
                   <span
-                    className="grid h-7 w-7 shrink-0 place-items-center rounded-full text-[12px] font-bold"
+                    className="grid h-8 w-8 shrink-0 place-items-center rounded-full text-[13px] font-bold"
                     style={{
                       backgroundColor: "var(--color-accent-soft)",
                       color: "var(--color-accent)",

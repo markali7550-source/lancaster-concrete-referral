@@ -139,7 +139,7 @@ export function ComplianceFooter() {
           {FOOTER_DISCLOSURE}
         </p>
 
-        <div className="mt-8 flex flex-col gap-2 text-center text-[12.5px] text-[color:var(--color-muted)] lg:flex-row lg:items-center lg:justify-between lg:text-left">
+        <div className="mt-8 flex flex-col gap-2 text-center text-[13px] text-[color:var(--color-muted)] lg:flex-row lg:items-center lg:justify-between lg:text-left">
           <p>
             © {new Date().getFullYear()} {site.brand}. All rights reserved.
           </p>

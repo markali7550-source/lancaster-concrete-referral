@@ -150,7 +150,7 @@ export default async function LocationPage({ params }: { params: Params }) {
           {location.localEvidence.map((item, index) => (
             <li key={item} className="card p-6 text-center lg:text-left">
               <span
-                className="mx-auto grid h-8 w-8 place-items-center rounded-full text-[12px] font-bold lg:mx-0"
+                className="mx-auto grid h-8 w-8 place-items-center rounded-full text-[13px] font-bold lg:mx-0"
                 style={{
                   backgroundColor: "var(--color-accent-soft)",
                   color: "var(--color-accent)",
