@@ -13,6 +13,7 @@ const PUBLISHED = [
   "/services/concrete-patios",
   "/services/concrete-slabs",
   "/services/concrete-repair",
+  "/locations",
   "/locations/lancaster-sc",
   "/locations/lancaster-sc/concrete-driveways",
   "/locations/lancaster-sc/concrete-patios",
@@ -25,7 +26,7 @@ const PUBLISHED = [
   "/referral-disclosure",
 ];
 
-const NOINDEX_OK = ["/locations", "/thank-you"];
+const NOINDEX_OK = ["/thank-you"];
 
 const MUST_404 = [
   "/locations/indian-land-sc",

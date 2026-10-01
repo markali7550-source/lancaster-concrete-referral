@@ -7,19 +7,22 @@ import {
   overlayHeading,
   Section,
 } from "@/components/marketing/sections";
+import { Icon } from "@/components/ui/Icon";
 import { publishedLocations } from "@/content/locations";
+import { publishedLocationServices } from "@/content/location-services";
+import { publishedServices } from "@/content/services";
 import { pageMetadata } from "@/lib/seo/metadata";
 
 /**
- * Conditional route (spec 3.2): noindex and omitted from the sitemap until it
- * provides distinct value beyond one published city.
+ * Conditional route (spec 3.2): indexable once it carries distinct value beyond
+ * a bare city list. It is a primary navigation destination, so it explains how
+ * coverage is granted and links through to each published local page.
  */
 export const metadata: Metadata = pageMetadata({
   title: "Concrete Referral Service Areas in South Carolina",
   description:
     "The South Carolina areas where we currently route concrete referrals. Coverage is added only once a participating provider approves it in writing.",
   path: "/locations",
-  noindex: true,
 });
 
 export default function LocationsPage() {
@@ -36,23 +39,91 @@ export default function LocationsPage() {
           Service areas
         </p>
         <h1 className="h1 mx-auto mt-5 max-w-3xl lg:mx-0" style={{ color: overlayHeading }}>
-          Areas We Currently Serve
+          Concrete Referral Service Areas in South Carolina
         </h1>
         <p className="lede mx-auto mt-5 max-w-2xl lg:mx-0" style={{ color: overlayBody }}>
           One service area today. Additional South Carolina cities appear
           here only after coverage, content, and compliance gates pass.
         </p>
       </OverlayHeader>
-      <Section title="Current service areas">
-      <ul className="flex flex-wrap gap-3">
-        {publishedLocations.map((location) => (
-          <li key={location.slug}>
-            <Link href={`/locations/${location.slug}`} className="btn btn-secondary">
-              {location.city}, {location.region}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <Section
+        eyebrow="Coverage"
+        title="Where we route concrete referrals today"
+        lead="Every area below has a participating provider who has confirmed in writing that they accept work there."
+      >
+        <div className="mx-auto max-w-prose space-y-6 text-center lg:mx-0 lg:text-left">
+          <div>
+            <h3 className="text-[17px] font-semibold">How an area gets added</h3>
+            <p className="mt-1.5 text-[16px] leading-relaxed text-[color:var(--color-muted)]">
+              A city appears here only once a provider has approved it in
+              writing and the page has its own local content. We do not draw a
+              radius on a map and call it coverage.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-[17px] font-semibold">
+              If your area is not listed
+            </h3>
+            <p className="mt-1.5 text-[16px] leading-relaxed text-[color:var(--color-muted)]">
+              Submit a request anyway. If nobody covers your address we tell you
+              plainly rather than passing your details to a provider who cannot
+              help.
+            </p>
+          </div>
+        </div>
+
+        <ul className="mt-9 grid gap-5 sm:grid-cols-2">
+          {publishedLocations.map((location) => (
+            <li key={location.slug}>
+              <Link
+                href={`/locations/${location.slug}`}
+                className="card card-interactive flex h-full flex-col p-6 text-center lg:text-left"
+              >
+                <h3 className="text-[17px] font-semibold">
+                  Concrete referrals in {location.city}, {location.region}
+                </h3>
+                <p className="mt-2 flex-1 text-[14px] leading-relaxed text-[color:var(--color-muted)]">
+                  Driveways, patios, slabs and repair routed to independent
+                  providers covering {location.city}.
+                </p>
+                <span
+                  className="mt-5 inline-flex items-center justify-center gap-1.5 text-[14px] font-semibold lg:justify-start"
+                  style={{ color: "var(--color-accent)" }}
+                >
+                  View {location.city} referrals
+                  <Icon name="arrow" className="h-4 w-4" />
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <nav aria-label="Local service pages" className="mt-9">
+          <p className="eyebrow-plain text-center lg:text-left">
+            Local service pages
+          </p>
+          <ul className="mt-4 flex flex-wrap justify-center gap-3 lg:justify-start">
+            {publishedLocationServices.map((record) => {
+              const location = publishedLocations.find(
+                (l) => l.slug === record.locationSlug,
+              );
+              const service = publishedServices.find(
+                (s) => s.slug === record.serviceSlug,
+              );
+              if (!location || !service) return null;
+              return (
+                <li key={`${record.locationSlug}-${record.serviceSlug}`}>
+                  <Link
+                    href={`/locations/${record.locationSlug}/${record.serviceSlug}`}
+                    className="btn btn-secondary"
+                  >
+                    {service.name} in {location.city}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
       </Section>
     </>
   );

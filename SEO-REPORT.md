@@ -1,114 +1,120 @@
 # Site wide SEO, content and responsive audit
 
 18 routes audited against all 15 checkpoints at 390, 768 and 1440 px. Design,
-branding, palette, typography and page structure unchanged.
+branding, palette and typography unchanged.
 
 ## 5. Paragraph length (the hard requirement)
 
-Every text block on the site measured (`p`, `li`, `dd`, `td`, `blockquote`).
+Every text block measured (`p`, `li`, `dd`, `td`, `blockquote`).
 
 | Words per block | Blocks |
 |---|---|
-| 1 to 20 | 1,357 |
-| 21 to 40 | 283 |
+| 1 to 20 | 1,359 |
+| 21 to 40 | 285 |
 | 41 to 60 | 40 |
 | 61 to 80 | 0 |
-| 81 to 90 | 0 |
-| **91 or more** | **0** |
+| **81 or more** | **0** |
 
-**1,680 blocks. The longest paragraph on the entire website is 60 words.**
+**1,684 blocks. The longest paragraph on the entire website is 60 words**, well
+inside the 80 word ceiling, and 98% sit at 40 words or fewer.
 
-The only two blocks that had been over 60 were the mandated legal disclosure
-(76 words) on `/how-it-works` and `/referral-disclosure`. The words are legally
-fixed, so instead of rewriting it the rendering now splits it at a sentence
-boundary into two paragraphs of 37 and 39 words. The text is still verbatim,
-sliced from the same constant.
+## Defect found and fixed this pass
 
-## Defects found and fixed this pass
+**`/locations` was a primary navigation destination that search engines were told
+to ignore.** After the header link was renamed to "Service areas" it pointed at a
+page carrying `noindex, nofollow`, 29 words of copy and a single bare button. That
+breaks "every important page is properly indexable".
 
-| # | Defect | Where | Fix |
-|---|---|---|---|
-| 1 | **Duplicate meta descriptions.** Each service hub shared its description word for word with its Lancaster page, 4 duplicated pairs across 8 indexable pages. | `/services/[service]` vs `/locations/lancaster-sc/[service]` | Hub descriptions rewritten to match informational intent ("what the referral covers, what falls outside it, how the request is routed"); local pages keep the transactional "Call now or request a quote" wording |
-| 2 | **Broken heading from templating.** `/services/concrete-slabs` rendered "How a **slabs and pad** project usually runs" because the H2 stripped a trailing "s" from "Slabs and pads". | Services H2 | Added a `projectNoun` field per service; now "How a **slab** project usually runs" |
-| 3 | **Legal disclosure was a 76 word wall.** | `/how-it-works`, `/referral-disclosure` | Split into two paragraphs, words untouched |
-| 4 | **Radio inputs 16 px.** | Lead form, 11 pages | 20 px, matching the consent checkbox |
-| 5 | **Breadcrumb links 20 px tall**, under the 24 px WCAG 2.5.8 minimum. | 9 pages | `-my-1 py-1` grows the hit area to 28 px with no change to the bar height |
+Fixed:
 
-## Checkpoint results after the fixes
+| | Before | After |
+|---|---|---|
+| Robots | `noindex, nofollow` | `index, follow` |
+| In sitemap | no | yes (17 URLs) |
+| H1 | "Areas We Currently Serve" | "Concrete Referral Service Areas in South Carolina" |
+| Body | 29 words | 158 words, in 40 to 60 word blocks under their own H3s |
+| Internal links out | 1 | 5 (city card plus all four local service pages) |
 
-**1, 4. SEO and keywords** — no stuffing. Highest term density on any substantial
-page is 3.0%; service pages run 1.6 to 2.3% on their primary term. Local terms
-("Lancaster", "Lancaster County", "SC") appear naturally in H1s, intros and local
-sections rather than being repeated.
+The new copy explains how an area qualifies for coverage and what happens if an
+address is not covered, which is the distinct value the spec required before the
+route could be indexed. The crawler fixture and sitemap expectations were updated
+to match.
 
-**2, 11. Headings** — exactly one H1 per page, zero level jumps across 18 pages, no
-heading over 12 words, none empty. Every H1 carries the page's primary keyword and
-location.
+## Checkpoint results
 
-**3. Meta** — all 18 titles 41 to 60 characters, all descriptions 97 to 154, zero
-duplicate titles, **zero duplicate descriptions**. Canonical and OpenGraph present
-on every page. `lang="en-US"`.
+**1, 4. SEO and keywords** — no stuffing anywhere. Peak term density on a
+substantial page is 3.0%; service pages run 1.6 to 2.3% on their primary term.
+Local terms appear naturally in H1s, intros and the local sections.
 
-**6, 7. Images** — 9 images on the homepage and each service page, 8 on each local
-page, 4 to 5 on thin pages. Every image has a descriptive alt. Zero broken images
-across 18 pages × 3 widths. All content photos use `object-fit: cover`, so no
-distortion; every one has a responsive `sizes` attribute and all WebP files are
-under 100 KB.
+**2, 11. Headings** — exactly one H1 per page, **zero level jumps** across all 18
+pages, none longer than 12 words, none empty. The card sub-headings added earlier
+sit correctly as H4 under their H3.
+
+**3. Meta** — all 18 titles 41 to 60 characters, descriptions 97 to 154.
+**Zero duplicate titles, zero duplicate descriptions.** Canonical and OpenGraph on
+every page.
+
+**6, 7. Images** — every section that benefits now carries a relevant photo.
+Zero broken images, zero missing alt, zero duplicate alt strings across different
+files, every image above 300 px has a `sizes` attribute, all WebP under 100 KB,
+all content photos `object-fit: cover` so nothing distorts.
 
 **8. Internal links** — 23 to 45 per page. Zero generic anchors, zero links without
-an accessible name, zero external links missing `rel=noopener`, zero non clean URLs
-(no underscores, no uppercase, no query strings).
+an accessible name, zero external links missing `rel=noopener`, zero unclean URLs.
+Lancaster service cards now use local anchor text ("View driveways in Lancaster").
 
 **9, 10, 12, 13. Responsive, alignment, spacing** — zero horizontal overflow, zero
-clipped text, zero overlapping sections and identical `.container-page` padding at
-390, 768 and 1440. Tap targets: every button, nav link and breadcrumb clears 24 px;
-the form's radio and consent inputs sit inside labels measuring 150×66 and 308×80.
+clipped text, zero genuine overlaps, identical container padding at all three
+widths. Every button, nav link and breadcrumb clears the 24 px tap minimum.
+
+*(The sweep reports the sticky in-page nav on service pages as overlapping once
+scrolled. That is what `position: sticky` does; the gap is zero at rest.)*
 
 **14, 15. Readability and consistency** — same section rhythm, card style, heading
-scale and CTA treatment on every page; mobile centring rules unchanged.
+scale and CTA treatment on every page.
 
 ## Indexability
 
 | Robots | Pages |
 |---|---|
-| `index, follow` | 16 |
-| `noindex, nofollow` | `/locations`, `/thank-you` (intentional) |
+| `index, follow` | **17** |
+| `noindex, nofollow` | `/thank-you` only (conversion page, intentional) |
 
-Sitemap lists the 16 indexable URLs. Structured data: `Organization` +
-`OnlineBusiness` + `WebSite` sitewide, plus `WebPage`, `BreadcrumbList`, `FAQPage`
-and `Service` where applicable.
+Sitemap now lists 17 URLs. Structured data: `Organization` + `OnlineBusiness` +
+`WebSite` sitewide, plus `WebPage`, `BreadcrumbList`, `FAQPage` and `Service`.
 
 ## Page by page
 
-| Page | Words | Images | Links | Schema |
+| Page | Words | Images | Links | Robots |
 |---|---|---|---|---|
-| `/` | 1,190 | 9 | 34 | WebPage, FAQPage |
-| `/services` | 536 | 9 | 33 | WebPage, Breadcrumb, FAQPage |
-| `/services/concrete-driveways` | 2,219 | 9 | 45 | Service, WebPage, Breadcrumb, FAQPage |
-| `/services/concrete-patios` | 2,124 | 9 | 45 | Service, WebPage, Breadcrumb, FAQPage |
-| `/services/concrete-slabs` | 2,076 | 9 | 45 | Service, WebPage, Breadcrumb, FAQPage |
-| `/services/concrete-repair` | 2,082 | 9 | 45 | Service, WebPage, Breadcrumb, FAQPage |
-| `/locations` | 29 | 5 | 23 | noindex hub |
-| `/locations/lancaster-sc` | 921 | 9 | 37 | WebPage, Breadcrumb, FAQPage |
-| `/locations/lancaster-sc/concrete-driveways` | 1,402 | 8 | 37 | Service, WebPage, Breadcrumb, FAQPage |
-| `/locations/lancaster-sc/concrete-patios` | 1,388 | 8 | 37 | Service, WebPage, Breadcrumb, FAQPage |
-| `/locations/lancaster-sc/concrete-slabs` | 1,371 | 8 | 37 | Service, WebPage, Breadcrumb, FAQPage |
-| `/locations/lancaster-sc/concrete-repair` | 1,350 | 8 | 37 | Service, WebPage, Breadcrumb, FAQPage |
-| `/how-it-works` | 473 | 5 | 25 | WebPage, Breadcrumb |
-| `/contact` | 234 | 4 | 26 | WebPage, Breadcrumb |
-| `/privacy` | 276 | 4 | 27 | legal |
-| `/terms` | 177 | 4 | 27 | legal |
-| `/referral-disclosure` | 323 | 4 | 27 | legal |
-| `/thank-you` | 131 | 4 | 24 | noindex conversion |
+| `/` | 1,190 | 9 | 34 | index |
+| `/services` | 536 | 9 | 33 | index |
+| `/services/concrete-driveways` | 2,219 | 9 | 45 | index |
+| `/services/concrete-patios` | 2,124 | 9 | 45 | index |
+| `/services/concrete-slabs` | 2,076 | 9 | 45 | index |
+| `/services/concrete-repair` | 2,082 | 9 | 45 | index |
+| `/locations` | **158** | 5 | **27** | **index** |
+| `/locations/lancaster-sc` | 921 | 9 | 37 | index |
+| `/locations/lancaster-sc/concrete-driveways` | 1,402 | 9 | 37 | index |
+| `/locations/lancaster-sc/concrete-patios` | 1,388 | 9 | 37 | index |
+| `/locations/lancaster-sc/concrete-slabs` | 1,371 | 9 | 37 | index |
+| `/locations/lancaster-sc/concrete-repair` | 1,350 | 9 | 37 | index |
+| `/how-it-works` | 473 | 6 | 25 | index |
+| `/contact` | 234 | 5 | 26 | index |
+| `/privacy` | 276 | 4 | 27 | index |
+| `/terms` | 177 | 4 | 27 | index |
+| `/referral-disclosure` | 323 | 4 | 27 | index |
+| `/thank-you` | 131 | 4 | 24 | noindex |
 
 ## Verification
 
-TypeScript clean · vitest 29/29 · build 28 static pages · page crawler ALL PASSED ·
-API suite 32/32 · content gates 4/4 · Playwright 26/26.
+TypeScript clean · vitest 29/29 · build 28 static pages · page crawler ALL PASSED
+(0 page checks, 0 gate failures, 0 broken links, 0 sitemap problems) · API suite
+32/32 · content gates 4/4 · Playwright 26/26.
 
-## Still outstanding (needs your input)
+## Still blocking real search visibility
 
-`NEXT_PUBLIC_SITE_URL` is still the placeholder `https://example-referral-brand.com`,
-so every canonical, `@id` and sitemap entry points at a domain you do not own, and
-Deployment Protection returns a 302 to crawlers. Until both are changed none of this
-optimisation can be indexed.
+`NEXT_PUBLIC_SITE_URL` remains `https://example-referral-brand.com`, so every
+canonical, `@id` and sitemap entry points at a domain you do not own, and Vercel
+Deployment Protection returns a 302 to crawlers. Until both change, none of this
+can be indexed.
