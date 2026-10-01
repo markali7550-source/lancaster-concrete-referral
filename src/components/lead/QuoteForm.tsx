@@ -587,10 +587,10 @@ export function QuoteForm({
         </div>
       )}
 
-      <p className="mt-4 text-xs leading-relaxed text-[color:var(--color-muted)]">
+      <p className="mt-4 text-center text-xs leading-relaxed text-[color:var(--color-muted)] lg:text-left">
         {LEAD_FORM_DISCLOSURE}
       </p>
-      <p className="mt-2 text-xs leading-relaxed text-[color:var(--color-muted)]">
+      <p className="mt-2 text-center text-xs leading-relaxed text-[color:var(--color-muted)] lg:text-left">
         Submitting this form does not create a contract, a price, or a booking.
         We are a referral service, not a concrete contractor.
       </p>
