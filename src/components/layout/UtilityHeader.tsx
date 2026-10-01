@@ -41,8 +41,8 @@ export function UtilityHeader() {
                 projectTypes: service.projectTypes,
               }))}
             />
-            <Link href="/locations/lancaster-sc" className="btn btn-ghost text-[15px] font-medium">
-              Lancaster
+            <Link href="/locations" className="btn btn-ghost text-[15px] font-medium">
+              Service areas
             </Link>
             <Link href="/how-it-works" className="btn btn-ghost text-[15px] font-medium">
               How it works
@@ -94,7 +94,13 @@ export function UtilityHeader() {
                 All services →
               </Link>
               <p className="eyebrow-plain px-3 pb-1 pt-3">Company</p>
-              <Link href="/locations/lancaster-sc" className="block rounded-[10px] px-3 py-2.5 text-[15px]">
+              <Link href="/locations" className="block rounded-[10px] px-3 py-2.5 text-[15px]">
+                Service areas
+              </Link>
+              <Link
+                href="/locations/lancaster-sc"
+                className="block rounded-[10px] px-3 py-2.5 text-[15px]"
+              >
                 Lancaster, SC
               </Link>
               <Link href="/how-it-works" className="block rounded-[10px] px-3 py-2.5 text-[15px]">
