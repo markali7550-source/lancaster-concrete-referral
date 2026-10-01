@@ -9,8 +9,6 @@ import {
 } from "@/components/marketing/sections";
 import { Icon } from "@/components/ui/Icon";
 import { publishedLocations } from "@/content/locations";
-import { publishedLocationServices } from "@/content/location-services";
-import { publishedServices } from "@/content/services";
 import { pageMetadata } from "@/lib/seo/metadata";
 
 /**
@@ -98,32 +96,6 @@ export default function LocationsPage() {
           ))}
         </ul>
 
-        <nav aria-label="Local service pages" className="mt-9">
-          <p className="eyebrow-plain text-center lg:text-left">
-            Local service pages
-          </p>
-          <ul className="mt-4 flex flex-wrap justify-center gap-3 lg:justify-start">
-            {publishedLocationServices.map((record) => {
-              const location = publishedLocations.find(
-                (l) => l.slug === record.locationSlug,
-              );
-              const service = publishedServices.find(
-                (s) => s.slug === record.serviceSlug,
-              );
-              if (!location || !service) return null;
-              return (
-                <li key={`${record.locationSlug}-${record.serviceSlug}`}>
-                  <Link
-                    href={`/locations/${record.locationSlug}/${record.serviceSlug}`}
-                    className="btn btn-secondary"
-                  >
-                    {service.name} in {location.city}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
       </Section>
     </>
   );
