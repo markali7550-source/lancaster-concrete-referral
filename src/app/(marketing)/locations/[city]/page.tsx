@@ -173,25 +173,13 @@ export default async function LocationPage({ params }: { params: Params }) {
         title={`Concrete services routed in ${location.city}`}
         lead="Pick the closest match. The category only decides which participating providers are eligible. The contractor scopes the whole job on site."
       >
-        <ProjectTypeChooser />
-        {comboSlugs.length > 0 ? (
-          <div className="mt-10 text-center lg:text-left">
-            <p className="eyebrow-plain">Areas service pages</p>
-            <ul className="mt-4 flex flex-wrap justify-center gap-3 lg:justify-start">
-              {comboSlugs.map((slug) => {
-                const service = publishedServices.find((s) => s.slug === slug);
-                if (!service) return null;
-                return (
-                  <li key={slug}>
-                    <Link href={`${path}/${slug}`} className="btn btn-secondary">
-                      {service.name} in {location.city}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        ) : null}
+        <ProjectTypeChooser
+          services={publishedServices.filter((service) =>
+            comboSlugs.includes(service.slug),
+          )}
+          cityPrefix={path}
+          cityLabel={location.city}
+        />
       </Section>
 
       <Section

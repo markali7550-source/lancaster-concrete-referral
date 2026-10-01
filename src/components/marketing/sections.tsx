@@ -380,9 +380,12 @@ export function ReferralDisclosureStrip() {
 export function ProjectTypeChooser({
   services = publishedServices,
   cityPrefix,
+  cityLabel,
 }: {
   services?: readonly ServiceRecord[];
   cityPrefix?: string;
+  /** Shown in the card link when the cards point at local pages. */
+  cityLabel?: string;
 }) {
   return (
     <ul className="grid gap-5 sm:grid-cols-2">
@@ -413,7 +416,9 @@ export function ProjectTypeChooser({
                 className="mt-5 inline-flex items-center justify-center gap-1.5 text-[14px] font-semibold lg:justify-start"
                 style={{ color: "var(--color-accent)" }}
               >
-                View {service.shortName.toLowerCase()} referrals
+                {cityLabel
+                  ? `View ${service.shortName.toLowerCase()} in ${cityLabel}`
+                  : `View ${service.shortName.toLowerCase()} referrals`}
                 <Icon name="arrow" className="h-4 w-4" />
               </span>
             </div>
