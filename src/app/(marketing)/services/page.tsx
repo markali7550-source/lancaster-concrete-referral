@@ -155,7 +155,7 @@ export default function ServicesPage() {
       <SectionDivider />
 
       <Section eyebrow="FAQ" title="About these services">
-        <FaqSection faqs={FAQS} />
+        <FaqSection faqs={FAQS} name="services-faq" />
       </Section>
 
       <CtaBand

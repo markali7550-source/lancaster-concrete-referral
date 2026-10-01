@@ -241,7 +241,7 @@ export default async function LocationPage({ params }: { params: Params }) {
       </Section>
 
       <Section eyebrow="FAQ" title={`${location.city} questions`}>
-        <FaqSection faqs={faqs} />
+        <FaqSection faqs={faqs} name="city-faq" />
       </Section>
 
       <Section tone="surface" eyebrow="Nearby" title="Adjacent published areas">

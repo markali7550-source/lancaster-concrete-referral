@@ -236,7 +236,7 @@ export default function HomePage() {
       </Section>
 
       <Section eyebrow="FAQ" title="Straight answers">
-        <FaqSection faqs={FAQS} />
+        <FaqSection faqs={FAQS} name="home-faq" />
       </Section>
 
       <Section

@@ -289,7 +289,7 @@ export default async function ComboPage({ params }: { params: Params }) {
         eyebrow="FAQ"
         title={`${location.city} ${serviceRecord.shortName.toLowerCase()} questions`}
       >
-        <FaqSection faqs={record.localFaqs} />
+        <FaqSection faqs={record.localFaqs} name="combo-faq" />
       </Section>
 
       <Section eyebrow="Other services" title={`Also routed in ${location.city}`}>
