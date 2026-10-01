@@ -20,11 +20,20 @@ export function MoreInformation({ blocks }: { blocks: ServiceDetail["moreInfo"] 
           <h3 className="text-center text-[17px] font-semibold lg:text-left">
             {block.heading}
           </h3>
-          <div className="mt-3 space-y-3 text-center text-[14.5px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
-            {block.body.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
+          <p className="mt-3 text-center text-[14.5px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
+            {block.body[0]}
+          </p>
+          <h4 className="mt-4 text-center text-[14px] font-semibold lg:text-left">
+            {block.subheading}
+          </h4>
+          {block.body.slice(1).map((paragraph) => (
+            <p
+              key={paragraph}
+              className="mt-1.5 text-center text-[14.5px] leading-relaxed text-[color:var(--color-muted)] lg:text-left"
+            >
+              {paragraph}
+            </p>
+          ))}
         </article>
       ))}
     </div>
