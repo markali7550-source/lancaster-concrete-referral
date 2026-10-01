@@ -171,10 +171,10 @@ export function ServiceDisclosureBlock() {
 export function ServiceCtaBand() {
   return (
     <section
-      className="border-y py-12"
+      className="border-y py-16 md:py-20"
       style={{
         borderColor: "var(--color-line)",
-        backgroundColor: "var(--color-accent-soft)",
+        backgroundColor: "var(--color-section)",
       }}
     >
       <div className="container-page flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
@@ -182,7 +182,7 @@ export function ServiceCtaBand() {
           <h2 className="text-xl font-semibold md:text-2xl">
             Need Help With Your Concrete Project?
           </h2>
-          <p className="mt-2 text-sm leading-relaxed text-[color:var(--color-muted)]">
+          <p className="mt-2 text-[15px] leading-relaxed text-[color:var(--color-muted)]">
             Tell us about your project and location to request a connection with
             an independent concrete service provider serving your area.
           </p>
