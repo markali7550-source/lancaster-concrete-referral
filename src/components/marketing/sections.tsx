@@ -535,7 +535,7 @@ export function HowMatchingWorks() {
       {STEPS.map((step, index) => (
         <li key={step.verb} className="card flex h-full flex-col p-6 text-center lg:text-left">
           <span
-            className="text-[13px] font-bold uppercase tracking-[0.18em]"
+            className="text-[30px] font-extrabold leading-none tracking-tight md:text-[34px]"
             style={{ color: "var(--color-accent)" }}
           >
             {String(index + 1).padStart(2, "0")}
