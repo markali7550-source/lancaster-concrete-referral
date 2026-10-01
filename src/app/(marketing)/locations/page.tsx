@@ -51,7 +51,9 @@ export default function LocationsPage() {
       >
         <div className="mx-auto max-w-prose space-y-6 text-center lg:mx-0 lg:text-left">
           <div>
-            <h3 className="text-[17px] font-semibold">How an area gets added</h3>
+            <h3 className="text-[22px] font-semibold leading-snug">
+              How an area gets added
+            </h3>
             <p className="mt-1.5 text-[16px] leading-relaxed text-[color:var(--color-muted)]">
               A city appears here only once a provider has approved it in
               writing and the page has its own local content. We do not draw a
@@ -59,7 +61,7 @@ export default function LocationsPage() {
             </p>
           </div>
           <div>
-            <h3 className="text-[17px] font-semibold">
+            <h3 className="text-[22px] font-semibold leading-snug">
               If your area is not listed
             </h3>
             <p className="mt-1.5 text-[16px] leading-relaxed text-[color:var(--color-muted)]">

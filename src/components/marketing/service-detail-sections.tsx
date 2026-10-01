@@ -132,11 +132,6 @@ export function ReferralSteps() {
           </li>
         ))}
       </ol>
-      <p className="mt-5 text-center text-[13px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
-        This platform routes requests only. We do not perform the work
-        ourselves. The independent provider quotes, schedules, and carries out
-        any project you agree to.
-      </p>
     </div>
   );
 }

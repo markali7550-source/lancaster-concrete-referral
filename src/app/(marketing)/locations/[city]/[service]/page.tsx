@@ -150,7 +150,9 @@ export default async function ComboPage({ params }: { params: Params }) {
               <div className="mx-auto mt-8 max-w-prose space-y-6 text-center lg:mx-0 lg:text-left">
                 {record.localBody.map((block) => (
                   <div key={block.heading}>
-                    <h3 className="text-[17px] font-semibold">{block.heading}</h3>
+                    <h3 className="text-[22px] font-semibold leading-snug">
+                      {block.heading}
+                    </h3>
                     <p className="mt-1.5 text-[16px] leading-relaxed text-[color:var(--color-muted)]">
                       {block.body}
                     </p>
