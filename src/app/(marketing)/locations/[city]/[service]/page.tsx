@@ -131,7 +131,7 @@ export default async function ComboPage({ params }: { params: Params }) {
       <ReferralDisclosureStrip />
 
       <div className="container-page">
-        <div className="grid gap-6 lg:grid-cols-12 lg:gap-14">
+        <div className="grid gap-6 lg:grid-cols-12 lg:gap-12">
           <div className="min-w-0 lg:col-span-7 xl:col-span-8">
             <section className="scroll-mt-36 py-12 md:py-20">
               <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">{`${serviceRecord.name} · ${location.city}`}</p>

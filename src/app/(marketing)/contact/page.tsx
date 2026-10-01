@@ -69,7 +69,10 @@ export default function ContactPage() {
                   Phone
                 </dt>
                 <dd className="mt-1">
-                  <a href={`tel:${site.phoneE164}`} className="text-xl font-semibold">
+                  <a
+                    href={`tel:${site.phoneE164}`}
+                    className="-my-2 inline-block py-2 text-xl font-semibold"
+                  >
                     {site.phoneDisplay}
                   </a>
                 </dd>
@@ -79,7 +82,12 @@ export default function ContactPage() {
                   Email
                 </dt>
                 <dd className="mt-1">
-                  <a href={`mailto:${site.email}`} className="text-lg">{site.email}</a>
+                  <a
+                    href={`mailto:${site.email}`}
+                    className="-my-2 inline-block py-2 text-lg"
+                  >
+                    {site.email}
+                  </a>
                 </dd>
               </div>
               <div>
