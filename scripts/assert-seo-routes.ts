@@ -13,7 +13,7 @@ for (const record of publishedLocationServices) {
     failures.push(`combo ${record.locationSlug}/${record.serviceSlug}: service not published`);
   }
   // Uniqueness gate: local body must not be a bare city substitution.
-  const words = record.localBody.join(" ").split(/\s+/).length;
+  const words = record.localBody.map((block) => block.body).join(" ").split(/\s+/).length;
   if (words < 120) {
     failures.push(`combo ${record.locationSlug}/${record.serviceSlug}: local body too thin (${words} words)`);
   }

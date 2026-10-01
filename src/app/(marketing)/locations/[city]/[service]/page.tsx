@@ -132,9 +132,14 @@ export default async function ComboPage({ params }: { params: Params }) {
                 What we see on {location.city}{" "}
                 {serviceRecord.shortName.toLowerCase()} requests
               </h2>
-              <div className="mx-auto mt-8 max-w-prose space-y-5 text-center text-[16px] leading-relaxed text-[color:var(--color-muted)] lg:mx-0 lg:text-left">
-                {record.localBody.map((paragraph) => (
-                  <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+              <div className="mx-auto mt-8 max-w-prose space-y-6 text-center lg:mx-0 lg:text-left">
+                {record.localBody.map((block) => (
+                  <div key={block.heading}>
+                    <h3 className="text-[17px] font-semibold">{block.heading}</h3>
+                    <p className="mt-1.5 text-[16px] leading-relaxed text-[color:var(--color-muted)]">
+                      {block.body}
+                    </p>
+                  </div>
                 ))}
               </div>
               <nav

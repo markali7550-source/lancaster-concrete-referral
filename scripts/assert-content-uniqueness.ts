@@ -23,7 +23,7 @@ const serviceCorpus = publishedServices.map((service) =>
 );
 
 for (const record of publishedLocationServices) {
-  const body = record.localBody.join(" ");
+  const body = record.localBody.map((block) => block.body).join(" ");
   const location = publishedLocations.find((l) => l.slug === record.locationSlug);
   const id = `${record.locationSlug}/${record.serviceSlug}`;
 
@@ -39,8 +39,8 @@ for (const record of publishedLocationServices) {
       if (other === record || other.serviceSlug !== record.serviceSlug) continue;
       const otherLocation = publishedLocations.find((l) => l.slug === other.locationSlug);
       const otherStripped = otherLocation
-        ? other.localBody.join(" ").replaceAll(otherLocation.city, "CITY")
-        : other.localBody.join(" ");
+        ? other.localBody.map((block) => block.body).join(" ").replaceAll(otherLocation.city, "CITY")
+        : other.localBody.map((block) => block.body).join(" ");
       if (stripped === otherStripped) {
         failures.push(`${id}: identical to ${other.locationSlug}/${other.serviceSlug} after city substitution`);
       }
