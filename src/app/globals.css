@@ -16,7 +16,7 @@
   --color-line-soft: #dde5e0;
   --color-accent: #0e7a4c;
   --color-accent-hover: #0a613b;
-  --color-accent-soft: #d8efe3;
+  --color-accent-soft: #e0f3e9;
   --color-danger: #b01d1d;
 
   --radius-card: 18px;
@@ -222,7 +222,7 @@
   }
 
   .btn-ghost {
-    min-height: 42px;
+    min-height: 48px;
     padding-inline: 0.9rem;
     font-weight: 600;
     color: var(--color-muted);

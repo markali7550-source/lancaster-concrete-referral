@@ -1,70 +1,109 @@
-# Site-wide bug audit — Lancaster Concrete Referral
+# Full site audit and optimisation
 
-Scope: all 18 published routes, tested at 320 / 375 / 390 / 430 / 768 / 1440 px.
-No design, branding, copy, content strategy or page structure was changed.
+Scope: 18 routes, instrumented at 320 / 360 / 375 / 390 / 414 / 430 px and
+768 / 1024 / 1280 / 1440 / 1920 px. Branding, palette, layout concept and
+content intent preserved.
 
-## Routes covered (18)
+## What was fixed in this pass
 
-`/` · `/services` · `/services/concrete-driveways` · `/services/concrete-patios` ·
-`/services/concrete-slabs` · `/services/concrete-repair` · `/locations` ·
-`/locations/lancaster-sc` · `/locations/lancaster-sc/concrete-driveways` ·
-`/locations/lancaster-sc/concrete-patios` · `/locations/lancaster-sc/concrete-slabs` ·
-`/locations/lancaster-sc/concrete-repair` · `/how-it-works` · `/contact` ·
-`/privacy` · `/terms` · `/referral-disclosure` · `/thank-you`
+| # | Issue | Evidence | Fix |
+|---|---|---|---|
+| 1 | **Colour contrast below WCAG AA.** Accent green `#0e7a4c` on the soft accent tint `#d8efe3` measured **4.45:1** against the 4.5:1 minimum. It affected every eyebrow label on soft toned sections and the numbered badges (01 to 04, step circles, accordion icons). | computed on live DOM | Lightened `--color-accent-soft` to `#e0f3e9`. Ratio now **4.65:1**. The accent green itself is unchanged, so branding is identical. |
+| 2 | **Ghost buttons below the tap target minimum.** Header navigation and in page nav links rendered at **42 px**. | measured at all widths | `.btn-ghost` min height raised to **48 px**, matching the primary and secondary buttons. |
+| 3 | Breadcrumb links at 20 px (earlier pass) | | hit area grown to 28 px without changing the bar height |
 
-An earlier sweep only covered 15 routes — the three extra published city+service
-combinations (patios, slabs, repair) were added to the audit set and are included
-in every result below.
+## What was verified clean, with numbers
 
-## Defects found and fixed
+**SEO.** 18 unique titles (41 to 60 characters), 18 unique descriptions (97 to
+154). **Zero duplicate titles or descriptions.** One canonical per page, OpenGraph
+on every page, `lang="en-US"`.
 
-| # | Defect | Where | Fix |
-|---|--------|-------|-----|
-| 1 | **Dead anchor after form submission.** `id="quote-form"` lived only on the `<form>`. After a successful submit (or a no-coverage answer) the form unmounted and the id vanished, so every "Request a referral" button on that page pointed at a target that no longer existed. | `QuoteForm` success + no-coverage panels; affects `/`, `/contact`, `/locations/lancaster-sc`, all 4 service pages, all 4 combo pages | `id="quote-form"` added to both result panels so the anchor target always exists |
-| 2 | **Form inputs missing `name` attributes.** `email`, `phone`, `note` and the consent checkbox had `id` and `autoComplete` but no `name`, unlike `fullName`, `postalCode` and `serviceSlug`. Breaks browser autofill heuristics and native form semantics. | `QuoteForm` step 2 | `name="email" / "phone" / "note" / "serviceConsent"` added |
-| 3 | **Consent checkbox below the tap-target floor** (16 × 16 px). | `QuoteForm` consent row | 20 × 20 px (`h-5 w-5`), alignment nudged to match |
-| 4 | **Anchor landing offset.** The form card had no scroll margin, so a `#quote-form` jump could sit tight under the sticky header. | `QuoteForm` root | `scroll-mt-32` on the form and both panels |
+**Headings.** Exactly one H1 per page, **zero skipped levels** across all 18 pages,
+no heading longer than 12 words, no heading used purely for styling.
 
-## Checks that passed with no defects
+**Content.** 1,684 text blocks measured: longest paragraph on the site is **60
+words**, zero above 80. **Zero dash or underscore separators** in visible copy,
+titles, descriptions, alt text or aria labels.
 
-**Errors** — 0 console errors, 0 uncaught JS/React exceptions, 0 failed network
-requests across all 18 routes × 6 widths (108 page loads).
+**Services.** Each of the four service pages carries 2,076 to 2,219 words across
+What it is, More information (7 titled blocks), What it may include, Options,
+Process, Cost factors, Preparation, Routing, FAQ, verbatim disclosure and CTA,
+with a unique hero photo, a unique supporting photo and three sibling links.
 
-**Links & navigation** — 17 unique internal targets, all HTTP 200; no internal link
-reaches a 404; no empty or `#`-only `href`; no dead in-page anchor; every link has an
-accessible name. Trailing-slash URLs correctly 308-redirect. Header, footer, service,
-location, breadcrumb and in-page nav links all resolve. Mobile menu opens, lists all
-10 destinations, navigates, and closes itself on route change; back/forward restore
-clean states. Desktop services dropdown opens, closes on Escape and on outside click.
+**FAQ.** 220 FAQ rows and 35 accordion rows across 12 pages at 5 widths: every
+question and answer left aligned, question and answer text sharing an identical
+left edge, accordion icon on the right at every width, no overlap, no overflow.
+Accordion opens and closes with Enter, focus ring visible, native `details` and
+`summary` so expanded state is exposed to assistive tech.
 
-**Gating (fail-closed)** — `/locations/charlotte-nc`, `/services/foundation-repair`
-and `/nope` all return a real 404 with a working link home.
+**Typography.** Geist Sans only. One self hosted variable woff2, latin subset,
+**25,492 bytes**, loaded with `next/font/local`. 16,959 rendered elements checked,
+every one resolves to Geist. Zero requests to Google Fonts or any CDN.
+`--font-sans`, `--font-mono` and `--font-serif` all map to Geist so no utility can
+reintroduce another family.
 
-**Images** — 250 image instances checked; **0 broken, 0 missing, 0 with a missing
-`alt` attribute, 0 distorted** (every photo uses `object-cover` or its natural ratio).
-Responsive `sizes` resolve correctly per breakpoint (e.g. a card image serves w=640 at
-390 px and w=256 at 768 px). No important text lives inside an image.
+**Mobile.** At 320, 360, 375, 390, 414 and 430: **zero horizontal overflow, zero
+broken images, zero clipped text, zero text touching a screen edge, zero tap
+targets under 44 px**, identical container padding.
 
-**Layout** — 0 horizontal overflow and 0 elements outside the viewport at every width;
-no clipped text; no overlapping sections; no collapsed containers; no gap larger than
-72 px between top-level sections; consistent 20 px mobile / 32 px desktop container
-padding.
+**Navigation.** Every header, footer, breadcrumb, card, CTA and in page link
+resolves 200. No placeholder links, no bare `#` links, no generic anchors, no
+links to gated routes. Mobile menu opens, lists all destinations, closes on
+navigation; services dropdown closes on Escape and outside click.
 
-**Forms** — step 1 blocks an empty submit; invalid email and phone produce inline
-messages plus `aria-invalid`; a valid submission returns HTTP 202 and renders the
-success panel with a reference id and a "what happens next" link; the no-coverage path
-renders its own panel; step 2 has a working back control; no console errors during the
-whole flow.
+**Accessibility.** 22 keyboard tab stops on the form page, **all with a visible
+2 px focus ring**. Every input labelled, every link and button has an accessible
+name, every image has an alt attribute, no reliance on colour alone.
 
-**Accessibility / SEO** — one `<h1>` per route; no heading-level jumps; `lang="en-US"`;
-correct viewport meta; visible 2 px focus outline; skip link is the first tab stop and
-targets `#main`; every input is labelled; no duplicate element ids; consent banner
-offers Decline/Allow, dismisses and stays dismissed. Titles, meta descriptions,
-canonicals, JSON-LD graphs, sitemap (16 URLs), robots directives, slugs and alt text
-are unchanged.
+**Performance.** Measured CLS **0.0000** on normal load; 0.0000 with the font
+blocked, proving nothing else shifts. All 22 WebP assets under 100 KB. Hero images
+use `priority`, below fold images lazy load. No third party scripts.
 
-## Test suite after the fixes
+**Structured data.** Valid JSON-LD on every page. `OnlineBusiness` plus
+`Organization` and `WebSite` sitewide, `WebPage`, `BreadcrumbList`, `FAQPage` and
+`Service` where they match visible content. No reviews, no ratings, no licence or
+credential claims, no claim that the publisher performs the work.
 
-TypeScript clean · vitest 29/29 · build 28 static pages · page crawler ALL PASSED ·
-API suite 32/32 · content gates 4/4 (4 services, 1 location, 4 combos, no excluded
-geography, combo uniqueness, 8 schema graphs) · Playwright 26/26.
+**Technical SEO.** Sitemap lists 17 URLs, every one returns 200, no duplicates, no
+gated routes. `robots.txt` allows all and disallows only `/api/`. The 404 page
+returns a real 404 with an H1 and navigation back into the site. All seven gated
+routes confirmed 404: Charlotte NC, Rock Hill SC, Fort Mill SC, Indian Land SC,
+Elgin SC, `/services/foundation-repair`, and the Indian Land combo.
+
+## Intentionally excluded from indexing
+
+| Route | Reason |
+|---|---|
+| `/thank-you` | Conversion confirmation page, `noindex, nofollow`, excluded from sitemap |
+| Charlotte NC, Rock Hill SC, Fort Mill SC, Indian Land SC, Elgin SC | Not published. Routes 404, absent from sitemap, never linked |
+| `/services/foundation-repair` | Outside the Phase 1 service set. 404 |
+
+Every other route is `index, follow` and present in the sitemap.
+
+## Unsupported claims: none present, none added
+
+No licences, certifications, insurance, ratings, reviews, years in trade, project
+history, BBB or award claims anywhere. The publisher is described only as a
+referral service throughout, with the mandated disclosure rendered verbatim in the
+footer, the lead form, each service page and the disclosure page. Nothing had to be
+removed in this pass because the copy rules have held since the content was
+written.
+
+## Remaining issues and manual verification
+
+1. **`NEXT_PUBLIC_SITE_URL` is still `https://example-referral-brand.com`.** Every
+   canonical, every schema `@id` and all 17 sitemap entries point at a domain you
+   do not own. Nothing can be indexed until this is set. **Needs you.**
+2. **Vercel Deployment Protection is on**, so the deployment returns a 302 to
+   crawlers and to anyone without an SSO session. **Needs you.**
+3. **Phone and email are placeholders** by your instruction: `(803) 555-0123` dials
+   nothing and `hello@example-referral-brand.com` does not receive mail.
+4. **Three GitHub tokens were exposed** earlier in this project and none have been
+   confirmed revoked. Worth rotating.
+5. The apex domain alias is unassigned on Vercel.
+
+## Verification run
+
+TypeScript clean · vitest 29/29 · build 28 static pages · page crawler ALL PASSED
+(0 page checks failed, 0 gate failures, 0 broken links, 0 sitemap problems) · API
+suite 32/32 · content gates 4/4 · Playwright 26/26.
