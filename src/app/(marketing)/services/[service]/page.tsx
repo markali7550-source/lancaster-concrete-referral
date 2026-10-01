@@ -178,6 +178,71 @@ export default async function ServicePage({ params }: { params: Params }) {
               </div>
             </section>
 
+            <section id="options" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
+              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Specification</p>
+              <h2 className="h2 mt-4 text-center lg:text-left">
+                Choices your contractor will raise
+              </h2>
+              <p className="lede mx-auto mt-4 max-w-prose text-center lg:mx-0 lg:text-left">
+                We do not specify your project. These are the decisions that
+                come up so you are not hearing them for the first time on site.
+              </p>
+              <div className="mt-8">
+                <OptionsList options={service.options} />
+              </div>
+            </section>
+
+            <section id="process" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
+              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Process</p>
+              <h2 className="h2 mt-4 text-center lg:text-left">
+                How a {service.projectNoun} project usually runs
+              </h2>
+              <p className="lede mx-auto mt-4 max-w-prose text-center lg:mx-0 lg:text-left">
+                Durations below are typical ranges reported by partners, not
+                commitments. Your contractor sets the actual schedule.
+              </p>
+              <div className="mt-8">
+                <Timeline phases={service.process} />
+              </div>
+            </section>
+
+            <section id="cost" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
+              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Pricing</p>
+              <h2 className="h2 mt-4 text-center lg:text-left">
+                What actually drives the price
+              </h2>
+              <p className="lede mx-auto mt-4 max-w-prose text-center lg:mx-0 lg:text-left">
+                We publish no prices, ranges, or per foot figures. Doing so
+                would be a guess on a project nobody has seen. What we can do is
+                tell you which variables move the number.
+              </p>
+              <div className="mt-8">
+                <CostTable rows={service.costFactors} />
+              </div>
+            </section>
+
+            <section id="prepare" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
+              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Preparation</p>
+              <h2 className="h2 mt-4 text-center lg:text-left">
+                Get more out of the estimate visit
+              </h2>
+              <div className="mt-8">
+                <PrepColumns
+                  checklist={service.prepChecklist}
+                  questions={service.quoteQuestions}
+                />
+              </div>
+            </section>
+
+            <section id="vetting" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
+              <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">How routing works</p>
+              <h2 className="h2 mt-4 text-center lg:text-left">
+                How your request reaches a service provider
+              </h2>
+              <div className="mt-8">
+                <RoutingControls />
+              </div>
+            </section>
           </div>
 
           {/* ------------------------------------------------------- Sidebar */}
@@ -209,74 +274,6 @@ export default async function ServicePage({ params }: { params: Params }) {
             </div>
           </aside>
         </div>
-      </div>
-
-      <div className="container-page">
-        <section id="options" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
-          <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Specification</p>
-          <h2 className="h2 mt-4 text-center lg:text-left">
-            Choices your contractor will raise
-          </h2>
-          <p className="lede mx-auto mt-4 max-w-prose text-center lg:mx-0 lg:text-left">
-            We do not specify your project. These are the decisions that
-            come up so you are not hearing them for the first time on site.
-          </p>
-          <div className="mt-8">
-            <OptionsList options={service.options} />
-          </div>
-        </section>
-
-        <section id="process" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
-          <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Process</p>
-          <h2 className="h2 mt-4 text-center lg:text-left">
-            How a {service.projectNoun} project usually runs
-          </h2>
-          <p className="lede mx-auto mt-4 max-w-prose text-center lg:mx-0 lg:text-left">
-            Durations below are typical ranges reported by partners, not
-            commitments. Your contractor sets the actual schedule.
-          </p>
-          <div className="mt-8">
-            <Timeline phases={service.process} />
-          </div>
-        </section>
-
-        <section id="cost" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
-          <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Pricing</p>
-          <h2 className="h2 mt-4 text-center lg:text-left">
-            What actually drives the price
-          </h2>
-          <p className="lede mx-auto mt-4 max-w-prose text-center lg:mx-0 lg:text-left">
-            We publish no prices, ranges, or per foot figures. Doing so
-            would be a guess on a project nobody has seen. What we can do is
-            tell you which variables move the number.
-          </p>
-          <div className="mt-8">
-            <CostTable rows={service.costFactors} />
-          </div>
-        </section>
-
-        <section id="prepare" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
-          <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">Preparation</p>
-          <h2 className="h2 mt-4 text-center lg:text-left">
-            Get more out of the estimate visit
-          </h2>
-          <div className="mt-8">
-            <PrepColumns
-              checklist={service.prepChecklist}
-              questions={service.quoteQuestions}
-            />
-          </div>
-        </section>
-
-        <section id="vetting" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
-          <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">How routing works</p>
-          <h2 className="h2 mt-4 text-center lg:text-left">
-            How your request reaches a service provider
-          </h2>
-          <div className="mt-8">
-            <RoutingControls />
-          </div>
-        </section>
       </div>
 
       <SectionDivider />
