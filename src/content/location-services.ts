@@ -10,6 +10,9 @@ export interface LocationServiceRecord {
    * Each entry renders as a titled block so the section scans.
    */
   localBody: { heading: string; body: string }[];
+  /** Supporting photo for the local section. Distinct from the service hero. */
+  localImage: string;
+  localImageAlt: string;
   localFaqs: { question: string; answer: string }[];
 }
 
@@ -18,6 +21,9 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-driveways",
     state: "published",
+    localImage: "/locations/lancaster-driveway-apron.webp",
+    localImageAlt:
+      "Finished concrete driveway on a narrow Lancaster SC lot meeting the street at a poured apron",
     localBody: [
       {
         heading: "Two kinds of request",
@@ -63,6 +69,9 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-patios",
     state: "published",
+    localImage: "/locations/lancaster-shaded-patio.webp",
+    localImageAlt:
+      "Broom finished concrete patio in a shaded Lancaster SC back yard under mature oak and pine trees",
     localBody: [
       {
         heading: "What most requests look like",
@@ -107,6 +116,9 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-slabs",
     state: "published",
+    localImage: "/locations/lancaster-equipment-pad.webp",
+    localImageAlt:
+      "Freshly poured concrete equipment pad on a rural Lancaster County parcel with the forms just removed",
     localBody: [
       {
         heading: "Mostly outbuilding pads",
@@ -151,6 +163,9 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-repair",
     state: "published",
+    localImage: "/locations/lancaster-lifted-walkway.webp",
+    localImageAlt:
+      "Concrete walkway panel in Lancaster SC lifted out of level beside a mature tree root",
     localBody: [
       {
         heading: "Three shapes of request",

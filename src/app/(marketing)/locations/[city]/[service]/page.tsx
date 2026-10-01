@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -138,6 +139,14 @@ export default async function ComboPage({ params }: { params: Params }) {
                 What we see on {location.city}{" "}
                 {serviceRecord.shortName.toLowerCase()} requests
               </h2>
+              <Image
+                src={record.localImage}
+                alt={record.localImageAlt}
+                width={900}
+                height={491}
+                sizes="(min-width: 1024px) 60vw, 100vw"
+                className="mt-7 h-52 w-full rounded-[16px] object-cover md:h-64"
+              />
               <div className="mx-auto mt-8 max-w-prose space-y-6 text-center lg:mx-0 lg:text-left">
                 {record.localBody.map((block) => (
                   <div key={block.heading}>

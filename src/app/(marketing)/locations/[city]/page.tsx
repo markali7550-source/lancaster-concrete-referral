@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -137,6 +138,14 @@ export default async function LocationPage({ params }: { params: Params }) {
         title={`What shapes concrete work in ${location.city}`}
         lead="Notes gathered from participating provider conversations about this specific market, not generic filler with a city name dropped in."
       >
+        <Image
+          src="/locations/lancaster-residential-street.webp"
+          alt={`Single storey brick homes with concrete driveways and front walkways on a residential street in ${location.city}, ${location.region}`}
+          width={900}
+          height={491}
+          sizes="(min-width: 1024px) 80rem, 100vw"
+          className="mb-8 h-56 w-full rounded-[18px] object-cover md:h-72"
+        />
         <ul className="grid gap-5 lg:grid-cols-3">
           {location.localEvidence.map((item, index) => (
             <li key={item} className="card p-6 text-center lg:text-left">

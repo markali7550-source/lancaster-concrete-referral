@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   HowMatchingWorks,
@@ -68,6 +69,14 @@ export default function HowItWorksPage() {
       </OverlayHeader>
       <ReferralDisclosureStrip />
       <Section eyebrow="Process" title="Three steps, no obligation">
+        <Image
+          src="/estimate-visit-measuring.webp"
+          alt="Independent contractor measuring a residential concrete driveway with a tape measure during an estimate visit"
+          width={1200}
+          height={655}
+          sizes="(min-width: 1024px) 80rem, 100vw"
+          className="mb-8 h-56 w-full rounded-[18px] object-cover object-[50%_22%] md:h-80"
+        />
         <HowMatchingWorks />
       </Section>
       <Section tone="soft" eyebrow="Eligibility" title="What blocks a provider from receiving your request">

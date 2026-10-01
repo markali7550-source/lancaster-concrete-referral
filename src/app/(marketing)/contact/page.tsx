@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { QuoteForm } from "@/components/lead/QuoteForm";
 import { ReferralDisclosureStrip, Section } from "@/components/marketing/sections";
@@ -90,6 +91,14 @@ export default function ContactPage() {
                 </dd>
               </div>
             </dl>
+            <Image
+              src="/contact-front-walkway.webp"
+              alt="Concrete front walkway and entry steps leading to the porch of a brick home in late afternoon light"
+              width={900}
+              height={491}
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              className="mt-8 h-48 w-full rounded-[16px] object-cover md:h-56"
+            />
             <p className="mx-auto mt-8 max-w-prose text-xs leading-relaxed text-[color:var(--color-muted)] lg:mx-0">
               {CALL_DISCLOSURE} We publish no street address because we are an
               online referral business, not a contracting premises.
