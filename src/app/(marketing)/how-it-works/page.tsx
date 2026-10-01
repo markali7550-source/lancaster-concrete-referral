@@ -74,8 +74,8 @@ export default function HowItWorksPage() {
           alt="Independent contractor measuring a residential concrete driveway with a tape measure during an estimate visit"
           width={1200}
           height={655}
-          sizes="(min-width: 1024px) 80rem, 100vw"
-          className="mb-8 h-56 w-full rounded-[18px] object-cover object-[50%_22%] md:h-80"
+          sizes="(min-width: 1024px) 56rem, 100vw"
+          className="mx-auto mb-8 h-auto w-full max-w-4xl rounded-[18px]"
         />
         <HowMatchingWorks />
       </Section>
