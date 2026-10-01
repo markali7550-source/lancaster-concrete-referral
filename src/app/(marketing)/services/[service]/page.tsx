@@ -138,14 +138,17 @@ export default async function ServicePage({ params }: { params: Params }) {
   return (
     <>
       <JsonLd data={graph} />
-      <Breadcrumbs
+      <ServiceHero
+        breadcrumbs={
+          <Breadcrumbs
+            overlay
         items={[
           { name: "Home", path: "/" },
           { name: "Services", path: "/services" },
           { name: service.name },
         ]}
-      />
-      <ServiceHero
+          />
+        }
         service={service}
         cityLabel="Lancaster County, South Carolina"
         h1={h1}

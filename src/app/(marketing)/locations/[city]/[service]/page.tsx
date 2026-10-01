@@ -97,15 +97,21 @@ export default async function ComboPage({ params }: { params: Params }) {
   return (
     <>
       <JsonLd data={graph} />
-      <Breadcrumbs
-        items={[
-          { name: "Home", path: "/" },
-          { name: "Service areas", path: "/locations" },
-          { name: `${location.city}, SC`, path: `/locations/${location.slug}` },
-          { name: serviceRecord.name },
-        ]}
-      />
       <Hero
+        breadcrumbs={
+          <Breadcrumbs
+            overlay
+            items={[
+              { name: "Home", path: "/" },
+              { name: "Service areas", path: "/locations" },
+              {
+                name: `${location.city}, SC`,
+                path: `/locations/${location.slug}`,
+              },
+              { name: serviceRecord.name },
+            ]}
+          />
+        }
         locationCue={`${location.city}, ${location.region}`}
         h1={h1}
         summary={description}

@@ -16,32 +16,60 @@ import {
 
 export function Breadcrumbs({
   items,
+  overlay = false,
 }: {
   items: { name: string; path?: string }[];
+  /** Rendered inside a photo header: no band, no border, light text. */
+  overlay?: boolean;
 }) {
+  const trail = (
+    <ol
+      className={`flex flex-wrap items-center gap-x-2 gap-y-1 text-sm ${
+        overlay
+          ? "justify-center lg:justify-start"
+          : "py-3 text-[color:var(--color-muted)]"
+      }`}
+      style={overlay ? { color: "rgba(255,255,255,0.78)" } : undefined}
+    >
+      {items.map((item, index) => (
+        <li key={item.name} className="flex items-center gap-2">
+          {index > 0 ? <span aria-hidden="true">/</span> : null}
+          {item.path ? (
+            <Link
+              href={item.path}
+              className="-my-1 inline-block py-1 hover:underline"
+            >
+              {item.name}
+            </Link>
+          ) : (
+            <span
+              aria-current="page"
+              className={overlay ? "font-medium" : "text-[color:var(--color-ink)]"}
+              style={overlay ? { color: "#ffffff" } : undefined}
+            >
+              {item.name}
+            </span>
+          )}
+        </li>
+      ))}
+    </ol>
+  );
+
+  if (overlay) {
+    return (
+      <nav aria-label="Breadcrumb" className="mb-6">
+        {trail}
+      </nav>
+    );
+  }
+
   return (
-    <nav aria-label="Breadcrumb" className="border-b" style={{ borderColor: "var(--color-line)" }}>
-      <div className="container-page">
-        <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 py-3 text-sm text-[color:var(--color-muted)]">
-          {items.map((item, index) => (
-            <li key={item.name} className="flex items-center gap-2">
-              {index > 0 ? <span aria-hidden="true">/</span> : null}
-              {item.path ? (
-                <Link
-                  href={item.path}
-                  className="-my-1 inline-block py-1 hover:underline"
-                >
-                  {item.name}
-                </Link>
-              ) : (
-                <span aria-current="page" className="text-[color:var(--color-ink)]">
-                  {item.name}
-                </span>
-              )}
-            </li>
-          ))}
-        </ol>
-      </div>
+    <nav
+      aria-label="Breadcrumb"
+      className="border-b"
+      style={{ borderColor: "var(--color-line)" }}
+    >
+      <div className="container-page">{trail}</div>
     </nav>
   );
 }
@@ -53,14 +81,20 @@ export function ServiceHero({
   cityLabel,
   h1,
   summary,
+  breadcrumbs,
 }: {
   service: ServiceRecord;
   cityLabel: string;
   h1: string;
   summary: string;
+  breadcrumbs?: React.ReactNode;
 }) {
   return (
-    <OverlayHeader imageSrc={service.image} imageAlt={service.imageAlt}>
+    <OverlayHeader
+      imageSrc={service.image}
+      imageAlt={service.imageAlt}
+      breadcrumbs={breadcrumbs}
+    >
       <p
         className="eyebrow before:hidden lg:before:block"
         style={{ color: overlayEyebrow }}

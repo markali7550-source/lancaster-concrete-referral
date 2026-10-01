@@ -104,14 +104,17 @@ export default async function LocationPage({ params }: { params: Params }) {
   return (
     <>
       <JsonLd data={graph} />
-      <Breadcrumbs
+      <Hero
+        breadcrumbs={
+          <Breadcrumbs
+            overlay
         items={[
           { name: "Home", path: "/" },
           { name: "Service areas", path: "/locations" },
           { name: `${location.city}, SC` },
         ]}
-      />
-      <Hero
+          />
+        }
         locationCue={`${location.county}, South Carolina`}
         h1={`Concrete Contractor Referrals in ${location.city}, SC`}
         summary={location.intro}

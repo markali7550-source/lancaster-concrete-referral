@@ -101,10 +101,13 @@ export function OverlayHeader({
   imageSrc,
   imageAlt,
   children,
+  breadcrumbs,
 }: {
   imageSrc: string;
   imageAlt: string;
   children: React.ReactNode;
+  /** Sits over the photo instead of in a band above it. */
+  breadcrumbs?: React.ReactNode;
 }) {
   return (
     <section
@@ -125,6 +128,7 @@ export function OverlayHeader({
       />
       <div className="container-page flex items-center py-14 md:py-20 lg:py-24">
         <div className="mx-auto w-full max-w-2xl text-center lg:mx-0 lg:text-left">
+          {breadcrumbs}
           {children}
         </div>
       </div>
@@ -150,12 +154,15 @@ export function Hero({
   imageSrc = "/home-hero.webp",
   imageAlt = "Broom finished concrete front walkway and entry steps at a two storey home",
   overlay = false,
+  breadcrumbs,
 }: {
   locationCue: string;
   h1: string;
   summary: string;
   imageSrc?: string;
   imageAlt?: string;
+  /** Sits over the photo instead of in a band above it. */
+  breadcrumbs?: React.ReactNode;
   /** Full-bleed photo behind the copy instead of a photo beside it. */
   overlay?: boolean;
 }) {
@@ -179,6 +186,7 @@ export function Hero({
         />
         <div className="container-page flex min-h-[calc(100dvh-6.25rem)] items-center py-14 lg:py-20">
           <div className="mx-auto w-full max-w-2xl text-center lg:mx-0 lg:text-left">
+            {breadcrumbs}
             <p
               className="eyebrow before:hidden lg:before:block"
               style={{ color: "#5fe3a8" }}

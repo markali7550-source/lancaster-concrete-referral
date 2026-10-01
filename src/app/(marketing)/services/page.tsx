@@ -59,9 +59,13 @@ export default function ServicesPage() {
   return (
     <>
       <JsonLd data={graph} />
-      <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Services" }]} />
-
       <OverlayHeader
+        breadcrumbs={
+          <Breadcrumbs
+            overlay
+            items={[{ name: "Home", path: "/" }, { name: "Services" }]}
+          />
+        }
         imageSrc="/services-overview.webp"
         imageAlt="Broom finished residential concrete surface in Lancaster SC with a tooled edge and control joint beside a lawn"
       >

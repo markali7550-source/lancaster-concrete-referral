@@ -38,8 +38,13 @@ export default function HowItWorksPage() {
   return (
     <>
       <JsonLd data={graph} />
-      <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "How it works" }]} />
       <OverlayHeader
+        breadcrumbs={
+          <Breadcrumbs
+            overlay
+            items={[{ name: "Home", path: "/" }, { name: "How it works" }]}
+          />
+        }
         imageSrc="/how-it-works-hero.webp"
         imageAlt="Two concrete workers screeding and floating a freshly poured residential driveway slab between timber forms outside a brick home"
       >
