@@ -488,24 +488,30 @@ export function CtaBand({
   title,
   body,
   showFormLink = true,
+  tone = "accent",
 }: {
   title: string;
   body: string;
   /** Pages without a quote form have nothing to jump to, so they omit it. */
   showFormLink?: boolean;
+  /** "section" uses the neutral alternate background instead of the mint tint. */
+  tone?: "accent" | "section";
 }) {
   return (
     <section
-      className="border-y py-12"
+      className={tone === "section" ? "border-y py-16 md:py-20" : "border-y py-12"}
       style={{
         borderColor: "var(--color-line)",
-        backgroundColor: "var(--color-accent-soft)",
+        backgroundColor:
+          tone === "section"
+            ? "var(--color-section)"
+            : "var(--color-accent-soft)",
       }}
     >
       <div className="container-page flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
         <div className="max-w-xl">
           <h2 className="text-xl font-semibold md:text-2xl">{title}</h2>
-          <p className="mt-2 text-sm leading-relaxed text-[color:var(--color-muted)]">
+          <p className="mt-2 text-[15px] leading-relaxed text-[color:var(--color-muted)]">
             {body}
           </p>
         </div>

@@ -409,7 +409,7 @@ export function ProjectTypeChooser({
             />
             <div className="flex flex-1 flex-col p-6 text-center lg:text-left">
               <h3 className="text-[17px] font-semibold">{service.name}</h3>
-              <p className="mt-2 flex-1 text-[14px] leading-relaxed text-[color:var(--color-muted)]">
+              <p className="mt-2 flex-1 text-[15px] leading-relaxed text-[color:var(--color-muted)]">
                 {service.summary}
               </p>
               <span

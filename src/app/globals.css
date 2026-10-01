@@ -61,7 +61,7 @@
     --color-muted: #aab8b0;
     --color-subtle: #718078;
     --color-line: #26352e;
-    --color-line-soft: #1e2a24;
+    --color-line-soft: #26352e;
     --color-accent: #25d98f;
     --color-accent-hover: #20c982;
     --color-accent-soft: #14312450;
@@ -366,7 +366,7 @@
   }
 
   .h1 {
-    font-size: clamp(2.25rem, 1.5rem + 2.4vw, 3.5rem);
+    font-size: clamp(2.25rem, 1.9rem + 1.6vw, 3.375rem);
     line-height: 1.05;
     font-weight: 800;
     letter-spacing: -0.045em;

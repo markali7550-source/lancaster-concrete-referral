@@ -76,7 +76,7 @@ export default function ServicesPage() {
           Service directory
         </p>
         <h1
-          className="mx-auto mt-3 max-w-3xl text-[2rem] font-semibold leading-[1.12] md:text-[2.75rem] lg:mx-0"
+          className="h1 mx-auto mt-4 max-w-3xl lg:mx-0"
           style={{ color: overlayHeading }}
         >
           Concrete Services We Route in Lancaster County, SC
@@ -159,6 +159,7 @@ export default function ServicesPage() {
       </Section>
 
       <CtaBand
+        tone="section"
         title="Not sure which service fits?"
         body="Describe the project in the quote form and we will route it on the closest match, or call and our referral team will tell you whether we cover it at all."
         showFormLink={false}
