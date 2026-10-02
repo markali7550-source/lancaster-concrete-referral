@@ -457,7 +457,7 @@ export function RelatedServices({
 }) {
   const others = services.filter((service) => service.slug !== currentSlug);
   return (
-    <ul className="grid gap-4 sm:grid-cols-3">
+    <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {others.map((service) => (
         <li key={service.slug}>
           <Link
