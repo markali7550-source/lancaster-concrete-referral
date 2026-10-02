@@ -134,6 +134,23 @@ export default function HomePage() {
       </Section>
 
       <Section
+        backgroundImage={{
+          src: "/locations/lancaster-residential-street.webp",
+          alt: "Single storey brick homes with concrete driveways and front walkways on a residential street in Lancaster, SC",
+        }}
+        eyebrow="Service area"
+        title="Areas we currently serve"
+        lead="Every area we currently serve. Service availability depends on participating providers."
+      >
+        <AdjacentAreas locations={publishedLocations} />
+
+        <p className="mt-7 text-center text-[14px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
+          Additional South Carolina areas are added one at a time, and only once
+          a participating provider has approved coverage there in writing.
+        </p>
+      </Section>
+
+      <Section
         tone="soft"
         eyebrow="How routing works"
         title="How your request reaches an independent provider"
@@ -226,22 +243,6 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section
-        backgroundImage={{
-          src: "/locations/lancaster-residential-street.webp",
-          alt: "Single storey brick homes with concrete driveways and front walkways on a residential street in Lancaster, SC",
-        }}
-        eyebrow="Service area"
-        title="Areas we currently serve"
-        lead="Every area we currently serve. Service availability depends on participating providers."
-      >
-        <AdjacentAreas locations={publishedLocations} />
-
-        <p className="mt-7 text-center text-[14px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
-          Additional South Carolina areas are added one at a time, and only once
-          a participating provider has approved coverage there in writing.
-        </p>
-      </Section>
 
       <Section eyebrow="Project photography" title="Why there is no gallery here">
         <ProjectExamples />
