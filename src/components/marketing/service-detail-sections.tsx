@@ -84,17 +84,6 @@ export function MayInclude({
               sizes="(min-width: 1024px) 40vw, 100vw"
               className="object-cover"
             />
-            <div
-              className="absolute inset-0"
-              aria-hidden="true"
-              style={{
-                background:
-                  "linear-gradient(180deg, transparent 42%, rgba(7,11,9,0.62) 100%)",
-              }}
-            />
-            <span className="absolute bottom-4 left-4 right-4 rounded-[10px] bg-black/55 px-3 py-2 text-xs font-medium leading-relaxed text-white backdrop-blur-sm">
-              Illustrative service photo — not a portfolio claim by this referral service.
-            </span>
           </div>
         </figure>
       ) : null}
