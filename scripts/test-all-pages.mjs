@@ -26,6 +26,9 @@ const PUBLISHED = [
   "/referral-disclosure",
 ];
 
+// Demo deployment: DEMO_NOINDEX in src/lib/seo/metadata.ts marks every route
+// noindex, so the crawler expects noindex sitewide. Flip both at launch.
+const DEMO_NOINDEX = true;
 const NOINDEX_OK = ["/thank-you"];
 
 const MUST_404 = [
@@ -109,7 +112,7 @@ async function testPage(route, { expectNoindex = false } = {}) {
     title: title.length > 10 && title.length <= 75 ? `${title.length}ch` : `FAIL ${title.length}ch`,
     desc: description.length > 50 && description.length <= 185 ? `${description.length}ch` : `FAIL ${description.length}ch`,
     canonical: canonical === expectedCanonical ? "self" : `FAIL ${canonical || "missing"}`,
-    robots: expectNoindex
+    robots: expectNoindex || DEMO_NOINDEX
       ? /noindex/.test(robots) ? "noindex" : "FAIL indexable"
       : /noindex/.test(robots) ? "FAIL noindex" : "index",
     h1: h1s.length === 1 ? "1" : `FAIL ${h1s.length}`,
@@ -163,7 +166,9 @@ const extra = sitemapUrls.filter((u) => !expected.includes(u));
 console.log(`entries: ${sitemapUrls.length}`);
 console.log(`missing published URLs: ${missing.length ? missing.join(", ") : "none"}`);
 console.log(`unexpected URLs:        ${extra.length ? extra.join(", ") : "none"}`);
-const noindexLeak = sitemapUrls.filter((u) => NOINDEX_OK.some((n) => u.endsWith(n)));
+const noindexLeak = DEMO_NOINDEX
+  ? []
+  : sitemapUrls.filter((u) => NOINDEX_OK.some((n) => u.endsWith(n)));
 console.log(`noindex pages leaked:   ${noindexLeak.length ? noindexLeak.join(", ") : "none"}`);
 
 console.log("\n=== SUMMARY ===\n");

@@ -15,12 +15,21 @@ interface PageMetaInput {
   noindex?: boolean;
 }
 
+/**
+ * Demo deployment: every route ships noindex, nofollow so the placeholder
+ * content cannot be indexed. Flip to false at launch.
+ */
+export const DEMO_NOINDEX = true;
+
 export function pageMetadata({
   title,
   description,
   path,
-  noindex = false,
+  noindex = DEMO_NOINDEX,
 }: PageMetaInput): Metadata {
+  // TODO(launch): point NEXT_PUBLIC_SITE_URL at the real domain so the
+  // canonical and OpenGraph URLs below resolve to production, then set
+  // DEMO_NOINDEX to false so the site becomes indexable.
   const canonical = absoluteUrl(path);
   return {
     title,

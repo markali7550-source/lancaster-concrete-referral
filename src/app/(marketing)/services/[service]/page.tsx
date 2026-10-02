@@ -246,7 +246,7 @@ export default async function ServicePage({ params }: { params: Params }) {
           </div>
 
           {/* ------------------------------------------------------- Sidebar */}
-          <aside className="min-w-0 lg:col-span-5 xl:col-span-4">
+          <aside className="order-first min-w-0 lg:order-none lg:col-span-5 xl:col-span-4">
             <div className="lg:sticky lg:top-[7.5rem] lg:pt-2 lg:pb-12">
               <QuoteForm
                 services={publishedServices.map((s) => ({

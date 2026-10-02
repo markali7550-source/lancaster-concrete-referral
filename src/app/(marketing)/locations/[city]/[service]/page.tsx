@@ -236,7 +236,7 @@ export default async function ComboPage({ params }: { params: Params }) {
             </section>
           </div>
 
-          <aside className="min-w-0 lg:col-span-5 xl:col-span-4">
+          <aside className="order-first min-w-0 lg:order-none lg:col-span-5 xl:col-span-4">
             <div className="lg:sticky lg:top-[4.5rem] lg:pt-2 lg:pb-16">
               <QuoteForm
                 services={publishedServices.map((s) => ({

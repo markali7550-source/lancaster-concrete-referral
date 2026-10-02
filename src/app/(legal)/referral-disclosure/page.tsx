@@ -32,7 +32,7 @@ export default function ReferralDisclosurePage() {
       <ul>
         <li>We do not perform, supervise, inspect, or manage construction work.</li>
         <li>We do not warrant or guarantee any contractor&apos;s work, pricing, or timeline.</li>
-        <li>We do not hold a contractor licence and do not act as a general contractor.</li>
+        <li>We do not hold a contractor license and do not act as a general contractor.</li>
         <li>We are not a party to the contract you sign with a contractor.</li>
       </ul>
 
@@ -50,7 +50,7 @@ export default function ReferralDisclosurePage() {
       <p>
         Our partner checks are internal routing controls, not an endorsement.
         South Carolina requirements vary by project type, scope, and total cost.
-        Verify licence and registration status directly through{" "}
+        Verify license and registration status directly through{" "}
         <a href={SC_LLR_URL} rel="noopener noreferrer nofollow" target="_blank">
           SC LLR
         </a>{" "}

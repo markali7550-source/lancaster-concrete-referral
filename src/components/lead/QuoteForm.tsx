@@ -1,11 +1,14 @@
 "use client";
 
-import { useId, useRef, useState } from "react";
+import { useId, useRef, useState, useEffect } from "react";
 import { Icon } from "@/components/ui/Icon";
 import { LEAD_FORM_DISCLOSURE, SERVICE_CONSENT } from "@/lib/seo/disclosure";
 import { track } from "@/lib/analytics/events";
 import { attributionForLead } from "@/domain/attribution/client";
-import { serviceAreaOptions } from "@/content/locations";
+import {
+  OUT_OF_AREA_POSTAL_CODE,
+  serviceAreaOptions,
+} from "@/content/locations";
 
 export interface QuoteFormServiceOption {
   slug: string;
@@ -50,6 +53,24 @@ export function QuoteForm({
   const baseId = useId();
   const [step, setStep] = useState<1 | 2>(1);
   const [status, setStatus] = useState<Status>("idle");
+  const [waitlistEmail, setWaitlistEmail] = useState("");
+  const [waitlistDone, setWaitlistDone] = useState(false);
+
+  // A "Request a referral" CTA points at #quote-form. The browser scrolls, and
+  // this moves keyboard focus to the first control so the jump is usable
+  // without a mouse. Submission behaviour is untouched.
+  useEffect(() => {
+    function focusFirstField() {
+      if (window.location.hash !== "#quote-form") return;
+      const root = document.getElementById("quote-form");
+      const target = root?.querySelector<HTMLElement>(
+        "input:not([type=hidden]), select, textarea, button",
+      );
+      target?.focus({ preventScroll: true });
+    }
+    window.addEventListener("hashchange", focusFirstField);
+    return () => window.removeEventListener("hashchange", focusFirstField);
+  }, []);
   const [errors, setErrors] = useState<Errors>({});
   const [leadId, setLeadId] = useState<string | null>(null);
   const summaryRef = useRef<HTMLDivElement>(null);
@@ -220,6 +241,8 @@ export function QuoteForm({
       track("lead_submit_failure", { error_class: "network", retryable: true });
     }
   }
+
+  const outOfArea = values.postalCode === OUT_OF_AREA_POSTAL_CODE;
 
   const errorEntries = Object.entries(errors);
 
@@ -426,6 +449,57 @@ export function QuoteForm({
               </p>
             ) : null}
           </div>
+
+          {outOfArea ? (
+            <div
+              className="rounded-[12px] border p-4"
+              style={{ borderColor: "var(--color-line)" }}
+            >
+              {waitlistDone ? (
+                <p
+                  className="text-sm"
+                  role="status"
+                  style={{ color: "var(--color-accent)" }}
+                >
+                  Thanks. We will email you when a participating provider covers
+                  your area.
+                </p>
+              ) : (
+                <>
+                  <label
+                    htmlFor={`${baseId}-waitlistEmail`}
+                    className="text-sm font-semibold"
+                  >
+                    We will tell you when we cover your area
+                  </label>
+                  <p className="mt-1.5 text-sm text-[color:var(--color-muted)]">
+                    Optional. Leave an email and we will let you know when a
+                    participating provider takes your area on.
+                  </p>
+                  <input
+                    id={`${baseId}-waitlistEmail`}
+                    name="waitlistEmail"
+                    type="email"
+                    autoComplete="email"
+                    className="field mt-2.5"
+                    value={waitlistEmail}
+                    onChange={(event) => setWaitlistEmail(event.target.value)}
+                  />
+                  <button
+                    type="button"
+                    className="btn btn-secondary mt-3 w-full"
+                    onClick={() => {
+                      // Demo stub: the waitlist is not wired to /api/leads so an
+                      // uncovered address never reaches the routing engine.
+                      if (waitlistEmail.includes("@")) setWaitlistDone(true);
+                    }}
+                  >
+                    Keep me posted
+                  </button>
+                </>
+              )}
+            </div>
+          ) : null}
 
           <button
             type="button"

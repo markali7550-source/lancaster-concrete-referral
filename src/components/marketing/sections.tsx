@@ -155,6 +155,7 @@ export function Hero({
   imageAlt = "Broom finished concrete front walkway and entry steps at a two storey home",
   overlay = false,
   breadcrumbs,
+  aside,
 }: {
   locationCue: string;
   h1: string;
@@ -163,6 +164,8 @@ export function Hero({
   imageAlt?: string;
   /** Sits over the photo instead of in a band above it. */
   breadcrumbs?: React.ReactNode;
+  /** Optional column beside the hero copy, used for the step one form. */
+  aside?: React.ReactNode;
   /** Full-bleed photo behind the copy instead of a photo beside it. */
   overlay?: boolean;
 }) {
@@ -184,7 +187,13 @@ export function Hero({
           className="absolute inset-0 -z-10 bg-gradient-to-b from-[#070b09]/85 via-[#070b09]/75 to-[#070b09]/85 lg:bg-gradient-to-r lg:from-[#070b09]/92 lg:via-[#070b09]/78 lg:to-[#070b09]/35"
           aria-hidden="true"
         />
-        <div className="container-page flex min-h-[calc(100dvh-6.25rem)] items-center py-14 lg:py-20">
+        <div
+          className={
+            aside
+              ? "container-page grid items-center gap-10 py-14 lg:grid-cols-[1.05fr_minmax(0,26rem)] lg:gap-14 lg:py-20"
+              : "container-page flex min-h-[calc(100dvh-6.25rem)] items-center py-14 lg:py-20"
+          }
+        >
           <div className="mx-auto w-full max-w-2xl text-center lg:mx-0 lg:text-left">
             {breadcrumbs}
             <p
@@ -233,6 +242,9 @@ export function Hero({
               ))}
             </ul>
           </div>
+          {aside ? (
+            <div className="mx-auto w-full max-w-xl lg:mx-0">{aside}</div>
+          ) : null}
         </div>
       </section>
     );
@@ -309,6 +321,32 @@ export function Hero({
 }
 
 /* -------------------------------------------------------------- StatStrip */
+
+/**
+ * Compact benefit row under the hero. Reuses the stat bar shell, the existing
+ * check icon and the existing text classes, so no new typography is added.
+ */
+export function BenefitBadges({ items }: { items: string[] }) {
+  return (
+    <div className="border-b" style={{ borderColor: "var(--color-line-soft)" }}>
+      <div className="container-page">
+        <ul className="grid gap-x-8 gap-y-3 py-5 sm:grid-cols-3">
+          {items.map((item) => (
+            <li
+              key={item}
+              className="flex items-center justify-center gap-2.5 text-sm font-semibold lg:justify-start"
+            >
+              <span style={{ color: "var(--color-accent)" }}>
+                <Icon name="check" className="h-4 w-4" />
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
 
 export function StatStrip({
   items,
@@ -488,9 +526,9 @@ export function RoutingControls() {
       </ul>
       <p className="mt-6 text-center text-[13.5px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
         These are routing controls only. They are not a verification of any
-        provider&apos;s licence, insurance, or workmanship, and they are not a
+        provider&apos;s license, insurance, or workmanship, and they are not a
         warranty, an endorsement, or a substitute for your own checks. Confirm
-        licence status, insurance, and credentials directly with the provider
+        license status, insurance, and credentials directly with the provider
         and through SC LLR before you hire.
       </p>
     </>
@@ -526,11 +564,11 @@ const STEPS = [
   },
   {
     verb: "We check participating provider eligibility",
-    body: "Location, project type, licence status, insurance, and current capacity are all checked before anything is sent.",
+    body: "We check coverage, project type match, referral agreement, and current capacity.",
   },
   {
-    verb: "The contractor contacts you",
-    body: "One independent contractor follows up directly to inspect, scope, and quote. You deal with them, not with us.",
+    verb: "The independent provider contacts you",
+    body: "One independent provider follows up directly to inspect, scope, and quote. You deal with them, not with us.",
   },
 ];
 

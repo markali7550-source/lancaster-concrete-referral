@@ -10,9 +10,8 @@ import {
   HowMatchingWorks,
   ProjectExamples,
   ProjectTypeChooser,
-  ReferralDisclosureStrip,
   Section,
-  StatStrip,
+  BenefitBadges,
   RoutingControls,
 } from "@/components/marketing/sections";
 import { CtaBand } from "@/components/marketing/service-sections";
@@ -33,11 +32,10 @@ export const metadata: Metadata = pageMetadata({
   path: "/",
 });
 
-const STATS = [
-  { value: "4", label: "Concrete services routed in Lancaster County" },
-  { value: "Lancaster, SC", label: "Area with written provider coverage" },
-  { value: "1", label: "Independent provider contacts you, not a phone bank" },
-  { value: "$0", label: "Cost to the homeowner, always" },
+const BENEFITS = [
+  "Free for homeowners",
+  "One independent provider, not five",
+  "Written coverage areas only",
 ];
 
 const DECISION_ITEMS = [
@@ -67,12 +65,12 @@ const FAQS = [
   {
     question: "Do you perform concrete work?",
     answer:
-      "No. We are a referral service that connects homeowners with independent third party concrete service providers. The actual services are performed by the selected service provider. We do not perform, supervise, warrant, or guarantee construction work.",
+      "No. An independent provider performs the work. We route your request and nothing else.",
   },
   {
     question: "Who performs the work?",
     answer:
-      "Concrete work is performed by an independent third party service provider. Availability and services depend on the provider serving the requested area. That provider holds the relationship, the contract, and the responsibility for the work.",
+      "An independent provider serving your area. They hold the relationship, the contract, and the responsibility for the work.",
   },
   {
     question: "Which areas can you route right now?",
@@ -82,12 +80,12 @@ const FAQS = [
   {
     question: "Are the service providers licensed and insured?",
     answer:
-      "Licensing and insurance are the responsibility of each independent service provider, and we make no representation about any provider's credentials. Confirm licence status, insurance, and credentials directly with the provider and through SC LLR before you hire.",
+      "Licensing and insurance are the responsibility of each independent provider, and we make no representation about any provider's credentials. Confirm license status, insurance, and credentials directly with the provider and through SC LLR before you hire.",
   },
   {
     question: "What happens to my details?",
     answer:
-      "Your request is stored by us and shared with the independent service provider covering your area so they can contact you. Marketing contact is a separate, optional consent. See the Privacy Policy for retention and your choices.",
+      "Your request is stored by us and shared with the independent provider covering your area so they can contact you. Marketing contact is a separate, optional consent. See the Privacy Policy for retention and your choices.",
   },
 ];
 
@@ -105,12 +103,13 @@ export default function HomePage() {
         locationCue="Lancaster County, South Carolina"
         h1="Connect With a Local Concrete Service Provider in Lancaster, SC"
         summary="Tell us your project and location, and we’ll pass your request to an independent local service provider who serves your area. We are a referral service, not a concrete contractor, and we do not perform concrete work ourselves."
+        // TODO(launch): /home-hero.webp is placeholder stock imagery. Replace
+        // with permissioned photography of real Lancaster work before launch.
         imageSrc="/home-hero.webp"
         imageAlt="Broom finished concrete front walkway and entry steps leading to the porch of a two storey home"
         overlay
       />
-      <StatStrip items={STATS} />
-      <ReferralDisclosureStrip />
+      <BenefitBadges items={BENEFITS} />
 
       <Section
         tone="surface"
@@ -133,7 +132,7 @@ export default function HomePage() {
       <Section
         eyebrow="Process"
         title="Three steps, no obligation"
-        lead="You are never passed to a call centre, and your details are never sold to a list of providers who bid against each other."
+        lead="You are never passed to a call center, and your details are never sold to a list of providers who bid against each other."
       >
         <HowMatchingWorks />
       </Section>
@@ -141,14 +140,14 @@ export default function HomePage() {
       <Section
         tone="soft"
         eyebrow="How routing works"
-        title="How your request reaches a service provider"
-        lead="These are routing controls, not credential verification. Licence, insurance, and workmanship remain matters to confirm directly with the independent provider who contacts you."
+        title="How your request reaches an independent provider"
+        lead="These are routing controls, not credential verification. License, insurance, and workmanship remain matters to confirm directly with the independent provider who contacts you."
       >
         <RoutingControls />
       </Section>
 
       <Section
-        eyebrow="Decision support"
+        eyebrow="Common questions"
         title="Questions worth settling before you call"
         lead="Straight answers, including the ones that tell you we are not the right service for your project."
       >
@@ -237,6 +236,13 @@ export default function HomePage() {
 
       <Section eyebrow="FAQ" title="Straight answers">
         <FaqSection faqs={FAQS} name="home-faq" />
+        <p className="mt-6 text-sm text-[color:var(--color-muted)]">
+          Full detail on how we are paid and what we do not do is on the{" "}
+          <Link href="/referral-disclosure" className="underline underline-offset-4">
+            referral disclosure page
+          </Link>
+          .
+        </p>
       </Section>
 
       <Section

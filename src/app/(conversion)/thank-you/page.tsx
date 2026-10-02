@@ -30,7 +30,7 @@ export default function ThankYouPage() {
         </h1>
         <p className="lede mt-5">
           You will be contacted by one independent service provider, not by a call
-          centre and not by us pretending to be the crew. Here is exactly what
+          center and not by us pretending to be the crew. Here is exactly what
           happens next.
         </p>
         <ol className="mt-8 space-y-4">

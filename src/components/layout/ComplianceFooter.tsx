@@ -20,7 +20,7 @@ export function ComplianceFooter() {
             <p className="mt-4 text-[13.5px] leading-relaxed text-[color:var(--color-muted)]">
               An online referral service that connects South Carolina
               homeowners with independent third party concrete service
-              providers. We hold no contractor licence and perform no
+              providers. We hold no contractor license and perform no
               concrete work.
             </p>
             <div className="mt-5 space-y-1.5 text-sm">
@@ -41,7 +41,7 @@ export function ComplianceFooter() {
               className="mt-5 inline-flex justify-center text-sm font-semibold underline underline-offset-4"
               style={{ color: "var(--color-accent)" }}
             >
-              Verify a licence with SC LLR
+              Verify a license with SC LLR
             </a>
           </div>
 
@@ -144,7 +144,7 @@ export function ComplianceFooter() {
             © {new Date().getFullYear()} {site.brand}. All rights reserved.
           </p>
           <p>
-            No licence, rating, review, or project claim on this site represents
+            No license, rating, review, or project claim on this site represents
             work performed by the publisher.
           </p>
         </div>
