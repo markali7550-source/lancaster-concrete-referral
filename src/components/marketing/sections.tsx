@@ -563,8 +563,9 @@ const STEPS = [
     body: "Two fields to start: what you need poured or repaired, and where the property is.",
   },
   {
-    verb: "We check participating provider eligibility",
-    body: "We check coverage, project type match, referral agreement, and current capacity.",
+    // Heading wording is fixed by the brief and must stay exact.
+    verb: "We check coverage, project type match, referral agreement, and current capacity.",
+    body: "Eligibility is confirmed before anything is sent, and nothing is sent if no participating provider covers the area.",
   },
   {
     verb: "The independent provider contacts you",

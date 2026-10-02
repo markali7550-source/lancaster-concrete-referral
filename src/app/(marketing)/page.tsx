@@ -100,6 +100,7 @@ export default function HomePage() {
         // with permissioned photography of real Lancaster work before launch.
         imageSrc="/home-hero.webp"
         imageAlt="Broom finished concrete front walkway and entry steps leading to the porch of a two storey home"
+        overlay
       />
 
       <Section
