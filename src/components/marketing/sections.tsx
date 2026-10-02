@@ -50,7 +50,7 @@ export function Section({
             className={
               align === "center"
                 ? "mx-auto max-w-2xl text-center"
-                : "text-center lg:text-left"
+                : "text-center md:text-left"
             }
           >
             {eyebrow ? (
@@ -58,7 +58,7 @@ export function Section({
                 className={
                   align === "center"
                     ? "eyebrow before:hidden"
-                    : "eyebrow before:hidden lg:before:block"
+                    : "eyebrow before:hidden md:before:block"
                 }
               >
                 {eyebrow}

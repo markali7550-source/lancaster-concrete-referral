@@ -135,7 +135,7 @@ export default function ServicesPage() {
         </div>
       </Section>
 
-      <Section eyebrow="Process" title="How a request reaches an independent service provider">
+      <Section eyebrow="Process" title="How a request reaches an independent provider">
         <HowMatchingWorks />
       </Section>
 
