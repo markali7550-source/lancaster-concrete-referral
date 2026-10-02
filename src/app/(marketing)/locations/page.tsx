@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   OverlayHeader,
@@ -77,22 +78,32 @@ export default function LocationsPage() {
             <li key={location.slug}>
               <Link
                 href={`/locations/${location.slug}`}
-                className="card card-interactive flex h-full flex-col p-6 text-center lg:text-left"
+                className="card card-interactive flex h-full flex-col overflow-hidden text-center lg:text-left"
               >
-                <h3 className="text-[17px] font-semibold">
-                  Concrete referrals in {location.city}, {location.region}
-                </h3>
-                <p className="mt-2 flex-1 text-[14px] leading-relaxed text-[color:var(--color-muted)]">
-                  Driveways, patios, slabs and repair routed to independent
-                  providers covering {location.city}.
-                </p>
-                <span
-                  className="mt-5 inline-flex items-center justify-center gap-1.5 text-[14px] font-semibold lg:justify-start"
-                  style={{ color: "var(--color-accent)" }}
-                >
-                  View {location.city} referrals
-                  <Icon name="arrow" className="card-go h-4 w-4" />
-                </span>
+                <Image
+                  src="/locations/lancaster-residential-street.webp"
+                  alt={`Residential street in ${location.city}, ${location.region}, with concrete driveways and front walkways`}
+                  width={900}
+                  height={491}
+                  sizes="(min-width: 640px) 45vw, 100vw"
+                  className="h-48 w-full object-cover"
+                />
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="text-[17px] font-semibold">
+                    Concrete referrals in {location.city}, {location.region}
+                  </h3>
+                  <p className="mt-2 flex-1 text-[14px] leading-relaxed text-[color:var(--color-muted)]">
+                    Driveways, patios, slabs and repair routed to independent
+                    providers covering {location.city}.
+                  </p>
+                  <span
+                    className="mt-5 inline-flex items-center justify-center gap-1.5 text-[14px] font-semibold lg:justify-start"
+                    style={{ color: "var(--color-accent)" }}
+                  >
+                    View {location.city} referrals
+                    <Icon name="arrow" className="card-go h-4 w-4" />
+                  </span>
+                </div>
               </Link>
             </li>
           ))}

@@ -168,6 +168,8 @@ export const overlayEyebrow = "#5fe3a8";
 export const overlayHeading = "#ffffff";
 export const overlayBody = "rgba(255,255,255,0.88)";
 export const overlayMuted = "rgba(255,255,255,0.82)";
+export const ILLUSTRATIVE_IMAGE_NOTE =
+  "Illustrative residential concrete photography, not a project gallery or a claim that this referral service performed the work.";
 
 const HERO_TRUST = [
   "Free for homeowners",
@@ -565,19 +567,89 @@ export function RoutingControls() {
 
 /* ----------------------------------------------------------- ProjectExamples */
 
+const ILLUSTRATIVE_GALLERY = [
+  {
+    src: "/services/concrete-driveways-detail.webp",
+    alt: "Close view of a residential concrete driveway surface with clean control joints and a broom finish",
+    label: "Driveway finish details",
+    body: "Joint layout, broom texture, edge transitions, and drainage are the details homeowners should discuss before a driveway pour is quoted.",
+  },
+  {
+    src: "/locations/lancaster-shaded-patio.webp",
+    alt: "Shaded backyard concrete patio bordered by mature trees and lawn in a Lancaster South Carolina style residential setting",
+    label: "Patio shade and drainage",
+    body: "Backyard shade and morning dampness can affect finish choice, slip resistance, and how water is directed away from the house.",
+  },
+  {
+    src: "/locations/lancaster-lifted-walkway.webp",
+    alt: "Uneven concrete walkway panel lifted near a mature tree root",
+    label: "Repair assessment clues",
+    body: "Repair conversations often start with a visible symptom, then move to the soil, water, or root condition that caused it.",
+  },
+] as const;
+
 export function ProjectExamples() {
+  const [featured, ...supporting] = ILLUSTRATIVE_GALLERY;
+
   return (
-    <div
-      className="rounded-[16px] border border-dashed p-8 text-center"
-      style={{ borderColor: "var(--color-line)" }}
-    >
-      <p className="font-semibold">Project gallery withheld pending provenance</p>
-      <p className="mx-auto mt-3 max-w-xl text-[14px] leading-relaxed text-[color:var(--color-muted)]">
-        We publish project photography only when we hold the image source,
-        ownership evidence, and written permission from the contractor who
-        performed the work. No stock photograph will be presented here as our
-        own project. The gallery stays empty until that evidence clears content
-        review.
+    <div className="grid gap-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-stretch">
+      <article className="card overflow-hidden">
+        <div className="relative h-72 min-h-full md:h-96">
+          <Image
+            src={featured.src}
+            alt={featured.alt}
+            fill
+            sizes="(min-width: 1024px) 48vw, 100vw"
+            className="object-cover"
+          />
+          <div
+            className="absolute inset-0"
+            aria-hidden="true"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(7,11,9,0.05) 0%, rgba(7,11,9,0.72) 100%)",
+            }}
+          />
+          <div className="absolute inset-x-0 bottom-0 p-6 text-white">
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#5fe3a8]">
+              Illustrative photo note
+            </p>
+            <h3 className="mt-2 text-2xl font-semibold">{featured.label}</h3>
+            <p className="mt-2 max-w-xl text-[14.5px] leading-relaxed text-white/85">
+              {featured.body}
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
+        {supporting.map((item) => (
+          <article
+            key={item.src}
+            className="card grid overflow-hidden sm:grid-rows-[11rem_1fr] lg:grid-cols-[12rem_1fr] lg:grid-rows-none"
+          >
+            <div className="relative min-h-44 lg:min-h-full">
+              <Image
+                src={item.src}
+                alt={item.alt}
+                fill
+                sizes="(min-width: 1024px) 18rem, (min-width: 640px) 45vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="p-5 text-center lg:text-left">
+              <p className="font-semibold">{item.label}</p>
+              <p className="mt-2 text-[14px] leading-relaxed text-[color:var(--color-muted)]">
+                {item.body}
+              </p>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <p className="lg:col-span-2 rounded-[12px] border p-4 text-center text-[13px] leading-relaxed text-[color:var(--color-muted)] lg:text-left" style={{ borderColor: "var(--color-line)" }}>
+        {ILLUSTRATIVE_IMAGE_NOTE} We publish true project portfolio photos only
+        after source, ownership, and contractor permission review.
       </p>
     </div>
   );
@@ -589,15 +661,24 @@ const STEPS = [
   {
     verb: "Tell us the project and location",
     body: "Two fields to start: what you need poured or repaired, and where the property is.",
+    image: "/estimate-visit-measuring.webp",
+    imageAlt:
+      "Independent concrete contractor measuring a residential driveway during an estimate visit",
   },
   {
     // Heading wording is fixed by the brief and must stay exact.
     verb: "We check coverage, project type match, referral agreement, and current capacity.",
     body: "Eligibility is confirmed before anything is sent, and nothing is sent if no participating provider covers the area.",
+    image: "/services-overview.webp",
+    imageAlt:
+      "Close view of finished broom textured concrete with a clean control joint beside a residential lawn",
   },
   {
     verb: "The independent provider contacts you",
     body: "One independent provider follows up directly to inspect, scope, and quote. You deal with them, not with us.",
+    image: "/how-it-works-hero.webp",
+    imageAlt:
+      "Concrete crew finishing a residential slab between timber forms outside a brick home",
   },
 ];
 
@@ -605,22 +686,43 @@ export function HowMatchingWorks() {
   return (
     <ol className="grid gap-5 md:grid-cols-3">
       {STEPS.map((step, index) => (
-        <li key={step.verb} className="card flex h-full flex-col p-6 text-center lg:text-left">
-          <span
-            className="text-[30px] font-extrabold leading-none tracking-tight md:text-[34px]"
-            style={{ color: "var(--color-accent)" }}
-          >
-            {String(index + 1).padStart(2, "0")}
-          </span>
-          <span
-            className="mx-auto mt-4 block h-px w-10 lg:mx-0"
-            style={{ backgroundColor: "var(--color-line)" }}
-            aria-hidden="true"
-          />
-          <p className="mt-4 text-[17px] font-semibold">{step.verb}</p>
-          <p className="mt-2 text-[14px] leading-relaxed text-[color:var(--color-muted)]">
-            {step.body}
-          </p>
+        <li
+          key={step.verb}
+          className="card flex h-full flex-col overflow-hidden text-center lg:text-left"
+        >
+          <div className="relative h-40 overflow-hidden">
+            <Image
+              src={step.image}
+              alt={step.imageAlt}
+              fill
+              sizes="(min-width: 768px) 33vw, 100vw"
+              className="object-cover"
+            />
+            <div
+              className="absolute inset-0"
+              aria-hidden="true"
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(7,11,9,0.05) 0%, rgba(7,11,9,0.46) 100%)",
+              }}
+            />
+            <span
+              className="absolute left-4 top-4 grid h-10 w-10 place-items-center rounded-full text-[15px] font-extrabold"
+              style={{
+                backgroundColor: "var(--color-accent)",
+                color: "var(--color-on-accent)",
+                boxShadow: "0 8px 22px rgba(0,0,0,0.24)",
+              }}
+            >
+              {String(index + 1).padStart(2, "0")}
+            </span>
+          </div>
+          <div className="flex flex-1 flex-col p-6">
+            <p className="text-[17px] font-semibold">{step.verb}</p>
+            <p className="mt-2 text-[14px] leading-relaxed text-[color:var(--color-muted)]">
+              {step.body}
+            </p>
+          </div>
         </li>
       ))}
     </ol>

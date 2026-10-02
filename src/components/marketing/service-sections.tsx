@@ -492,6 +492,8 @@ export function CtaBand({
   body,
   showFormLink = true,
   tone = "accent",
+  imageSrc = "/cta-pour-band.webp",
+  imageAlt = "Two independent concrete workers screeding a freshly poured residential driveway slab between timber forms",
 }: {
   title: string;
   body: string;
@@ -499,6 +501,9 @@ export function CtaBand({
   showFormLink?: boolean;
   /** "section" uses the neutral alternate background instead of the mint tint. */
   tone?: "accent" | "section";
+  /** Optional CTA photograph so repeated bands do not all reuse one image. */
+  imageSrc?: string;
+  imageAlt?: string;
 }) {
   return (
     <section
@@ -506,8 +511,8 @@ export function CtaBand({
       style={{ borderColor: "var(--color-line)" }}
     >
       <Image
-        src="/cta-pour-band.webp"
-        alt="Two independent concrete workers screeding a freshly poured residential driveway slab between timber forms"
+        src={imageSrc}
+        alt={imageAlt}
         fill
         sizes="100vw"
         className="-z-20 object-cover"

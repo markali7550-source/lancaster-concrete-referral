@@ -26,6 +26,7 @@ import {
   publishedLocationServices,
 } from "@/content/location-services";
 import { getLocation } from "@/content/locations";
+import { serviceDetails } from "@/content/service-details";
 import { getService, publishedServices } from "@/content/services";
 import { site } from "@/lib/env";
 import { comboMeta, pageMetadata } from "@/lib/seo/metadata";
@@ -77,6 +78,7 @@ export default async function ComboPage({ params }: { params: Params }) {
     serviceRecord.nameLower,
     location.city,
   );
+  const detail = serviceDetails[serviceRecord.slug];
 
   const graph = buildGraph([
     serviceNode({
@@ -216,11 +218,26 @@ export default async function ComboPage({ params }: { params: Params }) {
             >
               <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Preparation</p>
               <h2 className="h2 mt-4 text-center md:text-left">Get more out of the estimate visit</h2>
-              <div className="mt-8">
+              <div className="mt-8 grid gap-6 xl:grid-cols-[minmax(0,1fr)_18rem] xl:items-stretch">
                 <PrepColumns
                   checklist={serviceRecord.prepChecklist}
                   questions={serviceRecord.quoteQuestions}
                 />
+                <figure className="card overflow-hidden">
+                  <div className="relative h-64 xl:h-full xl:min-h-0">
+                    <Image
+                      src={detail.detailImage}
+                      alt={detail.detailImageAlt}
+                      fill
+                      sizes="(min-width: 1280px) 18rem, 100vw"
+                      className="object-cover"
+                    />
+                    <span className="absolute bottom-3 left-3 right-3 rounded-[10px] bg-black/60 px-3 py-2 text-[12px] leading-relaxed text-white backdrop-blur-sm">
+                      Illustrative service photo; project details are confirmed
+                      directly by the independent provider.
+                    </span>
+                  </div>
+                </figure>
               </div>
             </section>
 
