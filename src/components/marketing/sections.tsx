@@ -258,8 +258,8 @@ export function Hero({
         backgroundColor: "var(--color-surface)",
       }}
     >
-      <div className="container-page grid min-h-[calc(100dvh-6.25rem)] items-center gap-10 py-12 lg:grid-cols-12 lg:gap-14 lg:py-16">
-        <div className="text-center lg:col-span-6 lg:text-left">
+      <div className="container-page grid items-center gap-10 py-14 md:py-20 lg:grid-cols-12 lg:gap-16 lg:py-24">
+        <div className="text-center lg:col-span-7 lg:text-left">
           <p className="eyebrow before:hidden lg:before:block">
             {locationCue}
           </p>
@@ -294,10 +294,10 @@ export function Hero({
           </ul>
         </div>
 
-        <div className="lg:col-span-6">
+        <div className="lg:col-span-5">
           <figure className="mx-auto w-full max-w-md sm:max-w-lg lg:max-w-none">
             <div
-              className="overflow-hidden rounded-[20px] border"
+              className="aspect-[4/3] overflow-hidden rounded-[20px] border"
               style={{
                 borderColor: "var(--color-line-soft)",
                 boxShadow: "var(--shadow-raised)",
@@ -309,8 +309,8 @@ export function Hero({
                 width={1200}
                 height={800}
                 priority
-                sizes="(min-width: 1024px) 48vw, 100vw"
-                className="h-auto w-full object-cover"
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="h-full w-full object-cover"
               />
             </div>
           </figure>

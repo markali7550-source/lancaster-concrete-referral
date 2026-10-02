@@ -11,7 +11,6 @@ import {
   ProjectExamples,
   ProjectTypeChooser,
   Section,
-  BenefitBadges,
   RoutingControls,
 } from "@/components/marketing/sections";
 import { CtaBand } from "@/components/marketing/service-sections";
@@ -31,12 +30,6 @@ export const metadata: Metadata = pageMetadata({
   description: DESCRIPTION,
   path: "/",
 });
-
-const BENEFITS = [
-  "Free for homeowners",
-  "One independent provider, not five",
-  "Written coverage areas only",
-];
 
 const DECISION_ITEMS = [
   {
@@ -107,9 +100,7 @@ export default function HomePage() {
         // with permissioned photography of real Lancaster work before launch.
         imageSrc="/home-hero.webp"
         imageAlt="Broom finished concrete front walkway and entry steps leading to the porch of a two storey home"
-        overlay
       />
-      <BenefitBadges items={BENEFITS} />
 
       <Section
         tone="surface"
