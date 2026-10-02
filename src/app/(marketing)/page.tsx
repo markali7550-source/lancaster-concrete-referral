@@ -11,6 +11,7 @@ import {
   ProjectExamples,
   ProjectTypeChooser,
   Section,
+  SectionDivider,
   RoutingControls,
 } from "@/components/marketing/sections";
 import { CtaBand } from "@/components/marketing/service-sections";
@@ -249,6 +250,8 @@ export default function HomePage() {
         <ProjectExamples />
       </Section>
 
+
+      <SectionDivider />
 
       <Section eyebrow="FAQ" title="Straight answers">
         <FaqSection faqs={FAQS} name="home-faq" />
