@@ -32,7 +32,7 @@ export function UtilityHeader() {
 
           <nav
             aria-label="Primary"
-            className="hidden items-center gap-1 lg:flex"
+            className="hidden items-center gap-0.5 lg:flex xl:gap-1"
           >
             <ServicesMenu
               items={publishedServices.map((service) => ({
@@ -41,13 +41,13 @@ export function UtilityHeader() {
                 projectTypes: service.projectTypes,
               }))}
             />
-            <Link href="/locations" className="btn btn-ghost text-[15px] font-medium">
+            <Link href="/locations" className="btn btn-ghost whitespace-nowrap px-2.5 text-[15px] font-medium xl:px-3.5">
               Service areas
             </Link>
-            <Link href="/how-it-works" className="btn btn-ghost text-[15px] font-medium">
+            <Link href="/how-it-works" className="btn btn-ghost whitespace-nowrap px-2.5 text-[15px] font-medium xl:px-3.5">
               How it works
             </Link>
-            <Link href="/contact" className="btn btn-ghost text-[15px] font-medium">
+            <Link href="/contact" className="btn btn-ghost whitespace-nowrap px-2.5 text-[15px] font-medium xl:px-3.5">
               Contact
             </Link>
           </nav>
@@ -57,9 +57,9 @@ export function UtilityHeader() {
               fallbackDisplay={site.phoneDisplay}
               fallbackE164={site.phoneE164}
               placement="header"
-              className="btn btn-secondary"
+              className="btn btn-secondary hidden whitespace-nowrap xl:inline-flex"
             />
-            <Link href="/contact" className="btn btn-primary">
+            <Link href="/contact" className="btn btn-primary whitespace-nowrap">
               Request a referral
             </Link>
           </div>

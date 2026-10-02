@@ -502,15 +502,25 @@ export function CtaBand({
 }) {
   return (
     <section
-      className={tone === "section" ? "border-y py-16 md:py-20" : "border-y py-12"}
-      style={{
-        borderColor: "var(--color-line)",
-        backgroundColor:
-          tone === "section"
-            ? "var(--color-section)"
-            : "var(--color-accent-soft)",
-      }}
+      className="cta-photo relative isolate overflow-hidden border-y py-16 md:py-20"
+      style={{ borderColor: "var(--color-line)" }}
     >
+      <Image
+        src="/cta-pour-band.webp"
+        alt="Two independent concrete workers screeding a freshly poured residential driveway slab between timber forms"
+        fill
+        sizes="100vw"
+        className="-z-20 object-cover"
+      />
+      <div
+        className="absolute inset-0 -z-10"
+        aria-hidden="true"
+        style={{
+          background:
+            "linear-gradient(90deg, rgba(11,16,13,0.94) 0%, rgba(11,16,13,0.88) 45%, rgba(11,16,13,0.62) 100%)",
+        }}
+      />
+
       <div className="container-page flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
         <div className="max-w-xl">
           <h2 className="text-xl font-semibold md:text-2xl">{title}</h2>

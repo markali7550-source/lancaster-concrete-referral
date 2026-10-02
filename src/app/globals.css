@@ -139,6 +139,14 @@
     }
   }
 
+  /* CTA band over a photograph. Rebinding the surface tokens keeps every
+     existing utility inside the band readable without touching its markup. */
+  .cta-photo {
+    --color-ink: #f3f7f4;
+    --color-muted: #cfdbd5;
+    --color-line: rgba(255, 255, 255, 0.22);
+  }
+
   /* --------------------------------------------------------------- footer */
 
   /* Rebinding the surface tokens inside the footer recolours every utility it
