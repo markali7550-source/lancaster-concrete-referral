@@ -69,14 +69,20 @@ export default function HowItWorksPage() {
       </OverlayHeader>
       <ReferralDisclosureStrip />
       <Section eyebrow="Process" title="Three steps, no obligation">
-        <Image
-          src="/estimate-visit-measuring.webp"
-          alt="Independent contractor measuring a residential concrete driveway with a tape measure during an estimate visit"
-          width={1200}
-          height={655}
-          sizes="(min-width: 1024px) 56rem, 100vw"
-          className="mx-auto mb-8 h-auto w-full max-w-4xl rounded-[18px]"
-        />
+        <figure className="card mb-8 overflow-hidden">
+          <Image
+            src="/estimate-visit-measuring.webp"
+            alt="Independent contractor measuring a residential concrete driveway with a tape measure during an estimate visit"
+            width={1200}
+            height={655}
+            sizes="(min-width: 1024px) 56rem, 100vw"
+            className="h-64 w-full object-cover md:h-80"
+          />
+          <figcaption className="p-4 text-center text-[12.5px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
+            This image illustrates an estimate visit; it is not a project gallery
+            or a claim that this referral service performed the work.
+          </figcaption>
+        </figure>
         <HowMatchingWorks />
       </Section>
       <Section tone="soft" eyebrow="Eligibility" title="What blocks a provider from receiving your request">

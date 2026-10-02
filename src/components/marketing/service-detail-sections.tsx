@@ -75,16 +75,16 @@ export function MayInclude({
       </p>
       </div>
       {imageSrc ? (
-        <figure className="mx-auto w-full max-w-md min-w-0 lg:col-span-5 lg:mx-0 lg:max-w-none">
-          <Image
-            src={imageSrc}
-            alt={imageAlt ?? ""}
-            width={1100}
-            height={614}
-            sizes="(min-width: 1024px) 40vw, 100vw"
-            className="h-auto w-full rounded-[18px] border object-cover"
-            style={{ borderColor: "var(--color-line-soft)" }}
-          />
+        <figure className="card mx-auto w-full max-w-md min-w-0 overflow-hidden lg:col-span-5 lg:mx-0 lg:max-w-none">
+          <div className="relative aspect-[4/3]">
+            <Image
+              src={imageSrc}
+              alt={imageAlt ?? ""}
+              fill
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              className="object-cover"
+            />
+          </div>
         </figure>
       ) : null}
     </div>
@@ -118,7 +118,7 @@ export function ReferralSteps() {
               className="mx-auto grid h-10 w-10 place-items-center rounded-full text-[15px] font-bold md:mx-0"
               style={{
                 backgroundColor: "var(--color-accent)",
-                color: "var(--color-page)",
+                color: "var(--color-on-accent)",
               }}
             >
               {index + 1}
@@ -163,27 +163,42 @@ export function ServiceDisclosureBlock() {
 /* -------------------------------------------------------- ServiceCtaBand */
 
 /** Closing call to action. Copy is fixed by the publisher. */
-export function ServiceCtaBand() {
+export function ServiceCtaBand({
+  imageSrc,
+  imageAlt,
+}: {
+  imageSrc?: string;
+  imageAlt?: string;
+}) {
   return (
     <section
       className="cta-photo relative isolate overflow-hidden border-y py-16 md:py-20"
-      style={{ borderColor: "var(--color-line)" }}
+      style={{
+        borderColor: "var(--color-line)",
+        background: imageSrc
+          ? undefined
+          : "linear-gradient(135deg, #07120d 0%, #123d2b 58%, #0b100d 100%)",
+      }}
     >
-      <Image
-        src="/cta-pour-band.webp"
-        alt="Two independent concrete workers screeding a freshly poured residential driveway slab between timber forms"
-        fill
-        sizes="100vw"
-        className="-z-20 object-cover"
-      />
-      <div
-        className="absolute inset-0 -z-10"
-        aria-hidden="true"
-        style={{
-          background:
-            "linear-gradient(90deg, rgba(11,16,13,0.94) 0%, rgba(11,16,13,0.88) 45%, rgba(11,16,13,0.62) 100%)",
-        }}
-      />
+      {imageSrc ? (
+        <Image
+          src={imageSrc}
+          alt={imageAlt ?? ""}
+          fill
+          sizes="100vw"
+          className="-z-20 object-cover"
+        />
+      ) : null}
+      {imageSrc ? (
+        <div
+          className="absolute inset-0 -z-10"
+          aria-hidden="true"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(11,16,13,0.94) 0%, rgba(11,16,13,0.88) 45%, rgba(11,16,13,0.62) 100%)",
+          }}
+        />
+      ) : null}
 
       <div className="container-page flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
         <div className="max-w-xl">

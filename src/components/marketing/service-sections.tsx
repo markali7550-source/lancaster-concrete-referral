@@ -462,22 +462,19 @@ export function RelatedServices({
         <li key={service.slug}>
           <Link
             href={`${basePath}/${service.slug}`}
-            className="card card-interactive flex h-full flex-col overflow-hidden"
+            className="card card-interactive flex h-full flex-col p-5 text-center lg:text-left"
           >
-            <Image
-              src={service.image}
-              alt={service.imageAlt}
-              width={600}
-              height={400}
-              sizes="(min-width: 640px) 30vw, 100vw"
-              className="h-32 w-full object-cover"
-            />
-            <div className="flex flex-1 flex-col p-4 text-center lg:text-left">
-              <h3 className="font-semibold">{service.name}</h3>
-              <p className="mt-1.5 text-sm text-[color:var(--color-muted)]">
-                {service.summary}
-              </p>
-            </div>
+            <h3 className="font-semibold">{service.name}</h3>
+            <p className="mt-1.5 flex-1 text-sm text-[color:var(--color-muted)]">
+              {service.summary}
+            </p>
+            <span
+              className="mt-4 inline-flex items-center justify-center gap-1.5 text-[14px] font-semibold lg:justify-start"
+              style={{ color: "var(--color-accent)" }}
+            >
+              View service
+              <Icon name="arrow" className="card-go h-4 w-4" />
+            </span>
           </Link>
         </li>
       ))}
@@ -492,6 +489,8 @@ export function CtaBand({
   body,
   showFormLink = true,
   tone = "accent",
+  imageSrc,
+  imageAlt,
 }: {
   title: string;
   body: string;
@@ -499,27 +498,39 @@ export function CtaBand({
   showFormLink?: boolean;
   /** "section" uses the neutral alternate background instead of the mint tint. */
   tone?: "accent" | "section";
+  /** Optional CTA photograph. Pass only when that asset is not used elsewhere. */
+  imageSrc?: string;
+  imageAlt?: string;
 }) {
   return (
     <section
       className="cta-photo relative isolate overflow-hidden border-y py-16 md:py-20"
-      style={{ borderColor: "var(--color-line)" }}
+      style={{
+        borderColor: "var(--color-line)",
+        background: imageSrc
+          ? undefined
+          : "linear-gradient(135deg, #07120d 0%, #123d2b 58%, #0b100d 100%)",
+      }}
     >
-      <Image
-        src="/cta-pour-band.webp"
-        alt="Two independent concrete workers screeding a freshly poured residential driveway slab between timber forms"
-        fill
-        sizes="100vw"
-        className="-z-20 object-cover"
-      />
-      <div
-        className="absolute inset-0 -z-10"
-        aria-hidden="true"
-        style={{
-          background:
-            "linear-gradient(90deg, rgba(11,16,13,0.94) 0%, rgba(11,16,13,0.88) 45%, rgba(11,16,13,0.62) 100%)",
-        }}
-      />
+      {imageSrc ? (
+        <Image
+          src={imageSrc}
+          alt={imageAlt ?? ""}
+          fill
+          sizes="100vw"
+          className="-z-20 object-cover"
+        />
+      ) : null}
+      {imageSrc ? (
+        <div
+          className="absolute inset-0 -z-10"
+          aria-hidden="true"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(11,16,13,0.94) 0%, rgba(11,16,13,0.88) 45%, rgba(11,16,13,0.62) 100%)",
+          }}
+        />
+      ) : null}
 
       <div className="container-page flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
         <div className="max-w-xl">

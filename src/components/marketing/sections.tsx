@@ -168,6 +168,8 @@ export const overlayEyebrow = "#5fe3a8";
 export const overlayHeading = "#ffffff";
 export const overlayBody = "rgba(255,255,255,0.88)";
 export const overlayMuted = "rgba(255,255,255,0.82)";
+export const ILLUSTRATIVE_IMAGE_NOTE =
+  "Illustrative residential concrete photography, not a project gallery or a claim that this referral service performed the work.";
 
 const HERO_TRUST = [
   "Free for homeowners",
@@ -179,8 +181,8 @@ export function Hero({
   locationCue,
   h1,
   summary,
-  imageSrc = "/home-hero.webp",
-  imageAlt = "Broom finished concrete front walkway and entry steps at a two storey home",
+  imageSrc,
+  imageAlt,
   overlay = false,
   breadcrumbs,
   aside,
@@ -188,8 +190,8 @@ export function Hero({
   locationCue: string;
   h1: string;
   summary: string;
-  imageSrc?: string;
-  imageAlt?: string;
+  imageSrc: string;
+  imageAlt: string;
   /** Sits over the photo instead of in a band above it. */
   breadcrumbs?: React.ReactNode;
   /** Optional column beside the hero copy, used for the step one form. */
@@ -443,19 +445,29 @@ export function ReferralDisclosureStrip() {
 
 /* ---------------------------------------------------- ProjectTypeChooser */
 
+type ProjectTypeImageMap = Partial<
+  Record<ServiceRecord["slug"], { src: string; alt: string }>
+>;
+
 export function ProjectTypeChooser({
   services = publishedServices,
   cityPrefix,
   cityLabel,
+  images,
 }: {
   services?: readonly ServiceRecord[];
   cityPrefix?: string;
   /** Shown in the card link when the cards point at local pages. */
   cityLabel?: string;
+  /** Optional, page-specific images. Omit to render text-only cards and avoid reusing assets. */
+  images?: ProjectTypeImageMap;
 }) {
   return (
     <ul className="grid gap-5 sm:grid-cols-2">
-      {services.map((service) => (
+      {services.map((service) => {
+        const image = images?.[service.slug];
+
+        return (
         <li key={service.slug}>
           <Link
             href={
@@ -465,14 +477,16 @@ export function ProjectTypeChooser({
             }
             className="card card-interactive flex h-full flex-col overflow-hidden"
           >
-            <Image
-              src={service.image}
-              alt={service.imageAlt}
-              width={800}
-              height={500}
-              sizes="(min-width: 640px) 45vw, 100vw"
-              className="h-44 w-full object-cover"
-            />
+            {image ? (
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width={800}
+                height={500}
+                sizes="(min-width: 640px) 45vw, 100vw"
+                className="h-44 w-full object-cover"
+              />
+            ) : null}
             <div className="flex flex-1 flex-col p-6 text-center lg:text-left">
               <h3 className="text-[17px] font-semibold">{service.name}</h3>
               <p className="mt-2 flex-1 text-[15px] leading-relaxed text-[color:var(--color-muted)]">
@@ -490,7 +504,8 @@ export function ProjectTypeChooser({
             </div>
           </Link>
         </li>
-      ))}
+      );
+      })}
     </ul>
   );
 }
@@ -567,16 +582,15 @@ export function RoutingControls() {
 
 export function ProjectExamples() {
   return (
-    <div
-      className="rounded-[16px] border border-dashed p-8 text-center"
-      style={{ borderColor: "var(--color-line)" }}
-    >
-      <p className="font-semibold">Project gallery withheld pending provenance</p>
-      <p className="mx-auto mt-3 max-w-xl text-[14px] leading-relaxed text-[color:var(--color-muted)]">
-        We publish project photography only when we hold the image source,
-        ownership evidence, and written permission from the contractor who
-        performed the work. No stock photograph will be presented here as our
-        own project. The gallery stays empty until that evidence clears content
+    <div className="card p-7 text-center lg:text-left">
+      <p className="eyebrow-plain">Photography policy</p>
+      <h3 className="mt-3 text-2xl font-semibold">
+        We use illustrative construction imagery, not a fake portfolio.
+      </h3>
+      <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--color-muted)]">
+        {ILLUSTRATIVE_IMAGE_NOTE} Every photograph on this site is assigned to
+        one specific section only, and true project portfolio photos are
+        published only after source, ownership, and contractor permission
         review.
       </p>
     </div>

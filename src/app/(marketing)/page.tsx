@@ -55,6 +55,25 @@ const DECISION_ITEMS = [
   },
 ];
 
+const HOME_SERVICE_IMAGES = {
+  "concrete-driveways": {
+    src: "/home-driveway-card.jpg",
+    alt: "Fresh residential concrete driveway with broom finish leading to a brick ranch home in a Lancaster South Carolina style neighborhood",
+  },
+  "concrete-patios": {
+    src: "/home-patio-card.jpg",
+    alt: "New concrete backyard patio with outdoor seating and mature trees in a South Carolina residential yard",
+  },
+  "concrete-slabs": {
+    src: "/home-slab-card.jpg",
+    alt: "Concrete slab prepared for a backyard shed on a rural Lancaster County property with red clay soil at the edges",
+  },
+  "concrete-repair": {
+    src: "/home-repair-card.jpg",
+    alt: "Cracked uneven concrete walkway section beside lawn and mature tree roots before repair assessment",
+  },
+} as const;
+
 const FAQS = [
   {
     question: "Do you perform concrete work?",
@@ -97,8 +116,6 @@ export default function HomePage() {
         locationCue="Lancaster County, South Carolina"
         h1="Connect With a Local Concrete Service Provider in Lancaster, SC"
         summary="Tell us your project and location, and we’ll pass your request to an independent local service provider who serves your area. We are a referral service, not a concrete contractor, and we do not perform concrete work ourselves."
-        // TODO(launch): /home-hero.webp is placeholder stock imagery. Replace
-        // with permissioned photography of real Lancaster work before launch.
         imageSrc="/home-hero.webp"
         imageAlt="Broom finished concrete front walkway and entry steps leading to the porch of a two storey home"
         overlay
@@ -110,7 +127,7 @@ export default function HomePage() {
         title="What we can route in Lancaster today"
         lead="Four residential concrete service categories, each with at least one participating provider holding written coverage for Lancaster areas. Foundation repair, structural engineering, and retaining walls sit outside this scope."
       >
-        <ProjectTypeChooser />
+        <ProjectTypeChooser images={HOME_SERVICE_IMAGES} />
         <p className="mt-8 text-center text-sm lg:text-left">
           <Link
             href="/services"
@@ -154,8 +171,8 @@ export default function HomePage() {
 
       <Section
         backgroundImage={{
-          src: "/locations/lancaster-residential-street.webp",
-          alt: "Single storey brick homes with concrete driveways and front walkways on a residential street in Lancaster, SC",
+          src: "/home-service-area-band.jpg",
+          alt: "Quiet Lancaster County South Carolina residential street with concrete driveways, front walkways, and mature trees",
         }}
         eyebrow="Service area"
         title="Areas we currently serve"
@@ -246,7 +263,7 @@ export default function HomePage() {
       </Section>
 
 
-      <Section eyebrow="Project photography" title="Why there is no gallery here">
+      <Section eyebrow="Project photography" title="Illustrative concrete details, not a project gallery">
         <ProjectExamples />
       </Section>
 
@@ -267,6 +284,8 @@ export default function HomePage() {
       <CtaBand
         title="Ready to connect with an independent concrete service provider?"
         body="One request, one independent third party service provider, no charge to you and no obligation to proceed."
+        imageSrc="/cta-pour-band.webp"
+        imageAlt="Two independent concrete workers screeding a freshly poured residential driveway slab between timber forms"
       />
 
 
