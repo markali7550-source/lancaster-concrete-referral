@@ -69,30 +69,20 @@ export default function HowItWorksPage() {
       </OverlayHeader>
       <ReferralDisclosureStrip />
       <Section eyebrow="Process" title="Three steps, no obligation">
-        <div className="mb-8 grid gap-4 lg:grid-cols-[1.35fr_0.65fr]">
+        <figure className="card mb-8 overflow-hidden">
           <Image
             src="/estimate-visit-measuring.webp"
             alt="Independent contractor measuring a residential concrete driveway with a tape measure during an estimate visit"
             width={1200}
             height={655}
-            sizes="(min-width: 1024px) 52vw, 100vw"
-            className="h-64 w-full rounded-[18px] object-cover md:h-80"
+            sizes="(min-width: 1024px) 56rem, 100vw"
+            className="h-64 w-full object-cover md:h-80"
           />
-          <figure className="card overflow-hidden">
-            <Image
-              src="/process-band.webp"
-              alt="Residential concrete forms set along a driveway before a pour on a quiet southern street"
-              width={700}
-              height={655}
-              sizes="(min-width: 1024px) 24vw, 100vw"
-              className="h-52 w-full object-cover lg:h-80"
-            />
-            <figcaption className="p-4 text-[12.5px] leading-relaxed text-[color:var(--color-muted)]">
-              These images illustrate the referral process and site conditions;
-              they are not a project gallery.
-            </figcaption>
-          </figure>
-        </div>
+          <figcaption className="p-4 text-center text-[12.5px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
+            This image illustrates an estimate visit; it is not a project gallery
+            or a claim that this referral service performed the work.
+          </figcaption>
+        </figure>
         <HowMatchingWorks />
       </Section>
       <Section tone="soft" eyebrow="Eligibility" title="What blocks a provider from receiving your request">

@@ -108,23 +108,14 @@ const REFERRAL_STEPS = [
   {
     title: "Tell Us About Your Project",
     body: "Submit your project details and location.",
-    image: "/estimate-visit-measuring.webp",
-    imageAlt:
-      "Tape measure stretched across a residential concrete driveway during an estimate visit",
   },
   {
     title: "Request a Referral",
     body: "We connect your request with an independent concrete service provider serving the area.",
-    image: "/process-band.webp",
-    imageAlt:
-      "Residential concrete driveway forms set on a quiet southern street before a pour",
   },
   {
     title: "Discuss Your Project",
     body: "The independent provider can contact you to discuss the project, availability, and next steps.",
-    image: "/cta-pour-band.webp",
-    imageAlt:
-      "Concrete workers screeding a fresh residential slab between timber forms",
   },
 ] as const;
 
@@ -133,33 +124,22 @@ export function ReferralSteps() {
     <div>
       <ol className="grid gap-5 md:grid-cols-3">
         {REFERRAL_STEPS.map((step, index) => (
-          <li key={step.title} className="card flex h-full flex-col overflow-hidden">
-            <div className="relative h-36">
-              <Image
-                src={step.image}
-                alt={step.imageAlt}
-                fill
-                sizes="(min-width: 768px) 33vw, 100vw"
-                className="object-cover"
-              />
-              <span
-                className="absolute left-4 top-4 grid h-10 w-10 place-items-center rounded-full text-[15px] font-bold"
-                style={{
-                  backgroundColor: "var(--color-accent)",
-                  color: "var(--color-on-accent)",
-                }}
-              >
-                {index + 1}
-              </span>
-            </div>
-            <div className="flex flex-1 flex-col p-6">
-              <p className="text-center text-[16px] font-semibold md:text-left">
-                Step {index + 1}: {step.title}
-              </p>
-              <p className="mt-2 text-center text-[14px] leading-relaxed text-[color:var(--color-muted)] md:text-left">
-                {step.body}
-              </p>
-            </div>
+          <li key={step.title} className="card flex h-full flex-col p-6">
+            <span
+              className="mx-auto grid h-10 w-10 place-items-center rounded-full text-[15px] font-bold md:mx-0"
+              style={{
+                backgroundColor: "var(--color-accent)",
+                color: "var(--color-on-accent)",
+              }}
+            >
+              {index + 1}
+            </span>
+            <p className="mt-4 text-center text-[16px] font-semibold md:text-left">
+              Step {index + 1}: {step.title}
+            </p>
+            <p className="mt-2 text-center text-[14px] leading-relaxed text-[color:var(--color-muted)] md:text-left">
+              {step.body}
+            </p>
           </li>
         ))}
       </ol>
@@ -195,8 +175,8 @@ export function ServiceDisclosureBlock() {
 
 /** Closing call to action. Copy is fixed by the publisher. */
 export function ServiceCtaBand({
-  imageSrc = "/cta-pour-band.webp",
-  imageAlt = "Two independent concrete workers screeding a freshly poured residential driveway slab between timber forms",
+  imageSrc,
+  imageAlt,
 }: {
   imageSrc?: string;
   imageAlt?: string;
@@ -204,23 +184,32 @@ export function ServiceCtaBand({
   return (
     <section
       className="cta-photo relative isolate overflow-hidden border-y py-16 md:py-20"
-      style={{ borderColor: "var(--color-line)" }}
+      style={{
+        borderColor: "var(--color-line)",
+        background: imageSrc
+          ? undefined
+          : "linear-gradient(135deg, #07120d 0%, #123d2b 58%, #0b100d 100%)",
+      }}
     >
-      <Image
-        src={imageSrc}
-        alt={imageAlt}
-        fill
-        sizes="100vw"
-        className="-z-20 object-cover"
-      />
-      <div
-        className="absolute inset-0 -z-10"
-        aria-hidden="true"
-        style={{
-          background:
-            "linear-gradient(90deg, rgba(11,16,13,0.94) 0%, rgba(11,16,13,0.88) 45%, rgba(11,16,13,0.62) 100%)",
-        }}
-      />
+      {imageSrc ? (
+        <Image
+          src={imageSrc}
+          alt={imageAlt ?? ""}
+          fill
+          sizes="100vw"
+          className="-z-20 object-cover"
+        />
+      ) : null}
+      {imageSrc ? (
+        <div
+          className="absolute inset-0 -z-10"
+          aria-hidden="true"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(11,16,13,0.94) 0%, rgba(11,16,13,0.88) 45%, rgba(11,16,13,0.62) 100%)",
+          }}
+        />
+      ) : null}
 
       <div className="container-page flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
         <div className="max-w-xl">

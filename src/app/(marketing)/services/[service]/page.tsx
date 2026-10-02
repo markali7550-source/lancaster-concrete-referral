@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -98,11 +97,6 @@ export default async function ServicePage({ params }: { params: Params }) {
     );
 
   const detail = serviceDetails[service.slug];
-  const localStory = publishedLocationServices.find(
-    (record) =>
-      record.locationSlug === "lancaster-sc" && record.serviceSlug === service.slug,
-  );
-  const localHighlight = localStory?.localBody[0];
 
   // `nameLower` carries its own article for countable services ("a concrete
   // driveway") but not for mass nouns ("concrete repair"), so add one only
@@ -176,32 +170,6 @@ export default async function ServicePage({ params }: { params: Params }) {
               <p className="lede mx-auto mt-4 max-w-prose text-center md:mx-0 md:text-left">
                 {service.summary}
               </p>
-              {localStory && localHighlight ? (
-                <figure className="card mt-8 overflow-hidden md:grid md:grid-cols-[1.15fr_0.85fr]">
-                  <div className="relative h-56 md:h-full md:min-h-72">
-                    <Image
-                      src={localStory.localImage}
-                      alt={localStory.localImageAlt}
-                      fill
-                      sizes="(min-width: 1024px) 44vw, 100vw"
-                      className="object-cover"
-                    />
-                  </div>
-                  <figcaption className="p-5 text-center md:p-6 md:text-left">
-                    <p className="eyebrow-plain">Lancaster-specific context</p>
-                    <h3 className="mt-3 text-xl font-semibold">
-                      {localHighlight.heading}
-                    </h3>
-                    <p className="mt-2 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
-                      {localHighlight.body}
-                    </p>
-                    <p className="mt-5 border-t pt-4 text-xs leading-relaxed text-[color:var(--color-muted)] hairline">
-                      Illustrative service photography only — not a claim that
-                      this referral service performed the work shown.
-                    </p>
-                  </figcaption>
-                </figure>
-              ) : null}
               <div className="mt-8">
                 <ScopeColumns
                   covered={service.covered}
