@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { QuoteForm } from "@/components/lead/QuoteForm";
@@ -259,21 +258,6 @@ export default function HomePage() {
                 Call {site.phoneDisplay}
               </a>
             </div>
-            <figure className="card mt-6 overflow-hidden text-left">
-              <Image
-                src="/home-referral-support.jpg"
-                alt="Clipboard, tape measure, and marking paint beside a residential concrete driveway before an estimate visit"
-                width={900}
-                height={491}
-                sizes="(min-width: 1024px) 38vw, 100vw"
-                className="h-52 w-full object-cover md:h-60"
-              />
-              <figcaption className="p-4 text-[13px] leading-relaxed text-[color:var(--color-muted)]">
-                Estimate-visit imagery is shown for context only. We route your
-                request; the independent provider confirms scope, pricing, and
-                schedule directly with you.
-              </figcaption>
-            </figure>
           </div>
         </div>
       </Section>
