@@ -248,10 +248,6 @@ export default function HomePage() {
         <ProjectExamples />
       </Section>
 
-      <CtaBand
-        title="Ready to connect with an independent concrete service provider?"
-        body="One request, one independent third party service provider, no charge to you and no obligation to proceed."
-      />
 
       <Section eyebrow="FAQ" title="Straight answers">
         <FaqSection faqs={FAQS} name="home-faq" />
@@ -263,6 +259,11 @@ export default function HomePage() {
           .
         </p>
       </Section>
+
+      <CtaBand
+        title="Ready to connect with an independent concrete service provider?"
+        body="One request, one independent third party service provider, no charge to you and no obligation to proceed."
+      />
 
 
 
