@@ -122,6 +122,10 @@ export default function HomePage() {
       </Section>
 
       <Section
+        backgroundImage={{
+          src: "/process-band.webp",
+          alt: "Residential street in a small southern town with a half finished concrete driveway and timber forms in place",
+        }}
         eyebrow="Process"
         title="Three steps, no obligation"
         lead="You are never passed to a call center, and your details are never sold to a list of providers who bid against each other."
@@ -238,7 +242,10 @@ export default function HomePage() {
       </Section>
 
       <Section
-        tone="surface"
+        backgroundImage={{
+          src: "/locations/lancaster-residential-street.webp",
+          alt: "Single storey brick homes with concrete driveways and front walkways on a residential street in Lancaster, SC",
+        }}
         eyebrow="Service area"
         title="Areas we currently serve"
         lead="Every area we currently serve. Service availability depends on participating providers."

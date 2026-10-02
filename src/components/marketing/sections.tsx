@@ -18,6 +18,7 @@ export function Section({
   tone = "page",
   align = "left",
   compact = false,
+  backgroundImage,
 }: {
   id?: string;
   eyebrow?: string;
@@ -28,6 +29,8 @@ export function Section({
   align?: "left" | "center";
   /** Short sections (a single row of links) do not need full section rhythm. */
   compact?: boolean;
+  /** Optional full bleed photograph behind the section, with a dark scrim. */
+  backgroundImage?: { src: string; alt: string };
 }) {
   const background =
     tone === "soft"
@@ -39,11 +42,36 @@ export function Section({
   return (
     <section
       id={id}
-      className={
+      className={`${
         compact ? "scroll-mt-32 py-8 md:py-12" : "scroll-mt-32 py-12 md:py-20"
+      }${backgroundImage ? " cta-photo relative isolate overflow-hidden" : ""}`}
+      style={
+        backgroundImage
+          ? undefined
+          : background
+            ? { backgroundColor: background }
+            : undefined
       }
-      style={background ? { backgroundColor: background } : undefined}
     >
+      {backgroundImage ? (
+        <>
+          <Image
+            src={backgroundImage.src}
+            alt={backgroundImage.alt}
+            fill
+            sizes="100vw"
+            className="-z-20 object-cover"
+          />
+          <div
+            className="absolute inset-0 -z-10"
+            aria-hidden="true"
+            style={{
+              background:
+                "linear-gradient(90deg, rgba(11,16,13,0.95) 0%, rgba(11,16,13,0.88) 50%, rgba(11,16,13,0.66) 100%)",
+            }}
+          />
+        </>
+      ) : null}
       <div className="container-page">
         {eyebrow || title || lead ? (
           <div
