@@ -133,22 +133,6 @@ export default function HomePage() {
         <HowMatchingWorks />
       </Section>
 
-      <Section
-        backgroundImage={{
-          src: "/locations/lancaster-residential-street.webp",
-          alt: "Single storey brick homes with concrete driveways and front walkways on a residential street in Lancaster, SC",
-        }}
-        eyebrow="Service area"
-        title="Areas we currently serve"
-        lead="Every area we currently serve. Service availability depends on participating providers."
-      >
-        <AdjacentAreas locations={publishedLocations} />
-
-        <p className="mt-7 text-center text-[14px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
-          Additional South Carolina areas are added one at a time, and only once
-          a participating provider has approved coverage there in writing.
-        </p>
-      </Section>
 
       <Section
         tone="soft"
@@ -165,6 +149,23 @@ export default function HomePage() {
         lead="Straight answers, including the ones that tell you we are not the right service for your project."
       >
         <DecisionSupport items={DECISION_ITEMS} />
+      </Section>
+
+      <Section
+        backgroundImage={{
+          src: "/locations/lancaster-residential-street.webp",
+          alt: "Single storey brick homes with concrete driveways and front walkways on a residential street in Lancaster, SC",
+        }}
+        eyebrow="Service area"
+        title="Areas we currently serve"
+        lead="Every area we currently serve. Service availability depends on participating providers."
+      >
+        <AdjacentAreas locations={publishedLocations} />
+
+        <p className="mt-7 text-center text-[14px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
+          Additional South Carolina areas are added one at a time, and only once
+          a participating provider has approved coverage there in writing.
+        </p>
       </Section>
 
       <Section
