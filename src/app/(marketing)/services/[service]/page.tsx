@@ -113,7 +113,7 @@ export default async function ServicePage({ params }: { params: Params }) {
     { id: "process", label: "Process" },
     { id: "cost", label: "What drives cost" },
     { id: "prepare", label: "Prepare" },
-    { id: "vetting", label: "How routing works" },
+    { id: "routing", label: "How routing works" },
     { id: "how-it-works", label: "How it works" },
     { id: "quote-form", label: "Get a quote" },
     { id: "faq", label: "FAQ" },
@@ -234,7 +234,7 @@ export default async function ServicePage({ params }: { params: Params }) {
               </div>
             </section>
 
-            <section id="vetting" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
+            <section id="routing" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
               <p className="eyebrow flex justify-center before:hidden lg:justify-start lg:before:block">How routing works</p>
               <h2 className="h2 mt-4 text-center lg:text-left">
                 How your request reaches a service provider

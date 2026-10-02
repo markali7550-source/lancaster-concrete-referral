@@ -112,7 +112,7 @@ export async function POST(request: Request) {
       {
         result: "no_coverage",
         message:
-          "We do not have an approved contractor for that area yet. Nothing was sent to a contractor.",
+          "No participating provider covers that area yet. Nothing was sent.",
       },
       { status: 422, headers: noStore },
     );

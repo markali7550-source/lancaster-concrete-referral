@@ -275,13 +275,13 @@ export function QuoteForm({
   if (status === "no_coverage") {
     return (
       <div id="quote-form" className="card scroll-mt-32 p-6 md:p-8" role="status">
-        <p className="eyebrow">No approved contractor yet</p>
+        <p className="eyebrow">No provider covers that area yet</p>
         <h3 className="mt-2 text-2xl font-semibold">
           We do not cover that area today
         </h3>
         <p className="mt-3 text-[color:var(--color-muted)]">
-          Nothing was sent to a contractor. We only route requests to partners
-          who have explicitly approved your area, so we would rather tell you
+          Nothing was sent to a contractor. We only route requests to providers
+          who have confirmed in writing that they cover your area, so we would rather tell you
           plainly than pass your details to someone who cannot help.
         </p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
