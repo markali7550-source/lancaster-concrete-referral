@@ -121,6 +121,9 @@ export function SectionDivider() {
 
 /* ------------------------------------------------------------------- Hero */
 
+const HERO_IMAGE_OVERLAY =
+  "absolute inset-0 -z-10 bg-gradient-to-b from-[#070b09]/85 via-[#070b09]/75 to-[#070b09]/85 lg:bg-gradient-to-r lg:from-[#070b09]/92 lg:via-[#070b09]/78 lg:to-[#070b09]/35";
+
 /**
  * Full-bleed photo header: the photo fills the band, a dark scrim keeps the
  * copy legible, and the copy sits on top of it.
@@ -151,7 +154,7 @@ export function OverlayHeader({
         className="-z-20 object-cover"
       />
       <div
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-[#070b09]/85 via-[#070b09]/75 to-[#070b09]/85 lg:bg-gradient-to-r lg:from-[#070b09]/92 lg:via-[#070b09]/78 lg:to-[#070b09]/35"
+        className={HERO_IMAGE_OVERLAY}
         aria-hidden="true"
       />
       <div className="container-page flex items-center py-14 md:py-20 lg:py-24">
@@ -214,7 +217,7 @@ export function Hero({
           className="-z-20 object-cover"
         />
         <div
-          className="absolute inset-0 -z-10 bg-gradient-to-b from-[#070b09]/85 via-[#070b09]/75 to-[#070b09]/85 lg:bg-gradient-to-r lg:from-[#070b09]/92 lg:via-[#070b09]/78 lg:to-[#070b09]/35"
+          className={HERO_IMAGE_OVERLAY}
           aria-hidden="true"
         />
         <div

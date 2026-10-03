@@ -46,7 +46,7 @@ export default function ContactPage() {
           aria-hidden="true"
         />
         <div
-          className="absolute inset-0 -z-10 bg-[#07100b]/80"
+          className="absolute inset-0 -z-10 bg-gradient-to-b from-[#070b09]/85 via-[#070b09]/75 to-[#070b09]/85 lg:bg-gradient-to-r lg:from-[#070b09]/92 lg:via-[#070b09]/78 lg:to-[#070b09]/35"
           aria-hidden="true"
         />
         <div className="container-page py-12 text-center md:py-16 lg:text-left">
