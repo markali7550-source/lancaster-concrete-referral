@@ -64,6 +64,13 @@ function descriptionFor(nameLower: string, projectNoun: string) {
   return `What ${nameLower} referral covers in Lancaster, SC, what falls outside it, and how your ${projectNoun} request reaches an independent service provider.`;
 }
 
+const SERVICE_PAGE_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-driveways": { src: "/home-driveway-card.jpg", alt: "Representative residential concrete driveway with a clean broom finish" },
+  "concrete-patios": { src: "/home-patio-card.jpg", alt: "Representative backyard concrete patio beside a lawn and mature trees" },
+  "concrete-slabs": { src: "/home-slab-card.jpg", alt: "Representative concrete slab prepared beside a residential property" },
+  "concrete-repair": { src: "/home-repair-card.jpg", alt: "Representative cracked concrete walkway awaiting a repair assessment" },
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -325,10 +332,7 @@ export default async function ServicePage({ params }: { params: Params }) {
           eyebrow="Local pages"
           title={`${service.name} by city`}
           compact
-          backgroundImage={{
-            src: "/home-service-area-band.jpg",
-            alt: "Residential concrete driveways and walkways in a tree-lined neighborhood",
-          }}
+          backgroundImage={SERVICE_PAGE_IMAGES[service.slug]}
         >
           <ul className="flex flex-wrap justify-center gap-3 lg:justify-start">
             {cityLinks.map(({ record, location }) => (
