@@ -76,7 +76,7 @@ export default function HowItWorksPage() {
             width={1200}
             height={655}
             sizes="(min-width: 1024px) 56rem, 100vw"
-            className="h-64 w-full object-cover md:h-80"
+            className="aspect-[1200/655] h-auto w-full object-cover"
           />
         </figure>
         <HowMatchingWorks />
