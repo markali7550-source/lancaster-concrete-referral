@@ -175,7 +175,7 @@ export function ServiceCtaBand({
           alt={imageAlt ?? ""}
           fill
           sizes="100vw"
-          className="-z-20 object-cover"
+          className="cta-photo-image -z-20 object-cover"
         />
       ) : null}
       {imageSrc ? (
