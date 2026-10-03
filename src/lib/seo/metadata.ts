@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { absoluteUrl, site } from "@/lib/env";
 
 const OG_IMAGE = {
-  url: "/opengraph-image.png",
+  url: "/opengraph-image.webp",
   width: 1200,
   height: 630,
   alt: `${site.brand}, concrete referrals in Lancaster, South Carolina`,
