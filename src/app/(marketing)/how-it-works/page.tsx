@@ -78,10 +78,6 @@ export default function HowItWorksPage() {
             sizes="(min-width: 1024px) 56rem, 100vw"
             className="h-64 w-full object-cover md:h-80"
           />
-          <figcaption className="p-4 text-center text-[12.5px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
-            This image illustrates an estimate visit; it is not a project gallery
-            or a claim that this referral service performed the work.
-          </figcaption>
         </figure>
         <HowMatchingWorks />
       </Section>
