@@ -67,6 +67,9 @@ export default function HowItWorksPage() {
         </p>
       </OverlayHeader>
       <ReferralDisclosureStrip />
+      <Section tone="soft" eyebrow="Eligibility" title="What blocks a provider from receiving your request">
+        <RoutingControls />
+      </Section>
       <Section
         backgroundImage={{
           src: "/estimate-visit-measuring.webp",
@@ -76,9 +79,6 @@ export default function HowItWorksPage() {
         title="Three steps, no obligation"
       >
         <HowMatchingWorks />
-      </Section>
-      <Section tone="soft" eyebrow="Eligibility" title="What blocks a provider from receiving your request">
-        <RoutingControls />
       </Section>
       <Section eyebrow="Our role" title="What we are, and what we are not">
         <div className="card p-7 text-center lg:text-left">
