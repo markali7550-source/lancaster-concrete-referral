@@ -34,12 +34,21 @@ export default function ContactPage() {
       <JsonLd data={graph} />
       <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Contact" }]} />
       <div
-        className="border-b"
-        style={{
-          borderColor: "var(--color-line-soft)",
-          backgroundColor: "var(--color-surface)",
-        }}
+        className="cta-photo relative isolate overflow-hidden border-b"
+        style={{ borderColor: "var(--color-line-soft)" }}
       >
+        <Image
+          src="/contact-front-walkway.webp"
+          alt=""
+          fill
+          sizes="100vw"
+          className="-z-20 object-cover"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-0 -z-10 bg-[#07100b]/80"
+          aria-hidden="true"
+        />
         <div className="container-page py-12 text-center md:py-16 lg:text-left">
           <p className="eyebrow before:hidden lg:before:block">Contact</p>
           <h1 className="h1 mx-auto mt-5 max-w-3xl lg:mx-0">
@@ -49,14 +58,6 @@ export default function ContactPage() {
             We can confirm whether we have approved coverage for your area
             before you go any further.
           </p>
-          <Image
-            src="/contact-front-walkway.webp"
-            alt="Concrete front walkway and entry steps leading to the porch of a brick home in late afternoon light"
-            width={900}
-            height={491}
-            sizes="(min-width: 1024px) 56rem, 100vw"
-            className="mx-auto mt-8 h-48 w-full max-w-4xl rounded-[16px] object-cover md:h-64 lg:mx-0"
-          />
         </div>
       </div>
       <ReferralDisclosureStrip />
