@@ -8,13 +8,13 @@ import {
   FaqSection,
   Hero,
   HowMatchingWorks,
-  ProjectExamples,
   ProjectTypeChooser,
   Section,
   SectionDivider,
   RoutingControls,
 } from "@/components/marketing/sections";
 import { CtaBand } from "@/components/marketing/service-sections";
+import { ProjectGallery } from "@/components/marketing/ProjectGallery";
 import { publishedLocations } from "@/content/locations";
 import { publishedServices } from "@/content/services";
 import { site } from "@/lib/env";
@@ -263,8 +263,14 @@ export default function HomePage() {
       </Section>
 
 
-      <Section eyebrow="Project photography" title="Illustrative concrete details, not a project gallery">
-        <ProjectExamples />
+      <Section
+        tone="surface"
+        align="center"
+        eyebrow="PROJECT PHOTOGRAPHY"
+        title="Concrete Projects & Inspiration"
+        lead="Explore examples of concrete work and project styles to help you plan your next driveway, patio, slab, or repair project."
+      >
+        <ProjectGallery />
       </Section>
 
 
