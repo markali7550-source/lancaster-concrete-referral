@@ -171,7 +171,7 @@ export default function HomePage() {
 
       <Section
         backgroundImage={{
-          src: "/home-service-area-band.jpg",
+          src: "/home-service-area-band.webp",
           alt: "Quiet Lancaster County South Carolina residential street with concrete driveways, front walkways, and mature trees",
         }}
         eyebrow="Service area"
