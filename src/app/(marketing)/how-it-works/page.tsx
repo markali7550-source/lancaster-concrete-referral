@@ -76,7 +76,7 @@ export default function HowItWorksPage() {
             width={1200}
             height={655}
             sizes="(min-width: 1024px) 56rem, 100vw"
-            className="mx-auto aspect-[1200/655] h-auto w-full max-w-5xl object-cover"
+            className="mx-auto aspect-[1200/655] h-auto w-full max-w-4xl object-cover"
           />
         </figure>
         <HowMatchingWorks />
