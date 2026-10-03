@@ -1,32 +1,36 @@
+import Image from "next/image";
 import { site } from "@/lib/env";
 
-/** Text-based brand mark. Content photography is audited separately from the
- * wordmark, so the header/footer avoid repeated image assets entirely. */
+/** Native pixel dimensions of the shipped lockup artwork (both variants share
+ * the same canvas), used to keep the aspect ratio correct at any height. */
+const LOGO_WIDTH = 1808;
+const LOGO_HEIGHT = 556;
+
+/** Brand lockup. Ships as two pre-rendered variants — dark ink for light
+ * surfaces, light ink for dark surfaces (dark mode header, the dark footer
+ * band) — swapped purely in CSS via the existing `.logo-light` / `.logo-dark`
+ * utilities so no client JS is needed to pick the right one. */
 export function Logo({ height = 36 }: { height?: number }) {
-  const markSize = Math.max(28, Math.round(height * 0.82));
+  const width = Math.round((LOGO_WIDTH / LOGO_HEIGHT) * height);
 
   return (
-    <span className="inline-flex items-center gap-2.5" aria-label={site.brand}>
-      <span
-        className="grid shrink-0 place-items-center rounded-[10px] text-sm font-extrabold tracking-[-0.04em]"
-        style={{
-          width: markSize,
-          height: markSize,
-          backgroundColor: "var(--color-accent)",
-          color: "var(--color-on-accent)",
-          boxShadow:
-            "0 8px 22px color-mix(in srgb, var(--color-accent) 22%, transparent)",
-        }}
-        aria-hidden="true"
-      >
-        LC
-      </span>
-      <span
-        className="hidden whitespace-nowrap font-extrabold leading-none tracking-[-0.04em] sm:inline"
-        style={{ fontSize: Math.max(18, Math.round(height * 0.46)) }}
-      >
-        {site.brand}
-      </span>
+    <span className="relative inline-block" style={{ height, width }}>
+      <Image
+        src="/logo.webp"
+        alt={site.brand}
+        width={LOGO_WIDTH}
+        height={LOGO_HEIGHT}
+        priority
+        className="logo-light absolute inset-0 h-full w-full object-contain"
+      />
+      <Image
+        src="/logo-dark.webp"
+        alt={site.brand}
+        width={LOGO_WIDTH}
+        height={LOGO_HEIGHT}
+        priority
+        className="logo-dark absolute inset-0 h-full w-full object-contain"
+      />
     </span>
   );
 }
