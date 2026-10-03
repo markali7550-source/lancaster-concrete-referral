@@ -140,6 +140,10 @@ export default function HomePage() {
       </Section>
 
       <Section
+        backgroundImage={{
+          src: "/process-band.webp",
+          alt: "Residential concrete driveway forms and fresh pour on a neighborhood street",
+        }}
         eyebrow="Process"
         title="Three steps, no obligation"
         lead="You are never passed to a call center, and your details are never sold to a list of providers who bid against each other."
