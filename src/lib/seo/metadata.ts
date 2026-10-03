@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { absoluteUrl, site } from "@/lib/env";
 
 const OG_IMAGE = {
-  url: "/opengraph-image.png",
+  url: "/opengraph-image.webp",
   width: 1200,
   height: 630,
   alt: `${site.brand}, concrete referrals in Lancaster, South Carolina`,
@@ -15,11 +15,8 @@ interface PageMetaInput {
   noindex?: boolean;
 }
 
-/**
- * Demo deployment: every route ships noindex, nofollow so the placeholder
- * content cannot be indexed. Flip to false at launch.
- */
-export const DEMO_NOINDEX = true;
+/** Public pages are indexable by default; transactional confirmation pages opt out explicitly. */
+export const DEMO_NOINDEX = false;
 
 export function pageMetadata({
   title,

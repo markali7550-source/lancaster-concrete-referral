@@ -121,6 +121,9 @@ export function SectionDivider() {
 
 /* ------------------------------------------------------------------- Hero */
 
+const HERO_IMAGE_OVERLAY =
+  "absolute inset-0 -z-10 bg-gradient-to-b from-[#070b09]/85 via-[#070b09]/75 to-[#070b09]/85 lg:bg-gradient-to-r lg:from-[#070b09]/92 lg:via-[#070b09]/78 lg:to-[#070b09]/35";
+
 /**
  * Full-bleed photo header: the photo fills the band, a dark scrim keeps the
  * copy legible, and the copy sits on top of it.
@@ -151,7 +154,7 @@ export function OverlayHeader({
         className="-z-20 object-cover"
       />
       <div
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-[#070b09]/85 via-[#070b09]/75 to-[#070b09]/85 lg:bg-gradient-to-r lg:from-[#070b09]/92 lg:via-[#070b09]/78 lg:to-[#070b09]/35"
+        className={HERO_IMAGE_OVERLAY}
         aria-hidden="true"
       />
       <div className="container-page flex items-center py-14 md:py-20 lg:py-24">
@@ -214,7 +217,7 @@ export function Hero({
           className="-z-20 object-cover"
         />
         <div
-          className="absolute inset-0 -z-10 bg-gradient-to-b from-[#070b09]/85 via-[#070b09]/75 to-[#070b09]/85 lg:bg-gradient-to-r lg:from-[#070b09]/92 lg:via-[#070b09]/78 lg:to-[#070b09]/35"
+          className={HERO_IMAGE_OVERLAY}
           aria-hidden="true"
         />
         <div
@@ -475,7 +478,7 @@ export function ProjectTypeChooser({
                 ? `${cityPrefix}/${service.slug}`
                 : `/services/${service.slug}`
             }
-            className="card card-interactive flex h-full flex-col overflow-hidden"
+            className="group card card-interactive flex h-full flex-col overflow-hidden transition-colors duration-300 hover:border-[var(--color-accent)]"
           >
             {image ? (
               <Image
@@ -484,7 +487,7 @@ export function ProjectTypeChooser({
                 width={800}
                 height={500}
                 sizes="(min-width: 640px) 45vw, 100vw"
-                className="h-44 w-full object-cover"
+                className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
             ) : null}
             <div className="flex flex-1 flex-col p-6 text-center lg:text-left">
@@ -583,15 +586,15 @@ export function RoutingControls() {
 export function ProjectExamples() {
   return (
     <div className="card p-7 text-center lg:text-left">
-      <p className="eyebrow-plain">Photography policy</p>
+      <p className="eyebrow-plain">PHOTOGRAPHY POLICY</p>
       <h3 className="mt-3 text-2xl font-semibold">
-        We use illustrative construction imagery, not a fake portfolio.
+        Concept imagery for reference — verified portfolios on request.
       </h3>
       <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--color-muted)]">
-        {ILLUSTRATIVE_IMAGE_NOTE} Every photograph on this site is assigned to
-        one specific section only, and true project portfolio photos are
-        published only after source, ownership, and contractor permission
-        review.
+        We use clear illustrative concrete photography to showcase project
+        standards, never claiming direct execution. Authentic contractor
+        portfolio photos are published only after source, ownership, and
+        permission verification.
       </p>
     </div>
   );
@@ -662,7 +665,7 @@ export function DecisionSupport({
     >
       {items.map((item) => (
         <details key={item.question} name={name} className="group">
-          <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-6 font-medium md:px-6">
+          <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-medium md:px-6">
             <span className="flex-1 text-left">{item.question}</span>
             <span
               className="grid h-8 w-8 shrink-0 place-items-center rounded-[10px] transition-colors"
@@ -707,7 +710,7 @@ export function FaqSection({
     >
       {faqs.map((faq) => (
         <details key={faq.question} name={name} className="group">
-          <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-semibold md:px-6">
+          <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-semibold md:px-6">
             <span className="flex-1 text-left text-[16px]">{faq.question}</span>
             <span
               className="grid h-8 w-8 shrink-0 place-items-center rounded-[10px] transition-colors"

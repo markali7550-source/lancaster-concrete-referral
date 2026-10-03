@@ -64,6 +64,13 @@ function descriptionFor(nameLower: string, projectNoun: string) {
   return `What ${nameLower} referral covers in Lancaster, SC, what falls outside it, and how your ${projectNoun} request reaches an independent service provider.`;
 }
 
+const SERVICE_PAGE_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-driveways": { src: "/home-driveway-card.webp", alt: "Representative residential concrete driveway with a clean broom finish" },
+  "concrete-patios": { src: "/home-patio-card.webp", alt: "Representative backyard concrete patio beside a lawn and mature trees" },
+  "concrete-slabs": { src: "/home-slab-card.webp", alt: "Representative concrete slab prepared beside a residential property" },
+  "concrete-repair": { src: "/home-repair-card.webp", alt: "Representative cracked concrete walkway awaiting a repair assessment" },
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -321,7 +328,12 @@ export default async function ServicePage({ params }: { params: Params }) {
       <ServiceDisclosureBlock />
 
       {cityLinks.length > 0 ? (
-        <Section eyebrow="Local pages" title={`${service.name} by city`} compact>
+        <Section
+          eyebrow="Local pages"
+          title={`${service.name} by city`}
+          compact
+          backgroundImage={SERVICE_PAGE_IMAGES[service.slug]}
+        >
           <ul className="flex flex-wrap justify-center gap-3 lg:justify-start">
             {cityLinks.map(({ record, location }) => (
               <li key={record.locationSlug}>

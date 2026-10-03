@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   },
   description:
     "Referral service connecting Lancaster, South Carolina homeowners with independent concrete contractors for driveways, patios, slabs, and repair.",
+  icons: { icon: "/favicon.webp", apple: "/apple-icon.webp" },
 };
 
 export const viewport: Viewport = {
