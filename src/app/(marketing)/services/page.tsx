@@ -142,7 +142,14 @@ export default function ServicesPage() {
         </div>
       </Section>
 
-      <Section eyebrow="Process" title="How a request reaches an independent provider">
+      <Section
+        backgroundImage={{
+          src: "/process-band.webp",
+          alt: "Concrete driveway forms and fresh pour on a residential street",
+        }}
+        eyebrow="Process"
+        title="How a request reaches an independent provider"
+      >
         <HowMatchingWorks />
       </Section>
 
