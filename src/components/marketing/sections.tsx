@@ -662,7 +662,7 @@ export function DecisionSupport({
     >
       {items.map((item) => (
         <details key={item.question} name={name} className="group">
-          <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-6 font-medium md:px-6">
+          <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-medium md:px-6">
             <span className="flex-1 text-left">{item.question}</span>
             <span
               className="grid h-8 w-8 shrink-0 place-items-center rounded-[10px] transition-colors"
