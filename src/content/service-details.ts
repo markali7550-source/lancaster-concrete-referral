@@ -29,7 +29,7 @@ export interface ServiceDetail {
 export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
   /* ------------------------------------------------------ driveways */
   "concrete-driveways": {
-    detailImage: "/services/real-driveway.webp",
+    detailImage: "/real-driveway.webp",
     detailImageAlt:
       "Residential concrete driveway in Lancaster SC with jointed panels and a broom finish",
     mayInclude: [
@@ -103,7 +103,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
 
   /* --------------------------------------------------------- patios */
   "concrete-patios": {
-    detailImage: "/services/real-patio.webp",
+    detailImage: "/real-patio.webp",
     detailImageAlt:
       "Residential concrete patio in Lancaster SC with outdoor dining furniture",
     mayInclude: [
@@ -177,7 +177,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
 
   /* ---------------------------------------------------------- slabs */
   "concrete-slabs": {
-    detailImage: "/services/real-slab.webp",
+    detailImage: "/real-slab.webp",
     detailImageAlt:
       "Finished residential concrete slab and equipment pad in Lancaster SC beside a brick home, with an HVAC condenser on the pad",
     mayInclude: [
@@ -251,7 +251,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
 
   /* --------------------------------------------------------- repair */
   "concrete-repair": {
-    detailImage: "/services/real-repair.webp",
+    detailImage: "/real-repair.webp",
     detailImageAlt:
       "Concrete repair project in Lancaster SC showing a filled and smoothed crack in a slab",
     mayInclude: [
