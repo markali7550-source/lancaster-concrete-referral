@@ -15,11 +15,8 @@ interface PageMetaInput {
   noindex?: boolean;
 }
 
-/**
- * Demo deployment: every route ships noindex, nofollow so the placeholder
- * content cannot be indexed. Flip to false at launch.
- */
-export const DEMO_NOINDEX = true;
+/** Public pages are indexable by default; transactional confirmation pages opt out explicitly. */
+export const DEMO_NOINDEX = false;
 
 export function pageMetadata({
   title,
