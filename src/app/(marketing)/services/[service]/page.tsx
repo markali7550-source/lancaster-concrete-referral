@@ -321,7 +321,15 @@ export default async function ServicePage({ params }: { params: Params }) {
       <ServiceDisclosureBlock />
 
       {cityLinks.length > 0 ? (
-        <Section eyebrow="Local pages" title={`${service.name} by city`} compact>
+        <Section
+          eyebrow="Local pages"
+          title={`${service.name} by city`}
+          compact
+          backgroundImage={{
+            src: "/home-service-area-band.jpg",
+            alt: "Residential concrete driveways and walkways in a tree-lined neighborhood",
+          }}
+        >
           <ul className="flex flex-wrap justify-center gap-3 lg:justify-start">
             {cityLinks.map(({ record, location }) => (
               <li key={record.locationSlug}>
