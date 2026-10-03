@@ -49,6 +49,14 @@ export default function ContactPage() {
             We can confirm whether we have approved coverage for your area
             before you go any further.
           </p>
+          <Image
+            src="/contact-front-walkway.webp"
+            alt="Concrete front walkway and entry steps leading to the porch of a brick home in late afternoon light"
+            width={900}
+            height={491}
+            sizes="(min-width: 1024px) 56rem, 100vw"
+            className="mx-auto mt-8 h-48 w-full max-w-4xl rounded-[16px] object-cover md:h-64 lg:mx-0"
+          />
         </div>
       </div>
       <ReferralDisclosureStrip />
@@ -99,14 +107,6 @@ export default function ContactPage() {
                 </dd>
               </div>
             </dl>
-            <Image
-              src="/contact-front-walkway.webp"
-              alt="Concrete front walkway and entry steps leading to the porch of a brick home in late afternoon light"
-              width={900}
-              height={491}
-              sizes="(min-width: 1024px) 40vw, 100vw"
-              className="mt-8 h-48 w-full rounded-[16px] object-cover md:h-56"
-            />
             <p className="mx-auto mt-8 max-w-prose text-xs leading-relaxed text-[color:var(--color-muted)] lg:mx-0">
               {CALL_DISCLOSURE} We publish no street address because we are an
               online referral business, not a contracting premises.
