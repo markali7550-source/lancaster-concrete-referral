@@ -32,7 +32,6 @@ export default function ContactPage() {
   return (
     <>
       <JsonLd data={graph} />
-      <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Contact" }]} />
       <div
         className="cta-photo relative isolate overflow-hidden border-b"
         style={{ borderColor: "var(--color-line-soft)" }}
@@ -50,6 +49,10 @@ export default function ContactPage() {
           aria-hidden="true"
         />
         <div className="container-page py-12 text-center md:py-16 lg:text-left">
+          <Breadcrumbs
+            overlay
+            items={[{ name: "Home", path: "/" }, { name: "Contact" }]}
+          />
           <p className="eyebrow before:hidden lg:before:block">Contact</p>
           <h1 className="h1 mx-auto mt-5 max-w-3xl lg:mx-0">
             Contact Our Lancaster, SC Concrete Referral Team
