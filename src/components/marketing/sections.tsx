@@ -475,7 +475,7 @@ export function ProjectTypeChooser({
                 ? `${cityPrefix}/${service.slug}`
                 : `/services/${service.slug}`
             }
-            className="card card-interactive flex h-full flex-col overflow-hidden"
+            className="group card card-interactive flex h-full flex-col overflow-hidden transition-colors duration-300 hover:border-[var(--color-accent)]"
           >
             {image ? (
               <Image
@@ -484,7 +484,7 @@ export function ProjectTypeChooser({
                 width={800}
                 height={500}
                 sizes="(min-width: 640px) 45vw, 100vw"
-                className="h-44 w-full object-cover"
+                className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
             ) : null}
             <div className="flex flex-1 flex-col p-6 text-center lg:text-left">

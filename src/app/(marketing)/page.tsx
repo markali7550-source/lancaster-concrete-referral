@@ -57,20 +57,20 @@ const DECISION_ITEMS = [
 
 const HOME_SERVICE_IMAGES = {
   "concrete-driveways": {
-    src: "/home-driveway-card.jpg",
-    alt: "Fresh residential concrete driveway with broom finish leading to a brick ranch home in a Lancaster South Carolina style neighborhood",
+    src: "/services/concrete-driveways-detail.webp",
+    alt: "Concrete driveway project with a finished broom texture and residential access",
   },
   "concrete-patios": {
-    src: "/home-patio-card.jpg",
-    alt: "New concrete backyard patio with outdoor seating and mature trees in a South Carolina residential yard",
+    src: "/services/concrete-patios-detail.webp",
+    alt: "Finished concrete patio with a clean surface in a residential outdoor setting",
   },
   "concrete-slabs": {
-    src: "/home-slab-card.jpg",
-    alt: "Concrete slab prepared for a backyard shed on a rural Lancaster County property with red clay soil at the edges",
+    src: "/services/concrete-slabs-detail.webp",
+    alt: "Residential concrete slab prepared for a new project",
   },
   "concrete-repair": {
-    src: "/home-repair-card.jpg",
-    alt: "Cracked uneven concrete walkway section beside lawn and mature tree roots before repair assessment",
+    src: "/services/concrete-repair-detail.webp",
+    alt: "Concrete repair work showing a repaired residential concrete surface",
   },
 } as const;
 
