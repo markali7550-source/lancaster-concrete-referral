@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   FaqSection,
@@ -22,13 +21,6 @@ import { site } from "@/lib/env";
 const TITLE = "Concrete Services in Lancaster, SC | Driveways to Repair";
 const DESCRIPTION =
   "Driveways, patios, slabs and nonstructural repair in Lancaster, SC. See what each referral covers and how your request reaches an independent provider.";
-
-const SERVICE_IMAGES: Record<string, { src: string; alt: string }> = {
-  "concrete-driveways": { src: "/home-driveway-card.jpg", alt: "Representative concrete driveway" },
-  "concrete-patios": { src: "/home-patio-card.jpg", alt: "Representative concrete patio" },
-  "concrete-slabs": { src: "/home-slab-card.jpg", alt: "Representative concrete slab" },
-  "concrete-repair": { src: "/home-repair-card.jpg", alt: "Representative concrete repair" },
-};
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,
@@ -126,14 +118,6 @@ export default function ServicesPage() {
               {publishedServices.map((service) => (
                 <tr key={service.slug} className="border-t" style={{ borderColor: "var(--color-line)" }}>
                   <th scope="row" className="px-4 py-4 align-top font-medium">
-                    <Image
-                      src={SERVICE_IMAGES[service.slug].src}
-                      alt={SERVICE_IMAGES[service.slug].alt}
-                      width={96}
-                      height={56}
-                      sizes="96px"
-                      className="mb-3 h-14 w-24 rounded-[10px] object-cover"
-                    />
                     <a href={`/services/${service.slug}`} className="underline-offset-2 hover:underline">
                       {service.name}
                     </a>
