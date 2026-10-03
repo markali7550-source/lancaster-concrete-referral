@@ -292,14 +292,16 @@ export default async function ServicePage({ params }: { params: Params }) {
 
       <section id="may-include" className="scroll-mt-32">
         <Section
+          backgroundImage={{
+            src: detail.detailImage,
+            alt: detail.detailImageAlt,
+          }}
           eyebrow="Include"
           title={`What ${projectPhrase} project may include`}
         >
           <MayInclude
             items={detail.mayInclude}
             serviceName={projectPhrase}
-            imageSrc={detail.detailImage}
-            imageAlt={detail.detailImageAlt}
           />
         </Section>
       </section>
