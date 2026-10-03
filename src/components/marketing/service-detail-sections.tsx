@@ -45,22 +45,25 @@ export function MoreInformation({ blocks }: { blocks: ServiceDetail["moreInfo"] 
 export function MayInclude({
   items,
   serviceName,
-  imageSrc,
-  imageAlt,
 }: {
   items: string[];
   serviceName: string;
-  /** Supporting photo of the work this scope list describes. */
+  /** Optional legacy image props for backward compatibility */
   imageSrc?: string;
   imageAlt?: string;
 }) {
   return (
-    <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
-      <div className="min-w-0 lg:col-span-7">
+    <div>
       <ul className="grid gap-3 sm:grid-cols-2">
         {items.map((item) => (
-          <li key={item} className="card flex items-start justify-center gap-3 p-4 text-center lg:justify-start lg:text-left">
-            <span className="mt-0.5 shrink-0" style={{ color: "var(--color-accent)" }}>
+          <li
+            key={item}
+            className="card flex items-start justify-center gap-3 p-4 text-center lg:justify-start lg:text-left"
+          >
+            <span
+              className="mt-0.5 shrink-0"
+              style={{ color: "var(--color-accent)" }}
+            >
               <Icon name="check" className="h-4 w-4" />
             </span>
             <span className="text-[14.5px] font-medium">{item}</span>
@@ -73,20 +76,6 @@ export function MayInclude({
         offers every item. Confirm scope directly with the provider who contacts
         you.
       </p>
-      </div>
-      {imageSrc ? (
-        <figure className="card mx-auto w-full max-w-md min-w-0 overflow-hidden lg:col-span-5 lg:mx-0 lg:max-w-none">
-          <div className="relative aspect-[4/3]">
-            <Image
-              src={imageSrc}
-              alt={imageAlt ?? ""}
-              fill
-              sizes="(min-width: 1024px) 40vw, 100vw"
-              className="object-cover"
-            />
-          </div>
-        </figure>
-      ) : null}
     </div>
   );
 }
