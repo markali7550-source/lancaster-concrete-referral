@@ -70,6 +70,7 @@ export default function HowItWorksPage() {
       <Section tone="soft" eyebrow="Eligibility" title="What blocks a provider from receiving your request">
         <RoutingControls />
       </Section>
+
       <Section
         backgroundImage={{
           src: "/estimate-visit-measuring.webp",
