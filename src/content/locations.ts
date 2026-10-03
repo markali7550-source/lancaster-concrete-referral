@@ -46,7 +46,7 @@ export const locations: readonly LocationRecord[] = [
       "Red clay subsoil common through the county holds water, so participating providers are asked about drainage handling before a driveway or slab quote is confirmed.",
     ],
     intro:
-      "Looking for concrete services in Lancaster, SC? We help connect homeowners with independent concrete service providers who may be available for projects in the area. Lancaster is the core market for this referral service, and enquiries are matched against participating providers who have explicitly approved that coverage in writing.",
+      "Looking for concrete services in Lancaster, SC? We help connect homeowners with independent concrete service providers who may be available for projects in the area. Lancaster is the core market for this referral service, and inquiries are matched against participating providers who have explicitly approved that coverage in writing.",
     adjacent: [],
   },
   {

@@ -8,7 +8,7 @@ content intent preserved.
 
 | # | Issue | Evidence | Fix |
 |---|---|---|---|
-| 1 | **Colour contrast below WCAG AA.** Accent green `#0e7a4c` on the soft accent tint `#d8efe3` measured **4.45:1** against the 4.5:1 minimum. It affected every eyebrow label on soft toned sections and the numbered badges (01 to 04, step circles, accordion icons). | computed on live DOM | Lightened `--color-accent-soft` to `#e0f3e9`. Ratio now **4.65:1**. The accent green itself is unchanged, so branding is identical. |
+| 1 | **Color contrast below WCAG AA.** Accent green `#0e7a4c` on the soft accent tint `#d8efe3` measured **4.45:1** against the 4.5:1 minimum. It affected every eyebrow label on soft toned sections and the numbered badges (01 to 04, step circles, accordion icons). | computed on live DOM | Lightened `--color-accent-soft` to `#e0f3e9`. Ratio now **4.65:1**. The accent green itself is unchanged, so branding is identical. |
 | 2 | **Ghost buttons below the tap target minimum.** Header navigation and in page nav links rendered at **42 px**. | measured at all widths | `.btn-ghost` min height raised to **48 px**, matching the primary and secondary buttons. |
 | 3 | Breadcrumb links at 20 px (earlier pass) | | hit area grown to 28 px without changing the bar height |
 
@@ -53,7 +53,7 @@ navigation; services dropdown closes on Escape and outside click.
 
 **Accessibility.** 22 keyboard tab stops on the form page, **all with a visible
 2 px focus ring**. Every input labelled, every link and button has an accessible
-name, every image has an alt attribute, no reliance on colour alone.
+name, every image has an alt attribute, no reliance on color alone.
 
 **Performance.** Measured CLS **0.0000** on normal load; 0.0000 with the font
 blocked, proving nothing else shifts. All 22 WebP assets under 100 KB. Hero images
@@ -61,7 +61,7 @@ use `priority`, below fold images lazy load. No third party scripts.
 
 **Structured data.** Valid JSON-LD on every page. `OnlineBusiness` plus
 `Organization` and `WebSite` sitewide, `WebPage`, `BreadcrumbList`, `FAQPage` and
-`Service` where they match visible content. No reviews, no ratings, no licence or
+`Service` where they match visible content. No reviews, no ratings, no license or
 credential claims, no claim that the publisher performs the work.
 
 **Technical SEO.** Sitemap lists 17 URLs, every one returns 200, no duplicates, no
@@ -82,7 +82,7 @@ Every other route is `index, follow` and present in the sitemap.
 
 ## Unsupported claims: none present, none added
 
-No licences, certifications, insurance, ratings, reviews, years in trade, project
+No licenses, certifications, insurance, ratings, reviews, years in trade, project
 history, BBB or award claims anywhere. The publisher is described only as a
 referral service throughout, with the mandated disclosure rendered verbatim in the
 footer, the lead form, each service page and the disclosure page. Nothing had to be

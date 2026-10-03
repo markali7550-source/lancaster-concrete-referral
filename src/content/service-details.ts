@@ -168,7 +168,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         heading: "Why planning matters",
         subheading: "Decide before the forms go in",
         body: [
-          "Patios are easy to undersize and hard to enlarge neatly later, because an addition poured afterwards rarely matches the original in colour or texture.",
+          "Patios are easy to undersize and hard to enlarge neatly later, because an addition poured afterwards rarely matches the original in color or texture.",
           "Deciding size, finish, and drainage before the forms go in avoids the two common regrets: a slab that feels cramped once furnished, and water collecting near the house.",
         ],
       },
@@ -292,7 +292,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         heading: "Important considerations",
         subheading: "When repair will not hold",
         body: [
-          "Repairs are rarely invisible. Patched concrete usually differs in colour and texture from the slab around it, and that difference tends to remain.",
+          "Repairs are rarely invisible. Patched concrete usually differs in color and texture from the slab around it, and that difference tends to remain.",
           "Where the cause is active, such as soil movement or poor drainage, a surface only repair may not hold. Repeated patching of an old slab can cost more than one replacement.",
         ],
       },

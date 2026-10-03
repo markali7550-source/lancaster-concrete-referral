@@ -83,7 +83,7 @@ export function ConsentBanner() {
       <p className="text-sm font-semibold">Optional tracking</p>
       <p className="mt-1.5 text-[13px] leading-snug text-[color:var(--color-muted)] md:mt-2 md:leading-relaxed">
         We use optional analytics and call tracking to see which campaigns
-        produce enquiries. Declining changes nothing about your ability to call
+        produce inquiries. Declining changes nothing about your ability to call
         us or submit a request.
       </p>
       <div className="mt-3 grid grid-cols-2 gap-2 md:mt-4">

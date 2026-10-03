@@ -49,7 +49,7 @@ export const services: readonly ServiceRecord[] = [
     nameLower: "a concrete driveway",
     projectNoun: "driveway",
     state: "published",
-    intent: "New and replacement driveway enquiries",
+    intent: "New and replacement driveway inquiries",
     summary:
       "New pours and full replacements, including tear out of failed slabs and the drainage questions that come with Lancaster County clay.",
     heroSummary:
@@ -177,7 +177,7 @@ export const services: readonly ServiceRecord[] = [
       {
         factor: "Decorative finish",
         impact: "Medium",
-        note: "Stamping, colour, and exposed aggregate add labour and material.",
+        note: "Stamping, color, and exposed aggregate add labor and material.",
       },
       {
         factor: "Drainage correction",
@@ -237,7 +237,7 @@ export const services: readonly ServiceRecord[] = [
     nameLower: "a concrete patio",
     projectNoun: "patio",
     state: "published",
-    intent: "Residential patio enquiries",
+    intent: "Residential patio inquiries",
     summary:
       "New patio pours, replacements, and stamped finishes where a participating provider has documented that capability.",
     heroSummary:
@@ -266,8 +266,8 @@ export const services: readonly ServiceRecord[] = [
         body: "Enlarging an existing patio or connecting it to a walkway, where the existing slab is sound enough to tie into.",
       },
       {
-        title: "Stamped and coloured finishes",
-        body: "Pattern stamped or integrally coloured slabs, routed only to participating providers who have documented that capability for your area.",
+        title: "Stamped and colored finishes",
+        body: "Pattern stamped or integrally colored slabs, routed only to participating providers who have documented that capability for your area.",
       },
     ],
     outOfScope: [
@@ -293,9 +293,9 @@ export const services: readonly ServiceRecord[] = [
           "Stone, slate, or plank patterns pressed into the fresh slab. Availability depends on the participating provider and adds cost and cure time sensitivity.",
       },
       {
-        name: "Integral colour and release",
+        name: "Integral color and release",
         description:
-          "Colour mixed into the concrete rather than applied on top. Discuss fade expectations and sealing schedule with the contractor.",
+          "Color mixed into the concrete rather than applied on top. Discuss fade expectations and sealing schedule with the contractor.",
       },
       {
         name: "Sealing",
@@ -314,7 +314,7 @@ export const services: readonly ServiceRecord[] = [
         phase: "Written quote and finish selection",
         duration: "Varies by contractor",
         detail:
-          "Finish, pattern, colour, and edge detail are priced. Decorative options should be quoted as clearly separable extras.",
+          "Finish, pattern, color, and edge detail are priced. Decorative options should be quoted as clearly separable extras.",
       },
       {
         phase: "Excavation and base",
@@ -339,7 +339,7 @@ export const services: readonly ServiceRecord[] = [
       {
         factor: "Finish type",
         impact: "High",
-        note: "Stamped and coloured work is substantially more labour intensive than a broom finish.",
+        note: "Stamped and colored work is substantially more labor intensive than a broom finish.",
       },
       {
         factor: "Footprint and shape",
@@ -377,7 +377,7 @@ export const services: readonly ServiceRecord[] = [
     ],
     quoteQuestions: [
       "Which way will the finished slab drain, and at what fall?",
-      "Is the stamped or coloured option priced separately?",
+      "Is the stamped or colored option priced separately?",
       "How will you tie into the existing slab or threshold height?",
       "Where will joints fall, and how will they look in the pattern?",
       "Do you seal it, and when is the first reseal due?",
@@ -392,7 +392,7 @@ export const services: readonly ServiceRecord[] = [
       {
         question: "Is a stamped finish always available?",
         answer:
-          "No. Stamped work is routed only when a participating provider has documented that capability for your area. If it is not supported, your request goes through as a standard patio enquiry and we say so rather than promising a finish nobody can deliver.",
+          "No. Stamped work is routed only when a participating provider has documented that capability for your area. If it is not supported, your request goes through as a standard patio inquiry and we say so rather than promising a finish nobody can deliver.",
       },
       {
         question: "What size should a usable patio be?",
@@ -418,7 +418,7 @@ export const services: readonly ServiceRecord[] = [
     nameLower: "a concrete slab",
     projectNoun: "slab",
     state: "published",
-    intent: "Residential slab and pad enquiries",
+    intent: "Residential slab and pad inquiries",
     summary:
       "Residential slabs and pads for sheds, equipment, vehicles, and outbuildings, nonstructural work only.",
     heroSummary:
@@ -568,7 +568,7 @@ export const services: readonly ServiceRecord[] = [
       {
         question: "Do you handle foundations or structural slabs?",
         answer:
-          "No. Foundation repair, structural engineering, and retaining walls are outside this referral scope. Those enquiries are declined rather than routed to a concrete finisher who should not be taking them on.",
+          "No. Foundation repair, structural engineering, and retaining walls are outside this referral scope. Those inquiries are declined rather than routed to a concrete finisher who should not be taking them on.",
       },
       {
         question: "What thickness does a pad need?",
@@ -594,7 +594,7 @@ export const services: readonly ServiceRecord[] = [
     nameLower: "concrete repair",
     projectNoun: "repair",
     state: "published",
-    intent: "Nonstructural repair enquiries",
+    intent: "Nonstructural repair inquiries",
     summary:
       "Nonstructural crack repair, surface repair, and resurfacing. Structural assessment is out of scope.",
     heroSummary:
@@ -642,7 +642,7 @@ export const services: readonly ServiceRecord[] = [
       {
         name: "Partial depth patching",
         description:
-          "Damaged surface material is removed back to sound concrete and replaced. Colour match is never perfect. Expect a visible repair.",
+          "Damaged surface material is removed back to sound concrete and replaced. Color match is never perfect. Expect a visible repair.",
       },
       {
         name: "Cementitious overlay",
