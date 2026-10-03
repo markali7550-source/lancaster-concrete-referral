@@ -57,9 +57,9 @@ export function UtilityHeader() {
               fallbackDisplay={site.phoneDisplay}
               fallbackE164={site.phoneE164}
               placement="header"
-              className="btn btn-secondary hidden min-h-11 whitespace-nowrap px-4 text-[15px] xl:inline-flex"
+              className="btn btn-secondary hidden min-h-12 whitespace-nowrap px-3.5 text-[15px] xl:inline-flex"
             />
-            <Link href="/contact" className="btn btn-primary min-h-11 whitespace-nowrap px-4 text-[15px]">
+            <Link href="/contact" className="btn btn-primary min-h-12 whitespace-nowrap px-3.5 text-[15px]">
               Request a referral
             </Link>
           </div>
