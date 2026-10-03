@@ -102,7 +102,7 @@ export function ReferralSteps() {
     <div>
       <ol className="grid gap-5 md:grid-cols-3">
         {REFERRAL_STEPS.map((step, index) => (
-          <li key={step.title} className="card flex h-full flex-col p-6">
+          <li key={step.title} className="card process-step-card flex h-full flex-col p-6">
             <span
               className="mx-auto grid h-10 w-10 place-items-center rounded-full text-[15px] font-bold md:mx-0"
               style={{

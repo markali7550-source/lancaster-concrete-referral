@@ -317,6 +317,10 @@ export default async function ServicePage({ params }: { params: Params }) {
 
       <section id="how-it-works" className="scroll-mt-32">
         <Section
+          backgroundImage={{
+            src: "/process-band.webp",
+            alt: "Concrete driveway forms and fresh pour on a residential street",
+          }}
           eyebrow="How it works"
           title="Three steps to a referral"
           lead="Requesting a referral takes a few minutes. Here is what happens after you submit your project details."
