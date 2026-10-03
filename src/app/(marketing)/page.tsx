@@ -57,20 +57,20 @@ const DECISION_ITEMS = [
 
 const HOME_SERVICE_IMAGES = {
   "concrete-driveways": {
-    src: "/concrete-driveway-card.jpg",
-    alt: "Freshly poured brushed concrete driveway beside a suburban Pennsylvania home",
+    src: "/services/concrete-driveways-detail.webp",
+    alt: "Concrete driveway project with a finished broom texture and residential access",
   },
   "concrete-patios": {
-    src: "/concrete-patio-card.jpg",
-    alt: "Stamped concrete patio in a suburban backyard with outdoor seating",
+    src: "/services/concrete-patios-detail.webp",
+    alt: "Finished concrete patio with a clean surface in a residential outdoor setting",
   },
   "concrete-slabs": {
-    src: "/concrete-slab-card.jpg",
-    alt: "Precision-poured residential concrete pad slab with a broom finish",
+    src: "/services/concrete-slabs-detail.webp",
+    alt: "Residential concrete slab prepared for a new project",
   },
   "concrete-repair": {
-    src: "/concrete-repair-card.jpg",
-    alt: "Resurfaced concrete driveway beside an original surface during repair work",
+    src: "/services/concrete-repair-detail.webp",
+    alt: "Concrete repair work showing a repaired residential concrete surface",
   },
 } as const;
 
