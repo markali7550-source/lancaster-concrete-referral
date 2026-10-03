@@ -303,6 +303,8 @@ export default async function ComboPage({ params }: { params: Params }) {
         tone="section"
         title={`${serviceRecord.name} in ${location.city}, SC`}
         body="One request, one eligible independent contractor. If nobody approved for your area can take it, we will tell you plainly."
+        imageSrc="/cta-pour-band.webp"
+        imageAlt="Two independent concrete workers screeding a freshly poured residential driveway slab between timber forms"
       />
 
     </>
