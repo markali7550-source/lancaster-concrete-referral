@@ -68,11 +68,7 @@ export default function HowItWorksPage() {
         </p>
       </OverlayHeader>
       <ReferralDisclosureStrip />
-      <Section
-        backgroundImage={{ src: "/process-band.webp", alt: "Concrete driveway forms and fresh pour on a residential street" }}
-        eyebrow="Process"
-        title="Three steps, no obligation"
-      >
+      <Section eyebrow="Process" title="Three steps, no obligation">
         <figure className="card mb-8 overflow-hidden">
           <Image
             src="/estimate-visit-measuring.webp"
