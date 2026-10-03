@@ -18,6 +18,13 @@ import { pageMetadata } from "@/lib/seo/metadata";
 import { breadcrumbNode, buildGraph, faqNode, webPageNode } from "@/lib/schema/graph";
 import { site } from "@/lib/env";
 
+const SERVICE_CARD_IMAGES = {
+  "concrete-driveways": { src: "/concrete-driveway-inspiration.jpg", alt: "Representative residential concrete driveway with a smooth finished surface" },
+  "concrete-patios": { src: "/concrete-patio-inspiration.jpg", alt: "Representative finished residential concrete patio in a landscaped outdoor setting" },
+  "concrete-slabs": { src: "/concrete-slab-inspiration.jpg", alt: "Representative newly poured residential concrete slab with clean architectural edges" },
+  "concrete-repair": { src: "/concrete-repair-inspiration.jpg", alt: "Representative repaired concrete surface with smooth resurfacing and natural texture" },
+} as const;
+
 const TITLE = "Concrete Services in Lancaster, SC | Driveways to Repair";
 const DESCRIPTION =
   "Driveways, patios, slabs and nonstructural repair in Lancaster, SC. See what each referral covers and how your request reaches an independent provider.";
@@ -95,7 +102,7 @@ export default function ServicesPage() {
       <ReferralDisclosureStrip />
 
       <Section eyebrow="Choose a service" title="What we can route today">
-        <ProjectTypeChooser />
+        <ProjectTypeChooser images={SERVICE_CARD_IMAGES} />
       </Section>
 
       <Section tone="soft" eyebrow="Compare" title="Scope at a glance">
