@@ -126,6 +126,8 @@ export default function HowItWorksPage() {
         title="Ready to start?"
         body="Submit a request and we will route it to one eligible independent contractor, or call the referral team first to check coverage."
         showFormLink={false}
+        imageSrc="/cta-pour-band.webp"
+        imageAlt="Two independent concrete workers screeding a freshly poured residential driveway slab between timber forms"
       />
 
     </>

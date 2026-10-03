@@ -352,7 +352,10 @@ export default async function ServicePage({ params }: { params: Params }) {
       </Section>
 
 
-      <ServiceCtaBand />
+      <ServiceCtaBand
+        imageSrc="/cta-pour-band.webp"
+        imageAlt="Two independent concrete workers screeding a freshly poured residential driveway slab between timber forms"
+      />
 
     </>
   );

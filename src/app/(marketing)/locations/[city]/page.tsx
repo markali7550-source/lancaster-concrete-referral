@@ -254,6 +254,8 @@ export default async function LocationPage({ params }: { params: Params }) {
       <CtaBand
         title={`Get matched with a ${location.city} concrete contractor`}
         body="One request, one eligible independent contractor, no charge and no obligation."
+        imageSrc="/cta-pour-band.webp"
+        imageAlt="Two independent concrete workers screeding a freshly poured residential driveway slab between timber forms"
       />
 
     </>
