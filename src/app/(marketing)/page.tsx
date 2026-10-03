@@ -263,7 +263,10 @@ export default function HomePage() {
       </Section>
 
 
-      <Section eyebrow="Project photography" title="Illustrative concrete details, not a project gallery">
+      <Section
+        eyebrow="PROJECT PHOTOGRAPHY"
+        title="Representative quality details, built on transparency"
+      >
         <ProjectExamples />
       </Section>
 

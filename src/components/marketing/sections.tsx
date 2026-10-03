@@ -583,15 +583,15 @@ export function RoutingControls() {
 export function ProjectExamples() {
   return (
     <div className="card p-7 text-center lg:text-left">
-      <p className="eyebrow-plain">Photography policy</p>
+      <p className="eyebrow-plain">PHOTOGRAPHY POLICY</p>
       <h3 className="mt-3 text-2xl font-semibold">
-        We use illustrative construction imagery, not a fake portfolio.
+        Concept imagery for reference — verified portfolios on request.
       </h3>
       <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--color-muted)]">
-        {ILLUSTRATIVE_IMAGE_NOTE} Every photograph on this site is assigned to
-        one specific section only, and true project portfolio photos are
-        published only after source, ownership, and contractor permission
-        review.
+        We use clear illustrative concrete photography to showcase project
+        standards, never claiming direct execution. Authentic contractor
+        portfolio photos are published only after source, ownership, and
+        permission verification.
       </p>
     </div>
   );
