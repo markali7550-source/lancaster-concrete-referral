@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { DynamicPhone } from "@/components/lead/DynamicPhone";
 import { Icon } from "@/components/ui/Icon";
@@ -508,19 +507,10 @@ export function CtaBand({
       style={{
         borderColor: "var(--color-line)",
         background: imageSrc
-          ? undefined
+          ? `url(${imageSrc}) center / cover fixed`
           : "linear-gradient(135deg, #07120d 0%, #123d2b 58%, #0b100d 100%)",
       }}
     >
-      {imageSrc ? (
-        <Image
-          src={imageSrc}
-          alt={imageAlt ?? ""}
-          fill
-          sizes="100vw"
-          className="-z-20 object-cover"
-        />
-      ) : null}
       {imageSrc ? (
         <div
           className="absolute inset-0 -z-10"
