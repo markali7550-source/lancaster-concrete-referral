@@ -678,7 +678,7 @@ export function DecisionSupport({
               <Icon name="plus" className="h-4 w-4" />
             </span>
           </summary>
-          <p className="px-5 pb-6 text-left text-[15px] leading-relaxed text-[color:var(--color-muted)] md:px-6">
+          <p className="px-5 py-4 text-left text-[15px] leading-relaxed text-[color:var(--color-muted)] md:px-6">
             {item.answer}
           </p>
         </details>
@@ -723,7 +723,7 @@ export function FaqSection({
               <Icon name="plus" className="h-4 w-4" />
             </span>
           </summary>
-          <p className="px-5 pb-6 text-left text-[15px] leading-relaxed text-[color:var(--color-muted)] md:px-6">
+          <p className="px-5 py-4 text-left text-[15px] leading-relaxed text-[color:var(--color-muted)] md:px-6">
             {faq.answer}
           </p>
         </details>
