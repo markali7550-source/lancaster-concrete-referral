@@ -89,7 +89,19 @@
     font-feature-settings: "cv11", "ss01";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* `overflow-x: hidden` on body makes it a scrolling box, which in several
+       engines drops the page off the compositor's fast scroll path and onto
+       the main thread. Scrolling then judders, most visibly over large
+       photographic bands like the CTA. `clip` suppresses the same horizontal
+       overflow without establishing a scroll container at all; `hidden` stays
+       as the fallback for engines without it. */
     overflow-x: hidden;
+  }
+
+  @supports (overflow-x: clip) {
+    body {
+      overflow-x: clip;
+    }
   }
 
   :where(a, button, input, select, textarea, summary):focus-visible {
@@ -145,6 +157,11 @@
     --color-ink: #f3f7f4;
     --color-muted: #cfdbd5;
     --color-line: rgba(255, 255, 255, 0.22);
+    /* The band photo is lazy-loaded, so without a base colour the section
+       paints page-coloured and then flashes to the photo as it decodes, which
+       reads as the band jumping on scroll. This is the scrim colour, so the
+       swap is invisible. */
+    background-color: #0d1110;
   }
 
   /* ------------------------------------------------------------ CTA bands */
