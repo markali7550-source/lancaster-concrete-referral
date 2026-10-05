@@ -702,14 +702,21 @@ export function FaqSection({
 }) {
   return (
     <div
-      className="divide-y overflow-hidden rounded-[16px] border"
+      className="grid gap-2"
       style={{
-        borderColor: "var(--color-line-soft)",
-        backgroundColor: "var(--color-surface)",
+        backgroundColor: "transparent",
       }}
     >
       {faqs.map((faq) => (
-        <details key={faq.question} name={name} className="group">
+        <details
+          key={faq.question}
+          name={name}
+          className="group overflow-hidden rounded-[14px] border"
+          style={{
+            borderColor: "var(--color-line-soft)",
+            backgroundColor: "var(--color-surface)",
+          }}
+        >
           <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-semibold md:px-6">
             <span className="flex-1 text-left text-[16px]">{faq.question}</span>
             <span
