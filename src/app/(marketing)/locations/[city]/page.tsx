@@ -31,7 +31,7 @@ const LOCATION_SERVICE_CARD_IMAGES = {
   "concrete-driveways": { src: "/images/service-driveways.webp", alt: "Residential concrete driveway with a finished smooth surface" },
   "concrete-patios": { src: "/images/service-patios.webp", alt: "Finished residential concrete patio beside landscaped yard" },
   "concrete-slabs": { src: "/images/service-slabs.webp", alt: "Residential concrete slab with clean formed edges" },
-  "concrete-repair": { src: "/images/service-repair.webp", alt: "Repaired residential concrete surface with a smooth finish" },
+  "concrete-repair": { src: "/images/repair-hero-walkway.webp", alt: "Repaired residential concrete surface with a smooth finish" },
 } as const;
 import {
   breadcrumbNode,

@@ -68,14 +68,14 @@ const SERVICE_PAGE_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-driveways": { src: "/images/service-driveways.webp", alt: "Representative residential concrete driveway with a clean broom finish" },
   "concrete-patios": { src: "/images/service-patios.webp", alt: "Representative backyard concrete patio beside a lawn and mature trees" },
   "concrete-slabs": { src: "/images/service-slabs.webp", alt: "Representative concrete slab prepared beside a residential property" },
-  "concrete-repair": { src: "/images/service-repair.webp", alt: "Representative repaired concrete walkway awaiting a repair assessment" },
+  "concrete-repair": { src: "/images/repair-hero-walkway.webp", alt: "Representative repaired concrete walkway awaiting a repair assessment" },
 };
 
 const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-driveways": { src: "/images/driveway-drainage-detail.webp", alt: "Representative driveway edge with drainage pitch and lawn border" },
   "concrete-patios": { src: "/images/patio-stamped-texture.webp", alt: "Representative stamped concrete patio texture" },
   "concrete-slabs": { src: "/images/slab-shed-pad.webp", alt: "Representative residential concrete shed pad" },
-  "concrete-repair": { src: "/images/repair-crack-detail.webp", alt: "Representative repaired concrete crack detail" },
+  "concrete-repair": { src: "/images/repair-hero-walkway.webp", alt: "Representative repaired concrete crack detail" },
 };
 
 const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {

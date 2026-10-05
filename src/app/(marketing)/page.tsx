@@ -69,7 +69,7 @@ const HOME_SERVICE_IMAGES = {
     alt: "Residential concrete slab prepared for a new project",
   },
   "concrete-repair": {
-    src: "/images/service-repair.webp",
+    src: "/images/repair-hero-walkway.webp",
     alt: "Concrete repair work showing a repaired residential concrete surface",
   },
 } as const;
