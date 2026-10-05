@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { DynamicPhone } from "@/components/lead/DynamicPhone";
 import { Icon } from "@/components/ui/Icon";
 import type { ServiceDetail } from "@/content/service-details";
@@ -168,7 +167,7 @@ export function ServiceCtaBand({
       className="cta-photo relative isolate overflow-hidden py-16 md:py-20"
       style={
         imageSrc
-          ? undefined
+          ? { backgroundImage: `url("${imageSrc}")` }
           : {
               background:
                 "linear-gradient(135deg, #07120d 0%, #123d2b 58%, #0b100d 100%)",
@@ -177,13 +176,6 @@ export function ServiceCtaBand({
     >
       {imageSrc ? (
         <>
-          <Image
-            src={imageSrc}
-            alt={imageAlt ?? ""}
-            fill
-            sizes="100vw"
-            className="object-cover"
-          />
           <div
             className={`absolute inset-0 z-0 ${PHOTO_SCRIM}`}
             aria-hidden="true"

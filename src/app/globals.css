@@ -157,11 +157,21 @@
     --color-ink: #f3f7f4;
     --color-muted: #cfdbd5;
     --color-line: rgba(255, 255, 255, 0.22);
-    /* The band photo is lazy-loaded, so without a base colour the section
-       paints page-coloured and then flashes to the photo as it decodes, which
-       reads as the band jumping on scroll. This is the scrim colour, so the
-       swap is invisible. */
+    /* A plain, static section background. `scroll` is the initial value of
+       background-attachment and is stated explicitly so nobody reintroduces
+       `fixed` here: that is what made the photo detach from the band and
+       judder in the first place. There is no transform, transition,
+       animation or JS touching this, so the image is painted with the
+       section and the compositor moves the two together -- it cannot shake
+       or drift relative to the band.
+
+       The base colour is the scrim colour, so the section is already the
+       right shade before the image decodes and there is no flash. */
     background-color: #0d1110;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: scroll;
   }
 
   /* ------------------------------------------------------------ CTA bands */
