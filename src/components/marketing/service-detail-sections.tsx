@@ -169,9 +169,9 @@ export function ServiceCtaBand({
     >
       {imageSrc ? (
         <>
-          <div className="absolute inset-0 z-0 bg-black/75" aria-hidden="true" />
+          <div className="absolute inset-0 z-0 bg-black/30" aria-hidden="true" />
           <div
-            className="absolute inset-0 z-0 bg-gradient-to-b from-[#0D1110] via-transparent to-[#0D1110]"
+            className="absolute inset-0 z-0 bg-gradient-to-b from-[#0D1110]/40 via-transparent to-[#0D1110]/40"
             aria-hidden="true"
           />
         </>
