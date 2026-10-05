@@ -9,49 +9,67 @@
 
 ---
 
-## IMPORTANT — TESTING LIMITATIONS (read first)
+## IMPORTANT — TESTING METHOD (read first)
 
-No browser can be installed in this environment (Playwright/Chromium install
-fails: `fonts-freefont-ttf` unavailable, no system Chromium). Therefore:
+**Update — this report has been upgraded with real browser testing.** The first
+edition of this audit could not install a browser. A headless **Chromium 153**
+has since been obtained and the whole site was re-tested in a real rendering
+engine. The sections that previously said "Not verified" have been replaced with
+measured results.
 
-**Verified** — by fetching every page from the running production server and
-analysing the served HTML, the compiled CSS, the shipped JS bundles, the image
-files on disk, HTTP status codes and response headers, plus per-pixel contrast
-maths on every photograph.
+**Verified by real browser (Chromium 153, headless):**
 
-**NOT VERIFIED** — anything requiring a rendering engine:
+- **18 pages x 10 viewport widths = 180 page loads**, at 320, 360, 375, 390,
+  414, 430, 768, 1024, 1280 and 1920 px (mobile widths run with a mobile user
+  agent, `isMobile` and touch enabled)
+- Horizontal overflow, element geometry and overlap detection at every width
+- Runtime JavaScript console errors, uncaught page errors, failed requests
+- Core Web Vitals via `PerformanceObserver`: **LCP** (element + URL) and **CLS**
+  (with layout-shift sources)
+- Real image loading after full-page scroll, `naturalWidth` vs displayed size,
+  `srcset` candidate selection, AVIF/WebP content negotiation
+- Keyboard tabbing, focus order and computed focus-ring styles
+- The multi-step quote form end to end, including a real `POST /api/leads`
+- Consent banner and sticky bottom bar geometry on a 375x812 mobile viewport
+- Runtime `background-attachment` computed style, desktop vs mobile
+- Full-page screenshots at 320 / 375 / 768 / 1280 / 1920
 
-- Actual rendered layout, spacing, alignment at any viewport
-- Whether elements visually overlap or overflow in practice
-- Real scroll smoothness / the CTA fixed-background behaviour on desktop
-- iOS Safari, Android Chrome, Firefox, Safari behaviour
-- Lighthouse / Core Web Vitals field or lab numbers
-- Runtime JavaScript console errors
-- Interactive behaviour (clicking, typing, submitting, opening menus)
-- Automated axe/WAVE accessibility scan
-- Focus order as experienced by keyboard
-- Image visual quality, cropping, subject matter
+**Still NOT VERIFIED (and why):**
 
-Where this report comments on those areas it says so explicitly and reasons
-from markup and CSS. **Statements marked "Not verified" must be confirmed
-manually in a real browser before relying on them.**
+- **Real iOS Safari, Android Chrome, Firefox and desktop Safari** — only
+  Chromium is available. The iOS-Safari fixed-background caveat in particular is
+  reasoned from known engine behaviour, not observed.
+- **Lighthouse scores and field/CrUX data** — Lighthouse is not installed and
+  there is no real-user telemetry. LCP/CLS below are lab figures from a local
+  server, so network time is unrealistically fast; treat the *element* and the
+  *CLS* as meaningful and the millisecond LCP as a floor, not a field number.
+- **Real screen-reader output** (NVDA/JAWS/VoiceOver) — no AT available. ARIA is
+  verified structurally and via live-region presence, not by listening.
+- **Automated axe/WAVE rule sweep** — the axe library could not be downloaded;
+  accessibility findings below come from targeted scripted checks instead.
+- **Subjective image quality and subject matter** — screenshots were captured
+  and reviewed, but "is this the right photo" remains a human judgement.
 
 ---
 
 ## OVERALL STATUS
 
-# 86 / 100
+# 88 / 100
+
+**Needs Minor Fixes.** (Up from 86 in the pre-browser edition: browser testing
+cleared several suspected risks and confirmed the site renders cleanly at every
+tested width, which outweighs the three new minor issues it surfaced.)
 
 | Category | Score | Note |
 |---|---|---|
-| Build & technical integrity | 97 | clean typecheck, build, 29/29 tests |
+| Build & technical integrity | 99 | clean build + 29/29 tests; **0 console errors, 0 failed requests across 180 page loads** |
 | Links & routing | 100 | zero broken links or anchors |
 | SEO | 82 | one real brand bug, four over-length titles |
-| Accessibility | 90 | one ARIA gap; contrast and labels excellent |
-| Performance | 74 | logo preloading is wasteful; bundle over budget |
+| Accessibility | 90 | one ARIA gap; small standalone link targets; contrast, labels, focus all excellent |
+| Performance | 80 | **CLS 0.000 everywhere**; logo preloading still wasteful; hero source under-resolution |
 | Content | 85 | British spellings on a US site |
 | Consistency | 98 | header/footer/components identical sitewide |
-| UX | Not scored | requires a browser |
+| UX | 88 | funnel works end to end; confirmation heading clipped by sticky header |
 
 ---
 
@@ -144,6 +162,35 @@ The highest-severity items are listed below as High priority.
 - **Evidence:** `<button type="button" … aria-expanded="false" aria-haspopup="true" aria-label="Show services">` — no `aria-controls` attribute present.
 - **Why it matters:** Screen reader users are told a control is collapsed/expanded but the assistive technology cannot programmatically locate the controlled region. Minor, not a blocker — the buttons do have accessible names.
 - **Recommended fix:** Add `aria-controls` pointing at the dropdown panel's `id`.
+- **Priority: Low**
+
+### Issue 7 — Submission confirmation heading is hidden behind the sticky header (BROWSER-VERIFIED)
+
+- **Issue:** After a successful referral submission the success panel renders in place, but the page does not scroll it into view and does not move focus. The confirmation heading ends up **underneath the sticky site header**.
+- **Page/URL:** `/contact` (and every page embedding the quote form)
+- **Evidence:** Measured in Chromium at 1280x1000 after a real successful submission (`POST /api/leads` -> `202`): success heading `getBoundingClientRect().top = 47px`, sticky header `height = 65px`, so the heading sits **18 px underneath the header**; `scrollY` stayed at 628. `document.activeElement` was still `BODY` — focus was never moved. Screenshot: `form-success.png`.
+- **Why it matters:** The single most important moment in the funnel — "did my request go through?" — is presented with its headline clipped. Keyboard users also lose their place, as focus stays where the now-removed form used to be.
+- **Mitigating factor (verified):** a `role="status"` live region **is** present and contains the full confirmation text, so screen-reader users are correctly announced. This is a visual/focus issue, not a silent failure.
+- **Recommended fix:** On success, `scrollIntoView()` the panel and move focus to it (`tabIndex={-1}` + `.focus()`), or add `scroll-margin-top` equal to the header height.
+- **Priority: Medium**
+
+### Issue 8 — Hero/banner source images are too small for large viewports (BROWSER-VERIFIED)
+
+- **Issue:** Several full-bleed images have source files narrower than the space they are displayed in, so the browser upscales them.
+- **Page/URL:** `/` primarily; 14 of 50 images are affected sitewide
+- **Evidence:** `public/home-hero.webp` is **960x536**. The optimizer correctly refuses to upscale, so `w=1920` and `w=3840` both return 960x536 (verified by fetching each candidate). In Chromium at a 1280 px viewport the hero `<img>` is displayed at **1280x800** — a 1.33x upscale — and at 1920 px it is displayed at roughly 1920x1140, a **2x upscale** (4x on a HiDPI panel). The hero is also confirmed to be the **LCP element** on `/`. Other sub-900 px sources include `how-it-works-hero.webp` (860x642), `lancaster-hero.webp` (860x480), `repair-hero-walkway.webp` (816x545) and `home-service-area-band.webp` (816x545).
+- **Why it matters:** The largest, most prominent image on the site — and the LCP element — is visibly soft on any display wider than ~1000 px. This is a quality regression that came from the 100 KB file-size ceiling.
+- **Recommended fix:** Re-encode the hero and the other full-bleed heroes at ~1600-1920 px wide. At quality 40-50 a 1600 px WebP of this subject lands near 100-130 KB; a small, deliberate ceiling increase for hero images only is the right trade. Card and band images are fine as they are.
+- **Priority: Medium**
+
+### Issue 9 — Standalone list links are below the 24 px minimum target size (BROWSER-VERIFIED)
+
+- **Issue:** Link lists in page body content render **19-20 px tall**, under the WCAG 2.2 AA "Target Size (Minimum)" threshold of 24 px.
+- **Page/URL:** `/locations`, `/services`, and the "Full disclosure" / "referral disclosure page" links on several pages
+- **Evidence:** Measured at a 375 px mobile viewport: `Concrete Driveways` 137x19, `Concrete Patios` 109x19, `Concrete Slabs` 104x19, `Concrete Repair` 109x19, `All services` 83x19, `Full disclosure` 99x20. Each is `display:inline` but is the **sole content of its own `<li>`**, so the 2.5.8 "inline in a sentence" exception does **not** apply.
+- **Why it matters:** Small, closely stacked tap targets are easy to mis-tap on a phone.
+- **Note — these are NOT the same as the navigation and button targets,** which were re-verified as fine: `.btn` 52 px, radio rows 48 px, and the skip link measures 143x48 once focused.
+- **Recommended fix:** Give list links `display:inline-block; padding-block:4px` (or `min-height:24px`) so each row clears 24 px. No redesign needed.
 - **Priority: Low**
 
 ---
@@ -282,44 +329,55 @@ not applicable. Actual click/keyboard interaction is **Not verified**.
 
 ## MOBILE ISSUES
 
-**Nothing confirmed broken.** Full visual mobile testing is **Not verified**.
-What could be checked statically:
+**No mobile layout defects found.** This section is now browser-verified at
+**six phone widths plus tablet**: 320, 360, 375, 390, 414, 430 and 768 px, with
+a mobile user agent and touch enabled.
 
-| Check | Result |
+| Check | Result (measured in Chromium) |
 |---|---|
+| **Horizontal overflow** | **ZERO at every width.** `documentElement.scrollWidth` equalled `clientWidth` on all 18 pages x 10 widths (180 combinations). No element extended past the right edge. |
+| **Page loads** | **180 / 180 succeeded**, no navigation errors or non-2xx responses |
+| **Console / JS errors** | **0** across all 180 loads |
+| **Failed requests** | **0** across all 180 loads |
+| **Broken images** | **0** after full-page scroll on every page tested. (An initial probe reported 96 "unloaded" images — these were simply below-the-fold lazy images that had not entered the viewport yet. They all load correctly on scroll. **Lazy loading works; this was a probe artefact, not a defect.**) |
+| **Consent banner vs sticky bar** | **No overlap, no dead space.** At 375x812 the bottom-fixed consent banner measures exactly **169 px**, and `body` `padding-bottom` is exactly **169 px** — a precise match. Only one bottom-anchored fixed element is present at a time, and the guarded `ResizeObserver` keeps the reservation in sync. |
+| **`<table>` on `/services` at 320 px** | **PASSES — not clipped.** The table is 672 px wide inside a 280 px wrapper, and the wrapper computes `overflow-x: auto` and is genuinely scrollable (`scrollWidth > clientWidth`). Horizontal scrolling is contained to the table; the page itself does not overflow. |
+| **CTA background on mobile** | **Verified at runtime:** `0` elements compute `background-attachment: fixed` at 375 px. The photo scrolls normally on phones, exactly as specified. |
 | Viewport meta | `width=device-width, initial-scale=1` — correct |
-| Fixed pixel widths that could overflow | **none** — no `width:≥100px` fixed rules, no `width:100vw` |
-| Horizontal overflow guards | `body { overflow-x: hidden }` with an `@supports (overflow-x: clip)` upgrade |
-| Breakpoints | 40/48/64/80/96 rem — a clean, conventional mobile-first scale |
-| Smallest font size | **13 px** — acceptable; nothing below |
-| Touch targets | `.btn` 52 px, `.btn-ghost` 48 px, radio rows `min-h-12` (48 px) — all exceed the 44 px guideline |
-| `min-[380px]:grid-cols-2` in `QuoteForm.tsx:381` | **Not a defect.** A min-width query: single column below 380 px, so 320 px and 360 px are safe |
-| Mobile sticky form bar | `sticky bottom-0 … lg:static`, with `padding-bottom: max(.5rem, env(safe-area-inset-bottom))` — correctly handles iPhone home indicator |
-| Consent banner overlap | Reserves exact banner height as `body` padding on `max-width:767px`, released on dismissal, and the write is guarded against observer feedback loops — correct |
-| CTA background on mobile | `bg-scroll` (unprefixed default) — the photo scrolls normally on phones, which is the correct choice since iOS Safari does not honour fixed attachment |
+| Touch targets | `.btn` 52 px, radio rows 48 px; radio inputs are 20x20 but sit inside a **293x50 `<label>`**, so the effective target passes. Skip link is 143x48 when focused. |
+| Smallest font size | 13 px — acceptable |
+| Safe area | `.mobile-sticky-form` uses `env(safe-area-inset-bottom)` — correct for the iPhone home indicator |
 
-**Must be checked manually at 320 / 360 / 390 / 414 / 430 px:** actual text
-wrapping, whether the sticky form bar plus consent banner together obscure too
-much of a short viewport, and the `<table>` on `/services`.
+**Only mobile finding:** Issue 9 — body-content list links are 19-20 px tall.
+
+**One UX observation (not a defect):** at 375x812 the consent banner occupies
+169 px, about **21% of the viewport**, on first visit. It is dismissible and
+correctly compensated for, but it is a tall first impression on a small phone.
 
 ---
 
 ## DESKTOP ISSUES
 
-**Nothing confirmed broken.** Visual desktop testing is **Not verified**.
+**No desktop layout defects found.** Verified at 1024, 1280 and 1920 px.
 
-One area that warrants manual attention: the CTA banner uses
-`background-attachment: fixed` from 768 px up (`md:bg-fixed`, the only such
-rule on the site). Fixed backgrounds cannot be composited and repaint on every
-scroll frame. With one per page the cost is modest, but **scroll smoothness on
-desktop should be confirmed by eye**, particularly on high-resolution displays.
-This is also the one element whose appearance has been iterated on repeatedly,
-so a visual check of its final spacing (`my-[40px]` outside, `py-[36px]`
-inside) is worthwhile.
+| Check | Result (measured in Chromium) |
+|---|---|
+| Horizontal overflow | **none** at 1024 / 1280 / 1920 on all 18 pages |
+| Console errors / failed requests | **0** |
+| **CTA fixed background** | **Verified at runtime and behaving exactly as specified.** At 1280 px, **exactly one** element in the whole document computes `background-attachment: fixed` (`absolute inset-0 bg-cover bg-center bg-no-repeat…`). At 375 px the count is **0**. This satisfies your acceptance criterion at runtime, not just by source grep. |
+| **Layout stability** | **CLS = 0.000** on every page/viewport measured, with **zero** recorded layout-shift entries. The fixed background causes no shift. |
+| Hero rendering | Renders correctly; see Issue 8 — the hero is sharp only up to ~1000 px wide, and soft beyond that because the source is 960 px. |
 
-Between 768 px and 1024 px (tablets), iPad Safari handles fixed attachment
-poorly. The breakpoint was explicitly set to `md`, so this is a deliberate
-choice, but tablet rendering is **Not verified**.
+**Scroll-repaint cost of the fixed background:** with exactly one fixed layer
+per page and `0 @keyframes`, `0 will-change` and `0 scroll listeners` sitewide,
+the repaint cost is minimal. No jank was detectable in automated measurement,
+though genuine subjective scroll smoothness on a high-refresh display remains a
+human judgement.
+
+**Tablet (768-1024 px):** renders cleanly with no overflow. The `md` breakpoint
+does mean iPad-class Safari gets the fixed attachment, which Safari handles
+poorly — **still Not verified**, because only Chromium is available. This
+remains the single most valuable thing to spot-check on a real iPad.
 
 ---
 
@@ -374,11 +432,34 @@ choice, but tablet rendering is **Not verified**.
 | Static caching | `public, max-age=31536000, immutable` on images |
 | Animation cost | **0** `@keyframes`, **0** `will-change`, **0** scroll listeners in shipped JS |
 
+### Measured Core Web Vitals (BROWSER-VERIFIED, lab)
+
+| Page / viewport | LCP | LCP element | CLS |
+|---|---|---|---|
+| `/` @1280 | 136 ms | `home-hero.webp` (`IMG.-z-20 object-cover`) | **0.000** |
+| `/` @375 | 116 ms | `home-hero.webp` @ `w=640` | **0.000** |
+| `/services` @1280 | 136 ms | `services-overview.webp` | **0.000** |
+| `/contact` @375 | 132 ms | `contact-front-walkway.webp` | **0.000** |
+
+**CLS is a perfect 0.000 with zero layout-shift entries recorded** — the best
+possible result, and it confirms the intrinsic-dimension and
+banner-height-reservation work is paying off. LCP figures are from a local
+server, so they represent a floor rather than a field number, but the **LCP
+element is correctly a preloaded hero image on every page**, which is the part
+that matters architecturally.
+
+**Also verified:** the hero carries a proper **8-candidate `srcset`** with
+`sizes="100vw"` and a matching `<link rel=preload imagesrcset>`; the browser
+correctly selected `w=640` at 375 px and `w=1920` at 1280 px. Content
+negotiation returns **AVIF** to browsers advertising it, **WebP** to those
+advertising only WebP, and JPEG otherwise — all three confirmed by request.
+
 ### Issues
 
 | # | Issue | Evidence | Priority |
 |---|---|---|---|
-| 1 | Both logos preloaded at `w=1920` and `w=3840` | 1808×556, 82.8 + 81.8 KB, 72 of 85 non-lazy images | **High** |
+| 1 | Both logos preloaded at `w=1920` and `w=3840` | **Now confirmed in-browser:** two `<link rel=preload as=image>` tags, one per logo, each with `imagesrcset` offering `w=1920` (1x) **and** `w=3840` (2x) and **no `imagesizes`**. Sources are 1808×556; one of the two renders at **0×0** (the hidden theme variant) yet is still preloaded. Displayed size is 143×44. | **High** |
+| 8 | Hero source images smaller than their display size | `home-hero.webp` 960×536 shown at 1280×800 / ~1920×1140; 14 of 50 images under 900 px wide | Medium |
 | 5 | 131 kB First Load JS vs 120 kB budget | 8 dynamic-route pages | Medium |
 | 9 | `backdrop-filter` ×4 on `.process-step-card` | expensive to composite; cards are static so no scroll judder | Low |
 | 10 | CTA photos have no responsive `srcset` | they are CSS backgrounds by design; a 320 px phone receives the same 87–96 KB file | Low (accepted trade-off) |
@@ -421,7 +502,20 @@ choice, but tablet rendering is **Not verified**.
 |---|---|---|---|
 | 6 | `aria-expanded` without `aria-controls` on nav dropdowns | all 17, ×17 each | Low |
 
-**Not verified:** real screen reader output, actual focus order, focus trapping
+### Browser-verified accessibility results (new)
+
+| Check | Result (measured in Chromium) |
+|---|---|
+| **Focus visibility** | **PASS.** Every one of the first 8 tab stops on `/` showed a computed `outline: 2px solid`. No invisible focus states. |
+| **Focus order** | **PASS — logical.** Skip link -> logo -> Services -> services-dropdown toggle -> Service areas -> How it works -> Contact -> phone. Matches visual order. |
+| **Skip link** | **PASS.** Measures 143×48 px once focused (it is 1×1 when hidden, which is correct technique). |
+| **Nav dropdown keyboard/ARIA** | **PASS.** `aria-expanded` correctly transitions `false` -> `true` on activation, reveals 4 service links, and returns to `false` on **Escape**. |
+| **Form validation** | **PASS and accessible.** Submitting an incomplete step sets `aria-invalid="true"`, exposes a `role="alert"`, and announces "Fix 1 item to continue — Choose your location." / "Enter your full name." Submission is correctly blocked. |
+| **Success announcement** | **PASS.** The post-submission confirmation is inside a `role="status"` live region containing the full text, so it is announced. |
+| **Focus after submission** | **FAIL (minor).** Focus remains on `BODY`; no element receives focus and the panel is not scrolled into view. See **Issue 7**. |
+| **Touch target re-check** | 20×20 radio inputs sit inside **293×50** `<label>` wrappers — effective target passes. Body-content list links at 19-20 px do **not** — see **Issue 9**. |
+
+**Still Not verified:** real screen reader output, focus trapping
 in the mobile menu, and automated axe/WAVE results.
 
 ---
@@ -463,24 +557,45 @@ it here despite not being a code bug.
 
 ## UX/UI AUDIT
 
-Largely **Not verified** — this needs a browser and ideally real users. What
-can be assessed from structure:
+Now substantially verified: the full conversion funnel was driven end to end in
+a real browser, and screenshots were captured at five widths.
 
-**Strengths**
-- The value proposition is stated in the `<h1>` and lede of every page, and the referral model is disclosed repeatedly and plainly.
-- Two clear conversion paths everywhere: a phone button and a form link. The phone number is in the header, hero, CTA band and footer.
-- A persistent mobile sticky form bar keeps the primary action reachable.
-- Service and location taxonomies are shallow and predictable (`/services/<service>`, `/locations/<city>/<service>`).
-- Breadcrumbs with matching schema on 12 pages.
-- 404 page retains header, footer and a route home rather than dead-ending.
+### The referral funnel works (verified end to end)
 
-**Observations, not defects**
-- `/locations` currently lists one city; as a hub it adds a click without adding much. Reasonable to keep for future expansion, but it is the weakest page on the site.
-- `/contact` is the only main page without a closing CTA band. Defensible, since the page is itself the call to action.
+I completed a real submission on `/contact`:
 
-**Cannot assess without a browser:** whether CTAs are visually obvious, whether
-navigation feels intuitive, whether any section looks unfinished or crowded,
-and whether the site feels trustworthy at a glance.
+1. **Step 1 "Your project and location"** — project-type radios + location select. Attempting to continue while incomplete is correctly blocked with an accessible error.
+2. **Step 2 "How to reach you"** — name/contact details, again validated.
+3. **Submission** — `POST /api/leads` returned **202**, with **0 console errors** and **0 failed requests**.
+4. **Confirmation** — an in-place success panel reading *"REQUEST RECEIVED — Your request is with our routing team"*, an honest explanatory line (*"An independent contractor serving your area will contact you directly. We are not the contractor and do not set pricing or schedules."*), a **tracking reference** (`lead_c8a2f171-…`), and a **"What happens next"** button.
+
+This is a genuinely good confirmation experience: it sets expectations, repeats
+the referral disclosure at exactly the right moment, and gives the user a
+reference. **Two flaws:** the heading is clipped behind the sticky header and
+focus is not moved (**Issue 7**).
+
+**Note:** the funnel does **not** navigate to `/thank-you`; it confirms in
+place. That is a legitimate pattern and arguably better than a redirect, but it
+means the `/thank-you` route is effectively unreachable from the form. Worth a
+decision: either link to it from the "What happens next" button or retire it.
+Not a defect — flagging the inconsistency only.
+
+### Strengths (confirmed visually)
+
+- Value proposition sits in the `<h1>` and lede of every page; the referral model is disclosed repeatedly and plainly, including in the footer disclaimer strip.
+- Two clear conversion paths everywhere — phone button and form link — present in header, hero, CTA band and footer.
+- Contrast and legibility over photography are genuinely good; the hero text is comfortably readable against the image.
+- Navigation taxonomy is shallow and predictable; breadcrumbs with matching schema on 12 pages.
+- The 404 page retains header, footer and a route home.
+
+### Observations, not defects
+
+- `/locations` lists one city and adds a click without adding much; reasonable as a placeholder for expansion, but it remains the weakest page.
+- `/contact` is the only main page without a closing CTA band — defensible, as the page is itself the call to action.
+- The consent banner occupies ~21% of a 375×812 viewport on first load.
+
+**Still Not verified:** whether real users find the flow intuitive, and
+subjective judgement of photo selection. Those need human testers.
 
 ---
 
@@ -555,6 +670,40 @@ A consolidated list of what was tested and found correct:
 
 ---
 
+
+### Additionally verified in a real browser (Chromium 153)
+
+41. **180 / 180 page-viewport combinations loaded successfully** (18 pages x 10 widths)
+42. **Zero horizontal overflow** at 320 / 360 / 375 / 390 / 414 / 430 / 768 / 1024 / 1280 / 1920 px
+43. **Zero runtime console errors** across all 180 loads
+44. **Zero uncaught JavaScript page errors**
+45. **Zero failed network requests** across all 180 loads
+46. **CLS = 0.000** on every page/viewport measured, with zero layout-shift entries
+47. LCP element is correctly a preloaded hero image on every page measured
+48. Hero `srcset` works — browser selected `w=640` at 375 px, `w=1920` at 1280 px
+49. AVIF / WebP / JPEG content negotiation all three confirmed by request
+50. **All lazy-loaded images load correctly on scroll** — zero broken images sitewide
+51. `/services` `<table>` scrolls inside an `overflow-x:auto` wrapper at 320 px and is **not clipped**
+52. Consent banner height (169 px) **exactly matches** the reserved `body` padding — no overlap, no dead space
+53. **Exactly 1** element computes `background-attachment: fixed` at 1280 px and **0** at 375 px — your acceptance criterion verified at runtime
+54. Visible 2px focus outline on every one of the first 8 tab stops
+55. Keyboard focus order is logical and matches visual order
+56. Nav dropdown `aria-expanded` toggles correctly and closes on **Escape**
+57. Form validation blocks incomplete steps with `aria-invalid` + `role="alert"` + clear messages
+58. **Full funnel completes end to end** — `POST /api/leads` -> **202** with a tracking reference
+59. Success confirmation is inside a `role="status"` live region (announced to screen readers)
+60. Radio inputs' effective tap target is 293x50 via label wrapper; skip link is 143x48 when focused
+
+### False alarms investigated and dismissed (do not action)
+
+- **"96 broken images"** — below-fold lazy images not yet in viewport; all load on scroll.
+- **"Hero served as JPEG"** — an artefact of requesting without an `Accept` header; real browsers get AVIF.
+- **"Hero has no srcset"** — it has 8 candidates; my initial regex matched the wrong tag.
+- **"20px radio touch targets"** — wrapped in 293x50 labels.
+- **"1x1 skip link"** — correct hidden-until-focused technique; 143x48 when focused.
+
+---
+
 ## PRIORITY FIX LIST
 
 ### 1. Critical
@@ -574,6 +723,8 @@ A consolidated list of what was tested and found correct:
 | 3 | 4 × `/locations/lancaster-sc/<service>` — `metadata.ts:54–57` | Shorten titles to ≤60 ch and descriptions to ≤155 ch. |
 | 4 | `/services/concrete-slabs`, `/services/concrete-driveways`, `/services/concrete-patios`, `/locations/lancaster-sc/concrete-slabs`, `/locations/lancaster-sc/concrete-patios`, `/locations/lancaster-sc/concrete-repair` | Convert British spellings to US: `vapour→vapor`, `fibre→fiber`, `destabilise→destabilize`, `judgement→judgment`, `barrowed/barrowing→wheelbarrowed/wheelbarrowing`. |
 | 5 | `README.md:41`, `README.md:51`, `REMAINING-WORK.md:84` | Correct the 116 kB figure to 131 kB, and either raise the budget or trim the route bundles. |
+| 7 | `/contact` and every page with the quote form | On successful submission, scroll the confirmation panel into view and move focus to it (`tabIndex={-1}` + `.focus()`), or add `scroll-margin-top` equal to the header height. Currently the heading sits 18 px under the sticky header. |
+| 8 | `public/home-hero.webp` (+ `how-it-works-hero`, `lancaster-hero`, `repair-hero-walkway`, `home-service-area-band`) | Re-encode full-bleed hero images at ~1600-1920 px wide. The hero is the LCP element and is currently upscaled up to 2x on wide screens. |
 | — | Deployment environment | Confirm `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_CONTACT_EMAIL` and `NEXT_PUBLIC_FALLBACK_PHONE_*` are real values, not the `.env.example` placeholders. |
 
 ### 4. Low Priority
@@ -584,6 +735,8 @@ A consolidated list of what was tested and found correct:
 | 7 | 13 pages — `src/app/layout.tsx:37` | Remove the duplicate JSON-LD block. |
 | 8 | `/locations` | Expand beyond 268 words and add a title suffix, or accept as a stub until more cities exist. |
 | 9 | `.process-step-card` | Consider flattening `backdrop-filter` to a solid colour. |
+| 9b | `/locations`, `/services`, disclosure links | Give standalone list links `display:inline-block; padding-block:4px` so each clears the 24 px WCAG 2.2 target-size minimum (currently 19-20 px). |
+| 9c | `/thank-you` | The form confirms in place and never navigates here, so the route is unreachable from the funnel. Either link it from "What happens next" or retire it. |
 | 10 | `src/components/marketing/sections.tsx` | Remove the unused `ILLUSTRATIVE_IMAGE_NOTE` export. Also, `README.md:53` contains a `min-h-[calc(100dvh-3.5rem)]` string that causes Tailwind to generate dead CSS. |
 
 ---
@@ -592,28 +745,43 @@ A consolidated list of what was tested and found correct:
 
 # NEEDS MINOR FIXES
 
-The site is **close to production-ready**. No critical issue was found, there
-are no broken links or assets, the lead pipeline works, and accessibility and
-SEO fundamentals are in better shape than most sites of this type — notably
-zero missing alt text, zero unlabelled inputs, zero heading-hierarchy errors,
-valid structured data throughout, and WCAG AA contrast over every photograph.
+**Score: 88 / 100.** The site is **close to production-ready**, and real
+browser testing has now removed the main caveat that qualified the first
+edition of this verdict.
 
-Two High-priority items should be fixed before or shortly after launch: the
-**logo preloading waste** (the clearest performance win available) and the
-**wrong brand name on four pages** (a visible brand-consistency error in search
-results). The Medium items are quick copy and metadata edits.
+No critical issue was found. There are no broken links or assets, the lead
+pipeline works end to end, and the engineering fundamentals are in better shape
+than most sites of this type: zero missing alt text, zero unlabelled inputs,
+zero heading-hierarchy errors, valid structured data throughout, and WCAG AA
+contrast over every photograph.
 
-**One condition on this verdict:** no visual or browser-based testing was
-possible in this environment. Before declaring the site ready, someone must
-confirm in a real browser:
+**What browser testing added.** Across 180 page-viewport combinations the site
+produced **zero horizontal overflow, zero console errors, zero failed requests
+and a perfect CLS of 0.000**. The `<table>`, the consent banner, the sticky
+bottom bar, the nav dropdown, keyboard focus order and the full referral funnel
+were all specifically suspected risks in the first edition — **every one of
+them passed**. Your CTA fixed-background rule was confirmed at runtime: exactly
+one fixed layer on desktop, zero on mobile.
 
-1. Rendered layout and spacing at desktop and at 320 / 360 / 390 / 414 / 430 px
-2. Scroll smoothness of the CTA fixed background on desktop, and its behaviour on iPad Safari between 768–1024 px
-3. The CTA banner's final spacing
-4. The `<table>` on `/services` at narrow widths
-5. The mobile sticky form bar together with the consent banner on a short viewport
-6. Browser console for runtime errors
-7. That production environment variables are real, not the `.env.example` placeholders
+Browser testing surfaced **three new minor issues**, none severe: the
+submission confirmation heading is clipped behind the sticky header (Issue 7),
+hero source images are too small for wide screens and visibly upscale (Issue
+8), and body-content list links fall just under the 24 px touch-target minimum
+(Issue 9).
 
-With those confirmed and the two High-priority items fixed, this site is ready
-for production.
+**Priorities before launch** remain the two High items: the **logo preloading
+waste** — now confirmed in-browser as two separate preloads, one for an element
+that renders at 0x0 — and the **wrong brand name on four pages**. After those,
+Issues 7 and 8 are the most worthwhile, because they affect the two highest-value
+moments on the site: the hero and the confirmation screen.
+
+**Remaining conditions on this verdict** — genuinely untestable here:
+
+1. **Real iOS Safari and Android Chrome.** Chromium was the only engine available. The iPad-Safari fixed-background behaviour between 768-1024 px is the single highest-value manual spot-check.
+2. **Lighthouse / field Core Web Vitals.** The LCP numbers above come from a local server and are a floor, not a field measurement.
+3. **A real screen reader.** ARIA was verified structurally and by live-region presence, not by listening.
+4. **Production environment variables** — confirm `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_CONTACT_EMAIL` and the fallback phone values are real, not the `.env.example` placeholders (`example-referral-brand.com`, `(803) 555-0123`).
+5. **Human judgement on photo selection** and whether the flow feels intuitive to real visitors.
+
+With the two High-priority items fixed and the above spot-checked, this site is
+ready for production.
