@@ -1,9 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { DynamicPhone } from "@/components/lead/DynamicPhone";
 import { Icon } from "@/components/ui/Icon";
 import type { ServiceRecord } from "@/content/services";
 import { site } from "@/lib/env";
-import { CtaParallaxLayer } from "@/components/marketing/CtaParallaxLayer";
 import {
   OverlayHeader,
   PHOTO_EDGE_FADE,
@@ -507,9 +507,7 @@ export function CtaBand({
 }) {
   return (
     <section
-      className={`cta-photo relative isolate overflow-hidden py-16 md:py-20${
-        imageSrc ? " cta-parallax" : ""
-      }`}
+      className="cta-photo relative isolate overflow-hidden py-16 md:py-20"
       style={
         imageSrc
           ? undefined
@@ -521,7 +519,13 @@ export function CtaBand({
     >
       {imageSrc ? (
         <>
-          <CtaParallaxLayer src={imageSrc} alt={imageAlt ?? ""} />
+          <Image
+            src={imageSrc}
+            alt={imageAlt ?? ""}
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
           <div
             className={`absolute inset-0 z-0 ${PHOTO_SCRIM}`}
             aria-hidden="true"

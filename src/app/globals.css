@@ -149,49 +149,26 @@
 
   /* ------------------------------------------------------------ CTA bands */
 
-  /* The closing CTA band holds its photograph still while the band scrolls
-     over it. Scoped to this band only -- heroes and the other photo sections
-     scroll normally with the page.
+  /* The CTA photograph is an ordinary, statically positioned image that
+     scrolls with its section like any other content.
 
-     The pin is a viewport-sized `position: fixed` layer clipped back to the
-     band by `clip-path` on the section. Both halves matter:
+     There is deliberately no pinning here any more. Both ways of holding the
+     photo still against the viewport caused visible problems in this layout:
+     `position: fixed` (clipped to the band) and a JS-driven transform both
+     shook while scrolling, because anything that has to be re-placed as the
+     page moves is either fighting the compositor or lagging a frame behind
+     it. `background-attachment: fixed` is not an option either -- iOS Safari
+     ignores it, and `overflow-x: hidden` on body breaks it elsewhere.
 
-       - `fixed` is what makes the photo stationary, and because it is the
-         compositor doing the work there is no scroll handler lagging a frame
-         behind the page. A JS-driven transform was tried here and visibly
-         shook for exactly that reason.
-       - `clip-path` is what keeps it honest. `overflow: hidden` does not clip
-         a fixed descendant, so without the clip the layer would cover the
-         whole page. With it, the photo stops dead at the section edges: it
-         cannot overlap the next section or stay on screen once the CTA has
-         gone past.
+     A static image cannot jitter: it is painted once as part of the section
+     and the compositor moves it with everything else. No scroll listeners, no
+     transforms, no animation, no per-frame work, on any viewport size.
 
-     This deliberately avoids `background-attachment: fixed`, which iOS Safari
-     ignores outright and which `overflow-x: hidden` on body (see the base
-     layer) breaks in several other engines.
-
-     `data-pin="css"` is set by CtaParallaxLayer only after it has verified at
-     runtime that a fixed child of a clipped ancestor really is viewport-
-     relative in this engine. Without that attribute -- on mobile, with JS off,
-     before hydration, or on an engine that disagrees -- the rules below never
-     apply and the layer stays an ordinary cover image. */
-  .cta-parallax-layer {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-  }
-
-  @media (min-width: 64rem) {
-    @supports (clip-path: inset(0)) {
-      .cta-parallax[data-pin="css"] {
-        clip-path: inset(0);
-      }
-
-      .cta-parallax[data-pin="css"] .cta-parallax-layer {
-        position: fixed;
-      }
-    }
-  }
+     The photo is rendered by next/image with `fill` + `object-cover`, which is
+     the same stable "cover, centred, no-repeat" result as a CSS background
+     but additionally gives a srcset, so a 320px phone is not sent a
+     desktop-width asset. It is absolutely positioned, so it is outside normal
+     flow and cannot shift the layout. */
 
   /* --------------------------------------------------------------- header */
 
