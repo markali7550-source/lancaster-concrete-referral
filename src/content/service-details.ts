@@ -103,7 +103,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
 
   /* --------------------------------------------------------- patios */
   "concrete-patios": {
-    detailImage: "/images/service-patios.webp",
+    detailImage: "/home-patio-card.webp",
     detailImageAlt:
       "Residential concrete patio in Lancaster SC with outdoor dining furniture",
     mayInclude: [

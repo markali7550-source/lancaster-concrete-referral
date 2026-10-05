@@ -61,7 +61,7 @@ const HOME_SERVICE_IMAGES = {
     alt: "Concrete driveway project with a finished broom texture and residential access",
   },
   "concrete-patios": {
-    src: "/images/service-patios.webp",
+    src: "/home-patio-card.webp",
     alt: "Finished concrete patio with a clean surface in a residential outdoor setting",
   },
   "concrete-slabs": {

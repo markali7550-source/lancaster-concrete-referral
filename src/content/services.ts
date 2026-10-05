@@ -242,7 +242,7 @@ export const services: readonly ServiceRecord[] = [
       "New patio pours, replacements, and stamped finishes where a participating provider has documented that capability.",
     heroSummary:
       "Looking for a concrete patio contractor in Lancaster, SC? A patio is the one concrete project where finish and layout matter as much as the slab. We help homeowners connect with independent service providers who may be able to assist, and the provider walks the space with you and quotes it directly. Submit your project details to request a referral.",
-    image: "/images/service-patios.webp",
+    image: "/home-patio-card.webp",
     imageAlt:
       "Rectangular concrete backyard patio with a smooth troweled finish and control joints",
     projectTypes: ["New patio", "Patio replacement", "Stamped patio"],
