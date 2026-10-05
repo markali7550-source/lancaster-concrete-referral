@@ -261,7 +261,7 @@ export default async function ComboPage({ params }: { params: Params }) {
 
       <Section
         tone="surface"
-        backgroundImage={{ src: "/images/process-texture-bg.webp", alt: "Concrete driveway forms and fresh pour on a residential street" }}
+        backgroundImage={{ src: "/process-band.webp", alt: "Concrete driveway forms and fresh pour on a residential street" }}
         eyebrow="Process"
         title="Three steps, no obligation"
       >

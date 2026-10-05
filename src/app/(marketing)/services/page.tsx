@@ -144,7 +144,7 @@ export default function ServicesPage() {
 
       <Section
         backgroundImage={{
-          src: "/images/process-texture-bg.webp",
+          src: "/process-band.webp",
           alt: "Concrete driveway forms and fresh pour on a residential street",
         }}
         eyebrow="Process"

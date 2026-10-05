@@ -184,7 +184,7 @@ export default async function LocationPage({ params }: { params: Params }) {
 
       <Section
         backgroundImage={{
-          src: "/images/process-texture-bg.webp",
+          src: "/process-band.webp",
           alt: "Residential concrete driveway forms and fresh pour on a neighborhood street",
         }}
         eyebrow="Process"
