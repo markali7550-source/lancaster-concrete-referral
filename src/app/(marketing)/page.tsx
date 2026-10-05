@@ -57,19 +57,19 @@ const DECISION_ITEMS = [
 
 const HOME_SERVICE_IMAGES = {
   "concrete-driveways": {
-    src: "/images/card-driveway.webp",
+    src: "/images/service-driveways.webp",
     alt: "Concrete driveway project with a finished broom texture and residential access",
   },
   "concrete-patios": {
-    src: "/images/card-patio.webp",
+    src: "/images/service-patios.webp",
     alt: "Finished concrete patio with a clean surface in a residential outdoor setting",
   },
   "concrete-slabs": {
-    src: "/images/slab-hero-garage.webp",
+    src: "/images/service-slabs.webp",
     alt: "Residential concrete slab prepared for a new project",
   },
   "concrete-repair": {
-    src: "/images/card-repair.webp",
+    src: "/images/service-repair.webp",
     alt: "Concrete repair work showing a repaired residential concrete surface",
   },
 } as const;

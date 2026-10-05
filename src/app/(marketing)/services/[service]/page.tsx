@@ -65,10 +65,10 @@ function descriptionFor(nameLower: string, projectNoun: string) {
 }
 
 const SERVICE_PAGE_IMAGES: Record<string, { src: string; alt: string }> = {
-  "concrete-driveways": { src: "/images/driveway-hero-wide.webp", alt: "Representative residential concrete driveway with a clean broom finish" },
-  "concrete-patios": { src: "/images/patio-hero-wide.webp", alt: "Representative backyard concrete patio beside a lawn and mature trees" },
-  "concrete-slabs": { src: "/images/slab-hero-garage.webp", alt: "Representative concrete slab prepared beside a residential property" },
-  "concrete-repair": { src: "/images/repair-hero-walkway.webp", alt: "Representative repaired concrete walkway awaiting a repair assessment" },
+  "concrete-driveways": { src: "/images/service-driveways.webp", alt: "Representative residential concrete driveway with a clean broom finish" },
+  "concrete-patios": { src: "/images/service-patios.webp", alt: "Representative backyard concrete patio beside a lawn and mature trees" },
+  "concrete-slabs": { src: "/images/service-slabs.webp", alt: "Representative concrete slab prepared beside a residential property" },
+  "concrete-repair": { src: "/images/service-repair.webp", alt: "Representative repaired concrete walkway awaiting a repair assessment" },
 };
 
 const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
