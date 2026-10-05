@@ -169,7 +169,7 @@ Notes that trip people up:
 - Do **not** type your domain into the Name field. `@` or blank, not `yourdomain.com`.
 - Delete any pre-existing "parking" or placeholder `A`/`CNAME` records for `@`
   and `www`. Conflicting records are the most common cause of failure.
-- **Cloudflare users:** set the proxy toggle (orange cloud) to **DNS only** (grey).
+- **Cloudflare users:** set the proxy toggle (orange cloud) to **DNS only** (gray).
   Proxying in front of Vercel causes redirect loops and certificate errors.
 - Use the values Vercel shows *you* — the IP above is current at time of writing
   but Vercel can change it.
@@ -263,7 +263,7 @@ Build cache issue. Redeploy with the cache checkbox unchecked.
 The env var was not set for Production, or the redeploy reused the cache.
 
 **Redirect loop / too many redirects**
-Cloudflare proxy is on. Switch the record to DNS only (grey cloud).
+Cloudflare proxy is on. Switch the record to DNS only (gray cloud).
 
 **Certificate error after DNS resolves**
 Give it 15 minutes; Vercel issues it automatically. Persisting beyond an hour

@@ -76,13 +76,13 @@ installed, so there is nothing downstream to gate.
 
 ### 3.1 Accessibility audit (spec gate 14)
 Playwright now covers interaction, but there is **no axe/WCAG audit**. Known unreviewed
-areas: colour contrast on muted text, focus-visible styling, and the consent banner's
+areas: color contrast on muted text, focus-visible styling, and the consent banner's
 focus trap. One concrete defect is already visible: the banner is `position: fixed`
 bottom-left and **overlaps the quote form's "Back" button** at some viewport sizes.
 
 ### 3.2 Performance budgets unverified
 Bundle sizes pass (102 kB shared, heaviest page 116 kB against a 120 kB budget), but no
-Lighthouse or Core Web Vitals run has happened. Hero imagery is unoptimised source material.
+Lighthouse or Core Web Vitals run has happened. Hero imagery is unoptimized source material.
 
 ### 3.3 Cross-browser
 All browser testing to date is Chromium only. No Firefox or WebKit run.

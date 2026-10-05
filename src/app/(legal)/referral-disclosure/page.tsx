@@ -23,7 +23,7 @@ export default function ReferralDisclosurePage() {
       <h2>Our role</h2>
       <p>
         {site.brand} operates an online referral service. We collect project
-        enquiries from homeowners and route them to independent contractors who
+        inquiries from homeowners and route them to independent contractors who
         hold an active agreement with us and who have approved coverage for the
         relevant area and project type.
       </p>
@@ -42,7 +42,7 @@ export default function ReferralDisclosurePage() {
         collect from completed work that originated from our referral.
         Commission is calculated on collected revenue after contractually
         excluded taxes, refunds, and chargebacks. Nothing is charged to the
-        homeowner, and commission is never calculated from a call, an enquiry,
+        homeowner, and commission is never calculated from a call, an inquiry,
         an estimate, or an unpaid invoice.
       </p>
 

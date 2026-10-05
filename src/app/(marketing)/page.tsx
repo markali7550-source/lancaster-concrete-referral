@@ -57,20 +57,20 @@ const DECISION_ITEMS = [
 
 const HOME_SERVICE_IMAGES = {
   "concrete-driveways": {
-    src: "/home-driveway-card.jpg",
-    alt: "Fresh residential concrete driveway with broom finish leading to a brick ranch home in a Lancaster South Carolina style neighborhood",
+    src: "/images/service-driveways.webp",
+    alt: "Concrete driveway project with a finished broom texture and residential access",
   },
   "concrete-patios": {
-    src: "/home-patio-card.jpg",
-    alt: "New concrete backyard patio with outdoor seating and mature trees in a South Carolina residential yard",
+    src: "/images/service-patios.webp",
+    alt: "Finished concrete patio with a clean surface in a residential outdoor setting",
   },
   "concrete-slabs": {
-    src: "/home-slab-card.jpg",
-    alt: "Concrete slab prepared for a backyard shed on a rural Lancaster County property with red clay soil at the edges",
+    src: "/images/service-slabs.webp",
+    alt: "Residential concrete slab prepared for a new project",
   },
   "concrete-repair": {
-    src: "/home-repair-card.jpg",
-    alt: "Cracked uneven concrete walkway section beside lawn and mature tree roots before repair assessment",
+    src: "/images/repair-hero-walkway.webp",
+    alt: "Concrete repair work showing a repaired residential concrete surface",
   },
 } as const;
 
@@ -115,7 +115,7 @@ export default function HomePage() {
       <Hero
         locationCue="Lancaster County, South Carolina"
         h1="Connect With a Local Concrete Service Provider in Lancaster, SC"
-        summary="Tell us your project and location, and we’ll pass your request to an independent local service provider who serves your area. We are a referral service, not a concrete contractor, and we do not perform concrete work ourselves."
+        summary="Tell us what you need and where the property is. We’ll match your request with one eligible independent concrete service provider serving your area."
         imageSrc="/home-hero.webp"
         imageAlt="Broom finished concrete front walkway and entry steps leading to the porch of a two storey home"
         overlay
@@ -142,7 +142,7 @@ export default function HomePage() {
       <Section
         backgroundImage={{
           src: "/process-band.webp",
-          alt: "Residential street in a small southern town with a half finished concrete driveway and timber forms in place",
+          alt: "Residential concrete driveway forms and a fresh pour on a neighborhood street",
         }}
         eyebrow="Process"
         title="Three steps, no obligation"
@@ -171,7 +171,7 @@ export default function HomePage() {
 
       <Section
         backgroundImage={{
-          src: "/home-service-area-band.jpg",
+          src: "/home-service-area-band.webp",
           alt: "Quiet Lancaster County South Carolina residential street with concrete driveways, front walkways, and mature trees",
         }}
         eyebrow="Service area"
@@ -263,7 +263,10 @@ export default function HomePage() {
       </Section>
 
 
-      <Section eyebrow="Project photography" title="Illustrative concrete details, not a project gallery">
+      <Section
+        eyebrow="PROJECT PHOTOGRAPHY"
+        title="Representative quality details, built on transparency"
+      >
         <ProjectExamples />
       </Section>
 

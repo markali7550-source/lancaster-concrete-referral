@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { DynamicPhone } from "@/components/lead/DynamicPhone";
 import { Icon } from "@/components/ui/Icon";
 import type { ServiceDetail } from "@/content/service-details";
@@ -102,7 +101,7 @@ export function ReferralSteps() {
     <div>
       <ol className="grid gap-5 md:grid-cols-3">
         {REFERRAL_STEPS.map((step, index) => (
-          <li key={step.title} className="card flex h-full flex-col p-6">
+          <li key={step.title} className="card process-step-card flex h-full flex-col p-6">
             <span
               className="mx-auto grid h-10 w-10 place-items-center rounded-full text-[15px] font-bold md:mx-0"
               style={{
@@ -161,35 +160,24 @@ export function ServiceCtaBand({
 }) {
   return (
     <section
-      className="cta-photo relative isolate overflow-hidden border-y py-16 md:py-20"
+      className="cta-photo relative isolate overflow-hidden py-16 md:py-20"
       style={{
-        borderColor: "var(--color-line)",
         background: imageSrc
-          ? undefined
+          ? `url(${imageSrc}) center / cover fixed`
           : "linear-gradient(135deg, #07120d 0%, #123d2b 58%, #0b100d 100%)",
       }}
     >
       {imageSrc ? (
-        <Image
-          src={imageSrc}
-          alt={imageAlt ?? ""}
-          fill
-          sizes="100vw"
-          className="-z-20 object-cover"
-        />
-      ) : null}
-      {imageSrc ? (
-        <div
-          className="absolute inset-0 -z-10"
-          aria-hidden="true"
-          style={{
-            background:
-              "linear-gradient(90deg, rgba(11,16,13,0.94) 0%, rgba(11,16,13,0.88) 45%, rgba(11,16,13,0.62) 100%)",
-          }}
-        />
+        <>
+          <div className="absolute inset-0 z-0 bg-black" aria-hidden="true" />
+          <div
+            className="absolute inset-0 z-0 bg-gradient-to-b from-[#0D1110] via-transparent to-[#0D1110]"
+            aria-hidden="true"
+          />
+        </>
       ) : null}
 
-      <div className="container-page flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
+      <div className="container-page relative z-10 flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
         <div className="max-w-xl">
           <h2 className="text-xl font-semibold md:text-2xl">
             Need Help With Your Concrete Project?

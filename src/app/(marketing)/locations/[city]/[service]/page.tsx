@@ -259,7 +259,12 @@ export default async function ComboPage({ params }: { params: Params }) {
         </div>
       </div>
 
-      <Section tone="surface" eyebrow="Process" title="Three steps, no obligation">
+      <Section
+        tone="surface"
+        backgroundImage={{ src: "/process-band.webp", alt: "Concrete driveway forms and fresh pour on a residential street" }}
+        eyebrow="Process"
+        title="Three steps, no obligation"
+      >
         <HowMatchingWorks />
       </Section>
 

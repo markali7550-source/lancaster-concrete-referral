@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { absoluteUrl, site } from "@/lib/env";
 
 const OG_IMAGE = {
-  url: "/opengraph-image.png",
+  url: "/opengraph-image.webp",
   width: 1200,
   height: 630,
   alt: `${site.brand}, concrete referrals in Lancaster, South Carolina`,
@@ -15,11 +15,8 @@ interface PageMetaInput {
   noindex?: boolean;
 }
 
-/**
- * Demo deployment: every route ships noindex, nofollow so the placeholder
- * content cannot be indexed. Flip to false at launch.
- */
-export const DEMO_NOINDEX = true;
+/** Public pages are indexable by default; transactional confirmation pages opt out explicitly. */
+export const DEMO_NOINDEX = false;
 
 export function pageMetadata({
   title,
@@ -27,9 +24,6 @@ export function pageMetadata({
   path,
   noindex = DEMO_NOINDEX,
 }: PageMetaInput): Metadata {
-  // TODO(launch): point NEXT_PUBLIC_SITE_URL at the real domain so the
-  // canonical and OpenGraph URLs below resolve to production, then set
-  // DEMO_NOINDEX to false so the site becomes indexable.
   const canonical = absoluteUrl(path);
   return {
     title,
@@ -57,9 +51,9 @@ export function pageMetadata({
 
 export const comboMeta = {
   title: (serviceName: string, city: string) =>
-    `${serviceName} in ${city}, SC | Call for a Quote`,
+    `${serviceName} Referrals in ${city}, SC | Lancaster Concrete Referral`,
   description: (serviceNameLower: string, city: string) =>
-    `Need ${serviceNameLower} in ${city}, SC? Call now or request a quote. We connect you with an independent local concrete contractor. Availability varies.`,
+    `Explore ${serviceNameLower} referral options in ${city}, SC. Tell us about your project and we can connect you with one participating independent provider serving the area.`,
   h1: (serviceName: string, city: string) =>
-    `Get Matched With ${serviceName} Contractors in ${city}, SC`,
+    `${serviceName} Referrals in ${city}, SC`,
 };

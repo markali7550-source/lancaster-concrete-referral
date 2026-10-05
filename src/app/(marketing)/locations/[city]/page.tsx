@@ -26,6 +26,13 @@ import { publishedServices } from "@/content/services";
 import { publishedLocationServices } from "@/content/location-services";
 import { site } from "@/lib/env";
 import { pageMetadata } from "@/lib/seo/metadata";
+
+const LOCATION_SERVICE_CARD_IMAGES = {
+  "concrete-driveways": { src: "/images/service-driveways.webp", alt: "Residential concrete driveway with a finished smooth surface" },
+  "concrete-patios": { src: "/images/service-patios.webp", alt: "Finished residential concrete patio beside landscaped yard" },
+  "concrete-slabs": { src: "/images/service-slabs.webp", alt: "Residential concrete slab with clean formed edges" },
+  "concrete-repair": { src: "/images/repair-hero-walkway.webp", alt: "Repaired residential concrete surface with a smooth finish" },
+} as const;
 import {
   breadcrumbNode,
   buildGraph,
@@ -179,10 +186,15 @@ export default async function LocationPage({ params }: { params: Params }) {
           )}
           cityPrefix={path}
           cityLabel={location.city}
+          images={LOCATION_SERVICE_CARD_IMAGES}
         />
       </Section>
 
       <Section
+        backgroundImage={{
+          src: "/process-band.webp",
+          alt: "Residential concrete driveway forms and fresh pour on a neighborhood street",
+        }}
         eyebrow="Process"
         title="How a Lancaster request is routed"
       >

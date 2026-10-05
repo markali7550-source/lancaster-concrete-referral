@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { DynamicPhone } from "@/components/lead/DynamicPhone";
 import { Icon } from "@/components/ui/Icon";
@@ -180,12 +179,13 @@ export function InPageNav({ items }: { items: { id: string; label: string }[] })
   return (
     <nav
       aria-label="On this page"
-      className="sticky top-16 z-20 border-b"
+      className="sticky top-16 z-50 isolate border-b"
       style={{
         borderColor: "var(--color-line)",
         // Fully opaque: a translucent bar lets the headings scrolling beneath
         // it show through, which reads as broken text.
         backgroundColor: "var(--color-page)",
+        boxShadow: "0 8px 18px rgba(0, 0, 0, 0.18)",
       }}
     >
       <div className="container-page">
@@ -504,35 +504,24 @@ export function CtaBand({
 }) {
   return (
     <section
-      className="cta-photo relative isolate overflow-hidden border-y py-16 md:py-20"
+      className="cta-photo relative isolate overflow-hidden py-16 md:py-20"
       style={{
-        borderColor: "var(--color-line)",
         background: imageSrc
-          ? undefined
+          ? `url(${imageSrc}) center / cover fixed`
           : "linear-gradient(135deg, #07120d 0%, #123d2b 58%, #0b100d 100%)",
       }}
     >
       {imageSrc ? (
-        <Image
-          src={imageSrc}
-          alt={imageAlt ?? ""}
-          fill
-          sizes="100vw"
-          className="-z-20 object-cover"
-        />
-      ) : null}
-      {imageSrc ? (
-        <div
-          className="absolute inset-0 -z-10"
-          aria-hidden="true"
-          style={{
-            background:
-              "linear-gradient(90deg, rgba(11,16,13,0.94) 0%, rgba(11,16,13,0.88) 45%, rgba(11,16,13,0.62) 100%)",
-          }}
-        />
+        <>
+          <div className="absolute inset-0 z-0 bg-black" aria-hidden="true" />
+          <div
+            className="absolute inset-0 z-0 bg-gradient-to-b from-[#0D1110] via-transparent to-[#0D1110]"
+            aria-hidden="true"
+          />
+        </>
       ) : null}
 
-      <div className="container-page flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
+      <div className="container-page relative z-10 flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
         <div className="max-w-xl">
           <h2 className="text-xl font-semibold md:text-2xl">{title}</h2>
           <p className="mt-2 text-[15px] leading-relaxed text-[color:var(--color-muted)]">

@@ -3,9 +3,7 @@ import { absoluteUrl } from "@/lib/env";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    // TODO(launch): restore `allow: "/"` with `disallow: ["/api/"]` and keep
-    // the sitemap once the real domain is live.
-    rules: [{ userAgent: "*", disallow: "/" }],
+    rules: [{ userAgent: "*", allow: "/", disallow: ["/api/"] }],
     sitemap: absoluteUrl("/sitemap.xml"),
   };
 }

@@ -29,7 +29,7 @@ export interface ServiceDetail {
 export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
   /* ------------------------------------------------------ driveways */
   "concrete-driveways": {
-    detailImage: "/services/concrete-driveways-detail.webp",
+    detailImage: "/images/driveway-hero-wide.webp",
     detailImageAlt:
       "Residential concrete driveway in Lancaster SC with jointed panels and a broom finish",
     mayInclude: [
@@ -103,7 +103,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
 
   /* --------------------------------------------------------- patios */
   "concrete-patios": {
-    detailImage: "/services/concrete-patios-detail.webp",
+    detailImage: "/images/patio-hero-wide.webp",
     detailImageAlt:
       "Residential concrete patio in Lancaster SC with outdoor dining furniture",
     mayInclude: [
@@ -168,7 +168,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         heading: "Why planning matters",
         subheading: "Decide before the forms go in",
         body: [
-          "Patios are easy to undersize and hard to enlarge neatly later, because an addition poured afterwards rarely matches the original in colour or texture.",
+          "Patios are easy to undersize and hard to enlarge neatly later, because an addition poured afterwards rarely matches the original in color or texture.",
           "Deciding size, finish, and drainage before the forms go in avoids the two common regrets: a slab that feels cramped once furnished, and water collecting near the house.",
         ],
       },
@@ -177,7 +177,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
 
   /* ---------------------------------------------------------- slabs */
   "concrete-slabs": {
-    detailImage: "/services/concrete-slabs-detail.webp",
+    detailImage: "/images/slab-hero-garage.webp",
     detailImageAlt:
       "Finished residential concrete slab and equipment pad in Lancaster SC beside a brick home, with an HVAC condenser on the pad",
     mayInclude: [
@@ -251,7 +251,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
 
   /* --------------------------------------------------------- repair */
   "concrete-repair": {
-    detailImage: "/services/concrete-repair-detail.webp",
+    detailImage: "/images/repair-hero-walkway.webp",
     detailImageAlt:
       "Concrete repair project in Lancaster SC showing a filled and smoothed crack in a slab",
     mayInclude: [
@@ -292,7 +292,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         heading: "Important considerations",
         subheading: "When repair will not hold",
         body: [
-          "Repairs are rarely invisible. Patched concrete usually differs in colour and texture from the slab around it, and that difference tends to remain.",
+          "Repairs are rarely invisible. Patched concrete usually differs in color and texture from the slab around it, and that difference tends to remain.",
           "Where the cause is active, such as soil movement or poor drainage, a surface only repair may not hold. Repeated patching of an old slab can cost more than one replacement.",
         ],
       },

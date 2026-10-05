@@ -64,6 +64,27 @@ function descriptionFor(nameLower: string, projectNoun: string) {
   return `What ${nameLower} referral covers in Lancaster, SC, what falls outside it, and how your ${projectNoun} request reaches an independent service provider.`;
 }
 
+const SERVICE_PAGE_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-driveways": { src: "/images/service-driveways.webp", alt: "Representative residential concrete driveway with a clean broom finish" },
+  "concrete-patios": { src: "/images/service-patios.webp", alt: "Representative backyard concrete patio beside a lawn and mature trees" },
+  "concrete-slabs": { src: "/images/service-slabs.webp", alt: "Representative concrete slab prepared beside a residential property" },
+  "concrete-repair": { src: "/images/repair-hero-walkway.webp", alt: "Representative repaired concrete walkway awaiting a repair assessment" },
+};
+
+const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-driveways": { src: "/images/driveway-drainage-detail.webp", alt: "Representative driveway edge with drainage pitch and lawn border" },
+  "concrete-patios": { src: "/images/patio-stamped-texture.webp", alt: "Representative stamped concrete patio texture" },
+  "concrete-slabs": { src: "/images/slab-shed-pad.webp", alt: "Representative residential concrete shed pad" },
+  "concrete-repair": { src: "/images/repair-hero-walkway.webp", alt: "Representative repaired concrete crack detail" },
+};
+
+const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-driveways": { src: "/images/driveway-pour-joints.webp", alt: "Representative concrete driveway control joints and broom finish" },
+  "concrete-patios": { src: "/images/patio-steps-walkway.webp", alt: "Representative patio walkway transition beside a garden lawn" },
+  "concrete-slabs": { src: "/images/slab-broom-detail.webp", alt: "Representative concrete slab broom finish and clean edge" },
+  "concrete-repair": { src: "/images/service-slabs.webp", alt: "Representative residential concrete slab with clean formed edges" },
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -288,14 +309,9 @@ export default async function ServicePage({ params }: { params: Params }) {
         </Section>
       </section>
 
-      <SectionDivider />
-
       <section id="may-include" className="scroll-mt-32">
         <Section
-          backgroundImage={{
-            src: detail.detailImage,
-            alt: detail.detailImageAlt,
-          }}
+          backgroundImage={SERVICE_DETAIL_IMAGES[service.slug]}
           eyebrow="Include"
           title={`What ${projectPhrase} project may include`}
         >
@@ -305,8 +321,6 @@ export default async function ServicePage({ params }: { params: Params }) {
           />
         </Section>
       </section>
-
-      <SectionDivider />
 
       <section id="how-it-works" className="scroll-mt-32">
         <Section
@@ -321,7 +335,12 @@ export default async function ServicePage({ params }: { params: Params }) {
       <ServiceDisclosureBlock />
 
       {cityLinks.length > 0 ? (
-        <Section eyebrow="Local pages" title={`${service.name} by city`} compact>
+        <Section
+          eyebrow="Local pages"
+          title={`${service.name} by city`}
+          compact
+          backgroundImage={SERVICE_PROCESS_IMAGES[service.slug]}
+        >
           <ul className="flex flex-wrap justify-center gap-3 lg:justify-start">
             {cityLinks.map(({ record, location }) => (
               <li key={record.locationSlug}>
@@ -336,8 +355,6 @@ export default async function ServicePage({ params }: { params: Params }) {
           </ul>
         </Section>
       ) : null}
-
-      <SectionDivider />
 
       <section id="faq" className="scroll-mt-32">
         <Section eyebrow="FAQ" title={`${service.name} questions`}>

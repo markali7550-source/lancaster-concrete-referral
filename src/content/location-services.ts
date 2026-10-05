@@ -21,14 +21,14 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-driveways",
     state: "published",
-    localImage: "/locations/lancaster-driveway-apron.webp",
+    localImage: "/images/service-driveways.webp",
     localImageAlt:
       "Finished concrete driveway on a narrow Lancaster SC lot meeting the street at a poured apron",
     localBody: [
       {
         heading: "Two kinds of request",
         body:
-          "Driveway enquiries from Lancaster split fairly evenly between replacement of 1970s to 1990s pours in the older neighbourhoods off Chesterfield Avenue and first time pours on rural parcels where a gravel drive has become unworkable.",
+          "Driveway inquiries from Lancaster split fairly evenly between replacement of 1970s to 1990s pours in the older neighborhoods off Chesterfield Avenue and first time pours on rural parcels where a gravel drive has become unworkable.",
       },
       {
         heading: "Access and water come first",
@@ -38,7 +38,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         heading: "When to ask for a visit",
         body:
-          "Seasonality matters here too. Requests cluster in late spring and early autumn, which is when provider capacity tightens and acknowledgement times stretch. If your driveway is already failing, an enquiry in the quieter winter weeks usually gets a faster site visit, even though the pour itself may be scheduled for milder weather.",
+          "Seasonality matters here too. Requests cluster in late spring and early autumn, which is when provider capacity tightens and acknowledgement times stretch. If your driveway is already failing, an inquiry in the quieter winter weeks usually gets a faster site visit, even though the pour itself may be scheduled for milder weather.",
       },
       {
         heading: "Who actually does the work",
@@ -69,14 +69,14 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-patios",
     state: "published",
-    localImage: "/locations/lancaster-shaded-patio.webp",
+    localImage: "/images/service-patios.webp",
     localImageAlt:
       "Broom finished concrete patio in a shaded Lancaster SC back yard under mature oak and pine trees",
     localBody: [
       {
         heading: "What most requests look like",
         body:
-          "Patio enquiries in Lancaster are dominated by rear yard slabs behind single storey ranch houses built between the 1960s and the 1990s, and by homeowners converting a tired screened porch footprint into an open entertaining surface.",
+          "Patio inquiries in Lancaster are dominated by rear yard slabs behind single storey ranch houses built between the 1960s and the 1990s, and by homeowners converting a tired screened porch footprint into an open entertaining surface.",
       },
       {
         heading: "Shade decides the finish",
@@ -116,9 +116,9 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-slabs",
     state: "published",
-    localImage: "/locations/lancaster-equipment-pad.webp",
+    localImage: "/images/service-slabs.webp",
     localImageAlt:
-      "Freshly poured concrete equipment pad on a rural Lancaster County parcel with the forms just removed",
+      "Finished residential concrete slab beside a landscaped yard in Lancaster, South Carolina",
     localBody: [
       {
         heading: "Mostly outbuilding pads",
@@ -163,14 +163,14 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-repair",
     state: "published",
-    localImage: "/locations/lancaster-lifted-walkway.webp",
+    localImage: "/images/repair-hero-walkway.webp",
     localImageAlt:
-      "Concrete walkway panel in Lancaster SC lifted out of level beside a mature tree root",
+      "Uneven residential concrete walkway needing a repair assessment in Lancaster, South Carolina",
     localBody: [
       {
         heading: "Three shapes of request",
         body:
-          "Repair enquiries from Lancaster arrive in three recognisable shapes: surface spalling and flaking on slabs poured decades ago, joints that have opened and now trap water, and sections that have dropped out of level at an apron, walkway, or garage threshold.",
+          "Repair inquiries from Lancaster arrive in three recognizable shapes: surface spalling and flaking on slabs poured decades ago, joints that have opened and now trap water, and sections that have dropped out of level at an apron, walkway, or garage threshold.",
       },
       {
         heading: "Settlement is a soil story",

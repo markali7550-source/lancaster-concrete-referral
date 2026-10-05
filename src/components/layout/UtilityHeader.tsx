@@ -17,16 +17,10 @@ function Wordmark() {
 
 export function UtilityHeader() {
   return (
-    <header className="sticky top-0 z-30">
-      <div
-        className="border-b"
-        style={{
-          borderColor: "var(--color-line-soft)",
-          // Fully opaque: a translucent sticky bar lets the content scrolling
-          // beneath it show through, which reads as broken text.
-          backgroundColor: "var(--color-surface)",
-        }}
-      >
+    <header
+      className="sticky top-0 z-[100] border-b bg-[#0d1110]/40 backdrop-blur-md transition-all duration-300"
+      style={{ borderColor: "rgba(255,255,255,0.1)" }}
+    >
         <div className="container-page flex h-16 items-center justify-between gap-4">
           <Wordmark />
 
@@ -57,9 +51,9 @@ export function UtilityHeader() {
               fallbackDisplay={site.phoneDisplay}
               fallbackE164={site.phoneE164}
               placement="header"
-              className="btn btn-secondary hidden whitespace-nowrap xl:inline-flex"
+              className="btn btn-secondary hidden min-h-12 whitespace-nowrap px-3.5 text-[15px] xl:inline-flex"
             />
-            <Link href="/contact" className="btn btn-primary whitespace-nowrap">
+            <Link href="/contact" className="btn btn-primary min-h-12 whitespace-nowrap px-3.5 text-[15px]">
               Request a referral
             </Link>
           </div>
@@ -120,7 +114,6 @@ export function UtilityHeader() {
             </div>
           </MobileMenu>
         </div>
-      </div>
     </header>
   );
 }

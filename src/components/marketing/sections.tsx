@@ -62,17 +62,14 @@ export function Section({
             sizes="100vw"
             className="-z-20 object-cover"
           />
+          <div className="absolute inset-0 z-10 bg-[#0D1110]" aria-hidden="true" />
           <div
-            className="absolute inset-0 -z-10"
+            className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-[#0D1110] via-transparent to-[#0D1110]"
             aria-hidden="true"
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(11,16,13,0.95) 0%, rgba(11,16,13,0.88) 50%, rgba(11,16,13,0.66) 100%)",
-            }}
           />
         </>
       ) : null}
-      <div className="container-page">
+      <div className="container-page relative z-30">
         {eyebrow || title || lead ? (
           <div
             className={
@@ -121,6 +118,10 @@ export function SectionDivider() {
 
 /* ------------------------------------------------------------------- Hero */
 
+const HERO_IMAGE_OVERLAY = "absolute inset-0 z-10 bg-[#0D1110]";
+const HERO_IMAGE_FADE =
+  "pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-[#0D1110] via-transparent to-[#0D1110]";
+
 /**
  * Full-bleed photo header: the photo fills the band, a dark scrim keeps the
  * copy legible, and the copy sits on top of it.
@@ -139,7 +140,7 @@ export function OverlayHeader({
 }) {
   return (
     <section
-      className="relative isolate overflow-hidden border-b"
+      className="relative isolate overflow-hidden"
       style={{ borderColor: "var(--color-line-soft)" }}
     >
       <Image
@@ -151,10 +152,11 @@ export function OverlayHeader({
         className="-z-20 object-cover"
       />
       <div
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-[#070b09]/85 via-[#070b09]/75 to-[#070b09]/85 lg:bg-gradient-to-r lg:from-[#070b09]/92 lg:via-[#070b09]/78 lg:to-[#070b09]/35"
+        className={HERO_IMAGE_OVERLAY}
         aria-hidden="true"
       />
-      <div className="container-page flex items-center py-14 md:py-20 lg:py-24">
+      <div className={HERO_IMAGE_FADE} aria-hidden="true" />
+      <div className="container-page relative z-30 flex items-center py-14 md:py-20 lg:py-24">
         <div className="mx-auto w-full max-w-2xl text-center lg:mx-0 lg:text-left">
           {breadcrumbs}
           {children}
@@ -202,7 +204,7 @@ export function Hero({
   if (overlay) {
     return (
       <section
-        className="relative isolate overflow-hidden border-b"
+        className="relative isolate overflow-hidden"
         style={{ borderColor: "var(--color-line-soft)" }}
       >
         <Image
@@ -214,14 +216,15 @@ export function Hero({
           className="-z-20 object-cover"
         />
         <div
-          className="absolute inset-0 -z-10 bg-gradient-to-b from-[#070b09]/85 via-[#070b09]/75 to-[#070b09]/85 lg:bg-gradient-to-r lg:from-[#070b09]/92 lg:via-[#070b09]/78 lg:to-[#070b09]/35"
+          className={HERO_IMAGE_OVERLAY}
           aria-hidden="true"
         />
+        <div className={HERO_IMAGE_FADE} aria-hidden="true" />
         <div
           className={
             aside
-              ? "container-page grid items-center gap-10 py-14 lg:grid-cols-[1.05fr_minmax(0,26rem)] lg:gap-14 lg:py-20"
-              : "container-page flex min-h-[calc(100dvh-6.25rem)] items-center py-14 lg:py-20"
+              ? "container-page relative z-30 grid items-center gap-10 py-14 lg:grid-cols-[1.05fr_minmax(0,26rem)] lg:gap-14 lg:py-20"
+              : "container-page relative z-30 flex min-h-[calc(100dvh-6.25rem)] items-center py-14 lg:py-20"
           }
         >
           <div className="mx-auto w-full max-w-2xl text-center lg:mx-0 lg:text-left">
@@ -273,7 +276,7 @@ export function Hero({
             </ul>
           </div>
           {aside ? (
-            <div className="mx-auto w-full max-w-xl lg:mx-0">{aside}</div>
+            <div className="mobile-sticky-form sticky bottom-0 z-40 mx-auto w-full max-w-xl rounded-t-xl bg-[#0D1110]/95 p-2 backdrop-blur-md lg:static lg:mx-0 lg:max-w-xl lg:rounded-none lg:bg-transparent lg:p-0">{aside}</div>
           ) : null}
         </div>
       </section>
@@ -475,7 +478,7 @@ export function ProjectTypeChooser({
                 ? `${cityPrefix}/${service.slug}`
                 : `/services/${service.slug}`
             }
-            className="card card-interactive flex h-full flex-col overflow-hidden"
+            className="group card card-interactive flex h-full flex-col overflow-hidden transition-colors duration-300 hover:border-[var(--color-accent)]"
           >
             {image ? (
               <Image
@@ -484,7 +487,7 @@ export function ProjectTypeChooser({
                 width={800}
                 height={500}
                 sizes="(min-width: 640px) 45vw, 100vw"
-                className="h-44 w-full object-cover"
+                className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
             ) : null}
             <div className="flex flex-1 flex-col p-6 text-center lg:text-left">
@@ -583,15 +586,15 @@ export function RoutingControls() {
 export function ProjectExamples() {
   return (
     <div className="card p-7 text-center lg:text-left">
-      <p className="eyebrow-plain">Photography policy</p>
+      <p className="eyebrow-plain">PHOTOGRAPHY POLICY</p>
       <h3 className="mt-3 text-2xl font-semibold">
-        We use illustrative construction imagery, not a fake portfolio.
+        Concept imagery for reference — verified portfolios on request.
       </h3>
       <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--color-muted)]">
-        {ILLUSTRATIVE_IMAGE_NOTE} Every photograph on this site is assigned to
-        one specific section only, and true project portfolio photos are
-        published only after source, ownership, and contractor permission
-        review.
+        We use clear illustrative concrete photography to showcase project
+        standards, never claiming direct execution. Authentic contractor
+        portfolio photos are published only after source, ownership, and
+        permission verification.
       </p>
     </div>
   );
@@ -662,7 +665,7 @@ export function DecisionSupport({
     >
       {items.map((item) => (
         <details key={item.question} name={name} className="group">
-          <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-6 font-medium md:px-6">
+          <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-medium md:px-6">
             <span className="flex-1 text-left">{item.question}</span>
             <span
               className="grid h-8 w-8 shrink-0 place-items-center rounded-[10px] transition-colors"
@@ -675,7 +678,7 @@ export function DecisionSupport({
               <Icon name="plus" className="h-4 w-4" />
             </span>
           </summary>
-          <p className="px-5 pb-6 text-left text-[15px] leading-relaxed text-[color:var(--color-muted)] md:px-6">
+          <p className="px-5 py-4 text-left text-[15px] leading-relaxed text-[color:var(--color-muted)] md:px-6">
             {item.answer}
           </p>
         </details>
@@ -699,15 +702,23 @@ export function FaqSection({
 }) {
   return (
     <div
-      className="divide-y overflow-hidden rounded-[16px] border"
+      className="grid gap-2"
       style={{
-        borderColor: "var(--color-line-soft)",
-        backgroundColor: "var(--color-surface)",
+        backgroundColor: "transparent",
       }}
     >
       {faqs.map((faq) => (
-        <details key={faq.question} name={name} className="group">
-          <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-semibold md:px-6">
+        <details
+          key={faq.question}
+          name={name}
+          className="group overflow-hidden rounded-[14px]"
+          style={{
+            backgroundColor: "#121816",
+            border: "1px solid rgba(95, 227, 168, 0.16)",
+            boxShadow: "0 8px 20px rgba(0, 0, 0, 0.18)",
+          }}
+        >
+          <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-semibold md:px-6">
             <span className="flex-1 text-left text-[16px]">{faq.question}</span>
             <span
               className="grid h-8 w-8 shrink-0 place-items-center rounded-[10px] transition-colors"
@@ -720,7 +731,7 @@ export function FaqSection({
               <Icon name="plus" className="h-4 w-4" />
             </span>
           </summary>
-          <p className="px-5 pb-6 text-left text-[15px] leading-relaxed text-[color:var(--color-muted)] md:px-6">
+          <p className="px-5 py-4 text-left text-[15px] leading-relaxed text-[color:var(--color-muted)] md:px-6">
             {faq.answer}
           </p>
         </details>

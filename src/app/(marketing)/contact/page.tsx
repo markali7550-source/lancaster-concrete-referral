@@ -32,15 +32,27 @@ export default function ContactPage() {
   return (
     <>
       <JsonLd data={graph} />
-      <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Contact" }]} />
       <div
-        className="border-b"
-        style={{
-          borderColor: "var(--color-line-soft)",
-          backgroundColor: "var(--color-surface)",
-        }}
+        className="cta-photo relative isolate overflow-hidden border-b"
+        style={{ borderColor: "var(--color-line-soft)" }}
       >
+        <Image
+          src="/contact-front-walkway.webp"
+          alt=""
+          fill
+          sizes="100vw"
+          className="-z-20 object-cover"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-0 -z-10 bg-gradient-to-b from-[#070b09]/85 via-[#070b09]/75 to-[#070b09]/85 lg:bg-gradient-to-r lg:from-[#070b09]/92 lg:via-[#070b09]/78 lg:to-[#070b09]/35"
+          aria-hidden="true"
+        />
         <div className="container-page py-12 text-center md:py-16 lg:text-left">
+          <Breadcrumbs
+            overlay
+            items={[{ name: "Home", path: "/" }, { name: "Contact" }]}
+          />
           <p className="eyebrow before:hidden lg:before:block">Contact</p>
           <h1 className="h1 mx-auto mt-5 max-w-3xl lg:mx-0">
             Contact Our Lancaster, SC Concrete Referral Team
@@ -99,14 +111,6 @@ export default function ContactPage() {
                 </dd>
               </div>
             </dl>
-            <Image
-              src="/contact-front-walkway.webp"
-              alt="Concrete front walkway and entry steps leading to the porch of a brick home in late afternoon light"
-              width={900}
-              height={491}
-              sizes="(min-width: 1024px) 40vw, 100vw"
-              className="mt-8 h-48 w-full rounded-[16px] object-cover md:h-56"
-            />
             <p className="mx-auto mt-8 max-w-prose text-xs leading-relaxed text-[color:var(--color-muted)] lg:mx-0">
               {CALL_DISCLOSURE} We publish no street address because we are an
               online referral business, not a contracting premises.
