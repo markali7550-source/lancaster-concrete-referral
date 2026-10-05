@@ -116,9 +116,9 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-slabs",
     state: "published",
-    localImage: "/images/slab-broom-detail.webp",
+    localImage: "/images/service-slabs.webp",
     localImageAlt:
-      "Broom-finished concrete slab with clean formed edges in Lancaster, South Carolina",
+      "Finished residential concrete slab beside a landscaped yard in Lancaster, South Carolina",
     localBody: [
       {
         heading: "Mostly outbuilding pads",
