@@ -29,7 +29,7 @@ export interface ServiceDetail {
 export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
   /* ------------------------------------------------------ driveways */
   "concrete-driveways": {
-    detailImage: "/images/service-driveways.webp",
+    detailImage: "/home-driveway-card.webp",
     detailImageAlt:
       "Residential concrete driveway in Lancaster SC with jointed panels and a broom finish",
     mayInclude: [

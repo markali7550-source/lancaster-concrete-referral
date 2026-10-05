@@ -54,7 +54,7 @@ export const services: readonly ServiceRecord[] = [
       "New pours and full replacements, including tear out of failed slabs and the drainage questions that come with Lancaster County clay.",
     heroSummary:
       "Looking for a concrete driveway contractor in Lancaster, SC? We help homeowners connect with independent local service providers who may be able to assist with new pours and full replacements. Submit your project details to request a referral. We are a referral service and do not perform concrete work ourselves. The provider quotes, schedules, and performs the work.",
-    image: "/images/service-driveways.webp",
+    image: "/home-driveway-card.webp",
     imageAlt:
       "Newly poured residential concrete driveway with saw cut control joints and a broom finish",
     projectTypes: ["New driveway", "Driveway replacement"],

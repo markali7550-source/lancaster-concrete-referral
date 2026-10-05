@@ -57,7 +57,7 @@ const DECISION_ITEMS = [
 
 const HOME_SERVICE_IMAGES = {
   "concrete-driveways": {
-    src: "/images/service-driveways.webp",
+    src: "/home-driveway-card.webp",
     alt: "Concrete driveway project with a finished broom texture and residential access",
   },
   "concrete-patios": {
