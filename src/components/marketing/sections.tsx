@@ -711,10 +711,10 @@ export function FaqSection({
         <details
           key={faq.question}
           name={name}
-          className="group overflow-hidden rounded-[14px] border"
+          className="group overflow-hidden rounded-[14px]"
           style={{
-            borderColor: "var(--color-line-soft)",
             backgroundColor: "var(--color-surface)",
+            boxShadow: "0 8px 20px rgba(0, 0, 0, 0.12)",
           }}
         >
           <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-semibold md:px-6">
