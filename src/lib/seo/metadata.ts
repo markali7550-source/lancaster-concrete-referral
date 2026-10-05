@@ -24,9 +24,6 @@ export function pageMetadata({
   path,
   noindex = DEMO_NOINDEX,
 }: PageMetaInput): Metadata {
-  // TODO(launch): point NEXT_PUBLIC_SITE_URL at the real domain so the
-  // canonical and OpenGraph URLs below resolve to production, then set
-  // DEMO_NOINDEX to false so the site becomes indexable.
   const canonical = absoluteUrl(path);
   return {
     title,
@@ -54,9 +51,9 @@ export function pageMetadata({
 
 export const comboMeta = {
   title: (serviceName: string, city: string) =>
-    `${serviceName} in ${city}, SC | Call for a Quote`,
+    `${serviceName} Referrals in ${city}, SC | Lancaster Concrete Referral`,
   description: (serviceNameLower: string, city: string) =>
-    `Need ${serviceNameLower} in ${city}, SC? Call now or request a quote. We connect you with an independent local concrete contractor. Availability varies.`,
+    `Explore ${serviceNameLower} referral options in ${city}, SC. Tell us about your project and we can connect you with one participating independent provider serving the area.`,
   h1: (serviceName: string, city: string) =>
-    `Get Matched With ${serviceName} Contractors in ${city}, SC`,
+    `${serviceName} Referrals in ${city}, SC`,
 };
