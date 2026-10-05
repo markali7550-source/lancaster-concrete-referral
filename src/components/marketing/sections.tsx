@@ -62,7 +62,7 @@ export function Section({
             sizes="100vw"
             className="-z-20 object-cover"
           />
-          <div className="absolute inset-0 z-10 bg-[#0D1110]/70" aria-hidden="true" />
+          <div className="absolute inset-0 z-10 bg-[#0D1110]/90" aria-hidden="true" />
           <div
             className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-[#0D1110] via-transparent to-[#0D1110]"
             aria-hidden="true"
@@ -118,7 +118,7 @@ export function SectionDivider() {
 
 /* ------------------------------------------------------------------- Hero */
 
-const HERO_IMAGE_OVERLAY = "absolute inset-0 z-10 bg-[#0D1110]/70";
+const HERO_IMAGE_OVERLAY = "absolute inset-0 z-10 bg-[#0D1110]/90";
 const HERO_IMAGE_FADE =
   "pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-[#0D1110] via-transparent to-[#0D1110]";
 
