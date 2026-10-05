@@ -515,7 +515,7 @@ export function CtaBand({
         <>
           <div className="absolute inset-0 z-0 bg-black/50" aria-hidden="true" />
           <div
-            className="absolute inset-0 z-0 bg-gradient-to-b from-[#0D1110]/60 via-transparent to-[#0D1110]/60"
+            className="absolute inset-0 z-0 bg-gradient-to-b from-[#0D1110] via-transparent to-[#0D1110]"
             aria-hidden="true"
           />
         </>
