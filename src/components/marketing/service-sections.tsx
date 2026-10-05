@@ -507,7 +507,7 @@ export function CtaBand({
       style={{
         borderColor: "var(--color-line)",
         background: imageSrc
-          ? `url(${imageSrc}) center / cover`
+          ? `url(${imageSrc}) center / cover fixed`
           : "linear-gradient(135deg, #07120d 0%, #123d2b 58%, #0b100d 100%)",
       }}
     >
@@ -517,7 +517,7 @@ export function CtaBand({
           aria-hidden="true"
           style={{
             background:
-              "linear-gradient(180deg, rgba(11,16,13,0.92) 0%, rgba(11,16,13,0.78) 50%, rgba(11,16,13,0.92) 100%)",
+              "linear-gradient(90deg, rgba(11,16,13,0.94) 0%, rgba(11,16,13,0.88) 45%, rgba(11,16,13,0.62) 100%)",
           }}
         />
       ) : null}
