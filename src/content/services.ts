@@ -599,7 +599,7 @@ export const services: readonly ServiceRecord[] = [
       "Nonstructural crack repair, surface repair, and resurfacing. Structural assessment is out of scope.",
     heroSummary:
       "Looking for a concrete repair contractor in Lancaster, SC? We connect homeowners with independent service providers who may be able to help with surface level problems on sound concrete: crazing, spalling, shrinkage cracks, and tired finishes. If it sounds like movement or load failure, we will say so plainly.",
-    image: "/images/service-repair.webp",
+    image: "/images/repair-hero-walkway.webp",
     imageAlt:
       "Residential walkway half weathered and cracked, half freshly resurfaced with smooth concrete",
     projectTypes: ["Crack and surface repair", "Resurfacing"],
