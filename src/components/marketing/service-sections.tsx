@@ -504,7 +504,7 @@ export function CtaBand({
 }) {
   return (
     <section
-      className="cta-photo relative isolate flex min-h-[400px] w-full items-center overflow-hidden py-16 md:py-20 lg:min-h-[500px]"
+      className="cta-photo relative isolate overflow-hidden py-16 md:py-20"
       style={
         imageSrc
           ? undefined
@@ -540,7 +540,7 @@ export function CtaBand({
         </>
       ) : null}
 
-      <div className="container-page relative z-30 flex w-full flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
+      <div className="container-page relative z-30 flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
         <div className="max-w-xl">
           <h2 className="text-xl font-semibold md:text-2xl">{title}</h2>
           <p className="mt-2 text-[15px] leading-relaxed text-[color:var(--color-muted)]">
