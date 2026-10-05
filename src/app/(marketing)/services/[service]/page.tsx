@@ -82,7 +82,7 @@ const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-driveways": { src: "/images/driveway-pour-joints.webp", alt: "Representative concrete driveway control joints and broom finish" },
   "concrete-patios": { src: "/images/patio-steps-walkway.webp", alt: "Representative patio walkway transition beside a garden lawn" },
   "concrete-slabs": { src: "/images/slab-broom-detail.webp", alt: "Representative concrete slab broom finish and clean edge" },
-  "concrete-repair": { src: "/images/repair-surface-finish.webp", alt: "Representative repaired concrete surface finish" },
+  "concrete-repair": { src: "/images/service-slabs.webp", alt: "Representative residential concrete slab with clean formed edges" },
 };
 
 export async function generateMetadata({
