@@ -149,41 +149,48 @@
 
   /* ------------------------------------------------------------ CTA bands */
 
-  /* The closing CTA band pins its photograph to the viewport, so the image
-     holds still while the band scrolls over it. Scoped to this band only --
-     heroes and the other photo sections scroll normally with the page.
+  /* The closing CTA band holds its photograph still while the band scrolls
+     over it. Scoped to this band only -- heroes and the other photo sections
+     scroll normally with the page.
 
-     The pin itself is applied by CtaParallaxLayer.tsx, which sets a
-     `transform` on this layer every frame; that component carries the full
-     explanation of why the pure-CSS techniques (`background-attachment:
-     fixed`, and `position: fixed` clipped by `clip-path`) were all abandoned.
+     The pin is a viewport-sized `position: fixed` layer clipped back to the
+     band by `clip-path` on the section. Both halves matter:
 
-     What the CSS provides is the unpinned fallback below, which is what
-     renders with no JavaScript, on mobile, and before hydration. */
+       - `fixed` is what makes the photo stationary, and because it is the
+         compositor doing the work there is no scroll handler lagging a frame
+         behind the page. A JS-driven transform was tried here and visibly
+         shook for exactly that reason.
+       - `clip-path` is what keeps it honest. `overflow: hidden` does not clip
+         a fixed descendant, so without the clip the layer would cover the
+         whole page. With it, the photo stops dead at the section edges: it
+         cannot overlap the next section or stay on screen once the CTA has
+         gone past.
+
+     This deliberately avoids `background-attachment: fixed`, which iOS Safari
+     ignores outright and which `overflow-x: hidden` on body (see the base
+     layer) breaks in several other engines.
+
+     `data-pin="css"` is set by CtaParallaxLayer only after it has verified at
+     runtime that a fixed child of a clipped ancestor really is viewport-
+     relative in this engine. Without that attribute -- on mobile, with JS off,
+     before hydration, or on an engine that disagrees -- the rules below never
+     apply and the layer stays an ordinary cover image. */
   .cta-parallax-layer {
     position: absolute;
     inset: 0;
     overflow: hidden;
   }
 
-  /* Pinned state, switched on by the component once it is running on a
-     desktop-width viewport. The layer becomes a viewport-tall box anchored to
-     the top of the band; the component then translates it by the band's
-     offset so it lands at viewport coordinates 0..100vh on every frame. The
-     band's own `overflow: hidden` crops it back to the band, which works
-     reliably here because a transformed element is still clipped by an
-     ancestor's overflow -- the thing `position: fixed` would have escaped.
+  @media (min-width: 64rem) {
+    @supports (clip-path: inset(0)) {
+      .cta-parallax[data-pin="css"] {
+        clip-path: inset(0);
+      }
 
-     Note this is NOT gated on `prefers-reduced-motion`. A pinned layer is
-     stationary in the viewport, so it introduces no motion of its own -- it
-     actually moves less than the normal scrolling image it replaces. The
-     reduced-motion concern applies to offset/differential parallax, which
-     this is not. */
-  .cta-parallax-layer[data-pinned] {
-    top: 0;
-    bottom: auto;
-    height: 100vh;
-    will-change: transform;
+      .cta-parallax[data-pin="css"] .cta-parallax-layer {
+        position: fixed;
+      }
+    }
   }
 
   /* --------------------------------------------------------------- header */
