@@ -82,12 +82,10 @@ export function Section({
     >
       {backgroundImage ? (
         <>
-          <Image
-            src={backgroundImage.src}
-            alt={backgroundImage.alt}
-            fill
-            sizes="100vw"
-            className="-z-20 object-cover"
+          <div
+            className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed"
+            style={{ backgroundImage: `url("${backgroundImage.src}")` }}
+            aria-hidden="true"
           />
           <div
             className={`absolute inset-0 z-10 ${PHOTO_SCRIM}`}
@@ -174,13 +172,13 @@ export function OverlayHeader({
       className="relative isolate overflow-hidden"
       style={{ borderColor: "var(--color-line-soft)" }}
     >
-      <Image
-        src={imageSrc}
-        alt={imageAlt}
-        fill
-        priority
-        sizes="100vw"
-        className="-z-20 object-cover"
+      {/* The photo is a background layer so it can be locked to the viewport
+          on desktop. next/image no longer preloads it, so do that here. */}
+      <link rel="preload" as="image" href={imageSrc} fetchPriority="high" />
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed"
+        style={{ backgroundImage: `url("${imageSrc}")` }}
+        aria-hidden="true"
       />
       <div
         className={HERO_IMAGE_OVERLAY}
@@ -239,13 +237,11 @@ export function Hero({
         className="relative isolate overflow-hidden"
         style={{ borderColor: "var(--color-line-soft)" }}
       >
-        <Image
-          src={imageSrc}
-          alt={imageAlt}
-          fill
-          priority
-          sizes="100vw"
-          className="-z-20 object-cover"
+        <link rel="preload" as="image" href={imageSrc} fetchPriority="high" />
+        <div
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed"
+          style={{ backgroundImage: `url("${imageSrc}")` }}
+          aria-hidden="true"
         />
         <div
           className={HERO_IMAGE_OVERLAY}
