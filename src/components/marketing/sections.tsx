@@ -7,6 +7,33 @@ import type { LocationRecord } from "@/content/locations";
 import { site } from "@/lib/env";
 import { SHORT_DISCLOSURE } from "@/lib/seo/disclosure";
 
+/* ------------------------------------------------------------ Photo scrim */
+
+/*
+ * Every band that puts copy over a photograph shares these layers. They were
+ * previously written inline per component as a fully opaque fill, which hid
+ * the photograph completely.
+ *
+ * 70% is not arbitrary: it is the lowest opacity at which the *brightest*
+ * glyph-scale region of every photo in /public still clears WCAG AA (4.5:1)
+ * against the lightest text colour used on these bands. The binding constraint
+ * is the mint eyebrow #5fe3a8, which needs 0.70; muted body #cfdbd5 needs 0.67
+ * and white needs 0.57. Lower this and the eyebrow fails on the bright pours.
+ */
+export const PHOTO_SCRIM = "bg-[#0D1110]/70";
+
+/** Blends the band into the page background at the top and bottom seams. */
+export const PHOTO_EDGE_FADE =
+  "bg-gradient-to-b from-[#0D1110] via-transparent to-[#0D1110]";
+
+/**
+ * Heroes only. Deepens the copy side on desktop and releases to transparent on
+ * the right so the photograph stays visible. Gated to lg because the mobile
+ * hero centres its copy, where a left-weighted wash would do nothing useful.
+ */
+export const PHOTO_SIDE_WASH =
+  "hidden lg:block bg-gradient-to-r from-[#0D1110]/55 via-[#0D1110]/25 to-transparent";
+
 /* ---------------------------------------------------------------- Section */
 
 export function Section({
@@ -62,9 +89,12 @@ export function Section({
             sizes="100vw"
             className="-z-20 object-cover"
           />
-          <div className="absolute inset-0 z-10 bg-[#0D1110]" aria-hidden="true" />
           <div
-            className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-[#0D1110] via-transparent to-[#0D1110]"
+            className={`absolute inset-0 z-10 ${PHOTO_SCRIM}`}
+            aria-hidden="true"
+          />
+          <div
+            className={`pointer-events-none absolute inset-0 z-20 ${PHOTO_EDGE_FADE}`}
             aria-hidden="true"
           />
         </>
@@ -118,24 +148,10 @@ export function SectionDivider() {
 
 /* ------------------------------------------------------------------- Hero */
 
-/*
- * Hero scrim, in three stacked layers over the photo.
- *
- * The base scrim is uniform so the copy stays legible in both hero layouts --
- * centred over the middle of the photo on mobile, left-aligned on desktop.
- * At 60% over #0D1110 even a blown-out highlight in the photo lands around
- * #616161, which still clears 5.9:1 against white body text.
- *
- * The side wash is desktop-only: it deepens the left third behind the copy and
- * releases to fully transparent on the right, so the photograph is actually
- * visible instead of being painted over.
- */
-const HERO_IMAGE_OVERLAY = "absolute inset-0 z-10 bg-[#0D1110]/60";
-const HERO_IMAGE_SIDE_WASH =
-  "pointer-events-none absolute inset-0 z-10 hidden lg:block bg-gradient-to-r from-[#0D1110]/80 via-[#0D1110]/40 to-transparent";
-/* Blends the band into the page background at the seams only. */
-const HERO_IMAGE_FADE =
-  "pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-[#0D1110] via-transparent to-[#0D1110]";
+/* Hero scrim: the shared photo layers, stacked over the full-bleed image. */
+const HERO_IMAGE_OVERLAY = `absolute inset-0 z-10 ${PHOTO_SCRIM}`;
+const HERO_IMAGE_SIDE_WASH = `pointer-events-none absolute inset-0 z-10 ${PHOTO_SIDE_WASH}`;
+const HERO_IMAGE_FADE = `pointer-events-none absolute inset-0 z-20 ${PHOTO_EDGE_FADE}`;
 
 /**
  * Full-bleed photo header: the photo fills the band, a dark scrim keeps the

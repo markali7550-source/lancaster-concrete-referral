@@ -5,6 +5,8 @@ import type { ServiceRecord } from "@/content/services";
 import { site } from "@/lib/env";
 import {
   OverlayHeader,
+  PHOTO_EDGE_FADE,
+  PHOTO_SCRIM,
   overlayBody,
   overlayEyebrow,
   overlayHeading,
@@ -507,15 +509,18 @@ export function CtaBand({
       className="cta-photo relative isolate overflow-hidden py-16 md:py-20"
       style={{
         background: imageSrc
-          ? `url(${imageSrc}) center / cover fixed`
+          ? `url(${imageSrc}) center / cover no-repeat`
           : "linear-gradient(135deg, #07120d 0%, #123d2b 58%, #0b100d 100%)",
       }}
     >
       {imageSrc ? (
         <>
-          <div className="absolute inset-0 z-0 bg-black" aria-hidden="true" />
           <div
-            className="absolute inset-0 z-0 bg-gradient-to-b from-[#0D1110] via-transparent to-[#0D1110]"
+            className={`absolute inset-0 z-0 ${PHOTO_SCRIM}`}
+            aria-hidden="true"
+          />
+          <div
+            className={`absolute inset-0 z-0 ${PHOTO_EDGE_FADE}`}
             aria-hidden="true"
           />
         </>
