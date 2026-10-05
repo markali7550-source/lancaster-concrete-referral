@@ -57,11 +57,11 @@ const DECISION_ITEMS = [
 
 const HOME_SERVICE_IMAGES = {
   "concrete-driveways": {
-    src: "/home-driveway-card.webp",
+    src: "/images/card-driveway.webp",
     alt: "Concrete driveway project with a finished broom texture and residential access",
   },
   "concrete-patios": {
-    src: "/home-patio-card.webp",
+    src: "/images/card-patio.webp",
     alt: "Finished concrete patio with a clean surface in a residential outdoor setting",
   },
   "concrete-slabs": {
@@ -69,7 +69,7 @@ const HOME_SERVICE_IMAGES = {
     alt: "Residential concrete slab prepared for a new project",
   },
   "concrete-repair": {
-    src: "/home-repair-card.webp",
+    src: "/images/card-repair.webp",
     alt: "Concrete repair work showing a repaired residential concrete surface",
   },
 } as const;
@@ -141,7 +141,7 @@ export default function HomePage() {
 
       <Section
         backgroundImage={{
-          src: "/process-band.webp",
+          src: "/images/process-texture-bg.webp",
           alt: "Residential concrete driveway forms and fresh pour on a neighborhood street",
         }}
         eyebrow="Process"

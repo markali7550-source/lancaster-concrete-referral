@@ -19,10 +19,10 @@ import { breadcrumbNode, buildGraph, faqNode, webPageNode } from "@/lib/schema/g
 import { site } from "@/lib/env";
 
 const SERVICE_CARD_IMAGES = {
-  "concrete-driveways": { src: "/home-driveway-card.webp", alt: "Representative residential concrete driveway with a smooth finished surface" },
-  "concrete-patios": { src: "/home-patio-card.webp", alt: "Representative finished residential concrete patio in a landscaped outdoor setting" },
+  "concrete-driveways": { src: "/images/card-driveway.webp", alt: "Representative residential concrete driveway with a smooth finished surface" },
+  "concrete-patios": { src: "/images/card-patio.webp", alt: "Representative finished residential concrete patio in a landscaped outdoor setting" },
   "concrete-slabs": { src: "/images/slab-hero-garage.webp", alt: "Representative newly poured residential concrete slab with clean architectural edges" },
-  "concrete-repair": { src: "/home-repair-card.webp", alt: "Representative repaired concrete surface with smooth resurfacing and natural texture" },
+  "concrete-repair": { src: "/images/card-repair.webp", alt: "Representative repaired concrete surface with smooth resurfacing and natural texture" },
 } as const;
 
 const TITLE = "Concrete Services in Lancaster, SC | Driveways to Repair";
@@ -144,7 +144,7 @@ export default function ServicesPage() {
 
       <Section
         backgroundImage={{
-          src: "/process-band.webp",
+          src: "/images/process-texture-bg.webp",
           alt: "Concrete driveway forms and fresh pour on a residential street",
         }}
         eyebrow="Process"
