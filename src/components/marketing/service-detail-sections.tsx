@@ -162,7 +162,7 @@ export function ServiceCtaBand({
 }) {
   return (
     <section
-      className="cta-photo relative isolate overflow-hidden py-16 md:py-20"
+      className="cta-photo relative isolate h-auto overflow-hidden py-8"
       style={
         imageSrc
           ? undefined
