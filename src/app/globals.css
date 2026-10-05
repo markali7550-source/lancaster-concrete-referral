@@ -152,17 +152,14 @@
   /* The closing CTA band pins its photograph to the viewport, so the image
      holds still while the band scrolls over it. Scoped to this band only --
      heroes and the other photo sections scroll normally with the page.
-     
-     This deliberately does NOT use `background-attachment: fixed`, which fails
-     here for two reasons: iOS Safari does not honour it, and `overflow-x:
-     hidden` on body (see the base layer) changes how the body scrolling box is
-     established, which breaks fixed backgrounds in several engines.
 
-     Instead the photo is a viewport-sized `position: fixed` layer, clipped to
-     the band by `clip-path` on the parent. clip-path clips fixed descendants
-     without becoming a containing block for them, so the layer stays anchored
-     to the viewport while the band scrolls over it. This is the technique that
-     works on iOS. */
+     The pin itself is applied by CtaParallaxLayer.tsx, which sets a
+     `transform` on this layer every frame; that component carries the full
+     explanation of why the pure-CSS techniques (`background-attachment:
+     fixed`, and `position: fixed` clipped by `clip-path`) were all abandoned.
+
+     What the CSS provides is the unpinned fallback below, which is what
+     renders with no JavaScript, on mobile, and before hydration. */
   .cta-parallax-layer {
     position: absolute;
     inset: 0;
@@ -172,39 +169,24 @@
     background-repeat: no-repeat;
   }
 
-  /* Only promote the layer to viewport-fixed on desktop, and only where
-     clip-path is supported.
+  /* Pinned state, switched on by the component once it is running on a
+     desktop-width viewport. The layer becomes a viewport-tall box anchored to
+     the top of the band; the component then translates it by the band's
+     offset so it lands at viewport coordinates 0..100vh on every frame. The
+     band's own `overflow: hidden` crops it back to the band, which works
+     reliably here because a transformed element is still clipped by an
+     ancestor's overflow -- the thing `position: fixed` would have escaped.
 
-     The width gate is deliberate: mobile engines (iOS Safari in particular)
-     are unreliable with viewport-pinned layers once the URL bar collapses and
-     the visual viewport starts resizing mid-scroll, so phones and small
-     tablets get a normal, correctly cropped cover image instead. The gate is
-     on viewport width rather than (hover: none) -- pointer-type detection also
-     catches touch laptops and large tablets, which handle the effect fine.
-
-     The @supports guard matters independently: without clip-path the fixed
-     layer would escape the band and cover the page. */
-  @media (min-width: 64rem) {
-    @supports (clip-path: inset(0)) {
-      .cta-parallax {
-        clip-path: inset(0);
-      }
-
-      .cta-parallax .cta-parallax-layer {
-        position: fixed;
-      }
-    }
-  }
-
-  /* A declared reduced-motion preference opts out of the effect entirely. */
-  @media (prefers-reduced-motion: reduce) {
-    .cta-parallax {
-      clip-path: none;
-    }
-
-    .cta-parallax .cta-parallax-layer {
-      position: absolute;
-    }
+     Note this is NOT gated on `prefers-reduced-motion`. A pinned layer is
+     stationary in the viewport, so it introduces no motion of its own -- it
+     actually moves less than the normal scrolling image it replaces. The
+     reduced-motion concern applies to offset/differential parallax, which
+     this is not. */
+  .cta-parallax-layer[data-pinned] {
+    top: 0;
+    bottom: auto;
+    height: 100vh;
+    will-change: transform;
   }
 
   /* --------------------------------------------------------------- header */

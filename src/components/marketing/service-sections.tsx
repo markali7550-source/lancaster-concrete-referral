@@ -3,6 +3,7 @@ import { DynamicPhone } from "@/components/lead/DynamicPhone";
 import { Icon } from "@/components/ui/Icon";
 import type { ServiceRecord } from "@/content/services";
 import { site } from "@/lib/env";
+import { CtaParallaxLayer } from "@/components/marketing/CtaParallaxLayer";
 import {
   OverlayHeader,
   PHOTO_EDGE_FADE,
@@ -520,7 +521,7 @@ export function CtaBand({
     >
       {imageSrc ? (
         <>
-          <div className="cta-parallax-layer" aria-hidden="true" />
+          <CtaParallaxLayer />
           <div
             className={`absolute inset-0 z-0 ${PHOTO_SCRIM}`}
             aria-hidden="true"

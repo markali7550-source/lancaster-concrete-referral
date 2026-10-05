@@ -7,6 +7,7 @@ import {
   PHOTO_SCRIM,
 } from "@/components/marketing/sections";
 import { SERVICE_PAGE_DISCLOSURE } from "@/lib/seo/disclosure";
+import { CtaParallaxLayer } from "@/components/marketing/CtaParallaxLayer";
 
 /* ------------------------------------------------------- MoreInformation */
 
@@ -178,7 +179,7 @@ export function ServiceCtaBand({
     >
       {imageSrc ? (
         <>
-          <div className="cta-parallax-layer" aria-hidden="true" />
+          <CtaParallaxLayer />
           <div
             className={`absolute inset-0 z-0 ${PHOTO_SCRIM}`}
             aria-hidden="true"
