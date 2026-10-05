@@ -122,7 +122,7 @@ export function SectionDivider() {
 /* ------------------------------------------------------------------- Hero */
 
 const HERO_IMAGE_OVERLAY =
-  "absolute inset-0 -z-10 bg-gradient-to-b from-[#070b09]/85 via-[#070b09]/75 to-[#070b09]/85 lg:bg-gradient-to-r lg:from-[#070b09]/92 lg:via-[#070b09]/78 lg:to-[#070b09]/35";
+  "absolute inset-0 -z-10 bg-gradient-to-b from-[#070b09]/90 via-[#070b09]/76 to-[#070b09]/90";
 
 /**
  * Full-bleed photo header: the photo fills the band, a dark scrim keeps the
