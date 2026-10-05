@@ -172,16 +172,27 @@
     background-repeat: no-repeat;
   }
 
-  /* Only promote the layer to viewport-fixed where clip-path is supported,
-     otherwise it would escape the band and cover the page. Without this the
-     band simply shows a normal, correctly cropped cover image. */
-  @supports (clip-path: inset(0)) {
-    .cta-parallax {
-      clip-path: inset(0);
-    }
+  /* Only promote the layer to viewport-fixed on desktop, and only where
+     clip-path is supported.
 
-    .cta-parallax .cta-parallax-layer {
-      position: fixed;
+     The width gate is deliberate: mobile engines (iOS Safari in particular)
+     are unreliable with viewport-pinned layers once the URL bar collapses and
+     the visual viewport starts resizing mid-scroll, so phones and small
+     tablets get a normal, correctly cropped cover image instead. The gate is
+     on viewport width rather than (hover: none) -- pointer-type detection also
+     catches touch laptops and large tablets, which handle the effect fine.
+
+     The @supports guard matters independently: without clip-path the fixed
+     layer would escape the band and cover the page. */
+  @media (min-width: 64rem) {
+    @supports (clip-path: inset(0)) {
+      .cta-parallax {
+        clip-path: inset(0);
+      }
+
+      .cta-parallax .cta-parallax-layer {
+        position: fixed;
+      }
     }
   }
 
