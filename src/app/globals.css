@@ -151,23 +151,48 @@
 
   /* The closing CTA band pins its photograph to the viewport, so the image
      holds still while the band scrolls over it. Scoped to this band only --
-     heroes and the other photo sections scroll normally with the page. */
-  .cta-parallax {
+     heroes and the other photo sections scroll normally with the page.
+     
+     This deliberately does NOT use `background-attachment: fixed`, which fails
+     here for two reasons: iOS Safari does not honour it, and `overflow-x:
+     hidden` on body (see the base layer) changes how the body scrolling box is
+     established, which breaks fixed backgrounds in several engines.
+
+     Instead the photo is a viewport-sized `position: fixed` layer, clipped to
+     the band by `clip-path` on the parent. clip-path clips fixed descendants
+     without becoming a containing block for them, so the layer stays anchored
+     to the viewport while the band scrolls over it. This is the technique that
+     works on iOS. */
+  .cta-parallax-layer {
+    position: absolute;
+    inset: 0;
     background-image: var(--cta-image);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
   }
 
-  /* Two cases fall back to a normally scrolling image:
-     - Touch browsers. iOS Safari does not honour `fixed` here; it sizes the
-       image to the viewport and then scrolls it anyway, which reads as a
-       badly cropped, jumping background.
-     - A declared reduced-motion preference, since this is a motion effect. */
-  @media (hover: none), (prefers-reduced-motion: reduce) {
+  /* Only promote the layer to viewport-fixed where clip-path is supported,
+     otherwise it would escape the band and cover the page. Without this the
+     band simply shows a normal, correctly cropped cover image. */
+  @supports (clip-path: inset(0)) {
     .cta-parallax {
-      background-attachment: scroll;
+      clip-path: inset(0);
+    }
+
+    .cta-parallax .cta-parallax-layer {
+      position: fixed;
+    }
+  }
+
+  /* A declared reduced-motion preference opts out of the effect entirely. */
+  @media (prefers-reduced-motion: reduce) {
+    .cta-parallax {
+      clip-path: none;
+    }
+
+    .cta-parallax .cta-parallax-layer {
+      position: absolute;
     }
   }
 

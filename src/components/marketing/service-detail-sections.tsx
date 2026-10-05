@@ -178,6 +178,7 @@ export function ServiceCtaBand({
     >
       {imageSrc ? (
         <>
+          <div className="cta-parallax-layer" aria-hidden="true" />
           <div
             className={`absolute inset-0 z-0 ${PHOTO_SCRIM}`}
             aria-hidden="true"
