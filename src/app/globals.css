@@ -502,3 +502,9 @@
     background-position: center center !important;
   }
 }
+
+@media (max-width: 767px) {
+  .cta-photo {
+    padding-block: 2rem !important;
+  }
+}
