@@ -343,7 +343,7 @@ export default async function ServicePage({ params }: { params: Params }) {
           eyebrow="Local pages"
           title={`${service.name} by city`}
           compact
-          backgroundImage={SERVICE_PROCESS_IMAGES[service.slug]}
+          backgroundImage={SERVICE_DETAIL_IMAGES[service.slug]}
         >
           <ul className="flex flex-wrap justify-center gap-3 lg:justify-start">
             {cityLinks.map(({ record, location }) => (
