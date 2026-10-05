@@ -309,8 +309,6 @@ export default async function ServicePage({ params }: { params: Params }) {
         </Section>
       </section>
 
-      <SectionDivider />
-
       <section id="may-include" className="scroll-mt-32">
         <Section
           backgroundImage={SERVICE_DETAIL_IMAGES[service.slug]}
@@ -323,8 +321,6 @@ export default async function ServicePage({ params }: { params: Params }) {
           />
         </Section>
       </section>
-
-      <SectionDivider />
 
       <section id="how-it-works" className="scroll-mt-32">
         <Section
@@ -359,8 +355,6 @@ export default async function ServicePage({ params }: { params: Params }) {
           </ul>
         </Section>
       ) : null}
-
-      <SectionDivider />
 
       <section id="faq" className="scroll-mt-32">
         <Section eyebrow="FAQ" title={`${service.name} questions`}>
