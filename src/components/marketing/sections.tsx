@@ -62,9 +62,9 @@ export function Section({
             sizes="100vw"
             className="-z-20 object-cover"
           />
-          <div className="absolute inset-0 z-10 bg-[#0D1110]/30" aria-hidden="true" />
+          <div className="absolute inset-0 z-10 bg-[#0D1110]/50" aria-hidden="true" />
           <div
-            className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-[#0D1110]/40 via-transparent to-[#0D1110]/40"
+            className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-[#0D1110]/60 via-transparent to-[#0D1110]/60"
             aria-hidden="true"
           />
         </>
@@ -118,9 +118,9 @@ export function SectionDivider() {
 
 /* ------------------------------------------------------------------- Hero */
 
-const HERO_IMAGE_OVERLAY = "absolute inset-0 z-10 bg-[#0D1110]/30";
+const HERO_IMAGE_OVERLAY = "absolute inset-0 z-10 bg-[#0D1110]/50";
 const HERO_IMAGE_FADE =
-  "pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-[#0D1110]/40 via-transparent to-[#0D1110]/40";
+  "pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-[#0D1110]/60 via-transparent to-[#0D1110]/60";
 
 /**
  * Full-bleed photo header: the photo fills the band, a dark scrim keeps the
