@@ -170,36 +170,22 @@
     background-color: #0d1110;
   }
 
-  /* The CTA photograph, as its own layer inside the band.
+  /* The CTA photograph is a layer inside the band, carrying the Tailwind
+     utilities `bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed`.
 
-     On desktop `background-attachment: fixed` locks it to the viewport, so
-     the band scrolls over a stationary photo while the heading, paragraph
-     and buttons (z-30) move normally. The layer is `absolute inset-0` inside
-     a band with `overflow: hidden`, so the viewport-anchored painting is
-     clipped back to the band: it cannot bleed into the sections above or
-     below, and it stops existing the moment the band leaves the screen.
+     Mobile keeps `scroll`: iOS Safari does not honour fixed attachment and
+     approximates it by repainting every frame, which is the jitter that was
+     reported. From 48rem up, `fixed` anchors the photo to the viewport.
 
-     This works here only because body now uses `overflow-x: clip` rather
-     than `hidden`. `hidden` made the body a scrolling box, which is exactly
-     what breaks fixed backgrounds; `clip` suppresses the same horizontal
-     overflow without establishing a scroll container.
+     That anchoring works here only because body uses `overflow-x: clip`
+     rather than `hidden`. `hidden` made the body a scrolling box, which is
+     exactly what breaks fixed backgrounds; `clip` suppresses the same
+     horizontal overflow without establishing a scroll container.
 
-     Mobile deliberately keeps `scroll`. iOS Safari does not honour fixed
-     attachment and approximates it with a jittery repaint on every frame,
-     which is the behaviour that was reported as shaking. Below 64rem the
-     photo is an ordinary, perfectly stable section background. */
-  .cta-bg-layer {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: scroll;
-  }
+     The layer is `absolute inset-0` inside a band with `overflow: hidden`,
+     so the viewport-anchored painting is clipped back to the band and cannot
+     bleed into the sections above or below. */
 
-  @media (min-width: 64rem) {
-    .cta-bg-layer {
-      background-attachment: fixed;
-    }
-  }
 
   /* ------------------------------------------------------------ CTA bands */
 

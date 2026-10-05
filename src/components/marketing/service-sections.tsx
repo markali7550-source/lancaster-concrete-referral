@@ -516,11 +516,14 @@ export function CtaBand({
     >
       {imageSrc ? (
         <>
-          {/* Background layer. Locked to the viewport on desktop by
-              `background-attachment: fixed` (see .cta-bg-layer), so the photo
-              holds still while this band scrolls over it. */}
+          {/* Background layer.
+
+              `bg-scroll md:bg-fixed`: on mobile the photo is an ordinary
+              section background that scrolls with the page. From 48rem up it
+              is locked to the viewport, so the band scrolls over a stationary
+              photo while the content (z-30) moves normally. */}
           <div
-            className="cta-bg-layer absolute inset-0 z-0 bg-cover bg-center"
+            className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed"
             style={{ backgroundImage: `url("${imageSrc}")` }}
             aria-hidden="true"
           />
