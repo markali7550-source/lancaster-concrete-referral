@@ -141,8 +141,8 @@ export default function HomePage() {
 
       <Section
         backgroundImage={{
-          src: "/images/process-texture-bg.webp",
-          alt: "Residential concrete driveway forms and fresh pour on a neighborhood street",
+          src: "/process-band.webp",
+          alt: "Residential concrete driveway forms and a fresh pour on a neighborhood street",
         }}
         eyebrow="Process"
         title="Three steps, no obligation"
