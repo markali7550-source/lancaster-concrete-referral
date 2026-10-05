@@ -65,7 +65,7 @@ const HOME_SERVICE_IMAGES = {
     alt: "Finished concrete patio with a clean surface in a residential outdoor setting",
   },
   "concrete-slabs": {
-    src: "/images/service-slabs.webp",
+    src: "/images/slab-hero-garage.webp",
     alt: "Residential concrete slab prepared for a new project",
   },
   "concrete-repair": {

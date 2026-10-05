@@ -54,7 +54,7 @@ export const services: readonly ServiceRecord[] = [
       "New pours and full replacements, including tear out of failed slabs and the drainage questions that come with Lancaster County clay.",
     heroSummary:
       "Looking for a concrete driveway contractor in Lancaster, SC? We help homeowners connect with independent local service providers who may be able to assist with new pours and full replacements. Submit your project details to request a referral. We are a referral service and do not perform concrete work ourselves. The provider quotes, schedules, and performs the work.",
-    image: "/home-driveway-card.webp",
+    image: "/images/driveway-hero-wide.webp",
     imageAlt:
       "Newly poured residential concrete driveway with saw cut control joints and a broom finish",
     projectTypes: ["New driveway", "Driveway replacement"],
@@ -242,7 +242,7 @@ export const services: readonly ServiceRecord[] = [
       "New patio pours, replacements, and stamped finishes where a participating provider has documented that capability.",
     heroSummary:
       "Looking for a concrete patio contractor in Lancaster, SC? A patio is the one concrete project where finish and layout matter as much as the slab. We help homeowners connect with independent service providers who may be able to assist, and the provider walks the space with you and quotes it directly. Submit your project details to request a referral.",
-    image: "/home-patio-card.webp",
+    image: "/images/patio-hero-wide.webp",
     imageAlt:
       "Rectangular concrete backyard patio with a smooth troweled finish and control joints",
     projectTypes: ["New patio", "Patio replacement", "Stamped patio"],
@@ -423,7 +423,7 @@ export const services: readonly ServiceRecord[] = [
       "Residential slabs and pads for sheds, equipment, vehicles, and outbuildings, nonstructural work only.",
     heroSummary:
       "Looking for a concrete slab contractor in Lancaster, SC? Shed bases, equipment pads, RV and boat parking, and similar flatwork. We connect homeowners with independent service providers who may be able to help. Anything carrying a building load or needing an engineer is declined rather than routed.",
-    image: "/images/service-slabs.webp",
+    image: "/images/slab-hero-garage.webp",
     imageAlt:
       "Finished flat concrete slab pad in a residential backyard with a small storage shed",
     projectTypes: ["Residential slab", "Concrete pad"],
@@ -599,7 +599,7 @@ export const services: readonly ServiceRecord[] = [
       "Nonstructural crack repair, surface repair, and resurfacing. Structural assessment is out of scope.",
     heroSummary:
       "Looking for a concrete repair contractor in Lancaster, SC? We connect homeowners with independent service providers who may be able to help with surface level problems on sound concrete: crazing, spalling, shrinkage cracks, and tired finishes. If it sounds like movement or load failure, we will say so plainly.",
-    image: "/home-repair-card.webp",
+    image: "/images/repair-hero-walkway.webp",
     imageAlt:
       "Residential walkway half weathered and cracked, half freshly resurfaced with smooth concrete",
     projectTypes: ["Crack and surface repair", "Resurfacing"],

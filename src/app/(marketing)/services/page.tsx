@@ -21,7 +21,7 @@ import { site } from "@/lib/env";
 const SERVICE_CARD_IMAGES = {
   "concrete-driveways": { src: "/home-driveway-card.webp", alt: "Representative residential concrete driveway with a smooth finished surface" },
   "concrete-patios": { src: "/home-patio-card.webp", alt: "Representative finished residential concrete patio in a landscaped outdoor setting" },
-  "concrete-slabs": { src: "/images/service-slabs.webp", alt: "Representative newly poured residential concrete slab with clean architectural edges" },
+  "concrete-slabs": { src: "/images/slab-hero-garage.webp", alt: "Representative newly poured residential concrete slab with clean architectural edges" },
   "concrete-repair": { src: "/home-repair-card.webp", alt: "Representative repaired concrete surface with smooth resurfacing and natural texture" },
 } as const;
 

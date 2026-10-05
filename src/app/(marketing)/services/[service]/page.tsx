@@ -65,10 +65,17 @@ function descriptionFor(nameLower: string, projectNoun: string) {
 }
 
 const SERVICE_PAGE_IMAGES: Record<string, { src: string; alt: string }> = {
-  "concrete-driveways": { src: "/home-driveway-card.webp", alt: "Representative residential concrete driveway with a clean broom finish" },
-  "concrete-patios": { src: "/home-patio-card.webp", alt: "Representative backyard concrete patio beside a lawn and mature trees" },
-  "concrete-slabs": { src: "/home-slab-card.webp", alt: "Representative concrete slab prepared beside a residential property" },
-  "concrete-repair": { src: "/home-repair-card.webp", alt: "Representative cracked concrete walkway awaiting a repair assessment" },
+  "concrete-driveways": { src: "/images/driveway-hero-wide.webp", alt: "Representative residential concrete driveway with a clean broom finish" },
+  "concrete-patios": { src: "/images/patio-hero-wide.webp", alt: "Representative backyard concrete patio beside a lawn and mature trees" },
+  "concrete-slabs": { src: "/images/slab-hero-garage.webp", alt: "Representative concrete slab prepared beside a residential property" },
+  "concrete-repair": { src: "/images/repair-hero-walkway.webp", alt: "Representative repaired concrete walkway awaiting a repair assessment" },
+};
+
+const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-driveways": { src: "/images/driveway-pour-joints.webp", alt: "Representative concrete driveway control joints and broom finish" },
+  "concrete-patios": { src: "/images/patio-steps-walkway.webp", alt: "Representative patio walkway transition beside a garden lawn" },
+  "concrete-slabs": { src: "/images/slab-broom-detail.webp", alt: "Representative concrete slab broom finish and clean edge" },
+  "concrete-repair": { src: "/images/repair-surface-finish.webp", alt: "Representative repaired concrete surface finish" },
 };
 
 export async function generateMetadata({
@@ -329,7 +336,7 @@ export default async function ServicePage({ params }: { params: Params }) {
           eyebrow="Local pages"
           title={`${service.name} by city`}
           compact
-          backgroundImage={SERVICE_PAGE_IMAGES[service.slug]}
+          backgroundImage={SERVICE_PROCESS_IMAGES[service.slug]}
         >
           <ul className="flex flex-wrap justify-center gap-3 lg:justify-start">
             {cityLinks.map(({ record, location }) => (
