@@ -67,7 +67,7 @@ export function Section({
             aria-hidden="true"
             style={{
               background:
-                "linear-gradient(90deg, rgba(11,16,13,0.95) 0%, rgba(11,16,13,0.88) 50%, rgba(11,16,13,0.66) 100%)",
+                "linear-gradient(180deg, rgba(11,16,13,0.92) 0%, rgba(11,16,13,0.8) 50%, rgba(11,16,13,0.92) 100%)",
             }}
           />
         </>
