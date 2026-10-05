@@ -118,7 +118,22 @@ export function SectionDivider() {
 
 /* ------------------------------------------------------------------- Hero */
 
-const HERO_IMAGE_OVERLAY = "absolute inset-0 z-10 bg-[#0D1110]";
+/*
+ * Hero scrim, in three stacked layers over the photo.
+ *
+ * The base scrim is uniform so the copy stays legible in both hero layouts --
+ * centred over the middle of the photo on mobile, left-aligned on desktop.
+ * At 60% over #0D1110 even a blown-out highlight in the photo lands around
+ * #616161, which still clears 5.9:1 against white body text.
+ *
+ * The side wash is desktop-only: it deepens the left third behind the copy and
+ * releases to fully transparent on the right, so the photograph is actually
+ * visible instead of being painted over.
+ */
+const HERO_IMAGE_OVERLAY = "absolute inset-0 z-10 bg-[#0D1110]/60";
+const HERO_IMAGE_SIDE_WASH =
+  "pointer-events-none absolute inset-0 z-10 hidden lg:block bg-gradient-to-r from-[#0D1110]/80 via-[#0D1110]/40 to-transparent";
+/* Blends the band into the page background at the seams only. */
 const HERO_IMAGE_FADE =
   "pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-[#0D1110] via-transparent to-[#0D1110]";
 
@@ -155,6 +170,7 @@ export function OverlayHeader({
         className={HERO_IMAGE_OVERLAY}
         aria-hidden="true"
       />
+      <div className={HERO_IMAGE_SIDE_WASH} aria-hidden="true" />
       <div className={HERO_IMAGE_FADE} aria-hidden="true" />
       <div className="container-page relative z-30 flex items-center py-14 md:py-20 lg:py-24">
         <div className="mx-auto w-full max-w-2xl text-center lg:mx-0 lg:text-left">
@@ -219,6 +235,7 @@ export function Hero({
           className={HERO_IMAGE_OVERLAY}
           aria-hidden="true"
         />
+        <div className={HERO_IMAGE_SIDE_WASH} aria-hidden="true" />
         <div className={HERO_IMAGE_FADE} aria-hidden="true" />
         <div
           className={
