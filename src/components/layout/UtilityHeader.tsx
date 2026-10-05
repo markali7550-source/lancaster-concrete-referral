@@ -22,7 +22,12 @@ export function UtilityHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const updateScrollState = () => setIsScrolled(window.scrollY > 20);
+    if (typeof window === "undefined") return;
+
+    const updateScrollState = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
     updateScrollState();
     window.addEventListener("scroll", updateScrollState, { passive: true });
     return () => window.removeEventListener("scroll", updateScrollState);
