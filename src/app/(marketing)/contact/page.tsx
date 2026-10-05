@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { QuoteForm } from "@/components/lead/QuoteForm";
 import { ReferralDisclosureStrip, Section } from "@/components/marketing/sections";
@@ -35,9 +36,12 @@ export default function ContactPage() {
         className="cta-photo relative isolate overflow-hidden border-b"
         style={{ borderColor: "var(--color-line-soft)" }}
       >
-        <div
-          className="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed"
-          style={{ backgroundImage: 'url("/contact-front-walkway.webp")' }}
+        <Image
+          src="/contact-front-walkway.webp"
+          alt=""
+          fill
+          sizes="100vw"
+          className="-z-20 object-cover"
           aria-hidden="true"
         />
         <div
