@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import {
   OverlayHeader,
@@ -78,16 +77,8 @@ export default function LocationsPage() {
             <li key={location.slug}>
               <Link
                 href={`/locations/${location.slug}`}
-                className="card card-interactive flex h-full flex-col overflow-hidden text-center lg:text-left"
+                className="card card-interactive flex h-full flex-col p-6 text-center lg:text-left"
               >
-                <Image
-                  src="/lancaster-hero.webp"
-                  alt="Residential concrete driveway and walkway in Lancaster, South Carolina"
-                  width={1200}
-                  height={675}
-                  className="aspect-[16/9] w-full object-cover"
-                />
-                <div className="flex flex-1 flex-col p-6">
                 <h3 className="text-[17px] font-semibold">
                   Concrete referrals in {location.city}, {location.region}
                 </h3>
@@ -102,7 +93,6 @@ export default function LocationsPage() {
                   View {location.city} referrals
                   <Icon name="arrow" className="card-go h-4 w-4" />
                 </span>
-                </div>
               </Link>
             </li>
           ))}
