@@ -147,6 +147,30 @@
     --color-line: rgba(255, 255, 255, 0.22);
   }
 
+  /* ------------------------------------------------------------ CTA bands */
+
+  /* The closing CTA band pins its photograph to the viewport, so the image
+     holds still while the band scrolls over it. Scoped to this band only --
+     heroes and the other photo sections scroll normally with the page. */
+  .cta-parallax {
+    background-image: var(--cta-image);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  /* Two cases fall back to a normally scrolling image:
+     - Touch browsers. iOS Safari does not honour `fixed` here; it sizes the
+       image to the viewport and then scrolls it anyway, which reads as a
+       badly cropped, jumping background.
+     - A declared reduced-motion preference, since this is a motion effect. */
+  @media (hover: none), (prefers-reduced-motion: reduce) {
+    .cta-parallax {
+      background-attachment: scroll;
+    }
+  }
+
   /* --------------------------------------------------------------- header */
 
   /* The header is a dark translucent bar in BOTH colour schemes -- the same

@@ -506,12 +506,17 @@ export function CtaBand({
 }) {
   return (
     <section
-      className="cta-photo relative isolate overflow-hidden py-16 md:py-20"
-      style={{
-        background: imageSrc
-          ? `url(${imageSrc}) center / cover no-repeat`
-          : "linear-gradient(135deg, #07120d 0%, #123d2b 58%, #0b100d 100%)",
-      }}
+      className={`cta-photo relative isolate overflow-hidden py-16 md:py-20${
+        imageSrc ? " cta-parallax" : ""
+      }`}
+      style={
+        imageSrc
+          ? ({ "--cta-image": `url(${imageSrc})` } as React.CSSProperties)
+          : {
+              background:
+                "linear-gradient(135deg, #07120d 0%, #123d2b 58%, #0b100d 100%)",
+            }
+      }
     >
       {imageSrc ? (
         <>
