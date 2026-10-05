@@ -19,10 +19,10 @@ import { breadcrumbNode, buildGraph, faqNode, webPageNode } from "@/lib/schema/g
 import { site } from "@/lib/env";
 
 const SERVICE_CARD_IMAGES = {
-  "concrete-driveways": { src: "/real-driveway.webp", alt: "Representative residential concrete driveway with a smooth finished surface" },
-  "concrete-patios": { src: "/real-patio.webp", alt: "Representative finished residential concrete patio in a landscaped outdoor setting" },
-  "concrete-slabs": { src: "/real-slab.webp", alt: "Representative newly poured residential concrete slab with clean architectural edges" },
-  "concrete-repair": { src: "/real-repair.webp", alt: "Representative repaired concrete surface with smooth resurfacing and natural texture" },
+  "concrete-driveways": { src: "/images/service-driveways.webp", alt: "Representative residential concrete driveway with a smooth finished surface" },
+  "concrete-patios": { src: "/images/service-patios.webp", alt: "Representative finished residential concrete patio in a landscaped outdoor setting" },
+  "concrete-slabs": { src: "/images/service-slabs.webp", alt: "Representative newly poured residential concrete slab with clean architectural edges" },
+  "concrete-repair": { src: "/images/service-repair.webp", alt: "Representative repaired concrete surface with smooth resurfacing and natural texture" },
 } as const;
 
 const TITLE = "Concrete Services in Lancaster, SC | Driveways to Repair";
