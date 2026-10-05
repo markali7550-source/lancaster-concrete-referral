@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { DynamicPhone } from "@/components/lead/DynamicPhone";
 import { Icon } from "@/components/ui/Icon";
@@ -16,15 +19,28 @@ function Wordmark() {
 }
 
 export function UtilityHeader() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const updateScrollState = () => setIsScrolled(window.scrollY > 20);
+    updateScrollState();
+    window.addEventListener("scroll", updateScrollState, { passive: true });
+    return () => window.removeEventListener("scroll", updateScrollState);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-30">
-      <div
-        className="border-b"
+    <>
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ease-in-out ${
+          isScrolled ? "backdrop-blur-md" : ""
+        }`}
         style={{
-          borderColor: "var(--color-line-soft)",
-          // Fully opaque: a translucent sticky bar lets the content scrolling
-          // beneath it show through, which reads as broken text.
-          backgroundColor: "var(--color-surface)",
+          backgroundColor: isScrolled
+            ? "rgba(13, 17, 16, 0.5)"
+            : "var(--color-surface)",
+          borderBottom: isScrolled
+            ? "1px solid rgba(255,255,255,0.1)"
+            : "1px solid var(--color-line-soft)",
         }}
       >
         <div className="container-page flex h-16 items-center justify-between gap-4">
@@ -121,6 +137,8 @@ export function UtilityHeader() {
           </MobileMenu>
         </div>
       </div>
-    </header>
+      </header>
+      <div className="h-16" aria-hidden="true" />
+    </>
   );
 }
