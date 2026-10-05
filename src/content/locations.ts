@@ -21,6 +21,14 @@ export interface LocationRecord {
   coordinates: { lat: number; lng: number };
   localEvidence: string[];
   intro: string;
+  /**
+   * Single source of truth for this location's photography. The hero on
+   * /locations/[city] and the card on the /locations index both read this
+   * field, so the two can never drift apart.
+   * Unpublished records carry "" like `intro`; they are never rendered.
+   */
+  heroImage: string;
+  heroImageAlt: string;
   adjacent: string[];
 }
 
@@ -47,6 +55,9 @@ export const locations: readonly LocationRecord[] = [
     ],
     intro:
       "Looking for concrete services in Lancaster, SC? We help connect homeowners with independent concrete service providers who may be available for projects in the area. Lancaster is the core market for this referral service, and inquiries are matched against participating providers who have explicitly approved that coverage in writing.",
+    heroImage: "/lancaster-hero.webp",
+    heroImageAlt:
+      "Residential street in Lancaster, South Carolina with concrete driveways in natural daylight",
     adjacent: [],
   },
   {
@@ -59,6 +70,8 @@ export const locations: readonly LocationRecord[] = [
     coordinates: { lat: 0, lng: 0 },
     localEvidence: [],
     intro: "",
+    heroImage: "",
+    heroImageAlt: "",
     adjacent: [],
   },
   {
@@ -71,6 +84,8 @@ export const locations: readonly LocationRecord[] = [
     coordinates: { lat: 0, lng: 0 },
     localEvidence: [],
     intro: "",
+    heroImage: "",
+    heroImageAlt: "",
     adjacent: [],
   },
 ] as const;

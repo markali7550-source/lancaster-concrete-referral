@@ -21,7 +21,7 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-driveways",
     state: "published",
-    localImage: "/images/service-driveways.webp",
+    localImage: "/images/local-driveways-lancaster.webp",
     localImageAlt:
       "Finished concrete driveway on a narrow Lancaster SC lot meeting the street at a poured apron",
     localBody: [
@@ -69,7 +69,7 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-patios",
     state: "published",
-    localImage: "/images/service-patios.webp",
+    localImage: "/images/local-patios-lancaster.webp",
     localImageAlt:
       "Broom finished concrete patio in a shaded Lancaster SC back yard under mature oak and pine trees",
     localBody: [
@@ -116,7 +116,7 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-slabs",
     state: "published",
-    localImage: "/images/service-slabs.webp",
+    localImage: "/images/local-slabs-lancaster.webp",
     localImageAlt:
       "Finished residential concrete slab beside a landscaped yard in Lancaster, South Carolina",
     localBody: [
@@ -163,7 +163,7 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-repair",
     state: "published",
-    localImage: "/images/repair-hero-walkway.webp",
+    localImage: "/images/local-repair-lancaster.webp",
     localImageAlt:
       "Uneven residential concrete walkway needing a repair assessment in Lancaster, South Carolina",
     localBody: [

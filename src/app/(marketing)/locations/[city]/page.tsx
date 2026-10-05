@@ -126,8 +126,8 @@ export default async function LocationPage({ params }: { params: Params }) {
         locationCue={`${location.county}, South Carolina`}
         h1={`Concrete Contractor Referrals in ${location.city}, SC`}
         summary={location.intro}
-        imageSrc="/lancaster-hero.webp"
-        imageAlt={`Tree lined residential street in ${location.city}, ${location.region}, with concrete driveways and a sidewalk running past single family homes`}
+        imageSrc={location.heroImage}
+        imageAlt={location.heroImageAlt}
         overlay
       />
       <KeyFacts
@@ -192,8 +192,8 @@ export default async function LocationPage({ params }: { params: Params }) {
 
       <Section
         backgroundImage={{
-          src: "/process-band.webp",
-          alt: "Residential concrete driveway forms and fresh pour on a neighborhood street",
+          src: "/images/process-location-lancaster.webp",
+          alt: "Residential concrete driveway on a Lancaster neighborhood street",
         }}
         eyebrow="Process"
         title="How a Lancaster request is routed"
@@ -266,8 +266,8 @@ export default async function LocationPage({ params }: { params: Params }) {
       <CtaBand
         title={`Get matched with a ${location.city} concrete contractor`}
         body="One request, one eligible independent contractor, no charge and no obligation."
-        imageSrc="/cta-pour-band.webp"
-        imageAlt="Two independent concrete workers screeding a freshly poured residential driveway slab between timber forms"
+        imageSrc="/images/cta-location-lancaster.webp"
+        imageAlt="Concrete driveway apron meeting the street outside a Lancaster area home"
       />
 
     </>

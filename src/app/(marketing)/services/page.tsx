@@ -144,8 +144,8 @@ export default function ServicesPage() {
 
       <Section
         backgroundImage={{
-          src: "/process-band.webp",
-          alt: "Concrete driveway forms and fresh pour on a residential street",
+          src: "/images/process-services-index.webp",
+          alt: "Freshly screeded residential concrete surface curing between timber forms",
         }}
         eyebrow="Process"
         title="How a request reaches an independent provider"
@@ -177,8 +177,8 @@ export default function ServicesPage() {
         title="Not sure which service fits?"
         body="Describe the project in the quote form and we will route it on the closest match, or call and our referral team will tell you whether we cover it at all."
         showFormLink={false}
-        imageSrc="/cta-pour-band.webp"
-        imageAlt="Two independent concrete workers screeding a freshly poured residential driveway slab between timber forms"
+        imageSrc="/images/cta-services-index.webp"
+        imageAlt="Finished residential concrete driveway sweeping up to a suburban home"
       />
 
     </>

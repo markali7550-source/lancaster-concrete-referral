@@ -64,25 +64,34 @@ function descriptionFor(nameLower: string, projectNoun: string) {
   return `What ${nameLower} referral covers in Lancaster, SC, what falls outside it, and how your ${projectNoun} request reaches an independent service provider.`;
 }
 
-const SERVICE_PAGE_IMAGES: Record<string, { src: string; alt: string }> = {
-  "concrete-driveways": { src: "/images/service-driveways.webp", alt: "Representative residential concrete driveway with a clean broom finish" },
-  "concrete-patios": { src: "/images/service-patios.webp", alt: "Representative backyard concrete patio beside a lawn and mature trees" },
-  "concrete-slabs": { src: "/images/service-slabs.webp", alt: "Representative concrete slab prepared beside a residential property" },
-  "concrete-repair": { src: "/images/repair-hero-walkway.webp", alt: "Representative repaired concrete walkway awaiting a repair assessment" },
-};
-
+/*
+ * Section imagery for the service detail pages.
+ *
+ * The hero and the service card are NOT configured here -- both read
+ * `service.image` from content/services.ts and are deliberately left alone.
+ * Every map below is a secondary section, and each entry owns a file that is
+ * used in exactly one place site-wide.
+ */
 const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-driveways": { src: "/images/driveway-drainage-detail.webp", alt: "Representative driveway edge with drainage pitch and lawn border" },
   "concrete-patios": { src: "/images/patio-stamped-texture.webp", alt: "Representative stamped concrete patio texture" },
   "concrete-slabs": { src: "/images/slab-shed-pad.webp", alt: "Representative residential concrete shed pad" },
-  "concrete-repair": { src: "/images/repair-hero-walkway.webp", alt: "Representative repaired concrete crack detail" },
+  "concrete-repair": { src: "/images/repair-detail-crack.webp", alt: "Representative settled concrete walkway slab with a cracked, lifted edge" },
 };
 
 const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-driveways": { src: "/images/driveway-pour-joints.webp", alt: "Representative concrete driveway control joints and broom finish" },
-  "concrete-patios": { src: "/images/patio-steps-walkway.webp", alt: "Representative patio walkway transition beside a garden lawn" },
-  "concrete-slabs": { src: "/images/slab-broom-detail.webp", alt: "Representative concrete slab broom finish and clean edge" },
-  "concrete-repair": { src: "/images/service-slabs.webp", alt: "Representative residential concrete slab with clean formed edges" },
+  "concrete-patios": { src: "/images/patios-process-walkway.webp", alt: "Representative finished backyard patio with a garden border and seating area" },
+  "concrete-slabs": { src: "/images/slabs-process-pad.webp", alt: "Representative finished residential concrete pad set into a lawn" },
+  "concrete-repair": { src: "/images/repair-process-trowel.webp", alt: "Representative hand trowel finishing a concrete repair patch" },
+};
+
+/** Closing CTA photography, one dedicated file per service page. */
+const SERVICE_CTA_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-driveways": { src: "/images/cta-service-driveways.webp", alt: "Representative wide residential concrete driveway beside a brick home" },
+  "concrete-patios": { src: "/images/cta-service-patios.webp", alt: "Representative stamped concrete patio with outdoor furniture" },
+  "concrete-slabs": { src: "/images/cta-service-slabs.webp", alt: "Representative concrete shed pad in a fenced back garden" },
+  "concrete-repair": { src: "/images/cta-service-repair.webp", alt: "Representative broken concrete edge beside a freshly poured repair section" },
 };
 
 export async function generateMetadata({
@@ -370,8 +379,8 @@ export default async function ServicePage({ params }: { params: Params }) {
 
 
       <ServiceCtaBand
-        imageSrc="/cta-pour-band.webp"
-        imageAlt="Two independent concrete workers screeding a freshly poured residential driveway slab between timber forms"
+        imageSrc={SERVICE_CTA_IMAGES[service.slug]?.src}
+        imageAlt={SERVICE_CTA_IMAGES[service.slug]?.alt}
       />
 
     </>

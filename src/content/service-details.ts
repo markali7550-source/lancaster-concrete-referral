@@ -251,7 +251,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
 
   /* --------------------------------------------------------- repair */
   "concrete-repair": {
-    detailImage: "/images/repair-hero-walkway.webp",
+    detailImage: "/images/repair-scope-surface.webp",
     detailImageAlt:
       "Concrete repair project in Lancaster SC showing a filled and smoothed crack in a slab",
     mayInclude: [

@@ -38,6 +38,25 @@ import {
 
 export const dynamicParams = false;
 
+/*
+ * The four location-service combo pages share one template, so the process and
+ * CTA bands are keyed by service slug to keep every rendered section on its own
+ * dedicated image file rather than repeating a single shared band photo.
+ */
+const COMBO_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-driveways": { src: "/images/process-combo-driveways.webp", alt: "Independent contractor inspecting the formed edge of a new residential driveway slab" },
+  "concrete-patios": { src: "/images/process-combo-patios.webp", alt: "Two workers screeding a freshly poured backyard patio between timber forms" },
+  "concrete-slabs": { src: "/images/process-combo-slabs.webp", alt: "Compacted gravel subbase and reinforcing mesh set inside timber forms before a slab pour" },
+  "concrete-repair": { src: "/images/process-combo-repair.webp", alt: "Worker saw-cutting a cracked section out of an existing concrete driveway" },
+};
+
+const COMBO_CTA_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-driveways": { src: "/images/cta-combo-driveways.webp", alt: "Finished residential concrete driveway running up to an attached garage" },
+  "concrete-patios": { src: "/images/cta-combo-patios.webp", alt: "Backyard concrete patio bordered by lawn and mature planting" },
+  "concrete-slabs": { src: "/images/cta-combo-slabs.webp", alt: "Level concrete slab poured beside a residential property" },
+  "concrete-repair": { src: "/images/cta-combo-repair.webp", alt: "Weathered concrete walkway section prepared for a repair pour" },
+};
+
 export function generateStaticParams() {
   return publishedLocationServices.map((record) => ({
     city: record.locationSlug,
@@ -261,7 +280,7 @@ export default async function ComboPage({ params }: { params: Params }) {
 
       <Section
         tone="surface"
-        backgroundImage={{ src: "/process-band.webp", alt: "Concrete driveway forms and fresh pour on a residential street" }}
+        backgroundImage={COMBO_PROCESS_IMAGES[serviceRecord.slug]}
         eyebrow="Process"
         title="Three steps, no obligation"
       >
@@ -308,8 +327,8 @@ export default async function ComboPage({ params }: { params: Params }) {
         tone="section"
         title={`${serviceRecord.name} in ${location.city}, SC`}
         body="One request, one eligible independent contractor. If nobody approved for your area can take it, we will tell you plainly."
-        imageSrc="/cta-pour-band.webp"
-        imageAlt="Two independent concrete workers screeding a freshly poured residential driveway slab between timber forms"
+        imageSrc={COMBO_CTA_IMAGES[serviceRecord.slug]?.src}
+        imageAlt={COMBO_CTA_IMAGES[serviceRecord.slug]?.alt}
       />
 
     </>
