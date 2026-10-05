@@ -9,7 +9,7 @@ import { SERVICE_PAGE_DISCLOSURE } from "@/lib/seo/disclosure";
 
 /**
  * Narrative explainer. Two columns from lg up so long-form copy does not run
- * the full container width; centred headings on mobile per the brief, with
+ * the full container width; centered headings on mobile per the brief, with
  * body copy left-aligned because it is multi-line prose.
  */
 export function MoreInformation({ blocks }: { blocks: ServiceDetail["moreInfo"] }) {

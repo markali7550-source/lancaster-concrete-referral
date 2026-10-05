@@ -38,7 +38,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         heading: "When to ask for a visit",
         body:
-          "Seasonality matters here too. Requests cluster in late spring and early autumn, which is when provider capacity tightens and acknowledgement times stretch. If your driveway is already failing, an inquiry in the quieter winter weeks usually gets a faster site visit, even though the pour itself may be scheduled for milder weather.",
+          "Seasonality matters here too. Requests cluster in late spring and early fall, which is when provider capacity tightens and acknowledgment times stretch. If your driveway is already failing, an inquiry in the quieter winter weeks usually gets a faster site visit, even though the pour itself may be scheduled for milder weather.",
       },
       {
         heading: "Who actually does the work",
@@ -51,7 +51,7 @@ const records: readonly LocationServiceRecord[] = [
         question:
           "Do Lancaster driveway quotes include removing the old slab?",
         answer:
-          "Demolition and haul away are usually quoted as separate line items. Ask the assigned contractor to itemise removal so you can compare quotes honestly.",
+          "Demolition and haul away are usually quoted as separate line items. Ask the assigned contractor to itemize removal so you can compare quotes honestly.",
       },
       {
         question: "Which Lancaster areas can you match right now?",
@@ -76,12 +76,12 @@ const records: readonly LocationServiceRecord[] = [
       {
         heading: "What most requests look like",
         body:
-          "Patio inquiries in Lancaster are dominated by rear yard slabs behind single storey ranch houses built between the 1960s and the 1990s, and by homeowners converting a tired screened porch footprint into an open entertaining surface.",
+          "Patio inquiries in Lancaster are dominated by rear yard slabs behind single-story ranch houses built between the 1960s and the 1990s, and by homeowners converting a tired screened porch footprint into an open entertaining surface.",
       },
       {
         heading: "Shade decides the finish",
         body:
-          "Shade is the variable homeowners underestimate. Mature oaks and pines keep much of a Lancaster back yard damp into the morning, and a smooth trowelled finish there grows algae and turns slippery within a couple of seasons. Participating providers usually steer these patios toward a broom or exposed aggregate finish for grip.",
+          "Shade is the variable homeowners underestimate. Mature oaks and pines keep much of a Lancaster back yard damp into the morning, and a smooth troweled finish there grows algae and turns slippery within a couple of seasons. Participating providers usually steer these patios toward a broom or exposed aggregate finish for grip.",
       },
       {
         heading: "Humidity and scheduling",
@@ -98,7 +98,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         question: "What patio finish holds up best in a shaded Lancaster back yard?",
         answer:
-          "Textured finishes such as broom or exposed aggregate stay usable in damp shade, where a smooth trowelled surface tends to grow algae and get slippery. The assigned contractor makes the call after seeing the canopy and drainage on your lot.",
+          "Textured finishes such as broom or exposed aggregate stay usable in damp shade, where a smooth troweled surface tends to grow algae and get slippery. The assigned contractor makes the call after seeing the canopy and drainage on your lot.",
       },
       {
         question: "Can a new patio be joined to my existing porch slab?",
@@ -138,7 +138,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         heading: "Heated buildings need more",
         body:
-          "If the building on top will be heated or used as a workshop, expect the contractor to raise a vapour barrier beneath the slab. Lancaster County clay stays wet, and moisture rising through an unprotected pad ruins stored tools and flooring. Ask whether your structure also needs a permit.",
+          "If the building on top will be heated or used as a workshop, expect the contractor to raise a vapor barrier beneath the slab. Lancaster County clay stays wet, and moisture rising through an unprotected pad ruins stored tools and flooring. Ask whether your structure also needs a permit.",
       },
     ],
     localFaqs: [
@@ -153,7 +153,7 @@ const records: readonly LocationServiceRecord[] = [
           "It can, and so can a well head and its setback. Identify both before the site visit so the contractor can position the pad legally rather than redesigning it after the fact.",
       },
       {
-        question: "Do I need a vapour barrier under an outbuilding slab?",
+        question: "Do I need a vapor barrier under an outbuilding slab?",
         answer:
           "For a heated or finished space, participating providers generally recommend one because the clay subsoil here holds moisture. For an open carport it is usually unnecessary. The assigned contractor specifies it, not us.",
       },
@@ -175,12 +175,12 @@ const records: readonly LocationServiceRecord[] = [
       {
         heading: "Settlement is a soil story",
         body:
-          "Settlement here is usually a soil story rather than a concrete one. Red clay shrinks in a dry summer and swells with autumn rain, and stormwater running along an edge washes fines out from under the slab until a void forms. Grinding the lip flush without fixing the water resets the clock.",
+          "Settlement here is usually a soil story rather than a concrete one. Red clay shrinks in a dry summer and swells with fall rain, and stormwater running along an edge washes fines out from under the slab until a void forms. Grinding the lip flush without fixing the water resets the clock.",
       },
       {
         heading: "Tree roots and lifted panels",
         body:
-          "Mature hardwoods cause the opposite problem. Roots from oaks planted close to older in town walkways lift panels from below, and cutting the root to level the slab can destabilise the tree. Participating providers will tell you plainly when that tradeoff is the real decision.",
+          "Mature hardwoods cause the opposite problem. Roots from oaks planted close to older in town walkways lift panels from below, and cutting the root to level the slab can destabilize the tree. Participating providers will tell you plainly when that tradeoff is the real decision.",
       },
       {
         heading: "When replacement wins",
@@ -192,12 +192,12 @@ const records: readonly LocationServiceRecord[] = [
       {
         question: "Why does one section of my driveway keep sinking after it is fixed?",
         answer:
-          "Almost always water. If stormwater is washing fines out from under that section, levelling the surface without redirecting the water means the void reopens. Ask the contractor to explain what is being done about drainage.",
+          "Almost always water. If stormwater is washing fines out from under that section, leveling the surface without redirecting the water means the void reopens. Ask the contractor to explain what is being done about drainage.",
       },
       {
-        question: "Can a lifted slab near a tree be levelled without killing the tree?",
+        question: "Can a lifted slab near a tree be leveled without killing the tree?",
         answer:
-          "Sometimes, but cutting a structural root to level a panel can destabilise a mature oak. That tradeoff is a site specific judgement the assigned contractor will walk you through.",
+          "Sometimes, but cutting a structural root to level a panel can destabilize a mature oak. That tradeoff is a site specific judgment the assigned contractor will walk you through.",
       },
       {
         question: "When is resurfacing a waste of money?",

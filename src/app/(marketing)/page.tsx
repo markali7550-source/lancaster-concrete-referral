@@ -100,7 +100,7 @@ export default function HomePage() {
         h1="Connect With a Local Concrete Service Provider in Lancaster, SC"
         summary="Tell us what you need and where the property is. We’ll match your request with one eligible independent concrete service provider serving your area."
         imageSrc="/home-hero.webp"
-        imageAlt="Broom finished concrete front walkway and entry steps leading to the porch of a two storey home"
+        imageAlt="Broom finished concrete front walkway and entry steps leading to the porch of a two-story home"
         overlay
       />
 

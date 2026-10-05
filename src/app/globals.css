@@ -157,7 +157,7 @@
     --color-ink: #f3f7f4;
     --color-muted: #cfdbd5;
     --color-line: rgba(255, 255, 255, 0.22);
-    /* The base colour is the scrim colour, so the band is already the right
+    /* The base color is the scrim color, so the band is already the right
        shade before the photograph decodes and there is no flash. */
     background-color: #0d1110;
   }
@@ -167,7 +167,7 @@
 
   /* --------------------------------------------------------------- header */
 
-  /* The header is a dark translucent bar in BOTH colour schemes -- the same
+  /* The header is a dark translucent bar in BOTH color schemes -- the same
      convention .footer-band already uses. Without rebinding, light mode puts
      its near-black ink (#0c1310) and its dark-ink wordmark onto that dark bar,
      which leaves the nav and logo all but invisible over a hero photo. The
@@ -195,7 +195,7 @@
   }
 
   /* The dropdown panels are opaque cards sitting below the bar, so they step
-     back out of the dark-bar tokens and follow the page colour scheme again. */
+     back out of the dark-bar tokens and follow the page color scheme again. */
   .header-band .card {
     --color-ink: #0c1310;
     --color-muted: #4d5a54;
@@ -223,8 +223,8 @@
 
   /* --------------------------------------------------------------- footer */
 
-  /* Rebinding the surface tokens inside the footer recolours every utility it
-     already uses, so the band goes dark without touching any markup colours. */
+  /* Rebinding the surface tokens inside the footer recolors every utility it
+     already uses, so the band goes dark without touching any markup colors. */
   .footer-band {
     --color-surface: var(--color-footer-bg);
     --color-raised: var(--color-footer-bg);
@@ -512,7 +512,7 @@
     );
   }
 
-  /* Short centred rule used to separate stacked sections. */
+  /* Short centered rule used to separate stacked sections. */
   .divider-center {
     border: 0;
     height: 2px;
@@ -530,7 +530,7 @@
   }
 
   /* Brand logo: the wordmark ships in a dark-ink and a light-ink variant so
-     it stays legible in both colour schemes. */
+     it stays legible in both color schemes. */
   .logo-dark {
     display: none;
   }

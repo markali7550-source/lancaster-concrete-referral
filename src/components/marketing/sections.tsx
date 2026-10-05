@@ -16,7 +16,7 @@ import { SHORT_DISCLOSURE } from "@/lib/seo/disclosure";
  *
  * 70% is not arbitrary: it is the lowest opacity at which the *brightest*
  * glyph-scale region of every photo in /public still clears WCAG AA (4.5:1)
- * against the lightest text colour used on these bands. The binding constraint
+ * against the lightest text color used on these bands. The binding constraint
  * is the mint eyebrow #5fe3a8, which needs 0.70; muted body #cfdbd5 needs 0.67
  * and white needs 0.57. Lower this and the eyebrow fails on the bright pours.
  */
@@ -29,7 +29,7 @@ export const PHOTO_EDGE_FADE =
 /**
  * Heroes only. Deepens the copy side on desktop and releases to transparent on
  * the right so the photograph stays visible. Gated to lg because the mobile
- * hero centres its copy, where a left-weighted wash would do nothing useful.
+ * hero centers its copy, where a left-weighted wash would do nothing useful.
  */
 export const PHOTO_SIDE_WASH =
   "hidden lg:block bg-gradient-to-r from-[#0D1110]/55 via-[#0D1110]/25 to-transparent";
@@ -137,7 +137,7 @@ export function Section({
 
 /* ---------------------------------------------------------- SectionDivider */
 
-/** Centred hairline that separates two stacked sections. */
+/** Centered hairline that separates two stacked sections. */
 export function SectionDivider() {
   return (
     <div className="container-page" aria-hidden="true">

@@ -289,7 +289,7 @@ export function Timeline({
 }) {
   return (
     /* Two-column grid per row: a fixed marker track and the card. The rail is a
-       single element spanning the whole list, centred on the marker track, so
+       single element spanning the whole list, centered on the marker track, so
        every circle lands on the same axis at every width. */
     <ol className="relative grid gap-5">
       <span

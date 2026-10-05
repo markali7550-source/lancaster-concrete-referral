@@ -58,7 +58,7 @@ export function QuoteForm({
 
   // A "Request a referral" CTA points at #quote-form. The browser scrolls, and
   // this moves keyboard focus to the first control so the jump is usable
-  // without a mouse. Submission behaviour is untouched.
+  // without a mouse. Submission behavior is untouched.
   useEffect(() => {
     function focusFirstField() {
       if (window.location.hash !== "#quote-form") return;

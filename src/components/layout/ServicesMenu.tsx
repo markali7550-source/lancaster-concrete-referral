@@ -13,7 +13,7 @@ export interface ServicesMenuItem {
 
 /**
  * A native <details> stayed open forever here: client-side navigation does not
- * reset it, and it has no Escape or outside-click behaviour. This closes on
+ * reset it, and it has no Escape or outside-click behavior. This closes on
  * route change, Escape, and any pointer press outside the menu.
  */
 export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {

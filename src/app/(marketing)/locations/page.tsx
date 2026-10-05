@@ -83,7 +83,7 @@ export default function LocationsPage() {
                 {/*
                   Same file as the hero on /locations/[city] (location.heroImage),
                   so the card and the detail page can never show different photos.
-                  Rendered unscrimmed in its natural daylight colour.
+                  Rendered unscrimmed in its natural daylight color.
                 */}
                 <Image
                   src={location.heroImage}

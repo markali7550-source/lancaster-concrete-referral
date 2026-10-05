@@ -17,7 +17,7 @@ export interface ServiceDetail {
   /** Narrative explainer blocks, rendered in reading order. */
   /**
    * `body[0]` sits under the card heading. `subheading` titles the second
-   * paragraph so each card scans as two labelled points.
+   * paragraph so each card scans as two labeled points.
    */
   moreInfo: { heading: string; subheading: string; body: string[] }[];
 }
@@ -206,7 +206,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         subheading: "Detailing and permitting",
         body: [
           "The intended load should drive thickness and reinforcement, and the subbase needs proper compaction, since most slab problems begin below the concrete.",
-          "Edge thickening, vapour control under enclosed spaces, anchor placement, and perimeter drainage are worth settling early. Some slab work may be subject to permitting, which should be confirmed locally.",
+          "Edge thickening, vapor control under enclosed spaces, anchor placement, and perimeter drainage are worth settling early. Some slab work may be subject to permitting, which should be confirmed locally.",
         ],
       },
       {
@@ -260,7 +260,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         heading: "Common reasons homeowners request it",
         subheading: "Safety as the trigger",
         body: [
-          "Frequent reasons include a widening crack across a driveway or patio, a surface that is flaking or pitting, or a section that has dropped relative to its neighbour.",
+          "Frequent reasons include a widening crack across a driveway or patio, a surface that is flaking or pitting, or a section that has dropped relative to its neighbor.",
           "Standing water over a settled area and broken edges are common too. Safety is often the trigger, particularly where an uneven joint sits on a walking route.",
         ],
       },

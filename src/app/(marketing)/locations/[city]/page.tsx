@@ -93,7 +93,7 @@ export default async function LocationPage({ params }: { params: Params }) {
     {
       question: `How quickly does a ${location.city} contractor respond?`,
       answer:
-        "Participating providers work to a contracted acknowledgement window. If the assigned contractor does not acknowledge in time, the request is reassigned once to an approved backup rather than sitting unattended.",
+        "Participating providers work to a contracted acknowledgment window. If the assigned contractor does not acknowledge in time, the request is reassigned once to an approved backup rather than sitting unattended.",
     },
     {
       question: `Is there a ${location.city} office I can visit?`,
@@ -154,7 +154,7 @@ export default async function LocationPage({ params }: { params: Params }) {
       >
         <Image
           src="/locations/lancaster-residential-street.webp"
-          alt={`Single storey brick homes with concrete driveways and front walkways on a residential street in ${location.city}, ${location.region}`}
+          alt={`Single-story brick homes with concrete driveways and front walkways on a residential street in ${location.city}, ${location.region}`}
           width={900}
           height={491}
           sizes="(min-width: 1024px) 80rem, 100vw"

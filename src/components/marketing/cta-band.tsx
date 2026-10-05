@@ -16,7 +16,7 @@ import { site } from "@/lib/env";
  *   z-20  top/bottom fade       pointer-events-none
  *   z-30  heading and buttons   scrolls normally over the rest
  *
- * The photograph scrolls on phones on purpose. iOS Safari does not honour a
+ * The photograph scrolls on phones on purpose. iOS Safari does not honor a
  * viewport-locked background and approximates it by repainting every frame,
  * which is exactly the juddering that was reported. Below 48rem it is an
  * ordinary section background and cannot move relative to the band.
@@ -25,7 +25,7 @@ import { site } from "@/lib/env";
  * than `hidden`; `hidden` turns body into a scrolling box, which breaks
  * viewport-locked backgrounds. The layer is `absolute inset-0` inside a band
  * with `overflow: hidden`, so the painting is clipped back to the band and
- * cannot bleed into neighbouring sections.
+ * cannot bleed into neighboring sections.
  */
 const CTA_BACKGROUND_LAYER =
   "absolute inset-0 bg-cover bg-center bg-no-repeat z-0 bg-scroll md:bg-fixed";
