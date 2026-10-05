@@ -117,7 +117,7 @@ export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {
       </div>
       {open ? (
         <div
-          className="card absolute left-0 top-12 w-80 p-2"
+          className="card absolute left-0 top-[calc(100%+0.5rem)] z-[110] w-80 p-2"
           style={{ boxShadow: "var(--shadow-raised)" }}
         >
           {items.map((service) => (
