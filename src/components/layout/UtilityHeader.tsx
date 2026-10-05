@@ -114,7 +114,6 @@ export function UtilityHeader() {
             </div>
           </MobileMenu>
         </div>
-      </div>
     </header>
   );
 }
