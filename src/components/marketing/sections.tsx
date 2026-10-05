@@ -62,17 +62,14 @@ export function Section({
             sizes="100vw"
             className="-z-20 object-cover"
           />
+          <div className="absolute inset-0 z-10 bg-[#0D1110]/80" aria-hidden="true" />
           <div
-            className="absolute inset-0 -z-10"
+            className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-[#0D1110] via-transparent to-[#0D1110]"
             aria-hidden="true"
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(11,16,13,0.52) 0%, rgba(11,16,13,0.46) 50%, rgba(11,16,13,0.38) 100%)",
-            }}
           />
         </>
       ) : null}
-      <div className="container-page">
+      <div className="container-page relative z-30">
         {eyebrow || title || lead ? (
           <div
             className={
@@ -121,8 +118,9 @@ export function SectionDivider() {
 
 /* ------------------------------------------------------------------- Hero */
 
-const HERO_IMAGE_OVERLAY =
-  "absolute inset-0 -z-10 bg-gradient-to-b from-[#070b09]/85 via-[#070b09]/75 to-[#070b09]/85 lg:bg-gradient-to-r lg:from-[#070b09]/92 lg:via-[#070b09]/78 lg:to-[#070b09]/35";
+const HERO_IMAGE_OVERLAY = "absolute inset-0 z-10 bg-[#0D1110]/80";
+const HERO_IMAGE_FADE =
+  "pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-[#0D1110] via-transparent to-[#0D1110]";
 
 /**
  * Full-bleed photo header: the photo fills the band, a dark scrim keeps the
@@ -142,7 +140,7 @@ export function OverlayHeader({
 }) {
   return (
     <section
-      className="relative isolate overflow-hidden border-b"
+      className="relative isolate overflow-hidden"
       style={{ borderColor: "var(--color-line-soft)" }}
     >
       <Image
@@ -157,7 +155,8 @@ export function OverlayHeader({
         className={HERO_IMAGE_OVERLAY}
         aria-hidden="true"
       />
-      <div className="container-page flex items-center py-14 md:py-20 lg:py-24">
+      <div className={HERO_IMAGE_FADE} aria-hidden="true" />
+      <div className="container-page relative z-30 flex items-center py-14 md:py-20 lg:py-24">
         <div className="mx-auto w-full max-w-2xl text-center lg:mx-0 lg:text-left">
           {breadcrumbs}
           {children}
@@ -205,7 +204,7 @@ export function Hero({
   if (overlay) {
     return (
       <section
-        className="relative isolate overflow-hidden border-b"
+        className="relative isolate overflow-hidden"
         style={{ borderColor: "var(--color-line-soft)" }}
       >
         <Image
