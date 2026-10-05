@@ -74,8 +74,8 @@ function descriptionFor(nameLower: string, projectNoun: string) {
  */
 const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-driveways": { src: "/images/driveway-drainage-detail.webp", alt: "Representative driveway edge with drainage pitch and lawn border" },
-  "concrete-patios": { src: "/images/patio-stamped-texture.webp", alt: "Representative stamped concrete patio texture" },
-  "concrete-slabs": { src: "/images/slab-shed-pad.webp", alt: "Representative residential concrete shed pad" },
+  "concrete-patios": { src: "/images/patio-backyard-slab.webp", alt: "Representative plain concrete patio slab at the rear of a single storey brick home" },
+  "concrete-slabs": { src: "/images/slab-formwork-pad.webp", alt: "Representative concrete pad still sitting inside its timber forms on an open lot" },
   "concrete-repair": { src: "/images/repair-detail-crack.webp", alt: "Representative settled concrete walkway slab with a cracked, lifted edge" },
 };
 

@@ -27,18 +27,25 @@ import { publishedLocationServices } from "@/content/location-services";
 import { site } from "@/lib/env";
 import { pageMetadata } from "@/lib/seo/metadata";
 
-const LOCATION_SERVICE_CARD_IMAGES = {
-  "concrete-driveways": { src: "/images/service-driveways.webp", alt: "Residential concrete driveway with a finished smooth surface" },
-  "concrete-patios": { src: "/images/service-patios.webp", alt: "Finished residential concrete patio beside landscaped yard" },
-  "concrete-slabs": { src: "/images/service-slabs.webp", alt: "Residential concrete slab with clean formed edges" },
-  "concrete-repair": { src: "/images/repair-hero-walkway.webp", alt: "Repaired residential concrete surface with a smooth finish" },
-} as const;
 import {
   breadcrumbNode,
   buildGraph,
   faqNode,
   webPageNode,
 } from "@/lib/schema/graph";
+
+/*
+ * These cards link to the local service pages, so each one must show that
+ * page's own hero photograph -- not the national service image, which belongs
+ * to /services/[service]. Derived from the same records the local heroes read
+ * (localImage), so the card and the page it opens cannot drift apart.
+ */
+const LOCATION_SERVICE_CARD_IMAGES = Object.fromEntries(
+  publishedLocationServices.map((record) => [
+    record.serviceSlug,
+    { src: record.localImage, alt: record.localImageAlt },
+  ]),
+);
 
 export const dynamicParams = false;
 

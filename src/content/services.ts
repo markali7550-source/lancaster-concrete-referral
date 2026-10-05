@@ -765,3 +765,19 @@ export const publishedServices = services.filter((s) => s.state === "published")
 export function getService(slug: string): ServiceRecord | undefined {
   return publishedServices.find((s) => s.slug === slug);
 }
+
+/**
+ * Card imagery for the service grid on / and /services.
+ *
+ * Both of those grids link to /services/[service], whose hero renders
+ * `service.image`. Deriving the cards from the same field means a card can
+ * never show a different photograph from the page it opens, and the one photo
+ * keeps one accurate alt string instead of a hand-copied variant per page.
+ */
+export const serviceCardImages: Record<string, { src: string; alt: string }> =
+  Object.fromEntries(
+    publishedServices.map((service) => [
+      service.slug,
+      { src: service.image, alt: service.imageAlt },
+    ]),
+  );

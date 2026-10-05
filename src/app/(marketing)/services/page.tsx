@@ -13,17 +13,12 @@ import {
   SectionDivider,
 } from "@/components/marketing/sections";
 import { Breadcrumbs, CtaBand } from "@/components/marketing/service-sections";
-import { publishedServices } from "@/content/services";
+import { publishedServices, serviceCardImages } from "@/content/services";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { breadcrumbNode, buildGraph, faqNode, webPageNode } from "@/lib/schema/graph";
 import { site } from "@/lib/env";
 
-const SERVICE_CARD_IMAGES = {
-  "concrete-driveways": { src: "/images/service-driveways.webp", alt: "Representative residential concrete driveway with a smooth finished surface" },
-  "concrete-patios": { src: "/images/service-patios.webp", alt: "Representative finished residential concrete patio in a landscaped outdoor setting" },
-  "concrete-slabs": { src: "/images/service-slabs.webp", alt: "Representative newly poured residential concrete slab with clean architectural edges" },
-  "concrete-repair": { src: "/images/repair-hero-walkway.webp", alt: "Representative repaired concrete surface with smooth resurfacing and natural texture" },
-} as const;
+
 
 const TITLE = "Concrete Services in Lancaster, SC | Driveways to Repair";
 const DESCRIPTION =
@@ -102,7 +97,7 @@ export default function ServicesPage() {
       <ReferralDisclosureStrip />
 
       <Section eyebrow="Choose a service" title="What we can route today">
-        <ProjectTypeChooser images={SERVICE_CARD_IMAGES} />
+        <ProjectTypeChooser images={serviceCardImages} />
       </Section>
 
       <Section tone="soft" eyebrow="Compare" title="Scope at a glance">
@@ -145,7 +140,7 @@ export default function ServicesPage() {
       <Section
         backgroundImage={{
           src: "/images/process-services-index.webp",
-          alt: "Freshly screeded residential concrete surface curing between timber forms",
+          alt: "Independent contractor noting measurements on a clipboard beside a residential concrete driveway",
         }}
         eyebrow="Process"
         title="How a request reaches an independent provider"

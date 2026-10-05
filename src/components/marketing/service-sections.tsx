@@ -512,7 +512,7 @@ export function CtaBand({
       }`}
       style={
         imageSrc
-          ? ({ "--cta-image": `url(${imageSrc})` } as React.CSSProperties)
+          ? undefined
           : {
               background:
                 "linear-gradient(135deg, #07120d 0%, #123d2b 58%, #0b100d 100%)",
@@ -521,7 +521,7 @@ export function CtaBand({
     >
       {imageSrc ? (
         <>
-          <CtaParallaxLayer />
+          <CtaParallaxLayer src={imageSrc} alt={imageAlt ?? ""} />
           <div
             className={`absolute inset-0 z-0 ${PHOTO_SCRIM}`}
             aria-hidden="true"

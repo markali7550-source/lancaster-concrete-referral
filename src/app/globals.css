@@ -163,10 +163,7 @@
   .cta-parallax-layer {
     position: absolute;
     inset: 0;
-    background-image: var(--cta-image);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    overflow: hidden;
   }
 
   /* Pinned state, switched on by the component once it is running on a

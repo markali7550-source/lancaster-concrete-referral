@@ -12,10 +12,6 @@ import type { ServiceSlug } from "@/content/services";
  *   participating providers differ in what they take on.
  */
 export interface ServiceDetail {
-  /** Supporting photo shown beside the scope list. Distinct from the hero image. */
-  detailImage: string;
-  /** Descriptive alt text for the supporting photo. */
-  detailImageAlt: string;
   /** Common project components. Rendered under an explicit "may include" caveat. */
   mayInclude: string[];
   /** Narrative explainer blocks, rendered in reading order. */
@@ -29,9 +25,6 @@ export interface ServiceDetail {
 export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
   /* ------------------------------------------------------ driveways */
   "concrete-driveways": {
-    detailImage: "/images/driveway-hero-wide.webp",
-    detailImageAlt:
-      "Residential concrete driveway in Lancaster SC with jointed panels and a broom finish",
     mayInclude: [
       "New driveway installation",
       "Driveway replacement",
@@ -103,9 +96,6 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
 
   /* --------------------------------------------------------- patios */
   "concrete-patios": {
-    detailImage: "/images/patio-hero-wide.webp",
-    detailImageAlt:
-      "Residential concrete patio in Lancaster SC with outdoor dining furniture",
     mayInclude: [
       "New patio installation",
       "Patio replacement",
@@ -177,9 +167,6 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
 
   /* ---------------------------------------------------------- slabs */
   "concrete-slabs": {
-    detailImage: "/images/slab-hero-garage.webp",
-    detailImageAlt:
-      "Finished residential concrete slab and equipment pad in Lancaster SC beside a brick home, with an HVAC condenser on the pad",
     mayInclude: [
       "Residential slabs",
       "Garage slabs",
@@ -251,9 +238,6 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
 
   /* --------------------------------------------------------- repair */
   "concrete-repair": {
-    detailImage: "/images/repair-scope-surface.webp",
-    detailImageAlt:
-      "Concrete repair project in Lancaster SC showing a filled and smoothed crack in a slab",
     mayInclude: [
       "Cracks",
       "Surface deterioration",
