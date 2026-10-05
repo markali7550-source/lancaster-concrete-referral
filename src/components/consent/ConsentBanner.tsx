@@ -43,10 +43,16 @@ export function ConsentBanner() {
       return;
     }
     const mobile = window.matchMedia("(max-width: 767px)");
+    // Write only on an actual change. Setting body padding alters the
+    // document height, which can resize the banner and refire the observer:
+    // a feedback loop that thrashes layout while the page is being scrolled
+    // on mobile, where the collapsing URL bar resizes the viewport anyway.
+    let applied = "";
     const apply = () => {
-      document.body.style.paddingBottom = mobile.matches
-        ? `${node.offsetHeight}px`
-        : "";
+      const next = mobile.matches ? `${node.offsetHeight}px` : "";
+      if (next === applied) return;
+      applied = next;
+      document.body.style.paddingBottom = next;
     };
     apply();
     const observer = new ResizeObserver(apply);

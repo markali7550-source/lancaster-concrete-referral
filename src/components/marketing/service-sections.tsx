@@ -5,8 +5,6 @@ import type { ServiceRecord } from "@/content/services";
 import { site } from "@/lib/env";
 import {
   OverlayHeader,
-  PHOTO_EDGE_FADE,
-  PHOTO_SCRIM,
   overlayBody,
   overlayEyebrow,
   overlayHeading,
@@ -506,10 +504,10 @@ export function CtaBand({
 }) {
   return (
     <section
-      className="cta-photo relative isolate overflow-hidden py-16 md:py-20"
+      className="cta-photo relative isolate flex min-h-[400px] w-full items-center overflow-hidden py-16 md:py-20 lg:min-h-[500px]"
       style={
         imageSrc
-          ? { backgroundImage: `url("${imageSrc}")` }
+          ? undefined
           : {
               background:
                 "linear-gradient(135deg, #07120d 0%, #123d2b 58%, #0b100d 100%)",
@@ -518,18 +516,28 @@ export function CtaBand({
     >
       {imageSrc ? (
         <>
+          {/* Background layer. Locked to the viewport on desktop by
+              `background-attachment: fixed` (see .cta-bg-layer), so the photo
+              holds still while this band scrolls over it. */}
           <div
-            className={`absolute inset-0 z-0 ${PHOTO_SCRIM}`}
+            className="cta-bg-layer absolute inset-0 z-0 bg-cover bg-center"
+            style={{ backgroundImage: `url("${imageSrc}")` }}
             aria-hidden="true"
           />
+          {/* Dark overlay. */}
+          <div className="absolute inset-0 z-10 bg-[#0D1110]/50" aria-hidden="true" />
+          {/* Top/bottom fade. The mid stop is 40% rather than fully
+              transparent: 50% alone measures 2.63:1 on the body copy over
+              these photographs, and 50% under 40% composites to an effective
+              70%, which is the 4.5:1 AA floor. Still no hard edges. */}
           <div
-            className={`absolute inset-0 z-0 ${PHOTO_EDGE_FADE}`}
+            className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-[#0D1110] via-[#0D1110]/40 to-[#0D1110]"
             aria-hidden="true"
           />
         </>
       ) : null}
 
-      <div className="container-page relative z-10 flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
+      <div className="container-page relative z-30 flex w-full flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
         <div className="max-w-xl">
           <h2 className="text-xl font-semibold md:text-2xl">{title}</h2>
           <p className="mt-2 text-[15px] leading-relaxed text-[color:var(--color-muted)]">

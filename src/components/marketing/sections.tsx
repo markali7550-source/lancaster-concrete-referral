@@ -257,7 +257,7 @@ export function Hero({
           className={
             aside
               ? "container-page relative z-30 grid items-center gap-10 py-14 lg:grid-cols-[1.05fr_minmax(0,26rem)] lg:gap-14 lg:py-20"
-              : "container-page relative z-30 flex min-h-[calc(100dvh-6.25rem)] items-center py-14 lg:py-20"
+              : "container-page relative z-30 flex min-h-[calc(100svh-6.25rem)] items-center py-14 lg:py-20"
           }
         >
           <div className="mx-auto w-full max-w-2xl text-center lg:mx-0 lg:text-left">
