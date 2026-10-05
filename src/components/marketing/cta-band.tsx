@@ -58,7 +58,7 @@ export function CtaBand({
 
   return (
     <section
-      className="cta-photo relative isolate my-[10px] h-auto overflow-hidden py-[36px]"
+      className="cta-photo relative isolate my-[40px] h-auto overflow-hidden py-[36px]"
       style={
         imageSrc
           ? undefined
