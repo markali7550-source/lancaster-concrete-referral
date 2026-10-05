@@ -71,6 +71,13 @@ const SERVICE_PAGE_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-repair": { src: "/images/repair-hero-walkway.webp", alt: "Representative repaired concrete walkway awaiting a repair assessment" },
 };
 
+const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-driveways": { src: "/images/driveway-drainage-detail.webp", alt: "Representative driveway edge with drainage pitch and lawn border" },
+  "concrete-patios": { src: "/images/patio-stamped-texture.webp", alt: "Representative stamped concrete patio texture" },
+  "concrete-slabs": { src: "/images/slab-shed-pad.webp", alt: "Representative residential concrete shed pad" },
+  "concrete-repair": { src: "/images/repair-crack-detail.webp", alt: "Representative repaired concrete crack detail" },
+};
+
 const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-driveways": { src: "/images/driveway-pour-joints.webp", alt: "Representative concrete driveway control joints and broom finish" },
   "concrete-patios": { src: "/images/patio-steps-walkway.webp", alt: "Representative patio walkway transition beside a garden lawn" },
@@ -306,7 +313,7 @@ export default async function ServicePage({ params }: { params: Params }) {
 
       <section id="may-include" className="scroll-mt-32">
         <Section
-          backgroundImage={SERVICE_PAGE_IMAGES[service.slug]}
+          backgroundImage={SERVICE_DETAIL_IMAGES[service.slug]}
           eyebrow="Include"
           title={`What ${projectPhrase} project may include`}
         >
