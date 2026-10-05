@@ -157,58 +157,13 @@
     --color-ink: #f3f7f4;
     --color-muted: #cfdbd5;
     --color-line: rgba(255, 255, 255, 0.22);
-    /* A plain, static section background. `scroll` is the initial value of
-       background-attachment and is stated explicitly so nobody reintroduces
-       `fixed` here: that is what made the photo detach from the band and
-       judder in the first place. There is no transform, transition,
-       animation or JS touching this, so the image is painted with the
-       section and the compositor moves the two together -- it cannot shake
-       or drift relative to the band.
-
-       The base colour is the scrim colour, so the section is already the
-       right shade before the image decodes and there is no flash. */
+    /* The base colour is the scrim colour, so the band is already the right
+       shade before the photograph decodes and there is no flash. */
     background-color: #0d1110;
   }
 
-  /* The CTA photograph is a layer inside the band, carrying the Tailwind
-     utilities `bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed`.
-
-     Mobile keeps `scroll`: iOS Safari does not honour fixed attachment and
-     approximates it by repainting every frame, which is the jitter that was
-     reported. From 48rem up, `fixed` anchors the photo to the viewport.
-
-     That anchoring works here only because body uses `overflow-x: clip`
-     rather than `hidden`. `hidden` made the body a scrolling box, which is
-     exactly what breaks fixed backgrounds; `clip` suppresses the same
-     horizontal overflow without establishing a scroll container.
-
-     The layer is `absolute inset-0` inside a band with `overflow: hidden`,
-     so the viewport-anchored painting is clipped back to the band and cannot
-     bleed into the sections above or below. */
-
-
-  /* ------------------------------------------------------------ CTA bands */
-
-  /* The CTA photograph is an ordinary, statically positioned image that
-     scrolls with its section like any other content.
-
-     There is deliberately no pinning here any more. Both ways of holding the
-     photo still against the viewport caused visible problems in this layout:
-     `position: fixed` (clipped to the band) and a JS-driven transform both
-     shook while scrolling, because anything that has to be re-placed as the
-     page moves is either fighting the compositor or lagging a frame behind
-     it. `background-attachment: fixed` is not an option either -- iOS Safari
-     ignores it, and `overflow-x: hidden` on body breaks it elsewhere.
-
-     A static image cannot jitter: it is painted once as part of the section
-     and the compositor moves it with everything else. No scroll listeners, no
-     transforms, no animation, no per-frame work, on any viewport size.
-
-     The photo is rendered by next/image with `fill` + `object-cover`, which is
-     the same stable "cover, centred, no-repeat" result as a CSS background
-     but additionally gives a srcset, so a 320px phone is not sent a
-     desktop-width asset. It is absolutely positioned, so it is outside normal
-     flow and cannot shift the layout. */
+  /* The CTA photograph itself is a layer rendered by the CtaBand component;
+     see src/components/marketing/cta-band.tsx for how it is painted. */
 
   /* --------------------------------------------------------------- header */
 

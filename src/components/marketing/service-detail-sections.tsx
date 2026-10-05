@@ -1,7 +1,6 @@
-import { DynamicPhone } from "@/components/lead/DynamicPhone";
 import { Icon } from "@/components/ui/Icon";
+import { CtaBand } from "@/components/marketing/cta-band";
 import type { ServiceDetail } from "@/content/service-details";
-import { site } from "@/lib/env";
 import {
 } from "@/components/marketing/sections";
 import { SERVICE_PAGE_DISCLOSURE } from "@/lib/seo/disclosure";
@@ -161,66 +160,13 @@ export function ServiceCtaBand({
   imageAlt?: string;
 }) {
   return (
-    <section
-      className="cta-photo relative isolate h-auto overflow-hidden py-4"
-      style={
-        imageSrc
-          ? undefined
-          : {
-              background:
-                "linear-gradient(135deg, #07120d 0%, #123d2b 58%, #0b100d 100%)",
-            }
-      }
-    >
-      {imageSrc ? (
-        <>
-          {/* Background layer.
-
-              `bg-scroll md:bg-fixed`: on mobile the photo is an ordinary
-              section background that scrolls with the page. From 48rem up it
-              is locked to the viewport, so the band scrolls over a stationary
-              photo while the content (z-30) moves normally. */}
-          <div
-            className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed"
-            style={{ backgroundImage: `url("${imageSrc}")` }}
-            aria-hidden="true"
-          />
-          {/* Dark overlay. */}
-          <div className="absolute inset-0 z-10 bg-[#0D1110]/50" aria-hidden="true" />
-          {/* Top/bottom fade. The mid stop is 40% rather than fully
-              transparent: 50% alone measures 2.63:1 on the body copy over
-              these photographs, and 50% under 40% composites to an effective
-              70%, which is the 4.5:1 AA floor. Still no hard edges. */}
-          <div
-            className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-[#0D1110] via-[#0D1110]/40 to-[#0D1110]"
-            aria-hidden="true"
-          />
-        </>
-      ) : null}
-
-      <div className="container-page relative z-30 flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
-        <div className="max-w-xl">
-          <h2 className="text-xl font-semibold md:text-2xl">
-            Need Help With Your Concrete Project?
-          </h2>
-          <p className="mt-2 text-[15px] leading-relaxed text-[color:var(--color-muted)]">
-            Tell us about your project and location to request a connection with
-            an independent concrete service provider serving your area.
-          </p>
-        </div>
-        <div className="grid w-full max-w-sm shrink-0 gap-3 md:w-auto md:max-w-none md:grid-cols-2">
-          <DynamicPhone
-            fallbackDisplay={site.phoneDisplay}
-            fallbackE164={site.phoneE164}
-            placement="cta_band"
-            className="btn btn-primary"
-          />
-          <a href="#quote-form" className="btn btn-secondary">
-            Request a Referral
-            <Icon name="arrow" />
-          </a>
-        </div>
-      </div>
-    </section>
+    <CtaBand
+      title="Need Help With Your Concrete Project?"
+      body="Tell us about your project and location to request a connection with an independent concrete service provider serving your area."
+      imageSrc={imageSrc}
+      imageAlt={imageAlt}
+      actionLabel="Request a Referral"
+      actionIcon
+    />
   );
 }
