@@ -163,9 +163,9 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-repair",
     state: "published",
-    localImage: "/images/service-repair.webp",
+    localImage: "/images/repair-hero-walkway.webp",
     localImageAlt:
-      "Concrete walkway panel in Lancaster SC lifted out of level beside a mature tree root",
+      "Uneven residential concrete walkway needing a repair assessment in Lancaster, South Carolina",
     localBody: [
       {
         heading: "Three shapes of request",
