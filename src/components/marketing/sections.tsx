@@ -276,7 +276,7 @@ export function Hero({
             </ul>
           </div>
           {aside ? (
-            <div className="mx-auto w-full max-w-xl lg:mx-0">{aside}</div>
+            <div className="sticky bottom-0 z-40 mx-auto w-full max-w-xl rounded-t-xl bg-[#0D1110]/95 p-2 backdrop-blur-md lg:static lg:mx-0 lg:max-w-xl lg:rounded-none lg:bg-transparent lg:p-0">{aside}</div>
           ) : null}
         </div>
       </section>
