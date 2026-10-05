@@ -9,6 +9,61 @@
 
 ---
 
+# OVERALL WEBSITE SCORE
+
+## **Overall Website Score: 87/100**
+
+**Category Scores:**
+
+* Functionality: **19/20**
+* UI/Visual Design: **13/15**
+* Mobile Responsiveness: **14/15**
+* SEO: **12/15**
+* Performance: **8/10**
+* Accessibility: **9/10**
+* Content Quality: **4/5**
+* UX/Conversion: **8/10**
+
+**Overall Status: Very Good — only minor issues**
+
+### Why the site received this score
+
+The site scores highly because the things that most often break simply do not
+break here: across **180 real browser page-loads (18 pages x 10 viewport
+widths)** it produced **zero broken links, zero horizontal overflow, zero
+console errors, zero failed requests and a perfect CLS of 0.000**, and the
+full referral funnel completes end to end with `POST /api/leads` returning
+**202** — so Functionality, Mobile Responsiveness and Accessibility lose almost
+nothing. The deductions are concentrated in **SEO (-3)**, where four
+`/locations/lancaster-sc/<service>` pages carry the wrong brand name
+("Lancaster Concrete Referral" instead of "Lancaster Concrete Connect") plus
+titles of 71-75 characters and descriptions of 170-174, with duplicate JSON-LD
+on 13 routes; and in **Performance (-2)**, where both logo variants are
+preloaded at `w=1920` **and** `w=3840` (~165 KB per page, one of them for an
+element that renders at 0x0) while the hero — the confirmed LCP element — is a
+960x536 source stretched to 1280x800 and beyond.
+
+**UI/Visual Design (-2)** and **UX/Conversion (-2)** are reduced by the same
+two verified defects: that upscaled, visibly soft hero, and the post-submission
+confirmation heading sitting **18 px underneath the sticky header** with focus
+never moved off `BODY`. **Content Quality (-1)** reflects British spellings
+(`vapour`, `fibre`, `destabilise`, `judgement`) on five pages of a US site, and
+**Accessibility (-1)** reflects standalone list links measuring 19-20 px
+against the 24 px WCAG 2.2 minimum plus `aria-expanded` without `aria-controls`.
+
+No critical issue was found anywhere, which is why the score sits in the "Very
+Good" band rather than lower — but it stays below 90 because two **High**
+priority items (the logo preload waste and the wrong brand name on four
+indexed pages) are still outstanding, and because real iOS/Android Safari,
+Lighthouse field data and screen-reader testing could not be performed in this
+environment.
+
+**Arithmetic check:** 19 + 13 + 14 + 12 + 8 + 9 + 4 + 8 = **87**, out of a
+maximum of 20 + 15 + 15 + 15 + 10 + 10 + 5 + 10 = **100**. Band: 80-89 = **Very
+Good — only minor issues**.
+
+---
+
 ## IMPORTANT — TESTING METHOD (read first)
 
 **Update — this report has been upgraded with real browser testing.** The first
@@ -54,22 +109,28 @@ measured results.
 
 ## OVERALL STATUS
 
-# 88 / 100
+# 87 / 100 — Very Good (only minor issues)
 
-**Needs Minor Fixes.** (Up from 86 in the pre-browser edition: browser testing
-cleared several suspected risks and confirmed the site renders cleanly at every
-tested width, which outweighs the three new minor issues it surfaced.)
+See **Overall Website Score** at the top of this report for the full weighted
+breakdown. The table below is the diagnostic view of the same result, scored
+per engineering area rather than per weighted category.
 
-| Category | Score | Note |
+| Area | Score | Note |
 |---|---|---|
 | Build & technical integrity | 99 | clean build + 29/29 tests; **0 console errors, 0 failed requests across 180 page loads** |
-| Links & routing | 100 | zero broken links or anchors |
-| SEO | 82 | one real brand bug, four over-length titles |
-| Accessibility | 90 | one ARIA gap; small standalone link targets; contrast, labels, focus all excellent |
-| Performance | 80 | **CLS 0.000 everywhere**; logo preloading still wasteful; hero source under-resolution |
+| Links & routing | 100 | zero broken links, anchors or assets |
+| Layout & rendering | 97 | **zero overflow at 10 widths, CLS 0.000**; hero upscales on wide screens |
+| SEO | 82 | wrong brand name on 4 pages, four over-length titles, duplicate JSON-LD |
+| Accessibility | 90 | one ARIA gap, small list-link targets; contrast, labels, focus all excellent |
+| Performance | 80 | CLS perfect; logo preloading wasteful; hero source under-resolution |
 | Content | 85 | British spellings on a US site |
-| Consistency | 98 | header/footer/components identical sitewide |
-| UX | 88 | funnel works end to end; confirmation heading clipped by sticky header |
+| Consistency | 98 | header/footer/components byte-identical sitewide |
+| UX / conversion | 88 | funnel works end to end; confirmation heading clipped by sticky header |
+
+*(Prior editions scored 86 pre-browser and 88 post-browser on an unweighted
+scale. Applying your weighting — which gives SEO 15 points and Performance 10 —
+yields **87**, because the two outstanding High-priority items both sit in
+those two categories.)*
 
 ---
 
@@ -743,9 +804,10 @@ A consolidated list of what was tested and found correct:
 
 ## FINAL VERDICT
 
-# NEEDS MINOR FIXES
+# VERY GOOD — ONLY MINOR ISSUES
 
-**Score: 88 / 100.** The site is **close to production-ready**, and real
+**Score: 87 / 100 — Very Good (only minor issues).** The site is **close to
+production-ready**, and real
 browser testing has now removed the main caveat that qualified the first
 edition of this verdict.
 
