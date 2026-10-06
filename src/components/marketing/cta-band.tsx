@@ -21,6 +21,11 @@ import { site } from "@/lib/env";
  * which is exactly the juddering that was reported. Below 48rem it is an
  * ordinary section background and cannot move relative to the band.
  *
+ * `last:mb-0` drops the bottom margin when the band is the final element on
+ * the page, which it is on every page that ends in one. Otherwise the 40px
+ * margin renders as a strip of page background between the photograph and the
+ * footer, which reads as a black gap under the image.
+ *
  * The locking works at all only because body uses `overflow-x: clip` rather
  * than `hidden`; `hidden` turns body into a scrolling box, which breaks
  * viewport-locked backgrounds. The layer is `absolute inset-0` inside a band
@@ -58,7 +63,7 @@ export function CtaBand({
 
   return (
     <section
-      className="cta-photo relative isolate my-[40px] h-auto overflow-hidden py-[36px]"
+      className="cta-photo relative isolate my-[40px] h-auto overflow-hidden py-[36px] last:mb-0"
       style={
         imageSrc
           ? undefined
