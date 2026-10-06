@@ -14,11 +14,6 @@ import type { ServiceSlug } from "@/content/services";
 export interface ServiceDetail {
   /** Common project components. Rendered under an explicit "may include" caveat. */
   mayInclude: string[];
-  /** Narrative explainer blocks, rendered in reading order. */
-  /**
-   * `body[0]` sits under the card heading. `subheading` titles the second
-   * paragraph so each card scans as two labeled points.
-   */
 }
 
 export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {

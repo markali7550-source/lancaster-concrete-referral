@@ -165,7 +165,7 @@ export default function HomePage() {
       <Section
         tone="surface"
         eyebrow="Request a referral"
-        title="Start with your project type and location"
+        title="What we need from you"
         lead="Two short steps. A participating service provider may contact you, and if no provider covering your area can take it, we will say so plainly."
       >
         <p
