@@ -50,12 +50,12 @@ export default function LocationsPage() {
         title="Where we route concrete referrals today"
         lead="Every area below has a participating provider who has confirmed in writing that they accept work there."
       >
-        <div className="max-w-prose space-y-6">
+        <div className="grid gap-x-12 gap-y-6 md:grid-cols-2">
           <div>
             <h3 className="text-[22px] font-semibold leading-snug">
               How an area gets added
             </h3>
-            <p className="mt-1.5 text-[16px] leading-relaxed text-[color:var(--color-muted)]">
+            <p className="mt-1.5 max-w-[48ch] text-[16px] leading-relaxed text-[color:var(--color-muted)]">
               A city appears here only once a provider has approved it in
               writing and the page has its own local content. We do not draw a
               radius on a map and call it coverage.
@@ -65,7 +65,7 @@ export default function LocationsPage() {
             <h3 className="text-[22px] font-semibold leading-snug">
               If your area is not listed
             </h3>
-            <p className="mt-1.5 text-[16px] leading-relaxed text-[color:var(--color-muted)]">
+            <p className="mt-1.5 max-w-[48ch] text-[16px] leading-relaxed text-[color:var(--color-muted)]">
               Submit a request anyway. If nobody covers your address we tell you
               plainly rather than passing your details to a provider who cannot
               help.
@@ -73,12 +73,19 @@ export default function LocationsPage() {
           </div>
         </div>
 
-        <ul className="mt-9 grid gap-5 sm:grid-cols-2">
+        {/*
+          A full-width row per area, not a two-up grid. One approved city in a
+          two-column grid leaves half the row empty, which reads as a directory
+          waiting for data rather than an honest statement that coverage is one
+          city. Rows fill the width at any count and stay correct as the list
+          grows.
+        */}
+        <ul className="mt-9 space-y-5">
           {publishedLocations.map((location) => (
             <li key={location.slug}>
               <Link
                 href={`/locations/${location.slug}`}
-                className="group card card-interactive flex h-full flex-col overflow-hidden transition-colors duration-300 hover:border-[var(--color-accent)]"
+                className="group card card-interactive grid overflow-hidden transition-colors duration-300 hover:border-[var(--color-accent)] sm:grid-cols-[minmax(0,300px)_1fr]"
               >
                 {/*
                   Same file as the hero on /locations/[city] (location.heroImage),
@@ -90,10 +97,10 @@ export default function LocationsPage() {
                   alt={location.heroImageAlt}
                   width={800}
                   height={500}
-                  sizes="(min-width: 640px) 45vw, 100vw"
-                  className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  sizes="(min-width: 640px) 300px, 100vw"
+                  className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105 sm:h-full"
                 />
-                <div className="flex flex-1 flex-col p-6">
+                <div className="flex flex-1 flex-col justify-center p-6 sm:p-7">
                   <h3 className="text-[17px] font-semibold">
                     Concrete referrals in {location.city}, {location.region}
                   </h3>
