@@ -260,7 +260,7 @@ export default async function ComboPage({ params }: { params: Params }) {
 
       <CtaBand
         tone="section"
-        title={`${serviceRecord.name} in ${location.city}, SC`}
+        title={serviceRecord.headings.cta}
         body="One request, one eligible independent contractor. If nobody approved for your area can take it, we will tell you plainly."
       />
 

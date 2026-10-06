@@ -217,9 +217,12 @@ export function ScopeColumns({
   covered: { title: string; body: string }[];
   outOfScope: string[];
 }) {
+  // The page already gives up a column to the sticky form, so splitting this
+  // block again at lg left the cards 151px wide and wrapping after three
+  // words. Both splits now wait for xl, where there is room for them.
   return (
-    <div className="grid gap-6 lg:grid-cols-[1.6fr_1fr]">
-      <ul className="grid gap-4 sm:grid-cols-2">
+    <div className="grid gap-6 xl:grid-cols-[1.6fr_1fr]">
+      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
         {covered.map((item) => (
           <li key={item.title} className="card p-6">
             <div className="flex flex-col gap-2.5 lg:flex-row lg:gap-3">

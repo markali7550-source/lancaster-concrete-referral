@@ -33,6 +33,10 @@ export interface ServiceRecord {
     prepare: string;
     moreInfo: string;
     faq: string;
+    /** Closing CTA heading. Service-specific so the four pages do not all
+     *  end on the same sentence, and so the combo pages stop using a bare
+     *  keyword string ("Concrete Driveways in Lancaster, SC") as a CTA. */
+    cta: string;
   };
   /** Lede under the specification heading. */
   optionsLead: string;
@@ -78,6 +82,7 @@ export const services: readonly ServiceRecord[] = [
       prepare: "Before the contractor walks the drive",
       moreInfo: "Driveways on Lancaster County clay",
       faq: "Driveway questions we get asked",
+      cta: "Ready to price a driveway?",
     },
     optionsLead:
       "We do not specify your driveway. These are the calls the contractor will ask you to make, so they are not the first time you hear them.",
@@ -268,14 +273,15 @@ export const services: readonly ServiceRecord[] = [
     summary:
       "New patio pours, replacements, and stamped finishes where a participating provider has documented that capability.",
     heroSummary:
-      "A patio is the one concrete project where the finish matters as much as the slab under it. Colour, texture, and where the joints fall are decisions you live with every time you walk outside. We route your details to one independent provider who will walk the space with you and quote it directly.",
+      "A patio is the one concrete project where the finish matters as much as the slab under it. Color, texture, and where the joints fall are decisions you live with every time you walk outside. We route your details to one independent provider who will walk the space with you and quote it directly.",
     headings: {
-      options: "Finish, colour and layout choices",
+      options: "Finish, color and layout choices",
       process: "How a patio build is sequenced",
       cost: "What makes one patio cost more than another",
       prepare: "Walking the space before you get a price",
       moreInfo: "Getting a patio right the first time",
       faq: "Patio questions we get asked",
+      cta: "Ready to price a patio?",
     },
     optionsLead:
       "Patios are where the finish decisions live. Pick these before you compare quotes, or you will be comparing two different projects.",
@@ -467,6 +473,7 @@ export const services: readonly ServiceRecord[] = [
       prepare: "Knowing the load before the visit",
       moreInfo: "Sizing and siting a residential pad",
       faq: "Slab and pad questions we get asked",
+      cta: "Ready to price a pad?",
     },
     optionsLead:
       "A pad is specified by what sits on it. Load comes first, because it decides thickness, reinforcement and base depth before anything else is priced.",
@@ -653,6 +660,7 @@ export const services: readonly ServiceRecord[] = [
       prepare: "Describing the damage accurately",
       moreInfo: "Repair, resurface, or replace",
       faq: "Repair questions we get asked",
+      cta: "Want someone to look at the damage?",
     },
     optionsLead:
       "Repair is diagnosis before method. The right fix depends on why the concrete failed, which is why two jobs that look alike are quoted differently.",

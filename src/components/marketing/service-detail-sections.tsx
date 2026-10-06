@@ -151,17 +151,23 @@ export function ServiceDisclosureBlock() {
 
 /* -------------------------------------------------------- ServiceCtaBand */
 
-/** Closing call to action. Copy is fixed by the publisher. */
+/**
+ * Closing call to action. The heading comes from the service's own `headings.cta`
+ * so the four service pages do not all close on the same sentence; the body and
+ * the actions are fixed by the publisher.
+ */
 export function ServiceCtaBand({
+  title,
   imageSrc,
   imageAlt,
 }: {
+  title: string;
   imageSrc?: string;
   imageAlt?: string;
 }) {
   return (
     <CtaBand
-      title="Need help with a concrete project?"
+      title={title}
       body="Tell us about your project and location to request a connection with an independent concrete service provider serving your area."
       imageSrc={imageSrc}
       imageAlt={imageAlt}

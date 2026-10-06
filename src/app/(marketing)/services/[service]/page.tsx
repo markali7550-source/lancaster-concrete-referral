@@ -352,8 +352,7 @@ export default async function ServicePage({ params }: { params: Params }) {
       </Section>
 
 
-      <ServiceCtaBand
-      />
+      <ServiceCtaBand title={service.headings.cta} />
 
     </>
   );
