@@ -43,12 +43,27 @@ export const PHOTO_EDGE_FADE =
   "bg-gradient-to-b from-[#0B1017]/75 via-transparent to-[#0B1017]/75";
 
 /**
- * Heroes only. Deepens the copy side on desktop and releases to transparent on
- * the right so the photograph stays visible. Gated to lg because the mobile
- * hero centers its copy, where a left-weighted wash would do nothing useful.
+ * Heroes only. Deepens the copy side and releases on the right so the
+ * photograph stays visible.
+ *
+ * This used to be gated to lg and layered over the full-strength PHOTO_SCRIM,
+ * which meant it could never do its job: 72% flat dark plus a wash left the
+ * right-hand side of the hero at a measured mean luminance of 28 against 151
+ * in the source file, so the photograph was effectively a dark rectangle. The
+ * hero now pairs this with HERO_SCRIM instead, and the mobile hero -- whose
+ * copy is also flush left now -- gets the same left-weighted treatment rather
+ * than being excluded from it.
  */
 export const PHOTO_SIDE_WASH =
-  "hidden lg:block bg-gradient-to-r from-[#0B1017]/60 via-[#0B1017]/28 to-transparent";
+  "bg-gradient-to-r from-[#0B1017]/72 via-[#0B1017]/42 to-[#0B1017]/8";
+
+/**
+ * Hero-only base scrim, deliberately lighter than PHOTO_SCRIM because the hero
+ * stacks a side wash on top of it and PHOTO_SCRIM is tuned for bands that have
+ * only one layer. Kept heavier on small screens, where there is no horizontal
+ * room for the wash to fall away before the copy starts.
+ */
+export const HERO_SCRIM = "bg-[#0B1017]/52 lg:bg-[#0B1017]/30";
 
 /* ---------------------------------------------------------------- Section */
 
@@ -127,15 +142,7 @@ export function Section({
             }
           >
             {eyebrow ? (
-              <p
-                className={
-                  align === "center"
-                    ? "eyebrow before:hidden"
-                    : "eyebrow before:hidden md:before:block"
-                }
-              >
-                {eyebrow}
-              </p>
+              <p className="eyebrow">{eyebrow}</p>
             ) : null}
             {title ? <h2 className="h2 mt-3">{title}</h2> : null}
             {lead ? <p className="lede mt-4">{lead}</p> : null}
@@ -167,7 +174,7 @@ export function SectionDivider() {
 /* ------------------------------------------------------------------- Hero */
 
 /* Hero scrim: the shared photo layers, stacked over the full-bleed image. */
-const HERO_IMAGE_OVERLAY = `absolute inset-0 z-10 ${PHOTO_SCRIM}`;
+const HERO_IMAGE_OVERLAY = `absolute inset-0 z-10 ${HERO_SCRIM}`;
 const HERO_IMAGE_SIDE_WASH = `pointer-events-none absolute inset-0 z-10 ${PHOTO_SIDE_WASH}`;
 const HERO_IMAGE_FADE = `pointer-events-none absolute inset-0 z-20 ${PHOTO_EDGE_FADE}`;
 
@@ -207,7 +214,7 @@ export function OverlayHeader({
       <div className={HERO_IMAGE_SIDE_WASH} aria-hidden="true" />
       <div className={HERO_IMAGE_FADE} aria-hidden="true" />
       <div className="container-page relative z-30 flex items-center py-14 md:py-20 lg:py-24">
-        <div className="mx-auto w-full max-w-2xl text-center lg:mx-0 lg:text-left">
+        <div className="w-full max-w-2xl">
           {breadcrumbs}
           {children}
         </div>
@@ -276,10 +283,10 @@ export function Hero({
               : "container-page relative z-30 flex min-h-[calc(100svh-6.25rem)] items-center py-14 lg:py-20"
           }
         >
-          <div className="mx-auto w-full max-w-2xl text-center lg:mx-0 lg:text-left">
+          <div className="w-full max-w-2xl">
             {breadcrumbs}
             <p
-              className="eyebrow before:hidden lg:before:block"
+              className="eyebrow"
               style={{ color: "var(--color-band-accent)" }}
             >
               {locationCue}
@@ -288,7 +295,7 @@ export function Hero({
               {h1}
             </h1>
             <p
-              className="lede mx-auto mt-5 max-w-prose lg:mx-0"
+              className="lede mt-5 max-w-prose"
               style={{ color: "rgba(255,255,255,0.86)" }}
             >
               {summary}
@@ -296,7 +303,7 @@ export function Hero({
 
             <div
               id="hero-actions"
-              className="mx-auto mt-8 grid w-full max-w-sm gap-3 lg:mx-0 lg:max-w-none lg:grid-cols-[repeat(2,minmax(0,15rem))]"
+              className="mt-8 grid w-full max-w-sm gap-3 lg:max-w-none lg:grid-cols-[repeat(2,minmax(0,15rem))]"
             >
               <DynamicPhone
                 fallbackDisplay={site.phoneDisplay}
@@ -311,7 +318,7 @@ export function Hero({
             </div>
 
             <ul
-              className="mt-7 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[13px] lg:justify-start"
+              className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-[13px]"
               style={{ color: "rgba(255,255,255,0.80)" }}
             >
               {HERO_TRUST.map((item) => (
@@ -325,7 +332,7 @@ export function Hero({
             </ul>
           </div>
           {aside ? (
-            <div className="mobile-sticky-form sticky bottom-0 z-40 mx-auto w-full max-w-xl rounded-t-xl bg-[#0B1017] p-2 lg:static lg:mx-0 lg:max-w-xl lg:rounded-none lg:bg-transparent lg:p-0">{aside}</div>
+            <div className="mobile-sticky-form sticky bottom-0 z-40 w-full max-w-xl rounded-t-xl bg-[#0B1017] p-2 lg:static lg:max-w-xl lg:rounded-none lg:bg-transparent lg:p-0">{aside}</div>
           ) : null}
         </div>
       </section>
@@ -341,16 +348,16 @@ export function Hero({
       }}
     >
       <div className="container-page grid items-center gap-10 py-14 md:py-20 lg:grid-cols-12 lg:gap-16 lg:py-24">
-        <div className="text-center lg:col-span-7 lg:text-left">
-          <p className="eyebrow before:hidden lg:before:block">
+        <div className="lg:col-span-7">
+          <p className="eyebrow">
             {locationCue}
           </p>
           <h1 className="h1 mt-5">{h1}</h1>
-          <p className="lede mx-auto mt-5 max-w-prose lg:mx-0">{summary}</p>
+          <p className="lede mt-5 max-w-prose">{summary}</p>
 
           <div
             id="hero-actions"
-            className="mx-auto mt-8 grid w-full max-w-sm gap-3 lg:mx-0 lg:max-w-none lg:grid-cols-2"
+            className="mt-8 grid w-full max-w-sm gap-3 lg:max-w-none lg:grid-cols-2"
           >
             <DynamicPhone
               fallbackDisplay={site.phoneDisplay}
@@ -364,7 +371,7 @@ export function Hero({
             </a>
           </div>
 
-          <ul className="mt-7 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[13px] text-[color:var(--color-muted)] lg:justify-start">
+          <ul className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-[13px] text-[color:var(--color-muted)]">
             {HERO_TRUST.map((item) => (
               <li key={item} className="flex items-center gap-1.5">
                 <span style={{ color: "var(--color-accent)" }}>
@@ -416,7 +423,7 @@ export function BenefitBadges({ items }: { items: string[] }) {
           {items.map((item) => (
             <li
               key={item}
-              className="flex items-center justify-center gap-2.5 text-sm font-semibold lg:justify-start"
+              className="flex items-center gap-2.5 text-sm font-semibold"
             >
               <span style={{ color: "var(--color-accent)" }}>
                 <Icon name="check" className="h-4 w-4" />
@@ -786,7 +793,7 @@ export function AdjacentAreas({
     );
   }
   return (
-    <ul className="flex flex-wrap justify-center gap-3 lg:justify-start">
+    <ul className="flex flex-wrap gap-3">
       {locations.map((location) => (
         <li key={location.slug}>
           <Link href={`/locations/${location.slug}`} className="btn btn-secondary">

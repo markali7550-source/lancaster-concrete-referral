@@ -32,15 +32,15 @@ export default function LocationsPage() {
         imageAlt="Elevated view of a South Carolina residential neighborhood with concrete driveways and sidewalks along a quiet street"
       >
         <p
-          className="eyebrow before:hidden lg:before:block"
+          className="eyebrow"
           style={{ color: overlayEyebrow }}
         >
           Service areas
         </p>
-        <h1 className="h1 mx-auto mt-5 max-w-3xl lg:mx-0" style={{ color: overlayHeading }}>
+        <h1 className="h1 mt-5 max-w-3xl" style={{ color: overlayHeading }}>
           Concrete Referral Service Areas in South Carolina
         </h1>
-        <p className="lede mx-auto mt-5 max-w-2xl lg:mx-0" style={{ color: overlayBody }}>
+        <p className="lede mt-5 max-w-2xl" style={{ color: overlayBody }}>
           One service area today. Additional South Carolina cities appear
           here only after coverage, content, and compliance gates pass.
         </p>
@@ -78,7 +78,7 @@ export default function LocationsPage() {
             <li key={location.slug}>
               <Link
                 href={`/locations/${location.slug}`}
-                className="group card card-interactive flex h-full flex-col overflow-hidden text-center transition-colors duration-300 hover:border-[var(--color-accent)] lg:text-left"
+                className="group card card-interactive flex h-full flex-col overflow-hidden transition-colors duration-300 hover:border-[var(--color-accent)]"
               >
                 {/*
                   Same file as the hero on /locations/[city] (location.heroImage),
@@ -102,7 +102,7 @@ export default function LocationsPage() {
                     providers covering {location.city}.
                   </p>
                   <span
-                    className="mt-5 inline-flex items-center justify-center gap-1.5 text-[14px] font-semibold lg:justify-start"
+                    className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold"
                     style={{ color: "var(--color-accent)" }}
                   >
                     View {location.city} referrals

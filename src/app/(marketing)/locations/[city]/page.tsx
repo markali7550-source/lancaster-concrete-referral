@@ -194,7 +194,7 @@ export default async function LocationPage({ params }: { params: Params }) {
         title={`Tell us about your ${location.city} project`}
       >
         <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
-          <div className="mx-auto w-full max-w-xl lg:mx-0">
+          <div className="w-full max-w-xl">
             <QuoteForm
               services={publishedServices.map((s) => ({
                 slug: s.slug,
@@ -207,9 +207,9 @@ export default async function LocationPage({ params }: { params: Params }) {
               fallbackE164={site.phoneE164}
             />
           </div>
-          <div className="text-center lg:pt-4 lg:text-left">
+          <div className="lg:pt-4">
             <p className="eyebrow-plain">Before you send it</p>
-            <div className="mx-auto mt-5 max-w-xl lg:mx-0">
+            <div className="mt-5 max-w-xl">
               <DecisionSupport
                 items={[
                   {

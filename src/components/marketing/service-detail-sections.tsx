@@ -17,19 +17,19 @@ export function MoreInformation({ blocks }: { blocks: ServiceDetail["moreInfo"] 
     <div className="grid gap-5 lg:grid-cols-2 lg:gap-6">
       {blocks.map((block) => (
         <article key={block.heading} className="card flex h-full flex-col p-6">
-          <h3 className="text-center text-[17px] font-semibold lg:text-left">
+          <h3 className="text-[17px] font-semibold">
             {block.heading}
           </h3>
-          <p className="mt-3 text-center text-[14.5px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
+          <p className="mt-3 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
             {block.body[0]}
           </p>
-          <h4 className="mt-4 text-center text-[14px] font-semibold lg:text-left">
+          <h4 className="mt-4 text-[14px] font-semibold">
             {block.subheading}
           </h4>
           {block.body.slice(1).map((paragraph) => (
             <p
               key={paragraph}
-              className="mt-1.5 text-center text-[14.5px] leading-relaxed text-[color:var(--color-muted)] lg:text-left"
+              className="mt-1.5 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]"
             >
               {paragraph}
             </p>
@@ -58,7 +58,7 @@ export function MayInclude({
         {items.map((item) => (
           <li
             key={item}
-            className="card flex items-start justify-center gap-3 p-4 text-center lg:justify-start lg:text-left"
+            className="card flex items-start gap-3 p-4"
           >
             <span
               className="mt-0.5 shrink-0"
@@ -70,7 +70,7 @@ export function MayInclude({
           </li>
         ))}
       </ul>
-      <p className="mt-5 text-center text-[13px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
+      <p className="mt-5 text-[13px] leading-relaxed text-[color:var(--color-muted)]">
         This list describes components commonly associated with {serviceName}{" "}
         project. It is informational only, and not every participating provider
         offers every item. Confirm scope directly with the provider who contacts
@@ -104,7 +104,7 @@ export function ReferralSteps() {
         {REFERRAL_STEPS.map((step, index) => (
           <li key={step.title} className="card process-step-card flex h-full flex-col p-6">
             <span
-              className="mx-auto grid h-10 w-10 place-items-center rounded-full text-[15px] font-bold md:mx-0"
+              className="grid h-10 w-10 place-items-center rounded-full text-[15px] font-bold"
               style={{
                 backgroundColor: "var(--color-accent)",
                 color: "var(--color-on-accent)",
@@ -112,10 +112,10 @@ export function ReferralSteps() {
             >
               {index + 1}
             </span>
-            <p className="mt-4 text-center text-[16px] font-semibold md:text-left">
+            <p className="mt-4 text-[16px] font-semibold">
               Step {index + 1}: {step.title}
             </p>
-            <p className="mt-2 text-center text-[14px] leading-relaxed text-[color:var(--color-muted)] md:text-left">
+            <p className="mt-2 text-[14px] leading-relaxed text-[color:var(--color-muted)]">
               {step.body}
             </p>
           </li>
@@ -139,7 +139,7 @@ export function ServiceDisclosureBlock() {
     >
       <div className="container-page py-8">
         <div
-          className="rounded-[12px] border p-4 text-center text-[13.5px] font-medium leading-relaxed lg:text-left"
+          className="rounded-[12px] border p-4 text-[13.5px] font-medium leading-relaxed"
           style={{ borderColor: "var(--color-line)" }}
         >
           {SERVICE_PAGE_DISCLOSURE}

@@ -71,19 +71,19 @@ export default function ServicesPage() {
         imageAlt="Broom finished residential concrete walkway with a tooled control joint and radiused edge beside a lawn"
       >
         <p
-          className="eyebrow before:hidden lg:before:block"
+          className="eyebrow"
           style={{ color: overlayEyebrow }}
         >
           Service directory
         </p>
         <h1
-          className="h1 mx-auto mt-4 max-w-3xl lg:mx-0"
+          className="h1 mt-4 max-w-3xl"
           style={{ color: overlayHeading }}
         >
           Concrete Services We Route in Lancaster County, SC
         </h1>
         <p
-          className="mx-auto mt-4 max-w-2xl text-[17px] leading-relaxed lg:mx-0"
+          className="mt-4 max-w-2xl text-[17px] leading-relaxed"
           style={{ color: overlayBody }}
         >
           Four residential concrete services, each with at least one

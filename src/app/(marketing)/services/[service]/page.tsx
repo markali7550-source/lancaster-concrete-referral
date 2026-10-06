@@ -179,11 +179,11 @@ export default async function ServicePage({ params }: { params: Params }) {
           {/* ---------------------------------------------------- Main column */}
           <div className="min-w-0 lg:col-span-7 xl:col-span-8">
             <section id="scope" className="scroll-mt-36 py-12 md:py-20">
-              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Scope</p>
+              <p className="eyebrow flex">Scope</p>
               <h2 className="h2 mt-4">
                 What we route under {service.name.toLowerCase()}
               </h2>
-              <p className="lede mx-auto mt-4 max-w-prose text-center md:mx-0 md:text-left">
+              <p className="lede mt-4 max-w-prose">
                 {service.summary}
               </p>
               <div className="mt-8">
@@ -195,11 +195,11 @@ export default async function ServicePage({ params }: { params: Params }) {
             </section>
 
             <section id="options" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Specification</p>
+              <p className="eyebrow flex">Specification</p>
               <h2 className="h2 mt-4">
                 {service.headings.options}
               </h2>
-              <p className="lede mx-auto mt-4 max-w-prose text-center md:mx-0 md:text-left">
+              <p className="lede mt-4 max-w-prose">
                 {service.optionsLead}
               </p>
               <div className="mt-8">
@@ -208,11 +208,11 @@ export default async function ServicePage({ params }: { params: Params }) {
             </section>
 
             <section id="process" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Process</p>
+              <p className="eyebrow flex">Process</p>
               <h2 className="h2 mt-4">
                 {service.headings.process}
               </h2>
-              <p className="lede mx-auto mt-4 max-w-prose text-center md:mx-0 md:text-left">
+              <p className="lede mt-4 max-w-prose">
                 Durations below are typical ranges reported by partners, not
                 commitments. Your contractor sets the actual schedule.
               </p>
@@ -222,11 +222,11 @@ export default async function ServicePage({ params }: { params: Params }) {
             </section>
 
             <section id="cost" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Pricing</p>
+              <p className="eyebrow flex">Pricing</p>
               <h2 className="h2 mt-4">
                 {service.headings.cost}
               </h2>
-              <p className="lede mx-auto mt-4 max-w-prose text-center md:mx-0 md:text-left">
+              <p className="lede mt-4 max-w-prose">
                 We publish no prices, ranges, or per foot figures. Doing so
                 would be a guess on a project nobody has seen. What we can do is
                 tell you which variables move the number.
@@ -237,7 +237,7 @@ export default async function ServicePage({ params }: { params: Params }) {
             </section>
 
             <section id="prepare" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Preparation</p>
+              <p className="eyebrow flex">Preparation</p>
               <h2 className="h2 mt-4">
                 {service.headings.prepare}
               </h2>

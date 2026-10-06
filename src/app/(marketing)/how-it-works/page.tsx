@@ -49,16 +49,16 @@ export default function HowItWorksPage() {
         imageAlt="Freshly poured residential concrete slab floated smooth, with a brick home beyond the lawn"
       >
         <p
-          className="eyebrow before:hidden lg:before:block"
+          className="eyebrow"
           style={{ color: overlayEyebrow }}
         >
           Our process
         </p>
-        <h1 className="h1 mx-auto mt-5 max-w-3xl lg:mx-0" style={{ color: overlayHeading }}>
+        <h1 className="h1 mt-5 max-w-3xl" style={{ color: overlayHeading }}>
           How Our Concrete Service Provider Referrals Work
         </h1>
         <p
-          className="lede mx-auto mt-5 max-w-2xl lg:mx-0"
+          className="lede mt-5 max-w-2xl"
           style={{ color: overlayBody }}
         >
           What happens between the moment you submit a request and the

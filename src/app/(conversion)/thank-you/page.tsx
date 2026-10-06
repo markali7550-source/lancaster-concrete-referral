@@ -22,7 +22,7 @@ export default function ThankYouPage() {
   return (
     <div className="container-page py-16 md:py-24">
       <div className="mx-auto max-w-2xl text-center lg:mx-0 lg:text-left">
-        <p className="eyebrow justify-center before:hidden lg:justify-start lg:before:block">
+        <p className="eyebrow">
           Request received
         </p>
         <h1 className="h1 mt-4">

@@ -109,7 +109,7 @@ export default function HomePage() {
         lead="Four residential concrete service categories, each with at least one participating provider holding written coverage for Lancaster areas. Foundation repair, structural engineering, and retaining walls sit outside this scope."
       >
         <ProjectTypeChooser images={serviceCardImages} />
-        <p className="mt-8 text-center text-sm lg:text-left">
+        <p className="mt-8 text-sm">
           <Link
             href="/services"
             className="font-semibold underline underline-offset-4"
@@ -169,7 +169,7 @@ export default function HomePage() {
         lead="Two short steps. A participating service provider may contact you, and if no provider covering your area can take it, we will say so plainly."
       >
         <p
-          className="mb-8 rounded-[12px] border p-4 text-center text-[13.5px] leading-relaxed lg:text-left"
+          className="mb-8 rounded-[12px] border p-4 text-[13.5px] leading-relaxed"
           style={{
             borderColor: "var(--color-line)",
             color: "var(--color-muted)",
@@ -185,7 +185,7 @@ export default function HomePage() {
         </p>
 
         <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
-          <div className="mx-auto w-full max-w-xl lg:mx-0">
+          <div className="w-full max-w-xl">
             <QuoteForm
               services={publishedServices.map((s) => ({
                 slug: s.slug,
@@ -198,7 +198,7 @@ export default function HomePage() {
               fallbackE164={site.phoneE164}
             />
           </div>
-          <div className="text-center lg:pt-4 lg:text-left">
+          <div className="lg:pt-4">
             <p className="eyebrow-plain">What happens after you submit</p>
             <p className="mt-4 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
               Your location and project type are checked against participating

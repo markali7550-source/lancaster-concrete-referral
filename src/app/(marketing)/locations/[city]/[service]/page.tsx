@@ -141,7 +141,7 @@ export default async function ComboPage({ params }: { params: Params }) {
         <div className="grid gap-6 lg:grid-cols-12 lg:gap-12">
           <div className="min-w-0 lg:col-span-7 xl:col-span-8">
             <section className="scroll-mt-36 py-12 md:py-20">
-              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">{`${serviceRecord.name} · ${location.city}`}</p>
+              <p className="eyebrow flex">{`${serviceRecord.name} · ${location.city}`}</p>
               <h2 className="h2 mt-4">
                 What we see on {location.city}{" "}
                 {serviceRecord.shortName.toLowerCase()} requests
@@ -160,7 +160,7 @@ export default async function ComboPage({ params }: { params: Params }) {
               </div>
               <nav
                 aria-label="Related pages"
-                className="mt-9 flex flex-wrap justify-center gap-3 lg:justify-start"
+                className="mt-9 flex flex-wrap gap-3"
               >
                 <Link
                   href={`/services/${serviceRecord.slug}`}

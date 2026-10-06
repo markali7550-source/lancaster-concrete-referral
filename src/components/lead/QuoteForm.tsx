@@ -347,7 +347,7 @@ export function QuoteForm({
       noValidate
       id="quote-form"
     >
-      <div className="flex flex-col items-center gap-3 text-center sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:text-left">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
         <div>
           <p className="eyebrow">Step {step} of 2</p>
           <h3 className="mt-1 text-xl font-semibold md:text-2xl">
@@ -693,10 +693,10 @@ export function QuoteForm({
         </div>
       )}
 
-      <p className="mt-4 text-center text-xs leading-relaxed text-[color:var(--color-muted)] lg:text-left">
+      <p className="mt-4 text-xs leading-relaxed text-[color:var(--color-muted)]">
         {LEAD_FORM_DISCLOSURE}
       </p>
-      <p className="mt-2 text-center text-xs leading-relaxed text-[color:var(--color-muted)] lg:text-left">
+      <p className="mt-2 text-xs leading-relaxed text-[color:var(--color-muted)]">
         Submitting this form does not create a contract, a price, or a booking.
         We are a referral service, not a concrete contractor.
       </p>
