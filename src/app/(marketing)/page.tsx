@@ -8,11 +8,9 @@ import {
   FaqSection,
   Hero,
   HowMatchingWorks,
-  ProjectExamples,
   ProjectTypeChooser,
   Section,
   SectionDivider,
-  RoutingControls,
 } from "@/components/marketing/sections";
 import { CtaBand } from "@/components/marketing/service-sections";
 import { OUT_OF_AREA_POSTAL_CODE, publishedLocations, serviceAreaOptions } from "@/content/locations";
@@ -135,14 +133,6 @@ export default function HomePage() {
       </Section>
 
 
-      <Section
-        tone="soft"
-        eyebrow="How routing works"
-        title="How your request reaches an independent provider"
-        lead="These are routing controls, not credential verification. License, insurance, and workmanship remain matters to confirm directly with the independent provider who contacts you."
-      >
-        <RoutingControls />
-      </Section>
 
       <Section
         eyebrow="Common questions"
@@ -245,14 +235,6 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </Section>
-
-
-      <Section
-        eyebrow="PROJECT PHOTOGRAPHY"
-        title="Representative quality details, built on transparency"
-      >
-        <ProjectExamples />
       </Section>
 
 

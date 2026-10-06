@@ -36,7 +36,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
     ],
     moreInfo: [
       {
-        heading: "What a concrete driveway project is",
+        heading: "What you are actually paying for",
         subheading: "What the work involves",
         body: [
           "A concrete driveway is a poured, reinforced surface built to carry vehicle loads for years.",
@@ -44,7 +44,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         ],
       },
       {
-        heading: "Common reasons homeowners request it",
+        heading: "Why people replace a drive",
         subheading: "Other common triggers",
         body: [
           "Most requests start with a gravel or dirt drive that is hard to maintain, or an older slab that has cracked, settled, or spalled past patching.",
@@ -52,7 +52,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         ],
       },
       {
-        heading: "Typical project types",
+        heading: "Four kinds of driveway job",
         subheading: "Why the type matters",
         body: [
           "Projects usually fall into four groups: a new pour over an unpaved drive, full replacement with demolition and haul away, widening an existing driveway, or a rebuild driven by drainage.",
@@ -60,7 +60,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         ],
       },
       {
-        heading: "Important considerations",
+        heading: "Thickness, joints and slope",
         subheading: "Joints and slope",
         body: [
           "Thickness and reinforcement should suit the vehicles that will actually use the surface. A drive that sees a heavy truck is not built like one serving a single sedan.",
@@ -68,7 +68,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         ],
       },
       {
-        heading: "What to know before starting",
+        heading: "Access, utilities and curing time",
         subheading: "Access and curing time",
         body: [
           "Useful to know: approximate dimensions, whether an existing surface has to come out, where water goes in heavy rain, and whether utilities or irrigation run beneath the area.",
@@ -76,19 +76,11 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         ],
       },
       {
-        heading: "How a project generally runs",
+        heading: "Pour day and the week after",
         subheading: "From pour to cure",
         body: [
           "A typical sequence is a site look at the area and its drainage, a written scope and quote, removal of any existing surface, then excavation and subbase preparation.",
           "Forming and reinforcement follow, then the pour, the finish, joint cutting, and a curing period. Weather affects both the pour and the finish, so dates shift.",
-        ],
-      },
-      {
-        heading: "Why planning matters",
-        subheading: "What to do about it",
-        body: [
-          "Most driveway problems that appear years later trace back to a decision made before the pour: a subbase that was not compacted, a slope that moved water the wrong way, or joints spaced too far apart.",
-          "Settling those details in writing at quote stage is the most useful thing a homeowner can do.",
         ],
       },
     ],
@@ -107,7 +99,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
     ],
     moreInfo: [
       {
-        heading: "What a concrete patio project is",
+        heading: "Where a patio differs from a driveway",
         subheading: "How it differs from a driveway",
         body: [
           "A concrete patio is an outdoor living surface poured as a slab, usually sized around how the space will be furnished and used.",
@@ -115,7 +107,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         ],
       },
       {
-        heading: "Common reasons homeowners request it",
+        heading: "Why people add or replace one",
         subheading: "Other reasons we see",
         body: [
           "Requests usually follow a change in how the yard is used: adding a seating or dining area, replacing a slab that has cracked or settled, or extending one that turned out too small.",
@@ -123,7 +115,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         ],
       },
       {
-        heading: "Typical project types",
+        heading: "Plain, stamped, or joined to something",
         subheading: "Connected areas and steps",
         body: [
           "Common work includes a new patio on open ground, replacement of a deteriorated slab, and an extension poured against existing concrete.",
@@ -131,7 +123,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         ],
       },
       {
-        heading: "Important considerations",
+        heading: "Joints, texture and standing water",
         subheading: "Joints and surface texture",
         body: [
           "Slope is the detail most often underestimated. A patio needs enough fall to shed water away from the foundation without feeling tilted underfoot.",
@@ -139,7 +131,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         ],
       },
       {
-        heading: "What to know before starting",
+        heading: "Drainage, services and finish samples",
         subheading: "Services and finish details",
         body: [
           "Gather rough dimensions, how the space will be furnished, whether a cover or structure is planned later, and where downspouts discharge.",
@@ -147,19 +139,11 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         ],
       },
       {
-        heading: "How a project generally runs",
+        heading: "Excavation through to curing",
         subheading: "From excavation to curing",
         body: [
           "Work usually begins with a site visit to check grade and drainage, followed by a written scope and quote.",
           "Then comes layout and excavation, subbase preparation, forming, reinforcement where specified, the pour, finishing to the agreed texture, joints, and curing. Keep furniture off until the provider says it is ready.",
-        ],
-      },
-      {
-        heading: "Why planning matters",
-        subheading: "Decide before the forms go in",
-        body: [
-          "Patios are easy to undersize and hard to enlarge neatly later, because an addition poured afterwards rarely matches the original in color or texture.",
-          "Deciding size, finish, and drainage before the forms go in avoids the two common regrets: a slab that feels cramped once furnished, and water collecting near the house.",
         ],
       },
     ],
@@ -178,7 +162,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
     ],
     moreInfo: [
       {
-        heading: "What a concrete slab project is",
+        heading: "Load decides the build",
         subheading: "What decides the build",
         body: [
           "A slab is a flat, reinforced element poured to support something specific: a building, a vehicle, equipment, or a structure planned for later.",
@@ -186,7 +170,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         ],
       },
       {
-        heading: "Common reasons homeowners request it",
+        heading: "What people put on them",
         subheading: "Ahead of a delivery",
         body: [
           "Typical triggers include preparing a base for a shed, workshop, or detached garage, replacing a slab that has cracked or settled, or creating a pad for HVAC equipment or a generator.",
@@ -194,7 +178,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         ],
       },
       {
-        heading: "Typical project types",
+        heading: "Pads, bases and parking",
         subheading: "Replacement and structural work",
         body: [
           "Work commonly covers new residential slabs, garage and outbuilding slabs, small equipment pads, and foundation related slab work where that falls within a provider's scope.",
@@ -202,7 +186,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         ],
       },
       {
-        heading: "Important considerations",
+        heading: "Edge detailing and permits",
         subheading: "Detailing and permitting",
         body: [
           "The intended load should drive thickness and reinforcement, and the subbase needs proper compaction, since most slab problems begin below the concrete.",
@@ -210,7 +194,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         ],
       },
       {
-        heading: "What to know before starting",
+        heading: "Dimensions and what it carries",
         subheading: "Specifications to share",
         body: [
           "Be ready to describe what the slab will carry, the finished dimensions needed, the site's drainage, and access for equipment and delivery.",
@@ -218,19 +202,11 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         ],
       },
       {
-        heading: "How a project generally runs",
+        heading: "Forming through to curing",
         subheading: "From forming to curing",
         body: [
           "The usual sequence is a site assessment, a written scope and quote, layout and excavation, then subbase placement and compaction.",
           "Forming, reinforcement, any under slab provisions, the pour and finish, joint cutting, and curing follow. Squareness and level are checked first, because they are fixed once concrete is placed.",
-        ],
-      },
-      {
-        heading: "Why planning matters",
-        subheading: "Confirm it in writing",
-        body: [
-          "A slab is one of the hardest elements to change afterwards. Dimensions slightly off, a pad that is not square, or reinforcement suited to a lighter load usually cannot be corrected without removal.",
-          "Confirming purpose, size, and specification in writing before the pour prevents the most expensive category of rework.",
         ],
       },
     ],
@@ -249,7 +225,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
     ],
     moreInfo: [
       {
-        heading: "What concrete repair covers",
+        heading: "Why the cause comes before the fix",
         subheading: "Why the cause comes first",
         body: [
           "Concrete repair addresses existing slabs that have cracked, deteriorated at the surface, settled unevenly, or become a trip hazard.",
@@ -257,7 +233,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         ],
       },
       {
-        heading: "Common reasons homeowners request it",
+        heading: "Usually it is a trip hazard",
         subheading: "Safety as the trigger",
         body: [
           "Frequent reasons include a widening crack across a driveway or patio, a surface that is flaking or pitting, or a section that has dropped relative to its neighbor.",
@@ -265,7 +241,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         ],
       },
       {
-        heading: "Typical project types",
+        heading: "Patching, resurfacing, assessment",
         subheading: "Assessments and whole surfaces",
         body: [
           "Requests commonly involve individual cracks, areas of surface deterioration, uneven or settled sections, and damaged edges and corners.",
@@ -273,7 +249,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         ],
       },
       {
-        heading: "Important considerations",
+        heading: "When a repair will not hold",
         subheading: "When repair will not hold",
         body: [
           "Repairs are rarely invisible. Patched concrete usually differs in color and texture from the slab around it, and that difference tends to remain.",
@@ -281,7 +257,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         ],
       },
       {
-        heading: "What to know before starting",
+        heading: "What to tell the provider",
         subheading: "Questions for the provider",
         body: [
           "Helpful information includes when the damage appeared, whether it is changing, what the area is used for, and what happens there in heavy rain. Photographs are genuinely useful.",
@@ -289,19 +265,11 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         ],
       },
       {
-        heading: "How a project generally runs",
+        heading: "Cut out, repair, cure",
         subheading: "Repair and curing",
         body: [
           "A repair usually starts with a site assessment of the damage and its likely cause, followed by a written scope setting out the approach.",
           "Preparation of the area, the repair itself, and a curing period follow. Where the assessment points to replacement, the provider should explain why and what that scope involves.",
-        ],
-      },
-      {
-        heading: "Why planning matters",
-        subheading: "Why diagnosis decides it",
-        body: [
-          "Diagnosis is the part of concrete repair that decides whether the result lasts. Repairing a symptom while leaving drainage or movement unaddressed often returns the surface to its previous condition.",
-          "Time at the assessment stage, and asking for the reasoning behind the recommended approach, separates a repair that holds from one that has to be redone.",
         ],
       },
     ],

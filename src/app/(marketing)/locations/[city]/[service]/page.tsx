@@ -9,7 +9,6 @@ import {
   HowMatchingWorks,
   ReferralDisclosureStrip,
   Section,
-  RoutingControls,
 } from "@/components/marketing/sections";
 import {
   Breadcrumbs,
@@ -94,7 +93,7 @@ export default async function ComboPage({ params }: { params: Params }) {
   if (!record || !location || !serviceRecord) notFound();
 
   const path = `/locations/${city}/${service}`;
-  const h1 = comboMeta.h1(serviceRecord.name, location.city);
+  const h1 = comboMeta.h1(serviceRecord.slug, location.city);
   const description = comboMeta.description(
     serviceRecord.slug,
     location.city,
@@ -242,11 +241,14 @@ export default async function ComboPage({ params }: { params: Params }) {
               className="scroll-mt-36 border-t py-12 md:py-20"
               style={{ borderColor: "var(--color-line-soft)" }}
             >
-              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">How routing works</p>
-              <h2 className="h2 mt-4">Before your request is passed on</h2>
-              <div className="mt-8">
-                <RoutingControls />
-              </div>
+              <p className="max-w-prose text-[15px] leading-relaxed text-[color:var(--color-muted)]">
+                Coverage, project type, referral agreement and current capacity
+                are all checked before your details go anywhere.{" "}
+                <Link href="/how-it-works" className="underline underline-offset-4">
+                  How a request is checked and routed
+                </Link>
+                .
+              </p>
             </section>
           </div>
 

@@ -161,7 +161,7 @@ export function ServiceCtaBand({
 }) {
   return (
     <CtaBand
-      title="Need Help With Your Concrete Project?"
+      title="Need help with a concrete project?"
       body="Tell us about your project and location to request a connection with an independent concrete service provider serving your area."
       imageSrc={imageSrc}
       imageAlt={imageAlt}

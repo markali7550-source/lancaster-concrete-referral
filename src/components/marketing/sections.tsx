@@ -630,25 +630,6 @@ export function RoutingControls() {
   );
 }
 
-/* ----------------------------------------------------------- ProjectExamples */
-
-export function ProjectExamples() {
-  return (
-    <div className="card p-7">
-      <p className="eyebrow-plain">PHOTOGRAPHY POLICY</p>
-      <h3 className="mt-3 text-2xl font-semibold">
-        Concept imagery for reference — verified portfolios on request.
-      </h3>
-      <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--color-muted)]">
-        We use clear illustrative concrete photography to showcase project
-        standards, never claiming direct execution. Authentic contractor
-        portfolio photos are published only after source, ownership, and
-        permission verification.
-      </p>
-    </div>
-  );
-}
-
 /* ---------------------------------------------------------- HowMatchingWorks */
 
 const STEPS = [

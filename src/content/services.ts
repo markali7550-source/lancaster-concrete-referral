@@ -19,6 +19,23 @@ export interface ServiceRecord {
   summary: string;
   /** Hero paragraph on the service hub. */
   heroSummary: string;
+  /*
+   * Section headings written per service rather than built from the service
+   * name. Four pages previously shared seven byte-identical H2s, which is what
+   * made them read as one page with a noun swapped. These are the headings a
+   * writer would choose for each subject: a patio page should not be headed
+   * "What actually drives the price" just because the driveway page is.
+   */
+  headings: {
+    options: string;
+    process: string;
+    cost: string;
+    prepare: string;
+    moreInfo: string;
+    faq: string;
+  };
+  /** Lede under the specification heading. */
+  optionsLead: string;
   image: string;
   imageAlt: string;
   projectTypes: string[];
@@ -53,7 +70,17 @@ export const services: readonly ServiceRecord[] = [
     summary:
       "New pours and full replacements, including tear out of failed slabs and the drainage questions that come with Lancaster County clay.",
     heroSummary:
-      "Looking for a concrete driveway contractor in Lancaster, SC? We help homeowners connect with independent local service providers who may be able to assist with new pours and full replacements. Submit your project details to request a referral. We are a referral service and do not perform concrete work ourselves. The provider quotes, schedules, and performs the work.",
+      "Most driveway calls start one of two ways: a gravel drive that washes out every spring, or a slab that has cracked and settled past the point where patching is worth it. Tell us which one you have and we pass it to one independent provider who pours driveways in your area. They quote it, schedule it, and do the work. We do not.",
+    headings: {
+      options: "Decisions that change the quote",
+      process: "What a driveway pour week looks like",
+      cost: "Where driveway money actually goes",
+      prepare: "Before the contractor walks the drive",
+      moreInfo: "Driveways on Lancaster County clay",
+      faq: "Driveway questions we get asked",
+    },
+    optionsLead:
+      "We do not specify your driveway. These are the calls the contractor will ask you to make, so they are not the first time you hear them.",
     image: "/images/service-driveways.webp",
     imageAlt:
       "Newly poured residential concrete driveway with saw cut control joints and a broom finish",
@@ -241,7 +268,17 @@ export const services: readonly ServiceRecord[] = [
     summary:
       "New patio pours, replacements, and stamped finishes where a participating provider has documented that capability.",
     heroSummary:
-      "Looking for a concrete patio contractor in Lancaster, SC? A patio is the one concrete project where finish and layout matter as much as the slab. We help homeowners connect with independent service providers who may be able to assist, and the provider walks the space with you and quotes it directly. Submit your project details to request a referral.",
+      "A patio is the one concrete project where the finish matters as much as the slab under it. Colour, texture, and where the joints fall are decisions you live with every time you walk outside. We route your details to one independent provider who will walk the space with you and quote it directly.",
+    headings: {
+      options: "Finish, colour and layout choices",
+      process: "How a patio build is sequenced",
+      cost: "What makes one patio cost more than another",
+      prepare: "Walking the space before you get a price",
+      moreInfo: "Getting a patio right the first time",
+      faq: "Patio questions we get asked",
+    },
+    optionsLead:
+      "Patios are where the finish decisions live. Pick these before you compare quotes, or you will be comparing two different projects.",
     image: "/images/service-patios.webp",
     imageAlt:
       "Rectangular concrete backyard patio with a smooth troweled finish and control joints",
@@ -422,7 +459,17 @@ export const services: readonly ServiceRecord[] = [
     summary:
       "Residential slabs and pads for sheds, equipment, vehicles, and outbuildings, nonstructural work only.",
     heroSummary:
-      "Looking for a concrete slab contractor in Lancaster, SC? Shed bases, equipment pads, RV and boat parking, and similar flatwork. We connect homeowners with independent service providers who may be able to help. Anything carrying a building load or needing an engineer is declined rather than routed.",
+      "Shed bases, equipment pads, RV and boat parking. Flatwork that has to carry a known weight and stay level for years, which makes what goes under the slab the part that matters. If the pad will hold up a building, or needs an engineer's stamp, we decline it rather than route it.",
+    headings: {
+      options: "Specifying a pad for what it carries",
+      process: "From staked forms to a usable pad",
+      cost: "What drives the price of a pad",
+      prepare: "Knowing the load before the visit",
+      moreInfo: "Sizing and siting a residential pad",
+      faq: "Slab and pad questions we get asked",
+    },
+    optionsLead:
+      "A pad is specified by what sits on it. Load comes first, because it decides thickness, reinforcement and base depth before anything else is priced.",
     image: "/images/service-slabs.webp",
     imageAlt:
       "Finished flat concrete slab pad in a residential backyard with a small storage shed",
@@ -598,7 +645,17 @@ export const services: readonly ServiceRecord[] = [
     summary:
       "Nonstructural crack repair, surface repair, and resurfacing. Structural assessment is out of scope.",
     heroSummary:
-      "Looking for a concrete repair contractor in Lancaster, SC? We connect homeowners with independent service providers who may be able to help with surface level problems on sound concrete: crazing, spalling, shrinkage cracks, and tired finishes. If it sounds like movement or load failure, we will say so plainly.",
+      "Some concrete is worth saving and some is not. We route surface problems on slabs that are otherwise sound: crazing, spalling, shrinkage cracks, a finish that has simply worn out. If what you describe sounds like movement or a failing base, we will tell you, because resurfacing it would be money wasted.",
+    headings: {
+      options: "Repair methods and when each applies",
+      process: "How a repair job is assessed and done",
+      cost: "Why repair quotes vary so widely",
+      prepare: "Describing the damage accurately",
+      moreInfo: "Repair, resurface, or replace",
+      faq: "Repair questions we get asked",
+    },
+    optionsLead:
+      "Repair is diagnosis before method. The right fix depends on why the concrete failed, which is why two jobs that look alike are quoted differently.",
     image: "/images/repair-hero-walkway.webp",
     imageAlt:
       "Residential walkway half weathered and cracked, half freshly resurfaced with smooth concrete",

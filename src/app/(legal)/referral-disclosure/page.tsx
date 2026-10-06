@@ -56,6 +56,14 @@ export default function ReferralDisclosurePage() {
         </a>{" "}
         and request current insurance evidence before you hire anyone.
       </p>
+
+      <h2>Photography</h2>
+      <p>
+        Photographs on this site illustrate the kind of work we route. They do
+        not depict jobs completed by us, and we perform no concrete work. Where
+        a provider&rsquo;s own project photos appear, we confirm ownership and
+        permission first.
+      </p>
     </LegalPage>
   );
 }

@@ -8,7 +8,6 @@ import {
   ReferralDisclosureStrip,
   Section,
   SectionDivider,
-  RoutingControls,
 } from "@/components/marketing/sections";
 import {
   Breadcrumbs,
@@ -125,23 +124,13 @@ export default async function ServicePage({ params }: { params: Params }) {
 
   const detail = serviceDetails[service.slug];
 
-  // `nameLower` carries its own article for countable services ("a concrete
-  // driveway") but not for mass nouns ("concrete repair"), so add one only
-  // when it is missing.
-  const projectPhrase = service.nameLower.startsWith("a ")
-    ? service.nameLower
-    : `a ${service.nameLower}`;
-
   const navItems = [
     { id: "scope", label: "What's covered" },
     { id: "more-information", label: "More information" },
-    { id: "may-include", label: "May include" },
     { id: "options", label: "Options" },
     { id: "process", label: "Process" },
     { id: "cost", label: "What drives cost" },
     { id: "prepare", label: "Prepare" },
-    { id: "routing", label: "How routing works" },
-    { id: "how-it-works", label: "How it works" },
     { id: "quote-form", label: "Get a quote" },
     { id: "faq", label: "FAQ" },
   ];
@@ -208,11 +197,10 @@ export default async function ServicePage({ params }: { params: Params }) {
             <section id="options" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
               <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Specification</p>
               <h2 className="h2 mt-4">
-                Choices your contractor will raise
+                {service.headings.options}
               </h2>
               <p className="lede mx-auto mt-4 max-w-prose text-center md:mx-0 md:text-left">
-                We do not specify your project. These are the decisions that
-                come up so you are not hearing them for the first time on site.
+                {service.optionsLead}
               </p>
               <div className="mt-8">
                 <OptionsList options={service.options} />
@@ -222,7 +210,7 @@ export default async function ServicePage({ params }: { params: Params }) {
             <section id="process" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
               <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Process</p>
               <h2 className="h2 mt-4">
-                How a {service.projectNoun} project usually runs
+                {service.headings.process}
               </h2>
               <p className="lede mx-auto mt-4 max-w-prose text-center md:mx-0 md:text-left">
                 Durations below are typical ranges reported by partners, not
@@ -236,7 +224,7 @@ export default async function ServicePage({ params }: { params: Params }) {
             <section id="cost" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
               <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Pricing</p>
               <h2 className="h2 mt-4">
-                What actually drives the price
+                {service.headings.cost}
               </h2>
               <p className="lede mx-auto mt-4 max-w-prose text-center md:mx-0 md:text-left">
                 We publish no prices, ranges, or per foot figures. Doing so
@@ -251,7 +239,7 @@ export default async function ServicePage({ params }: { params: Params }) {
             <section id="prepare" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
               <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Preparation</p>
               <h2 className="h2 mt-4">
-                Get more out of the estimate visit
+                {service.headings.prepare}
               </h2>
               <div className="mt-8">
                 <PrepColumns
@@ -261,14 +249,21 @@ export default async function ServicePage({ params }: { params: Params }) {
               </div>
             </section>
 
-            <section id="routing" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">How routing works</p>
-              <h2 className="h2 mt-4">
-                How your request reaches an independent provider
-              </h2>
-              <div className="mt-8">
-                <RoutingControls />
-              </div>
+            {/*
+              The four routing controls used to be repeated in full here, on
+              every service page, every combo page and the home page -- the
+              same four paragraphs on eleven URLs. They are explained once, on
+              /how-it-works, and linked from the places that need them.
+            */}
+            <section className="scroll-mt-36 border-t py-10" style={{ borderColor: "var(--color-line-soft)" }}>
+              <p className="max-w-prose text-[15px] leading-relaxed text-[color:var(--color-muted)]">
+                Before anything is sent we check written coverage, project type,
+                an active referral agreement and current capacity.{" "}
+                <Link href="/how-it-works" className="underline underline-offset-4">
+                  How a request is checked and routed
+                </Link>
+                .
+              </p>
             </section>
           </div>
 
@@ -310,62 +305,42 @@ export default async function ServicePage({ params }: { params: Params }) {
       <section id="more-information" className="scroll-mt-32">
         <Section
           eyebrow="More information"
-          title={`Understanding ${projectPhrase} project in Lancaster, SC`}
-          lead={`A plain language look at what ${projectPhrase} project involves, what homeowners in Lancaster County typically ask about, and what is worth settling before any work begins.`}
+          title={service.headings.moreInfo}
         >
           <MoreInformation blocks={detail.moreInfo} />
         </Section>
       </section>
 
-      <section id="may-include" className="scroll-mt-32">
-        <Section
-          backgroundImage={SERVICE_DETAIL_IMAGES[service.slug]}
-          eyebrow="Include"
-          title={`What ${projectPhrase} project may include`}
-        >
-          <MayInclude
-            items={detail.mayInclude}
-            serviceName={projectPhrase}
-          />
-        </Section>
-      </section>
-
-      <section id="how-it-works" className="scroll-mt-32">
-        <Section
-          eyebrow="How it works"
-          title="Three steps to a referral"
-          lead="Requesting a referral takes a few minutes. Here is what happens after you submit your project details."
-        >
-          <ReferralSteps />
-        </Section>
-      </section>
-
       <ServiceDisclosureBlock />
 
+      {/*
+        One city is one sentence, not a directory. This was a full section --
+        eyebrow, heading, background photograph -- wrapped around a single
+        link, which is what a multi-city template looks like when only one row
+        of data exists. It returns to a section if the list ever grows.
+      */}
       {cityLinks.length > 0 ? (
-        <Section
-          eyebrow="Local pages"
-          title={`${service.name} by city`}
-          compact
-          backgroundImage={SERVICE_PROCESS_IMAGES[service.slug]}
-        >
-          <ul className="flex flex-wrap justify-center gap-3 lg:justify-start">
-            {cityLinks.map(({ record, location }) => (
-              <li key={record.locationSlug}>
+        <div className="container-page py-10">
+          <p className="max-w-prose text-[15px] leading-relaxed text-[color:var(--color-muted)]">
+            {cityLinks.length === 1 ? "Local page: " : "Local pages: "}
+            {cityLinks.map(({ record, location }, index) => (
+              <span key={record.locationSlug}>
+                {index > 0 ? ", " : ""}
                 <Link
                   href={`/locations/${record.locationSlug}/${record.serviceSlug}`}
-                  className="btn btn-secondary"
+                  className="underline underline-offset-4"
                 >
-                  {service.name} in {location.city}, {location.region}
+                  {service.nameLower} in {location.city}
                 </Link>
-              </li>
+              </span>
             ))}
-          </ul>
-        </Section>
+            .
+          </p>
+        </div>
       ) : null}
 
       <section id="faq" className="scroll-mt-32">
-        <Section eyebrow="FAQ" title={`${service.name} questions`}>
+        <Section eyebrow="FAQ" title={service.headings.faq}>
           <FaqSection faqs={service.considerations} name="service-faq" />
         </Section>
       </section>

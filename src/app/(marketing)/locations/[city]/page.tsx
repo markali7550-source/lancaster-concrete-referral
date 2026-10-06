@@ -14,7 +14,6 @@ import {
   ReferralDisclosureStrip,
   Section,
   StatStrip,
-  RoutingControls,
 } from "@/components/marketing/sections";
 import {
   Breadcrumbs,
@@ -208,13 +207,6 @@ export default async function LocationPage({ params }: { params: Params }) {
         <HowMatchingWorks />
       </Section>
 
-      <Section
-        tone="soft"
-        eyebrow="How routing works"
-        title="How a request is matched to a provider"
-      >
-        <RoutingControls />
-      </Section>
 
       <Section
         tone="surface"
