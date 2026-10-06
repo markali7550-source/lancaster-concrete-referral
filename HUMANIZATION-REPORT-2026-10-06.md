@@ -184,3 +184,150 @@ Scored honestly against the brief's targets, after a second pass that fixed the 
 | **Trust** | ≥9 | 8 | **8** | Unchanged, and I am not moving it. No fabricated reviews, ratings, licences, awards or statistics; the referral relationship is disclosed in the hero, body, footer and a dedicated page; no fake urgency or badges. It is held at 8 solely by the 555 placeholder phone number and the example.com email, which a careful visitor will notice. Nothing I can do in the repository changes that. |
 
 The highest-leverage remaining action is still item 1 — set the five `NEXT_PUBLIC_*` environment variables to real details at deploy. That alone moves trust to 9.
+
+---
+
+## 13. Third pass — reading the site instead of grepping it
+
+The first two passes fixed structure and lexis, and the measurements said the
+copy was clean: zero buzzwords, zero em dashes, zero exclamation marks, mean
+sentence length 14.1 words. That was true and it was not sufficient. Every
+defect found in this pass is invisible to a word-list sweep, because none of
+them is about word choice. They were found by rendering all 17 routes to plain
+text and reading them, and by putting each photograph next to the words that
+describe it.
+
+### 13.1 The descriptions did not match the photographs
+
+Alt text had never been checked against the images. Rendering the 13 content
+images as contact sheets and reading each alt string beside its own frame
+found **5 wrong, 3 of them naming a finish the photograph contradicts**.
+
+| Image | Alt text claimed | The photograph actually shows |
+|---|---|---|
+| `service-patios` | "smooth troweled finish" | stamped random-stone, curved edge, split-rail fence |
+| `repair-hero-walkway` | "half freshly resurfaced" | a root-heaved slab with a raised lip; no resurfaced half |
+| `local-patios-lancaster` | "broom finished, shaded by mature oak and pine" | stamped flagstone in full sun, young saplings, new timber fence |
+| `local-repair-lancaster` | "uneven walkway … in Lancaster, South Carolina" | a broad driveway slab with a long crack and map cracking |
+| `local-slabs-lancaster` | "landscaped yard … in Lancaster, South Carolina" | bare soil and gravel along the slab edge |
+
+Two separate faults are stacked here. The first is simple inaccuracy, and it is
+the kind a sighted editor never catches because they never read the alt text.
+The second is worse: two strings asserted the photograph was taken *in
+Lancaster, South Carolina*. The site's own position is that its imagery is
+representative, so the alt text was contradicting the disclosure a few hundred
+pixels below it, and doing so in the one place the claim could not be seen. The
+remaining eight alts were verified against their frames and left alone.
+
+### 13.2 The copy asserted data the business cannot have
+
+The four Lancaster service pages carry the best local writing on the site. They
+also carried about a dozen sentences that quietly claim a dataset:
+
+- "Driveway inquiries from Lancaster **split fairly evenly** between …"
+- "Patio inquiries in Lancaster are **dominated by** …"
+- "Rural parcels **account for most** of the larger ones"
+- "Repair inquiries **arrive in three recognizable shapes**"
+- "**Requests cluster** in late spring and early fall, which is when provider
+  capacity tightens and **acknowledgment times stretch**"
+- six more reporting what "participating providers" habitually ask, steer
+  toward, or schedule
+
+Those same pages say Lancaster is "the approved coverage area **at launch**"
+and that each request goes to **one** provider. A reader who notices the first
+statement cannot believe the second set. This is the most AI-like writing that
+survived two passes, and it survives precisely because it reads as expertise:
+inventing a plausible distribution is exactly how a language model performs
+local knowledge.
+
+The fix was not deletion. Every one of those paragraphs contains real, checkable
+construction knowledge, and all of it was kept — clay subsoil holding water,
+shade growing algae on a troweled finish, a July pour skinning over before it
+can be finished, septic and well setbacks constraining where a pad can sit, oak
+roots lifting walkway panels, differential movement where a new slab meets an
+old footing. What changed is that the text now states the condition instead of
+reporting a statistic about it. "A broom or exposed aggregate finish holds grip
+where a smooth troweled one will not" needs no dataset; "providers usually steer
+these patios toward a broom finish" does.
+
+Also dropped: a named street used to locate "the older neighborhoods". It is an
+unverifiable specific, and the brief's rule is to invent nothing.
+
+### 13.3 Grammar that a template produces and a writer does not
+
+Fixing the plural H1 in pass one did not fix the bug class. The same plural
+`shortName` was being interpolated into four more attributive positions:
+
+- "View **driveways** referrals" → "View driveway referrals"
+- "All **patios** referrals" → "All patio referrals"
+- "Lancaster **driveways** questions" → "Lancaster driveway questions"
+- "What we see on Lancaster **slabs** requests" → "What we see on Lancaster slab requests"
+
+All four now use the singular `projectNoun` field. Three other interpolations of
+the same field were checked and deliberately left plural, because they are
+grammatically correct there — "View driveways in Lancaster", "What we route
+under concrete driveways", and "the concrete driveways page", which is the
+page's actual name. The lesson from pass one generalises: when a brief says fix
+the logic so it cannot return, sweep every interpolation of the offending field,
+then check each one individually rather than applying one rule to all of them.
+
+### 13.4 Typography that was set rather than edited
+
+Reading rendered text surfaced four inconsistencies, including two I introduced
+in the previous pass:
+
+- **A literal ` -- ` in two sentences I wrote.** The site correctly bans em
+  dashes, but a double hyphen is a worse substitute — it renders as two visible
+  hyphens and looks like markup that failed to convert. Both sentences were
+  restructured.
+- **One `&mdash;` entity** on the combo pages. It was the only em dash in 1,622
+  lines of visitor-facing copy, so it read as an outlier rather than a style.
+- **Mixed apostrophes:** one `&rsquo;` against three `&apos;`, so one sentence
+  showed a curly apostrophe and the rest showed straight ones.
+- **"a different order *to* driveways"** — British. American English takes
+  "from". The legal pages had the matching slip, stamped "24 September 2026"
+  rather than "September 24, 2026".
+
+Individually trivial. Together they are the signature of text that was generated
+and never read aloud by someone who lives where the business claims to operate.
+
+Rendered copy across all 17 routes now measures **0 em dashes, 0 en dashes, 0
+literal double hyphens, 0 curly apostrophes, 0 exclamation marks, and no British
+spellings or conventions**.
+
+### 13.5 My own new copy needed the same scrutiny as the inherited copy
+
+Four of the eight section ledes written in pass two had defects: the two double
+hyphens above, the British preposition, and a repetition fault — two separate
+ledes both commented on the page's own layout. One such aside is a human touch;
+two is a tic, and a tic is what makes writing feel generated. The repair page
+now simply says the assessment comes first. Worth recording plainly: text I
+wrote to remove the AI feel had to be audited for the AI feel.
+
+### 13.6 One inconsistency deliberately preserved
+
+Step 02 of "Three steps, no obligation" is a full sentence ending in a period,
+while steps 01 and 03 are short phrases. It looks like an editing miss. It is
+carried in the source under the comment *"Heading wording is fixed by the brief
+and must stay exact"*, so it is a requirement, not a defect, and it has been
+left exactly as written. Flagging it here so it is not silently "fixed" later.
+
+## 14. Scores after the third pass — unchanged, and why
+
+| | Target | Pass 2 | Pass 3 | Why it did not move |
+|---|---|---|---|---|
+| **AI-looking** | ≤2 | 2 | **2** | Real tells were removed — fabricated statistics, five wrong image descriptions, four template plurals. But the score was never being held up by those; it is held at 2 because every photograph on the site is AI-generated concept imagery. Fixing the writing cannot move that, so the number stays. |
+| **Human-designed** | ≥9 | 9 | **9** | This pass changed almost no design. It corrected language and accuracy. A 10 would need the shared component vocabulary across the four service pages to break up, which was judged a design system working correctly rather than a fault. |
+| **Professional** | ≥9 | 9 | **9** | All gates still green: typecheck, 36/36 tests, four content asserts, 18/18 routes 200. Accurate alt text and consistent typography are what 9 already implied; they are a correction toward the claimed score, not evidence for a higher one. |
+| **Generic / template** | ≤2 | 2 | **2** | Unchanged. The four attributive plurals were template artefacts and are gone, but a reader was unlikely to read "All patios referrals" as *template* so much as *sloppy*. |
+| **Trust** | ≥9 | 8 | **8** | Still capped by the `(803) 555-0123` reserved-fiction number and the `example-referral-brand.com` email, both environment-supplied and deliberately not invented. One honest note: **pass two's 8 was slightly generous**, because the location copy was asserting invented statistics and I had not audited it yet. The number is the same; it is now accurate rather than flattering. |
+
+No score was raised in this pass. Three of the findings — invented statistics,
+alt text contradicting the imagery disclosure, and text claiming photographs
+were taken in Lancaster — were trust defects that existed while trust was scored
+8. Raising the score after removing defects I had failed to count the first time
+would be exactly the manipulation the brief rules out.
+
+**The single highest-leverage remaining action is unchanged:** set the five
+`NEXT_PUBLIC_*` environment variables to real contact details at deploy. That
+moves trust to 9 and is the only target still unmet.
