@@ -7,6 +7,33 @@ import type { LocationRecord } from "@/content/locations";
 import { site } from "@/lib/env";
 import { SHORT_DISCLOSURE } from "@/lib/seo/disclosure";
 
+/* ------------------------------------------------------------ Photo scrim */
+
+/*
+ * Every band that puts copy over a photograph shares these layers. They were
+ * previously written inline per component as a fully opaque fill, which hid
+ * the photograph completely.
+ *
+ * 70% is not arbitrary: it is the lowest opacity at which the *brightest*
+ * glyph-scale region of every photo in /public still clears WCAG AA (4.5:1)
+ * against the lightest text color used on these bands. The binding constraint
+ * is the mint eyebrow #5fe3a8, which needs 0.70; muted body #cfdbd5 needs 0.67
+ * and white needs 0.57. Lower this and the eyebrow fails on the bright pours.
+ */
+export const PHOTO_SCRIM = "bg-[#0D1110]/70";
+
+/** Blends the band into the page background at the top and bottom seams. */
+export const PHOTO_EDGE_FADE =
+  "bg-gradient-to-b from-[#0D1110] via-transparent to-[#0D1110]";
+
+/**
+ * Heroes only. Deepens the copy side on desktop and releases to transparent on
+ * the right so the photograph stays visible. Gated to lg because the mobile
+ * hero centers its copy, where a left-weighted wash would do nothing useful.
+ */
+export const PHOTO_SIDE_WASH =
+  "hidden lg:block bg-gradient-to-r from-[#0D1110]/55 via-[#0D1110]/25 to-transparent";
+
 /* ---------------------------------------------------------------- Section */
 
 export function Section({
@@ -62,9 +89,12 @@ export function Section({
             sizes="100vw"
             className="-z-20 object-cover"
           />
-          <div className="absolute inset-0 z-10 bg-[#0D1110]" aria-hidden="true" />
           <div
-            className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-[#0D1110] via-transparent to-[#0D1110]"
+            className={`absolute inset-0 z-10 ${PHOTO_SCRIM}`}
+            aria-hidden="true"
+          />
+          <div
+            className={`pointer-events-none absolute inset-0 z-20 ${PHOTO_EDGE_FADE}`}
             aria-hidden="true"
           />
         </>
@@ -107,7 +137,7 @@ export function Section({
 
 /* ---------------------------------------------------------- SectionDivider */
 
-/** Centred hairline that separates two stacked sections. */
+/** Centered hairline that separates two stacked sections. */
 export function SectionDivider() {
   return (
     <div className="container-page" aria-hidden="true">
@@ -118,9 +148,10 @@ export function SectionDivider() {
 
 /* ------------------------------------------------------------------- Hero */
 
-const HERO_IMAGE_OVERLAY = "absolute inset-0 z-10 bg-[#0D1110]";
-const HERO_IMAGE_FADE =
-  "pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-[#0D1110] via-transparent to-[#0D1110]";
+/* Hero scrim: the shared photo layers, stacked over the full-bleed image. */
+const HERO_IMAGE_OVERLAY = `absolute inset-0 z-10 ${PHOTO_SCRIM}`;
+const HERO_IMAGE_SIDE_WASH = `pointer-events-none absolute inset-0 z-10 ${PHOTO_SIDE_WASH}`;
+const HERO_IMAGE_FADE = `pointer-events-none absolute inset-0 z-20 ${PHOTO_EDGE_FADE}`;
 
 /**
  * Full-bleed photo header: the photo fills the band, a dark scrim keeps the
@@ -155,6 +186,7 @@ export function OverlayHeader({
         className={HERO_IMAGE_OVERLAY}
         aria-hidden="true"
       />
+      <div className={HERO_IMAGE_SIDE_WASH} aria-hidden="true" />
       <div className={HERO_IMAGE_FADE} aria-hidden="true" />
       <div className="container-page relative z-30 flex items-center py-14 md:py-20 lg:py-24">
         <div className="mx-auto w-full max-w-2xl text-center lg:mx-0 lg:text-left">
@@ -170,8 +202,6 @@ export const overlayEyebrow = "#5fe3a8";
 export const overlayHeading = "#ffffff";
 export const overlayBody = "rgba(255,255,255,0.88)";
 export const overlayMuted = "rgba(255,255,255,0.82)";
-export const ILLUSTRATIVE_IMAGE_NOTE =
-  "Illustrative residential concrete photography, not a project gallery or a claim that this referral service performed the work.";
 
 const HERO_TRUST = [
   "Free for homeowners",
@@ -219,12 +249,13 @@ export function Hero({
           className={HERO_IMAGE_OVERLAY}
           aria-hidden="true"
         />
+        <div className={HERO_IMAGE_SIDE_WASH} aria-hidden="true" />
         <div className={HERO_IMAGE_FADE} aria-hidden="true" />
         <div
           className={
             aside
               ? "container-page relative z-30 grid items-center gap-10 py-14 lg:grid-cols-[1.05fr_minmax(0,26rem)] lg:gap-14 lg:py-20"
-              : "container-page relative z-30 flex min-h-[calc(100dvh-6.25rem)] items-center py-14 lg:py-20"
+              : "container-page relative z-30 flex min-h-[calc(100svh-6.25rem)] items-center py-14 lg:py-20"
           }
         >
           <div className="mx-auto w-full max-w-2xl text-center lg:mx-0 lg:text-left">
@@ -276,7 +307,7 @@ export function Hero({
             </ul>
           </div>
           {aside ? (
-            <div className="mobile-sticky-form sticky bottom-0 z-40 mx-auto w-full max-w-xl rounded-t-xl bg-[#0D1110]/95 p-2 backdrop-blur-md lg:static lg:mx-0 lg:max-w-xl lg:rounded-none lg:bg-transparent lg:p-0">{aside}</div>
+            <div className="mobile-sticky-form sticky bottom-0 z-40 mx-auto w-full max-w-xl rounded-t-xl bg-[#0D1110] p-2 lg:static lg:mx-0 lg:max-w-xl lg:rounded-none lg:bg-transparent lg:p-0">{aside}</div>
           ) : null}
         </div>
       </section>

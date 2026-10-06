@@ -18,7 +18,7 @@ export interface PartnerRecord {
   };
   insurance: { onFile: boolean; expiresAt: string; generalLiability: number };
   suspended: boolean;
-  /** Rolling acknowledgement service level, minutes. */
+  /** Rolling acknowledgment service level, minutes. */
   ackMinutes: number;
   contractedPriority: number;
   backup: boolean;

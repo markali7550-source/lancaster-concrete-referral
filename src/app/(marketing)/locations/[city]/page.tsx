@@ -21,24 +21,31 @@ import {
   CtaBand,
   KeyFacts,
 } from "@/components/marketing/service-sections";
-import { getLocation, publishedLocations } from "@/content/locations";
+import { OUT_OF_AREA_POSTAL_CODE, getLocation, publishedLocations, serviceAreaOptions } from "@/content/locations";
 import { publishedServices } from "@/content/services";
 import { publishedLocationServices } from "@/content/location-services";
 import { site } from "@/lib/env";
 import { pageMetadata } from "@/lib/seo/metadata";
 
-const LOCATION_SERVICE_CARD_IMAGES = {
-  "concrete-driveways": { src: "/images/service-driveways.webp", alt: "Residential concrete driveway with a finished smooth surface" },
-  "concrete-patios": { src: "/images/service-patios.webp", alt: "Finished residential concrete patio beside landscaped yard" },
-  "concrete-slabs": { src: "/images/service-slabs.webp", alt: "Residential concrete slab with clean formed edges" },
-  "concrete-repair": { src: "/images/repair-hero-walkway.webp", alt: "Repaired residential concrete surface with a smooth finish" },
-} as const;
 import {
   breadcrumbNode,
   buildGraph,
   faqNode,
   webPageNode,
 } from "@/lib/schema/graph";
+
+/*
+ * These cards link to the local service pages, so each one must show that
+ * page's own hero photograph -- not the national service image, which belongs
+ * to /services/[service]. Derived from the same records the local heroes read
+ * (localImage), so the card and the page it opens cannot drift apart.
+ */
+const LOCATION_SERVICE_CARD_IMAGES = Object.fromEntries(
+  publishedLocationServices.map((record) => [
+    record.serviceSlug,
+    { src: record.localImage, alt: record.localImageAlt },
+  ]),
+);
 
 export const dynamicParams = false;
 
@@ -86,7 +93,7 @@ export default async function LocationPage({ params }: { params: Params }) {
     {
       question: `How quickly does a ${location.city} contractor respond?`,
       answer:
-        "Participating providers work to a contracted acknowledgement window. If the assigned contractor does not acknowledge in time, the request is reassigned once to an approved backup rather than sitting unattended.",
+        "Participating providers work to a contracted acknowledgment window. If the assigned contractor does not acknowledge in time, the request is reassigned once to an approved backup rather than sitting unattended.",
     },
     {
       question: `Is there a ${location.city} office I can visit?`,
@@ -126,8 +133,8 @@ export default async function LocationPage({ params }: { params: Params }) {
         locationCue={`${location.county}, South Carolina`}
         h1={`Concrete Contractor Referrals in ${location.city}, SC`}
         summary={location.intro}
-        imageSrc="/lancaster-hero.webp"
-        imageAlt={`Tree lined residential street in ${location.city}, ${location.region}, with concrete driveways and a sidewalk running past single family homes`}
+        imageSrc={location.heroImage}
+        imageAlt={location.heroImageAlt}
         overlay
       />
       <KeyFacts
@@ -147,7 +154,7 @@ export default async function LocationPage({ params }: { params: Params }) {
       >
         <Image
           src="/locations/lancaster-residential-street.webp"
-          alt={`Single storey brick homes with concrete driveways and front walkways on a residential street in ${location.city}, ${location.region}`}
+          alt={`Single-story brick homes with concrete driveways and front walkways on a residential street in ${location.city}, ${location.region}`}
           width={900}
           height={491}
           sizes="(min-width: 1024px) 80rem, 100vw"
@@ -192,8 +199,8 @@ export default async function LocationPage({ params }: { params: Params }) {
 
       <Section
         backgroundImage={{
-          src: "/process-band.webp",
-          alt: "Residential concrete driveway forms and fresh pour on a neighborhood street",
+          src: "/images/process-location-lancaster.webp",
+          alt: "Residential concrete driveway on a Lancaster neighborhood street",
         }}
         eyebrow="Process"
         title="How a Lancaster request is routed"
@@ -221,7 +228,9 @@ export default async function LocationPage({ params }: { params: Params }) {
                 slug: s.slug,
                 name: s.name,
               }))}
-              consentVersion={site.consentVersion}
+              serviceAreas={serviceAreaOptions}
+                outOfAreaValue={OUT_OF_AREA_POSTAL_CODE}
+                consentVersion={site.consentVersion}
               fallbackDisplay={site.phoneDisplay}
               fallbackE164={site.phoneE164}
             />
@@ -266,8 +275,8 @@ export default async function LocationPage({ params }: { params: Params }) {
       <CtaBand
         title={`Get matched with a ${location.city} concrete contractor`}
         body="One request, one eligible independent contractor, no charge and no obligation."
-        imageSrc="/cta-pour-band.webp"
-        imageAlt="Two independent concrete workers screeding a freshly poured residential driveway slab between timber forms"
+        imageSrc="/images/cta-location-lancaster.webp"
+        imageAlt="Concrete driveway apron meeting the street outside a Lancaster area home"
       />
 
     </>

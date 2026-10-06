@@ -97,7 +97,7 @@ export const services: readonly ServiceRecord[] = [
       {
         name: "Thickness and reinforcement",
         description:
-          "Residential drives are commonly placed thicker where vehicles are heavy. Fibre mesh, welded wire, or rebar is specified by the contractor based on load and soil.",
+          "Residential drives are commonly placed thicker where vehicles are heavy. Fiber mesh, welded wire, or rebar is specified by the contractor based on load and soil.",
       },
       {
         name: "Control joint layout",
@@ -359,7 +359,7 @@ export const services: readonly ServiceRecord[] = [
       {
         factor: "Access to the rear yard",
         impact: "Medium",
-        note: "Gate width and slope decide whether concrete is barrowed, pumped, or chuted.",
+        note: "Gate width and slope decide whether concrete is wheelbarrowed, pumped, or chuted.",
       },
       {
         factor: "Sealing and maintenance",
@@ -466,10 +466,10 @@ export const services: readonly ServiceRecord[] = [
       {
         name: "Reinforcement",
         description:
-          "Fibre mesh, welded wire, or rebar. The choice follows load, soil, and the contractor's judgement.",
+          "Fiber mesh, welded wire, or rebar. The choice follows load, soil, and the contractor's judgment.",
       },
       {
-        name: "Vapour barrier",
+        name: "Vapor barrier",
         description:
           "Relevant where anything moisture sensitive will sit on or be enclosed above the slab.",
       },
@@ -530,12 +530,12 @@ export const services: readonly ServiceRecord[] = [
       {
         factor: "Access to the location",
         impact: "High",
-        note: "Rear yard pads that cannot be chuted from the truck need barrowing or pumping.",
+        note: "Rear yard pads that cannot be chuted from the truck need wheelbarrowing or pumping.",
       },
       {
         factor: "Reinforcement specification",
         impact: "Medium",
-        note: "Rebar mats cost more than fibre mesh and are not always necessary.",
+        note: "Rebar mats cost more than fiber mesh and are not always necessary.",
       },
       {
         factor: "Anchors and embedded items",
@@ -554,7 +554,7 @@ export const services: readonly ServiceRecord[] = [
     quoteQuestions: [
       "What thickness and reinforcement are you specifying for this load?",
       "How deep is the base, and what material is it?",
-      "Is a vapour barrier included, and is it needed here?",
+      "Is a vapor barrier included, and is it needed here?",
       "Are anchor bolts or sleeves set during the pour?",
       "How long before I can place the shed or park on it?",
       "Does my project need anything you are not licensed to do?",
@@ -629,7 +629,7 @@ export const services: readonly ServiceRecord[] = [
     ],
     outOfScope: [
       "Structural assessment, engineering reports, and load calculations",
-      "Slab jacking, mudjacking, and foam levelling of settled slabs",
+      "Slab jacking, mudjacking, and foam leveling of settled slabs",
       "Foundation crack repair and waterproofing",
       "Anything caused by active ground movement or heave",
     ],
@@ -765,3 +765,19 @@ export const publishedServices = services.filter((s) => s.state === "published")
 export function getService(slug: string): ServiceRecord | undefined {
   return publishedServices.find((s) => s.slug === slug);
 }
+
+/**
+ * Card imagery for the service grid on / and /services.
+ *
+ * Both of those grids link to /services/[service], whose hero renders
+ * `service.image`. Deriving the cards from the same field means a card can
+ * never show a different photograph from the page it opens, and the one photo
+ * keeps one accurate alt string instead of a hand-copied variant per page.
+ */
+export const serviceCardImages: Record<string, { src: string; alt: string }> =
+  Object.fromEntries(
+    publishedServices.map((service) => [
+      service.slug,
+      { src: service.image, alt: service.imageAlt },
+    ]),
+  );

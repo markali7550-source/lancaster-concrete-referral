@@ -289,7 +289,7 @@ export function Timeline({
 }) {
   return (
     /* Two-column grid per row: a fixed marker track and the card. The rail is a
-       single element spanning the whole list, centred on the marker track, so
+       single element spanning the whole list, centered on the marker track, so
        every circle lands on the same axis at every width. */
     <ol className="relative grid gap-5">
       <span
@@ -484,70 +484,6 @@ export function RelatedServices({
 
 /* ----------------------------------------------------------------- CtaBand */
 
-export function CtaBand({
-  title,
-  body,
-  showFormLink = true,
-  tone = "accent",
-  imageSrc,
-  imageAlt,
-}: {
-  title: string;
-  body: string;
-  /** Pages without a quote form have nothing to jump to, so they omit it. */
-  showFormLink?: boolean;
-  /** "section" uses the neutral alternate background instead of the mint tint. */
-  tone?: "accent" | "section";
-  /** Optional CTA photograph. Pass only when that asset is not used elsewhere. */
-  imageSrc?: string;
-  imageAlt?: string;
-}) {
-  return (
-    <section
-      className="cta-photo relative isolate overflow-hidden py-16 md:py-20"
-      style={{
-        background: imageSrc
-          ? `url(${imageSrc}) center / cover fixed`
-          : "linear-gradient(135deg, #07120d 0%, #123d2b 58%, #0b100d 100%)",
-      }}
-    >
-      {imageSrc ? (
-        <>
-          <div className="absolute inset-0 z-0 bg-black" aria-hidden="true" />
-          <div
-            className="absolute inset-0 z-0 bg-gradient-to-b from-[#0D1110] via-transparent to-[#0D1110]"
-            aria-hidden="true"
-          />
-        </>
-      ) : null}
-
-      <div className="container-page relative z-10 flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
-        <div className="max-w-xl">
-          <h2 className="text-xl font-semibold md:text-2xl">{title}</h2>
-          <p className="mt-2 text-[15px] leading-relaxed text-[color:var(--color-muted)]">
-            {body}
-          </p>
-        </div>
-        <div
-          className={
-            showFormLink
-              ? "grid w-full max-w-sm shrink-0 gap-3 md:w-auto md:max-w-none md:grid-cols-2"
-              : "grid w-full max-w-sm shrink-0 gap-3 md:w-auto md:max-w-none"
-          }
-        >
-          <DynamicPhone
-            fallbackDisplay={site.phoneDisplay}
-            fallbackE164={site.phoneE164}
-            placement="cta_band"
-            className="btn btn-primary"
-          />
-          {showFormLink ? (
-            <a href="#quote-form" className="btn btn-secondary">
-              Request a referral
-            </a>
-          ) : null}
-        </div>
-      </div>
-    </section>
-  );
-}
+/** Re-exported so existing imports keep working. The band itself, and the
+    site's only viewport-locked background, live in cta-band.tsx. */
+export { CtaBand } from "@/components/marketing/cta-band";

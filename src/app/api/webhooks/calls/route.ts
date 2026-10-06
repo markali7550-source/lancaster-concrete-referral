@@ -67,7 +67,7 @@ export async function POST(request: Request) {
 
   markProcessed(parsed.data.providerEventId, parsed.data.type);
 
-  // Fast acknowledgement: heavy reconciliation belongs on the queue.
+  // Fast acknowledgment: heavy reconciliation belongs on the queue.
   return NextResponse.json({ received: true }, { status: 200, headers: noStore });
 }
 

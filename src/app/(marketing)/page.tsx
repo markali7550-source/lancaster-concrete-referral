@@ -15,8 +15,8 @@ import {
   RoutingControls,
 } from "@/components/marketing/sections";
 import { CtaBand } from "@/components/marketing/service-sections";
-import { publishedLocations } from "@/content/locations";
-import { publishedServices } from "@/content/services";
+import { OUT_OF_AREA_POSTAL_CODE, publishedLocations, serviceAreaOptions } from "@/content/locations";
+import { publishedServices, serviceCardImages } from "@/content/services";
 import { site } from "@/lib/env";
 import { REFERRAL_SERVICE_DISCLOSURE } from "@/lib/seo/disclosure";
 import { pageMetadata } from "@/lib/seo/metadata";
@@ -55,24 +55,7 @@ const DECISION_ITEMS = [
   },
 ];
 
-const HOME_SERVICE_IMAGES = {
-  "concrete-driveways": {
-    src: "/images/service-driveways.webp",
-    alt: "Concrete driveway project with a finished broom texture and residential access",
-  },
-  "concrete-patios": {
-    src: "/images/service-patios.webp",
-    alt: "Finished concrete patio with a clean surface in a residential outdoor setting",
-  },
-  "concrete-slabs": {
-    src: "/images/service-slabs.webp",
-    alt: "Residential concrete slab prepared for a new project",
-  },
-  "concrete-repair": {
-    src: "/images/repair-hero-walkway.webp",
-    alt: "Concrete repair work showing a repaired residential concrete surface",
-  },
-} as const;
+
 
 const FAQS = [
   {
@@ -117,7 +100,7 @@ export default function HomePage() {
         h1="Connect With a Local Concrete Service Provider in Lancaster, SC"
         summary="Tell us what you need and where the property is. We’ll match your request with one eligible independent concrete service provider serving your area."
         imageSrc="/home-hero.webp"
-        imageAlt="Broom finished concrete front walkway and entry steps leading to the porch of a two storey home"
+        imageAlt="Broom finished concrete front walkway and entry steps leading to the porch of a two-story home"
         overlay
       />
 
@@ -127,7 +110,7 @@ export default function HomePage() {
         title="What we can route in Lancaster today"
         lead="Four residential concrete service categories, each with at least one participating provider holding written coverage for Lancaster areas. Foundation repair, structural engineering, and retaining walls sit outside this scope."
       >
-        <ProjectTypeChooser images={HOME_SERVICE_IMAGES} />
+        <ProjectTypeChooser images={serviceCardImages} />
         <p className="mt-8 text-center text-sm lg:text-left">
           <Link
             href="/services"
@@ -215,7 +198,9 @@ export default function HomePage() {
                 slug: s.slug,
                 name: s.name,
               }))}
-              consentVersion={site.consentVersion}
+              serviceAreas={serviceAreaOptions}
+                outOfAreaValue={OUT_OF_AREA_POSTAL_CODE}
+                consentVersion={site.consentVersion}
               fallbackDisplay={site.phoneDisplay}
               fallbackE164={site.phoneE164}
             />

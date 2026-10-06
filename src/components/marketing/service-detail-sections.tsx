@@ -1,14 +1,15 @@
-import { DynamicPhone } from "@/components/lead/DynamicPhone";
 import { Icon } from "@/components/ui/Icon";
+import { CtaBand } from "@/components/marketing/cta-band";
 import type { ServiceDetail } from "@/content/service-details";
-import { site } from "@/lib/env";
+import {
+} from "@/components/marketing/sections";
 import { SERVICE_PAGE_DISCLOSURE } from "@/lib/seo/disclosure";
 
 /* ------------------------------------------------------- MoreInformation */
 
 /**
  * Narrative explainer. Two columns from lg up so long-form copy does not run
- * the full container width; centred headings on mobile per the brief, with
+ * the full container width; centered headings on mobile per the brief, with
  * body copy left-aligned because it is multi-line prose.
  */
 export function MoreInformation({ blocks }: { blocks: ServiceDetail["moreInfo"] }) {
@@ -159,47 +160,13 @@ export function ServiceCtaBand({
   imageAlt?: string;
 }) {
   return (
-    <section
-      className="cta-photo relative isolate overflow-hidden py-16 md:py-20"
-      style={{
-        background: imageSrc
-          ? `url(${imageSrc}) center / cover fixed`
-          : "linear-gradient(135deg, #07120d 0%, #123d2b 58%, #0b100d 100%)",
-      }}
-    >
-      {imageSrc ? (
-        <>
-          <div className="absolute inset-0 z-0 bg-black" aria-hidden="true" />
-          <div
-            className="absolute inset-0 z-0 bg-gradient-to-b from-[#0D1110] via-transparent to-[#0D1110]"
-            aria-hidden="true"
-          />
-        </>
-      ) : null}
-
-      <div className="container-page relative z-10 flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
-        <div className="max-w-xl">
-          <h2 className="text-xl font-semibold md:text-2xl">
-            Need Help With Your Concrete Project?
-          </h2>
-          <p className="mt-2 text-[15px] leading-relaxed text-[color:var(--color-muted)]">
-            Tell us about your project and location to request a connection with
-            an independent concrete service provider serving your area.
-          </p>
-        </div>
-        <div className="grid w-full max-w-sm shrink-0 gap-3 md:w-auto md:max-w-none md:grid-cols-2">
-          <DynamicPhone
-            fallbackDisplay={site.phoneDisplay}
-            fallbackE164={site.phoneE164}
-            placement="cta_band"
-            className="btn btn-primary"
-          />
-          <a href="#quote-form" className="btn btn-secondary">
-            Request a Referral
-            <Icon name="arrow" />
-          </a>
-        </div>
-      </div>
-    </section>
+    <CtaBand
+      title="Need Help With Your Concrete Project?"
+      body="Tell us about your project and location to request a connection with an independent concrete service provider serving your area."
+      imageSrc={imageSrc}
+      imageAlt={imageAlt}
+      actionLabel="Request a Referral"
+      actionIcon
+    />
   );
 }

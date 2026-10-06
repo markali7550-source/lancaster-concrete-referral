@@ -12,16 +12,12 @@ import type { ServiceSlug } from "@/content/services";
  *   participating providers differ in what they take on.
  */
 export interface ServiceDetail {
-  /** Supporting photo shown beside the scope list. Distinct from the hero image. */
-  detailImage: string;
-  /** Descriptive alt text for the supporting photo. */
-  detailImageAlt: string;
   /** Common project components. Rendered under an explicit "may include" caveat. */
   mayInclude: string[];
   /** Narrative explainer blocks, rendered in reading order. */
   /**
    * `body[0]` sits under the card heading. `subheading` titles the second
-   * paragraph so each card scans as two labelled points.
+   * paragraph so each card scans as two labeled points.
    */
   moreInfo: { heading: string; subheading: string; body: string[] }[];
 }
@@ -29,9 +25,6 @@ export interface ServiceDetail {
 export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
   /* ------------------------------------------------------ driveways */
   "concrete-driveways": {
-    detailImage: "/images/driveway-hero-wide.webp",
-    detailImageAlt:
-      "Residential concrete driveway in Lancaster SC with jointed panels and a broom finish",
     mayInclude: [
       "New driveway installation",
       "Driveway replacement",
@@ -103,9 +96,6 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
 
   /* --------------------------------------------------------- patios */
   "concrete-patios": {
-    detailImage: "/images/patio-hero-wide.webp",
-    detailImageAlt:
-      "Residential concrete patio in Lancaster SC with outdoor dining furniture",
     mayInclude: [
       "New patio installation",
       "Patio replacement",
@@ -177,9 +167,6 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
 
   /* ---------------------------------------------------------- slabs */
   "concrete-slabs": {
-    detailImage: "/images/slab-hero-garage.webp",
-    detailImageAlt:
-      "Finished residential concrete slab and equipment pad in Lancaster SC beside a brick home, with an HVAC condenser on the pad",
     mayInclude: [
       "Residential slabs",
       "Garage slabs",
@@ -219,7 +206,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         subheading: "Detailing and permitting",
         body: [
           "The intended load should drive thickness and reinforcement, and the subbase needs proper compaction, since most slab problems begin below the concrete.",
-          "Edge thickening, vapour control under enclosed spaces, anchor placement, and perimeter drainage are worth settling early. Some slab work may be subject to permitting, which should be confirmed locally.",
+          "Edge thickening, vapor control under enclosed spaces, anchor placement, and perimeter drainage are worth settling early. Some slab work may be subject to permitting, which should be confirmed locally.",
         ],
       },
       {
@@ -251,9 +238,6 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
 
   /* --------------------------------------------------------- repair */
   "concrete-repair": {
-    detailImage: "/images/repair-hero-walkway.webp",
-    detailImageAlt:
-      "Concrete repair project in Lancaster SC showing a filled and smoothed crack in a slab",
     mayInclude: [
       "Cracks",
       "Surface deterioration",
@@ -276,7 +260,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         heading: "Common reasons homeowners request it",
         subheading: "Safety as the trigger",
         body: [
-          "Frequent reasons include a widening crack across a driveway or patio, a surface that is flaking or pitting, or a section that has dropped relative to its neighbour.",
+          "Frequent reasons include a widening crack across a driveway or patio, a surface that is flaking or pitting, or a section that has dropped relative to its neighbor.",
           "Standing water over a settled area and broken edges are common too. Safety is often the trigger, particularly where an uneven joint sits on a walking route.",
         ],
       },

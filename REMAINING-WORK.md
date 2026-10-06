@@ -81,7 +81,14 @@ focus trap. One concrete defect is already visible: the banner is `position: fix
 bottom-left and **overlaps the quote form's "Back" button** at some viewport sizes.
 
 ### 3.2 Performance budgets unverified
-Bundle sizes pass (102 kB shared, heaviest page 116 kB against a 120 kB budget), but no
+Bundle sizes are 103 kB shared and 130 kB on the heaviest pages against a 120 kB
+budget, so the budget is currently exceeded by 10 kB on the five form-bearing
+routes (/, /contact, /locations/[city], /locations/[city]/[service],
+/services/[service]). That 130 kB is 103 kB of React + Next.js runtime, ~17 kB
+for the multi-step quote form and ~10 kB for the consent banner and navigation
+menus; it cannot be brought under 120 kB without removing the quote form, which
+is the site's primary conversion path. Either raise the budget to 135 kB or
+accept the overage knowingly. No
 Lighthouse or Core Web Vitals run has happened. Hero imagery is unoptimized source material.
 
 ### 3.3 Cross-browser

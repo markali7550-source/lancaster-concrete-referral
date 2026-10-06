@@ -96,9 +96,16 @@ export function faqNode(
   };
 }
 
+/** Page-level graph.
+ *
+ * Deliberately does NOT spread `rootGraph()`: the root layout already renders
+ * the Organization and WebSite nodes once on every page, so including them
+ * here emitted both a second time on the 13 routes that build a page graph.
+ * Page nodes reference those entities by `@id` (ORG_ID / SITE_ID), which
+ * resolves across separate JSON-LD blocks on the same page. */
 export function buildGraph(nodes: (Node | null)[]) {
   return {
     "@context": "https://schema.org",
-    "@graph": [...rootGraph(), ...nodes.filter((n): n is Node => n !== null)],
+    "@graph": nodes.filter((n): n is Node => n !== null),
   };
 }

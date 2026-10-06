@@ -89,7 +89,19 @@
     font-feature-settings: "cv11", "ss01";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* `overflow-x: hidden` on body makes it a scrolling box, which in several
+       engines drops the page off the compositor's fast scroll path and onto
+       the main thread. Scrolling then judders, most visibly over large
+       photographic bands like the CTA. `clip` suppresses the same horizontal
+       overflow without establishing a scroll container at all; `hidden` stays
+       as the fallback for engines without it. */
     overflow-x: hidden;
+  }
+
+  @supports (overflow-x: clip) {
+    body {
+      overflow-x: clip;
+    }
   }
 
   :where(a, button, input, select, textarea, summary):focus-visible {
@@ -145,12 +157,102 @@
     --color-ink: #f3f7f4;
     --color-muted: #cfdbd5;
     --color-line: rgba(255, 255, 255, 0.22);
+    /* The base color is the scrim color, so the band is already the right
+       shade before the photograph decodes and there is no flash. */
+    background-color: #0d1110;
+  }
+
+  /* The CTA photograph itself is a layer rendered by the CtaBand component;
+     see src/components/marketing/cta-band.tsx for how it is painted. */
+
+  /* Edge fade for the CTA photograph.
+
+     The fade blends the band into the page background so there is no hard
+     seam. It must NOT erase the photograph while doing so. The previous
+     version ramped from fully opaque #0d1110 at both edges to 40% at the
+     midpoint; on a ~193px band that left the top and bottom thirds at solid
+     #0d1110, which read as an empty black gap under the copy.
+
+     So: fixed-length ramps instead of percentage ones, and partial rather
+     than opaque end stops. The ramp is short enough that the photograph
+     carries across the band, and the end stop is close enough to the page
+     background (rgb(11,16,13)) that the seam stays invisible.
+
+     The 40% plateau is load bearing and deliberately unchanged: the 50%
+     scrim under a 40% fade composites to an effective 70%, which is what
+     clears the 4.5:1 AA floor on the body copy. The copy always sits inside
+     the plateau (it starts 36px in, past the 22px ramp), so text contrast is
+     identical to before. */
+  .cta-photo-fade {
+    background-image: linear-gradient(
+      to bottom,
+      rgba(13, 17, 16, 0.68) 0,
+      rgba(13, 17, 16, 0.4) 22px,
+      rgba(13, 17, 16, 0.4) calc(100% - 22px),
+      rgba(13, 17, 16, 0.68) 100%
+    );
+  }
+
+  /* --------------------------------------------------------------- header */
+
+  /* The header is a dark translucent bar in BOTH color schemes -- the same
+     convention .footer-band already uses. Without rebinding, light mode puts
+     its near-black ink (#0c1310) and its dark-ink wordmark onto that dark bar,
+     which leaves the nav and logo all but invisible over a hero photo. The
+     accent pair is swapped to the dark-scheme values so filled and hover
+     states still read against the bar. */
+  .header-band {
+    --color-ink: #f3f7f4;
+    --color-muted: #cfdbd5;
+    --color-line: rgba(255, 255, 255, 0.28);
+    --color-surface: rgba(255, 255, 255, 0.1);
+    --color-accent: #25d98f;
+    --color-accent-hover: #20c982;
+    --color-accent-soft: rgba(255, 255, 255, 0.14);
+    --color-on-accent: #06100b;
+    color: var(--color-ink);
+  }
+
+  /* The wordmark ships as dark ink, so the dark bar needs the light variant. */
+  .header-band .logo-light {
+    display: none;
+  }
+
+  .header-band .logo-dark {
+    display: block;
+  }
+
+  /* The dropdown panels are opaque cards sitting below the bar, so they step
+     back out of the dark-bar tokens and follow the page color scheme again. */
+  .header-band .card {
+    --color-ink: #0c1310;
+    --color-muted: #4d5a54;
+    --color-line: #b7c3bc;
+    --color-surface: #ffffff;
+    --color-accent: #0e7a4c;
+    --color-accent-hover: #0a613b;
+    --color-accent-soft: #e0f3e9;
+    --color-on-accent: #ffffff;
+    color: var(--color-ink);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .header-band .card {
+      --color-ink: #f3f7f4;
+      --color-muted: #aab8b0;
+      --color-line: #26352e;
+      --color-surface: #141c17;
+      --color-accent: #25d98f;
+      --color-accent-hover: #20c982;
+      --color-accent-soft: #14312450;
+      --color-on-accent: #06100b;
+    }
   }
 
   /* --------------------------------------------------------------- footer */
 
-  /* Rebinding the surface tokens inside the footer recolours every utility it
-     already uses, so the band goes dark without touching any markup colours. */
+  /* Rebinding the surface tokens inside the footer recolors every utility it
+     already uses, so the band goes dark without touching any markup colors. */
   .footer-band {
     --color-surface: var(--color-footer-bg);
     --color-raised: var(--color-footer-bg);
@@ -438,7 +540,7 @@
     );
   }
 
-  /* Short centred rule used to separate stacked sections. */
+  /* Short centered rule used to separate stacked sections. */
   .divider-center {
     border: 0;
     height: 2px;
@@ -456,7 +558,7 @@
   }
 
   /* Brand logo: the wordmark ships in a dark-ink and a light-ink variant so
-     it stays legible in both colour schemes. */
+     it stays legible in both color schemes. */
   .logo-dark {
     display: none;
   }

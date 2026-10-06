@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   OverlayHeader,
@@ -77,22 +78,37 @@ export default function LocationsPage() {
             <li key={location.slug}>
               <Link
                 href={`/locations/${location.slug}`}
-                className="card card-interactive flex h-full flex-col p-6 text-center lg:text-left"
+                className="group card card-interactive flex h-full flex-col overflow-hidden text-center transition-colors duration-300 hover:border-[var(--color-accent)] lg:text-left"
               >
-                <h3 className="text-[17px] font-semibold">
-                  Concrete referrals in {location.city}, {location.region}
-                </h3>
-                <p className="mt-2 flex-1 text-[14px] leading-relaxed text-[color:var(--color-muted)]">
-                  Driveways, patios, slabs and repair routed to independent
-                  providers covering {location.city}.
-                </p>
-                <span
-                  className="mt-5 inline-flex items-center justify-center gap-1.5 text-[14px] font-semibold lg:justify-start"
-                  style={{ color: "var(--color-accent)" }}
-                >
-                  View {location.city} referrals
-                  <Icon name="arrow" className="card-go h-4 w-4" />
-                </span>
+                {/*
+                  Same file as the hero on /locations/[city] (location.heroImage),
+                  so the card and the detail page can never show different photos.
+                  Rendered unscrimmed in its natural daylight color.
+                */}
+                <Image
+                  src={location.heroImage}
+                  alt={location.heroImageAlt}
+                  width={800}
+                  height={500}
+                  sizes="(min-width: 640px) 45vw, 100vw"
+                  className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="text-[17px] font-semibold">
+                    Concrete referrals in {location.city}, {location.region}
+                  </h3>
+                  <p className="mt-2 flex-1 text-[14px] leading-relaxed text-[color:var(--color-muted)]">
+                    Driveways, patios, slabs and repair routed to independent
+                    providers covering {location.city}.
+                  </p>
+                  <span
+                    className="mt-5 inline-flex items-center justify-center gap-1.5 text-[14px] font-semibold lg:justify-start"
+                    style={{ color: "var(--color-accent)" }}
+                  >
+                    View {location.city} referrals
+                    <Icon name="arrow" className="card-go h-4 w-4" />
+                  </span>
+                </div>
               </Link>
             </li>
           ))}

@@ -10,7 +10,7 @@ import { site } from "@/lib/env";
 function Wordmark() {
   return (
     <Link href="/" className="flex items-center" aria-label={site.brand}>
-      <Logo height={44} />
+      <Logo height={44} priority />
     </Link>
   );
 }
@@ -18,7 +18,7 @@ function Wordmark() {
 export function UtilityHeader() {
   return (
     <header
-      className="sticky top-0 z-[100] border-b bg-[#0d1110]/40 backdrop-blur-md transition-all duration-300"
+      className="header-band sticky top-0 z-[100] border-b bg-[#0d1110] transition-colors duration-300"
       style={{ borderColor: "rgba(255,255,255,0.1)" }}
     >
         <div className="container-page flex h-16 items-center justify-between gap-4">
