@@ -233,11 +233,11 @@ export default async function LocationPage({ params }: { params: Params }) {
         </div>
       </Section>
 
-      <Section eyebrow="FAQ" title={`${location.city} questions`}>
+      <Section compact eyebrow="FAQ" title={`${location.city} questions`}>
         <FaqSection faqs={faqs} name="city-faq" />
       </Section>
 
-      <Section tone="surface" eyebrow="Nearby" title="Adjacent published areas">
+      <Section compact tone="surface" eyebrow="Nearby" title="Adjacent published areas">
         <AdjacentAreas
           locations={publishedLocations.filter((l) => l.slug !== location.slug)}
         />

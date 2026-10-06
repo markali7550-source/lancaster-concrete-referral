@@ -136,7 +136,7 @@ export default function ServicesPage() {
         </div>
       </Section>
 
-      <Section eyebrow="Out of scope" title="What we decline outright">
+      <Section compact eyebrow="Out of scope" title="What we decline outright">
         <div className="card p-6">
           <p className="text-[color:var(--color-muted)]">
             Foundation repair, structural engineering assessments, retaining
@@ -151,7 +151,7 @@ export default function ServicesPage() {
 
       <SectionDivider />
 
-      <Section eyebrow="FAQ" title="About these services">
+      <Section compact eyebrow="FAQ" title="About these services">
         <FaqSection faqs={FAQS} name="services-faq" />
       </Section>
 

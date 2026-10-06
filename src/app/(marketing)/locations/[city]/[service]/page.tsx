@@ -236,7 +236,7 @@ export default async function ComboPage({ params }: { params: Params }) {
         </div>
       </div>
 
-      <Section
+      <Section compact
         tone="surface"
         eyebrow="FAQ"
         title={`${location.city} ${serviceRecord.shortName.toLowerCase()} questions`}
@@ -244,7 +244,7 @@ export default async function ComboPage({ params }: { params: Params }) {
         <FaqSection faqs={record.localFaqs} name="combo-faq" />
       </Section>
 
-      <Section eyebrow="Other services" title={`Also routed in ${location.city}`}>
+      <Section compact eyebrow="Other services" title={`Also routed in ${location.city}`}>
         <RelatedServices
           services={publishedServices.filter((s) =>
             publishedLocationServices.some(

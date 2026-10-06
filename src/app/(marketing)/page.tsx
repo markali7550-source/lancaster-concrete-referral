@@ -227,7 +227,7 @@ export default function HomePage() {
 
       <SectionDivider />
 
-      <Section eyebrow="FAQ" title="How this service works">
+      <Section compact eyebrow="FAQ" title="How this service works">
         <FaqSection faqs={FAQS} name="home-faq" />
         <p className="mt-6 text-sm text-[color:var(--color-muted)]">
           Full detail on how we are paid and what we do not do is on the{" "}

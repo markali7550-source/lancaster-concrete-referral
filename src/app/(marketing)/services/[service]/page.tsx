@@ -346,14 +346,14 @@ export default async function ServicePage({ params }: { params: Params }) {
       ) : null}
 
       <section id="faq" className="scroll-mt-32">
-        <Section eyebrow="FAQ" title={service.headings.faq}>
+        <Section compact eyebrow="FAQ" title={service.headings.faq}>
           <FaqSection faqs={service.considerations} name="service-faq" />
         </Section>
       </section>
 
       <SectionDivider />
 
-      <Section eyebrow="Other services" title="Also routed in Lancaster">
+      <Section compact eyebrow="Other services" title="Also routed in Lancaster">
         <RelatedServices services={publishedServices} currentSlug={service.slug} />
       </Section>
 
