@@ -182,9 +182,9 @@ export default async function ServicePage({ params }: { params: Params }) {
                 return (
                   <section key={id} id="scope" className={cls} style={style}>
                     <p className="eyebrow flex">Scope</p>
-                    <h2 className="h2 mt-4">
-                      What we route under {service.name.toLowerCase()}
-                    </h2>
+                      <h2 className="h2 mt-4">
+                        {service.headings.scope}
+                      </h2>
                     <p className="lede mt-4 max-w-prose">{service.summary}</p>
                     <div className="mt-8">
                       <ScopeColumns
@@ -347,7 +347,10 @@ export default async function ServicePage({ params }: { params: Params }) {
       </Section>
 
 
-      <ServiceCtaBand title={service.headings.cta} />
+      <ServiceCtaBand
+        title={service.headings.cta}
+        body={service.ctaLead}
+      />
 
     </>
   );
