@@ -1258,3 +1258,149 @@ Three image files are now unreferenced: `patios-process-walkway.webp`,
 `slabs-process-pad.webp` and `repair-process-trowel.webp`. They were left on
 disk rather than deleted, so the section can be restored with a single revert.
 They are not downloaded by any page and cost nothing at runtime.
+
+## 30. Image rules for the home page, service pages and city-service pages
+
+Every image on every one of the 18 routes was inspected against the brief.
+
+### 30.1 Home page: service-specific images removed
+
+The home page was running six photographs of specific services:
+
+| Slot | Was | Problem |
+| --- | --- | --- |
+| Hero | `cta-service-driveways.webp` | A driveway opened a four-service site |
+| Service card 1 | `service-driveways.webp` | Driveway |
+| Service card 2 | `service-patios.webp` | Patio |
+| Service card 3 | `service-slabs.webp` | Slab |
+| Service card 4 | `repair-hero-walkway.webp` | Repair |
+| CTA band | `local-driveways-lancaster.webp` | A driveway closed the page too |
+
+The home page now carries no service-specific photograph:
+
+  - **Hero** is `home-hero-concrete-work.webp`, a ready-mix chute discharging
+    into timber forms. It is concrete work, not a finished driveway, patio,
+    slab or repair.
+  - **Service cards are text-only.** `ProjectTypeChooser` already took an
+    optional `images` prop and rendered text cards when it was omitted, so the
+    home page simply stops passing one. `/services` still passes it, because
+    there a patio photograph on the patio card matches its own card.
+  - **CTA band** is `home-cta-concrete-finish.webp`, a bull float on a wet
+    slab.
+  - The two bands that were already neutral, `process-band.webp` (forms and a
+    truck on a residential street) and `home-service-area-band.webp` (a brick
+    home and front walkway), were left alone.
+
+Both new photographs were checked at the size they render and contain no
+people, so there are no hands or faces to malform. Measured on rendered
+pixels, the CTA band gives 9.40:1 on the heading and 4.54:1 on the body copy,
+both above AA.
+
+### 30.2 Service pages: already correct, left alone
+
+Each service page already ran three photographs of its own service and all
+twelve matched. Nothing was changed.
+
+| Page | Hero | Detail | CTA |
+| --- | --- | --- | --- |
+| Driveways | `service-driveways` | `driveway-drainage-detail` | `cta-service-driveways` |
+| Patios | `service-patios` | `patio-backyard-slab` | `cta-service-patios` |
+| Slabs | `service-slabs` | `slab-formwork-pad` | `cta-service-slabs` |
+| Repair | `repair-hero-walkway` | `repair-detail-crack` | `cta-service-repair` |
+
+### 30.3 City-service pages: primary image now matches the service page
+
+This was the largest mismatch. Each city-service page had its own unrelated
+primary photograph, so Lancaster + Concrete Patios looked like a different
+service from Concrete Patios. `localImage` is now the parent service image:
+
+| City-service page | Was | Now |
+| --- | --- | --- |
+| Lancaster + Driveways | `cta-combo-driveways` | `service-driveways` |
+| Lancaster + Patios | `local-patios-lancaster` | `service-patios` |
+| Lancaster + Slabs | `local-slabs-lancaster` | `service-slabs` |
+| Lancaster + Repair | `local-repair-lancaster` | `repair-hero-walkway` |
+
+Because the city page builds its service cards from the same `localImage`
+field, those cards now carry the service images too, so the service page, the
+city page card and the city-service page all show one photograph per service.
+Any future city added for a service inherits the same image automatically.
+
+Supporting sections stay distinct: each city-service page still has three
+different photographs, one per section, and no page repeats an image.
+
+### 30.4 Images that did not match their section
+
+  - **Driveways city page, process section** ran `process-combo-driveways.webp`,
+    which is a pad beside a house doorway, not a driveway. It now runs
+    `process-steps-formwork.webp`, a driveway formed with mesh and chairs.
+  - **That pad photograph** moved to `/how-it-works`, where no particular
+    service is implied, and was renamed `concrete-edge-inspection.webp`
+    because its old name described a page it no longer appears on.
+  - **The city page used `process-location-lancaster.webp` twice**, in the
+    local-conditions section and again behind the routing section. The routing
+    band now uses `process-band.webp`.
+
+### 30.5 Location claims and alt text
+
+One alt text asserted where a photograph was taken:
+
+    alt={`... where the forms were pulled, in ${location.city}, ${location.region}`}
+
+The photograph is representative, not a recorded Lancaster project, so the
+suffix was removed. All 28 alt strings were then read against the image they
+describe: none names a city, none is keyword stuffed, and each describes the
+visible object and finish.
+
+One alt also made a claim about a person: `"Independent contractor inspecting
+the formed edge..."`. The site cannot verify that an unidentified person in a
+stock photograph is an independent contractor, so it now reads `"Worker
+crouching beside a freshly finished concrete pad, checking the formed edge
+where it meets the backfill"`.
+
+### 30.6 Realism
+
+All 31 existing photographs were viewed at full size, and the four containing
+people were examined closely, since hands are where generated imagery fails.
+The hand on the slab edge in `concrete-edge-inspection.webp` has a correct
+thumb and four fingers. The saw operator and the two patio workers are
+anatomically sound and their tools are intact and correctly held. Nothing was
+replaced for looking polished; no further image was judged defective.
+
+### 30.7 Final QA
+
+| Check | Result |
+| --- | --- |
+| Matches its section | 49 of 49 |
+| Matches its service | 49 of 49 |
+| Looks like real photography | pass |
+| Free of obvious AI artifacts | pass |
+| Primary image consistent service to city-service | 4 of 4 |
+| Home page free of service-specific images | pass |
+| Alt text factually accurate | 28 of 28 |
+| No unsupported location claims | 0 remaining |
+| Desktop | checked at 1100 and 1440 |
+| Mobile | checked at 390 |
+| WebP | 44 of 44 |
+| Under 100KB | 44 of 44 |
+| No layout shift | CLS 0.0000 on all 18 routes |
+
+`process-steps-formwork.webp` was the only file over the budget at 152KB and
+was re-encoded to 95KB. Routes return 18/18 at 200 and 20/20 internal links
+resolve.
+
+### 30.8 Remaining
+
+  - **Seven image files are now unreferenced** (`local-driveways-lancaster`,
+    `local-patios-lancaster`, `local-repair-lancaster`, `local-slabs-lancaster`,
+    `patios-process-walkway`, `repair-process-trowel`, `slabs-process-pad`).
+    They are not served to anyone and were kept so these changes can be
+    reverted. They can be deleted once the new allocation is settled.
+  - **`/services` still opens and closes on driveway photographs**
+    (`services-overview.webp`, `cta-services-index.webp`). It has the same
+    "favours one service" flaw as the home page did, but the brief scoped that
+    rule to the home page and there is no neutral photograph left to use, so
+    it was left rather than changed for its own sake.
+  - **The home page hero carries a slight denoise.** The source was unusually
+    noisy and would not reach 100KB at 1440px wide without it. At the size it
+    renders, behind the hero scrim, the softening is not visible.
