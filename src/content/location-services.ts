@@ -28,17 +28,17 @@ const records: readonly LocationServiceRecord[] = [
       {
         heading: "Two kinds of job",
         body:
-          "Two kinds of driveway job come up around Lancaster. One is replacing a pour from the 1970s to 1990s in the older in town neighborhoods. The other is a first pour on a rural parcel where a gravel drive has become unworkable.",
+          "Driveway requests usually fall into one of two jobs. One is replacing an aging slab that has cracked, settled, or lost its surface. The other is a first concrete pour where a gravel drive has become unworkable. The two price differently, because only one of them carries demolition and haul away.",
       },
       {
         heading: "Access and water come first",
         body:
-          "Two things usually matter more here than square footage: truck access and water. Narrow lots in town restrict where a mixer can stage, and the county's clay subsoil holds water long enough that subbase preparation and edge drainage change the price of the job more than the square footage does.",
+          "Square footage affects the price, and access and drainage can move it just as much. Where a mixer can stage decides whether concrete is chuted straight into the forms or has to be barrowed or pumped, and clay subsoil that holds water puts more weight on subbase preparation and edge drainage.",
       },
       {
         heading: "When to ask for a visit",
         body:
-          "Seasonality matters here too. Concrete work fills up through late spring and early fall, which is when a site visit is hardest to get quickly. If your driveway is already failing, asking in the quieter winter weeks usually gets you looked at sooner, even though the pour itself may be scheduled for milder weather.",
+          "Weather shapes the schedule more than the calendar does. Temperature, humidity, and rain all affect site preparation, placement, and curing, so a contractor may move a pour rather than fight the conditions. If a driveway is already failing, it is worth asking for an assessment early rather than waiting for the season you would prefer to pour in.",
       },
       {
         heading: "Who actually does the work",
@@ -76,17 +76,17 @@ const records: readonly LocationServiceRecord[] = [
       {
         heading: "What the work usually is",
         body:
-          "Patio work around Lancaster tends to be one of two things: a rear yard slab behind a single-story ranch of the kind built here between the 1960s and the 1990s, or a tired screened porch footprint opened up into an uncovered entertaining surface.",
+          "Patio work is usually either a new slab in a rear yard or a replacement of a surface that has cracked, settled, or drains the wrong way. An old porch or stoop footprint opened up into an uncovered seating area is a common variation, and it pulls the existing structure into the scope.",
       },
       {
         heading: "Shade decides the finish",
         body:
-          "Shade is the variable homeowners underestimate. Mature oaks and pines keep much of a Lancaster back yard damp into the morning, and a smooth troweled finish there grows algae and turns slippery within a couple of seasons. A broom or exposed aggregate finish holds grip in that situation where a smooth troweled one will not.",
+          "Shade changes which finish makes sense. A patio under mature trees stays damp well into the morning, and a smooth troweled surface in that position grows algae and gets slippery. A broom finish or exposed aggregate keeps grip where a smooth trowel will not, and it is worth settling before the slab is ordered rather than after.",
       },
       {
         heading: "Humidity and scheduling",
         body:
-          "Humidity drives scheduling more than temperature does. A July pour in Lancaster County can skin over faster than the crew can finish it, so a pour may start at first light or be moved rather than fought. Expect a contractor to talk about curing and moisture protection, not just the pour day itself.",
+          "Heat and humidity drive scheduling more than temperature alone. In hot, humid conditions a slab can skin over faster than it can be finished, so pours are often started early in the day or moved rather than fought. Expect a contractor to talk about curing and moisture protection, not only the pour day itself.",
       },
       {
         heading: "Tying into existing concrete",
@@ -121,9 +121,9 @@ const records: readonly LocationServiceRecord[] = [
       "Finished residential concrete slab set into a back lawn, with bare soil and gravel still showing along its edge",
     localBody: [
       {
-        heading: "Mostly outbuilding pads",
+        heading: "What pads are usually for",
         body:
-          "Most residential pads around Lancaster are for outbuildings: detached workshops, equipment and mower storage, carports, hot tub bases, and pads for replacement HVAC condensers. The larger ones tend to sit on rural parcels outside the town limits.",
+          "Residential pads are commonly poured for outbuildings: detached workshops, equipment and mower storage, carports, hot tub bases, and pads for replacement HVAC condensers. Each of those carries a different load, and the load decides the slab rather than the footprint does.",
       },
       {
         heading: "Load comes before price",
@@ -155,7 +155,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         question: "Do I need a vapor barrier under an outbuilding slab?",
         answer:
-          "For a heated or finished space, participating providers generally recommend one because the clay subsoil here holds moisture. For an open carport it is usually unnecessary. The assigned contractor specifies it, not us.",
+          "A vapor barrier is standard practice under a heated or finished space, because clay subsoil holds moisture that would otherwise rise through the slab. Under an open carport it is normally unnecessary. The assigned contractor specifies it, not us.",
       },
     ],
   },
@@ -170,7 +170,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         heading: "Three shapes it takes",
         body:
-          "Repair work around here usually takes one of three shapes: surface spalling and flaking on slabs poured decades ago, joints that have opened and now trap water, and sections that have dropped out of level at an apron, walkway, or garage threshold.",
+          "Repair work usually takes one of three shapes: surface spalling and flaking on an older slab, joints that have opened and now trap water, and sections that have dropped out of level at an apron, walkway, or garage threshold. Which one you have decides whether the fix is cosmetic or structural.",
       },
       {
         heading: "Settlement is a soil story",
@@ -192,7 +192,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         question: "Why does one section of my driveway keep sinking after it is fixed?",
         answer:
-          "Almost always water. If stormwater is washing fines out from under that section, leveling the surface without redirecting the water means the void reopens. Ask the contractor to explain what is being done about drainage.",
+          "Usually water. If stormwater is washing fines out from under that section, leveling the surface without redirecting the water means the void reopens. Ask the contractor to explain what is being done about drainage.",
       },
       {
         question: "Can a lifted slab near a tree be leveled without killing the tree?",

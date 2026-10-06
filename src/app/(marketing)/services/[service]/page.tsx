@@ -60,7 +60,7 @@ const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
 };
 
 const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
-  "concrete-driveways": { src: "/images/local-driveways-lancaster.webp", alt: "Residential concrete driveway and apron on a Lancaster street" },
+  "concrete-driveways": { src: "/images/local-driveways-lancaster.webp", alt: "Wide residential concrete driveway widening to a broad apron at the street, in front of a single story brick home" },
   "concrete-patios": { src: "/images/patios-process-walkway.webp", alt: "Finished backyard patio with a garden border and seating area" },
   "concrete-slabs": { src: "/images/slabs-process-pad.webp", alt: "Finished residential concrete pad set into a lawn" },
   "concrete-repair": { src: "/images/repair-process-trowel.webp", alt: "Hand trowel resting beside a filled joint on a concrete repair" },

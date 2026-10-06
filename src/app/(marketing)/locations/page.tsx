@@ -29,7 +29,7 @@ export default function LocationsPage() {
     <>
       <OverlayHeader
         imageSrc="/service-areas-hero.webp"
-        imageAlt="Elevated view of a South Carolina residential neighborhood with concrete driveways and sidewalks along a quiet street"
+        imageAlt="Elevated view of a suburban residential neighborhood of brick homes with concrete driveways along a curving street"
       >
         <p
           className="eyebrow"

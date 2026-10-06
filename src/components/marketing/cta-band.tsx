@@ -36,21 +36,18 @@ const CTA_BACKGROUND_LAYER =
   "absolute inset-0 bg-cover bg-center bg-no-repeat z-0 bg-scroll md:bg-fixed";
 
 /**
- * The one photograph behind every closing CTA on the site.
+ * Fallback photograph for a closing CTA band.
  *
- * Every page used to carry its own CTA photo, keyed by service or location.
- * They are now deliberately the same image: the band is a ~207px letterbox, so
- * only a thin middle slice of any photograph survives the crop, and most of
- * those per-page shots put blank slab or a bright garage door in exactly that
- * slice. One image also means the scrim can be tuned against one known
- * photograph instead of the brightest of a dozen.
+ * Every service page, location page and index passes its own `imageSrc`, so a
+ * patio page closes on a patio. This file is only the default for a band that
+ * does not name one, which at present is the home page.
  *
- * This file was chosen on measurements, not taste. Its left third -- the side
- * the copy sits on -- is naturally dark (pine trunks and pine straw rather
- * than sky or white cladding), which is why the body copy clears 4.5:1 here
- * while the alternatives measured 3.4-3.7:1 behind the same scrim.
- *
- * Deliberately not used anywhere else on the site, so no page shows it twice.
+ * It was chosen on measurements. The band is a letterbox of roughly 207px, so
+ * only a thin middle slice of any photograph survives the crop, and the left
+ * third of this one (pine trunks and pine straw rather than sky or pale
+ * cladding) sits under the copy, where it measured 4.5:1 against a scrim that
+ * left other candidates at 3.4 to 3.7:1. Check any replacement at the crop
+ * before trusting it.
  */
 const CTA_IMAGE = "/images/local-driveways-lancaster.webp";
 const CTA_IMAGE_ALT =

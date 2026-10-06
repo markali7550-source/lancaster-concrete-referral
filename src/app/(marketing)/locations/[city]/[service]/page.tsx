@@ -161,9 +161,15 @@ export default async function ComboPage({ params }: { params: Params }) {
           <div className="min-w-0 lg:col-span-7 xl:col-span-8">
             <section className="scroll-mt-36 py-12 md:py-20">
               <p className="eyebrow flex">{`${serviceRecord.name} · ${location.city}`}</p>
+              {/*
+                Was "What we see on Lancaster patio requests", which claims the
+                publisher has observed its own request history. It has none.
+                The section is about site conditions, so the heading says that
+                and keeps the geography.
+              */}
               <h2 className="h2 mt-4">
-                What we see on {location.city}{" "}
-                {serviceRecord.projectNoun} requests
+                What affects a {serviceRecord.projectNoun} project in{" "}
+                {location.city}
               </h2>
               <div className="mt-8 max-w-prose space-y-6">
                 {record.localBody.map((block) => (
@@ -202,7 +208,7 @@ export default async function ComboPage({ params }: { params: Params }) {
             >
               <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Process</p>
               <h2 className="h2 mt-4 text-center md:text-left">
-                How the project usually runs here
+                How the project usually runs
               </h2>
               <p className="lede mx-auto mt-4 max-w-prose text-center md:mx-0 md:text-left">
                 Typical ranges reported by participating providers, not commitments. Your

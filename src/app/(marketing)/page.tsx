@@ -127,7 +127,7 @@ export default function HomePage() {
       <Section
         backgroundImage={{
           src: "/process-band.webp",
-          alt: "Residential concrete driveway forms and a fresh pour on a neighborhood street",
+          alt: "Timber forms set along the edge of a residential street beside a contractor's truck, with excavated clay heaped alongside",
         }}
         eyebrow="Process"
         title="Three steps, no obligation"
@@ -158,7 +158,7 @@ export default function HomePage() {
       <Section
         backgroundImage={{
           src: "/home-service-area-band.webp",
-          alt: "Quiet Lancaster County South Carolina residential street with concrete driveways, front walkways, and mature trees",
+          alt: "Single story brick ranch home behind a mature shade tree, with a curved concrete front walkway running out to the sidewalk",
         }}
         eyebrow="Service area"
         title="Areas we currently serve"

@@ -425,17 +425,20 @@ export function PrepColumns({
         <p className="font-semibold">Ask the contractor, not us</p>
         <ul className="mt-4 space-y-3 text-sm">
           {questions.map((item) => (
-            <li
-              key={item}
-              className="block lg:flex lg:gap-3"
-            >
+            <li key={item} className="flex gap-3">
+              {/*
+                This bullet used to be a literal "?" glyph, so every item
+                rendered as "? Would replacement be the better value here,
+                honestly?" -- a question mark opening a sentence that already
+                ends in one. The items are self-evidently questions; the bullet
+                now matches the checklist column beside it instead of
+                punctuating the text.
+              */}
               <span
                 aria-hidden="true"
-                className="mr-1.5 inline lg:mr-0 lg:inline-block"
-                style={{ color: "var(--color-accent)" }}
-              >
-                ?
-              </span>
+                className="mt-[7px] h-[5px] w-[5px] shrink-0 rounded-full"
+                style={{ backgroundColor: "var(--color-accent)" }}
+              />
               <span className="text-[color:var(--color-muted)]">{item}</span>
             </li>
           ))}

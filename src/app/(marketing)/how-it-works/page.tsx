@@ -46,7 +46,7 @@ export default function HowItWorksPage() {
           />
         }
         imageSrc="/how-it-works-hero.webp"
-        imageAlt="Freshly poured residential concrete slab floated smooth, with a brick home beyond the lawn"
+        imageAlt="Freshly placed residential concrete slab floated smooth and still inside its timber forms, with a brick home beyond the lawn"
       >
         <p
           className="eyebrow"

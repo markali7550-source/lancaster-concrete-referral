@@ -202,7 +202,7 @@ export const services: readonly ServiceRecord[] = [
         phase: "Subbase, forms, and reinforcement",
         duration: "Typically one day",
         detail:
-          "Compacted base material, formwork set to grade, and reinforcement placed. On clay, compaction is the step that decides how the slab ages.",
+          "Compacted base material, formwork set to grade, and reinforcement placed. On clay, compaction has a particular bearing on how the slab ages.",
       },
       {
         phase: "Pour and finish",
@@ -241,7 +241,7 @@ export const services: readonly ServiceRecord[] = [
       {
         factor: "Square footage",
         impact: "Medium",
-        note: "Matters, but it is a weaker predictor than access and prep on most Lancaster jobs.",
+        note: "Affects the price, though access and site preparation can move a quote just as much.",
       },
       {
         factor: "Decorative finish",
@@ -295,7 +295,7 @@ export const services: readonly ServiceRecord[] = [
       {
         question: "Why does clay soil keep coming up?",
         answer:
-          "Red clay holds water and moves with moisture content. That makes compaction, base depth, and drainage the three details most likely to decide whether a driveway lasts, which is why participating providers ask about them before quoting.",
+          "Red clay holds water and moves with moisture content, so compaction, base depth, and drainage are worth settling before the pour is priced. Expect a contractor to ask about all three.",
       },
     ],
   },
@@ -723,7 +723,7 @@ export const services: readonly ServiceRecord[] = [
       process: "How a repair job is assessed and done",
       cost: "Why repair quotes vary so widely",
       prepare: "Describing the damage accurately",
-      faq: "Questions we hear before a repair visit",
+      faq: "Questions worth asking before a repair visit",
       cta: "Want someone to look at the damage?",
     },
     optionsLead:
@@ -810,7 +810,7 @@ export const services: readonly ServiceRecord[] = [
         phase: "Surface preparation",
         duration: "Typically part of one day",
         detail:
-          "Cleaning, grinding, or profiling. Preparation is the step that decides whether the repair bonds and lasts.",
+          "Cleaning, grinding, or profiling. Surface preparation has a direct bearing on whether the repair bonds and lasts.",
       },
       {
         phase: "Repair or overlay application",
