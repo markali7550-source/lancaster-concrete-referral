@@ -15,12 +15,17 @@ function Wordmark() {
   );
 }
 
+/**
+ * Background, blur, and the hairline bottom edge all live on `.header-band` in
+ * globals.css (the "Frosted glass, 50%" block). They are deliberately NOT set
+ * here: a `bg-*` utility would outrank the component layer and an inline
+ * `borderColor` would outrank everything, either of which silently cancels the
+ * glass. Everything else about the bar -- height, spacing, nav, logo, buttons
+ * -- is unchanged.
+ */
 export function UtilityHeader() {
   return (
-    <header
-      className="header-band sticky top-0 z-[100] border-b bg-[#0d1110] transition-colors duration-300"
-      style={{ borderColor: "rgba(255,255,255,0.1)" }}
-    >
+    <header className="header-band sticky top-0 z-[100] border-b transition-colors duration-300">
         <div className="container-page flex h-16 items-center justify-between gap-4">
           <Wordmark />
 

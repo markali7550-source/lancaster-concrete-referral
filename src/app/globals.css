@@ -211,6 +211,50 @@
     --color-accent-soft: rgba(255, 255, 255, 0.14);
     --color-on-accent: #06100b;
     color: var(--color-ink);
+
+    /* Frosted glass, 50%.
+
+       The tint is the same #0d1110 the bar has always used, now at half alpha,
+       so whatever scrolls underneath stays visible through it. `blur` is what
+       turns that translucency into glass rather than a plain see-through
+       panel; `saturate` puts back the color the blur washes out.
+
+       `brightness` is the load bearing part and must not be dropped. The bar
+       carries light ink (#f3f7f4) and light-grey nav labels (#cfdbd5), which a
+       bare 50% tint cannot support once a near-white section (#f2f5f3, white
+       cards) scrolls under it: the glass composites to a mid grey and the nav
+       falls to ~2.5:1, well under the 4.5:1 AA floor. Dimming the backdrop
+       before the tint lands holds the nav at ~5.3:1 and the ink at ~6.9:1 in
+       that worst case, while dark backdrops (the hero photo, dark mode) are
+       already below the dim and so look unchanged. Height, spacing, and
+       layout are untouched -- this is background only. */
+    background-color: rgba(13, 17, 16, 0.5);
+    -webkit-backdrop-filter: blur(16px) saturate(130%) brightness(0.6);
+    backdrop-filter: blur(16px) saturate(130%) brightness(0.6);
+    /* Hairline highlight along the bottom edge: enough to separate the glass
+       from the content sliding beneath it, not enough to read as a rule. */
+    border-bottom-color: rgba(255, 255, 255, 0.12);
+  }
+
+  /* No backdrop-filter (older engines): there is no blur to carry the
+     separation, so the tint goes nearly opaque rather than leaving light ink
+     floating on a washed out bar. */
+  @supports not (
+    (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
+  ) {
+    .header-band {
+      background-color: rgba(13, 17, 16, 0.94);
+    }
+  }
+
+  /* Same contract as .process-step-card: users who ask for less transparency
+     get the original solid bar. */
+  @media (prefers-reduced-transparency: reduce) {
+    .header-band {
+      background-color: #0d1110;
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
   }
 
   /* The wordmark ships as dark ink, so the dark bar needs the light variant. */
