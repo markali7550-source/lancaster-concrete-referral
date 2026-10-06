@@ -539,3 +539,114 @@ placeholders, and neither is fixable in the repository.
 
 **Unchanged highest-leverage action:** set the five `NEXT_PUBLIC_*`
 environment variables to real contact details at deploy.
+
+---
+
+## 19. Sixth pass — opening the site on a desktop
+
+Five passes had read the prose, checked alt text against its photographs,
+examined the images at 3x, and scrolled the site on a phone. None had opened
+it at 1440px. Two of the brief's §1 items — "empty visual space that serves
+no purpose" and "repetitive section layouts" — are close to invisible on a
+narrow viewport, because a single column hides both.
+
+### 19.1 The service areas page looked like a directory missing its data
+
+At 1440px, `/locations` put the heading, the lede, both explainer blocks and
+the one approved city into a narrow left column, leaving **the right 45% of
+the section empty down its whole height**. The city itself rendered as a
+small card inside a `sm:grid-cols-2` grid, so half that row was void as well.
+
+An automated check had caught only part of it — a 2-column grid holding 1
+child, 51% empty. The rest needed looking at.
+
+An earlier pass had seen the card and left it, reasoning that filling the grid
+would mean inventing coverage. That was a false choice. The answer was never
+more cities; it was not using a two-up grid to display one thing.
+
+- The two explainers are short, so they now sit side by side rather than
+  stacked inside a `max-w-prose` column, each paragraph held to a 48ch measure.
+- Each area is now a **full-width row**, image left and text right, instead of
+  a card in a grid. Rows fill the width at any count and stay correct as the
+  list grows, so the layout stops implying absent entries.
+
+Mobile is untouched — the split only engages at `sm` and above. Page height
+fell from 2,028 to 1,753 with nothing removed, and underfilled grids went
+1 → 0. The remaining grid warnings sitewide are all the main+aside
+`lg:grid-cols-12` page layout at 4% empty, which is the gutter.
+
+### 19.2 Two identical accordions on one page
+
+Seen side by side at desktop, the homepage clearly ran the same disclosure
+widget twice: "Four things worth deciding yourself" and the "How this service
+works" FAQ — same component, same rows, same plus affordance, two sections
+apart. The city page did it too, with "Before you send it" and its own FAQ.
+One accordion is a pattern. Two is a component being reused because it exists.
+
+The FAQ stays an accordion. The decision section should not have been one in
+the first place: its four answers are short, useful, and one of them states
+plainly how the business gets paid. Hiding that behind a click is worse than
+showing it.
+
+`DecisionSupport` is now a plain two-column text list — no card, no border, no
+disclosure row. That gives the homepage the **text-focused** section §8 asks
+for, and it reads as editorial rather than as a widget. It takes a `columns`
+prop because the city page renders it in a sidebar where one column is right.
+Each page now has exactly one accordion group.
+
+### 19.3 A bug caught by measuring instead of trusting the markup
+
+The first version of that class list was written as:
+
+```
+`grid gap-x-12 gap-y-7${columns === 2 ? " md:grid-cols-2" : ""}`
+```
+
+which puts the token `gap-y-7$` in the source. Tailwind never generates that
+utility, so `row-gap` computed to `normal` and the two rows butted together
+with no space between them. `gap-x-12` survived only because a space follows
+it. The screenshot looked *slightly* tight; the computed style said `normal`,
+which is unambiguous. Both branches are now complete literal strings, and the
+measured result is row-gap 28px, two 544px columns on the homepage and one
+510px column in the city sidebar.
+
+Worth recording as a method note: a rendered screenshot shows you that
+something is off, but reading the computed value tells you what. Several of
+this pass's findings needed both.
+
+### 19.4 Checked and left alone
+
+- **Section shape variety.** Every page fingerprints 100% unique section
+  shapes — home 7/7, services 6/6, how-it-works 5/5 — except the city page at
+  6/7. §8 is satisfied and needed no change.
+- **Visual density.** At 1440px the homepage carries 5 gradients, 4
+  backdrop-filters and 2 pills. Restrained; nothing to subtract.
+- **Dark mode.** The rewritten section was verified under
+  `prefers-color-scheme: dark`. Theme variables carry through correctly
+  (`#ECEFF3` headings, `#A3AEBC` body); no hardcoded light values leaked.
+
+## 20. Scores after the sixth pass
+
+| | Target | Pass 5 | Pass 6 | Why |
+|---|---|---|---|---|
+| **AI-looking** | ≤2 | 2 | **2** | A half-empty directory grid and a page running the same accordion twice are both "generated from one prompt" tells, and both are gone. The ceiling is unchanged: every photograph is AI-generated concept imagery. |
+| **Human-designed** | ≥9 | 9 | **9** | This pass is the clearest evidence for the 9 rather than a reason to raise it. Deciding that one city should be a full-width row, and that four short answers should be read rather than clicked, is the kind of judgement the score already claimed. A 10 would need the four service pages to stop sharing one component vocabulary, which remains a design system working correctly. |
+| **Professional** | ≥9 | 9 | **9** | Typecheck, 36/36 tests, four content asserts, 18/18 routes 200, 0 underfilled grids, dark mode verified. The Tailwind gap bug was caught before it shipped, which is what the 9 is supposed to mean. |
+| **Generic / template** | ≤2 | 2 | **2** | "Two-up grid holding one item" is close to the definition of template residue, and it is gone. Held at 2 because the overall shape is still a local-service site, which is correct. |
+| **Trust** | ≥9 | 8 | **8** | Unchanged, still capped by the `(803) 555-0123` reserved-fiction number and the `example-referral-brand.com` email, both environment-supplied and deliberately not invented. |
+
+Six passes, and the pattern is now unambiguous enough to state as a
+conclusion: **every finding came from rendering the site through a lens not
+yet used.** Prose, then alt text beside its own photograph, then photographs
+at 3x, then a phone, then a desktop. The automated sweeps were useful for
+confirming a fix and worthless at finding the next fault — a buzzword sweep
+returned clean on invented statistics, a duplicate-text check returned clean
+on a section that paraphrased its own page, and an overflow check returned
+clean on a layout that was 45% empty.
+
+What is left is the imagery being AI-generated and the contact details being
+placeholders. Neither is fixable in the repository.
+
+**Unchanged highest-leverage action:** set the five `NEXT_PUBLIC_*`
+environment variables to real contact details at deploy. That moves trust to
+9 and is the only target still unmet.
