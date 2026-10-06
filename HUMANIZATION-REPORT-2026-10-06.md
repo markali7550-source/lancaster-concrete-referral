@@ -878,3 +878,121 @@ wide a line of text actually is.
 **Unchanged highest-leverage action:** set the five `NEXT_PUBLIC_*` environment
 variables to real contact details at deploy. That moves trust to 9 and remains
 the only target still unmet.
+
+---
+
+## 25. Ninth pass — using the form, and reading the copy as a concrete contractor
+
+Eight passes had read the site. None had ever *used* it. The quote form is the
+whole point of the site and no pass had filled it in, triggered a validation
+error, or seen what happens after submit. This pass drove the form with a real
+browser and mocked each API response to reach states no one had looked at.
+
+A second lens ran alongside it: reading the technical copy as someone who pours
+concrete for a living. The fourth pass checked the photographs for construction
+accuracy; the prose had never been checked the same way.
+
+### 25.1 The form itself is in good shape
+
+Worth stating plainly, because the honest answer to "is this generated?" here is
+no. Submitting empty gives **"Fix 4 items to continue"** with a focused summary,
+each item linking to its field, inline messages and red borders. The messages
+explain themselves rather than scolding:
+
+- "Enter a 10 digit US phone number, with or without the leading 1."
+- "Consent is required so a contractor can contact you."
+
+The states behind the API are better still. No coverage returns:
+
+> Nothing was sent to a contractor. We only route requests to providers who have
+> confirmed in writing that they cover your area, so we would rather tell you
+> plainly than pass your details to someone who cannot help.
+
+A failed submit says **"Your details are still here."** Choosing an uncovered
+area offers a waitlist — "We will tell you when we cover your area" — instead of
+a dead end. None of this needed touching.
+
+### 25.2 The one real finding: two receipts in a row
+
+Submitting successfully renders an inline card:
+
+> **Request received** / Your request is with our routing team
+> Reference: `<id>` / **[ What happens next → ]**
+
+Pressing that button landed on a page that opened:
+
+> **Request received** / Thanks, your request is in the routing queue
+
+The same eyebrow **verbatim**, and a headline that paraphrases the one directly
+above it — both reaching for the word *routing*. Two consecutive screens saying
+one thing twice in slightly different words is the same paraphrase-duplication
+defect removed from `moreInfo` in the fifth pass, except here the two copies sit
+back to back in the most important moment on the site.
+
+It was also answering the wrong question. The button promises *what happens
+next*; the destination re-announced receipt. The page now leads with **"What
+happens next / How your request reaches a contractor"**, and the trailing "Here
+is exactly what happens next" was dropped from the lede because the eyebrow now
+carries it. The inline card remains the receipt. The two screens read as a
+sequence.
+
+### 25.3 The technical copy holds up
+
+Forty-one technical statements were pulled from the four service pages and read
+for construction accuracy. They are correct, and more importantly they are
+correctly *hedged*:
+
+- "Fiber mesh, welded wire, or rebar is specified by the contractor based on load and soil."
+- "Thickness and reinforcement follow the load, the soil, and applicable code."
+- "If the subbase is the cause, resurfacing only buys time."
+- "Rebar mats cost more than fiber mesh and are not always necessary."
+
+The copy **never states a slab thickness, a PSI, a joint spacing or a cure
+duration**. For a referral service that does not pour the concrete, declining to
+specify the job is both technically honest and legally correct, and it removes
+the single most common way generated construction copy gets caught — a
+confident, plausible, wrong number.
+
+Across 1,353 lines of rendered copy there are **zero dollar amounts, zero
+percentages and zero counting claims**. Every mention of a licence, rating,
+review or guarantee is a disclaimer rather than a claim. Sections 6 and 11 are
+satisfied by measurement, not assertion.
+
+### 25.4 Observed and deliberately not changed
+
+**The reference number does not survive the click.** It appears on the inline
+card and is gone on `/thank-you`. Carrying it across needs state in the URL or
+storage — a functionality change to the lead flow, which section 7 puts out of
+bounds. Recorded as an observation for whoever owns the flow, not fixed here.
+
+**Two sets of validation messages exist.** The client wording is warmer than the
+server schema's ("Consent is required so a contractor can contact you" versus
+"Service consent is required"), and on an HTTP 400 the server text is what
+renders. In practice the client blocks every case the server would catch, so the
+terser strings are unreachable without a crafted request. Left alone rather than
+touching the validation layer of a working lead pipeline.
+
+### 25.5 Verification
+
+18/18 routes 200, typecheck clean, 36/36 tests, 4/4 content assertions. Re-rendered
+at 390, 820 and 1440px: no overflow, no stranded grid rows, no cramped columns.
+Document heights match the eighth-pass baselines exactly on every page except
+`/thank-you`, which is 32px shorter — the sentence removed from its lede.
+
+## 26. Scores after the ninth pass
+
+| Dimension | Target | Eighth pass | Now | Reasoning |
+|---|---|---|---|---|
+| **AI-looking** | ≤2 | 2 | **2** | One genuine paraphrase-duplication removed from the highest-stakes moment on the site. Held at 2 rather than lowered: the photographs are still AI-generated, and that remains the honest reason this is not a 1. |
+| **Human-designed** | ≥9 | 9 | **9** | The form's error, no-coverage and failure states turn out to be the most human writing on the site — someone thought hard about them. That was already true before this pass, so it raises nothing; the duplicate receipt was the one place nobody had looked. |
+| **Professional** | ≥9 | 9 | **9** | Held. The technical copy survives a contractor's reading, which is the strongest evidence of professionalism found in nine passes. |
+| **Generic / template** | ≤2 | 2 | **2** | Unchanged. |
+| **Trust** | ≥9 | 8 | **8** | Unchanged, still capped by `(803) 555-0123` and `hello@example-referral-brand.com`, both environment-supplied. |
+
+Nine passes, and the rule has still not broken: **the finding always comes from a
+lens not yet used.** This time it was using the product instead of reading it,
+and reading the prose as a tradesperson rather than an editor.
+
+**Unchanged highest-leverage action:** set the five `NEXT_PUBLIC_*` environment
+variables to real contact details at deploy. That moves trust to 9 and remains
+the only target still unmet.
