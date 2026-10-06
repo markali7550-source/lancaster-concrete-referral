@@ -217,12 +217,14 @@ export function ScopeColumns({
   covered: { title: string; body: string }[];
   outOfScope: string[];
 }) {
-  // The page already gives up a column to the sticky form, so splitting this
-  // block again at lg left the cards 151px wide and wrapping after three
-  // words. Both splits now wait for xl, where there is room for them.
+  // The page already gives up a column to the sticky form, and at xl it gives
+  // up another to the out-of-scope aside below. Splitting the covered list a
+  // third time on top of that measured 213px cards holding 131px of text at
+  // 1440px — three words a line. The list stays single-column from lg up; only
+  // the list/aside split happens at xl.
   return (
     <div className="grid gap-6 xl:grid-cols-[1.6fr_1fr]">
-      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
         {covered.map((item) => (
           <li key={item.title} className="card p-6">
             <div className="flex flex-col gap-2.5 lg:flex-row lg:gap-3">
@@ -461,8 +463,11 @@ export function RelatedServices({
   basePath?: string;
 }) {
   const others = services.filter((service) => service.slug !== currentSlug);
+  // Always exactly three cards (four services minus the current one), so the
+  // column count goes straight from 1 to 3. A 2-column step stranded the third
+  // card beside an empty cell on every tablet-width screen.
   return (
-    <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <ul className="grid gap-4 md:grid-cols-3">
       {others.map((service) => (
         <li key={service.slug}>
           <Link

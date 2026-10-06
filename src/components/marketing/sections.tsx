@@ -661,8 +661,11 @@ const STEPS = [
 ];
 
 export function HowMatchingWorks() {
+  // Three across only from lg. At md the columns fell to ~239px, which left
+  // the body copy about 25 characters wide and wrapped step 02's heading onto
+  // four lines while its neighbours used two.
   return (
-    <ol className="grid gap-5 md:grid-cols-3">
+    <ol className="grid gap-5 lg:grid-cols-3">
       {STEPS.map((step, index) => (
         <li key={step.verb} className="card flex h-full flex-col p-6">
           <span
