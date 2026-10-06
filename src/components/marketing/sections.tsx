@@ -688,44 +688,44 @@ export function HowMatchingWorks() {
 
 /* ------------------------------------------------------------ DecisionSupport */
 
+/**
+ * Plain text, deliberately not an accordion. The pages that use this already
+ * carry a real FAQ accordion further down, and two identical disclosure groups
+ * on one page read as a component being reused rather than a decision. These
+ * four answers are also short and worth reading without a click.
+ */
 export function DecisionSupport({
   items,
-  name = "decision-support",
+  columns = 2,
 }: {
   items: { question: string; answer: string }[];
-  /**
-   * Shared name that makes the group an exclusive accordion: opening one row
-   * closes the row that was open. Pass a distinct value if two groups ever
-   * render on the same page.
-   */
-  name?: string;
+  /** Two across in a full-width section, one where it sits in a sidebar. */
+  columns?: 1 | 2;
 }) {
   return (
-    <div
-      className="divide-y overflow-hidden rounded-[var(--radius-card)] border"
-      style={{ borderColor: "var(--color-line-soft)", backgroundColor: "var(--color-surface)" }}
+    <dl
+      /*
+       * Both branches are complete literal strings. Building the class list by
+       * interpolating next to a utility produces the token "gap-y-7$", which
+       * Tailwind never generates, and the rows silently lose their gap.
+       */
+      className={
+        columns === 2
+          ? "grid gap-x-12 gap-y-7 md:grid-cols-2"
+          : "grid gap-x-12 gap-y-7"
+      }
     >
       {items.map((item) => (
-        <details key={item.question} name={name} className="group">
-          <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-medium md:px-6">
-            <span className="flex-1 text-left">{item.question}</span>
-            <span
-              className="grid h-8 w-8 shrink-0 place-items-center rounded-[10px] transition-colors"
-              style={{
-                backgroundColor: "var(--color-accent-soft)",
-                color: "var(--color-accent)",
-              }}
-              aria-hidden="true"
-            >
-              <Icon name="plus" className="h-4 w-4" />
-            </span>
-          </summary>
-          <p className="px-5 py-4 text-left text-[15px] leading-relaxed text-[color:var(--color-muted)] md:px-6">
+        <div key={item.question}>
+          <dt className="text-[17px] font-semibold leading-snug">
+            {item.question}
+          </dt>
+          <dd className="mt-2 max-w-[54ch] text-[15px] leading-relaxed text-[color:var(--color-muted)]">
             {item.answer}
-          </p>
-        </details>
+          </dd>
+        </div>
       ))}
-    </div>
+    </dl>
   );
 }
 
