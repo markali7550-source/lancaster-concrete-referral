@@ -425,3 +425,117 @@ correct direction when the finding is "I had not checked."
 **Unchanged highest-leverage action:** set the five `NEXT_PUBLIC_*` environment
 variables to real contact details at deploy. That is the only remaining move
 that changes a score.
+
+---
+
+## 17. Fifth pass — opening the site on a phone
+
+Mobile had been measured but never looked at. The earlier passes recorded
+counts at 390px — zero overflows, footer height, centred-paragraph ratios —
+and all of those numbers were correct. They were also blind to the two
+largest remaining problems, both of which were obvious within about thirty
+seconds of actually scrolling the page.
+
+A real browser was run at 390x844 and the pages were read top to bottom.
+
+### 17.1 Mobile itself is sound
+
+Worth stating plainly, because the brief asks whether mobile feels designed
+or merely stacked. It feels designed. The project-type selector is a 2x2
+radio grid rather than four stacked rows; the form carries a "Step 1 of 2"
+label and a progress bar; a "Rather just talk?" card with a call button sits
+beside the form for people who do not want to type; the footer is a
+two-column link layout, not a single column of everything. Four padding tiers
+survive at mobile width, so the vertical rhythm still carries hierarchy.
+
+The 29 elements that report as overflowing the viewport on a service page
+were checked by walking each one's ancestors: **all 29 sit inside the
+deliberate `overflow-x-auto` sub-nav**. Genuinely broken layout: zero.
+
+### 17.2 A section that retold the page it was on
+
+The driveways page ran 14,376 pixels on a phone. Near the bottom sat a
+six-card section, "Driveways on Lancaster County clay", under the eyebrow
+"More information". Reading it after having read the page, it says nothing
+new:
+
+| Block | Already said by |
+|---|---|
+| "Why people replace a drive" | the hero lede — a gravel drive that washes out, or a slab cracked past patching |
+| "Four kinds of driveway job" | the Scope cards — the same four items |
+| "Thickness, joints and slope" | the Specification section — the same two topics |
+| "Access, utilities and curing time" | the Preparation checklist, in prose |
+| "Pour day and the week after" | the six-step Process timeline, in prose |
+
+The sixth block defines what a driveway is.
+
+Verbatim overlap with the rest of the page measures **near zero**, and that is
+the finding rather than a reprieve. This is paraphrase. A lexical duplicate
+check — the kind of sweep the earlier passes relied on — returns clean on it,
+which is exactly why it survived four passes. Restating your own page in
+different words is what a generator produces when told to add a section.
+
+The component confirmed it: `card → h3 → paragraph → h4 → paragraph`, six
+times in a grid, where the `h4` is filled from a `subheading` field with
+nothing to put in it. **Thirteen of the twenty-four subheadings across the
+four services echo their own heading**, six of them completely:
+
+```
+"Thickness, joints and slope"       ->  "Joints and slope"
+"Access, utilities and curing time" ->  "Access and curing time"
+"Excavation through to curing"      ->  "From excavation to curing"
+"Forming through to curing"         ->  "From forming to curing"
+"Load decides the build"            ->  "What decides the build"
+"When a repair will not hold"       ->  "When repair will not hold"
+```
+
+A person does not write a subheading that repeats the heading above it. A
+template with an empty slot does.
+
+Removed: the section, its in-page nav entry, the `MoreInformation` component,
+and the `moreInfo` data and types from both content files.
+
+| | before | after |
+|---|---|---|
+| driveways page height @390px | 14,376 | **12,198** |
+| cards on driveways @390px | 29 | **23** |
+| patios / slabs / repair height | — | 11,854 / 11,572 / 11,566 |
+
+What remains on those pages reads as a sequence instead of a loop: the
+preparation checklist, the questions to ask the contractor, a one-line note
+on what is checked before routing, the disclosure, the FAQ, other services.
+
+### 17.3 Two smaller echoes of the same fault
+
+- The homepage form section was titled **"Start with your project type and
+  location"** directly above the form's own step label **"Your project and
+  location"** — the same words twice, three lines apart. The step label is
+  functional and stays; the section heading is now "What we need from you".
+  A sitewide check for headings that echo a nearby heading now returns zero.
+- "Nobody can price a driveway from a **postcode**." Postcode is British.
+  This is the third pass running in which a defect was found in copy I wrote
+  myself, and the second British usage. Now "from an address".
+
+## 18. Scores after the fifth pass
+
+| | Target | Pass 4 | Pass 5 | Why |
+|---|---|---|---|---|
+| **AI-looking** | ≤2 | 2 | **2** | A section that paraphrased its own page, with thirteen subheadings echoing their own headings, is as clear an artifact of generation as the melted float was. It is gone. The score does not improve because the ceiling is unchanged: all imagery is AI-generated concept photography. |
+| **Human-designed** | ≥9 | 9 | **9** | Removing a redundant section restores the judgement the page should always have shown; it does not add new design. Mobile was confirmed as deliberately laid out rather than stacked, which supports the 9 that was already claimed. |
+| **Professional** | ≥9 | 9 | **9** | Typecheck, 36/36 tests, four content asserts, 18/18 routes 200, 0 orphaned images, 0 genuine mobile overflows. |
+| **Generic / template** | ≤2 | 2 | **2** | The most template-like thing on the site has been deleted. Held at 2 rather than lowered, because the shape is still recognisably a local-service site, which is correct for what it is. |
+| **Trust** | ≥9 | 8 | **8** | Unchanged and still capped by the `(803) 555-0123` reserved-fiction number and the `example-referral-brand.com` email, both environment-supplied. |
+
+No score moved, for the fifth time running on at least one line, and the
+reason is worth stating once plainly: **the measurements were never wrong,
+they were just narrow.** A buzzword sweep, an em-dash count and an overflow
+check all returned clean on a page carrying a section that repeated itself
+six times. Each pass that found something new found it by rendering the thing
+and reading or looking at it — the prose, the alt text beside its own
+photograph, the photograph at 3x, the page on a phone. That is the method
+that worked, and it is the honest reason the scores have stopped moving:
+what remains is the imagery being generated and the contact details being
+placeholders, and neither is fixable in the repository.
+
+**Unchanged highest-leverage action:** set the five `NEXT_PUBLIC_*`
+environment variables to real contact details at deploy.
