@@ -650,3 +650,117 @@ placeholders. Neither is fixable in the repository.
 **Unchanged highest-leverage action:** set the five `NEXT_PUBLIC_*`
 environment variables to real contact details at deploy. That moves trust to
 9 and is the only target still unmet.
+
+---
+
+## 21. Seventh pass — reading the four service pages side by side
+
+Section 3 of the brief calls service-page repetition the biggest AI signal.
+Through six passes it had only ever been **measured**, never **read**. The
+measurement was "service-page H2s exactly identical: 7/13 → 1/9", and it was
+the wrong test. Exact string equality passes any two headings that differ by
+one word, which is precisely the failure mode section 3 describes.
+
+This pass extracted the rendered text of all four service pages and printed
+their H2 skeletons as four columns of one table — the comparison a visitor
+makes when they open two tabs.
+
+### 21.1 What the table showed
+
+Four of the eight heading rows were noun-swap templates:
+
+| Row | driveways | patios | slabs | repair |
+|---|---|---|---|---|
+| 0 scope | What we route under concrete driveways | …patios | …slabs | …repair |
+| 5 faq | Driveway questions we get asked | Patio questions… | Slab and pad questions… | Repair questions… |
+| 7 cta | Ready to price a driveway? | …a patio? | …a pad? | Want someone to look at the damage? |
+
+Rows 1–4 — the specification, process, pricing and preparation headings —
+were genuinely distinct in both wording and order, so the earlier passes did
+hold. The repetition had collected in the first and last sections of every
+page: the two places a visitor actually reads.
+
+### 21.2 The scope heading could not have been fixed in the content file
+
+`What we route under concrete driveways` was not a content string. It was a
+template literal in the page component:
+
+```tsx
+<h2 className="h2 mt-4">What we route under {service.name.toLowerCase()}</h2>
+```
+
+No edit to `services.ts` could have made those four headings differ, because
+the heading did not live there. This is the same class of defect as the
+plural-H1 bug in section 5 of this report, and the brief's instruction for it
+is the same: fix the source logic so the problem cannot return. A `scope`
+field was added to the per-service `headings` record and the component now
+renders `service.headings.scope`.
+
+### 21.3 The closing paragraph was identical on all four pages
+
+Checking the CTA heading surfaced a worse instance underneath it. The heading
+varied; the paragraph below it did not. `ServiceCtaBand` hardcoded one body:
+
+> Tell us about your project and location to request a connection with an
+> independent concrete service provider serving your area.
+
+All four service pages closed on that exact sentence. The component now
+requires a `body` prop and each service supplies its own `ctaLead`, written
+against what that service's page actually spent its length explaining —
+tear-out and drainage for driveways, tie-ins for patios, load for pads,
+on-site assessment before pricing for repair.
+
+### 21.4 Result
+
+| Row | before | after |
+|---|---|---|
+| 0 scope | one template | What counts as a driveway job / Where patio work starts and stops / Pads this category covers / Damage we route, and damage we do not |
+| 5 faq | one template | What homeowners ask about driveways / Common questions about patios / Slab and pad questions / Questions we hear before a repair visit |
+| 7 cta heading | one template | Ready to price a driveway? / Thinking about a patio? / Need a pad poured? / Want someone to look at the damage? |
+| 7 cta body | one sentence ×4 | four, each specific to its service |
+
+Templated heading rows: **4 of 8 → 1 of 8**.
+
+### 21.5 What was checked and deliberately kept
+
+**"Also routed in Lancaster" ×4** is the remaining identical row and it stays.
+It labels the same cross-sell block performing the same navigational job on
+every page. Real sites label related-content sections consistently, and
+varying it would be change for its own sake — which the brief rules out twice.
+Recorded here so it reads as a decision rather than an oversight.
+
+**The combo-page CTA body** is shared across the location pages but differs
+from the service-page bodies. It describes the referral mechanism, which genuinely
+does not change per service. Left alone.
+
+### 21.6 The lesson, stated plainly
+
+A string-equality metric cannot detect a template. "What we route under
+concrete driveways" and "What we route under concrete patios" are different
+strings and the same sentence. The correct test strips the service noun and
+compares what remains — or, more cheaply, prints the headings side by side
+and looks at them. The side-by-side table took one command and found in
+seconds what six passes of automated comparison had scored as clean.
+
+Seven passes, and the rule has not broken once: **the finding always comes
+from a lens not yet used.** Prose, alt text beside its photograph, photographs
+at 3x, a phone, a desktop, and now four pages in four columns.
+
+## 22. Scores after the seventh pass
+
+| Dimension | Target | Sixth pass | Now | Reasoning |
+|---|---|---|---|---|
+| **AI-looking** | ≤2 | 2 | **2** | Four pages opening on one sentence with a noun swapped is a textbook generation artefact, and it is gone. Held at 2 rather than lowered, because the photographs are still AI-generated and that is the honest reason the number is not 1. |
+| **Human-designed** | ≥9 | 9 | **9** | The headings now read as four people describing four jobs. Not raised to 10: the fix restored an intent the codebase already had — the `cta` field carried a comment saying it was per-service "so the four pages do not all end on the same sentence", and three of the four still ended on the same sentence anyway. |
+| **Professional** | ≥9 | 9 | **9** | Unchanged. A visitor comparing two service tabs no longer sees the same page twice. |
+| **Generic / template** | ≤2 | 2 | **2** | The literal template slot is gone from the two sections most likely to be read. Held at 2, not 1, because one identical cross-sell label remains by choice. |
+| **Trust** | ≥9 | 8 | **8** | Unchanged, still capped by the `(803) 555-0123` reserved-fiction number and the `example-referral-brand.com` email, both environment-supplied. |
+
+Scores are unchanged, and that is the honest reading. This pass removed a real
+section-3 defect, but it did not shift any dimension a full point — the four
+pages were already differentiated through their middle sections, so fixing the
+bookends tightened a result rather than changing it.
+
+**Unchanged highest-leverage action:** set the five `NEXT_PUBLIC_*` environment
+variables to real contact details at deploy. That moves trust to 9 and remains
+the only target still unmet.
