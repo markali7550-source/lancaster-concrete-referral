@@ -272,8 +272,13 @@ export default function HomePage() {
       <CtaBand
         title="Ready to connect with an independent concrete service provider?"
         body="One request, one independent third party service provider, no charge to you and no obligation to proceed."
-        imageSrc="/images/cta-combo-driveways.webp"
-        imageAlt="Wide residential concrete driveway leading to a two car garage on a winter day"
+        /* Chosen for this band's geometry, not just its subject. The CTA is a
+           ~207px letterbox, so only the middle slice of the photograph is ever
+           visible. A driveway shot that recedes to a vanishing point puts blank
+           slab in that slice and the band reads as a grey smear; this one keeps
+           pines, pine straw and the curve of the drive in frame throughout. */
+        imageSrc="/images/local-driveways-lancaster.webp"
+        imageAlt="Curved concrete driveway sweeping up to a brick ranch home set among tall pines"
       />
 
 

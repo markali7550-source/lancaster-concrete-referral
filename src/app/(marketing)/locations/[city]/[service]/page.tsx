@@ -44,10 +44,11 @@ export const dynamicParams = false;
  * dedicated image file rather than repeating a single shared band photo. That
  * still holds between the combo pages themselves -- no two of them share a file.
  *
- * Two entries are now also used once on a top-level page, following the
- * 2026-10-05 image audit: cta-combo-driveways.webp is the home page closing CTA
- * and cta-combo-repair.webp backs the process band on /how-it-works. Both were
- * verified-real photos promoted into slots whose originals were unusable.
+ * One entry is now also used once on a top-level page, following the 2026-10-05
+ * image audit: cta-combo-repair.webp backs the process band on /how-it-works.
+ * It is a verified-real photo promoted into a slot whose original was unusable.
+ * The home page closing CTA takes local-driveways-lancaster.webp, which is this
+ * city/service pair's localImage in content/location-services.ts.
  */
 const COMBO_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-driveways": { src: "/images/process-combo-driveways.webp", alt: "Independent contractor inspecting the formed edge of a new residential driveway slab" },
