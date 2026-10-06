@@ -101,7 +101,7 @@ export const services: readonly ServiceRecord[] = [
     summary:
       "New pours and full replacements, including tear out of failed slabs and the drainage questions that come with Lancaster County clay.",
     heroSummary:
-      "Most driveway calls start one of two ways: a gravel drive that washes out every spring, or a slab that has cracked and settled past the point where patching is worth it. Tell us which one you have and we pass it to one independent provider who pours driveways in your area. They quote it, schedule it, and do the work. We do not.",
+      "A driveway project is usually one of two jobs: putting concrete over a gravel drive that no longer holds up, or replacing a slab that has cracked and settled past the point where patching is worth it. Tell us which one you have and we pass it to one independent provider who pours driveways in your area. They quote it, schedule it, and do the work. We do not.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "What counts as a driveway job",

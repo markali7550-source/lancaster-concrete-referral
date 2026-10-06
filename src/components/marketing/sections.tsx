@@ -27,15 +27,35 @@ import { SHORT_DISCLOSURE } from "@/lib/seo/disclosure";
  * separate green-black.
  */
 /**
- * Scrim over a photo band.
+ * Base scrim over a photo band.
  *
- * At 72% every band rendered as a flat near-black rectangle: the photograph
- * underneath was doing no work at all, so sections that were meant to be the
- * visual relief on a text page read as dead space instead. 56% lets the
- * photograph show while keeping white body copy above 7:1 on mid tones and
- * above 4.5:1 on the brightest parts of these images.
+ * Three values have been tried. At 72% every band rendered as a flat
+ * near-black rectangle and the photograph did no work at all. A flat 56% let
+ * the photograph through but measured 4.36:1 for white body copy and 2.29:1
+ * for the mint eyebrow against the brightest highlight in these images, both
+ * under AA.
+ *
+ * So the darkening is no longer uniform. This base keeps the whole band in the
+ * same material as the footer and the CTA, and PHOTO_COPY_WASH below adds the
+ * contrast where the text actually sits, which leaves the right of the frame
+ * light enough to read as a photograph.
  */
-export const PHOTO_SCRIM = "bg-[#0B1017]/56";
+export const PHOTO_SCRIM = "bg-[#0B1017]/48";
+
+/**
+ * Extra darkening under the copy.
+ *
+ * Below lg the content spans the full width, so the wash does too. From lg the
+ * copy is left aligned in roughly the first half of the band, so it ramps out
+ * to transparent and the photograph survives on the right.
+ *
+ * With the 48% base this puts the copy column at 74% combined on small screens
+ * and 77% at the left edge on desktop, which holds white body copy at 4.9:1
+ * and the mint eyebrow at 4.6:1 against a pure white highlight, the worst case
+ * any of these photographs can produce.
+ */
+export const PHOTO_COPY_WASH =
+  "bg-[#0B1017]/50 lg:bg-transparent lg:bg-gradient-to-r lg:from-[#0B1017]/58 lg:via-[#0B1017]/40 lg:to-transparent";
 
 /**
  * Vignette at the top and bottom of a photo band.
@@ -49,7 +69,7 @@ export const PHOTO_SCRIM = "bg-[#0B1017]/56";
  * between two sections.
  */
 export const PHOTO_EDGE_FADE =
-  "bg-gradient-to-b from-[#0B1017]/75 via-transparent to-[#0B1017]/75";
+  "bg-gradient-to-b from-[#0B1017]/55 via-transparent to-[#0B1017]/55";
 
 /**
  * Heroes only. Deepens the copy side and releases on the right so the
@@ -133,6 +153,10 @@ export function Section({
           />
           <div
             className={`absolute inset-0 z-10 ${PHOTO_SCRIM}`}
+            aria-hidden="true"
+          />
+          <div
+            className={`absolute inset-0 z-10 ${PHOTO_COPY_WASH}`}
             aria-hidden="true"
           />
           <div
