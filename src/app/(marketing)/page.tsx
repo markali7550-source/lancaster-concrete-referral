@@ -96,7 +96,7 @@ export default function HomePage() {
       <Hero
         locationCue="Lancaster County, South Carolina"
         h1="Connect With a Local Concrete Service Provider in Lancaster, SC"
-        summary="Tell us what you need and where the property is. We’ll match your request with one eligible independent concrete service provider serving your area."
+        summary="Tell us what you need and where the property is. We will match your request with one eligible independent concrete service provider serving your area."
         imageSrc="/images/cta-service-driveways.webp"
         imageAlt="Concrete driveway running up to the attached garage of a single story brick home"
         overlay

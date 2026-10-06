@@ -61,7 +61,7 @@ export default function ReferralDisclosurePage() {
       <p>
         Photographs on this site illustrate the kind of work we route. They do
         not depict jobs completed by us, and we perform no concrete work. Where
-        a provider&rsquo;s own project photos appear, we confirm ownership and
+        a provider&apos;s own project photos appear, we confirm ownership and
         permission first.
       </p>
     </LegalPage>

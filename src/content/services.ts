@@ -111,7 +111,7 @@ export const services: readonly ServiceRecord[] = [
     processLead:
       "A driveway is a one-day pour on the end of a week of preparation. The sequence below is what that week usually looks like; your contractor sets the real dates.",
     costLead:
-      "Nobody can price a driveway from a postcode. Square footage is only the start of it -- what the old slab costs to break up and haul away, and whether a truck can reach the pour, often move the number more.",
+      "Nobody can price a driveway from a postcode. Square footage is only the start of it. What the old slab costs to break up and haul away, and whether a truck can reach the pour, often move the number more.",
     image: "/images/service-driveways.webp",
     imageAlt:
       "Concrete driveway running up to the garage of a single story brick ranch house, with saw cut control joints across its width",
@@ -316,7 +316,7 @@ export const services: readonly ServiceRecord[] = [
     optionsLead:
       "Patios are where the finish decisions live. Pick these before you compare quotes, or you will be comparing two different projects.",
     processLead:
-      "Patios are built in a different order to driveways, because the finish is decided before the forms go in rather than after. Timings are typical, not promised.",
+      "Patios are built in a different order from driveways, because the finish is decided before the forms go in rather than after. Timings are typical, not promised.",
     costLead:
       "Patios are the project people most often price before they commit, so it is worth knowing what actually moves the figure. Finish and shape change it far more than size does.",
     image: "/images/service-patios.webp",
@@ -519,7 +519,7 @@ export const services: readonly ServiceRecord[] = [
     optionsLead:
       "A pad is specified by what sits on it. Load comes first, because it decides thickness, reinforcement and base depth before anything else is priced.",
     processLead:
-      "A pad is mostly groundwork. By the time concrete arrives the hard part -- getting the base right and the forms square -- is already done. Durations are typical ranges, not commitments.",
+      "A pad is mostly groundwork. By the time the concrete arrives, the hard part is done: the base is right and the forms are square. Durations are typical ranges, not commitments.",
     costLead:
       "Pricing comes last here for a reason: until the load, the access and the base are known, any number is a guess. Once those are settled a contractor can quote a pad quickly.",
     image: "/images/service-slabs.webp",
@@ -717,7 +717,7 @@ export const services: readonly ServiceRecord[] = [
     optionsLead:
       "Repair is diagnosis before method. The right fix depends on why the concrete failed, which is why two jobs that look alike are quoted differently.",
     processLead:
-      "Repair starts with working out why the concrete failed. Until that is established, choosing a method is guesswork, which is why assessment comes before anything else on this page.",
+      "Repair starts with working out why the concrete failed. Until that is established, choosing a method is guesswork, which is why the assessment comes first.",
     costLead:
       "Repair quotes vary more than any other concrete work, because two slabs with identical cracks can need completely different work underneath. These are the things that move it.",
     image: "/images/repair-hero-walkway.webp",

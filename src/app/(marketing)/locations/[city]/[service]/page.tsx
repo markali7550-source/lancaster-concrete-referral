@@ -193,9 +193,9 @@ export default async function ComboPage({ params }: { params: Params }) {
                 </Link>{" "}
                 rather than being repeated here. Coverage, project type,
                 referral agreement and capacity are all checked before your
-                details go anywhere &mdash;{" "}
+                details go anywhere.{" "}
                 <Link href="/how-it-works" className="underline underline-offset-4">
-                  how a request is routed
+                  How a request is routed
                 </Link>
                 .
               </p>
