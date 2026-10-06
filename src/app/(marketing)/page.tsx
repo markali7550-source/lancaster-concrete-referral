@@ -4,15 +4,19 @@ import Link from "next/link";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { QuoteForm } from "@/components/lead/QuoteForm";
 import {
+  AdjacentAreas,
   DecisionSupport,
   FaqSection,
   Hero,
   HowMatchingWorks,
   ProjectTypeChooser,
+  RoutingControls,
   Section,
   SectionDivider,
 } from "@/components/marketing/sections";
-import { CtaBand } from "@/components/marketing/service-sections";
+import {
+  CtaBand,
+} from "@/components/marketing/service-sections";
 import { OUT_OF_AREA_POSTAL_CODE, publishedLocations, serviceAreaOptions } from "@/content/locations";
 import { publishedServices, serviceCardImages } from "@/content/services";
 import { site } from "@/lib/env";
@@ -135,6 +139,15 @@ export default function HomePage() {
 
 
       <Section
+        tone="soft"
+        eyebrow="How routing works"
+        title="How your request reaches an independent provider"
+        lead="These are routing controls, not credential verification. License, insurance, and workmanship remain matters to confirm directly with the independent provider who contacts you."
+      >
+        <RoutingControls />
+      </Section>
+
+      <Section
         eyebrow="Before you call"
         title="Four things worth deciding yourself"
         lead="None of these need a contractor to answer, and knowing them makes the first conversation shorter."
@@ -142,25 +155,22 @@ export default function HomePage() {
         <DecisionSupport items={DECISION_ITEMS} />
       </Section>
 
-      <div className="container-page py-10">
-        <p className="text-[15px] leading-relaxed text-[color:var(--color-muted)]">
-          Right now we route requests in{" "}
-          {publishedLocations.map((location, index) => (
-            <Fragment key={location.slug}>
-              {index > 0 && (index === publishedLocations.length - 1 ? " and " : ", ")}
-              <Link
-                href={`/locations/${location.slug}`}
-                className="underline underline-offset-4"
-              >
-                {location.city}, {location.region}
-              </Link>
-            </Fragment>
-          ))}
-          . Additional South
-          Carolina areas are added one at a time, and only once a participating
-          provider has approved coverage there in writing.
+      <Section
+        backgroundImage={{
+          src: "/home-service-area-band.webp",
+          alt: "Quiet Lancaster County South Carolina residential street with concrete driveways, front walkways, and mature trees",
+        }}
+        eyebrow="Service area"
+        title="Areas we currently serve"
+        lead="Every area we currently serve. Service availability depends on participating providers."
+      >
+        <AdjacentAreas locations={publishedLocations} />
+
+        <p className="mt-7 text-center text-[14px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
+          Additional South Carolina areas are added one at a time, and only once
+          a participating provider has approved coverage there in writing.
         </p>
-      </div>
+      </Section>
 
       <Section
         tone="surface"

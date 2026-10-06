@@ -2,14 +2,15 @@ import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   FaqSection,
-  ProjectTypeChooser,
+  HowMatchingWorks,
   OverlayHeader,
-  overlayBody,
-  overlayEyebrow,
-  overlayHeading,
+  ProjectTypeChooser,
   ReferralDisclosureStrip,
   Section,
   SectionDivider,
+  overlayBody,
+  overlayEyebrow,
+  overlayHeading,
 } from "@/components/marketing/sections";
 import { Breadcrumbs, CtaBand } from "@/components/marketing/service-sections";
 import { publishedServices, serviceCardImages } from "@/content/services";
@@ -134,6 +135,14 @@ export default function ServicesPage() {
             </tbody>
           </table>
         </div>
+      </Section>
+
+      <Section
+        tone="soft"
+        eyebrow="Process"
+        title="How a request reaches an independent provider"
+      >
+        <HowMatchingWorks />
       </Section>
 
       <Section compact eyebrow="Out of scope" title="What we decline outright">

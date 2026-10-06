@@ -6,14 +6,19 @@ import { QuoteForm } from "@/components/lead/QuoteForm";
 import {
   FaqSection,
   Hero,
+  HowMatchingWorks,
   ReferralDisclosureStrip,
+  RoutingControls,
   Section,
 } from "@/components/marketing/sections";
 import {
   Breadcrumbs,
+  CostTable,
   CtaBand,
   KeyFacts,
+  PrepColumns,
   RelatedServices,
+  Timeline,
 } from "@/components/marketing/service-sections";
 import {
   getLocationService,
@@ -45,6 +50,13 @@ export const dynamicParams = false;
  * driveways pair at cta-combo-driveways.webp so no page shows it twice.
  */
 
+
+const COMBO_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-driveways": { src: "/images/process-combo-driveways.webp", alt: "Independent contractor inspecting the formed edge of a new residential driveway slab" },
+  "concrete-patios": { src: "/images/process-combo-patios.webp", alt: "Two workers screeding a freshly poured backyard patio between timber forms" },
+  "concrete-slabs": { src: "/images/process-combo-slabs.webp", alt: "Compacted gravel subbase and reinforcing mesh set inside timber forms before a slab pour" },
+  "concrete-repair": { src: "/images/process-combo-repair.webp", alt: "Worker saw-cutting a cracked section out of an existing concrete driveway" },
+};
 
 export function generateStaticParams() {
   return publishedLocationServices.map((record) => ({
@@ -181,24 +193,57 @@ export default async function ComboPage({ params }: { params: Params }) {
               className="scroll-mt-36 border-t py-12 md:py-20"
               style={{ borderColor: "var(--color-line-soft)" }}
             >
-              <p className="max-w-prose text-[15px] leading-relaxed text-[color:var(--color-muted)]">
-                Sequence, what moves the price, and what to have ready for the
-                estimate visit are the same wherever the work happens, so they
-                live on{" "}
-                <Link
-                  href={`/services/${serviceRecord.slug}`}
-                  className="underline underline-offset-4"
-                >
-                  the {serviceRecord.name.toLowerCase()} page
-                </Link>{" "}
-                rather than being repeated here. Coverage, project type,
-                referral agreement and capacity are all checked before your
-                details go anywhere.{" "}
-                <Link href="/how-it-works" className="underline underline-offset-4">
-                  How a request is routed
-                </Link>
-                .
+              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Process</p>
+              <h2 className="h2 mt-4 text-center md:text-left">
+                How the project usually runs here
+              </h2>
+              <p className="lede mx-auto mt-4 max-w-prose text-center md:mx-0 md:text-left">
+                Typical ranges reported by participating providers, not commitments. Your
+                contractor sets the actual schedule for your site.
               </p>
+              <div className="mt-8">
+                <Timeline phases={serviceRecord.process} />
+              </div>
+            </section>
+
+            <section
+              className="scroll-mt-36 border-t py-12 md:py-20"
+              style={{ borderColor: "var(--color-line-soft)" }}
+            >
+              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Pricing</p>
+              <h2 className="h2 mt-4 text-center md:text-left">What drives the price locally</h2>
+              <p className="lede mx-auto mt-4 max-w-prose text-center md:mx-0 md:text-left">
+                We publish no figures. These are the variables that move the
+                number on a {location.city} property.
+              </p>
+              <div className="mt-8">
+                <CostTable rows={serviceRecord.costFactors} />
+              </div>
+            </section>
+
+            <section
+              className="scroll-mt-36 border-t py-12 md:py-20"
+              style={{ borderColor: "var(--color-line-soft)" }}
+            >
+              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Preparation</p>
+              <h2 className="h2 mt-4 text-center md:text-left">Get more out of the estimate visit</h2>
+              <div className="mt-8">
+                <PrepColumns
+                  checklist={serviceRecord.prepChecklist}
+                  questions={serviceRecord.quoteQuestions}
+                />
+              </div>
+            </section>
+
+            <section
+              className="scroll-mt-36 border-t py-12 md:py-20"
+              style={{ borderColor: "var(--color-line-soft)" }}
+            >
+              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">How routing works</p>
+              <h2 className="h2 mt-4 text-center md:text-left">Before your request is passed on</h2>
+              <div className="mt-8">
+                <RoutingControls />
+              </div>
             </section>
           </div>
 
@@ -235,6 +280,15 @@ export default async function ComboPage({ params }: { params: Params }) {
           </aside>
         </div>
       </div>
+
+      <Section
+        tone="surface"
+        backgroundImage={COMBO_PROCESS_IMAGES[serviceRecord.slug]}
+        eyebrow="Process"
+        title="Three steps, no obligation"
+      >
+        <HowMatchingWorks />
+      </Section>
 
       <Section compact
         tone="surface"

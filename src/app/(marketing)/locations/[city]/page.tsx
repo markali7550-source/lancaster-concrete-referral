@@ -9,8 +9,10 @@ import {
   DecisionSupport,
   FaqSection,
   Hero,
+  HowMatchingWorks,
   ProjectTypeChooser,
   ReferralDisclosureStrip,
+  RoutingControls,
   Section,
   StatStrip,
 } from "@/components/marketing/sections";
@@ -187,6 +189,25 @@ export default async function LocationPage({ params }: { params: Params }) {
         />
       </Section>
 
+
+      <Section
+        backgroundImage={{
+          src: "/images/process-location-lancaster.webp",
+          alt: "Residential concrete driveway on a Lancaster neighborhood street",
+        }}
+        eyebrow="Process"
+        title="How a Lancaster request is routed"
+      >
+        <HowMatchingWorks />
+      </Section>
+
+      <Section
+        tone="soft"
+        eyebrow="How routing works"
+        title="How a request is matched to a provider"
+      >
+        <RoutingControls />
+      </Section>
 
       <Section
         tone="surface"
