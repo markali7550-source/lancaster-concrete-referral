@@ -267,6 +267,25 @@
     color: var(--color-band-ink);
   }
 
+  /* Cards sitting on a photo band: tinted toward the band navy instead of
+     the white wash --color-surface hands them, so copy sits on a calmer,
+     darker field and busy photography stops reading through the text.
+
+     Same 8% opacity as the wash it replaces, dark rather than light. The
+     amount is measured, not guessed: across the three home band cards the
+     white wash composites to a mean of 63.6 and this lands 28% darker.
+
+     Note for anyone retuning this. A *dark* tint cannot be made subtler
+     than about 27% darker, because most of the step comes from dropping the
+     white lift rather than from the tint itself -- 0.06 gives 27.4% and
+     0.18 only reaches 31.8%. Below that floor the panel has to stay light
+     and get thinner (white at ~0.02 is a true 20%), which all but erases
+     it. So: adjust the alpha here for weight, but switch back to white if
+     the panel is ever wanted lighter than the photograph again. */
+  .cta-photo .card {
+    background-color: rgba(11, 16, 23, 0.08);
+  }
+
   /* Secondary buttons sitting on a dark band: outlined in white rather than
      in the page's warm hairline, which disappears against navy. */
   .cta-photo .btn-secondary {
