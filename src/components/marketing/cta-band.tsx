@@ -42,16 +42,16 @@ const CTA_BACKGROUND_LAYER =
  * patio page closes on a patio. This file is only the default for a band that
  * does not name one, which at present is the home page.
  *
- * It was chosen on measurements. The band is a letterbox of roughly 207px, so
- * only a thin middle slice of any photograph survives the crop, and the left
- * third of this one (pine trunks and pine straw rather than sky or pale
- * cladding) sits under the copy, where it measured 4.5:1 against a scrim that
- * left other candidates at 3.4 to 3.7:1. Check any replacement at the crop
- * before trusting it.
+ * The home page must not favour one of the four services, so the default is
+ * concrete work itself rather than a finished driveway, patio, slab or repair.
+ *
+ * The band is a letterbox of roughly 207px, so only a thin middle slice of any
+ * photograph survives the crop. Check the contrast of any replacement at that
+ * crop, under the copy, before trusting it.
  */
-const CTA_IMAGE = "/images/local-driveways-lancaster.webp";
+const CTA_IMAGE = "/home-cta-concrete-finish.webp";
 const CTA_IMAGE_ALT =
-  "Curved concrete driveway sweeping up to a brick ranch home set among tall pines";
+  "Bull float resting on the wet surface of a freshly placed concrete slab, with timber edge forms and gravel alongside";
 
 export function CtaBand({
   title,

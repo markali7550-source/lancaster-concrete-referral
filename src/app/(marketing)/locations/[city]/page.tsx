@@ -154,7 +154,7 @@ export default async function LocationPage({ params }: { params: Params }) {
       >
         <Image
           src="/images/process-location-lancaster.webp"
-          alt={`Newly poured concrete driveway at a brick ranch house, with raw red clay still exposed along both edges where the forms were pulled, in ${location.city}, ${location.region}`}
+          alt="Newly poured concrete driveway at a brick ranch house, with raw red clay still exposed along both edges where the forms were pulled"
           width={900}
           height={491}
           sizes="(min-width: 1024px) 80rem, 100vw"
@@ -192,8 +192,8 @@ export default async function LocationPage({ params }: { params: Params }) {
 
       <Section
         backgroundImage={{
-          src: "/images/process-location-lancaster.webp",
-          alt: "Newly placed residential concrete driveway with raw red clay along both edges, running to the attached garage of a brick home",
+          src: "/process-band.webp",
+          alt: "Timber forms set along the edge of a residential street beside a contractor's truck, with excavated clay heaped alongside",
         }}
         eyebrow="Process"
         title="How a Lancaster request is routed"

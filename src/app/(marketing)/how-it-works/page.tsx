@@ -73,8 +73,8 @@ export default function HowItWorksPage() {
 
       <Section
         backgroundImage={{
-          src: "/images/process-steps-formwork.webp",
-          alt: "Residential driveway formed and ready to pour, with welded wire mesh on chairs over a gravel subbase and red clay spoil heaped along one edge",
+          src: "/images/concrete-edge-inspection.webp",
+          alt: "Worker crouching beside a freshly finished concrete pad, checking the formed edge where it meets the backfill",
         }}
         eyebrow="Process"
         title="Three steps, no obligation"

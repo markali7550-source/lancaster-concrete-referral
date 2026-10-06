@@ -18,7 +18,7 @@ import {
   CtaBand,
 } from "@/components/marketing/service-sections";
 import { OUT_OF_AREA_POSTAL_CODE, publishedLocations, serviceAreaOptions } from "@/content/locations";
-import { publishedServices, serviceCardImages } from "@/content/services";
+import { publishedServices } from "@/content/services";
 import { site } from "@/lib/env";
 import { REFERRAL_SERVICE_DISCLOSURE } from "@/lib/seo/disclosure";
 import { pageMetadata } from "@/lib/seo/metadata";
@@ -101,8 +101,8 @@ export default function HomePage() {
         locationCue="Lancaster County, South Carolina"
         h1="Connect With a Local Concrete Service Provider in Lancaster, SC"
         summary="Tell us what you need and where the property is. We will match your request with one eligible independent concrete service provider serving your area."
-        imageSrc="/images/cta-service-driveways.webp"
-        imageAlt="Concrete driveway running up to the attached garage of a single story brick home"
+        imageSrc="/home-hero-concrete-work.webp"
+        imageAlt="Ready mix truck chute discharging wet concrete into timber forms on a residential lot, with gravel subbase and red clay spoil alongside"
         overlay
       />
 
@@ -112,7 +112,7 @@ export default function HomePage() {
         title="What we can route in Lancaster today"
         lead="Four residential concrete service categories, each with at least one participating provider holding written coverage for Lancaster areas. Foundation repair, structural engineering, and retaining walls sit outside this scope."
       >
-        <ProjectTypeChooser images={serviceCardImages} />
+        <ProjectTypeChooser />
         <p className="mt-8 text-sm">
           <Link
             href="/services"

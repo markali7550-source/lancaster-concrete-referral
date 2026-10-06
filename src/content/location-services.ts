@@ -21,9 +21,9 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-driveways",
     state: "published",
-    localImage: "/images/cta-combo-driveways.webp",
+    localImage: "/images/service-driveways.webp",
     localImageAlt:
-      "Wide residential concrete driveway running up to the attached garage of a suburban home",
+      "Concrete driveway running up to the garage of a single story brick ranch house, with saw cut control joints across its width",
     localBody: [
       {
         heading: "Two kinds of job",
@@ -69,9 +69,9 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-patios",
     state: "published",
-    localImage: "/images/local-patios-lancaster.webp",
+    localImage: "/images/service-patios.webp",
     localImageAlt:
-      "Stamped concrete patio in a flagstone pattern with a bullnose border, a shaded table and a new timber privacy fence behind it",
+      "Stamped concrete backyard patio in a random stone pattern with a curved edge, set against a mown lawn and a split rail fence",
     localBody: [
       {
         heading: "What the work usually is",
@@ -116,9 +116,9 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-slabs",
     state: "published",
-    localImage: "/images/local-slabs-lancaster.webp",
+    localImage: "/images/service-slabs.webp",
     localImageAlt:
-      "Finished residential concrete slab set into a back lawn, with bare soil and gravel still showing along its edge",
+      "Finished concrete shed pad in a back yard, sitting proud of the ground with form marks down its side and backfilled soil around the edge",
     localBody: [
       {
         heading: "What pads are usually for",
@@ -163,9 +163,9 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-repair",
     state: "published",
-    localImage: "/images/local-repair-lancaster.webp",
+    localImage: "/images/repair-hero-walkway.webp",
     localImageAlt:
-      "Wide residential concrete slab with a long crack running through it and fine map cracking across the surface",
+      "Residential concrete walkway where one slab has been lifted and tilted by tree roots, leaving a raised lip against the next panel",
     localBody: [
       {
         heading: "Three shapes it takes",
