@@ -996,3 +996,101 @@ and reading the prose as a tradesperson rather than an editor.
 **Unchanged highest-leverage action:** set the five `NEXT_PUBLIC_*` environment
 variables to real contact details at deploy. That moves trust to 9 and remains
 the only target still unmet.
+
+---
+
+## 27. Tenth pass — restoring the design, keeping the de-templating
+
+The ninth pass left the site thinner than it should have been. Earlier passes
+had treated "this block also appears on the service hub" as a reason to delete
+rather than a reason to differentiate, and the result was pages that were less
+templated but also less finished. This pass restores the composition and keeps
+the copy and structure work.
+
+### 27.1 The image system, which was the worst of it
+
+One photograph — `local-driveways-lancaster.webp` — was the closing band on
+**twelve pages**. The patio page, the slab page and the repair page all signed
+off with a picture of somebody's driveway. That was a deliberate earlier change
+("one shared CTA photo") and it was wrong: it is exactly the tell of a template,
+a single asset doing duty for content it has nothing to do with.
+
+Every page now carries photography of its own subject:
+
+| Page | Hero | In body | Closing band |
+|---|---|---|---|
+| Driveways | driveway | drainage detail | driveway |
+| Patios | patio | backyard slab · finished patio | stamped patio |
+| Slabs | slab | pad in timber forms · finished pad | shed pad |
+| Repair | walkway | cracked slab · trowel and filled joint | cut-out and replaced section |
+| Lancaster + each service | — | per-service process band | per-service closing band |
+| /services · /how-it-works · city page | — | — | own band each |
+
+`local-driveways-lancaster.webp` went from 12 pages to 2.
+
+Sixteen image files were restored from history. **Three were not**, each for a
+named defect rather than for being imperfect:
+
+- `cta-pour-band` — merged fingers on the right-hand worker, and a tiled hip
+  roof, brick pattern and front fence that read Australian suburban rather than
+  Piedmont.
+- `estimate-visit-measuring` — illegible marks standing in for handwriting on
+  the clipboard, the same defect that retired the earlier clipboard photo.
+- `cta-combo-repair` — a gloved hand whose fingers merge into a single mass.
+
+### 27.2 Sections restored
+
+- **"What a <service> project may include"** was gone from all four service
+  pages even though its content and its component were still in the repository
+  and the component was still imported. Restored, with a per-service photograph
+  behind it.
+- **The local-pages band** returns from one sentence to a section with its own
+  photograph.
+
+### 27.3 Three defects found by looking rather than measuring
+
+**Photo bands were rendering as flat black rectangles.** A 72% scrim stacked
+under a 75% edge fade left nothing of the photograph visible, so sections meant
+to be the visual relief on a text-heavy page read as dead space. At 56% the
+photograph does its job and white body copy still clears 7:1 on mid tones.
+
+**The service disclosure was a bordered box inside a bordered, padded band** —
+one sentence of small print carrying more chrome than any real section, sitting
+in a pale gap between two photographs. Same wording, now the same compact strip
+already used under the hero.
+
+**"May include" is seven items in two columns on all four services**: three rows
+plus one card stranded beside half an empty row, each card wide enough for a
+sentence while holding three words. Balanced columns split seven as 3/2/2.
+
+Also fixed: "components commonly associated with patio project" now reads "with
+**a** patio project".
+
+### 27.4 A measurement mistake worth recording
+
+The dark bands were first diagnosed as a scrim problem from a full-page
+screenshot. They were partly a **capture artifact**: below-the-fold images are
+lazy-loaded and never decode in a full-page screenshot unless the harness
+scrolls the page first. The scrim was genuinely too heavy and the change stands,
+but the first reading overstated it. The harness now scrolls the full height and
+waits on `img.complete` before capturing. A second artifact was caught the same
+way — an "empty right half" on service pages that is really the sticky quote
+form, which renders at its natural position in a full-page capture.
+
+### 27.5 Kept from the earlier passes
+
+Singular H1 grammar, per-service section ordering, the de-duplicated copy, the
+removed numbered criteria, varied section padding, the thank-you sequence fix,
+and the removal of the photography-policy section. None of that was reverted.
+
+### 27.6 Verification
+
+Typecheck clean · 36/36 tests · 4/4 content assertions · 18/18 routes 200 ·
+45 → 44 images with **zero orphans** · no overflow, no stranded grid cells and
+no empty sections at 390, 768, 1024 and 1440px.
+
+The one width flag left is the three-card cross-sell at 768px (224px columns,
+~22 characters a line). It was screenshotted rather than assumed: the cards are
+short nav blurbs, even in height and legible, and both alternatives at tablet
+are worse — a stranded third card in two columns, or three full-width stacked
+cards. Left as it is, consistent with the earlier decision.
