@@ -1,8 +1,8 @@
 # Making the site read as human-designed — final report
 
 **Site:** Lancaster Concrete Connect (referral platform)
-**Branch:** `arena/23071b57-lancaster-concrete-referral` · baseline `fb45858` → `9089757`
-**Scope:** 16 commits · 59 files · +2,107 / −760 · 26 source files touched
+**Branch:** `arena/23071b57-lancaster-concrete-referral` · baseline `fb45858` → `db44675`
+**Scope:** 21 commits · 62 files · 30 source files touched
 **Method:** editing, subtraction, variation. No redesign. Structure, routes, forms, API, phone, email, domain, services and legal positioning are unchanged.
 
 Every number below was measured against the running site, not estimated. Tooling: a curl+regex scanner across all 17 routes for heading/sentence data, and headless Chromium at 390 / 1024 / 1280 / 1440 px in dark mode for layout and luminance.
@@ -20,7 +20,10 @@ So the AI signal was **architectural, not verbal**. Six specific things produced
 3. **A templated SEO opener on five pages**: "Looking for a concrete *X* contractor in Lancaster, SC?"
 4. **Broken H1 grammar from string interpolation.** The service name is stored plural, so the combo pages rendered "Concrete Driveways Referrals in Lancaster, SC".
 5. **Mobile was stacked, not designed.** **33 of 44** long reading paragraphs were centre-aligned at 390 px.
-6. **Volume as a substitute for judgement.** 7–9 CTA buttons per page, 39 cards on one service page, a 11,538 px driveways page, a hero photo so heavily scrimmed its right half measured 26–46 mean luminance from a 151-luminance source, and a whole marketing section explaining the site's photography sourcing policy — a section no human designer would write, and one that makes the visitor think about image generation.
+6. **One structural skeleton under all four service pages.** Even after the wording was fixed, every service page rendered the same hardcoded sequence — scope, specification, process, cost, prepare — with the same five eyebrows in the same five slots. The pages said different things in the same shape.
+7. **One padding value for the whole site.** All 24 `Section` instances used identical vertical padding, so every page breathed the same from first section to last. Consistent, but machine-even, with no hierarchy between a page's main argument and its appendix.
+8. **Numbered cards used for things that are not sequences.** *How it works* ran a 01–04 grid of routing checks directly above the genuine 01–03 process steps. The checks all apply at once, so the numerals asserted an order that does not exist, and the same numbered-card pattern appeared twice in one scroll.
+9. **Volume as a substitute for judgement.** 7–9 CTA buttons per page, 39 cards on one service page, a 11,538 px driveways page, a hero photo so heavily scrimmed its right half measured 26–46 mean luminance from a 151-luminance source, and a whole marketing section explaining the site's photography sourcing policy — a section no human designer would write, and one that makes the visitor think about image generation.
 
 ---
 
@@ -31,7 +34,7 @@ So the AI signal was **architectural, not verbal**. Six specific things produced
 | Service-page H2s identical across all 4 pages | 7 / 13 | **1 / 9** |
 | Service-page H3 ladder identical | 100% | **1 / 10** |
 | Combo-page H2 / H3 identical | 7 / 10 | **1 / 4 · 1 / 8** |
-| Distinct sentences appearing on 2+ pages | 87/323 = **27%** | 43/481 = **9%** |
+| Distinct sentences appearing on 2+ pages | 87/323 = **27%** | 36/544 = **7%** |
 | "Looking for a concrete X contractor…?" openers | 5 | **0** |
 | Title Case headings | 5 | **0** |
 | Reading paragraphs centred @390px | 33 / 44 | **0 / 101** |
@@ -39,10 +42,13 @@ So the AI signal was **architectural, not verbal**. Six specific things produced
 | CTA buttons per page | 7–9 | **2.9** (23 across 8 pages) |
 | Cards on the driveways page | 39 | **28** |
 | Cards narrower than 190px @1024px | 4 | **0** |
-| Page height: home / driveways / combo | 7,642 / 11,538 / 8,227 px | **6,025 / 9,163 / 4,045 px** |
+| Page height: home / driveways / combo | 7,642 / 11,538 / 8,227 px | **5,987 / 8,914 / 3,943 px** |
 | Mobile footer height | ~1,300 px | **1,072 px** |
 | Content images on disk | 44 | **18** |
 | Orphaned images | 8 | **0** |
+| Distinct main-column section orders across the 4 service pages | 1 | **4** |
+| Distinct section padding tiers in use | 1 | **4** (96 / 80 / 56 / 44) |
+| Numbered card sequences on *How it works* | 2 | **1** |
 
 The one remaining shared service-page H2 is the cross-link section ("Also routed in Lancaster"), which *should* match across pages. Of the 101 long paragraphs at 390 px, the only centred text left is 4 CTA-band bodies, centred deliberately.
 
@@ -93,6 +99,8 @@ Images now vary by angle (ground level, standing, aerial), weather (overcast, fl
 - The **key-facts strip** and the **covered/out-of-scope block** were de-carded where cards added nothing.
 - The **covered-scope grid** stopped splitting into two columns at `lg` while the page had already given a column to the sticky form — four cards were 151 px wide and wrapping after three words. Both splits now wait for `xl`.
 - The **sub-navigation** no longer overflows its container at desktop (was 1258 px of content in 1136 px).
+- **Vertical rhythm became a hierarchy.** All 24 sections shared one padding value and the `Section` component's `compact` variant was unused. One rule now applies: material that resolves a page rather than carrying it — FAQ blocks, "Also routed in" and "Adjacent published areas" cross-links, the out-of-scope note — sits in a tighter tier. Pages step 96 / 80 / 56 / 44 instead of flat 96.
+- **The routing checks on *How it works* lost their step numbers.** All four are checked on every request, so 01–04 stated an order that does not exist, directly above the real three-step sequence. They are now a hairline-divided list of titled criteria.
 - The **mobile footer** was one centred column: a four-line centred tagline, then four link groups single-file, then a seven-line centred disclaimer. Now left-aligned with the link groups two-up.
 
 ## 7. Copy rewritten
@@ -121,6 +129,19 @@ A per-service `headings` block was added to `src/content/services.ts`, so each p
 | **faq** | Driveway questions we get asked | Patio questions we get asked | Slab and pad questions we get asked | Repair questions we get asked |
 | **cta** | Ready to price a driveway? | Ready to price a patio? | Ready to price a pad? | Want someone to look at the damage? |
 
+**Section order now differs too, and is reasoned rather than shuffled.** It comes from the service record, not a hardcoded sequence:
+
+```
+driveways  scope -> options -> process -> cost -> prepare
+patios     scope -> options -> cost -> process -> prepare
+slabs      scope -> options -> process -> prepare -> cost
+repair     scope -> process -> options -> cost -> prepare
+```
+
+A patio is discretionary spend, so people price it before they care how it is built. A pad cannot be priced until the load, access and base are known, so cost comes last. A repair has to be diagnosed before any method can be specified, so assessment leads and the methods follow from it. The in-page nav is generated from the same field, so it cannot drift out of step with the page.
+
+The process and pricing ledes were two hardcoded strings shared by all four pages; they are now written per service.
+
 The body copy, construction considerations, FAQs and CTA context underneath were rewritten to match, and section *shapes* now differ between pages: the patios page uses a comparison table for cost, the driveways page a bordered two-column list for specification decisions, the repair page a method-by-symptom structure.
 
 ## 9. H1 and template logic fixed
@@ -144,22 +165,22 @@ All 14 H1s were re-verified from rendered HTML. The grammar cannot regress by ad
 Named specifically, as asked:
 
 1. **The published contact details are placeholders.** `(803) 555-0123` is in the reserved-fiction 555 range and the email is `hello@example-referral-brand.com`. They come from `.env.example`, not source, so this is a deployment-time fix — but as the site stands it is the single largest trust defect, and I deliberately did not invent real ones.
-2. **Two kept patio photos read as Northern, not Carolina.** `service-patios.webp` and `local-patios-lancaster.webp` show split-rail fencing, spruce/fir and no red clay. Neither has a *defect*, so under the rule "replace only for real defects" they stay — but they are the weakest local-authenticity images on the site.
-3. **Uniform vertical rhythm.** Every section on every page uses 96 px top and bottom padding. It is consistent and not wrong, but a human-composed page usually breathes unevenly — tighter around short interstitials, looser before a major turn.
-4. **The four service pages still share one structural skeleton.** Their content and headings now differ genuinely, but the section *order* is identical. A hand-built site would likely reorder or drop a section where the subject did not need it.
+2. **Two kept patio photos read as Northern, not Carolina.** `service-patios.webp` and `local-patios-lancaster.webp` show split-rail and cedar fencing, spruce/fir in the background and no red clay. I considered replacing them and decided against it, which is worth explaining: both read convincingly as real photographs — slightly soft, handheld, mundane composition, correct stamp pattern and colour-release variation. Regenerating them would trade a credible photograph for a fresh render against the one defect the brief cares most about. Neither has an actual defect, and the rule is to replace only for defects. They stay, and this is the weakest local-authenticity link on the site.
+3. **The four service pages still share one component vocabulary** — timeline, cost table, prep checklist. Their order, headings, ledes and content now differ, but a visitor who reads all four will recognise the same building blocks. That is a design system doing its job rather than a defect, but it is the honest reason the structural variation is not total.
+4. **The locations index has one service area**, so its card grid renders a single card with empty space beside it. That is the truthful state of the business — one approved area — and padding it with unapproved cities would be inventing coverage. Left as is.
 5. **A `CAPTION.sr-only` element reports as overflowing** (363 px of content in 1 px) on the driveways page. It is screen-reader-only and invisible; not a visual defect, listed for completeness.
 6. All photography is AI-generated concept imagery. The site never claims the photos show real completed projects, and the alt text says "Representative".
 
 ## 11–12. Self-review scores
 
-Scored honestly against the brief's targets. Three of five fall a point short, and I would rather name why than move the numbers.
+Scored honestly against the brief's targets, after a second pass that fixed the structural sameness, the flat rhythm and the false numbering. Four of five targets are met; trust is not, for a reason that lives outside the code.
 
-| | Target | Score | Why this number |
-|---|---|---|---|
-| **AI-looking** | ≤2 | **3** | The architectural tells are gone — no duplicated ladders, no templated openers, no keyword headings, no photography-policy section. It loses a point because every photograph is AI-generated concept imagery and two frames read as the wrong region, and because the 96 px rhythm is machine-even. |
-| **Human-designed** | ≥9 | **8** | Section shapes now vary genuinely — table, bordered list, numbered steps, FAQ, quiet one-line interstitial, photo band. It loses a point for the identical section order across the four service pages and the uniform spacing rhythm. |
-| **Professional** | ≥9 | **9** | Typecheck, 36/36 tests and four content-assert gates pass. 17/17 routes 200, 0 orphaned images, 0 broken image requests, titles 41–60 chars, descriptions 97–154. Restrained tokens, one typeface, real legal disclosures, an SC LLR verification link. |
-| **Generic / template** | ≤2 | **3** | The content inside the pages is specific and locally grounded. The chassis is still a recognisable local-service order: hero → facts → scope → process → cost → prep → FAQ → cross-links → CTA. |
-| **Trust** | ≥9 | **8** | No fabricated reviews, ratings, licences, awards or statistics; the referral relationship is disclosed plainly in the hero, body, footer and a dedicated page. Held back by the 555 placeholder phone number and the example.com email, which a careful visitor will notice. |
+| | Target | First pass | Now | Why this number |
+|---|---|---|---|---|
+| **AI-looking** | ≤2 | 3 | **2** | The remaining tells from the first pass are gone: the four service pages no longer share a skeleton, the site no longer breathes at one interval, and the only numbered sequence left is the one that is actually a sequence. No buzzwords, no em dashes, no exclamation marks in rendered copy. It is not 1 because every photograph is AI-generated concept imagery and two frames are regionally generic. |
+| **Human-designed** | ≥9 | 8 | **9** | Section order is now an editorial judgement per service rather than a template, spacing carries hierarchy, and section shapes genuinely vary — table, timeline, hairline list, checklist, accordion, quiet one-line interstitial. Not 10: the four pages still draw on one component vocabulary. |
+| **Professional** | ≥9 | 9 | **9** | Typecheck, 36/36 tests and four content-assert gates pass. 18/18 routes 200, 0 orphaned images, 0 broken image requests, 0 real layout overflows at 390px or 1440px. Titles 41–60 chars, descriptions 97–154. One typeface, restrained tokens, real legal disclosures, an SC LLR verification link. |
+| **Generic / template** | ≤2 | 3 | **2** | The chassis is no longer uniform: each service page runs its own order and the rhythm has tiers. It is not 1 because the overall shape is still recognisably a local-service site, which is appropriate rather than wrong. |
+| **Trust** | ≥9 | 8 | **8** | Unchanged, and I am not moving it. No fabricated reviews, ratings, licences, awards or statistics; the referral relationship is disclosed in the hero, body, footer and a dedicated page; no fake urgency or badges. It is held at 8 solely by the 555 placeholder phone number and the example.com email, which a careful visitor will notice. Nothing I can do in the repository changes that. |
 
-The highest-leverage remaining action is item 1 — set the five `NEXT_PUBLIC_*` environment variables to real details at deploy. That alone moves trust to 9.
+The highest-leverage remaining action is still item 1 — set the five `NEXT_PUBLIC_*` environment variables to real details at deploy. That alone moves trust to 9.
