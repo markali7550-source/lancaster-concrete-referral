@@ -76,13 +76,17 @@ export function CtaBand({
             aria-hidden="true"
           />
           <div className="absolute inset-0 z-10 bg-[#0D1110]/50" aria-hidden="true" />
-          {/* The fade's middle stop is 40% rather than fully transparent. The
-              50% overlay on its own measures 2.63:1 on the body copy over
-              these photographs; 50% under 40% composites to an effective 70%,
-              which clears the 4.5:1 AA floor. Still no hard top or bottom
-              edge. */}
+          {/* The fade's plateau is 40% rather than fully transparent. The 50%
+              overlay on its own measures 2.63:1 on the body copy over these
+              photographs; 50% under 40% composites to an effective 70%, which
+              clears the 4.5:1 AA floor.
+
+              The ramps to that plateau live in .cta-photo-fade because they
+              need fixed pixel lengths and partial end stops, which a Tailwind
+              three-stop gradient cannot express. Opaque end stops used to
+              black out the top and bottom of the band. */}
           <div
-            className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-[#0D1110] via-[#0D1110]/40 to-[#0D1110]"
+            className="cta-photo-fade pointer-events-none absolute inset-0 z-20"
             aria-hidden="true"
           />
         </>
