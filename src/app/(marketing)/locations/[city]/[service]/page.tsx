@@ -41,13 +41,19 @@ export const dynamicParams = false;
 /*
  * The four location-service combo pages share one template, so the process and
  * CTA bands are keyed by service slug to keep every rendered section on its own
- * dedicated image file rather than repeating a single shared band photo.
+ * dedicated image file rather than repeating a single shared band photo. That
+ * still holds between the combo pages themselves -- no two of them share a file.
+ *
+ * Two entries are now also used once on a top-level page, following the
+ * 2026-10-05 image audit: cta-combo-driveways.webp is the home page closing CTA
+ * and cta-combo-repair.webp backs the process band on /how-it-works. Both were
+ * verified-real photos promoted into slots whose originals were unusable.
  */
 const COMBO_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-driveways": { src: "/images/process-combo-driveways.webp", alt: "Independent contractor inspecting the formed edge of a new residential driveway slab" },
-  "concrete-patios": { src: "/images/process-combo-patios.webp", alt: "Two workers screeding a freshly poured backyard patio between timber forms" },
+  "concrete-patios": { src: "/images/process-combo-patios.webp", alt: "Finished backyard concrete patio with a broom finish, tooled control joints and a rounded edge" },
   "concrete-slabs": { src: "/images/process-combo-slabs.webp", alt: "Compacted gravel subbase and reinforcing mesh set inside timber forms before a slab pour" },
-  "concrete-repair": { src: "/images/process-combo-repair.webp", alt: "Worker saw-cutting a cracked section out of an existing concrete driveway" },
+  "concrete-repair": { src: "/images/process-combo-repair.webp", alt: "Damaged driveway section saw-cut out and removed down to the compacted gravel base" },
 };
 
 const COMBO_CTA_IMAGES: Record<string, { src: string; alt: string }> = {

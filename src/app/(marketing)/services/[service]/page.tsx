@@ -69,13 +69,19 @@ function descriptionFor(nameLower: string, projectNoun: string) {
  *
  * The hero and the service card are NOT configured here -- both read
  * `service.image` from content/services.ts and are deliberately left alone.
- * Every map below is a secondary section, and each entry owns a file that is
- * used in exactly one place site-wide.
+ * Every map below is a secondary section, and no two service pages share an
+ * entry, so each of these pages still renders a distinct set of photos.
+ *
+ * One deliberate exception: cta-service-driveways.webp is also the home page
+ * hero. The 2026-10-05 image audit replaced a batch of unusable construction
+ * photos, and this verified-real driveway shot was the best available image for
+ * the most-seen slot on the site. Home and /services/concrete-driveways are far
+ * apart in the normal browsing path, so the repeat is an accepted trade.
  */
 const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-driveways": { src: "/images/driveway-drainage-detail.webp", alt: "Representative driveway edge with drainage pitch and lawn border" },
   "concrete-patios": { src: "/images/patio-backyard-slab.webp", alt: "Representative plain concrete patio slab at the rear of a single-story brick home" },
-  "concrete-slabs": { src: "/images/slab-formwork-pad.webp", alt: "Representative concrete pad still sitting inside its timber forms on an open lot" },
+  "concrete-slabs": { src: "/images/slab-formwork-pad.webp", alt: "Representative freshly poured concrete pad still enclosed by its staked timber side forms" },
   "concrete-repair": { src: "/images/repair-detail-crack.webp", alt: "Representative settled concrete walkway slab with a cracked, lifted edge" },
 };
 
@@ -91,7 +97,7 @@ const SERVICE_CTA_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-driveways": { src: "/images/cta-service-driveways.webp", alt: "Representative wide residential concrete driveway beside a brick home" },
   "concrete-patios": { src: "/images/cta-service-patios.webp", alt: "Representative stamped concrete patio with outdoor furniture" },
   "concrete-slabs": { src: "/images/cta-service-slabs.webp", alt: "Representative concrete shed pad in a fenced backyard" },
-  "concrete-repair": { src: "/images/cta-service-repair.webp", alt: "Representative broken concrete edge beside a freshly poured repair section" },
+  "concrete-repair": { src: "/images/cta-service-repair.webp", alt: "Representative cracked and settled concrete driveway slab with spalled, uneven edges" },
 };
 
 export async function generateMetadata({

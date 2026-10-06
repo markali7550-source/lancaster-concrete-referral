@@ -99,8 +99,8 @@ export default function HomePage() {
         locationCue="Lancaster County, South Carolina"
         h1="Connect With a Local Concrete Service Provider in Lancaster, SC"
         summary="Tell us what you need and where the property is. We’ll match your request with one eligible independent concrete service provider serving your area."
-        imageSrc="/home-hero.webp"
-        imageAlt="Broom finished concrete front walkway and entry steps leading to the porch of a two-story home"
+        imageSrc="/images/cta-service-driveways.webp"
+        imageAlt="Concrete driveway running up to the attached garage of a single story brick home"
         overlay
       />
 
@@ -272,8 +272,8 @@ export default function HomePage() {
       <CtaBand
         title="Ready to connect with an independent concrete service provider?"
         body="One request, one independent third party service provider, no charge to you and no obligation to proceed."
-        imageSrc="/cta-pour-band.webp"
-        imageAlt="Two independent concrete workers screeding a freshly poured residential driveway slab between timber forms"
+        imageSrc="/images/cta-combo-driveways.webp"
+        imageAlt="Wide residential concrete driveway leading to a two car garage on a winter day"
       />
 
 

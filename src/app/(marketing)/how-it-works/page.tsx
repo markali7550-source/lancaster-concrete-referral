@@ -46,7 +46,7 @@ export default function HowItWorksPage() {
           />
         }
         imageSrc="/how-it-works-hero.webp"
-        imageAlt="Two concrete workers screeding and floating a freshly poured residential driveway slab between timber forms outside a brick home"
+        imageAlt="Freshly poured residential concrete slab floated smooth, with a brick home beyond the lawn"
       >
         <p
           className="eyebrow before:hidden lg:before:block"
@@ -73,8 +73,8 @@ export default function HowItWorksPage() {
 
       <Section
         backgroundImage={{
-          src: "/estimate-visit-measuring.webp",
-          alt: "Independent contractor measuring a residential concrete driveway during an estimate visit",
+          src: "/images/cta-combo-repair.webp",
+          alt: "Gloved hand working a hand float across the surface of freshly placed concrete",
         }}
         eyebrow="Process"
         title="Three steps, no obligation"

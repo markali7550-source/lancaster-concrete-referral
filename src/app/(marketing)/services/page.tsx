@@ -69,7 +69,7 @@ export default function ServicesPage() {
           />
         }
         imageSrc="/services-overview.webp"
-        imageAlt="Broom finished residential concrete surface in Lancaster SC with a tooled edge and control joint beside a lawn"
+        imageAlt="Broom finished residential concrete walkway with a tooled control joint and radiused edge beside a lawn"
       >
         <p
           className="eyebrow before:hidden lg:before:block"
