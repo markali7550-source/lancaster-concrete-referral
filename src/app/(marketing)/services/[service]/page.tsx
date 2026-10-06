@@ -360,12 +360,11 @@ export default async function ServicePage({ params }: { params: Params }) {
 
       <ServiceDisclosureBlock />
 
-      {/*
-        One city is one sentence, not a directory. This was a full section --
-        eyebrow, heading, background photograph -- wrapped around a single
-        link, which is what a multi-city template looks like when only one row
-        of data exists. It returns to a section if the list ever grows.
-      */}
+        {/*
+          Each service page carries its own photograph here, so the four pages
+          do not share one band. The list renders only when a city page exists
+          for this service, and it wraps as more cities are added.
+        */}
       {cityLinks.length > 0 ? (
         <Section
           compact
