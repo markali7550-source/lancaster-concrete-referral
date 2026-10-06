@@ -58,6 +58,13 @@ const COMBO_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-repair": { src: "/images/process-combo-repair.webp", alt: "Worker saw-cutting a cracked section out of an existing concrete driveway" },
 };
 
+const COMBO_CTA_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-driveways": { src: "/images/cta-combo-driveways.webp", alt: "Finished residential concrete driveway running up to an attached garage" },
+  "concrete-patios": { src: "/images/cta-combo-patios.webp", alt: "Rectangular concrete patio with two chairs set behind a single story brick home" },
+  "concrete-slabs": { src: "/images/cta-combo-slabs.webp", alt: "Concrete equipment pad carrying an air conditioning condenser beside a brick house" },
+  "concrete-repair": { src: "/images/repair-detail-crack.webp", alt: "Concrete walkway slab cracked and lifted by a tree root alongside a lawn" },
+};
+
 export function generateStaticParams() {
   return publishedLocationServices.map((record) => ({
     city: record.locationSlug,
@@ -314,6 +321,8 @@ export default async function ComboPage({ params }: { params: Params }) {
 
       <CtaBand
         tone="section"
+        imageSrc={COMBO_CTA_IMAGES[serviceRecord.slug]?.src}
+        imageAlt={COMBO_CTA_IMAGES[serviceRecord.slug]?.alt}
         title={serviceRecord.headings.cta}
         body="One request, one eligible independent contractor. If nobody approved for your area can take it, we will tell you plainly."
       />

@@ -166,6 +166,8 @@ export default function ServicesPage() {
 
       <CtaBand
         tone="section"
+        imageSrc="/images/cta-services-index.webp"
+        imageAlt="Wide residential concrete driveway and front walkway on a tree lined street"
         title="Not sure which service fits?"
         body="Describe the project in the quote form and we will route it on the closest match, or call and our referral team will tell you whether we cover it at all."
         showFormLink={false}

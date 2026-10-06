@@ -116,6 +116,8 @@ export default function HowItWorksPage() {
       </Section>
 
       <CtaBand
+        imageSrc="/images/cta-how-it-works.webp"
+        imageAlt="Two story home with a broad concrete driveway and front path"
         title="Ready to start?"
         body="Submit a request and we will route it to one eligible independent contractor, or call the referral team first to check coverage."
         showFormLink={false}

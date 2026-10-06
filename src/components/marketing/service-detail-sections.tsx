@@ -1,7 +1,6 @@
+import Link from "next/link";
 import { Icon } from "@/components/ui/Icon";
 import { CtaBand } from "@/components/marketing/cta-band";
-import {
-} from "@/components/marketing/sections";
 import { SERVICE_PAGE_DISCLOSURE } from "@/lib/seo/disclosure";
 
 /* ------------------------------------------------------------ MayInclude */
@@ -18,11 +17,18 @@ export function MayInclude({
 }) {
   return (
     <div>
-      <ul className="grid gap-3 sm:grid-cols-2">
+      {/*
+        Every service lists seven of these. In a two column grid that is three
+        rows plus one card stranded beside half a row of nothing, and each card
+        was wide enough for a sentence while holding three words. Balanced
+        columns split seven as 3/2/2 with no hole and size the card to its
+        label.
+      */}
+      <ul className="columns-1 gap-3 sm:columns-2 lg:columns-3">
         {items.map((item) => (
           <li
             key={item}
-            className="card flex items-start gap-3 p-4"
+            className="card mb-3 flex break-inside-avoid items-start gap-3 p-4"
           >
             <span
               className="mt-0.5 shrink-0"
@@ -35,7 +41,7 @@ export function MayInclude({
         ))}
       </ul>
       <p className="mt-5 text-[13px] leading-relaxed text-[color:var(--color-muted)]">
-        This list describes components commonly associated with {serviceName}{" "}
+        This list describes components commonly associated with a {serviceName}{" "}
         project. It is informational only, and not every participating provider
         offers every item. Confirm scope directly with the provider who contacts
         you.
@@ -91,6 +97,13 @@ export function ReferralSteps() {
 
 /* ------------------------------------------------- ServiceDisclosureBlock */
 
+/**
+ * The wording is unchanged and still states the full position. The container
+ * is not: this used to be a bordered box inside a bordered, padded band, so a
+ * single sentence of small print got more chrome than any real section on the
+ * page and left a pale gap between two photographs. It now uses the same
+ * compact strip as the disclosure under the hero.
+ */
 export function ServiceDisclosureBlock() {
   return (
     <section
@@ -101,13 +114,20 @@ export function ServiceDisclosureBlock() {
         backgroundColor: "var(--color-surface)",
       }}
     >
-      <div className="container-page py-8">
-        <div
-          className="rounded-[12px] border p-4 text-[13.5px] font-medium leading-relaxed"
-          style={{ borderColor: "var(--color-line)" }}
+      <div className="container-page flex flex-col gap-2 py-3.5 text-[13.5px] leading-relaxed sm:flex-row sm:items-center sm:justify-between">
+        <p className="flex items-start gap-2.5">
+          <span style={{ color: "var(--color-accent)" }}>
+            <Icon name="shield" className="mt-px h-[18px] w-[18px]" />
+          </span>
+          <span>{SERVICE_PAGE_DISCLOSURE}</span>
+        </p>
+        <Link
+          href="/referral-disclosure"
+          className="shrink-0 self-center font-semibold underline underline-offset-4 sm:self-auto"
+          style={{ color: "var(--color-accent)" }}
         >
-          {SERVICE_PAGE_DISCLOSURE}
-        </div>
+          Full disclosure
+        </Link>
       </div>
     </section>
   );

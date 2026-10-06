@@ -47,6 +47,48 @@ import {
 
 export const dynamicParams = false;
 
+/**
+ * Each service page carries photographs of its own work. These used to be a
+ * single shared driveway photo, which is how a patio page ends up closing on
+ * somebody else's garage.
+ */
+const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-driveways": { src: "/images/driveway-drainage-detail.webp", alt: "Driveway edge pitched away from the lawn with a gravel drainage margin" },
+  "concrete-patios": { src: "/images/patio-backyard-slab.webp", alt: "Plain concrete patio slab at the rear of a single story brick home" },
+  "concrete-slabs": { src: "/images/slab-formwork-pad.webp", alt: "Concrete pad still sitting inside its timber forms on an open lot" },
+  "concrete-repair": { src: "/images/repair-detail-crack.webp", alt: "Settled concrete walkway slab with a cracked, lifted edge" },
+};
+
+const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-driveways": { src: "/images/local-driveways-lancaster.webp", alt: "Residential concrete driveway and apron on a Lancaster street" },
+  "concrete-patios": { src: "/images/patios-process-walkway.webp", alt: "Finished backyard patio with a garden border and seating area" },
+  "concrete-slabs": { src: "/images/slabs-process-pad.webp", alt: "Finished residential concrete pad set into a lawn" },
+  "concrete-repair": { src: "/images/repair-process-trowel.webp", alt: "Hand trowel resting beside a filled joint on a concrete repair" },
+};
+
+/**
+ * The closing band carries a photograph of the service it belongs to. One
+ * shared photo meant a driveway closed the patio, slab and repair pages.
+ */
+const SERVICE_CTA_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-driveways": {
+    src: "/images/cta-service-driveways.webp",
+    alt: "Finished concrete driveway running up to the attached garage of a single story brick home",
+  },
+  "concrete-patios": {
+    src: "/images/cta-service-patios.webp",
+    alt: "Stamped and colored concrete patio with outdoor furniture and a shade umbrella behind a suburban home",
+  },
+  "concrete-slabs": {
+    src: "/images/cta-service-slabs.webp",
+    alt: "Concrete shed pad with a compacted gravel border in a fenced back yard",
+  },
+  "concrete-repair": {
+    src: "/images/cta-service-repair.webp",
+    alt: "Section of failed concrete cut out and replaced beside the surviving original slab",
+  },
+};
+
 export function generateStaticParams() {
   return publishedServices.map((service) => ({ service: service.slug }));
 }
@@ -306,6 +348,16 @@ export default async function ServicePage({ params }: { params: Params }) {
 
       <SectionDivider />
 
+      <section id="may-include" className="scroll-mt-32">
+        <Section
+          backgroundImage={SERVICE_DETAIL_IMAGES[service.slug]}
+          eyebrow="Include"
+          title={`What a ${service.projectNoun} project may include`}
+        >
+          <MayInclude items={detail.mayInclude} serviceName={service.projectNoun} />
+        </Section>
+      </section>
+
       <ServiceDisclosureBlock />
 
       {/*
@@ -315,23 +367,25 @@ export default async function ServicePage({ params }: { params: Params }) {
         of data exists. It returns to a section if the list ever grows.
       */}
       {cityLinks.length > 0 ? (
-        <div className="container-page py-10">
-          <p className="max-w-prose text-[15px] leading-relaxed text-[color:var(--color-muted)]">
-            {cityLinks.length === 1 ? "Local page: " : "Local pages: "}
-            {cityLinks.map(({ record, location }, index) => (
-              <span key={record.locationSlug}>
-                {index > 0 ? ", " : ""}
+        <Section
+          compact
+          eyebrow="Local pages"
+          title={`${service.name} by city`}
+          backgroundImage={SERVICE_PROCESS_IMAGES[service.slug]}
+        >
+          <ul className="flex flex-wrap justify-center gap-3 lg:justify-start">
+            {cityLinks.map(({ record, location }) => (
+              <li key={record.locationSlug}>
                 <Link
                   href={`/locations/${record.locationSlug}/${record.serviceSlug}`}
-                  className="underline underline-offset-4"
+                  className="btn btn-secondary"
                 >
-                  {service.nameLower} in {location.city}
+                  {service.name} in {location.city}, {location.region}
                 </Link>
-              </span>
+              </li>
             ))}
-            .
-          </p>
-        </div>
+          </ul>
+        </Section>
       ) : null}
 
       <section id="faq" className="scroll-mt-32">
@@ -350,6 +404,8 @@ export default async function ServicePage({ params }: { params: Params }) {
       <ServiceCtaBand
         title={service.headings.cta}
         body={service.ctaLead}
+        imageSrc={SERVICE_CTA_IMAGES[service.slug]?.src}
+        imageAlt={SERVICE_CTA_IMAGES[service.slug]?.alt}
       />
 
     </>

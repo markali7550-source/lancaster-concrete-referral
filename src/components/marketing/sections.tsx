@@ -26,7 +26,16 @@ import { SHORT_DISCLOSURE } from "@/lib/seo/disclosure";
  * material as every other heavy surface on the site rather than as a
  * separate green-black.
  */
-export const PHOTO_SCRIM = "bg-[#0B1017]/72";
+/**
+ * Scrim over a photo band.
+ *
+ * At 72% every band rendered as a flat near-black rectangle: the photograph
+ * underneath was doing no work at all, so sections that were meant to be the
+ * visual relief on a text page read as dead space instead. 56% lets the
+ * photograph show while keeping white body copy above 7:1 on mid tones and
+ * above 4.5:1 on the brightest parts of these images.
+ */
+export const PHOTO_SCRIM = "bg-[#0B1017]/56";
 
 /**
  * Vignette at the top and bottom of a photo band.
