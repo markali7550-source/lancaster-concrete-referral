@@ -33,8 +33,7 @@ import {
   publishedServices,
   type ServiceSectionId,
 } from "@/content/services";
-import { publishedLocationServices } from "@/content/location-services";
-import { OUT_OF_AREA_POSTAL_CODE, getLocation, serviceAreaOptions } from "@/content/locations";
+import { OUT_OF_AREA_POSTAL_CODE, serviceAreaOptions } from "@/content/locations";
 import { site } from "@/lib/env";
 import { pageMetadata } from "@/lib/seo/metadata";
 import {
@@ -57,13 +56,6 @@ const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-patios": { src: "/images/patio-backyard-slab.webp", alt: "Plain concrete patio slab at the rear of a single story brick home" },
   "concrete-slabs": { src: "/images/slab-formwork-pad.webp", alt: "Concrete pad still sitting inside its timber forms on an open lot" },
   "concrete-repair": { src: "/images/repair-detail-crack.webp", alt: "Settled concrete walkway slab with a cracked, lifted edge" },
-};
-
-const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
-  "concrete-driveways": { src: "/images/local-driveways-lancaster.webp", alt: "Wide residential concrete driveway widening to a broad apron at the street, in front of a single story brick home" },
-  "concrete-patios": { src: "/images/patios-process-walkway.webp", alt: "Finished backyard patio with a garden border and seating area" },
-  "concrete-slabs": { src: "/images/slabs-process-pad.webp", alt: "Finished residential concrete pad set into a lawn" },
-  "concrete-repair": { src: "/images/repair-process-trowel.webp", alt: "Hand trowel resting beside a filled joint on a concrete repair" },
 };
 
 /**
@@ -131,14 +123,6 @@ export default async function ServicePage({ params }: { params: Params }) {
   const path = `/services/${service.slug}`;
   const h1 = `${service.name} in Lancaster County, SC`;
   const description = descriptionFor(service.nameLower, service.projectNoun);
-
-  const cityLinks = publishedLocationServices
-    .filter((record) => record.serviceSlug === service.slug)
-    .map((record) => ({ record, location: getLocation(record.locationSlug) }))
-    .filter(
-      (entry): entry is { record: (typeof publishedLocationServices)[number]; location: NonNullable<ReturnType<typeof getLocation>> } =>
-        Boolean(entry.location),
-    );
 
   const detail = serviceDetails[service.slug];
 
@@ -359,33 +343,6 @@ export default async function ServicePage({ params }: { params: Params }) {
       </section>
 
       <ServiceDisclosureBlock />
-
-        {/*
-          Each service page carries its own photograph here, so the four pages
-          do not share one band. The list renders only when a city page exists
-          for this service, and it wraps as more cities are added.
-        */}
-      {cityLinks.length > 0 ? (
-        <Section
-          compact
-          eyebrow="Local pages"
-          title={`${service.name} by city`}
-          backgroundImage={SERVICE_PROCESS_IMAGES[service.slug]}
-        >
-          <ul className="flex flex-wrap justify-center gap-3 lg:justify-start">
-            {cityLinks.map(({ record, location }) => (
-              <li key={record.locationSlug}>
-                <Link
-                  href={`/locations/${record.locationSlug}/${record.serviceSlug}`}
-                  className="btn btn-secondary"
-                >
-                  {service.name} in {location.city}, {location.region}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </Section>
-      ) : null}
 
       <section id="faq" className="scroll-mt-32">
         <Section compact eyebrow="FAQ" title={service.headings.faq}>
