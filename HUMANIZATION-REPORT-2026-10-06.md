@@ -764,3 +764,117 @@ bookends tightened a result rather than changing it.
 **Unchanged highest-leverage action:** set the five `NEXT_PUBLIC_*` environment
 variables to real contact details at deploy. That moves trust to 9 and remains
 the only target still unmet.
+
+---
+
+## 23. Eighth pass — the widths between the two we had tested, and the page nobody opened
+
+Seven passes checked desktop at 1440px and mobile at 390px. Nothing had ever
+been rendered between them, and `/thank-you` — a live route in the quote flow
+— had never been opened at all. Both gaps held real defects.
+
+This pass also added a measurement the earlier harnesses never took: **rendered
+line length**. Every previous sweep counted sections, cards, grid fill and
+overflow. None of them measured how wide a paragraph actually was, which is why
+the worst finding below sat on a desktop page through seven desktop audits.
+
+### 23.1 Three grids that only broke in the untested band
+
+**`RelatedServices` stranded a card on eight pages.** The cross-sell list always
+renders exactly three cards — four services minus the current one — but its
+column ladder was `sm:grid-cols-2 lg:grid-cols-3`. Between 640px and 1023px that
+is two columns holding three cards, so the third sat alone beside a visible
+empty cell on all four service pages and all four combo pages. A fixed set of
+three has no business passing through a 2-column stage; it now goes straight
+from one column to three at `md`.
+
+**`HowMatchingWorks` cramped itself at `md`.** Three across from 768px put the
+columns at 239px, leaving about 25 characters a line, and wrapped step 02's
+heading onto four lines while 01 and 03 used two — three cards of visibly
+different weight in a row that is supposed to read as a sequence. Three across
+now waits for `lg`.
+
+**`ScopeColumns` was the worst, and it was not a tablet problem.** At 1440px the
+covered-scope cards measured 213px wide holding 131px of text:
+
+> First time concrete / over an existing / gravel or dirt drive, / including the
+> / excavation, / subbase, and / apron connection / to the street or / existing
+> approach.
+
+Nine lines for one sentence, three words a line, with headings like "New
+driveway / pours" breaking too. The page splits three times over: once for the
+sticky form column, again at `xl` for the out-of-scope aside, and then the
+covered list split a third time. A comment in the file claimed both splits had
+room at `xl`. They did not, and nobody had measured it. The list is single
+column from `lg` up and now renders at 441px.
+
+### 23.2 The page nobody had opened
+
+`/thank-you` renders four numbered steps. Their rows carried `justify-center`.
+Three of the four have text long enough to fill the row, so it did nothing
+visible. Step 3 fits on one line, so that row centred itself and its number sat
+42px right of the other three. Measured badge offsets were **57, 57, 99, 57** —
+a ragged left edge on the page a homeowner sees immediately after submitting a
+request, which is the single worst place on the site to look unfinished.
+
+The copy there needed nothing. "You will be contacted by one independent service
+provider, not by a call center and not by us pretending to be the crew" is the
+most human sentence on the site.
+
+### 23.3 Checked and deliberately left alone
+
+**Five-item specification lists on the patio and slab pages.** Five items in two
+columns leaves the fifth on its own. Unlike the cross-sell cards these are text
+rows with a thin accent rule — no card, no border, no empty box — so the eye
+reads a list that ended, the way a spec sheet does. Changing it would be change
+for its own sake.
+
+**199px cross-sell cards at 768px.** Flagged by the new line-length metric, then
+looked at: three even cards, equal height, clean. The 220px threshold is
+calibrated for body prose and is wrong for short navigation cards. Kept.
+
+**Sentence-case H1s on the legal and confirmation pages** against Title Case on
+the marketing pages. Plain-spoken legal pages are a normal human choice, not an
+inconsistency to iron out.
+
+### 23.4 Images
+
+No image was replaced this pass, because none has a defect left to fix. All 18
+content images were examined at 3x in the fourth pass and the one genuine defect
+found there was replaced then. An orphan sweep of rendered HTML this pass
+returned **zero** unused files once the shared CTA photograph was accounted for
+— it is painted as a CSS `background-image` rather than an `<img>`, which is why
+a naive `src` scan appears to miss it.
+
+### 23.5 Verification
+
+18/18 routes 200, typecheck clean, 36/36 tests, 4/4 content assertions. Rendered
+at **390, 768, 820, 1000, 1023, 1280, 1440 and 1920px**: no stranded grid rows,
+no horizontal overflow outside the intentional sub-nav scroller, and no text
+column under 220px except the cross-sell cards reviewed by eye above.
+
+One process note worth recording: the first run after the grid edits reported
+every route "clean" with `docH` exactly equal to the viewport height. The pages
+were returning HTTP 500 — a JSX comment cannot sit beside the returned element
+inside `return ( ... )`. A metric that reads an error page reports no defects.
+The harness now checks the status code and flags any document whose height
+equals the viewport.
+
+## 24. Scores after the eighth pass
+
+| Dimension | Target | Seventh pass | Now | Reasoning |
+|---|---|---|---|---|
+| **AI-looking** | ≤2 | 2 | **2** | Nothing found this pass was copy or imagery; it was all layout arithmetic. Held at 2 — the photographs are still AI-generated, which remains the honest reason this is not a 1. |
+| **Human-designed** | ≥9 | 9 | **9** | A stranded card, a four-line heading beside two-line siblings, three-words-a-line body copy and a ragged step number are all things a person would have caught by looking. Fixing them removes evidence of nobody looking; it does not add evidence of design intent, so the number holds. |
+| **Professional** | ≥9 | 9 | **9** | Held. The 131px columns were the most unprofessional thing left on the site and they are gone, but the remaining cap is contact details, not craft. |
+| **Generic / template** | ≤2 | 2 | **2** | Unchanged. These were defects, not template residue. |
+| **Trust** | ≥9 | 8 | **8** | Unchanged, still capped by `(803) 555-0123` and `hello@example-referral-brand.com`, both environment-supplied. |
+
+Eight passes, and the rule has still not broken: **the finding always comes from
+a lens not yet used.** This time the lenses were the widths between the two we
+had tested, a route nobody had opened, and the first harness that measured how
+wide a line of text actually is.
+
+**Unchanged highest-leverage action:** set the five `NEXT_PUBLIC_*` environment
+variables to real contact details at deploy. That moves trust to 9 and remains
+the only target still unmet.
