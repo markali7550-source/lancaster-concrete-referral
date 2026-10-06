@@ -10,7 +10,7 @@ import { site } from "@/lib/env";
 function Wordmark() {
   return (
     <Link href="/" className="flex items-center" aria-label={site.brand}>
-      <Logo height={44} />
+      <Logo height={44} priority />
     </Link>
   );
 }

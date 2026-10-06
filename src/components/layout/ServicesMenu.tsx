@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { Icon } from "@/components/ui/Icon";
 
 export interface ServicesMenuItem {
@@ -24,6 +24,9 @@ export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pathname = usePathname();
+  // Stable id so `aria-expanded` can be paired with `aria-controls`, letting
+  // assistive tech locate the panel this caret owns.
+  const panelId = `${useId()}-services-panel`;
 
   function cancelClose() {
     if (closeTimer.current) {
@@ -95,6 +98,10 @@ export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {
           type="button"
           className="btn btn-ghost cursor-pointer px-1.5 transition-colors duration-150 hover:bg-[color:var(--color-accent-soft)] hover:text-[color:var(--color-accent)]"
           aria-expanded={open}
+          // Only advertised while the panel is mounted: the dropdown is
+          // conditionally rendered, so pointing at the id when closed would be
+          // a dangling ARIA reference.
+          aria-controls={open ? panelId : undefined}
           aria-haspopup="true"
           aria-label={open ? "Hide services" : "Show services"}
           onClick={() => {
@@ -117,6 +124,7 @@ export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {
       </div>
       {open ? (
         <div
+          id={panelId}
           className="card absolute left-0 top-[calc(100%+0.5rem)] z-[110] w-80 p-2"
           style={{ boxShadow: "var(--shadow-raised)" }}
         >

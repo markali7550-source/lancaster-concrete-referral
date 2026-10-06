@@ -32,7 +32,7 @@ import {
 import { serviceDetails } from "@/content/service-details";
 import { getService, publishedServices } from "@/content/services";
 import { publishedLocationServices } from "@/content/location-services";
-import { getLocation } from "@/content/locations";
+import { OUT_OF_AREA_POSTAL_CODE, getLocation, serviceAreaOptions } from "@/content/locations";
 import { site } from "@/lib/env";
 import { pageMetadata } from "@/lib/seo/metadata";
 import {
@@ -284,6 +284,8 @@ export default async function ServicePage({ params }: { params: Params }) {
                   name: s.name,
                 }))}
                 defaultServiceSlug={service.slug}
+                serviceAreas={serviceAreaOptions}
+                outOfAreaValue={OUT_OF_AREA_POSTAL_CODE}
                 consentVersion={site.consentVersion}
                 fallbackDisplay={site.phoneDisplay}
                 fallbackE164={site.phoneE164}

@@ -24,7 +24,7 @@ import {
   getLocationService,
   publishedLocationServices,
 } from "@/content/location-services";
-import { getLocation } from "@/content/locations";
+import { OUT_OF_AREA_POSTAL_CODE, getLocation, serviceAreaOptions } from "@/content/locations";
 import { getService, publishedServices } from "@/content/services";
 import { site } from "@/lib/env";
 import { comboMeta, pageMetadata } from "@/lib/seo/metadata";
@@ -77,7 +77,7 @@ export async function generateMetadata({
   if (!location || !serviceRecord || !getLocationService(city, service)) return {};
   return pageMetadata({
     title: comboMeta.title(serviceRecord.name, location.city),
-    description: comboMeta.description(serviceRecord.nameLower, location.city),
+    description: comboMeta.description(serviceRecord.slug, location.city),
     path: `/locations/${city}/${service}`,
   });
 }
@@ -92,7 +92,7 @@ export default async function ComboPage({ params }: { params: Params }) {
   const path = `/locations/${city}/${service}`;
   const h1 = comboMeta.h1(serviceRecord.name, location.city);
   const description = comboMeta.description(
-    serviceRecord.nameLower,
+    serviceRecord.slug,
     location.city,
   );
 
@@ -254,6 +254,8 @@ export default async function ComboPage({ params }: { params: Params }) {
                   name: s.name,
                 }))}
                 defaultServiceSlug={serviceRecord.slug}
+                serviceAreas={serviceAreaOptions}
+                outOfAreaValue={OUT_OF_AREA_POSTAL_CODE}
                 consentVersion={site.consentVersion}
                 fallbackDisplay={site.phoneDisplay}
                 fallbackE164={site.phoneE164}

@@ -38,7 +38,8 @@ in `src/content/*`. No Cartesian product is ever generated.
 - Same `Idempotency-Key` → original lead ID, `replay:true`, no second delivery
 - ZIP 28211 → `422 {result:"no_coverage"}`, nothing routed
 - `GET /api/tracking-number` → `405` (allocation is state-creating, POST only)
-- First Load JS: 116 kB on landing pages (budget 120 kB)
+- First Load JS: 103 kB shared; 113 kB on content pages; 130 kB on the five
+  pages that render the quote form (budget 120 kB — see note below)
 
 ## Gate checklist status
 
@@ -48,7 +49,7 @@ in `src/content/*`. No Cartesian product is ever generated.
 | 4–5 | Self-canonicals, sitemap purity | ✅ `pageMetadata()` + `sitemap.ts` |
 | 6 | Internal links, no orphan conversion page | ✅ combo links both parents |
 | 7 | Content uniqueness | ✅ build gate fails thin combos (<120 words, <3 local FAQs) |
-| 11 | JS budget | ✅ 116 kB |
+| 11 | JS budget | ⚠️ 130 kB on form pages vs 120 kB budget |
 | 12 | Hero media | ✅ priority, explicit dims, responsive sizes — swap in AVIF before launch |
 | 13 | Responsive 320px+, 390×844 first viewport | ✅ `min-h-[calc(100dvh-3.5rem)]`, stacked actions |
 | 14 | Accessibility | ⚠️ semantics/focus/skip-link done; axe + Playwright suites not written |

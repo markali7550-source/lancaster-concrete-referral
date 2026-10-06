@@ -5,10 +5,7 @@ import { Icon } from "@/components/ui/Icon";
 import { LEAD_FORM_DISCLOSURE, SERVICE_CONSENT } from "@/lib/seo/disclosure";
 import { track } from "@/lib/analytics/events";
 import { attributionForLead } from "@/domain/attribution/client";
-import {
-  OUT_OF_AREA_POSTAL_CODE,
-  serviceAreaOptions,
-} from "@/content/locations";
+import type { ServiceAreaOption } from "@/content/locations";
 
 export interface QuoteFormServiceOption {
   slug: string;
@@ -17,6 +14,13 @@ export interface QuoteFormServiceOption {
 
 interface QuoteFormProps {
   services: QuoteFormServiceOption[];
+  /** Coverage choices, passed in from the server so the full location dataset
+   *  (every record's prose, coordinates and imagery) never reaches the client
+   *  bundle. Previously this component imported `serviceAreaOptions` directly,
+   *  which pulled all of `@/content/locations` into the browser. */
+  serviceAreas: readonly ServiceAreaOption[];
+  /** Sentinel value for "My area is not listed", also supplied by the server. */
+  outOfAreaValue: string;
   defaultServiceSlug?: string;
   consentVersion: string;
   fallbackDisplay: string;
@@ -45,6 +49,8 @@ function newIdempotencyKey(): string {
 
 export function QuoteForm({
   services,
+  serviceAreas,
+  outOfAreaValue,
   defaultServiceSlug,
   consentVersion,
   fallbackDisplay,
@@ -55,6 +61,26 @@ export function QuoteForm({
   const [status, setStatus] = useState<Status>("idle");
   const [waitlistEmail, setWaitlistEmail] = useState("");
   const [waitlistDone, setWaitlistDone] = useState(false);
+
+  // On success the form is replaced in place by the confirmation panel. Without
+  // this the page keeps its old scroll offset, which left the confirmation
+  // heading sitting underneath the sticky header, and focus stranded on <body>.
+  // `scroll-mt-32` on the panel supplies the sticky-header offset.
+  const successRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    if (status !== "success") return;
+    const el = successRef.current;
+    if (!el) return;
+    const reduceMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    el.scrollIntoView({
+      block: "start",
+      behavior: reduceMotion ? "auto" : "smooth",
+    });
+    // preventScroll so focusing does not undo the offset above.
+    el.focus({ preventScroll: true });
+  }, [status]);
 
   // A "Request a referral" CTA points at #quote-form. The browser scrolls, and
   // this moves keyboard focus to the first control so the jump is usable
@@ -242,13 +268,19 @@ export function QuoteForm({
     }
   }
 
-  const outOfArea = values.postalCode === OUT_OF_AREA_POSTAL_CODE;
+  const outOfArea = values.postalCode === outOfAreaValue;
 
   const errorEntries = Object.entries(errors);
 
   if (status === "success") {
     return (
-      <div id="quote-form" className="card scroll-mt-32 p-6 md:p-8" role="status">
+      <div
+        id="quote-form"
+        ref={successRef}
+        tabIndex={-1}
+        className="card scroll-mt-32 p-6 md:p-8 focus:outline-none"
+        role="status"
+      >
         <p className="eyebrow">Request received</p>
         <h3 className="mt-2 text-2xl font-semibold">
           Your request is with our routing team
@@ -433,7 +465,7 @@ export function QuoteForm({
               onChange={(event) => set("postalCode", event.target.value)}
             >
               <option value="">Select your location</option>
-              {serviceAreaOptions.map((option) => (
+              {serviceAreas.map((option) => (
                 <option key={option.value} value={option.value}>
                   {option.label}
                 </option>

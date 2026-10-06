@@ -202,8 +202,6 @@ export const overlayEyebrow = "#5fe3a8";
 export const overlayHeading = "#ffffff";
 export const overlayBody = "rgba(255,255,255,0.88)";
 export const overlayMuted = "rgba(255,255,255,0.82)";
-export const ILLUSTRATIVE_IMAGE_NOTE =
-  "Illustrative residential concrete photography, not a project gallery or a claim that this referral service performed the work.";
 
 const HERO_TRUST = [
   "Free for homeowners",

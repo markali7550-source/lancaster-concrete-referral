@@ -1,3 +1,7 @@
+import {
+  OUT_OF_AREA_POSTAL_CODE,
+  serviceAreaOptions,
+} from "@/content/locations";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -119,7 +123,9 @@ export default function ContactPage() {
           <div>
             <QuoteForm
               services={publishedServices.map((s) => ({ slug: s.slug, name: s.name }))}
-              consentVersion={site.consentVersion}
+              serviceAreas={serviceAreaOptions}
+                outOfAreaValue={OUT_OF_AREA_POSTAL_CODE}
+                consentVersion={site.consentVersion}
               fallbackDisplay={site.phoneDisplay}
               fallbackE164={site.phoneE164}
             />

@@ -15,7 +15,7 @@ import {
   RoutingControls,
 } from "@/components/marketing/sections";
 import { CtaBand } from "@/components/marketing/service-sections";
-import { publishedLocations } from "@/content/locations";
+import { OUT_OF_AREA_POSTAL_CODE, publishedLocations, serviceAreaOptions } from "@/content/locations";
 import { publishedServices, serviceCardImages } from "@/content/services";
 import { site } from "@/lib/env";
 import { REFERRAL_SERVICE_DISCLOSURE } from "@/lib/seo/disclosure";
@@ -198,7 +198,9 @@ export default function HomePage() {
                 slug: s.slug,
                 name: s.name,
               }))}
-              consentVersion={site.consentVersion}
+              serviceAreas={serviceAreaOptions}
+                outOfAreaValue={OUT_OF_AREA_POSTAL_CODE}
+                consentVersion={site.consentVersion}
               fallbackDisplay={site.phoneDisplay}
               fallbackE164={site.phoneE164}
             />
