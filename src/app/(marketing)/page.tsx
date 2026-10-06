@@ -1,9 +1,9 @@
+import { Fragment } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { QuoteForm } from "@/components/lead/QuoteForm";
 import {
-  AdjacentAreas,
   DecisionSupport,
   FaqSection,
   Hero,
@@ -135,29 +135,32 @@ export default function HomePage() {
 
 
       <Section
-        eyebrow="Common questions"
-        title="Questions worth settling before you call"
-        lead="Straight answers, including the ones that tell you we are not the right service for your project."
+        eyebrow="Before you call"
+        title="Four things worth deciding yourself"
+        lead="None of these need a contractor to answer, and knowing them makes the first conversation shorter."
       >
         <DecisionSupport items={DECISION_ITEMS} />
       </Section>
 
-      <Section
-        backgroundImage={{
-          src: "/home-service-area-band.webp",
-          alt: "Quiet Lancaster County South Carolina residential street with concrete driveways, front walkways, and mature trees",
-        }}
-        eyebrow="Service area"
-        title="Areas we currently serve"
-        lead="Every area we currently serve. Service availability depends on participating providers."
-      >
-        <AdjacentAreas locations={publishedLocations} />
-
-        <p className="mt-7 text-center text-[14px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
-          Additional South Carolina areas are added one at a time, and only once
-          a participating provider has approved coverage there in writing.
+      <div className="container-page py-10">
+        <p className="text-[15px] leading-relaxed text-[color:var(--color-muted)]">
+          Right now we route requests in{" "}
+          {publishedLocations.map((location, index) => (
+            <Fragment key={location.slug}>
+              {index > 0 && (index === publishedLocations.length - 1 ? " and " : ", ")}
+              <Link
+                href={`/locations/${location.slug}`}
+                className="underline underline-offset-4"
+              >
+                {location.city}, {location.region}
+              </Link>
+            </Fragment>
+          ))}
+          . Additional South
+          Carolina areas are added one at a time, and only once a participating
+          provider has approved coverage there in writing.
         </p>
-      </Section>
+      </div>
 
       <Section
         tone="surface"
@@ -197,29 +200,13 @@ export default function HomePage() {
           </div>
           <div className="text-center lg:pt-4 lg:text-left">
             <p className="eyebrow-plain">What happens after you submit</p>
-            <ol className="mt-5 space-y-5">
-              {[
-                "Your location and project type are checked against participating providers with written coverage.",
-                "Service availability depends on participating providers, so coverage and current capacity are checked before anything is sent.",
-                "One independent third party service provider receives the request and may contact you.",
-                "If they do not acknowledge in time, it is reassigned once to another participating provider.",
-              ].map((item, index) => (
-                <li key={item} className="flex justify-center gap-4 text-left lg:justify-start">
-                  <span
-                    className="grid h-8 w-8 shrink-0 place-items-center rounded-full text-[13px] font-bold"
-                    style={{
-                      backgroundColor: "var(--color-accent-soft)",
-                      color: "var(--color-accent)",
-                    }}
-                  >
-                    {index + 1}
-                  </span>
-                  <span className="text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ol>
+            <p className="mt-4 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
+              Your location and project type are checked against participating
+              providers with written coverage. One provider receives the
+              request and may contact you. If they do not acknowledge in time
+              it is reassigned once, and if nobody covers your area we tell you
+              so rather than forwarding it anyway.
+            </p>
             <div className="card mt-8 p-5">
               <p className="text-sm font-semibold">Rather just talk?</p>
               <p className="mt-1.5 text-[14px] text-[color:var(--color-muted)]">
@@ -240,7 +227,7 @@ export default function HomePage() {
 
       <SectionDivider />
 
-      <Section eyebrow="FAQ" title="Straight answers">
+      <Section eyebrow="FAQ" title="How this service works">
         <FaqSection faqs={FAQS} name="home-faq" />
         <p className="mt-6 text-sm text-[color:var(--color-muted)]">
           Full detail on how we are paid and what we do not do is on the{" "}

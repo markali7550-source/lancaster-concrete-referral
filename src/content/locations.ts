@@ -57,7 +57,7 @@ export const locations: readonly LocationRecord[] = [
       "Lancaster is the only area this service covers right now. Every request is checked against providers who have approved that coverage in writing, which is why the list here is short and why it grows slowly. If nobody covers your address, we say so instead of passing your details along anyway.",
     heroImage: "/lancaster-hero.webp",
     heroImageAlt:
-      "Residential street in Lancaster, South Carolina with concrete driveways in natural daylight",
+      "Quiet residential street of brick ranch houses and pines, with red clay verges and concrete driveways",
     adjacent: [],
   },
   {

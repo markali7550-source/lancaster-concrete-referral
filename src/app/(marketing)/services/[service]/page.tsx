@@ -83,7 +83,7 @@ const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
 };
 
 const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
-  "concrete-driveways": { src: "/images/driveway-pour-joints.webp", alt: "Representative concrete driveway control joints and broom finish" },
+  "concrete-driveways": { src: "/images/driveway-pour-joints.webp", alt: "Close up of a tooled control joint crossing the broom finished surface of a concrete driveway" },
   "concrete-patios": { src: "/images/patios-process-walkway.webp", alt: "Representative finished backyard patio with a garden border and seating area" },
   "concrete-slabs": { src: "/images/slabs-process-pad.webp", alt: "Representative finished residential concrete pad set into a lawn" },
   "concrete-repair": { src: "/images/repair-process-trowel.webp", alt: "Representative hand trowel finishing a concrete repair patch" },

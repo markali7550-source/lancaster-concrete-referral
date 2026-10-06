@@ -83,7 +83,7 @@ export const services: readonly ServiceRecord[] = [
       "We do not specify your driveway. These are the calls the contractor will ask you to make, so they are not the first time you hear them.",
     image: "/images/service-driveways.webp",
     imageAlt:
-      "Newly poured residential concrete driveway with saw cut control joints and a broom finish",
+      "Concrete driveway running up to the garage of a single story brick ranch house, with saw cut control joints across its width",
     projectTypes: ["New driveway", "Driveway replacement"],
     keyFacts: [
       { label: "Routed for", value: "Residential driveways and aprons" },
@@ -472,7 +472,7 @@ export const services: readonly ServiceRecord[] = [
       "A pad is specified by what sits on it. Load comes first, because it decides thickness, reinforcement and base depth before anything else is priced.",
     image: "/images/service-slabs.webp",
     imageAlt:
-      "Finished flat concrete slab pad in a residential backyard with a small storage shed",
+      "Finished concrete shed pad in a back yard, sitting proud of the ground with form marks down its side and backfilled soil around the edge",
     projectTypes: ["Residential slab", "Concrete pad"],
     keyFacts: [
       { label: "Routed for", value: "Nonstructural residential slabs and pads" },

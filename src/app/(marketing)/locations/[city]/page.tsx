@@ -9,7 +9,6 @@ import {
   DecisionSupport,
   FaqSection,
   Hero,
-  HowMatchingWorks,
   ProjectTypeChooser,
   ReferralDisclosureStrip,
   Section,
@@ -149,32 +148,24 @@ export default async function LocationPage({ params }: { params: Params }) {
       <Section
         eyebrow="Local conditions"
         title={`What shapes concrete work in ${location.city}`}
-        lead="Notes gathered from participating provider conversations about this specific market, not generic filler with a city name dropped in."
+        lead="Notes from participating provider conversations about this market."
       >
         <Image
-          src="/locations/lancaster-residential-street.webp"
-          alt={`Single-story brick homes with concrete driveways and front walkways on a residential street in ${location.city}, ${location.region}`}
+          src="/images/process-location-lancaster.webp"
+          alt={`Newly poured concrete driveway at a brick ranch house, with raw red clay still exposed along both edges where the forms were pulled, in ${location.city}, ${location.region}`}
           width={900}
           height={491}
           sizes="(min-width: 1024px) 80rem, 100vw"
           className="mb-8 h-56 w-full rounded-[12px] object-cover md:h-72"
         />
-        <ul className="grid gap-5 lg:grid-cols-3">
-          {location.localEvidence.map((item, index) => (
-            <li key={item} className="card p-6">
-              <span
-                className="mx-auto grid h-8 w-8 place-items-center rounded-full text-[13px] font-bold lg:mx-0"
-                style={{
-                  backgroundColor: "var(--color-accent-soft)",
-                  color: "var(--color-accent)",
-                }}
-                aria-hidden="true"
-              >
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <p className="mt-4 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
-                {item}
-              </p>
+        <ul className="grid gap-x-10 gap-y-6 md:grid-cols-3">
+          {location.localEvidence.map((item) => (
+            <li
+              key={item}
+              className="border-t pt-4 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]"
+              style={{ borderColor: "var(--color-line)" }}
+            >
+              {item}
             </li>
           ))}
         </ul>
@@ -194,17 +185,6 @@ export default async function LocationPage({ params }: { params: Params }) {
           cityLabel={location.city}
           images={LOCATION_SERVICE_CARD_IMAGES}
         />
-      </Section>
-
-      <Section
-        backgroundImage={{
-          src: "/images/process-location-lancaster.webp",
-          alt: "Residential concrete driveway on a Lancaster neighborhood street",
-        }}
-        eyebrow="Process"
-        title="How a Lancaster request is routed"
-      >
-        <HowMatchingWorks />
       </Section>
 
 

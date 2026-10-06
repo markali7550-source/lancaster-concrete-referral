@@ -6,18 +6,14 @@ import { QuoteForm } from "@/components/lead/QuoteForm";
 import {
   FaqSection,
   Hero,
-  HowMatchingWorks,
   ReferralDisclosureStrip,
   Section,
 } from "@/components/marketing/sections";
 import {
   Breadcrumbs,
-  CostTable,
   CtaBand,
   KeyFacts,
-  PrepColumns,
   RelatedServices,
-  Timeline,
 } from "@/components/marketing/service-sections";
 import {
   getLocationService,
@@ -38,26 +34,16 @@ import {
 export const dynamicParams = false;
 
 /*
- * The four location-service combo pages share one template, so the process band
- * is keyed by service slug and no two combo pages render the same process photo.
+ * Combo pages are local pages. Sequence, cost drivers and estimate-visit prep
+ * are identical whatever city the work is in, so they live on the service hub
+ * and are linked from here rather than re-rendered -- these four pages used to
+ * repeat all three, which is why they read as copies of each other.
  *
- * The closing CTA band is deliberately NOT keyed by slug any more: every CTA
- * band on the site renders one shared photo (CTA_IMAGE in
- * components/marketing/cta-band.tsx). Because that shared photo is the one that
- * used to be the driveways localImage, content/location-services.ts points the
- * driveways pair at cta-combo-driveways.webp instead, so no page shows the same
- * photo twice.
- *
- * One process entry is also used once on a top-level page, following the
- * 2026-10-05 image audit: cta-combo-repair.webp backs the process band on
- * /how-it-works -- a verified-real photo promoted into an unusable slot.
+ * The closing CTA band on every page of the site renders one shared photo
+ * (CTA_IMAGE in components/marketing/cta-band.tsx). Because that photo was
+ * previously the driveways localImage, content/location-services.ts points the
+ * driveways pair at cta-combo-driveways.webp so no page shows it twice.
  */
-const COMBO_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
-  "concrete-driveways": { src: "/images/process-combo-driveways.webp", alt: "Independent contractor inspecting the formed edge of a new residential driveway slab" },
-  "concrete-patios": { src: "/images/process-combo-patios.webp", alt: "Finished backyard concrete patio with a broom finish, tooled control joints and a rounded edge" },
-  "concrete-slabs": { src: "/images/process-combo-slabs.webp", alt: "Compacted gravel subbase and reinforcing mesh set inside timber forms before a slab pour" },
-  "concrete-repair": { src: "/images/process-combo-repair.webp", alt: "Damaged driveway section saw-cut out and removed down to the compacted gravel base" },
-};
 
 
 export function generateStaticParams() {
@@ -195,57 +181,21 @@ export default async function ComboPage({ params }: { params: Params }) {
               className="scroll-mt-36 border-t py-12 md:py-20"
               style={{ borderColor: "var(--color-line-soft)" }}
             >
-              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Process</p>
-              <h2 className="h2 mt-4">
-                How the project usually runs here
-              </h2>
-              <p className="lede mx-auto mt-4 max-w-prose text-center md:mx-0 md:text-left">
-                Typical ranges reported by participating providers, not commitments. Your
-                contractor sets the actual schedule for your site.
-              </p>
-              <div className="mt-8">
-                <Timeline phases={serviceRecord.process} />
-              </div>
-            </section>
-
-            <section
-              className="scroll-mt-36 border-t py-12 md:py-20"
-              style={{ borderColor: "var(--color-line-soft)" }}
-            >
-              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Pricing</p>
-              <h2 className="h2 mt-4">What drives the price locally</h2>
-              <p className="lede mx-auto mt-4 max-w-prose text-center md:mx-0 md:text-left">
-                We publish no figures. These are the variables that move the
-                number on a {location.city} property.
-              </p>
-              <div className="mt-8">
-                <CostTable rows={serviceRecord.costFactors} />
-              </div>
-            </section>
-
-            <section
-              className="scroll-mt-36 border-t py-12 md:py-20"
-              style={{ borderColor: "var(--color-line-soft)" }}
-            >
-              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Preparation</p>
-              <h2 className="h2 mt-4">Get more out of the estimate visit</h2>
-              <div className="mt-8">
-                <PrepColumns
-                  checklist={serviceRecord.prepChecklist}
-                  questions={serviceRecord.quoteQuestions}
-                />
-              </div>
-            </section>
-
-            <section
-              className="scroll-mt-36 border-t py-12 md:py-20"
-              style={{ borderColor: "var(--color-line-soft)" }}
-            >
               <p className="max-w-prose text-[15px] leading-relaxed text-[color:var(--color-muted)]">
-                Coverage, project type, referral agreement and current capacity
-                are all checked before your details go anywhere.{" "}
+                Sequence, what moves the price, and what to have ready for the
+                estimate visit are the same wherever the work happens, so they
+                live on{" "}
+                <Link
+                  href={`/services/${serviceRecord.slug}`}
+                  className="underline underline-offset-4"
+                >
+                  the {serviceRecord.name.toLowerCase()} page
+                </Link>{" "}
+                rather than being repeated here. Coverage, project type,
+                referral agreement and capacity are all checked before your
+                details go anywhere &mdash;{" "}
                 <Link href="/how-it-works" className="underline underline-offset-4">
-                  How a request is checked and routed
+                  how a request is routed
                 </Link>
                 .
               </p>
@@ -285,29 +235,6 @@ export default async function ComboPage({ params }: { params: Params }) {
           </aside>
         </div>
       </div>
-
-      <Section
-        tone="surface"
-        backgroundImage={COMBO_PROCESS_IMAGES[serviceRecord.slug]}
-        eyebrow="Process"
-        title="Three steps, no obligation"
-      >
-        <HowMatchingWorks />
-      </Section>
-
-      <Section
-        eyebrow="Before you call"
-        title="Worth settling first"
-        lead={`The questions worth answering before any ${serviceRecord.name.toLowerCase()} quote apply wherever the work happens, so we keep them in one place rather than repeating them on every local page.`}
-      >
-        <Link
-          href={`/services/${serviceRecord.slug}#prepare`}
-          className="btn btn-secondary"
-        >
-          What to settle before quoting{" "}
-          {serviceRecord.name.toLowerCase()} in {location.city}
-        </Link>
-      </Section>
 
       <Section
         tone="surface"

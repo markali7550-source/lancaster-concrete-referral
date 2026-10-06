@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   FaqSection,
-  HowMatchingWorks,
   ProjectTypeChooser,
   OverlayHeader,
   overlayBody,
@@ -135,17 +134,6 @@ export default function ServicesPage() {
             </tbody>
           </table>
         </div>
-      </Section>
-
-      <Section
-        backgroundImage={{
-          src: "/images/process-services-index.webp",
-          alt: "Independent contractor noting measurements on a clipboard beside a residential concrete driveway",
-        }}
-        eyebrow="Process"
-        title="How a request reaches an independent provider"
-      >
-        <HowMatchingWorks />
       </Section>
 
       <Section eyebrow="Out of scope" title="What we decline outright">
