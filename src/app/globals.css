@@ -212,25 +212,36 @@
     --color-on-accent: #06100b;
     color: var(--color-ink);
 
-    /* Frosted glass, 50%.
+    /* Frosted glass, 60%.
 
-       The tint is the same #0d1110 the bar has always used, now at half alpha,
+       The tint is the same #0d1110 the bar has always used, now at 40% alpha,
        so whatever scrolls underneath stays visible through it. `blur` is what
        turns that translucency into glass rather than a plain see-through
        panel; `saturate` puts back the color the blur washes out.
 
        `brightness` is the load bearing part and must not be dropped. The bar
        carries light ink (#f3f7f4) and light-grey nav labels (#cfdbd5), which a
-       bare 50% tint cannot support once a near-white section (#f2f5f3, white
+       bare tint cannot support once a near-white section (#f2f5f3, white
        cards) scrolls under it: the glass composites to a mid grey and the nav
-       falls to ~2.5:1, well under the 4.5:1 AA floor. Dimming the backdrop
-       before the tint lands holds the nav at ~5.3:1 and the ink at ~6.9:1 in
+       falls to ~2.2:1, well under the 4.5:1 AA floor. Dimming the backdrop
+       before the tint lands holds the nav at ~4.8:1 and the ink at ~6.3:1 in
        that worst case, while dark backdrops (the hero photo, dark mode) are
-       already below the dim and so look unchanged. Height, spacing, and
-       layout are untouched -- this is background only. */
-    background-color: rgba(13, 17, 16, 0.5);
-    -webkit-backdrop-filter: blur(16px) saturate(130%) brightness(0.6);
-    backdrop-filter: blur(16px) saturate(130%) brightness(0.6);
+       already below the dim and so look unchanged.
+
+       TUNING. How much of the page actually shows through is the product of
+       the two, not the alpha alone:
+
+         transmission = (1 - tint alpha) x brightness = 0.60 x 0.55 = 0.33
+
+       Raising the alpha while dropping the brightness by the same factor is a
+       no-op you can see nothing of, and raising transmission much past ~0.33
+       walks the nav labels under AA (0.40 x 0.60 = 0.36 puts them at 4.3:1).
+       Move both numbers together and check that product.
+
+       Height, spacing, and layout are untouched -- this is background only. */
+    background-color: rgba(13, 17, 16, 0.4);
+    -webkit-backdrop-filter: blur(16px) saturate(130%) brightness(0.55);
+    backdrop-filter: blur(16px) saturate(130%) brightness(0.55);
     /* Hairline highlight along the bottom edge: enough to separate the glass
        from the content sliding beneath it, not enough to read as a rule. */
     border-bottom-color: rgba(255, 255, 255, 0.12);
