@@ -555,9 +555,19 @@ export function ProjectTypeChooser({
                 className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold"
                 style={{ color: "var(--color-accent)" }}
               >
+                {/*
+                  The "in {city}" form takes the plural short name, because
+                  "View driveways in Lancaster" is correct. The referrals form
+                  must not: English wants a singular attributive noun, so the
+                  plural produced "View driveways referrals" and "View slabs
+                  and pads referrals". This is the same interpolation fault
+                  that produced "Concrete Driveways Referrals" in the H1, and
+                  it is fixed the same way -- from projectNoun, not by
+                  slicing the plural.
+                */}
                 {cityLabel
                   ? `View ${service.shortName.toLowerCase()} in ${cityLabel}`
-                  : `View ${service.shortName.toLowerCase()} referrals`}
+                  : `View ${service.projectNoun} referrals`}
                 <Icon name="arrow" className="card-go h-4 w-4" />
               </span>
             </div>
