@@ -1211,3 +1211,50 @@ labelled nowhere as verified and nothing was fabricated to replace them, but
 until the five `NEXT_PUBLIC_*` values are set at deploy the site cannot be fully
 trusted by a visitor who tries to call. This remains the single highest leverage
 action available and it is a deployment step, not a code change.
+
+## 29. Removing the local-pages band from the service pages
+
+Requested directly by the client after they saw the section rendered on their
+preview.
+
+### 29.1 What was removed
+
+The closing band on each of the four service pages:
+
+    Local pages
+    Concrete Driveways by city
+    [ Concrete Driveways in Lancaster, SC ]
+
+A full-bleed photograph, an eyebrow, a heading and a single button. The band
+was the shape a multi-city directory takes, applied to a list holding one
+city. Only one city is published, so the heading "by city" promised a
+directory the data could not fill, and the photograph gave a one-link list the
+visual weight of a major section.
+
+This section had been through two earlier states. It was first collapsed to a
+single sentence, which read as a stub, then restored as a photographic band,
+which overstated a single link. Removing it resolves both.
+
+### 29.2 What was removed with it
+
+The band was the only consumer of each of these, so all were deleted rather
+than left as dead code:
+
+  - the `cityLinks` query in the service page
+  - the `SERVICE_PROCESS_IMAGES` map
+  - the `publishedLocationServices` import
+  - the `getLocation` import
+
+### 29.3 What was checked before removing it
+
+Each city page carried five inbound links. Four of them come from the city
+hub and the three sibling city pages, and only one came from this band, so the
+city pages keep four inbound links each and none is orphaned. Verified by
+crawling all 18 routes: 18/18 return 200 and 20/20 internal links resolve.
+
+### 29.4 Side effects
+
+Three image files are now unreferenced: `patios-process-walkway.webp`,
+`slabs-process-pad.webp` and `repair-process-trowel.webp`. They were left on
+disk rather than deleted, so the section can be restored with a single revert.
+They are not downloaded by any page and cost nothing at runtime.
