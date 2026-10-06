@@ -1094,3 +1094,120 @@ The one width flag left is the three-card cross-sell at 768px (224px columns,
 short nav blurbs, even in height and legible, and both alternatives at tablet
 are worse — a stranded third card in two columns, or three full-width stacked
 cards. Left as it is, consistent with the earlier decision.
+
+---
+
+## 28. Eleventh pass — production audit
+
+A full-site audit against a 29 point brief. Findings are listed with what was
+actually wrong, because several checks came back clean and those matter too.
+
+### 28.1 The question mark bug
+
+Reproduced on all four service pages and all four location service pages. The
+"Ask the contractor, not us" list used a literal `?` as its bullet glyph, so
+every item rendered as:
+
+> ? Would replacement be the better value here, honestly?
+
+A question mark opening a sentence that already ends in one. The items are
+self-evidently questions, so the bullet is now a dot matching the checklist
+column beside it.
+
+### 28.2 Claims the publisher cannot support
+
+The site has no request history, no provider statistics and no seasonal demand
+data, but the copy spoke as though it had all three. Rewritten as the general
+construction knowledge it actually was:
+
+| Was | Problem |
+|---|---|
+| "Most driveway calls start one of two ways" | call volume data |
+| "Concrete work fills up through late spring and early fall" | seasonal demand data |
+| "Most residential pads around Lancaster are for outbuildings" | local project distribution |
+| "a pour from the 1970s to 1990s in the older in town neighborhoods" | local housing stock |
+| "a weaker predictor than access and prep on most Lancaster jobs" | local job data |
+| "participating providers generally recommend" a vapor barrier | provider behavior data |
+| "Shade is the variable homeowners underestimate" | local homeowner knowledge |
+| "What we see on Lancaster patio requests" (H2, four pages) | observed request history |
+| "Questions we hear before a repair visit" (H2) | firsthand history |
+
+The expertise stays. Shade and finish choice, humidity and set time, load before
+footprint, septic and well setbacks, clay shrink and swell, root heave and when
+replacement beats repair are all still there, now stated as construction
+knowledge rather than as the publisher's own observations.
+
+Three absolute claims softened, including the one the brief names directly:
+"the three details most likely to decide whether a driveway lasts".
+
+**Kept after checking:** "Lancaster County sits on the Carolina Slate Belt" is
+verifiable public geology, not business data. USGS places the Haile deposit in
+Lancaster County within that belt, and the University of South Carolina lists
+Lancaster among slate belt counties. "Most residential driveways are placed in
+one working day" is general trade knowledge, not a claim about this publisher's
+customers.
+
+### 28.3 Alt text
+
+Four strings claimed a representative photograph was taken in Lancaster or
+South Carolina. Two more simply did not describe the image:
+
+- a band described as "a fresh pour" shows formwork, a truck and bare clay with
+  no concrete placed
+- "Quiet Lancaster County South Carolina residential street with concrete
+  driveways, front walkways, and mature trees" is one house and a front walkway
+
+All six rewritten to describe only what is visible. **Zero location claims
+remain in any alt string.** The other twenty five were checked against the
+images and left alone, including the stamped patio correctly described as
+stamped rather than smooth troweled.
+
+### 28.4 Contrast, and a correction to the previous pass
+
+The tenth pass took the band scrim from 72% to 56% because at 72% the
+photographs were invisible. Measured properly, 56% gave 4.36:1 for white body
+copy and 2.29:1 for the mint eyebrow against the brightest highlight these
+images can produce. Both under AA. Uniform darkening cannot satisfy both goals,
+so the scrim is now 48% with a second layer that darkens only where the copy
+sits: solid below lg, ramping out to transparent from lg.
+
+Measured on rendered pixels: eyebrows 6.7 and 8.7:1, headings 11 to 19:1, CTA
+body copy 9.0:1 at both 390 and 1280. The right of each frame stays light enough
+to read as a photograph.
+
+### 28.5 Checks that came back clean
+
+- **Structured data.** No AggregateRating, Review, rating, price or offer
+  anywhere. Uses Organization/OnlineBusiness rather than LocalBusiness, which is
+  correct for a referral publisher. JSON-LD FAQ entries all appear as visible
+  text.
+- **Internal links.** All 20 distinct targets return 200.
+- **Metadata.** 18 routes, zero duplicate titles, zero duplicate descriptions,
+  titles 41 to 60 characters, descriptions 97 to 154, canonicals correct.
+- **Keyword density.** Service pages 0.69 to 0.71% for "Lancaster". Zero of 13
+  to 17 headings per page carry "SC" or "South Carolina". The city page runs
+  2.7% because the brand name and the page subject both contain the word; every
+  occurrence is a single natural use.
+- **Accessibility.** All 18 routes: one H1 each, no heading level skips, every
+  image has alt, no empty links or buttons, every form control labelled, no
+  duplicate ids.
+- **Responsive.** No horizontal overflow at 320, 375, 390, 414, 768, 1024 or
+  1440. The only clipping flags are `sr-only` table captions and the skip link,
+  which are intentional.
+- **Punctuation.** No em dashes, no `--`, no doubled or misplaced punctuation,
+  no British spellings across 2,454 lines of rendered copy.
+- **Referral positioning.** Zero occurrences of "our crew", "we pour", "we
+  install", "our licensed" or similar. "Referral service, not a concrete
+  contractor" appears 33 times, "we do not perform" 27 times.
+- **Plurals.** No plural service name colliding with a singular noun.
+- **Self-referential copy.** The only "on this page" instances are the legal
+  sentence "Nothing on this page creates a contract", which is deliberate.
+
+### 28.6 Still outstanding
+
+The phone number and email remain `(803) 555-0123` and
+`hello@example-referral-brand.com`, supplied by environment variables. They are
+labelled nowhere as verified and nothing was fabricated to replace them, but
+until the five `NEXT_PUBLIC_*` values are set at deploy the site cannot be fully
+trusted by a visitor who tries to call. This remains the single highest leverage
+action available and it is a deployment step, not a code change.
