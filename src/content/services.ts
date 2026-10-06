@@ -321,7 +321,7 @@ export const services: readonly ServiceRecord[] = [
       "Patios are the project people most often price before they commit, so it is worth knowing what actually moves the figure. Finish and shape change it far more than size does.",
     image: "/images/service-patios.webp",
     imageAlt:
-      "Rectangular concrete backyard patio with a smooth troweled finish and control joints",
+      "Stamped concrete backyard patio in a random stone pattern with a curved edge, set against a mown lawn and a split rail fence",
     projectTypes: ["New patio", "Patio replacement", "Stamped patio"],
     keyFacts: [
       {
@@ -722,7 +722,7 @@ export const services: readonly ServiceRecord[] = [
       "Repair quotes vary more than any other concrete work, because two slabs with identical cracks can need completely different work underneath. These are the things that move it.",
     image: "/images/repair-hero-walkway.webp",
     imageAlt:
-      "Residential walkway half weathered and cracked, half freshly resurfaced with smooth concrete",
+      "Residential concrete walkway where one slab has been lifted and tilted by tree roots, leaving a raised lip against the next panel",
     projectTypes: ["Crack and surface repair", "Resurfacing"],
     keyFacts: [
       { label: "Routed for", value: "Nonstructural repair and resurfacing" },

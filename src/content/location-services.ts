@@ -71,7 +71,7 @@ const records: readonly LocationServiceRecord[] = [
     state: "published",
     localImage: "/images/local-patios-lancaster.webp",
     localImageAlt:
-      "Broom finished concrete patio in a shaded Lancaster SC back yard under mature oak and pine trees",
+      "Stamped concrete patio in a flagstone pattern with a bullnose border, a shaded table and a new timber privacy fence behind it",
     localBody: [
       {
         heading: "What most requests look like",
@@ -118,7 +118,7 @@ const records: readonly LocationServiceRecord[] = [
     state: "published",
     localImage: "/images/local-slabs-lancaster.webp",
     localImageAlt:
-      "Finished residential concrete slab beside a landscaped yard in Lancaster, South Carolina",
+      "Finished residential concrete slab set into a back lawn, with bare soil and gravel still showing along its edge",
     localBody: [
       {
         heading: "Mostly outbuilding pads",
@@ -165,7 +165,7 @@ const records: readonly LocationServiceRecord[] = [
     state: "published",
     localImage: "/images/local-repair-lancaster.webp",
     localImageAlt:
-      "Uneven residential concrete walkway needing a repair assessment in Lancaster, South Carolina",
+      "Wide residential concrete slab with a long crack running through it and fine map cracking across the surface",
     localBody: [
       {
         heading: "Three shapes of request",
