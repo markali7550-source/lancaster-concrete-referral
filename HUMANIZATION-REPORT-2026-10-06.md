@@ -331,3 +331,97 @@ would be exactly the manipulation the brief rules out.
 **The single highest-leverage remaining action is unchanged:** set the five
 `NEXT_PUBLIC_*` environment variables to real contact details at deploy. That
 moves trust to 9 and is the only target still unmet.
+
+---
+
+## 15. Fourth pass — looking at the photographs instead of their captions
+
+Pass three audited alt text *against* the images and corrected five captions.
+It did not audit the images themselves for artifacts. This pass enlarged all
+eighteen content photographs to 3x and examined them, then examined the four
+homepage service-card images at 2x against the specific defects the brief
+names.
+
+### 15.1 One image had genuine AI artifacts
+
+`cta-combo-repair.webp` — the band behind "Three steps, no obligation" on
+`/how-it-works` — showed a gloved hand running a hand float. At magnification:
+
+- the float's handle rises from a **single asymmetric post** where a real hand
+  float has a two-point mount, and the plate **dissolves into loose grey
+  rectangular fragments** at its right end rather than forming a tool edge
+- the grip **passes through** the handle instead of around it, with a
+  flesh-toned element surfacing where the glove should be continuous
+- a **disembodied grey blob** sits in the top-right corner, attached to nothing
+- the float's **shadow does not match the float**, and the hand casts almost none
+- the wet slurry ridge on the left bears **no relationship** to where the tool is
+
+This is the brief's "distorted tools" and "unnatural metal fragments" category,
+and it was the last live example of it.
+
+**The replacement deliberately contains no people, no hands and no tools.**
+Hands and hand tools are the subjects that generate artifacts, and this site
+has no editorial need for either — it is a referral service, and the brief
+separately warns against fake workers. Removing the subject removes the whole
+risk class rather than re-rolling the same dice. The new frame shows a driveway
+formed and ready to pour: timber forms with the stakes correctly *outside*
+them, welded wire mesh on orange chairs over a compacted gravel subbase, red
+clay spoil heaped along one edge, tire ruts and footprints in the subgrade, a
+brick ranch and loblolly pines behind.
+
+It also fills a gap in the set. Every other photograph is summer or early
+autumn; this one is **winter, bare deciduous trees under flat grey overcast**.
+It is the only ground-level camera position and the only image showing the
+reinforcement stage. That is §6 variation earned by circumstance rather than
+applied as an effect.
+
+Renamed `process-steps-formwork.webp`. The old name described neither a CTA nor
+repair work — the kind of leftover filename that tells a reader an asset was
+reused rather than chosen. Orphan audit against rendered HTML afterwards: 23
+referenced, 0 orphans, 0 missing, 18/18 routes 200.
+
+Legibility was checked rather than assumed: the new frame measures 118/255 in
+the heading zone against 112/255 for the CTA band photo already shipping, so
+under the same 72% `#0B1017` scrim the contrast is unchanged.
+
+### 15.2 The other seventeen were examined and kept
+
+Not one of them was replaced, and that is the finding, not a default. The brief
+is explicit that polish alone is not a defect.
+
+`process-band.webp` is the clearest case for keeping. At 3x it holds up in
+every detail that usually fails: a correct Ford Super Duty grille and badge, a
+real portable drum mixer on the lawn, timber forms over welded mesh at the
+kerb, red clay spoil, patched and potholed asphalt, power lines, a loaded
+trailer. It is the most convincing photograph on the site.
+
+### 15.3 The brief's named targets, closed individually
+
+| Named target | Status |
+|---|---|
+| Driveway without realistic control joints | **Resolved.** `service-driveways` shows longitudinal and transverse joints forming roughly square panels, with hairline cracking and a red clay verge. |
+| Concrete surface resembling polished tile | **Resolved.** `service-patios` is matte stamped random-stone with real grout lines, antiquing-release colour variation and a hairline crack. No specular tile sheen anywhere in the set. |
+| Clipboard/clip with unnatural metal fragments | **Gone.** No clipboard appears in any of the eighteen images. Its nearest surviving relative was the fragmented float plate described above, replaced this pass. |
+| AI-looking handwriting | **None.** No handwriting or rendered lettering appears in any image. The only text is a manufacturer's badge on a real truck grille. |
+| Suspicious homepage service-card imagery | **Checked at 2x and kept.** All four — `service-driveways`, `service-patios`, `service-slabs`, `repair-hero-walkway` — show correct construction: a formed slab edge with slight aggregate exposure, and a root-heaved panel with a visible fracture face and exposed aggregate at the break. |
+
+## 16. Scores after the fourth pass
+
+| | Target | Pass 3 | Pass 4 | Why |
+|---|---|---|---|---|
+| **AI-looking** | ≤2 | 2 | **2** | The last image with *visible* artifacts is gone, so the honest note is that **pass three's 2 was generous**: a live photograph containing a melted tool and a floating blob is close to the literal definition of AI-looking. The number is the same and is now accurate. It does not go to 1 because all imagery remains AI-generated concept photography, which is the ceiling. |
+| **Human-designed** | ≥9 | 9 | **9** | No design changed this pass. |
+| **Professional** | ≥9 | 9 | **9** | Typecheck, 36/36 tests, four content asserts, 18/18 routes 200, 0 orphaned images. |
+| **Generic / template** | ≤2 | 2 | **2** | Unchanged. |
+| **Trust** | ≥9 | 8 | **8** | Still capped by the `(803) 555-0123` reserved-fiction number and the `example-referral-brand.com` email, both environment-supplied and deliberately not invented. |
+
+Two passes running, the honest conclusion has been that a previously reported
+score was slightly flattering because a defect had not yet been looked for in
+the right way. That is the cost of auditing by measurement: a sweep confirms
+what it was built to count, and stays silent about everything else. Both times
+the number stayed where it was and the justification got weaker, which is the
+correct direction when the finding is "I had not checked."
+
+**Unchanged highest-leverage action:** set the five `NEXT_PUBLIC_*` environment
+variables to real contact details at deploy. That is the only remaining move
+that changes a score.
