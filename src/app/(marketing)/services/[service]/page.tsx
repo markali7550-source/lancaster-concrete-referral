@@ -63,33 +63,6 @@ function descriptionFor(nameLower: string, projectNoun: string) {
   return `What ${nameLower} referral covers in Lancaster, SC, what falls outside it, and how your ${projectNoun} request reaches an independent service provider.`;
 }
 
-/*
- * Section imagery for the service detail pages.
- *
- * The hero and the service card are NOT configured here -- both read
- * `service.image` from content/services.ts and are deliberately left alone.
- * Every map below is a secondary section, and no two service pages share an
- * entry, so each of these pages still renders a distinct set of photos.
- *
- * The closing CTA band is no longer configured here. Every CTA band on the site
- * now renders one shared photo, defined as CTA_IMAGE in
- * components/marketing/cta-band.tsx. Pass imageSrc/imageAlt only to override it.
- */
-const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
-  "concrete-driveways": { src: "/images/driveway-drainage-detail.webp", alt: "Representative driveway edge with drainage pitch and lawn border" },
-  "concrete-patios": { src: "/images/patio-backyard-slab.webp", alt: "Representative plain concrete patio slab at the rear of a single-story brick home" },
-  "concrete-slabs": { src: "/images/slab-formwork-pad.webp", alt: "Representative freshly poured concrete pad still enclosed by its staked timber side forms" },
-  "concrete-repair": { src: "/images/repair-detail-crack.webp", alt: "Representative settled concrete walkway slab with a cracked, lifted edge" },
-};
-
-const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
-  "concrete-driveways": { src: "/images/driveway-pour-joints.webp", alt: "Close up of a tooled control joint crossing the broom finished surface of a concrete driveway" },
-  "concrete-patios": { src: "/images/patios-process-walkway.webp", alt: "Representative backyard patio slab just floated and still inside its timber forms, with a bull float and hand trowel resting on the edge" },
-  "concrete-slabs": { src: "/images/slabs-process-pad.webp", alt: "Representative finished residential concrete pad set into a lawn" },
-  "concrete-repair": { src: "/images/repair-process-trowel.webp", alt: "Representative hand trowel finishing a concrete repair patch" },
-};
-
-
 export async function generateMetadata({
   params,
 }: {
