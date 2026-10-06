@@ -144,7 +144,7 @@ export default async function ComboPage({ params }: { params: Params }) {
               <p className="eyebrow flex">{`${serviceRecord.name} · ${location.city}`}</p>
               <h2 className="h2 mt-4">
                 What we see on {location.city}{" "}
-                {serviceRecord.shortName.toLowerCase()} requests
+                {serviceRecord.projectNoun} requests
               </h2>
               <div className="mt-8 max-w-prose space-y-6">
                 {record.localBody.map((block) => (
@@ -166,7 +166,7 @@ export default async function ComboPage({ params }: { params: Params }) {
                   href={`/services/${serviceRecord.slug}`}
                   className="btn btn-secondary"
                 >
-                  All {serviceRecord.shortName.toLowerCase()} referrals
+                  All {serviceRecord.projectNoun} referrals
                 </Link>
                 <Link
                   href={`/locations/${location.slug}`}
@@ -239,7 +239,7 @@ export default async function ComboPage({ params }: { params: Params }) {
       <Section compact
         tone="surface"
         eyebrow="FAQ"
-        title={`${location.city} ${serviceRecord.shortName.toLowerCase()} questions`}
+        title={`${location.city} ${serviceRecord.projectNoun} questions`}
       >
         <FaqSection faqs={record.localFaqs} name="combo-faq" />
       </Section>

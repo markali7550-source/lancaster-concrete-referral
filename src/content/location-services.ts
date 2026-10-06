@@ -26,19 +26,19 @@ const records: readonly LocationServiceRecord[] = [
       "Wide residential concrete driveway running up to the attached garage of a suburban home",
     localBody: [
       {
-        heading: "Two kinds of request",
+        heading: "Two kinds of job",
         body:
-          "Driveway inquiries from Lancaster split fairly evenly between replacement of 1970s to 1990s pours in the older neighborhoods off Chesterfield Avenue and first time pours on rural parcels where a gravel drive has become unworkable.",
+          "Two kinds of driveway job come up around Lancaster. One is replacing a pour from the 1970s to 1990s in the older in town neighborhoods. The other is a first pour on a rural parcel where a gravel drive has become unworkable.",
       },
       {
         heading: "Access and water come first",
         body:
-          "The two questions participating providers raise most often on Lancaster driveways are truck access and water. Narrow lots in town restrict where a mixer can stage, and the county's clay subsoil holds water long enough that subbase preparation and edge drainage change the price of the job more than the square footage does.",
+          "Two things usually matter more here than square footage: truck access and water. Narrow lots in town restrict where a mixer can stage, and the county's clay subsoil holds water long enough that subbase preparation and edge drainage change the price of the job more than the square footage does.",
       },
       {
         heading: "When to ask for a visit",
         body:
-          "Seasonality matters here too. Requests cluster in late spring and early fall, which is when provider capacity tightens and acknowledgment times stretch. If your driveway is already failing, an inquiry in the quieter winter weeks usually gets a faster site visit, even though the pour itself may be scheduled for milder weather.",
+          "Seasonality matters here too. Concrete work fills up through late spring and early fall, which is when a site visit is hardest to get quickly. If your driveway is already failing, asking in the quieter winter weeks usually gets you looked at sooner, even though the pour itself may be scheduled for milder weather.",
       },
       {
         heading: "Who actually does the work",
@@ -74,24 +74,24 @@ const records: readonly LocationServiceRecord[] = [
       "Stamped concrete patio in a flagstone pattern with a bullnose border, a shaded table and a new timber privacy fence behind it",
     localBody: [
       {
-        heading: "What most requests look like",
+        heading: "What the work usually is",
         body:
-          "Patio inquiries in Lancaster are dominated by rear yard slabs behind single-story ranch houses built between the 1960s and the 1990s, and by homeowners converting a tired screened porch footprint into an open entertaining surface.",
+          "Patio work around Lancaster tends to be one of two things: a rear yard slab behind a single-story ranch of the kind built here between the 1960s and the 1990s, or a tired screened porch footprint opened up into an uncovered entertaining surface.",
       },
       {
         heading: "Shade decides the finish",
         body:
-          "Shade is the variable homeowners underestimate. Mature oaks and pines keep much of a Lancaster back yard damp into the morning, and a smooth troweled finish there grows algae and turns slippery within a couple of seasons. Participating providers usually steer these patios toward a broom or exposed aggregate finish for grip.",
+          "Shade is the variable homeowners underestimate. Mature oaks and pines keep much of a Lancaster back yard damp into the morning, and a smooth troweled finish there grows algae and turns slippery within a couple of seasons. A broom or exposed aggregate finish holds grip in that situation where a smooth troweled one will not.",
       },
       {
         heading: "Humidity and scheduling",
         body:
-          "Humidity drives scheduling more than temperature does. A July pour in Lancaster County can skin over faster than the crew can finish it, so participating providers often start at first light or push the date rather than fight the slab. Expect a contractor to talk about curing and moisture protection, not just the pour day itself.",
+          "Humidity drives scheduling more than temperature does. A July pour in Lancaster County can skin over faster than the crew can finish it, so a pour may start at first light or be moved rather than fought. Expect a contractor to talk about curing and moisture protection, not just the pour day itself.",
       },
       {
         heading: "Tying into existing concrete",
         body:
-          "Tying a new patio into an existing porch footing or stoop is the other recurring detail. The old footing and the new slab move independently unless the joint is detailed deliberately, which is why participating providers inspect the existing structure before quoting rather than pricing from a square foot figure over the phone.",
+          "Tying a new patio into an existing porch footing or stoop is the other detail worth raising early. The old footing and the new slab move independently unless the joint is detailed deliberately, which is why the existing structure needs looking at before anyone quotes, rather than pricing it from a square foot figure over the phone.",
       },
     ],
     localFaqs: [
@@ -108,7 +108,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         question: "Is summer a bad time to pour a patio here?",
         answer:
-          "It is workable but less forgiving. Lancaster humidity and heat shorten finishing time, so participating providers often schedule early morning pours or move the date. That is a contractor decision, not ours.",
+          "It is workable but less forgiving. Humidity and heat shorten finishing time, so a pour here may be scheduled for early morning or moved to a better week. That is a contractor decision, not ours.",
       },
     ],
   },
@@ -123,17 +123,17 @@ const records: readonly LocationServiceRecord[] = [
       {
         heading: "Mostly outbuilding pads",
         body:
-          "Slab requests around Lancaster are mostly outbuilding pads: detached workshops, equipment and mower storage, carports, hot tub bases, and pads for replacement HVAC condensers. Rural parcels outside the town limits account for most of the larger ones.",
+          "Most residential pads around Lancaster are for outbuildings: detached workshops, equipment and mower storage, carports, hot tub bases, and pads for replacement HVAC condensers. The larger ones tend to sit on rural parcels outside the town limits.",
       },
       {
         heading: "Load comes before price",
         body:
-          "Load is the first question a participating provider asks, because it changes the slab rather than just its price. A pad that will carry a lifted truck, a tractor, or a loaded workshop bench needs thickened edges and different reinforcement from a simple storage floor, and retrofitting that later means breaking out the slab.",
+          "Load is the first thing to settle, because it changes the slab rather than just its price. A pad that will carry a lifted truck, a tractor, or a loaded workshop bench needs thickened edges and different reinforcement from a simple storage floor, and retrofitting that later means breaking out the slab.",
       },
       {
         heading: "Siting on rural parcels",
         body:
-          "On rural Lancaster parcels, siting is the second question. Septic fields, well heads, and their setbacks constrain where a pad can legally and sensibly go, and participating providers will want those locations identified before they quote. Homeowners frequently discover the obvious flat spot is the one place the pad cannot sit.",
+          "On rural Lancaster parcels, siting is the second question. Septic fields, well heads, and their setbacks constrain where a pad can legally and sensibly go, and those locations need identifying before anyone quotes. The obvious flat spot is often the one place the pad cannot sit.",
       },
       {
         heading: "Heated buildings need more",
@@ -168,9 +168,9 @@ const records: readonly LocationServiceRecord[] = [
       "Wide residential concrete slab with a long crack running through it and fine map cracking across the surface",
     localBody: [
       {
-        heading: "Three shapes of request",
+        heading: "Three shapes it takes",
         body:
-          "Repair inquiries from Lancaster arrive in three recognizable shapes: surface spalling and flaking on slabs poured decades ago, joints that have opened and now trap water, and sections that have dropped out of level at an apron, walkway, or garage threshold.",
+          "Repair work around here usually takes one of three shapes: surface spalling and flaking on slabs poured decades ago, joints that have opened and now trap water, and sections that have dropped out of level at an apron, walkway, or garage threshold.",
       },
       {
         heading: "Settlement is a soil story",
@@ -180,7 +180,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         heading: "Tree roots and lifted panels",
         body:
-          "Mature hardwoods cause the opposite problem. Roots from oaks planted close to older in town walkways lift panels from below, and cutting the root to level the slab can destabilize the tree. Participating providers will tell you plainly when that tradeoff is the real decision.",
+          "Mature hardwoods cause the opposite problem. Roots from oaks planted close to older in town walkways lift panels from below, and cutting the root to level the slab can destabilize the tree. A contractor worth hiring will tell you plainly when that tradeoff is the real decision.",
       },
       {
         heading: "When replacement wins",

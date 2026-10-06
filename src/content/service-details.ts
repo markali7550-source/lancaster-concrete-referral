@@ -47,7 +47,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
         heading: "Why people replace a drive",
         subheading: "Other common triggers",
         body: [
-          "Most requests start with a gravel or dirt drive that is hard to maintain, or an older slab that has cracked, settled, or spalled past patching.",
+          "A driveway job usually starts with a gravel or dirt drive that is hard to maintain, or an older slab that has cracked, settled, or spalled past patching.",
           "Others are widening a drive that is too narrow, correcting runoff that heads for the garage, or adding a pad for a trailer or boat.",
         ],
       },
