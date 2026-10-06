@@ -1,44 +1,8 @@
 import { Icon } from "@/components/ui/Icon";
 import { CtaBand } from "@/components/marketing/cta-band";
-import type { ServiceDetail } from "@/content/service-details";
 import {
 } from "@/components/marketing/sections";
 import { SERVICE_PAGE_DISCLOSURE } from "@/lib/seo/disclosure";
-
-/* ------------------------------------------------------- MoreInformation */
-
-/**
- * Narrative explainer. Two columns from lg up so long-form copy does not run
- * the full container width; centered headings on mobile per the brief, with
- * body copy left-aligned because it is multi-line prose.
- */
-export function MoreInformation({ blocks }: { blocks: ServiceDetail["moreInfo"] }) {
-  return (
-    <div className="grid gap-5 lg:grid-cols-2 lg:gap-6">
-      {blocks.map((block) => (
-        <article key={block.heading} className="card flex h-full flex-col p-6">
-          <h3 className="text-[17px] font-semibold">
-            {block.heading}
-          </h3>
-          <p className="mt-3 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
-            {block.body[0]}
-          </p>
-          <h4 className="mt-4 text-[14px] font-semibold">
-            {block.subheading}
-          </h4>
-          {block.body.slice(1).map((paragraph) => (
-            <p
-              key={paragraph}
-              className="mt-1.5 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]"
-            >
-              {paragraph}
-            </p>
-          ))}
-        </article>
-      ))}
-    </div>
-  );
-}
 
 /* ------------------------------------------------------------ MayInclude */
 

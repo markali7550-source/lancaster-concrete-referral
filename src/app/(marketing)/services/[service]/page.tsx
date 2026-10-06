@@ -23,7 +23,6 @@ import {
 } from "@/components/marketing/service-sections";
 import {
   MayInclude,
-  MoreInformation,
   ReferralSteps,
   ServiceCtaBand,
   ServiceDisclosureBlock,
@@ -117,7 +116,6 @@ export default async function ServicePage({ params }: { params: Params }) {
 
   const navItems = [
     ...service.sectionOrder.map((id) => ({ id, label: mainNavLabels[id] })),
-    { id: "more-information", label: "More information" },
     { id: "quote-form", label: "Get a quote" },
     { id: "faq", label: "FAQ" },
   ];
@@ -307,15 +305,6 @@ export default async function ServicePage({ params }: { params: Params }) {
       </div>
 
       <SectionDivider />
-
-      <section id="more-information" className="scroll-mt-32">
-        <Section
-          eyebrow="More information"
-          title={service.headings.moreInfo}
-        >
-          <MoreInformation blocks={detail.moreInfo} />
-        </Section>
-      </section>
 
       <ServiceDisclosureBlock />
 

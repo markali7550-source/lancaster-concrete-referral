@@ -44,7 +44,6 @@ export interface ServiceRecord {
     process: string;
     cost: string;
     prepare: string;
-    moreInfo: string;
     faq: string;
     /** Closing CTA heading. Service-specific so the four pages do not all
      *  end on the same sentence, and so the combo pages stop using a bare
@@ -102,7 +101,6 @@ export const services: readonly ServiceRecord[] = [
       process: "What a driveway pour week looks like",
       cost: "Where driveway money actually goes",
       prepare: "Before the contractor walks the drive",
-      moreInfo: "Driveways on Lancaster County clay",
       faq: "Driveway questions we get asked",
       cta: "Ready to price a driveway?",
     },
@@ -111,7 +109,7 @@ export const services: readonly ServiceRecord[] = [
     processLead:
       "A driveway is a one-day pour on the end of a week of preparation. The sequence below is what that week usually looks like; your contractor sets the real dates.",
     costLead:
-      "Nobody can price a driveway from a postcode. Square footage is only the start of it. What the old slab costs to break up and haul away, and whether a truck can reach the pour, often move the number more.",
+      "Nobody can price a driveway from an address. Square footage is only the start of it. What the old slab costs to break up and haul away, and whether a truck can reach the pour, often move the number more.",
     image: "/images/service-driveways.webp",
     imageAlt:
       "Concrete driveway running up to the garage of a single story brick ranch house, with saw cut control joints across its width",
@@ -309,7 +307,6 @@ export const services: readonly ServiceRecord[] = [
       process: "How a patio build is sequenced",
       cost: "What makes one patio cost more than another",
       prepare: "Walking the space before you get a price",
-      moreInfo: "Getting a patio right the first time",
       faq: "Patio questions we get asked",
       cta: "Ready to price a patio?",
     },
@@ -512,7 +509,6 @@ export const services: readonly ServiceRecord[] = [
       process: "From staked forms to a usable pad",
       cost: "What drives the price of a pad",
       prepare: "Knowing the load before the visit",
-      moreInfo: "Sizing and siting a residential pad",
       faq: "Slab and pad questions we get asked",
       cta: "Ready to price a pad?",
     },
@@ -710,7 +706,6 @@ export const services: readonly ServiceRecord[] = [
       process: "How a repair job is assessed and done",
       cost: "Why repair quotes vary so widely",
       prepare: "Describing the damage accurately",
-      moreInfo: "Repair, resurface, or replace",
       faq: "Repair questions we get asked",
       cta: "Want someone to look at the damage?",
     },
