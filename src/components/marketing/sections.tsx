@@ -599,29 +599,24 @@ export function RoutingControls() {
           backgroundColor: "var(--color-line-soft)",
         }}
       >
-        {ROUTING_CONTROLS.map((check, index) => (
+        {ROUTING_CONTROLS.map((check) => (
           <li
             key={check.title}
             className="p-6"
             style={{ backgroundColor: "var(--color-surface)" }}
           >
-            <div className="flex items-start gap-3 text-left lg:gap-3.5">
-              <span
-                className="marker-count grid h-8 w-8 shrink-0 place-items-center rounded-full text-[13px] font-bold"
-                style={{
-                  backgroundColor: "var(--color-accent-soft)",
-                  color: "var(--color-accent)",
-                }}
-                aria-hidden="true"
-              >
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <div>
-                <p className="font-semibold">{check.title}</p>
-                <p className="mt-2 text-[14px] leading-relaxed text-[color:var(--color-muted)]">
-                  {check.body}
-                </p>
-              </div>
+            {/*
+              These four used to carry 01-04 step markers, directly above the
+              genuine three-step sequence on the same page. They are not steps
+              -- every one of them is checked on every request -- so numbering
+              them stated an order that does not exist and repeated the
+              numbered-card pattern twice in a row. Title and body only.
+            */}
+            <div className="text-left">
+              <p className="font-semibold">{check.title}</p>
+              <p className="mt-2 text-[14px] leading-relaxed text-[color:var(--color-muted)]">
+                {check.body}
+              </p>
             </div>
           </li>
         ))}
