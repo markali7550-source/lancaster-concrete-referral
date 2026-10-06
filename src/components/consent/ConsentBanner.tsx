@@ -78,7 +78,7 @@ export function ConsentBanner() {
       ref={ref}
       role="region"
       aria-label="Tracking consent"
-      className="fixed inset-x-0 bottom-0 z-50 border-t p-3.5 md:inset-x-auto md:bottom-4 md:left-4 md:max-w-sm md:rounded-[16px] md:border md:p-4"
+      className="fixed inset-x-0 bottom-0 z-50 border-t p-3.5 md:inset-x-auto md:bottom-4 md:left-4 md:max-w-sm md:rounded-[12px] md:border md:p-4"
       style={{
         backgroundColor: "var(--color-surface)",
         borderColor: "var(--color-line)",

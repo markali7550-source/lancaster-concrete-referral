@@ -14,17 +14,33 @@ import { SHORT_DISCLOSURE } from "@/lib/seo/disclosure";
  * previously written inline per component as a fully opaque fill, which hid
  * the photograph completely.
  *
- * 70% is not arbitrary: it is the lowest opacity at which the *brightest*
+ * 72% is not arbitrary: it is the lowest opacity at which the *brightest*
  * glyph-scale region of every photo in /public still clears WCAG AA (4.5:1)
  * against the lightest text color used on these bands. The binding constraint
- * is the mint eyebrow #5fe3a8, which needs 0.70; muted body #cfdbd5 needs 0.67
- * and white needs 0.57. Lower this and the eyebrow fails on the bright pours.
+ * is the mint eyebrow #4ED29A, which needs 0.72; muted body #A8B3C0 needs
+ * 0.70 and white needs 0.57. Lower this and the eyebrow fails on the bright
+ * pours.
+ *
+ * The colour is --color-band-deep (#0B1017), the same navy the footer, the
+ * CTA and the header glass are built from, so a photo band reads as the same
+ * material as every other heavy surface on the site rather than as a
+ * separate green-black.
  */
-export const PHOTO_SCRIM = "bg-[#0D1110]/70";
+export const PHOTO_SCRIM = "bg-[#0B1017]/72";
 
-/** Blends the band into the page background at the top and bottom seams. */
+/**
+ * Vignette at the top and bottom of a photo band.
+ *
+ * It used to ramp to FULLY OPAQUE navy at both edges, which made sense when
+ * it was described as "blending into the page background" -- except the page
+ * is warm off-white, so the band was blending into a colour that is nowhere
+ * near it and the seam read as a hard black strip above the next section.
+ * At 70% the vignette still does its real job (holding contrast under the
+ * glass header and over the bottom edge) without stamping a black bar
+ * between two sections.
+ */
 export const PHOTO_EDGE_FADE =
-  "bg-gradient-to-b from-[#0D1110] via-transparent to-[#0D1110]";
+  "bg-gradient-to-b from-[#0B1017]/75 via-transparent to-[#0B1017]/75";
 
 /**
  * Heroes only. Deepens the copy side on desktop and releases to transparent on
@@ -32,7 +48,7 @@ export const PHOTO_EDGE_FADE =
  * hero centers its copy, where a left-weighted wash would do nothing useful.
  */
 export const PHOTO_SIDE_WASH =
-  "hidden lg:block bg-gradient-to-r from-[#0D1110]/55 via-[#0D1110]/25 to-transparent";
+  "hidden lg:block bg-gradient-to-r from-[#0B1017]/60 via-[#0B1017]/28 to-transparent";
 
 /* ---------------------------------------------------------------- Section */
 
@@ -70,7 +86,9 @@ export function Section({
     <section
       id={id}
       className={`${
-        compact ? "scroll-mt-32 py-8 md:py-12" : "scroll-mt-32 py-12 md:py-20"
+        compact
+          ? "scroll-mt-32 py-10 md:py-14"
+          : "scroll-mt-32 py-14 md:py-20 lg:py-24"
       }${backgroundImage ? " cta-photo relative isolate overflow-hidden" : ""}`}
       style={
         backgroundImage
@@ -105,7 +123,7 @@ export function Section({
             className={
               align === "center"
                 ? "mx-auto max-w-2xl text-center"
-                : "text-center md:text-left"
+                : "text-left"
             }
           >
             {eyebrow ? (
@@ -198,10 +216,10 @@ export function OverlayHeader({
   );
 }
 
-export const overlayEyebrow = "#5fe3a8";
-export const overlayHeading = "#ffffff";
-export const overlayBody = "rgba(255,255,255,0.88)";
-export const overlayMuted = "rgba(255,255,255,0.82)";
+export const overlayEyebrow = "var(--color-band-accent)";
+export const overlayHeading = "var(--color-band-ink)";
+export const overlayBody = "rgba(255,255,255,0.86)";
+export const overlayMuted = "rgba(255,255,255,0.80)";
 
 const HERO_TRUST = [
   "Free for homeowners",
@@ -262,16 +280,16 @@ export function Hero({
             {breadcrumbs}
             <p
               className="eyebrow before:hidden lg:before:block"
-              style={{ color: "#5fe3a8" }}
+              style={{ color: "var(--color-band-accent)" }}
             >
               {locationCue}
             </p>
-            <h1 className="h1 mt-5" style={{ color: "#ffffff" }}>
+            <h1 className="h1 mt-5" style={{ color: "var(--color-band-ink)" }}>
               {h1}
             </h1>
             <p
               className="lede mx-auto mt-5 max-w-prose lg:mx-0"
-              style={{ color: "rgba(255,255,255,0.88)" }}
+              style={{ color: "rgba(255,255,255,0.86)" }}
             >
               {summary}
             </p>
@@ -294,11 +312,11 @@ export function Hero({
 
             <ul
               className="mt-7 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[13px] lg:justify-start"
-              style={{ color: "rgba(255,255,255,0.82)" }}
+              style={{ color: "rgba(255,255,255,0.80)" }}
             >
               {HERO_TRUST.map((item) => (
                 <li key={item} className="flex items-center gap-1.5">
-                  <span style={{ color: "#5fe3a8" }}>
+                  <span style={{ color: "var(--color-band-accent)" }}>
                     <Icon name="check" className="h-4 w-4" />
                   </span>
                   {item}
@@ -307,7 +325,7 @@ export function Hero({
             </ul>
           </div>
           {aside ? (
-            <div className="mobile-sticky-form sticky bottom-0 z-40 mx-auto w-full max-w-xl rounded-t-xl bg-[#0D1110] p-2 lg:static lg:mx-0 lg:max-w-xl lg:rounded-none lg:bg-transparent lg:p-0">{aside}</div>
+            <div className="mobile-sticky-form sticky bottom-0 z-40 mx-auto w-full max-w-xl rounded-t-xl bg-[#0B1017] p-2 lg:static lg:mx-0 lg:max-w-xl lg:rounded-none lg:bg-transparent lg:p-0">{aside}</div>
           ) : null}
         </div>
       </section>
@@ -361,10 +379,10 @@ export function Hero({
         <div className="lg:col-span-5">
           <figure className="mx-auto w-full max-w-md sm:max-w-lg lg:max-w-none">
             <div
-              className="aspect-[4/3] overflow-hidden rounded-[20px] border"
+              className="aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] border"
               style={{
                 borderColor: "var(--color-line-soft)",
-                boxShadow: "var(--shadow-raised)",
+                boxShadow: "var(--shadow-card)",
               }}
             >
               <Image
@@ -424,7 +442,7 @@ export function StatStrip({
           {items.map((item) => (
             <div
               key={item.label}
-              className="py-6 text-center sm:px-6 sm:first:pl-0 lg:py-7 lg:text-left"
+              className="py-6 sm:px-6 sm:first:pl-0 lg:py-7"
               style={{ borderColor: "var(--color-line-soft)" }}
             >
               <dt className="sr-only">{item.label}</dt>
@@ -459,7 +477,7 @@ export function ReferralDisclosureStrip() {
       }}
     >
       <div className="container-page flex flex-col gap-2 py-3.5 text-[13.5px] sm:flex-row sm:items-center sm:justify-between">
-        <p className="flex items-start justify-center gap-2.5 text-center sm:justify-start sm:text-left">
+        <p className="flex items-start gap-2.5">
           <span style={{ color: "var(--color-accent)" }}>
             <Icon name="shield" className="mt-px h-[18px] w-[18px]" />
           </span>
@@ -521,13 +539,13 @@ export function ProjectTypeChooser({
                 className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
             ) : null}
-            <div className="flex flex-1 flex-col p-6 text-center lg:text-left">
+            <div className="flex flex-1 flex-col p-6 text-left">
               <h3 className="text-[17px] font-semibold">{service.name}</h3>
               <p className="mt-2 flex-1 text-[15px] leading-relaxed text-[color:var(--color-muted)]">
                 {service.summary}
               </p>
               <span
-                className="mt-5 inline-flex items-center justify-center gap-1.5 text-[14px] font-semibold lg:justify-start"
+                className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold"
                 style={{ color: "var(--color-accent)" }}
               >
                 {cityLabel
@@ -568,7 +586,7 @@ const ROUTING_CONTROLS = [
 export function RoutingControls() {
   return (
     <>
-      <ul className="grid gap-px overflow-hidden rounded-[16px] border sm:grid-cols-2"
+      <ul className="grid gap-px overflow-hidden rounded-[var(--radius-card)] border sm:grid-cols-2"
         style={{
           borderColor: "var(--color-line-soft)",
           backgroundColor: "var(--color-line-soft)",
@@ -580,7 +598,7 @@ export function RoutingControls() {
             className="p-6"
             style={{ backgroundColor: "var(--color-surface)" }}
           >
-            <div className="flex flex-col items-center gap-3 text-center lg:flex-row lg:items-start lg:gap-3.5 lg:text-left">
+            <div className="flex items-start gap-3 text-left lg:gap-3.5">
               <span
                 className="marker-count grid h-8 w-8 shrink-0 place-items-center rounded-full text-[13px] font-bold"
                 style={{
@@ -601,7 +619,7 @@ export function RoutingControls() {
           </li>
         ))}
       </ul>
-      <p className="mt-6 text-center text-[13.5px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
+      <p className="mt-6 text-[13.5px] leading-relaxed text-[color:var(--color-muted)]">
         These are routing controls only. They are not a verification of any
         provider&apos;s license, insurance, or workmanship, and they are not a
         warranty, an endorsement, or a substitute for your own checks. Confirm
@@ -616,7 +634,7 @@ export function RoutingControls() {
 
 export function ProjectExamples() {
   return (
-    <div className="card p-7 text-center lg:text-left">
+    <div className="card p-7">
       <p className="eyebrow-plain">PHOTOGRAPHY POLICY</p>
       <h3 className="mt-3 text-2xl font-semibold">
         Concept imagery for reference — verified portfolios on request.
@@ -653,7 +671,7 @@ export function HowMatchingWorks() {
   return (
     <ol className="grid gap-5 md:grid-cols-3">
       {STEPS.map((step, index) => (
-        <li key={step.verb} className="card flex h-full flex-col p-6 text-center lg:text-left">
+        <li key={step.verb} className="card flex h-full flex-col p-6">
           <span
             className="text-[30px] font-extrabold leading-none tracking-tight md:text-[34px]"
             style={{ color: "var(--color-accent)" }}
@@ -661,7 +679,7 @@ export function HowMatchingWorks() {
             {String(index + 1).padStart(2, "0")}
           </span>
           <span
-            className="mx-auto mt-4 block h-px w-10 lg:mx-0"
+            className="mt-4 block h-px w-10"
             style={{ backgroundColor: "var(--color-line)" }}
             aria-hidden="true"
           />
@@ -691,7 +709,7 @@ export function DecisionSupport({
 }) {
   return (
     <div
-      className="divide-y overflow-hidden rounded-[16px] border"
+      className="divide-y overflow-hidden rounded-[var(--radius-card)] border"
       style={{ borderColor: "var(--color-line-soft)", backgroundColor: "var(--color-surface)" }}
     >
       {items.map((item) => (
@@ -742,12 +760,7 @@ export function FaqSection({
         <details
           key={faq.question}
           name={name}
-          className="group overflow-hidden rounded-[14px]"
-          style={{
-            backgroundColor: "#121816",
-            border: "1px solid rgba(95, 227, 168, 0.16)",
-            boxShadow: "0 8px 20px rgba(0, 0, 0, 0.18)",
-          }}
+          className="group card overflow-hidden"
         >
           <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-semibold md:px-6">
             <span className="flex-1 text-left text-[16px]">{faq.question}</span>
@@ -780,7 +793,7 @@ export function AdjacentAreas({
 }) {
   if (locations.length === 0) {
     return (
-      <div className="card p-6 text-center lg:text-left">
+      <div className="card p-6">
         <p className="font-semibold">Lancaster only, for now</p>
         <p className="mt-2.5 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
           Additional South Carolina areas are added one at a time, and only

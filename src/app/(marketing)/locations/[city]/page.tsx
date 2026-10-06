@@ -158,11 +158,11 @@ export default async function LocationPage({ params }: { params: Params }) {
           width={900}
           height={491}
           sizes="(min-width: 1024px) 80rem, 100vw"
-          className="mb-8 h-56 w-full rounded-[18px] object-cover md:h-72"
+          className="mb-8 h-56 w-full rounded-[12px] object-cover md:h-72"
         />
         <ul className="grid gap-5 lg:grid-cols-3">
           {location.localEvidence.map((item, index) => (
-            <li key={item} className="card p-6 text-center lg:text-left">
+            <li key={item} className="card p-6">
               <span
                 className="mx-auto grid h-8 w-8 place-items-center rounded-full text-[13px] font-bold lg:mx-0"
                 style={{

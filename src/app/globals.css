@@ -14,35 +14,87 @@
   --font-mono: var(--font-geist-sans), sans-serif;
   --font-serif: var(--font-geist-sans), sans-serif;
 
-  --color-page: #f2f5f3;
-  --color-section: #eaf0ec;
-  --color-subtle: #6b7873;
-  --color-on-accent: #ffffff;
-  --color-surface: #ffffff;
-  --color-raised: #ffffff;
-  --color-ink: #0c1310;
-  --color-muted: #4d5a54;
-  --color-line: #b7c3bc;
-  --color-line-soft: #dde5e0;
-  --color-accent: #0e7a4c;
-  --color-accent-hover: #0a613b;
-  --color-accent-soft: #e0f3e9;
-  --color-danger: #b01d1d;
+  /* ---------------------------------------------------------------- palette
+   *
+   * Three families, nothing else:
+   *
+   *   1. WARM NEUTRALS  page / section / surface / line
+   *      Concrete is a warm grey material, so the page runs on a warm off
+   *      white rather than the blue-white every template ships with. The
+   *      neutrals used to carry a green tint (#f2f5f3) inherited from the
+   *      accent, which made the whole site read as one washed out hue.
+   *
+   *   2. DEEP NAVY CHARCOAL  ink / band
+   *      Primary text and every "heavy" surface (footer, CTA band, photo
+   *      scrims) share one near-black with a blue bias. Warm paper against a
+   *      cool near-black is what gives the page its depth; it is also the
+   *      pairing architecture and building trades have used in print forever.
+   *
+   *   3. ONE ACCENT  a single deep emerald, reserved for action
+   *      The wordmark ships a mint #0FD287 that cannot change. A deep emerald
+   *      is the same hue two stops down: it reads as the logo's serious
+   *      sibling, carries white text at 6.6:1, and stays legible as link text
+   *      at 6.0:1 on the page. Mint survives only ON the dark bands, where it
+   *      is the logo colour doing logo work.
+   *
+   * Everything else is a tint of those three. No fourth hue, no gradients
+   * beyond the photo scrims, no colour that is not doing a job. */
 
-  --radius-card: 14px;
+  --color-page: #f6f4f1; /* warm off-white: the page itself */
+  --color-section: #eeebe5; /* one step deeper, for alternating bands */
+  --color-surface: #ffffff; /* clean white: cards and content areas */
+  --color-raised: #ffffff;
+
+  --color-ink: #141a22; /* deep navy charcoal: headings and body */
+  --color-muted: #55606e; /* neutral grey: secondary copy (5.8:1 on page) */
+  --color-subtle: #66707d; /* micro labels; still clears AA at 4.6:1 */
+
+  --color-line: #cfcac2; /* warm separator */
+  --color-line-soft: #e4e0d9; /* hairline, the default card edge */
+  /* Form controls need a boundary a user can actually see: 3.3:1 against
+     white, where the decorative hairline above sits at 1.3:1. */
+  --color-line-field: #948c80;
+
+  --color-accent: #0b6b45;
+  --color-accent-hover: #09573a;
+  --color-accent-soft: #e6f0ea; /* quiet accent wash for chips and hovers */
+  --color-on-accent: #ffffff;
+  --color-danger: #a8231d;
+
+  /* The filled button's colour, deliberately held OUT of the rebinding that
+     the dark bands do to --color-accent. Accent *text* has to lighten on
+     navy to stay legible; the primary button must not, or the site ends up
+     with an emerald CTA on paper and a mint one on the CTA band. One primary
+     colour, every section, is the whole point. */
+  --color-accent-fill: #0b6b45;
+  --color-accent-fill-hover: #09573a;
+  --color-on-accent-fill: #ffffff;
+
+  /* The dark bands: footer, CTA, photo scrims. One colour, used everywhere,
+     so the heavy surfaces read as the same material. */
+  --color-band: #10161f;
+  --color-band-deep: #0b1017; /* seam colour where a band meets the page */
+  --color-band-ink: #f4f6f8;
+  --color-band-muted: #a8b3c0;
+  --color-band-line: rgba(255, 255, 255, 0.14);
+  --color-band-accent: #4ed29a; /* the logo mint, doing logo work on dark */
+
+  /* Tighter than before. Large radii read as "app", small ones as "print";
+     a local trade site wants the second. Two values only. */
+  --radius-card: 12px;
   --radius-control: 10px;
 
-  /* Softer, wider elevation reads as premium rather than boxed in. */
-  --shadow-card: 0 1px 2px rgba(12, 19, 16, 0.04),
-    0 4px 14px rgba(12, 19, 16, 0.05);
-  --shadow-raised: 0 18px 44px rgba(12, 19, 16, 0.13),
-    0 4px 12px rgba(12, 19, 16, 0.06);
-  /* Footer runs as a dark band in light mode, an industry convention that
-     anchors the page without touching the brand palette. */
-  --color-footer-bg: #0c1310;
-  --color-footer-ink: #f3f7f4;
-  --color-footer-muted: #9fb0a8;
-  --color-footer-line: #24312b;
+  /* Shadows are a whisper. Structure comes from the hairline and the paper
+     colour change, not from elevation. */
+  --shadow-card: 0 1px 2px rgba(16, 24, 34, 0.05);
+  --shadow-raised: 0 12px 28px rgba(16, 24, 34, 0.1),
+    0 2px 6px rgba(16, 24, 34, 0.05);
+
+  /* Footer is the dark band, bound through so the two can never drift. */
+  --color-footer-bg: var(--color-band);
+  --color-footer-ink: var(--color-band-ink);
+  --color-footer-muted: var(--color-band-muted);
+  --color-footer-line: rgba(255, 255, 255, 0.12);
 }
 
 @layer theme {
@@ -51,28 +103,36 @@
   }
 }
 
+/* Dark mode is the same three families inverted: the navy becomes the paper,
+   the warm neutrals become the ink, and the accent lifts just far enough to
+   carry on a dark surface without turning into the neon mint it used to be
+   (#25d98f, which glowed against everything around it). */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-page: #0b100d;
-    --color-section: #0e1712;
-    --color-surface: #141c17;
-    --color-raised: #182019;
-    --color-ink: #f3f7f4;
-    --color-muted: #aab8b0;
-    --color-subtle: #718078;
-    --color-line: #26352e;
-    --color-line-soft: #26352e;
-    --color-accent: #25d98f;
-    --color-accent-hover: #20c982;
-    --color-accent-soft: #14312450;
-    --color-on-accent: #06100b;
-    --color-danger: #ff8f8f;
-    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 14px rgba(0, 0, 0, 0.3);
-    --shadow-raised: 0 18px 44px rgba(0, 0, 0, 0.55);
-    --color-footer-bg: #0e1612;
-    --color-footer-ink: #f5f9f6;
-    --color-footer-muted: #a8b5ae;
-    --color-footer-line: #24312b;
+    --color-page: #0c1117;
+    --color-section: #10161e;
+    --color-surface: #141b24;
+    --color-raised: #19212b;
+    --color-ink: #eceff3;
+    --color-muted: #a3aebc;
+    --color-subtle: #8b96a4;
+    --color-line: #28323f;
+    --color-line-soft: #222b37;
+    --color-line-field: #3b4756;
+    --color-accent: #3fc98a;
+    --color-accent-hover: #35b87c;
+    --color-accent-soft: rgba(63, 201, 138, 0.14);
+    --color-on-accent: #04140c;
+    --color-accent-fill: #3fc98a;
+    --color-accent-fill-hover: #35b87c;
+    --color-on-accent-fill: #04140c;
+    --color-danger: #ff9b95;
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.45);
+    --shadow-raised: 0 14px 32px rgba(0, 0, 0, 0.55),
+      0 2px 6px rgba(0, 0, 0, 0.4);
+    --color-band: #0e141c;
+    --color-band-deep: #090d13;
+    --color-footer-line: rgba(255, 255, 255, 0.1);
   }
 }
 
@@ -87,6 +147,10 @@
     color: var(--color-ink);
     font-family: var(--font-sans);
     font-feature-settings: "cv11", "ss01";
+    /* Paragraphs across the site set their own leading; this is the floor for
+       everything that does not, and 1.6 is the readable end of the range for
+       Geist at 15-16px. */
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     /* `overflow-x: hidden` on body makes it a scrolling box, which in several
@@ -110,22 +174,48 @@
     border-radius: 4px;
   }
 
+  /* Inline links. Colour is left to the component (the footer, the dark
+     bands and body copy each need their own), but the underline is set once
+     here: the browser default sits on the baseline and cuts the descenders
+     of g, y and p, which is the small thing that makes body copy look
+     untended. Offset it and let the weight come from the typeface. */
+  :where(a) {
+    text-underline-offset: 0.18em;
+    text-decoration-thickness: from-font;
+  }
+
+  /* Headings.
+   *
+   * Two changes from before, both about restraint. Weight came down from 800
+   * to 700: at display sizes Geist's 800 closes up the counters and reads as
+   * shouting, where 700 keeps the authority and the letterforms. Tracking
+   * came in from -0.045em to -0.028em: the old value was tight enough that
+   * "Concrete Service" lost the gaps between words at hero size. The scale
+   * below is a 1.25 ratio, so h1 / h2 / h3 sit in a deliberate relationship
+   * instead of three unrelated clamps. */
   h1,
   h2,
-  h3 {
-    letter-spacing: -0.022em;
+  h3,
+  h4 {
     text-wrap: balance;
-    letter-spacing: -0.03em;
     font-weight: 700;
+    letter-spacing: -0.022em;
+    line-height: 1.2;
   }
 
   h1 {
-    letter-spacing: -0.045em;
-    font-weight: 800;
+    letter-spacing: -0.028em;
+    line-height: 1.07;
   }
 
   p {
     text-wrap: pretty;
+  }
+
+  /* Links inside running copy. Buttons and nav opt out by setting their own
+     colour, so this only ever catches real prose links. */
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-accent) 22%, transparent);
   }
 
   summary::-webkit-details-marker {
@@ -151,15 +241,42 @@
     }
   }
 
-  /* CTA band over a photograph. Rebinding the surface tokens keeps every
-     existing utility inside the band readable without touching its markup. */
+  /* Any band that runs dark: the CTA, the photo sections, the hero. Rebinding
+     the surface tokens keeps every existing utility inside the band readable
+     without touching its markup.
+     
+     These all pull from --color-band, so the footer, the CTA, and every photo
+     scrim are literally the same navy. That single fact is most of what makes
+     the page feel like one designed object rather than a stack of sections. */
   .cta-photo {
-    --color-ink: #f3f7f4;
-    --color-muted: #cfdbd5;
-    --color-line: rgba(255, 255, 255, 0.22);
+    --color-ink: var(--color-band-ink);
+    --color-muted: var(--color-band-muted);
+    --color-line: var(--color-band-line);
+    --color-line-soft: var(--color-band-line);
+    --color-subtle: var(--color-band-muted);
+    --color-surface: rgba(255, 255, 255, 0.08);
+    /* Accent TEXT lifts to the logo mint here (9.5:1 on navy, where the paper
+       emerald manages 2.8:1 and the step numerals were unreadable). The
+       filled button is unaffected -- it reads --color-accent-fill. */
+    --color-accent: var(--color-band-accent);
+    --color-accent-hover: var(--color-band-accent);
+    --color-accent-soft: rgba(255, 255, 255, 0.1);
     /* The base color is the scrim color, so the band is already the right
        shade before the photograph decodes and there is no flash. */
-    background-color: #0d1110;
+    background-color: var(--color-band);
+    color: var(--color-band-ink);
+  }
+
+  /* Secondary buttons sitting on a dark band: outlined in white rather than
+     in the page's warm hairline, which disappears against navy. */
+  .cta-photo .btn-secondary {
+    border-color: rgba(255, 255, 255, 0.28);
+  }
+
+  .cta-photo .btn-secondary:hover {
+    border-color: var(--color-band-accent);
+    color: var(--color-band-accent);
+    background-color: rgba(255, 255, 255, 0.1);
   }
 
   /* The CTA photograph itself is a layer rendered by the CtaBand component;
@@ -182,127 +299,122 @@
      scrim under a 40% fade composites to an effective 70%, which is what
      clears the 4.5:1 AA floor on the body copy. The copy always sits inside
      the plateau (it starts 36px in, past the 22px ramp), so text contrast is
-     identical to before. */
+     identical to before. Only the hue moved, from the old green-black to the
+     band navy. */
   .cta-photo-fade {
     background-image: linear-gradient(
       to bottom,
-      rgba(13, 17, 16, 0.68) 0,
-      rgba(13, 17, 16, 0.4) 22px,
-      rgba(13, 17, 16, 0.4) calc(100% - 22px),
-      rgba(13, 17, 16, 0.68) 100%
+      rgba(11, 16, 23, 0.68) 0,
+      rgba(11, 16, 23, 0.4) 22px,
+      rgba(11, 16, 23, 0.4) calc(100% - 22px),
+      rgba(11, 16, 23, 0.68) 100%
     );
   }
 
   /* --------------------------------------------------------------- header */
 
-  /* The header is a dark translucent bar in BOTH color schemes -- the same
-     convention .footer-band already uses. Without rebinding, light mode puts
-     its near-black ink (#0c1310) and its dark-ink wordmark onto that dark bar,
-     which leaves the nav and logo all but invisible over a hero photo. The
-     accent pair is swapped to the dark-scheme values so filled and hover
-     states still read against the bar. */
+  /* The bar is frosted glass at ~50%, and in light mode it is now LIGHT glass
+     rather than the dark slab it used to be.
+     
+     Why it flipped. A dark 50% bar over a light page is a contradiction you
+     cannot design your way out of: half of a near-black tint over warm paper
+     composites to a flat mid grey, so the bar read as a muddy slab sitting on
+     top of the site instead of part of it, and every nav label had to be
+     propped up with a heavy backdrop dim to stay legible. Light glass over a
+     light page is the honest version -- at rest it is the page colour, one
+     shade brighter, and what scrolls under it actually shows through.
+
+     Legibility works the mirror image of the old bar. The ink is the page's
+     navy charcoal, so the danger is a DARK backdrop sliding under the glass
+     (the hero photo, the CTA band, the footer). `brightness(1.8)` lifts that
+     backdrop before the tint lands, which holds the nav at:
+
+       over white / the page .............. 16.7:1
+       over the hero photograph ............ 6.1:1
+       over the navy CTA band .............. 5.3:1
+       over the dark-mode page ............. 5.0:1
+
+     TUNING. What you see through the glass is the product of the two values,
+     not the alpha alone: transmission = (1 - alpha) x brightness. Lowering
+     the brightness while raising the alpha by the same factor is a change you
+     cannot see. Below about brightness(1.6) the nav starts failing AA over
+     the darkest photo bands. */
   .header-band {
-    --color-ink: #f3f7f4;
-    --color-muted: #cfdbd5;
-    --color-line: rgba(255, 255, 255, 0.28);
-    --color-surface: rgba(255, 255, 255, 0.1);
-    --color-accent: #25d98f;
-    --color-accent-hover: #20c982;
-    --color-accent-soft: rgba(255, 255, 255, 0.14);
-    --color-on-accent: #06100b;
+    /* Translucent white so the outlined phone button reads as glass too. */
+    --color-surface: rgba(255, 255, 255, 0.62);
+    --color-line: rgba(20, 26, 34, 0.18);
     color: var(--color-ink);
 
-    /* Frosted glass, 60%.
+    background-color: rgba(246, 244, 241, 0.5);
+    -webkit-backdrop-filter: blur(18px) saturate(150%) brightness(1.8);
+    backdrop-filter: blur(18px) saturate(150%) brightness(1.8);
+    /* Hairline, not a rule: enough to separate the glass from the content
+       sliding beneath it, invisible when nothing is behind it. */
+    border-bottom-color: rgba(20, 26, 34, 0.1);
+  }
 
-       The tint is the same #0d1110 the bar has always used, now at 40% alpha,
-       so whatever scrolls underneath stays visible through it. `blur` is what
-       turns that translucency into glass rather than a plain see-through
-       panel; `saturate` puts back the color the blur washes out.
+  /* Nav labels sit in full ink rather than the muted grey. On glass the
+     backdrop is doing enough to the contrast already; a second, lighter text
+     colour on top of that is where legibility goes to die. */
+  .header-band .btn-ghost {
+    color: var(--color-ink);
+  }
 
-       `brightness` is the load bearing part and must not be dropped. The bar
-       carries light ink (#f3f7f4) and light-grey nav labels (#cfdbd5), which a
-       bare tint cannot support once a near-white section (#f2f5f3, white
-       cards) scrolls under it: the glass composites to a mid grey and the nav
-       falls to ~2.2:1, well under the 4.5:1 AA floor. Dimming the backdrop
-       before the tint lands holds the nav at ~4.8:1 and the ink at ~6.3:1 in
-       that worst case, while dark backdrops (the hero photo, dark mode) are
-       already below the dim and so look unchanged.
-
-       TUNING. How much of the page actually shows through is the product of
-       the two, not the alpha alone:
-
-         transmission = (1 - tint alpha) x brightness = 0.60 x 0.55 = 0.33
-
-       Raising the alpha while dropping the brightness by the same factor is a
-       no-op you can see nothing of, and raising transmission much past ~0.33
-       walks the nav labels under AA (0.40 x 0.60 = 0.36 puts them at 4.3:1).
-       Move both numbers together and check that product.
-
-       Height, spacing, and layout are untouched -- this is background only. */
-    background-color: rgba(13, 17, 16, 0.4);
-    -webkit-backdrop-filter: blur(16px) saturate(130%) brightness(0.55);
-    backdrop-filter: blur(16px) saturate(130%) brightness(0.55);
-    /* Hairline highlight along the bottom edge: enough to separate the glass
-       from the content sliding beneath it, not enough to read as a rule. */
-    border-bottom-color: rgba(255, 255, 255, 0.12);
+  /* Dark mode keeps a dark bar, for the same reason light mode now keeps a
+     light one: the glass should be made of the same material as the page
+     behind it. Same construction, inverted, and the dim goes back under 1. */
+  @media (prefers-color-scheme: dark) {
+    .header-band {
+      --color-surface: rgba(255, 255, 255, 0.07);
+      --color-line: rgba(255, 255, 255, 0.2);
+      background-color: rgba(12, 17, 23, 0.5);
+      -webkit-backdrop-filter: blur(18px) saturate(140%) brightness(0.6);
+      backdrop-filter: blur(18px) saturate(140%) brightness(0.6);
+      border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
   }
 
   /* No backdrop-filter (older engines): there is no blur to carry the
-     separation, so the tint goes nearly opaque rather than leaving light ink
+     separation, so the tint goes nearly opaque rather than leaving ink
      floating on a washed out bar. */
   @supports not (
     (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
   ) {
     .header-band {
-      background-color: rgba(13, 17, 16, 0.94);
+      background-color: rgba(246, 244, 241, 0.96);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .header-band {
+        background-color: rgba(12, 17, 23, 0.96);
+      }
     }
   }
 
   /* Same contract as .process-step-card: users who ask for less transparency
-     get the original solid bar. */
+     get a solid bar. */
   @media (prefers-reduced-transparency: reduce) {
     .header-band {
-      background-color: #0d1110;
+      background-color: var(--color-page);
       -webkit-backdrop-filter: none;
       backdrop-filter: none;
     }
   }
 
-  /* The wordmark ships as dark ink, so the dark bar needs the light variant. */
-  .header-band .logo-light {
-    display: none;
-  }
-
-  .header-band .logo-dark {
-    display: block;
-  }
-
-  /* The dropdown panels are opaque cards sitting below the bar, so they step
-     back out of the dark-bar tokens and follow the page color scheme again. */
+  /* The bar rebinds --color-surface to translucent white so the outlined
+     phone button reads as glass. The menu panels (ServicesMenu, MobileMenu)
+     are .card, which reads the same variable -- left alone they would turn
+     into 62% panels with the page scrolling visibly through the links. They
+     get the opaque raised surface back explicitly. */
   .header-band .card {
-    --color-ink: #0c1310;
-    --color-muted: #4d5a54;
-    --color-line: #b7c3bc;
-    --color-surface: #ffffff;
-    --color-accent: #0e7a4c;
-    --color-accent-hover: #0a613b;
-    --color-accent-soft: #e0f3e9;
-    --color-on-accent: #ffffff;
-    color: var(--color-ink);
+    background-color: var(--color-raised);
+    border-color: var(--color-line-soft);
+    box-shadow: var(--shadow-raised);
   }
 
-  @media (prefers-color-scheme: dark) {
-    .header-band .card {
-      --color-ink: #f3f7f4;
-      --color-muted: #aab8b0;
-      --color-line: #26352e;
-      --color-surface: #141c17;
-      --color-accent: #25d98f;
-      --color-accent-hover: #20c982;
-      --color-accent-soft: #14312450;
-      --color-on-accent: #06100b;
-    }
-  }
+  /* The wordmark variant is no longer forced here. A light bar wants the
+     dark-ink lockup, a dark bar wants the light-ink one, and that is exactly
+     what the global .logo-light / .logo-dark rules already do per scheme. */
 
   /* --------------------------------------------------------------- footer */
 
@@ -315,6 +427,14 @@
     --color-muted: var(--color-footer-muted);
     --color-line: var(--color-footer-line);
     --color-line-soft: var(--color-footer-line);
+    /* Column labels are eyebrow-plain, which reads --color-subtle; the page
+       value is a mid grey that sinks into navy at 3.2:1. */
+    --color-subtle: var(--color-band-muted);
+    /* The deep emerald is tuned for white paper and goes muddy on navy, so
+       inside the band the accent becomes the logo mint -- the same swap the
+       photo bands make. 9.5:1 here. */
+    --color-accent: var(--color-band-accent);
+    --color-accent-hover: var(--color-band-accent);
     background-color: var(--color-footer-bg);
     color: var(--color-footer-ink);
     border-top: 1px solid var(--color-footer-line);
@@ -335,6 +455,10 @@
 
   /* ------------------------------------------------------------- surfaces */
 
+  /* A card is white paper on a warm page with a hairline edge. That contrast
+     -- #ffffff against #f6f4f1 -- is what separates it, which is why the
+     shadow can stay at a single 5% pass instead of the double drop shadow
+     every card component ships with. */
   .card {
     background-color: var(--color-surface);
     border: 1px solid var(--color-line-soft);
@@ -349,14 +473,17 @@
       transform 180ms cubic-bezier(0.2, 0.7, 0.3, 1);
   }
 
+  /* Hover is a lift of two pixels and a warmer edge. The old state added a
+     full accent border plus an inset accent ring plus a three pixel jump,
+     which made every card flash green under the cursor. */
   .card-interactive:hover {
-    border-color: var(--color-accent);
-    box-shadow: var(--shadow-raised), 0 0 0 1px var(--color-accent) inset;
-    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--color-accent) 45%, transparent);
+    box-shadow: var(--shadow-raised);
+    transform: translateY(-2px);
   }
 
   .card-interactive:active {
-    transform: translateY(-1px);
+    transform: translateY(0);
     box-shadow: var(--shadow-card);
   }
 
@@ -366,7 +493,7 @@
   }
 
   .card-interactive:hover img {
-    transform: scale(1.045);
+    transform: scale(1.03);
   }
 
   /* The arrow affordance on a card slides forward with the hover. */
@@ -398,34 +525,39 @@
 
   /* -------------------------------------------------------------- controls */
 
+  /* Three ranks, one shape. Filled emerald for the single most important
+     action on a view, outlined for the alternative, bare for navigation.
+     Weight is 600 rather than 700: at 16px the heavier cut made every button
+     shout at the same volume as the headings. */
   .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     min-height: 52px;
-    padding-inline: 1.6rem;
+    padding-inline: 1.5rem;
     border-radius: var(--radius-control);
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.2;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.006em;
     text-align: center;
     transition: background-color 140ms ease, border-color 140ms ease,
-      box-shadow 140ms ease;
+      color 140ms ease, box-shadow 140ms ease;
   }
 
+  /* No coloured glow. The old primary carried an 18px emerald halo that
+     marked it as a template button from across the room; a filled 6.6:1
+     emerald does not need help being seen. */
   .btn-primary {
-    background-color: var(--color-accent);
-    color: var(--color-on-accent);
-    box-shadow: 0 1px 2px rgba(12, 19, 16, 0.12),
-      0 6px 18px color-mix(in srgb, var(--color-accent) 28%, transparent);
+    background-color: var(--color-accent-fill);
+    color: var(--color-on-accent-fill);
+    box-shadow: 0 1px 2px rgba(16, 24, 34, 0.14);
   }
 
   .btn-primary:hover {
-    background-color: var(--color-accent-hover);
-    box-shadow: var(--shadow-raised),
-      0 0 0 4px color-mix(in srgb, var(--color-accent) 22%, transparent);
+    background-color: var(--color-accent-fill-hover);
+    box-shadow: 0 2px 6px rgba(16, 24, 34, 0.18);
   }
 
   .btn:active {
@@ -438,10 +570,12 @@
     }
   }
 
+  /* 1px, not 2px. A two pixel outline on a 52px control is a toy button; the
+     hairline is what makes it read as considered. */
   .btn-secondary {
     background-color: var(--color-surface);
     color: var(--color-ink);
-    border: 2px solid var(--color-line);
+    border: 1px solid var(--color-line);
   }
 
   .btn-secondary:hover {
@@ -453,7 +587,7 @@
   .btn-ghost {
     min-height: 48px;
     padding-inline: 0.9rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--color-muted);
   }
 
@@ -467,7 +601,10 @@
     min-height: 48px;
     padding: 0.7rem 0.9rem;
     border-radius: var(--radius-control);
-    border: 2px solid var(--color-line);
+    /* Controls get their own, darker boundary. The decorative hairline is
+       1.3:1 on white, which is fine for a card edge and not fine for the
+       thing a user has to find and click. */
+    border: 1px solid var(--color-line-field);
     background-color: var(--color-raised);
     color: var(--color-ink);
     font-size: 0.9375rem;
@@ -475,7 +612,11 @@
   }
 
   .field:hover:not(:focus) {
-    border-color: color-mix(in srgb, var(--color-accent) 45%, var(--color-line));
+    border-color: color-mix(
+      in srgb,
+      var(--color-accent) 55%,
+      var(--color-line-field)
+    );
   }
 
   input[type="radio"],
@@ -486,7 +627,8 @@
   .field:focus {
     border-color: var(--color-accent);
     background-color: var(--color-surface);
-    box-shadow: 0 0 0 4px var(--color-accent-soft);
+    box-shadow: 0 0 0 3px
+      color-mix(in srgb, var(--color-accent) 18%, transparent);
     outline: none;
   }
 
@@ -496,59 +638,66 @@
 
   /* ------------------------------------------------------------ typography */
 
+  /* The eyebrow is the one piece of ornament on the page, so it is drawn
+     thin: a 1px rule at 20px instead of a 2px rule at 28px, and tracking
+     opened from 0.14em to 0.16em so 12px uppercase has room to breathe. */
   .eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
-    font-size: 0.8125rem;
+    gap: 0.625rem;
+    font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--color-accent);
   }
 
   .eyebrow::before {
     content: "";
-    width: 1.75rem;
-    height: 2px;
+    width: 1.25rem;
+    height: 1px;
     background-color: currentColor;
-    opacity: 0.6;
+    opacity: 0.7;
   }
 
   .eyebrow-plain {
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--color-muted);
+    color: var(--color-subtle);
   }
 
+  /* Display scale, roughly a 1.25 ratio between steps. Both sizes came down
+     at the top end (h1 3.375rem -> 3rem) because the old maximum filled a
+     1440px hero with three lines of 54px type and left the page no room to
+     breathe above the fold. */
   .h2 {
-    font-size: clamp(2rem, 1.6rem + 1.4vw, 2.375rem);
-    line-height: 1.12;
+    font-size: clamp(1.75rem, 1.45rem + 1.3vw, 2.25rem);
+    line-height: 1.15;
     font-weight: 700;
-    letter-spacing: -0.035em;
+    letter-spacing: -0.024em;
   }
 
   .h1 {
-    font-size: clamp(2.25rem, 1.9rem + 1.6vw, 3.375rem);
-    line-height: 1.05;
-    font-weight: 800;
-    letter-spacing: -0.045em;
+    font-size: clamp(2.125rem, 1.75rem + 1.75vw, 3rem);
+    line-height: 1.07;
+    font-weight: 700;
+    letter-spacing: -0.028em;
   }
 
   .lede {
-    font-size: 1.125rem;
-    line-height: 1.6;
+    font-size: 1.0625rem;
+    line-height: 1.65;
     color: var(--color-muted);
     /* Keep the reading measure comfortable instead of letting intro copy run
-       the full container width. */
-    max-width: 46rem;
+       the full container width. ~70 characters at this size. */
+    max-width: 42rem;
   }
 
   @media (min-width: 768px) {
     .lede {
-      font-size: 1.25rem;
+      font-size: 1.1875rem;
     }
   }
 
@@ -595,21 +744,16 @@
     );
   }
 
-  /* Short centered rule used to separate stacked sections. */
+  /* Short centered rule used to separate stacked sections. It was a 2px
+     emerald gradient glowing across half the viewport -- the single most
+     template-looking element on the page. A 1px neutral hairline does the
+     same job and lets the section's paper colour carry the rhythm. */
   .divider-center {
     border: 0;
-    height: 2px;
-    width: clamp(200px, 48%, 520px);
+    height: 1px;
+    width: 100%;
     margin-inline: auto;
-    border-radius: 2px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      color-mix(in srgb, var(--color-accent) 70%, transparent) 30%,
-      var(--color-accent) 50%,
-      color-mix(in srgb, var(--color-accent) 70%, transparent) 70%,
-      transparent
-    );
+    background-color: var(--color-line-soft);
   }
 
   /* Brand logo: the wordmark ships in a dark-ink and a light-ink variant so
@@ -647,9 +791,23 @@
   }
 }
 
-/* Elevated cards over the concrete process photography band. */
-.process-step-card { background: rgba(10, 17, 13, 0.78); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-color: rgba(95, 227, 168, 0.24); box-shadow: 0 12px 32px rgba(0,0,0,.18); }
-@media (prefers-reduced-transparency: reduce) { .process-step-card { background: var(--color-surface); backdrop-filter: none; -webkit-backdrop-filter: none; } }
+/* Elevated cards over the concrete process photography band. Navy glass with
+   a white hairline, matching the header's construction -- the old mint border
+   was the only green outline on the site and read as a stray highlight. */
+.process-step-card {
+  background: rgba(11, 16, 23, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+}
+@media (prefers-reduced-transparency: reduce) {
+  .process-step-card {
+    background: var(--color-band);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
 
 /* Keep sticky mobile actions clear of device home indicators. */
 .mobile-sticky-form {

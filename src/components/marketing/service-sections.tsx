@@ -44,7 +44,7 @@ export function Breadcrumbs({
             <span
               aria-current="page"
               className={overlay ? "font-medium" : "text-[color:var(--color-ink)]"}
-              style={overlay ? { color: "#ffffff" } : undefined}
+              style={overlay ? { color: "var(--color-band-ink)" } : undefined}
             >
               {item.name}
             </span>
@@ -116,7 +116,7 @@ export function ServiceHero({
             className="rounded-full px-3 py-1.5 text-sm font-medium"
             style={{
               backgroundColor: "rgba(255,255,255,0.12)",
-              color: "#ffffff",
+              color: "var(--color-band-ink)",
             }}
           >
             {type}
@@ -158,7 +158,7 @@ export function KeyFacts({ facts }: { facts: { label: string; value: string }[] 
           {facts.map((fact) => (
             <div
               key={fact.label}
-              className="flex h-full flex-col rounded-[12px] border p-4 text-center lg:text-left"
+              className="flex h-full flex-col rounded-[12px] border p-4"
               style={{ borderColor: "var(--color-line-soft)" }}
             >
               <dt className="eyebrow justify-center before:hidden lg:justify-start lg:before:block">
@@ -181,11 +181,13 @@ export function InPageNav({ items }: { items: { id: string; label: string }[] })
       aria-label="On this page"
       className="sticky top-16 z-50 isolate border-b"
       style={{
-        borderColor: "var(--color-line)",
+        borderColor: "var(--color-line-soft)",
         // Fully opaque: a translucent bar lets the headings scrolling beneath
         // it show through, which reads as broken text.
         backgroundColor: "var(--color-page)",
-        boxShadow: "0 8px 18px rgba(0, 0, 0, 0.18)",
+        // A hairline and a 6% drop. The old 18% shadow was heavier than
+        // anything else on the page and made the strip look detached.
+        boxShadow: "0 1px 0 var(--color-line-soft), 0 6px 14px rgba(16, 24, 34, 0.06)",
       }}
     >
       <div className="container-page">
@@ -235,13 +237,13 @@ export function ScopeColumns({
         ))}
       </ul>
       <aside
-        className="rounded-[16px] border p-5 text-center lg:text-left"
+        className="rounded-[12px] border p-5"
         style={{ borderColor: "var(--color-line)" }}
       >
         <p className="font-semibold">Not routed under this service</p>
         <ul className="mt-3 space-y-2.5 text-sm text-[color:var(--color-muted)]">
           {outOfScope.map((item) => (
-            <li key={item} className="text-center lg:text-left">
+            <li key={item} className="text-left">
               {item}
             </li>
           ))}
@@ -340,7 +342,7 @@ export function CostTable({
   rows: { factor: string; impact: string; note: string }[];
 }) {
   return (
-    <div className="max-w-full overflow-x-auto rounded-[16px] border" style={{ borderColor: "var(--color-line)" }}>
+    <div className="max-w-full overflow-x-auto rounded-[12px] border" style={{ borderColor: "var(--color-line)" }}>
       <table className="w-full min-w-[34rem] border-collapse text-left text-sm">
         <caption className="sr-only">
           Factors that affect the price quoted by the contractor
@@ -395,7 +397,7 @@ export function PrepColumns({
 }) {
   return (
     <div className="grid gap-6 md:grid-cols-2">
-      <div className="card p-6 text-center lg:text-left">
+      <div className="card p-6">
         <p className="font-semibold">Before the estimate visit</p>
         <ul className="mt-4 space-y-3 text-sm">
           {checklist.map((item) => (
@@ -414,7 +416,7 @@ export function PrepColumns({
           ))}
         </ul>
       </div>
-      <div className="card p-6 text-center lg:text-left">
+      <div className="card p-6">
         <p className="font-semibold">Ask the contractor, not us</p>
         <ul className="mt-4 space-y-3 text-sm">
           {questions.map((item) => (
@@ -462,7 +464,7 @@ export function RelatedServices({
         <li key={service.slug}>
           <Link
             href={`${basePath}/${service.slug}`}
-            className="card card-interactive flex h-full flex-col p-5 text-center lg:text-left"
+            className="card card-interactive flex h-full flex-col p-5"
           >
             <h3 className="font-semibold">{service.name}</h3>
             <p className="mt-1.5 flex-1 text-sm text-[color:var(--color-muted)]">

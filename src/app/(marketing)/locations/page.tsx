@@ -50,7 +50,7 @@ export default function LocationsPage() {
         title="Where we route concrete referrals today"
         lead="Every area below has a participating provider who has confirmed in writing that they accept work there."
       >
-        <div className="mx-auto max-w-prose space-y-6 text-center lg:mx-0 lg:text-left">
+        <div className="max-w-prose space-y-6">
           <div>
             <h3 className="text-[22px] font-semibold leading-snug">
               How an area gets added

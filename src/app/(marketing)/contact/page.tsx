@@ -49,7 +49,7 @@ export default function ContactPage() {
           aria-hidden="true"
         />
         <div
-          className="absolute inset-0 -z-10 bg-gradient-to-b from-[#070b09]/85 via-[#070b09]/75 to-[#070b09]/85 lg:bg-gradient-to-r lg:from-[#070b09]/92 lg:via-[#070b09]/78 lg:to-[#070b09]/35"
+          className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0B1017]/88 via-[#0B1017]/78 to-[#0B1017]/88 lg:bg-gradient-to-r lg:from-[#0B1017]/92 lg:via-[#0B1017]/80 lg:to-[#0B1017]/38"
           aria-hidden="true"
         />
         <div className="container-page py-12 text-center md:py-16 lg:text-left">
@@ -71,7 +71,7 @@ export default function ContactPage() {
       <Section>
         <h2 className="sr-only">Contact details and referral request</h2>
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
-          <div className="text-center lg:text-left">
+          <div className="text-left">
             <p className="lede mx-auto max-w-prose lg:mx-0">
               We are the referral service, not the contractor. Our referral team can tell
               you whether we have approved coverage for your area and what

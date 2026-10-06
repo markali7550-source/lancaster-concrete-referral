@@ -153,11 +153,11 @@ export default async function ComboPage({ params }: { params: Params }) {
           <div className="min-w-0 lg:col-span-7 xl:col-span-8">
             <section className="scroll-mt-36 py-12 md:py-20">
               <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">{`${serviceRecord.name} · ${location.city}`}</p>
-              <h2 className="h2 mt-4 text-center md:text-left">
+              <h2 className="h2 mt-4">
                 What we see on {location.city}{" "}
                 {serviceRecord.shortName.toLowerCase()} requests
               </h2>
-              <div className="mx-auto mt-8 max-w-prose space-y-6 text-center lg:mx-0 lg:text-left">
+              <div className="mt-8 max-w-prose space-y-6">
                 {record.localBody.map((block) => (
                   <div key={block.heading}>
                     <h3 className="text-[22px] font-semibold leading-snug">
@@ -193,7 +193,7 @@ export default async function ComboPage({ params }: { params: Params }) {
               style={{ borderColor: "var(--color-line-soft)" }}
             >
               <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Process</p>
-              <h2 className="h2 mt-4 text-center md:text-left">
+              <h2 className="h2 mt-4">
                 How the project usually runs here
               </h2>
               <p className="lede mx-auto mt-4 max-w-prose text-center md:mx-0 md:text-left">
@@ -210,7 +210,7 @@ export default async function ComboPage({ params }: { params: Params }) {
               style={{ borderColor: "var(--color-line-soft)" }}
             >
               <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Pricing</p>
-              <h2 className="h2 mt-4 text-center md:text-left">What drives the price locally</h2>
+              <h2 className="h2 mt-4">What drives the price locally</h2>
               <p className="lede mx-auto mt-4 max-w-prose text-center md:mx-0 md:text-left">
                 We publish no figures. These are the variables that move the
                 number on a {location.city} property.
@@ -225,7 +225,7 @@ export default async function ComboPage({ params }: { params: Params }) {
               style={{ borderColor: "var(--color-line-soft)" }}
             >
               <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Preparation</p>
-              <h2 className="h2 mt-4 text-center md:text-left">Get more out of the estimate visit</h2>
+              <h2 className="h2 mt-4">Get more out of the estimate visit</h2>
               <div className="mt-8">
                 <PrepColumns
                   checklist={serviceRecord.prepChecklist}
@@ -239,7 +239,7 @@ export default async function ComboPage({ params }: { params: Params }) {
               style={{ borderColor: "var(--color-line-soft)" }}
             >
               <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">How routing works</p>
-              <h2 className="h2 mt-4 text-center md:text-left">Before your request is passed on</h2>
+              <h2 className="h2 mt-4">Before your request is passed on</h2>
               <div className="mt-8">
                 <RoutingControls />
               </div>
@@ -260,7 +260,7 @@ export default async function ComboPage({ params }: { params: Params }) {
                 fallbackDisplay={site.phoneDisplay}
                 fallbackE164={site.phoneE164}
               />
-              <div className="card mt-4 p-5 text-center lg:text-left">
+              <div className="card mt-4 p-5">
                 <p className="text-sm font-semibold">
                   Checking coverage first?
                 </p>

@@ -102,7 +102,7 @@ export default function ServicesPage() {
 
       <Section tone="soft" eyebrow="Compare" title="Scope at a glance">
         <div
-          className="max-w-full overflow-x-auto rounded-[16px] border"
+          className="max-w-full overflow-x-auto rounded-[12px] border"
           style={{ borderColor: "var(--color-line)", backgroundColor: "var(--color-surface)" }}
         >
           <table className="w-full min-w-[42rem] border-collapse text-left text-sm">
@@ -149,7 +149,7 @@ export default function ServicesPage() {
       </Section>
 
       <Section eyebrow="Out of scope" title="What we decline outright">
-        <div className="card p-6 text-center lg:text-left">
+        <div className="card p-6">
           <p className="text-[color:var(--color-muted)]">
             Foundation repair, structural engineering assessments, retaining
             walls, slab jacking, material supply, and commercial contracts are

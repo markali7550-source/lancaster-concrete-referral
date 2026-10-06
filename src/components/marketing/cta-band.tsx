@@ -63,15 +63,13 @@ export function CtaBand({
 
   return (
     <section
-      className="cta-photo relative isolate my-[40px] h-auto overflow-hidden py-[36px] last:mb-0"
-      style={
-        imageSrc
-          ? undefined
-          : {
-              background:
-                "linear-gradient(135deg, #07120d 0%, #123d2b 58%, #0b100d 100%)",
-            }
-      }
+      className="cta-photo relative isolate my-[40px] h-auto overflow-hidden py-[44px] last:mb-0"
+      /* Flat band navy, not the three-stop green gradient this used to
+         carry. The CTA earns its prominence from being the only full-bleed
+         dark surface between two warm paper sections, plus the single filled
+         emerald button on it -- a gradient on top of that was the site
+         shouting over itself. */
+      style={imageSrc ? undefined : { backgroundColor: "var(--color-band)" }}
     >
       {imageSrc ? (
         <>
@@ -80,7 +78,7 @@ export function CtaBand({
             style={{ backgroundImage: `url("${imageSrc}")` }}
             aria-hidden="true"
           />
-          <div className="absolute inset-0 z-10 bg-[#0D1110]/50" aria-hidden="true" />
+          <div className="absolute inset-0 z-10 bg-[#0B1017]/55" aria-hidden="true" />
           {/* The fade's plateau is 40% rather than fully transparent. The 50%
               overlay on its own measures 2.63:1 on the body copy over these
               photographs; 50% under 40% composites to an effective 70%, which
@@ -99,7 +97,9 @@ export function CtaBand({
 
       <div className="container-page relative z-30 flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
         <div className="max-w-xl">
-          <h2 className="text-xl font-semibold md:text-2xl">{title}</h2>
+          <h2 className="text-[1.375rem] font-semibold tracking-[-0.022em] md:text-[1.625rem]">
+            {title}
+          </h2>
           <p className="mt-2 text-[15px] leading-relaxed text-[color:var(--color-muted)]">
             {body}
           </p>
