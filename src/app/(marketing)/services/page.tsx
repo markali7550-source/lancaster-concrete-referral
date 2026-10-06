@@ -172,8 +172,6 @@ export default function ServicesPage() {
         title="Not sure which service fits?"
         body="Describe the project in the quote form and we will route it on the closest match, or call and our referral team will tell you whether we cover it at all."
         showFormLink={false}
-        imageSrc="/images/cta-services-index.webp"
-        imageAlt="Finished residential concrete driveway sweeping up to a suburban home"
       />
 
     </>

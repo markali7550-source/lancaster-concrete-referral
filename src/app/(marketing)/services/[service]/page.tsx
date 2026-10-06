@@ -72,11 +72,9 @@ function descriptionFor(nameLower: string, projectNoun: string) {
  * Every map below is a secondary section, and no two service pages share an
  * entry, so each of these pages still renders a distinct set of photos.
  *
- * One deliberate exception: cta-service-driveways.webp is also the home page
- * hero. The 2026-10-05 image audit replaced a batch of unusable construction
- * photos, and this verified-real driveway shot was the best available image for
- * the most-seen slot on the site. Home and /services/concrete-driveways are far
- * apart in the normal browsing path, so the repeat is an accepted trade.
+ * The closing CTA band is no longer configured here. Every CTA band on the site
+ * now renders one shared photo, defined as CTA_IMAGE in
+ * components/marketing/cta-band.tsx. Pass imageSrc/imageAlt only to override it.
  */
 const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-driveways": { src: "/images/driveway-drainage-detail.webp", alt: "Representative driveway edge with drainage pitch and lawn border" },
@@ -92,13 +90,6 @@ const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-repair": { src: "/images/repair-process-trowel.webp", alt: "Representative hand trowel finishing a concrete repair patch" },
 };
 
-/** Closing CTA photography, one dedicated file per service page. */
-const SERVICE_CTA_IMAGES: Record<string, { src: string; alt: string }> = {
-  "concrete-driveways": { src: "/images/cta-service-driveways.webp", alt: "Representative wide residential concrete driveway beside a brick home" },
-  "concrete-patios": { src: "/images/cta-service-patios.webp", alt: "Representative stamped concrete patio with outdoor furniture" },
-  "concrete-slabs": { src: "/images/cta-service-slabs.webp", alt: "Representative concrete shed pad in a fenced backyard" },
-  "concrete-repair": { src: "/images/cta-service-repair.webp", alt: "Representative cracked and settled concrete driveway slab with spalled, uneven edges" },
-};
 
 export async function generateMetadata({
   params,
@@ -387,8 +378,6 @@ export default async function ServicePage({ params }: { params: Params }) {
 
 
       <ServiceCtaBand
-        imageSrc={SERVICE_CTA_IMAGES[service.slug]?.src}
-        imageAlt={SERVICE_CTA_IMAGES[service.slug]?.alt}
       />
 
     </>

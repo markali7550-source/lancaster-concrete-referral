@@ -21,9 +21,9 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-driveways",
     state: "published",
-    localImage: "/images/local-driveways-lancaster.webp",
+    localImage: "/images/cta-combo-driveways.webp",
     localImageAlt:
-      "Finished concrete driveway on a narrow Lancaster SC lot meeting the street at a poured apron",
+      "Wide residential concrete driveway running up to the attached garage of a suburban home",
     localBody: [
       {
         heading: "Two kinds of request",

@@ -35,13 +35,34 @@ import { site } from "@/lib/env";
 const CTA_BACKGROUND_LAYER =
   "absolute inset-0 bg-cover bg-center bg-no-repeat z-0 bg-scroll md:bg-fixed";
 
+/**
+ * The one photograph behind every closing CTA on the site.
+ *
+ * Every page used to carry its own CTA photo, keyed by service or location.
+ * They are now deliberately the same image: the band is a ~207px letterbox, so
+ * only a thin middle slice of any photograph survives the crop, and most of
+ * those per-page shots put blank slab or a bright garage door in exactly that
+ * slice. One image also means the scrim can be tuned against one known
+ * photograph instead of the brightest of a dozen.
+ *
+ * This file was chosen on measurements, not taste. Its left third -- the side
+ * the copy sits on -- is naturally dark (pine trunks and pine straw rather
+ * than sky or white cladding), which is why the body copy clears 4.5:1 here
+ * while the alternatives measured 3.4-3.7:1 behind the same scrim.
+ *
+ * Deliberately not used anywhere else on the site, so no page shows it twice.
+ */
+const CTA_IMAGE = "/images/local-driveways-lancaster.webp";
+const CTA_IMAGE_ALT =
+  "Curved concrete driveway sweeping up to a brick ranch home set among tall pines";
+
 export function CtaBand({
   title,
   body,
   showFormLink = true,
   tone = "accent",
-  imageSrc,
-  imageAlt,
+  imageSrc = CTA_IMAGE,
+  imageAlt = CTA_IMAGE_ALT,
   actionLabel = "Request a referral",
   actionIcon = false,
 }: {
@@ -51,7 +72,11 @@ export function CtaBand({
   showFormLink?: boolean;
   /** "section" uses the neutral alternate background instead of the mint tint. */
   tone?: "accent" | "section";
-  /** Optional CTA photograph. Pass only when that asset is not used elsewhere. */
+  /**
+   * Overrides the shared CTA photograph. Every page currently takes the
+   * default; pass this only for a band that genuinely needs its own image,
+   * and check it against the letterbox crop first.
+   */
   imageSrc?: string;
   imageAlt?: string;
   /** Service detail pages use title case and a trailing arrow. */

@@ -352,3 +352,80 @@ Possibly AI **5** · Unclear **3** · Newly generated, documented **6**.
 The count of synthetic images barely moves. What changed is that none of them
 now depict a physically impossible construction operation, and the two most-seen
 slots on the site hold real photographs.
+
+## Addendum 2 — CTA bands consolidated onto one image (2026-10-06)
+
+Every closing CTA band on the site now renders a **single shared photograph**
+instead of one keyed per service or location. The image is defined once as
+`CTA_IMAGE` in `src/components/marketing/cta-band.tsx`; `imageSrc`/`imageAlt`
+remain as props so any future page can override it, but no page does today.
+
+**Chosen image:** `/images/local-driveways-lancaster.webp` — "Curved concrete
+driveway sweeping up to a brick ranch home set among tall pines."
+
+The band is a ~207px letterbox crop, so the choice was made on how each
+candidate behaves *inside that crop*, not on how it looks whole. Candidates were
+ranked by the brightness of the left third, where the heading and body copy sit:
+
+| Candidate | Native | Upscale to cover | Left-column p95 | Verdict |
+|---|---|---|---|---|
+| `cta-how-it-works.webp` | 1440×810 | 1.11× | 190 | Best resolution, but white garage doors land directly behind the copy |
+| `cta-services-index.webp` | 1100×614 | 1.45× | 191 | Bright mid-ground |
+| `cta-location-lancaster.webp` | 900×491 | 1.78× | 200 | Brightest of the set |
+| **`local-driveways-lancaster.webp`** | 907×605 | 1.59× | 171 | **Chosen** — the only candidate with a naturally dark left third |
+
+**Accepted trade-off:** the chosen file is upscaled 1.59× to cover a 1440px
+viewport. In a 207px band under a scrim this is not visible, and it was judged a
+smaller cost than text sitting on a bright garage door.
+
+### Accessibility result
+
+Consolidation removed the worst-case band outright. Measured in dark mode at
+1440px, body copy against the rendered band:
+
+| Page | Before (own image) | After (shared image) |
+|---|---|---|
+| Home | 5.85:1 p95 · 5.03:1 worst pixel | unchanged — it already used this photo |
+| `/services/concrete-repair` | 4.58:1 p95 · **3.97:1 worst pixel (failed AA)** | 5.77:1 p95 · **4.95:1 worst pixel** |
+
+Every CTA band on the site now clears 4.5:1 at **every pixel**, not just at p95.
+
+### Files removed (8)
+
+`cta-combo-patios` · `cta-combo-slabs` · `cta-how-it-works` ·
+`cta-location-lancaster` · `cta-service-patios` · `cta-service-repair` ·
+`cta-service-slabs` · `cta-services-index` (all `.webp`, all in
+`public/images/`). Nothing references them; they would otherwise have shipped as
+dead weight. On-disk WebP count: **47 → 39**.
+
+One of the eight, `cta-service-repair.webp`, was an image generated during the
+first addendum, so **5 of those 6 generated images remain in use**, not 6.
+
+### Corrections to Addendum 1
+
+The "Accepted trade-off" section above states three real photos are each used in
+two places. Consolidation resolved two of them and changed the third:
+
+- `cta-service-driveways.webp` — now used **once** (home hero only).
+- `cta-combo-repair.webp` — now used **once** (`/how-it-works` process band).
+- `cta-combo-driveways.webp` — still used twice, but in different slots: it is
+  now the driveways combo `localImage` and the matching card on
+  `/locations/lancaster-sc`, having been moved off the home CTA.
+
+That last move was required: the shared CTA photo was previously the driveways
+combo `localImage`, which would have made that page show the same photo twice.
+Its alt text was rewritten to describe the image that now fills the slot. **No
+page shows the same photograph twice**, and the two stale source comments that
+described the old per-slug CTA scheme were rewritten.
+
+### Revised tally
+
+Real photographic **14** · Professional stock **2** · Likely AI **8** ·
+Possibly AI **4** · Unclear **3** · Generated and documented **5**.
+
+### Unchanged
+
+Geist Sans, the colour system, layout, phone number, email, routes, schema and
+all legal and referral wording are byte-identical. Imagery remains presented as
+concept/reference imagery and is still not claimed to be completed work by any
+provider.

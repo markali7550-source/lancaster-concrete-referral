@@ -39,16 +39,19 @@ import {
 export const dynamicParams = false;
 
 /*
- * The four location-service combo pages share one template, so the process and
- * CTA bands are keyed by service slug to keep every rendered section on its own
- * dedicated image file rather than repeating a single shared band photo. That
- * still holds between the combo pages themselves -- no two of them share a file.
+ * The four location-service combo pages share one template, so the process band
+ * is keyed by service slug and no two combo pages render the same process photo.
  *
- * One entry is now also used once on a top-level page, following the 2026-10-05
- * image audit: cta-combo-repair.webp backs the process band on /how-it-works.
- * It is a verified-real photo promoted into a slot whose original was unusable.
- * The home page closing CTA takes local-driveways-lancaster.webp, which is this
- * city/service pair's localImage in content/location-services.ts.
+ * The closing CTA band is deliberately NOT keyed by slug any more: every CTA
+ * band on the site renders one shared photo (CTA_IMAGE in
+ * components/marketing/cta-band.tsx). Because that shared photo is the one that
+ * used to be the driveways localImage, content/location-services.ts points the
+ * driveways pair at cta-combo-driveways.webp instead, so no page shows the same
+ * photo twice.
+ *
+ * One process entry is also used once on a top-level page, following the
+ * 2026-10-05 image audit: cta-combo-repair.webp backs the process band on
+ * /how-it-works -- a verified-real photo promoted into an unusable slot.
  */
 const COMBO_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-driveways": { src: "/images/process-combo-driveways.webp", alt: "Independent contractor inspecting the formed edge of a new residential driveway slab" },
@@ -57,12 +60,6 @@ const COMBO_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-repair": { src: "/images/process-combo-repair.webp", alt: "Damaged driveway section saw-cut out and removed down to the compacted gravel base" },
 };
 
-const COMBO_CTA_IMAGES: Record<string, { src: string; alt: string }> = {
-  "concrete-driveways": { src: "/images/cta-combo-driveways.webp", alt: "Finished residential concrete driveway running up to an attached garage" },
-  "concrete-patios": { src: "/images/cta-combo-patios.webp", alt: "Backyard concrete patio bordered by lawn and mature planting" },
-  "concrete-slabs": { src: "/images/cta-combo-slabs.webp", alt: "Level concrete slab poured beside a residential property" },
-  "concrete-repair": { src: "/images/cta-combo-repair.webp", alt: "Weathered concrete walkway section prepared for a repair pour" },
-};
 
 export function generateStaticParams() {
   return publishedLocationServices.map((record) => ({
@@ -336,8 +333,6 @@ export default async function ComboPage({ params }: { params: Params }) {
         tone="section"
         title={`${serviceRecord.name} in ${location.city}, SC`}
         body="One request, one eligible independent contractor. If nobody approved for your area can take it, we will tell you plainly."
-        imageSrc={COMBO_CTA_IMAGES[serviceRecord.slug]?.src}
-        imageAlt={COMBO_CTA_IMAGES[serviceRecord.slug]?.alt}
       />
 
     </>

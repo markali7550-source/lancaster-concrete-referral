@@ -119,8 +119,6 @@ export default function HowItWorksPage() {
         title="Ready to start?"
         body="Submit a request and we will route it to one eligible independent contractor, or call the referral team first to check coverage."
         showFormLink={false}
-        imageSrc="/images/cta-how-it-works.webp"
-        imageAlt="Wide residential concrete driveway and walkway in afternoon daylight"
       />
 
     </>
