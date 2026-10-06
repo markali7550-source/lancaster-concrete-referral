@@ -33,9 +33,12 @@ export default function ThankYouPage() {
           center and not by us pretending to be the crew. Here is exactly what
           happens next.
         </p>
+        {/* Rows are start-aligned. justify-center here only bit the one step
+            whose text fits on a single line, centring that row and pushing its
+            number 42px right of the other three. */}
         <ol className="mt-8 space-y-4">
           {NEXT_STEPS.map((step, index) => (
-            <li key={step} className="card flex justify-center gap-4 p-6 text-left">
+            <li key={step} className="card flex gap-4 p-6 text-left">
               <span
                 className="grid h-8 w-8 shrink-0 place-items-center rounded-full font-semibold"
                 style={{
