@@ -29,7 +29,11 @@ import {
   ServiceDisclosureBlock,
 } from "@/components/marketing/service-detail-sections";
 import { serviceDetails } from "@/content/service-details";
-import { getService, publishedServices } from "@/content/services";
+import {
+  getService,
+  publishedServices,
+  type ServiceSectionId,
+} from "@/content/services";
 import { publishedLocationServices } from "@/content/location-services";
 import { OUT_OF_AREA_POSTAL_CODE, getLocation, serviceAreaOptions } from "@/content/locations";
 import { site } from "@/lib/env";
@@ -97,13 +101,23 @@ export default async function ServicePage({ params }: { params: Params }) {
 
   const detail = serviceDetails[service.slug];
 
+  /*
+   * Built from the service's own sectionOrder so the sub-nav always matches
+   * the order the sections are actually rendered in. Hardcoding it meant the
+   * nav claimed every page ran scope -> options -> process -> cost -> prepare,
+   * which stopped being true once the pages were allowed to differ.
+   */
+  const mainNavLabels: Record<ServiceSectionId, string> = {
+    scope: "What's covered",
+    options: "Options",
+    process: "Process",
+    cost: "What drives cost",
+    prepare: "Prepare",
+  };
+
   const navItems = [
-    { id: "scope", label: "What's covered" },
+    ...service.sectionOrder.map((id) => ({ id, label: mainNavLabels[id] })),
     { id: "more-information", label: "More information" },
-    { id: "options", label: "Options" },
-    { id: "process", label: "Process" },
-    { id: "cost", label: "What drives cost" },
-    { id: "prepare", label: "Prepare" },
     { id: "quote-form", label: "Get a quote" },
     { id: "faq", label: "FAQ" },
   ];
@@ -151,76 +165,95 @@ export default async function ServicePage({ params }: { params: Params }) {
         <div className="grid gap-6 lg:grid-cols-12 lg:gap-12">
           {/* ---------------------------------------------------- Main column */}
           <div className="min-w-0 lg:col-span-7 xl:col-span-8">
-            <section id="scope" className="scroll-mt-36 py-12 md:py-20">
-              <p className="eyebrow flex">Scope</p>
-              <h2 className="h2 mt-4">
-                What we route under {service.name.toLowerCase()}
-              </h2>
-              <p className="lede mt-4 max-w-prose">
-                {service.summary}
-              </p>
-              <div className="mt-8">
-                <ScopeColumns
-                  covered={service.covered}
-                  outOfScope={service.outOfScope}
-                />
-              </div>
-            </section>
+            {service.sectionOrder.map((id, index) => {
+              /*
+               * Rendered from the service's own sectionOrder, not a fixed
+               * sequence, so the four pages lead with whatever actually
+               * matters for that job. The first section carries no top rule
+               * and the rest are separated by one, wherever they land.
+               */
+              const first = index === 0;
+              const cls = first
+                ? "scroll-mt-36 py-12 md:py-20"
+                : "scroll-mt-36 border-t py-12 md:py-20";
+              const style = first
+                ? undefined
+                : { borderColor: "var(--color-line-soft)" };
 
-            <section id="options" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="eyebrow flex">Specification</p>
-              <h2 className="h2 mt-4">
-                {service.headings.options}
-              </h2>
-              <p className="lede mt-4 max-w-prose">
-                {service.optionsLead}
-              </p>
-              <div className="mt-8">
-                <OptionsList options={service.options} />
-              </div>
-            </section>
+              if (id === "scope") {
+                return (
+                  <section key={id} id="scope" className={cls} style={style}>
+                    <p className="eyebrow flex">Scope</p>
+                    <h2 className="h2 mt-4">
+                      What we route under {service.name.toLowerCase()}
+                    </h2>
+                    <p className="lede mt-4 max-w-prose">{service.summary}</p>
+                    <div className="mt-8">
+                      <ScopeColumns
+                        covered={service.covered}
+                        outOfScope={service.outOfScope}
+                      />
+                    </div>
+                  </section>
+                );
+              }
 
-            <section id="process" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="eyebrow flex">Process</p>
-              <h2 className="h2 mt-4">
-                {service.headings.process}
-              </h2>
-              <p className="lede mt-4 max-w-prose">
-                Durations below are typical ranges reported by partners, not
-                commitments. Your contractor sets the actual schedule.
-              </p>
-              <div className="mt-8">
-                <Timeline phases={service.process} />
-              </div>
-            </section>
+              if (id === "options") {
+                return (
+                  <section key={id} id="options" className={cls} style={style}>
+                    <p className="eyebrow flex">Specification</p>
+                    <h2 className="h2 mt-4">{service.headings.options}</h2>
+                    <p className="lede mt-4 max-w-prose">
+                      {service.optionsLead}
+                    </p>
+                    <div className="mt-8">
+                      <OptionsList options={service.options} />
+                    </div>
+                  </section>
+                );
+              }
 
-            <section id="cost" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="eyebrow flex">Pricing</p>
-              <h2 className="h2 mt-4">
-                {service.headings.cost}
-              </h2>
-              <p className="lede mt-4 max-w-prose">
-                We publish no prices, ranges, or per foot figures. Doing so
-                would be a guess on a project nobody has seen. What we can do is
-                tell you which variables move the number.
-              </p>
-              <div className="mt-8">
-                <CostTable rows={service.costFactors} />
-              </div>
-            </section>
+              if (id === "process") {
+                return (
+                  <section key={id} id="process" className={cls} style={style}>
+                    <p className="eyebrow flex">Process</p>
+                    <h2 className="h2 mt-4">{service.headings.process}</h2>
+                    <p className="lede mt-4 max-w-prose">
+                      {service.processLead}
+                    </p>
+                    <div className="mt-8">
+                      <Timeline phases={service.process} />
+                    </div>
+                  </section>
+                );
+              }
 
-            <section id="prepare" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="eyebrow flex">Preparation</p>
-              <h2 className="h2 mt-4">
-                {service.headings.prepare}
-              </h2>
-              <div className="mt-8">
-                <PrepColumns
-                  checklist={service.prepChecklist}
-                  questions={service.quoteQuestions}
-                />
-              </div>
-            </section>
+              if (id === "cost") {
+                return (
+                  <section key={id} id="cost" className={cls} style={style}>
+                    <p className="eyebrow flex">Pricing</p>
+                    <h2 className="h2 mt-4">{service.headings.cost}</h2>
+                    <p className="lede mt-4 max-w-prose">{service.costLead}</p>
+                    <div className="mt-8">
+                      <CostTable rows={service.costFactors} />
+                    </div>
+                  </section>
+                );
+              }
+
+              return (
+                <section key={id} id="prepare" className={cls} style={style}>
+                  <p className="eyebrow flex">Preparation</p>
+                  <h2 className="h2 mt-4">{service.headings.prepare}</h2>
+                  <div className="mt-8">
+                    <PrepColumns
+                      checklist={service.prepChecklist}
+                      questions={service.quoteQuestions}
+                    />
+                  </div>
+                </section>
+              );
+            })}
 
             {/*
               The four routing controls used to be repeated in full here, on
