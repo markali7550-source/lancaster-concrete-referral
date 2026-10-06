@@ -78,7 +78,23 @@ export function CtaBand({
             style={{ backgroundImage: `url("${imageSrc}")` }}
             aria-hidden="true"
           />
-          <div className="absolute inset-0 z-10 bg-[#0B1017]/55" aria-hidden="true" />
+          {/* Flat scrim. Unchanged on mobile, where the copy centres over the
+              whole band and there is nowhere to hide it, and much lighter from
+              lg up, where the side wash below takes over behind the text. */}
+          <div
+            className="absolute inset-0 z-10 bg-[#0B1017]/55 lg:bg-[#0B1017]/28"
+            aria-hidden="true"
+          />
+          {/* Same trick the heroes use (PHOTO_SIDE_WASH): put the darkness
+              where the words are instead of over the whole photograph. The
+              copy sits left and the buttons right, so this deepens the left,
+              releases the right, and lets the band read as a photograph again
+              rather than a grey panel. Desktop only -- the mobile layout
+              centres its copy, where a left-weighted wash does nothing. */}
+          <div
+            className="pointer-events-none absolute inset-0 z-10 hidden lg:block bg-gradient-to-r from-[#0B1017]/72 via-[#0B1017]/32 to-transparent"
+            aria-hidden="true"
+          />
           {/* The fade's plateau is 40% rather than fully transparent. The 50%
               overlay on its own measures 2.63:1 on the body copy over these
               photographs; 50% under 40% composites to an effective 70%, which
