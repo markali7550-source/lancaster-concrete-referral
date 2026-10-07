@@ -125,16 +125,25 @@ export default function HomePage() {
       </Section>
 
         {/*
+          Concrete texture background, requested by the owner at this exact
+          path. It is not a generated image: it is a crop of the broom
+          finished slab in cta-combo-driveways.webp, taken at native
+          resolution with no upscaling, so it is a real concrete surface.
+          A flat even texture is deliberate here -- the three step cards sit
+          on top, and a busier scene competed with the numerals.
+
+          process-band.webp is kept in public/ rather than deleted. Swapping
+          this one `src` back restores the street pour if that is preferred.
+
           `seamlessEdges` is set here and nowhere else. This band sits between
           two flat sections, so its top and bottom read as hard horizontal
-          lines where the photograph stops. Ramping both edges to the page
-          colour dissolves them. Every other photo band keeps the standard
-          55% vignette.
+          lines where the image stops. Ramping both edges to the page colour
+          dissolves them. Every other photo band keeps the standard vignette.
         */}
         <Section
           backgroundImage={{
-            src: "/process-band.webp",
-            alt: "Contractor's pickup and portable mixer parked at a residential street where a concrete walkway and apron sit in timber forms, with excavated red clay heaped alongside",
+            src: "/images/process-texture-bg.webp",
+            alt: "",
           }}
           seamlessEdges
           eyebrow="Process"
