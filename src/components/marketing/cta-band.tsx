@@ -15,10 +15,17 @@ import { site } from "@/lib/env";
  * only, leaving the drift in place on desktop. Both are now gone for the same
  * reason: the background simply scrolls with its section.
  *
- * Do not reintroduce `bg-fixed` here. It also forced body to use
- * `overflow-x: clip` rather than `hidden`, because `hidden` turns body into a
- * scrolling box and breaks viewport-locked backgrounds. Anchoring the image
- * removes that coupling entirely.
+ * A single instance can still opt into the viewport-locked look via the
+ * `fixedBackground` prop (currently: the Lancaster city page closing band, at
+ * the owner's explicit request). That is the parallax effect, not a freeze:
+ * the image holds still against the viewport while the band -- and its copy --
+ * scroll past it, so a different slice of the photo shows through the band at
+ * every scroll offset. Do not set it on the shared default path, and do not
+ * copy it to other bands without re-checking the letterbox crop at several
+ * scroll offsets: the visible slice is no longer the one the contrast audit
+ * measured. It also forced body to use `overflow-x: clip` rather than `hidden`,
+ * because `hidden` turns body into a scrolling box and breaks viewport-locked
+ * backgrounds; that coupling returns for as long as any instance stays fixed.
  *
  * Layers, back to front:
  *
@@ -62,6 +69,7 @@ export function CtaBand({
   imageAlt = CTA_IMAGE_ALT,
   actionLabel = "Request a referral",
   actionIcon = false,
+  fixedBackground = false,
 }: {
   title: string;
   body: string;
@@ -79,6 +87,12 @@ export function CtaBand({
   /** Service detail pages use title case and a trailing arrow. */
   actionLabel?: string;
   actionIcon?: boolean;
+  /**
+   * Viewport-locks this band's photograph (`background-attachment: fixed`).
+   * Instance-level opt-in only -- see the header comment for what this
+   * actually does to the visible slice while scrolling.
+   */
+  fixedBackground?: boolean;
 }) {
   void tone;
   void imageAlt;
@@ -96,8 +110,19 @@ export function CtaBand({
       {imageSrc ? (
         <>
           <div
-            className={CTA_BACKGROUND_LAYER}
-            style={{ backgroundImage: `url("${imageSrc}")` }}
+            className={
+              fixedBackground
+                ? "absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+                : CTA_BACKGROUND_LAYER
+            }
+            style={
+              fixedBackground
+                ? {
+                    backgroundImage: `url("${imageSrc}")`,
+                    backgroundAttachment: "fixed",
+                  }
+                : { backgroundImage: `url("${imageSrc}")` }
+            }
             aria-hidden="true"
           />
           {/* Flat scrim. Unchanged on mobile, where the copy centres over the
