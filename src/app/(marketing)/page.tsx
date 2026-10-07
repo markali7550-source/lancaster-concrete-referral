@@ -101,8 +101,8 @@ export default function HomePage() {
         locationCue="Lancaster County, South Carolina"
         h1="Connect With a Local Concrete Service Provider in Lancaster, SC"
         summary="Tell us what you need and where the property is. We will match your request with one eligible independent concrete service provider serving your area."
-          imageSrc="/home-hero-street-pour.webp"
-          imageAlt="Contractor's pickup and portable mixer parked at a residential street where a concrete walkway and apron sit in timber forms, with excavated red clay heaped alongside"
+        imageSrc="/home-hero.webp"
+        imageAlt="Broom finished concrete front walkway and entry steps leading to the porch of a two-story home"
         overlay
       />
 
@@ -124,13 +124,11 @@ export default function HomePage() {
         </p>
       </Section>
 
-        {/*
-          This band's photograph became the home page hero, where a general
-          construction scene is required. Nothing else in the library is a
-          process photograph that is not already assigned, so the band runs on
-          type rather than borrowing an unrelated image.
-        */}
         <Section
+          backgroundImage={{
+            src: "/process-band.webp",
+            alt: "Contractor's pickup and portable mixer parked at a residential street where a concrete walkway and apron sit in timber forms, with excavated red clay heaped alongside",
+          }}
           eyebrow="Process"
         title="Three steps, no obligation"
         lead="You are never passed to a call center, and your details are never sold to a list of providers who bid against each other."

@@ -138,22 +138,21 @@ export default function ServicesPage() {
       </Section>
 
       {/*
-        Restores the photograph this band lost. The original
-        (process-services-index) was generated and was cut for it. This is a
-        real photograph: rough unscreeded mix sits ahead of the blade and
-        smooth wet finish behind it, the screed rides a form rail, and the
-        throttle cable routes correctly from handle to engine — the
-        material-state boundary that generated images get wrong.
+        Restored at the owner's explicit direction. I had cut this photograph
+        because the clipboard's clip does not resolve into a real mechanism
+        (see WEBSITE-AUDIT-2026-10-06). The owner reviewed that finding and
+        chose to keep the image, so it stands.
 
-        It shows placing and levelling rather than any one finished product,
-        so it does not favour driveways, patios, slabs or repair on the page
-        that lists all four. The alt claims no location.
+        It shows a provider assessing and quoting on site rather than any one
+        finished product, which matches this band's subject and does not
+        favour driveways, patios, slabs or repair on the page that lists all
+        four. The alt claims no location.
       */}
       <Section
         tone="soft"
         backgroundImage={{
-          src: "/images/process-screeding-slab.webp",
-          alt: "Worker walking a petrol powered vibrating screed across freshly poured concrete, leaving a smooth wet surface behind the blade",
+          src: "/images/process-services-index.webp",
+          alt: "Contractor in a cap writing on a clipboard while standing on a residential concrete driveway, with a work pickup parked at the kerb behind him",
         }}
         eyebrow="Process"
         title="How a request reaches an independent provider"
