@@ -137,8 +137,24 @@ export default function ServicesPage() {
         </div>
       </Section>
 
+      {/*
+        Restores the photograph this band lost. The original
+        (process-services-index) was generated and was cut for it. This is a
+        real photograph: rough unscreeded mix sits ahead of the blade and
+        smooth wet finish behind it, the screed rides a form rail, and the
+        throttle cable routes correctly from handle to engine — the
+        material-state boundary that generated images get wrong.
+
+        It shows placing and levelling rather than any one finished product,
+        so it does not favour driveways, patios, slabs or repair on the page
+        that lists all four. The alt claims no location.
+      */}
       <Section
         tone="soft"
+        backgroundImage={{
+          src: "/images/process-screeding-slab.webp",
+          alt: "Worker walking a petrol powered vibrating screed across freshly poured concrete, leaving a smooth wet surface behind the blade",
+        }}
         eyebrow="Process"
         title="How a request reaches an independent provider"
       >

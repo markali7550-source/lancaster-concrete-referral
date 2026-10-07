@@ -52,17 +52,23 @@ export function MayInclude({
 
 /* --------------------------------------------------------- ReferralSteps */
 
+/*
+  Sentence case, matching every other heading on the site ("Three steps, no
+  obligation", "Diagnosis on site", "What a repair project may include").
+  These three were Title Case, which was the only place that happened and
+  which reads as template output.
+*/
 const REFERRAL_STEPS = [
   {
-    title: "Tell Us About Your Project",
+    title: "Tell us about your project",
     body: "Submit your project details and location.",
   },
   {
-    title: "Request a Referral",
+    title: "Request a referral",
     body: "We connect your request with an independent concrete service provider serving the area.",
   },
   {
-    title: "Discuss Your Project",
+    title: "Discuss your project",
     body: "The independent provider can contact you to discuss the project, availability, and next steps.",
   },
 ] as const;
@@ -159,7 +165,7 @@ export function ServiceCtaBand({
       body={body}
       imageSrc={imageSrc}
       imageAlt={imageAlt}
-      actionLabel="Request a Referral"
+      actionLabel="Request a referral"
       actionIcon
     />
   );

@@ -1924,3 +1924,65 @@ environment variables at deploy time.
 - 30 distinct photographs, 47 placements, 0 unapproved duplicates
 - 37 WebP, none over 100 KiB, 0 unreferenced assets
 - tsc clean, 36/36 tests
+
+## 36. Services process band restored, CTA wording unified, hero verified
+
+### The /services process band has its photograph back
+
+"How a request reaches an independent provider" on `/services` had been running
+with no image since the generated `process-services-index` was cut. It now
+carries a real photograph: a worker walking a petrol vibrating screed across
+freshly poured concrete.
+
+Verified at 2x before use. The decisive tell is the material-state boundary —
+rough unscreeded mix sits ahead of the blade and smooth wet finish behind it,
+the screed rides a form rail, and the throttle cable routes correctly from
+handle to engine. Generated images reliably get that transition wrong.
+
+Free-licensed Pexels source, 1200x799, 92.0 KB WebP. It shows placing and
+levelling rather than any one finished product, so it does not favour
+driveways, patios, slabs or repair on the page that lists all four. The alt
+claims no location.
+
+Three candidates were rejected rather than used: two were shot under banana
+palms, which reads as tropical and wrong for a South Carolina audience, and
+one showed vertical column formwork rather than flatwork.
+
+### CTA wording is now consistent
+
+`service-detail-sections.tsx` passed `actionLabel="Request a Referral"`, so the
+same button read "Request a Referral" on the four service pages and "Request a
+referral" in the header, on the homepage, on location pages and on the form
+submit. Unified to sentence case.
+
+The three `REFERRAL_STEPS` headings were also Title Case — "Tell Us About Your
+Project", "Request a Referral", "Discuss Your Project" — the only place on the
+site that happened. Every other heading is sentence case. Changed to match.
+
+### The homepage hero was already correct
+
+Reported as a mismatched driveway photograph. It is not what the repository
+serves. The homepage hero is `home-hero-street-pour.webp`: a contractor's
+pickup and portable mixer parked on a residential street, with a walkway and
+apron sitting in timber forms and excavated red clay heaped alongside.
+
+Rendered live at 1366px to confirm. The H1, eyebrow and both buttons match the
+report exactly; the photograph does not, and the secondary button is white
+here against dark in the report. That combination means a stale deployment,
+not a code defect.
+
+The hero also satisfies the rule it was reported against: it is general rather
+than service-specific, showing concrete work in progress instead of a finished
+driveway, patio, slab or repair. Changing it would have introduced the very
+fault it was reported for. Left alone.
+
+### Verification
+
+18 routes x 6 widths = 108 loads.
+
+- 31 distinct photographs, 48 placements, 0 unapproved duplicates
+- each restored process photograph appears on exactly one page:
+  `/services`, `/how-it-works`, `/services/concrete-repair`
+- 0 non-200, 0 horizontal overflow, 0 console errors
+- `background-attachment: scroll` only
+- tsc clean, 36/36 tests
