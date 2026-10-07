@@ -5,31 +5,24 @@ import { site } from "@/lib/env";
 /**
  * The closing call-to-action band, shared by every page that ends in one.
  *
- * The photograph is anchored to the band and scrolls with it. It is NOT locked
- * to the viewport. An earlier version used `md:bg-fixed` on desktop, which is
- * `background-attachment: fixed`: the image paints against the viewport while
- * the band clips it, so scrolling past drags a different slice of the photo
- * through the band and the picture appears to slide, drift and reframe itself.
- * On phones the same class made iOS Safari repaint every frame, which is the
- * juddering that was reported earlier; that was patched by scrolling on mobile
- * only, leaving the drift in place on desktop. Both are now gone for the same
- * reason: the background simply scrolls with its section.
+ * Every band shows the same photograph (CTA_IMAGE below), viewport-locked via
+ * `background-attachment: fixed`: the image holds still against the viewport
+ * while the band -- and its copy -- scroll past it, so a different slice of
+ * the photo shows through the band at every scroll offset. That parallax is
+ * the owner's explicit choice, applied site-wide at their request; an earlier
+ * version scrolled the photo with the band and gave each page its own subject.
  *
- * A single instance can still opt into the viewport-locked look via the
- * `fixedBackground` prop (currently: the Lancaster city page closing band, at
- * the owner's explicit request). That is the parallax effect, not a freeze:
- * the image holds still against the viewport while the band -- and its copy --
- * scroll past it, so a different slice of the photo shows through the band at
- * every scroll offset. Do not set it on the shared default path, and do not
- * copy it to other bands without re-checking the letterbox crop at several
- * scroll offsets: the visible slice is no longer the one the contrast audit
- * measured. It also forced body to use `overflow-x: clip` rather than `hidden`,
- * because `hidden` turns body into a scrolling box and breaks viewport-locked
- * backgrounds; that coupling returns for as long as any instance stays fixed.
+ * Consequences of the fixed attachment, kept here so they are not rediscovered:
+ * it forces body to use `overflow-x: clip` rather than `hidden`, because
+ * `hidden` turns body into a scrolling box and breaks viewport-locked
+ * backgrounds; and the visible slice is no longer one crop, so the contrast
+ * audit's letterbox measurement holds only approximately across scroll offsets.
+ * iOS Safari ignores `background-attachment: fixed` and renders the photo
+ * scrolled, which is the graceful fallback, not a defect.
  *
  * Layers, back to front:
  *
- *   z-0   the photograph        scrolls with the band, at every width
+ *   z-0   the photograph        viewport-locked (fixed), at every width
  *   z-10  50% dark overlay
  *   z-20  top/bottom fade       pointer-events-none
  *   z-30  heading and buttons
@@ -43,22 +36,21 @@ const CTA_BACKGROUND_LAYER =
   "absolute inset-0 bg-cover bg-center bg-no-repeat z-0 bg-scroll";
 
 /**
- * Fallback photograph for a closing CTA band.
+ * The one photograph behind every closing CTA band on the site.
  *
- * Every service page, location page and index passes its own `imageSrc`, so a
- * patio page closes on a patio. This file is only the default for a band that
- * does not name one, which at present is the home page.
- *
- * The home page must not favour one of the four services, so the default is
- * concrete work itself rather than a finished driveway, patio, slab or repair.
+ * Every page shows this same image, at the owner's explicit request. It is a
+ * brick ranch home with a concrete driveway -- residential and service-neutral
+ * enough to close a driveway page, a patio page, or the index without favouring
+ * one service, which is what the role needs now that the photo is shared.
  *
  * The band is a letterbox of roughly 207px, so only a thin middle slice of any
- * photograph survives the crop. Check the contrast of any replacement at that
- * crop, under the copy, before trusting it.
+ * photograph survives the crop -- and with the viewport-locked attachment that
+ * slice moves as the page scrolls. Check the contrast of any replacement under
+ * the copy at several scroll offsets, not just one, before trusting it.
  */
-const CTA_IMAGE = "/images/cta-home-driveway.webp";
+const CTA_IMAGE = "/images/cta-location-lancaster.webp";
 const CTA_IMAGE_ALT =
-  "Finished broom finished concrete driveway curving up to the side entrance of a single story brick home, edged by pine straw";
+  "Brick ranch home with a concrete driveway meeting the street between red clay verges";
 
 export function CtaBand({
   title,
@@ -69,7 +61,7 @@ export function CtaBand({
   imageAlt = CTA_IMAGE_ALT,
   actionLabel = "Request a referral",
   actionIcon = false,
-  fixedBackground = false,
+  fixedBackground = true,
 }: {
   title: string;
   body: string;
@@ -89,8 +81,9 @@ export function CtaBand({
   actionIcon?: boolean;
   /**
    * Viewport-locks this band's photograph (`background-attachment: fixed`).
-   * Instance-level opt-in only -- see the header comment for what this
-   * actually does to the visible slice while scrolling.
+   * On by default, site-wide, at the owner's request -- pass false only to
+   * restore the anchored behaviour on one band. See the header comment for
+   * what the fixed attachment does to the visible slice while scrolling.
    */
   fixedBackground?: boolean;
 }) {

@@ -80,25 +80,6 @@ const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
   },
 };
 
-const SERVICE_CTA_IMAGES: Record<string, { src: string; alt: string }> = {
-  "concrete-driveways": {
-    src: "/images/cta-service-driveways.webp",
-    alt: "Finished concrete driveway running up to the attached garage of a single story brick home",
-  },
-  "concrete-patios": {
-    src: "/images/cta-service-patios.webp",
-    alt: "Stamped and colored concrete patio with outdoor furniture and a shade umbrella behind a suburban home",
-  },
-  "concrete-slabs": {
-    src: "/images/cta-service-slabs.webp",
-    alt: "Concrete shed pad with a compacted gravel border in a fenced back yard",
-  },
-  "concrete-repair": {
-    src: "/images/cta-service-repair.webp",
-    alt: "Section of failed concrete cut out and replaced beside the surviving original slab",
-  },
-};
-
 export function generateStaticParams() {
   return publishedServices.map((service) => ({ service: service.slug }));
 }
@@ -388,8 +369,6 @@ export default async function ServicePage({ params }: { params: Params }) {
       <ServiceCtaBand
         title={service.headings.cta}
         body={service.ctaLead}
-        imageSrc={SERVICE_CTA_IMAGES[service.slug]?.src}
-        imageAlt={SERVICE_CTA_IMAGES[service.slug]?.alt}
       />
 
     </>

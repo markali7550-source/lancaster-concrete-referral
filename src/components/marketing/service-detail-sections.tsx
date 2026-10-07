@@ -149,22 +149,16 @@ export function ServiceDisclosureBlock() {
 export function ServiceCtaBand({
   title,
   body,
-  imageSrc,
-  imageAlt,
 }: {
   title: string;
   /** Required, and service-specific. This used to be one hardcoded sentence,
    *  so all four service pages closed on identical copy. */
   body: string;
-  imageSrc?: string;
-  imageAlt?: string;
 }) {
   return (
     <CtaBand
       title={title}
       body={body}
-      imageSrc={imageSrc}
-      imageAlt={imageAlt}
       actionLabel="Request a referral"
       actionIcon
     />
