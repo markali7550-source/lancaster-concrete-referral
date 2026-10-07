@@ -289,17 +289,25 @@ export default async function ComboPage({ params }: { params: Params }) {
         </div>
       </div>
 
-      {/*
-          No process photograph. Every one in the library showed people and
-          tools and every one was generated, not photographed: a screed with no
-          head, a saw blade in front of its own guard, reinforcing mesh drawn as
-          a flat grid. Nothing real was available, so the band runs on type.
+        {/*
+          Owner override: reuses the concrete texture from the home process
+          band. It is an abstract surface crop with no people, tools or
+          finished product in frame, so it reads the same across every
+          service x location combination and claims no real job. Decorative,
+          so the alt is empty. The shared Section supplies the scrim, the edge
+          fade and the z-30 content layer, and it renders a next/image element
+          rather than a CSS background, so nothing is attachment-fixed and the
+          picture scrolls with the band.
         */}
         <Section
-        tone="surface"
-        eyebrow="Process"
-        title="Three steps, no obligation"
-      >
+          tone="surface"
+          backgroundImage={{
+            src: "/images/process-texture-bg.webp",
+            alt: "",
+          }}
+          eyebrow="Process"
+          title="Three steps, no obligation"
+        >
         <HowMatchingWorks />
       </Section>
 
