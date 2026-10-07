@@ -71,14 +71,15 @@ export default function HowItWorksPage() {
         <RoutingControls />
       </Section>
 
-      <Section
-        backgroundImage={{
-          src: "/images/concrete-edge-inspection.webp",
-          alt: "Worker crouching beside a freshly finished concrete pad, checking the formed edge where it meets the backfill",
-        }}
-        eyebrow="Process"
-        title="Three steps, no obligation"
-      >
+        {/*
+          No photograph. The process shot that was here showed a man crouching
+          at a slab edge with his fingers fused into the concrete — generated,
+          not photographed. Nothing real was available to replace it.
+        */}
+        <Section
+          eyebrow="Process"
+          title="Three steps, no obligation"
+        >
         <HowMatchingWorks />
       </Section>
       <Section eyebrow="Our role" title="What we are, and what we are not">

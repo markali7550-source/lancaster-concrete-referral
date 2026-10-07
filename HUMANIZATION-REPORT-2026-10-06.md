@@ -1669,3 +1669,80 @@ difference is visible in the before and after of `service-driveways`,
 - Typecheck clean, 36/36 tests pass.
 - Looked at, not just measured: home page hero, process band and CTA at desktop
   and mobile, and the driveway process band with its image removed.
+
+## 33. Inspecting every image, and what that cost
+
+The instruction was to stop auditing and actually replace. So I inspected the
+images I had not yet opened — in the previous pass I had looked closely at
+about ten of thirty-two, and three of those ten were generated.
+
+### A clear pattern
+
+Magnified, the library splits cleanly in two.
+
+**Static finished-concrete scenes hold up.** `service-driveways` has real
+weather staining, hairline cracks, tyre marks and a ragged clay edge.
+`service-patios` has coherent sling-chair frames and a working swivel base.
+`slab-formwork-pad`, `cta-service-driveways` and `how-it-works-hero` behave
+the same way. I cannot prove their origin, but nothing in them is impossible.
+
+**Every photograph containing people, tools, machinery or reinforcing mesh is
+generated.** Not "polished" — impossible:
+
+- `process-combo-patios` — the left worker's screed **has no head**. It is a
+  thin rod ending at the surface. His mate's glove fuses into his float. Both
+  men stand on the slab they are finishing.
+- `process-combo-repair` — a thin rod runs from the saw to a floating sphere
+  that is not part of any tool. The blade sits **in front of its own guard**.
+  The brand text is scrambled and the "CUT" spray marks are warped.
+- `process-combo-slabs` — the mesh is a flat grid with no wire thickness, no
+  shadow, resting directly on stone, continuing through objects that should
+  occlude it.
+- `concrete-edge-inspection` — the man's fingers **merge into the slab edge**;
+  his boot melts into the dirt.
+- `process-location-lancaster` — red clay applied along the lawn like paint,
+  with a hard unnatural boundary and repeated shrubs.
+
+### The blocker, stated plainly
+
+The rule is to replace these with real professional photography. I cannot. I
+have no licensed photo library. An image search returns paid-stock previews —
+the first page was all Dreamstime, watermarked, 500px wide, which is both
+copyright infringement and too small for a 1440px band. Generating replacements
+is what created this problem in the first place and is banned by the rules.
+
+So I applied the fallback the rules themselves specify: *if a suitable
+realistic photograph cannot be found, do not add an image.* All five were
+removed, along with three unused generated process files so they cannot be
+picked up later.
+
+### What this changed
+
+Every process band on the site is now text-only — home, how-it-works, the
+Lancaster city page and all four city-service pages. The "Local conditions"
+section lost its photograph and now runs as three columns of specific local
+notes, which lost nothing: the notes were always the content.
+
+The site keeps 27 distinct photographs across 44 placements: every hero, every
+service card, every supporting section and every CTA. What it no longer has is
+a single picture of a person pretending to do concrete work.
+
+### State after the pass
+
+- 27 distinct content images, 44 placements, **0 unapproved duplicates** at
+  1366px and 390px.
+- The only repeats are the four service chains (card, index card, service hero,
+  city card, city-service hero) and `lancaster-hero` across its card and page.
+- 0 CTA images outside CTA bands, 0 alts claiming a location, 0 broken images.
+- **CLS 0.0000 on all 18 routes at both widths.** 18/18 routes 200.
+- 35 WebP, all under 100KiB, average 80KB, 2.7MB total — down from 3.8MB.
+- Typecheck clean, 36/36 tests.
+
+### What is still needed
+
+Seven sections now have no photograph, and four of them would be better with
+one: the three city-service process bands and the how-it-works process band.
+Each needs a genuine photograph of concrete work in progress. That requires
+either licensed stock or photographs from participating providers. I have left
+the sections structurally ready for an image rather than filling them with
+something false.

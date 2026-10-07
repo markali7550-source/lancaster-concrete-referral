@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -152,14 +151,12 @@ export default async function LocationPage({ params }: { params: Params }) {
         title={`What shapes concrete work in ${location.city}`}
         lead="Notes from participating provider conversations about this market."
       >
-        <Image
-          src="/images/process-location-lancaster.webp"
-          alt="Newly poured concrete driveway at a brick ranch house, with raw red clay still exposed along both edges where the forms were pulled"
-          width={900}
-          height={491}
-          sizes="(min-width: 1024px) 80rem, 100vw"
-          className="mb-8 h-56 w-full rounded-[12px] object-cover md:h-72"
-        />
+          {/*
+            No photograph. The one here had red clay applied along the lawn
+            edges like paint, with a hard unnatural boundary and repeated
+            shrubs — generated, not photographed. The notes below carry the
+            section on their own.
+          */}
         <ul className="grid gap-x-10 gap-y-6 md:grid-cols-3">
           {location.localEvidence.map((item) => (
             <li
