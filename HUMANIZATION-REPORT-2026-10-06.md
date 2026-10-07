@@ -1746,3 +1746,80 @@ Each needs a genuine photograph of concrete work in progress. That requires
 either licensed stock or photographs from participating providers. I have left
 the sections structurally ready for an image rather than filling them with
 something false.
+
+## 34. Image system: the live inventory, and the one honest addition
+
+Two artifacts now ship with the repo so the image system can be checked without
+reading any source:
+
+- **`IMAGE-INVENTORY.md`** — the rule-11 list. Every image, every page, every
+  section, every alt string.
+- **`IMAGE-SYSTEM-PROOF.png`** — the same data rendered visually, each photo
+  shown next to the places it is used.
+
+Both are produced by loading all 18 routes in a real browser, scrolling to force
+lazy images in, and recording every `<img>` **and** every CSS background band.
+Source-only greps miss the CTA bands entirely, which is how duplicates hid here
+before.
+
+**Result: 28 distinct photographs, 45 placements, 0 unapproved duplicates.**
+
+Every repeat is one of the two permitted patterns:
+
+| Image | Repeats | Pattern |
+| --- | --- | --- |
+| `service-driveways` | 5x | card -> service hero -> location-service hero |
+| `service-patios` | 5x | same |
+| `service-slabs` | 5x | same |
+| `repair-hero-walkway` | 5x | same |
+| `lancaster-hero` | 2x | location card -> the page it opens |
+
+### The one image added this round
+
+`site-conditions-slab-subbase.webp` now sits in **Local conditions -> "What
+shapes concrete work in Lancaster"**, replacing the generated shot that had red
+clay painted along the lawn edges.
+
+It earns the slot rather than filling it. The section's three notes are about
+subbase prep, drainage, and narrow access on tight lots; the frame shows a
+finished pad with its subbase still open around the perimeter, on a lot hemmed
+in by a neighbour's fence. That is the subject the copy is discussing.
+
+It is also the most clearly photographic file in the library: phone-camera
+softness, a weed with a single yellow flower at the slab edge, gravel with real
+size variation, harsh midday sun with shadows that agree on direction.
+
+Two §32 obligations applied to it directly:
+
+- The file was named `local-slabs-lancaster`. Nothing establishes where it was
+  taken, so the name was a location claim the site cannot support. Renamed.
+- The alt describes **bare soil and gravel**, not red clay — the soil in the
+  frame is grey-brown. The copy beside it discusses red clay; the alt does not
+  borrow that word just because it sits nearby.
+
+### What was not done, and why
+
+The highest-resolution file on the site is 1440x810; the homepage hero is
+900x502 behind a band that renders 1366px wide and up. Resolution could be
+improved by moving a larger file into the hero. That was rejected: the only
+larger files are driveway-specific, and rule 7 requires the homepage hero to
+stay general. Subject fit outranks pixel count.
+
+The remaining gap is sourcing, and it is environmental. This sandbox has no
+network route to stock photo hosts — `curl` to `images.pexels.com` and
+`unsplash.com` both return HTTP 000. Images can only arrive through the image
+search proxy, which returns free-licensed results at 500-800px (too soft for a
+full-width band), while every full-resolution result is behind a paid licence
+(Unsplash+, Getty). A large share of what the proxy labels "free" is itself
+AI-generated stock. Generating replacements is banned by rule 6.
+
+So seven process sections carry no photograph. Under rule 6 that is the
+specified outcome: *if a suitable realistic photograph cannot be found, do not
+add an image.* Those sections need people performing an activity, which is
+exactly the subject that cannot be sourced here and exactly the subject the
+generated images kept getting wrong — the headless screeder, the mesh with no
+wire gauge, the fingers fused into the slab edge. An empty band is honest; a
+fake crew is not.
+
+To fill them, supply real photographs: drop licensed files into `public/images/`
+and they can be wired up in minutes.

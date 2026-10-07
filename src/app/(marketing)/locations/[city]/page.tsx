@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -152,11 +153,22 @@ export default async function LocationPage({ params }: { params: Params }) {
         lead="Notes from participating provider conversations about this market."
       >
           {/*
-            No photograph. The one here had red clay applied along the lawn
-            edges like paint, with a hard unnatural boundary and repeated
-            shrubs — generated, not photographed. The notes below carry the
-            section on their own.
+            Replaces the generated shot that had red clay painted along the
+            lawn edges. This one is a real photograph and it earns its place
+            here rather than filling space: the section is about subbase,
+            drainage and tight lots, and the frame shows exactly that — a
+            finished pad with its subbase still open around the edges on a
+            lot hemmed in by neighbours. The alt describes the soil as it
+            actually appears, not as red clay, and claims no location.
           */}
+          <Image
+            src="/images/site-conditions-slab-subbase.webp"
+            alt="Freshly finished concrete pad in a fenced back yard, with bare soil and gravel still exposed around its edges and neighbouring houses close behind"
+            width={944}
+            height={531}
+            sizes="(min-width: 1024px) 80rem, 100vw"
+            className="mb-8 h-56 w-full rounded-[12px] object-cover md:h-72"
+          />
         <ul className="grid gap-x-10 gap-y-6 md:grid-cols-3">
           {location.localEvidence.map((item) => (
             <li
