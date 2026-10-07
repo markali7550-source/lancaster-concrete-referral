@@ -1823,3 +1823,104 @@ fake crew is not.
 
 To fill them, supply real photographs: drop licensed files into `public/images/`
 and they can be wired up in minutes.
+
+## 35. The CTA scroll bug, and two photographs restored
+
+### The scroll bug was real, and it is fixed
+
+`cta-band.tsx` applied `bg-scroll md:bg-fixed` to the CTA photograph layer.
+`bg-fixed` is `background-attachment: fixed`: the image paints against the
+**viewport** while the band clips it, so scrolling past drags a different slice
+of the photo through the band. The picture appears to slide, drift and reframe
+itself inside a section that is not moving.
+
+Measured, rather than asserted. The band was captured at two page scroll
+offsets 544px apart and the same 150px strip compared:
+
+| | `background-attachment` | pixels differing |
+| --- | --- | --- |
+| Before | `fixed` | **71.12%** |
+| After | `scroll` | **0.42%** |
+
+The before/after pair is unambiguous: identical headline and buttons in both
+frames, completely different photograph behind them — dark sky and overhead
+wires at one offset, the brick house and trees at the other.
+
+The fix is one class: the layer is now `bg-scroll` at every width, so the
+photograph is anchored to its band. Verified across every page that carries a
+CTA band, and `background-attachment` now reports `scroll` site-wide with no
+`fixed` anywhere in the repository.
+
+This also removes a hidden coupling. The old comment recorded that the lock
+"works at all only because body uses `overflow-x: clip` rather than `hidden`".
+Anchoring the image drops that dependency.
+
+One measurement looked like a failure and was not. `/services/concrete-repair`
+reported 28% difference despite `scroll`. The photograph is pixel-identical in
+both frames; the difference is the sticky in-page sub-nav overlaying the top of
+the band at one offset. Ordinary sticky behaviour, not image drift.
+
+### Two photographs restored to bands that had been emptied
+
+Both were sourced as free-licensed Pexels photographs, inspected at 2x before
+use, and converted to WebP under 100 KB.
+
+**`/how-it-works` → Process.** Replaces the generated shot whose subject had
+fingers merged into a slab edge. Under magnification the replacement holds up:
+the glove has five separately articulated fingers with worn seams, the dried
+concrete splatter on the boot is irregularly distributed, form hardware is
+consistent, and sun direction agrees across the frame. 1100x733, 87.8 KB.
+
+It stays on that page only. The identical "Three steps" band also renders on
+all four city-service pages, so wiring it into the shared section would have
+put one supporting photograph in five places.
+
+**`/services/concrete-repair` → Process.** A worker cutting into a slab with a
+handheld cut-off saw. Sawing the failed section out is the first physical act
+of a repair, so the picture shows the process the timeline beneath it
+describes. 1100x741, 44.2 KB.
+
+Added through a new `SERVICE_PROCESS_IMAGES` map that is deliberately sparse —
+repair is the only key. Placing and finishing look much the same across
+driveways, patios and slabs, and the generated images that used to fill those
+bands are precisely what had to be deleted. A missing key renders no image
+rather than a generic one.
+
+### What was deliberately left alone
+
+The four `SERVICE_DETAIL_IMAGES` were already real, on-subject and unique, so
+they were not touched. The rule is to change an image only when the answer
+justifies it, and here it did not.
+
+### Sourcing ceiling, stated precisely
+
+Earlier notes said this sandbox has no network. That was too broad and is now
+corrected: `registry.npmjs.org` returns 200 while `example.com`,
+`commons.wikimedia.org`, `upload.wikimedia.org` and `images.pexels.com` all
+return 000, with DNS resolving normally. Egress is **allowlisted to the npm
+registry**. Images can therefore only arrive through the image-search proxy,
+and every proxy URL carries an `rs:fit:500` transform, so results arrive at
+roughly 500px regardless of what the host holds. The two photographs above
+survive that ceiling because both have shallow depth of field.
+
+### Placeholder contact details
+
+`(803) 555-0123` and `hello@example-referral-brand.com` appear only in
+`.env.example`, which is the correct place for them. No source file hardcodes
+either; `src/lib/env/index.ts` reads them from the environment and validates
+with zod. Nothing was invented. If the deployment does not set real values the
+placeholders will render, so real contact details need to be supplied as
+environment variables at deploy time.
+
+### Final QA
+
+18 routes x 6 widths (320, 375, 390, 430, 768, 1366) = 108 page loads.
+
+- 0 non-200 responses
+- 0 horizontal overflow at any width
+- 0 console errors, 0 page errors
+- 0 `<img>` missing an alt attribute
+- `background-attachment: scroll` only
+- 30 distinct photographs, 47 placements, 0 unapproved duplicates
+- 37 WebP, none over 100 KiB, 0 unreferenced assets
+- tsc clean, 36/36 tests

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -62,6 +63,23 @@ const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
  * The closing band carries a photograph of the service it belongs to. One
  * shared photo meant a driveway closed the patio, slab and repair pages.
  */
+/**
+ * Optional photograph for the Process band, keyed by service.
+ *
+ * Deliberately sparse. Only repair has one, because a repair genuinely starts
+ * with an identifiable physical act — sawing the failed section out — that a
+ * photograph can show. Placing, screeding and curing look much the same across
+ * driveways, patios and slabs, and the generated images that used to fill
+ * those bands are exactly what had to be deleted. A missing key renders no
+ * image rather than a generic one.
+ */
+const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-repair": {
+    src: "/images/repair-sawcutting-slab.webp",
+    alt: "Worker cutting into a concrete slab with a handheld cut off saw, throwing up a cloud of dust beside a chain link fence",
+  },
+};
+
 const SERVICE_CTA_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-driveways": {
     src: "/images/cta-service-driveways.webp",
@@ -245,6 +263,16 @@ export default async function ServicePage({ params }: { params: Params }) {
                     <p className="lede mt-4 max-w-prose">
                       {service.processLead}
                     </p>
+                    {SERVICE_PROCESS_IMAGES[service.slug] ? (
+                      <Image
+                        src={SERVICE_PROCESS_IMAGES[service.slug].src}
+                        alt={SERVICE_PROCESS_IMAGES[service.slug].alt}
+                        width={1100}
+                        height={741}
+                        sizes="(min-width: 1024px) 48rem, 100vw"
+                        className="mt-8 h-56 w-full rounded-[12px] object-cover md:h-64"
+                      />
+                    ) : null}
                     <div className="mt-8">
                       <Timeline phases={service.process} />
                     </div>

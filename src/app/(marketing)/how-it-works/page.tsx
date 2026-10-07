@@ -72,11 +72,26 @@ export default function HowItWorksPage() {
       </Section>
 
         {/*
-          No photograph. The process shot that was here showed a man crouching
-          at a slab edge with his fingers fused into the concrete — generated,
-          not photographed. Nothing real was available to replace it.
+          Restores the photograph removed from this band. The previous one was
+          generated — the man's fingers merged into the slab edge. This is a
+          real photograph: the glove has five separately articulated fingers
+          with worn seams, the concrete splatter dried on the boot is
+          irregular, and the sun direction is consistent across the frame.
+
+          It stays on this page only. The identical "Three steps" band also
+          renders on all four city-service pages, so wiring the image into the
+          shared section would put one supporting photograph in five places.
+
+          Deliberately service-neutral: this page covers driveways, patios,
+          slabs and repair, so the picture shows concrete being placed and
+          worked rather than any one finished product. The alt describes the
+          formed edge that is actually in frame and claims no location.
         */}
         <Section
+          backgroundImage={{
+            src: "/images/process-placing-edge.webp",
+            alt: "Worker in a high-visibility vest working wet concrete along a formed edge with a long handled tool, with excavated ground and broken rubble behind",
+          }}
           eyebrow="Process"
           title="Three steps, no obligation"
         >

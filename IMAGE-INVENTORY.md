@@ -1,18 +1,18 @@
 # Image inventory
 
-Generated from the **running site**, not from source: every route was loaded in a real
-browser, scrolled to force lazy images in, and every `<img>` plus every CSS background
-band was recorded with the section heading it sits under.
+Generated from the **running site**, not from source: every route loaded in a real
+browser, scrolled to force lazy images in, recording every `<img>` plus every CSS
+background band with the section heading it sits under.
 
-- **28** distinct photographs
-- **45** placements across 18 routes
+- **30** distinct photographs
+- **47** placements across 18 routes
 - **0** unapproved duplicates
 
-Brand marks (`logo.webp`, `logo-dark.webp`) are excluded: a logo is required to repeat.
+Brand marks (`logo.webp`, `logo-dark.webp`) are excluded: a logo is meant to repeat.
 
-## Image -> page -> section -> purpose
+## Image -> page -> section
 
-| Image | Page | Section | Purpose |
+| Image | Page | Section | Status |
 | --- | --- | --- | --- |
 | `/images/repair-hero-walkway.webp` | `/` | Concrete Repair | Service chain (approved) |
 | `/images/repair-hero-walkway.webp` | `/services` | Concrete Repair | Service chain (approved) |
@@ -34,8 +34,8 @@ Brand marks (`logo.webp`, `logo-dark.webp`) are excluded: a logo is required to 
 | `/images/service-slabs.webp` | `/services/concrete-slabs` | Concrete Slabs in Lancaster County, SC | Service chain (approved) |
 | `/images/service-slabs.webp` | `/locations/lancaster-sc` | Concrete Slabs | Service chain (approved) |
 | `/images/service-slabs.webp` | `/locations/lancaster-sc/concrete-slabs` | Concrete Slab Referrals in Lancaster, SC | Service chain (approved) |
-| `/lancaster-hero.webp` | `/locations` | Concrete referrals in Lancaster, SC | Location card -> hero (approved) |
-| `/lancaster-hero.webp` | `/locations/lancaster-sc` | Concrete Contractor Referrals in Lancaster, SC | Location card -> hero (approved) |
+| `/lancaster-hero.webp` | `/locations` | Concrete referrals in Lancaster, SC | Location card -> page (approved) |
+| `/lancaster-hero.webp` | `/locations/lancaster-sc` | Concrete Contractor Referrals in Lancaster, SC | Location card -> page (approved) |
 | `/contact-front-walkway.webp` | `/contact` | Contact Our Lancaster, SC Concrete Referral Team | Unique |
 | `/home-hero-street-pour.webp` | `/` | Connect With a Local Concrete Service Provider in Lancaster, | Unique |
 | `/home-service-area-band.webp` | `/` | Areas we currently serve | Unique |
@@ -54,60 +54,13 @@ Brand marks (`logo.webp`, `logo-dark.webp`) are excluded: a logo is required to 
 | `/images/cta-services-index.webp` | `/services` | Not sure which service fits? | Unique |
 | `/images/driveway-drainage-detail.webp` | `/services/concrete-driveways` | What a driveway project may include | Unique |
 | `/images/patio-backyard-slab.webp` | `/services/concrete-patios` | What a patio project may include | Unique |
+| `/images/process-placing-edge.webp` | `/how-it-works` | Three steps, no obligation | Unique |
 | `/images/repair-detail-crack.webp` | `/services/concrete-repair` | What a repair project may include | Unique |
+| `/images/repair-sawcutting-slab.webp` | `/services/concrete-repair` | How a repair job is assessed and done | Unique |
 | `/images/site-conditions-slab-subbase.webp` | `/locations/lancaster-sc` | What shapes concrete work in Lancaster | Unique |
 | `/images/slab-formwork-pad.webp` | `/services/concrete-slabs` | What a slab project may include | Unique |
 | `/service-areas-hero.webp` | `/locations` | Concrete Referral Service Areas in South Carolina | Unique |
 | `/services-overview.webp` | `/services` | Concrete Services We Route in Lancaster County, SC | Unique |
-
-## Every repeat, justified
-
-### `/images/repair-hero-walkway.webp` — used 5x
-
-Approved: service card -> service page hero -> matching location-service hero. The homepage card, the `/services` index card and the Lancaster city card are all the same kind of object as the homepage card.
-
-- `/` — Concrete Repair
-- `/services` — Concrete Repair
-- `/services/concrete-repair` — Concrete Repair in Lancaster County, SC
-- `/locations/lancaster-sc` — Concrete Repair
-- `/locations/lancaster-sc/concrete-repair` — Concrete Repair Referrals in Lancaster, SC
-
-### `/images/service-driveways.webp` — used 5x
-
-Approved: service card -> service page hero -> matching location-service hero. The homepage card, the `/services` index card and the Lancaster city card are all the same kind of object as the homepage card.
-
-- `/` — Concrete Driveways
-- `/services` — Concrete Driveways
-- `/services/concrete-driveways` — Concrete Driveways in Lancaster County, SC
-- `/locations/lancaster-sc` — Concrete Driveways
-- `/locations/lancaster-sc/concrete-driveways` — Concrete Driveway Referrals in Lancaster, SC
-
-### `/images/service-patios.webp` — used 5x
-
-Approved: service card -> service page hero -> matching location-service hero. The homepage card, the `/services` index card and the Lancaster city card are all the same kind of object as the homepage card.
-
-- `/` — Concrete Patios
-- `/services` — Concrete Patios
-- `/services/concrete-patios` — Concrete Patios in Lancaster County, SC
-- `/locations/lancaster-sc` — Concrete Patios
-- `/locations/lancaster-sc/concrete-patios` — Concrete Patio Referrals in Lancaster, SC
-
-### `/images/service-slabs.webp` — used 5x
-
-Approved: service card -> service page hero -> matching location-service hero. The homepage card, the `/services` index card and the Lancaster city card are all the same kind of object as the homepage card.
-
-- `/` — Concrete Slabs
-- `/services` — Concrete Slabs
-- `/services/concrete-slabs` — Concrete Slabs in Lancaster County, SC
-- `/locations/lancaster-sc` — Concrete Slabs
-- `/locations/lancaster-sc/concrete-slabs` — Concrete Slab Referrals in Lancaster, SC
-
-### `/lancaster-hero.webp` — used 2x
-
-Approved: the Lancaster card on `/locations` previews the page it opens, which is the card -> hero relationship applied to a place rather than a service.
-
-- `/locations` — Concrete referrals in Lancaster, SC
-- `/locations/lancaster-sc` — Concrete Contractor Referrals in Lancaster, SC
 
 ## Alt text actually written for each photograph
 
@@ -116,25 +69,27 @@ Approved: the Lancaster card on `/locations` previews the page it opens, which i
 - `/images/service-patios.webp` — Stamped concrete backyard patio in a random stone pattern with a curved edge, set against a mown lawn and a split rail fence
 - `/images/service-slabs.webp` — Finished concrete shed pad in a back yard, sitting proud of the ground with form marks down its side and backfilled soil around the edge
 - `/lancaster-hero.webp` — Quiet residential street of brick ranch houses and pines, with red clay verges and concrete driveways
-- `/contact-front-walkway.webp` — _no alt: CSS background band, decorative, copy sits over it_
+- `/contact-front-walkway.webp` — _CSS background band, decorative, copy sits over it_
 - `/home-hero-street-pour.webp` — Contractor's pickup and portable mixer parked at a residential street where a concrete walkway and apron sit in timber forms, with excavated red clay heaped alongside
 - `/home-service-area-band.webp` — Single story brick ranch home behind a mature shade tree, with a curved concrete front walkway running out to the sidewalk
 - `/how-it-works-hero.webp` — Freshly placed residential concrete slab floated smooth and still inside its timber forms, with a brick home beyond the lawn
-- `/images/cta-combo-driveways.webp` — _no alt: CSS background band, decorative, copy sits over it_
-- `/images/cta-combo-patios.webp` — _no alt: CSS background band, decorative, copy sits over it_
-- `/images/cta-combo-slabs.webp` — _no alt: CSS background band, decorative, copy sits over it_
-- `/images/cta-home-driveway.webp` — _no alt: CSS background band, decorative, copy sits over it_
-- `/images/cta-how-it-works.webp` — _no alt: CSS background band, decorative, copy sits over it_
-- `/images/cta-location-lancaster.webp` — _no alt: CSS background band, decorative, copy sits over it_
-- `/images/cta-repair-replacement.webp` — _no alt: CSS background band, decorative, copy sits over it_
-- `/images/cta-service-driveways.webp` — _no alt: CSS background band, decorative, copy sits over it_
-- `/images/cta-service-patios.webp` — _no alt: CSS background band, decorative, copy sits over it_
-- `/images/cta-service-repair.webp` — _no alt: CSS background band, decorative, copy sits over it_
-- `/images/cta-service-slabs.webp` — _no alt: CSS background band, decorative, copy sits over it_
-- `/images/cta-services-index.webp` — _no alt: CSS background band, decorative, copy sits over it_
+- `/images/cta-combo-driveways.webp` — _CSS background band, decorative, copy sits over it_
+- `/images/cta-combo-patios.webp` — _CSS background band, decorative, copy sits over it_
+- `/images/cta-combo-slabs.webp` — _CSS background band, decorative, copy sits over it_
+- `/images/cta-home-driveway.webp` — _CSS background band, decorative, copy sits over it_
+- `/images/cta-how-it-works.webp` — _CSS background band, decorative, copy sits over it_
+- `/images/cta-location-lancaster.webp` — _CSS background band, decorative, copy sits over it_
+- `/images/cta-repair-replacement.webp` — _CSS background band, decorative, copy sits over it_
+- `/images/cta-service-driveways.webp` — _CSS background band, decorative, copy sits over it_
+- `/images/cta-service-patios.webp` — _CSS background band, decorative, copy sits over it_
+- `/images/cta-service-repair.webp` — _CSS background band, decorative, copy sits over it_
+- `/images/cta-service-slabs.webp` — _CSS background band, decorative, copy sits over it_
+- `/images/cta-services-index.webp` — _CSS background band, decorative, copy sits over it_
 - `/images/driveway-drainage-detail.webp` — Driveway edge pitched away from the lawn with a gravel drainage margin
 - `/images/patio-backyard-slab.webp` — Plain concrete patio slab at the rear of a single story brick home
+- `/images/process-placing-edge.webp` — Worker in a high-visibility vest working wet concrete along a formed edge with a long handled tool, with excavated ground and broken rubble behind
 - `/images/repair-detail-crack.webp` — Settled concrete walkway slab with a cracked, lifted edge
+- `/images/repair-sawcutting-slab.webp` — Worker cutting into a concrete slab with a handheld cut off saw, throwing up a cloud of dust beside a chain link fence
 - `/images/site-conditions-slab-subbase.webp` — Freshly finished concrete pad in a fenced back yard, with bare soil and gravel still exposed around its edges and neighbouring houses close behind
 - `/images/slab-formwork-pad.webp` — Concrete pad still sitting inside its timber forms on an open lot
 - `/service-areas-hero.webp` — Elevated view of a suburban residential neighborhood of brick homes with concrete driveways along a curving street

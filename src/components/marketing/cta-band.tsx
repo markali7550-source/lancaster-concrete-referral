@@ -5,35 +5,35 @@ import { site } from "@/lib/env";
 /**
  * The closing call-to-action band, shared by every page that ends in one.
  *
- * This is the ONE place in the repository that locks a background to the
- * viewport. Nothing else on the site does, and nothing else should: keep the
- * desktop-locked background class below confined to this file.
+ * The photograph is anchored to the band and scrolls with it. It is NOT locked
+ * to the viewport. An earlier version used `md:bg-fixed` on desktop, which is
+ * `background-attachment: fixed`: the image paints against the viewport while
+ * the band clips it, so scrolling past drags a different slice of the photo
+ * through the band and the picture appears to slide, drift and reframe itself.
+ * On phones the same class made iOS Safari repaint every frame, which is the
+ * juddering that was reported earlier; that was patched by scrolling on mobile
+ * only, leaving the drift in place on desktop. Both are now gone for the same
+ * reason: the background simply scrolls with its section.
+ *
+ * Do not reintroduce `bg-fixed` here. It also forced body to use
+ * `overflow-x: clip` rather than `hidden`, because `hidden` turns body into a
+ * scrolling box and breaks viewport-locked backgrounds. Anchoring the image
+ * removes that coupling entirely.
  *
  * Layers, back to front:
  *
- *   z-0   the photograph        scrolls on mobile, locked from 48rem up
+ *   z-0   the photograph        scrolls with the band, at every width
  *   z-10  50% dark overlay
  *   z-20  top/bottom fade       pointer-events-none
- *   z-30  heading and buttons   scrolls normally over the rest
- *
- * The photograph scrolls on phones on purpose. iOS Safari does not honor a
- * viewport-locked background and approximates it by repainting every frame,
- * which is exactly the juddering that was reported. Below 48rem it is an
- * ordinary section background and cannot move relative to the band.
+ *   z-30  heading and buttons
  *
  * `last:mb-0` drops the bottom margin when the band is the final element on
  * the page, which it is on every page that ends in one. Otherwise the 40px
  * margin renders as a strip of page background between the photograph and the
  * footer, which reads as a black gap under the image.
- *
- * The locking works at all only because body uses `overflow-x: clip` rather
- * than `hidden`; `hidden` turns body into a scrolling box, which breaks
- * viewport-locked backgrounds. The layer is `absolute inset-0` inside a band
- * with `overflow: hidden`, so the painting is clipped back to the band and
- * cannot bleed into neighboring sections.
  */
 const CTA_BACKGROUND_LAYER =
-  "absolute inset-0 bg-cover bg-center bg-no-repeat z-0 bg-scroll md:bg-fixed";
+  "absolute inset-0 bg-cover bg-center bg-no-repeat z-0 bg-scroll";
 
 /**
  * Fallback photograph for a closing CTA band.
