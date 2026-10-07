@@ -200,12 +200,17 @@ export default async function LocationPage({ params }: { params: Params }) {
 
 
       {/*
-        No background photograph here on purpose. Every construction photograph
-        in the library is already assigned to one section elsewhere, and the one
-        that fits a routing band carries the home page. An unrelated photograph
-        would be worse than none, so this band runs on type alone.
+        Recovered. This band carried process-band.webp until 857f176 removed it,
+        on the grounds that the only photograph suiting a routing band was
+        needed by the home page. The home process band has since moved to
+        process-texture-bg.webp, so this one is free again and no other section
+        loses an image by restoring it. Same src and same alt as before.
       */}
       <Section
+        backgroundImage={{
+          src: "/process-band.webp",
+          alt: "Timber forms set along the edge of a residential street beside a contractor's truck, with excavated clay heaped alongside",
+        }}
         eyebrow="Process"
         title="How a Lancaster request is routed"
       >
