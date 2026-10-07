@@ -133,25 +133,49 @@ export default function HomePage() {
           on top, and a busier scene competed with the numerals.
 
           process-band.webp is kept in public/ rather than deleted. Swapping
-          this one `src` back restores the street pour if that is preferred.
+          the url() below back restores the street pour if that is preferred.
 
-          `seamlessEdges` is set here and nowhere else. This band sits between
-          two flat sections, so its top and bottom read as hard horizontal
-          lines where the image stops. Ramping both edges to the page colour
-          dissolves them. Every other photo band keeps the standard vignette.
+          Written as an explicit section rather than <Section> because the
+          owner specified the exact layer stack: texture at z-0 on bg-scroll,
+          a 50% #0D1110 wash at z-10, a top-and-bottom #0D1110 gradient at
+          z-20, and the step cards at z-30. Routing this through <Section>
+          would have meant editing the shared component, which would have
+          moved every other photo band on the site.
+
+          cta-photo is kept on the section because it is the rule that flips
+          the eyebrow, heading, lead and card text to their light-on-dark
+          variants. Without it the type renders dark ink on a dark band.
         */}
-        <Section
-          backgroundImage={{
-            src: "/images/process-texture-bg.webp",
-            alt: "",
-          }}
-          seamlessEdges
-          eyebrow="Process"
-        title="Three steps, no obligation"
-        lead="You are never passed to a call center, and your details are never sold to a list of providers who bid against each other."
-      >
-        <HowMatchingWorks />
-      </Section>
+        <section className="cta-photo relative w-full overflow-hidden py-16 md:py-24 bg-[#0D1110]">
+          <div
+            className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-scroll"
+            style={{
+              backgroundImage: "url('/images/process-texture-bg.webp')",
+            }}
+            aria-hidden="true"
+          />
+          <div
+            className="absolute inset-0 z-10 bg-[#0D1110]/50"
+            aria-hidden="true"
+          />
+          <div
+            className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-[#0D1110] via-transparent to-[#0D1110]"
+            aria-hidden="true"
+          />
+          <div className="container-page relative z-30">
+            <div className="text-left">
+              <p className="eyebrow">Process</p>
+              <h2 className="h2 mt-3">Three steps, no obligation</h2>
+              <p className="lede mt-4">
+                You are never passed to a call center, and your details are
+                never sold to a list of providers who bid against each other.
+              </p>
+            </div>
+            <div className="mt-7">
+              <HowMatchingWorks />
+            </div>
+          </div>
+        </section>
 
 
 
