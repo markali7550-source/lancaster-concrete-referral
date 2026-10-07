@@ -6,6 +6,9 @@ export type ServiceSlug =
 
 export type PublicationState = "published" | "gated" | "blocked";
 
+export type ServiceSectionId =
+  "scope" | "options" | "process" | "cost" | "prepare";
+
 export interface ServiceRecord {
   slug: ServiceSlug;
   name: string;
@@ -19,6 +22,47 @@ export interface ServiceRecord {
   summary: string;
   /** Hero paragraph on the service hub. */
   heroSummary: string;
+  /*
+   * Section headings written per service rather than built from the service
+   * name. Four pages previously shared seven byte-identical H2s, which is what
+   * made them read as one page with a noun swapped. These are the headings a
+   * writer would choose for each subject: a patio page should not be headed
+   * "What actually drives the price" just because the driveway page is.
+   */
+  /*
+   * Main-column section order, per service. The four pages used to render one
+   * hardcoded sequence -- scope, specification, process, cost, prepare -- which
+   * is why they still read as the same page once the wording was fixed. A
+   * homeowner does not approach these four jobs the same way, so the page does
+   * not either: you price a patio before you care how it is built, you cannot
+   * price a slab until you have said what it carries, and you diagnose a
+   * repair before anyone specifies a method for it.
+   */
+  sectionOrder: readonly ServiceSectionId[];
+  headings: {
+    /** Scope heading. Per service because the component hardcoded
+     *  "What we route under {name}", which opened all four pages on the
+     *  same sentence with one noun swapped. */
+    scope: string;
+    options: string;
+    process: string;
+    cost: string;
+    prepare: string;
+    faq: string;
+    /** Closing CTA heading. Service-specific so the four pages do not all
+     *  end on the same sentence, and so the combo pages stop using a bare
+     *  keyword string ("Concrete Driveways in Lancaster, SC") as a CTA. */
+    cta: string;
+  };
+  /** Lede under the specification heading. */
+  optionsLead: string;
+  /** Lede under the process heading. */
+  processLead: string;
+  /** Lede under the pricing heading. */
+  costLead: string;
+  /** Body of the closing CTA. Per service so the four pages do not end on
+   *  an identical paragraph. */
+  ctaLead: string;
   image: string;
   imageAlt: string;
   projectTypes: string[];
@@ -33,7 +77,11 @@ export interface ServiceRecord {
   /** Typical project sequence. Durations are ranges, never promises. */
   process: { phase: string; duration: string; detail: string }[];
   /** What actually moves the price. */
-  costFactors: { factor: string; impact: "High" | "Medium" | "Low"; note: string }[];
+  costFactors: {
+    factor: string;
+    impact: "High" | "Medium" | "Low";
+    note: string;
+  }[];
   /** Homeowner prep before the estimate visit. */
   prepChecklist: string[];
   /** Questions to put to the contractor, not to us. */
@@ -53,15 +101,36 @@ export const services: readonly ServiceRecord[] = [
     summary:
       "New pours and full replacements, including tear out of failed slabs and the drainage questions that come with Lancaster County clay.",
     heroSummary:
-      "Looking for a concrete driveway contractor in Lancaster, SC? We help homeowners connect with independent local service providers who may be able to assist with new pours and full replacements. Submit your project details to request a referral. We are a referral service and do not perform concrete work ourselves. The provider quotes, schedules, and performs the work.",
+      "A driveway project is usually one of two jobs: putting concrete over a gravel drive that no longer holds up, or replacing a slab that has cracked and settled past the point where patching is worth it. Tell us which one you have and we pass it to one independent provider who pours driveways in your area. They quote it, schedule it, and do the work. We do not.",
+    sectionOrder: ["scope", "options", "process", "cost", "prepare"],
+    headings: {
+      scope: "What counts as a driveway job",
+      options: "Decisions that change the quote",
+      process: "What a driveway pour week looks like",
+      cost: "Where driveway money actually goes",
+      prepare: "Before the contractor walks the drive",
+      faq: "What homeowners ask about driveways",
+      cta: "Ready to price a driveway?",
+    },
+    optionsLead:
+      "We do not specify your driveway. These are the calls the contractor will ask you to make, so they are not the first time you hear them.",
+    processLead:
+      "A driveway is a one-day pour on the end of a week of preparation. The sequence below is what that week usually looks like; your contractor sets the real dates.",
+    costLead:
+      "Nobody can price a driveway from an address. Square footage is only the start of it. What the old slab costs to break up and haul away, and whether a truck can reach the pour, often move the number more.",
+    ctaLead:
+      "Tell us the length of the drive and whether the old slab has to come out. One provider with written coverage for your area takes it from there.",
     image: "/images/service-driveways.webp",
     imageAlt:
-      "Newly poured residential concrete driveway with saw cut control joints and a broom finish",
+      "Concrete driveway running up to the garage of a single story brick ranch house, with saw cut control joints across its width",
     projectTypes: ["New driveway", "Driveway replacement"],
     keyFacts: [
       { label: "Routed for", value: "Residential driveways and aprons" },
       { label: "Coverage today", value: "Lancaster, SC" },
-      { label: "Typical site visit", value: "Within the participating provider's contracted response window" },
+      {
+        label: "Typical site visit",
+        value: "Within the participating provider's contracted response window",
+      },
       { label: "Cost to you", value: "No charge for the referral" },
     ],
     covered: [
@@ -133,7 +202,7 @@ export const services: readonly ServiceRecord[] = [
         phase: "Subbase, forms, and reinforcement",
         duration: "Typically one day",
         detail:
-          "Compacted base material, formwork set to grade, and reinforcement placed. On clay, compaction is the step that decides how the slab ages.",
+          "Compacted base material, formwork set to grade, and reinforcement placed. On clay, compaction has a particular bearing on how the slab ages.",
       },
       {
         phase: "Pour and finish",
@@ -172,7 +241,7 @@ export const services: readonly ServiceRecord[] = [
       {
         factor: "Square footage",
         impact: "Medium",
-        note: "Matters, but it is a weaker predictor than access and prep on most Lancaster jobs.",
+        note: "Affects the price, though access and site preparation can move a quote just as much.",
       },
       {
         factor: "Decorative finish",
@@ -226,7 +295,7 @@ export const services: readonly ServiceRecord[] = [
       {
         question: "Why does clay soil keep coming up?",
         answer:
-          "Red clay holds water and moves with moisture content. That makes compaction, base depth, and drainage the three details most likely to decide whether a driveway lasts, which is why participating providers ask about them before quoting.",
+          "Red clay holds water and moves with moisture content, so compaction, base depth, and drainage are worth settling before the pour is priced. Expect a contractor to ask about all three.",
       },
     ],
   },
@@ -241,15 +310,39 @@ export const services: readonly ServiceRecord[] = [
     summary:
       "New patio pours, replacements, and stamped finishes where a participating provider has documented that capability.",
     heroSummary:
-      "Looking for a concrete patio contractor in Lancaster, SC? A patio is the one concrete project where finish and layout matter as much as the slab. We help homeowners connect with independent service providers who may be able to assist, and the provider walks the space with you and quotes it directly. Submit your project details to request a referral.",
+      "A patio is the one concrete project where the finish matters as much as the slab under it. Color, texture, and where the joints fall are decisions you live with every time you walk outside. We route your details to one independent provider who will walk the space with you and quote it directly.",
+    sectionOrder: ["scope", "options", "cost", "process", "prepare"],
+    headings: {
+      scope: "Where patio work starts and stops",
+      options: "Finish, color and layout choices",
+      process: "How a patio build is sequenced",
+      cost: "What makes one patio cost more than another",
+      prepare: "Walking the space before you get a price",
+      faq: "Common questions about patios",
+      cta: "Thinking about a patio?",
+    },
+    optionsLead:
+      "Patios are where the finish decisions live. Pick these before you compare quotes, or you will be comparing two different projects.",
+    processLead:
+      "Patios are built in a different order from driveways, because the finish is decided before the forms go in rather than after. Timings are typical, not promised.",
+    costLead:
+      "Patios are the project people most often price before they commit, so it is worth knowing what actually moves the figure. Finish and shape change it far more than size does.",
+    ctaLead:
+      "Send the rough size, and say whether it ties into an existing porch or stoop. It goes to a single participating provider, not a panel of bidders.",
     image: "/images/service-patios.webp",
     imageAlt:
-      "Rectangular concrete backyard patio with a smooth troweled finish and control joints",
+      "Stamped concrete backyard patio in a random stone pattern with a curved edge, set against a mown lawn and a split rail fence",
     projectTypes: ["New patio", "Patio replacement", "Stamped patio"],
     keyFacts: [
-      { label: "Routed for", value: "Residential patios and walkway connections" },
+      {
+        label: "Routed for",
+        value: "Residential patios and walkway connections",
+      },
       { label: "Coverage today", value: "Lancaster, SC" },
-      { label: "Decorative work", value: "Only where a participating provider documents the capability" },
+      {
+        label: "Decorative work",
+        value: "Only where a participating provider documents the capability",
+      },
       { label: "Cost to you", value: "No charge for the referral" },
     ],
     covered: [
@@ -422,15 +515,39 @@ export const services: readonly ServiceRecord[] = [
     summary:
       "Residential slabs and pads for sheds, equipment, vehicles, and outbuildings, nonstructural work only.",
     heroSummary:
-      "Looking for a concrete slab contractor in Lancaster, SC? Shed bases, equipment pads, RV and boat parking, and similar flatwork. We connect homeowners with independent service providers who may be able to help. Anything carrying a building load or needing an engineer is declined rather than routed.",
+      "Shed bases, equipment pads, RV and boat parking. Flatwork that has to carry a known weight and stay level for years, which makes what goes under the slab the part that matters. If the pad will hold up a building, or needs an engineer's stamp, we decline it rather than route it.",
+    sectionOrder: ["scope", "options", "process", "prepare", "cost"],
+    headings: {
+      scope: "Pads this category covers",
+      options: "Specifying a pad for what it carries",
+      process: "From staked forms to a usable pad",
+      cost: "What drives the price of a pad",
+      prepare: "Knowing the load before the visit",
+      faq: "Slab and pad questions",
+      cta: "Need a pad poured?",
+    },
+    optionsLead:
+      "A pad is specified by what sits on it. Load comes first, because it decides thickness, reinforcement and base depth before anything else is priced.",
+    processLead:
+      "A pad is mostly groundwork. By the time the concrete arrives, the hard part is done: the base is right and the forms are square. Durations are typical ranges, not commitments.",
+    costLead:
+      "Pricing comes last here for a reason: until the load, the access and the base are known, any number is a guess. Once those are settled a contractor can quote a pad quickly.",
+    ctaLead:
+      "Say what the pad has to carry and roughly where it goes. We route it to one provider approved for your area.",
     image: "/images/service-slabs.webp",
     imageAlt:
-      "Finished flat concrete slab pad in a residential backyard with a small storage shed",
+      "Finished concrete shed pad in a back yard, sitting proud of the ground with form marks down its side and backfilled soil around the edge",
     projectTypes: ["Residential slab", "Concrete pad"],
     keyFacts: [
-      { label: "Routed for", value: "Nonstructural residential slabs and pads" },
+      {
+        label: "Routed for",
+        value: "Nonstructural residential slabs and pads",
+      },
       { label: "Coverage today", value: "Lancaster, SC" },
-      { label: "Never routed", value: "Foundations and engineered structural slabs" },
+      {
+        label: "Never routed",
+        value: "Foundations and engineered structural slabs",
+      },
       { label: "Cost to you", value: "No charge for the referral" },
     ],
     covered: [
@@ -598,15 +715,36 @@ export const services: readonly ServiceRecord[] = [
     summary:
       "Nonstructural crack repair, surface repair, and resurfacing. Structural assessment is out of scope.",
     heroSummary:
-      "Looking for a concrete repair contractor in Lancaster, SC? We connect homeowners with independent service providers who may be able to help with surface level problems on sound concrete: crazing, spalling, shrinkage cracks, and tired finishes. If it sounds like movement or load failure, we will say so plainly.",
+      "Some concrete is worth saving and some is not. We route surface problems on slabs that are otherwise sound: crazing, spalling, shrinkage cracks, a finish that has simply worn out. If what you describe sounds like movement or a failing base, we will tell you, because resurfacing it would be money wasted.",
+    sectionOrder: ["scope", "process", "options", "cost", "prepare"],
+    headings: {
+      scope: "Damage we route, and damage we do not",
+      options: "Repair methods and when each applies",
+      process: "How a repair job is assessed and done",
+      cost: "Why repair quotes vary so widely",
+      prepare: "Describing the damage accurately",
+      faq: "Questions worth asking before a repair visit",
+      cta: "Want someone to look at the damage?",
+    },
+    optionsLead:
+      "Repair is diagnosis before method. The right fix depends on why the concrete failed, which is why two jobs that look alike are quoted differently.",
+    processLead:
+      "Repair starts with working out why the concrete failed. Until that is established, choosing a method is guesswork, which is why the assessment comes first.",
+    costLead:
+      "Repair quotes vary more than any other concrete work, because two slabs with identical cracks can need completely different work underneath. These are the things that move it.",
+    ctaLead:
+      "Describe the damage and where it is. The provider looks at it on site before anyone talks about price.",
     image: "/images/repair-hero-walkway.webp",
     imageAlt:
-      "Residential walkway half weathered and cracked, half freshly resurfaced with smooth concrete",
+      "Residential concrete walkway where one slab has been lifted and tilted by tree roots, leaving a raised lip against the next panel",
     projectTypes: ["Crack and surface repair", "Resurfacing"],
     keyFacts: [
       { label: "Routed for", value: "Nonstructural repair and resurfacing" },
       { label: "Coverage today", value: "Lancaster, SC" },
-      { label: "Never routed", value: "Structural, heaving, or load failure assessment" },
+      {
+        label: "Never routed",
+        value: "Structural, heaving, or load failure assessment",
+      },
       { label: "Cost to you", value: "No charge for the referral" },
     ],
     covered: [
@@ -672,7 +810,7 @@ export const services: readonly ServiceRecord[] = [
         phase: "Surface preparation",
         duration: "Typically part of one day",
         detail:
-          "Cleaning, grinding, or profiling. Preparation is the step that decides whether the repair bonds and lasts.",
+          "Cleaning, grinding, or profiling. Surface preparation has a direct bearing on whether the repair bonds and lasts.",
       },
       {
         phase: "Repair or overlay application",
@@ -760,7 +898,9 @@ export const services: readonly ServiceRecord[] = [
   },
 ] as const;
 
-export const publishedServices = services.filter((s) => s.state === "published");
+export const publishedServices = services.filter(
+  (s) => s.state === "published",
+);
 
 export function getService(slug: string): ServiceRecord | undefined {
   return publishedServices.find((s) => s.slug === slug);

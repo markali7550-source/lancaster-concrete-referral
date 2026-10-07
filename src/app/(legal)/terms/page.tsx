@@ -12,7 +12,7 @@ export const metadata: Metadata = pageMetadata({
 
 export default function TermsPage() {
   return (
-    <LegalPage title="Terms of use" updated="24 September 2026" currentPath="/terms">
+    <LegalPage title="Terms of use" updated="September 24, 2026" currentPath="/terms">
       <h2>Referral service only</h2>
       <p>
         {site.brand} provides introductions to independent contractors. We are

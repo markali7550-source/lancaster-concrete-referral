@@ -25,7 +25,7 @@ export function Breadcrumbs({
     <ol
       className={`flex flex-wrap items-center gap-x-2 gap-y-1 text-sm ${
         overlay
-          ? "justify-center lg:justify-start"
+          ? " "
           : "py-3 text-[color:var(--color-muted)]"
       }`}
       style={overlay ? { color: "rgba(255,255,255,0.78)" } : undefined}
@@ -44,7 +44,7 @@ export function Breadcrumbs({
             <span
               aria-current="page"
               className={overlay ? "font-medium" : "text-[color:var(--color-ink)]"}
-              style={overlay ? { color: "#ffffff" } : undefined}
+              style={overlay ? { color: "var(--color-band-ink)" } : undefined}
             >
               {item.name}
             </span>
@@ -95,7 +95,7 @@ export function ServiceHero({
       breadcrumbs={breadcrumbs}
     >
       <p
-        className="eyebrow before:hidden lg:before:block"
+        className="eyebrow"
         style={{ color: overlayEyebrow }}
       >
         {cityLabel}
@@ -104,19 +104,19 @@ export function ServiceHero({
         {h1}
       </h1>
       <p
-        className="lede mx-auto mt-5 max-w-prose lg:mx-0"
+        className="lede mt-5 max-w-prose"
         style={{ color: overlayBody }}
       >
         {summary}
       </p>
-      <ul className="mt-5 flex flex-wrap justify-center gap-2 lg:justify-start">
+      <ul className="mt-5 flex flex-wrap gap-2">
         {service.projectTypes.map((type) => (
           <li
             key={type}
             className="rounded-full px-3 py-1.5 text-sm font-medium"
             style={{
               backgroundColor: "rgba(255,255,255,0.12)",
-              color: "#ffffff",
+              color: "var(--color-band-ink)",
             }}
           >
             {type}
@@ -125,7 +125,7 @@ export function ServiceHero({
       </ul>
       <div
         id="hero-actions"
-        className="mx-auto mt-7 grid w-full max-w-sm gap-3 lg:mx-0 lg:max-w-none lg:grid-cols-[repeat(2,minmax(0,15rem))]"
+        className="mt-7 grid w-full max-w-sm gap-3 lg:max-w-none lg:grid-cols-[repeat(2,minmax(0,15rem))]"
       >
         <DynamicPhone
           fallbackDisplay={site.phoneDisplay}
@@ -158,10 +158,10 @@ export function KeyFacts({ facts }: { facts: { label: string; value: string }[] 
           {facts.map((fact) => (
             <div
               key={fact.label}
-              className="flex h-full flex-col rounded-[12px] border p-4 text-center lg:text-left"
+              className="flex h-full flex-col rounded-[12px] border p-4"
               style={{ borderColor: "var(--color-line-soft)" }}
             >
-              <dt className="eyebrow justify-center before:hidden lg:justify-start lg:before:block">
+              <dt className="eyebrow">
                 {fact.label}
               </dt>
               <dd className="mt-auto pt-2 text-sm font-medium">{fact.value}</dd>
@@ -181,11 +181,13 @@ export function InPageNav({ items }: { items: { id: string; label: string }[] })
       aria-label="On this page"
       className="sticky top-16 z-50 isolate border-b"
       style={{
-        borderColor: "var(--color-line)",
+        borderColor: "var(--color-line-soft)",
         // Fully opaque: a translucent bar lets the headings scrolling beneath
         // it show through, which reads as broken text.
         backgroundColor: "var(--color-page)",
-        boxShadow: "0 8px 18px rgba(0, 0, 0, 0.18)",
+        // A hairline and a 6% drop. The old 18% shadow was heavier than
+        // anything else on the page and made the strip look detached.
+        boxShadow: "0 1px 0 var(--color-line-soft), 0 6px 14px rgba(16, 24, 34, 0.06)",
       }}
     >
       <div className="container-page">
@@ -215,12 +217,17 @@ export function ScopeColumns({
   covered: { title: string; body: string }[];
   outOfScope: string[];
 }) {
+  // The page already gives up a column to the sticky form, and at xl it gives
+  // up another to the out-of-scope aside below. Splitting the covered list a
+  // third time on top of that measured 213px cards holding 131px of text at
+  // 1440px — three words a line. The list stays single-column from lg up; only
+  // the list/aside split happens at xl.
   return (
-    <div className="grid gap-6 lg:grid-cols-[1.6fr_1fr]">
-      <ul className="grid gap-4 sm:grid-cols-2">
+    <div className="grid gap-6 xl:grid-cols-[1.6fr_1fr]">
+      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
         {covered.map((item) => (
           <li key={item.title} className="card p-6">
-            <div className="flex flex-col items-center gap-2.5 text-center lg:flex-row lg:items-start lg:gap-3 lg:text-left">
+            <div className="flex flex-col gap-2.5 lg:flex-row lg:gap-3">
               <span style={{ color: "var(--color-accent)" }}>
                 <Icon name="check" className="mt-0.5 h-5 w-5" />
               </span>
@@ -235,13 +242,13 @@ export function ScopeColumns({
         ))}
       </ul>
       <aside
-        className="rounded-[16px] border p-5 text-center lg:text-left"
+        className="rounded-[12px] border p-5"
         style={{ borderColor: "var(--color-line)" }}
       >
         <p className="font-semibold">Not routed under this service</p>
         <ul className="mt-3 space-y-2.5 text-sm text-[color:var(--color-muted)]">
           {outOfScope.map((item) => (
-            <li key={item} className="text-center lg:text-left">
+            <li key={item} className="text-left">
               {item}
             </li>
           ))}
@@ -267,7 +274,7 @@ export function OptionsList({
       {options.map((option) => (
         <div
           key={option.name}
-          className="border-t-2 pt-4 text-center lg:border-l-2 lg:border-t-0 lg:pl-4 lg:pt-0 lg:text-left"
+          className="border-t-2 pt-4 lg:border-l-2 lg:border-t-0 lg:pl-4 lg:pt-0"
           style={{ borderColor: "var(--color-accent)" }}
         >
           <dt className="font-semibold">{option.name}</dt>
@@ -322,7 +329,7 @@ export function Timeline({
                 {phase.duration}
               </p>
             </div>
-            <p className="mt-2 text-center text-sm leading-relaxed text-[color:var(--color-muted)] lg:text-left">
+            <p className="mt-2 text-sm leading-relaxed text-[color:var(--color-muted)]">
               {phase.detail}
             </p>
           </div>
@@ -340,7 +347,7 @@ export function CostTable({
   rows: { factor: string; impact: string; note: string }[];
 }) {
   return (
-    <div className="max-w-full overflow-x-auto rounded-[16px] border" style={{ borderColor: "var(--color-line)" }}>
+    <div className="max-w-full overflow-x-auto rounded-[12px] border" style={{ borderColor: "var(--color-line)" }}>
       <table className="w-full min-w-[34rem] border-collapse text-left text-sm">
         <caption className="sr-only">
           Factors that affect the price quoted by the contractor
@@ -395,13 +402,13 @@ export function PrepColumns({
 }) {
   return (
     <div className="grid gap-6 md:grid-cols-2">
-      <div className="card p-6 text-center lg:text-left">
+      <div className="card p-6">
         <p className="font-semibold">Before the estimate visit</p>
         <ul className="mt-4 space-y-3 text-sm">
           {checklist.map((item) => (
             <li
               key={item}
-              className="block text-center lg:flex lg:justify-start lg:gap-3 lg:text-left"
+              className="block lg:flex lg:gap-3"
             >
               <span
                 className="mr-1.5 inline-block align-[-3px] lg:mr-0 lg:align-baseline"
@@ -414,21 +421,24 @@ export function PrepColumns({
           ))}
         </ul>
       </div>
-      <div className="card p-6 text-center lg:text-left">
+      <div className="card p-6">
         <p className="font-semibold">Ask the contractor, not us</p>
         <ul className="mt-4 space-y-3 text-sm">
           {questions.map((item) => (
-            <li
-              key={item}
-              className="block text-center lg:flex lg:justify-start lg:gap-3 lg:text-left"
-            >
+            <li key={item} className="flex gap-3">
+              {/*
+                This bullet used to be a literal "?" glyph, so every item
+                rendered as "? Would replacement be the better value here,
+                honestly?" -- a question mark opening a sentence that already
+                ends in one. The items are self-evidently questions; the bullet
+                now matches the checklist column beside it instead of
+                punctuating the text.
+              */}
               <span
                 aria-hidden="true"
-                className="mr-1.5 inline lg:mr-0 lg:inline-block"
-                style={{ color: "var(--color-accent)" }}
-              >
-                ?
-              </span>
+                className="mt-[7px] h-[5px] w-[5px] shrink-0 rounded-full"
+                style={{ backgroundColor: "var(--color-accent)" }}
+              />
               <span className="text-[color:var(--color-muted)]">{item}</span>
             </li>
           ))}
@@ -456,20 +466,23 @@ export function RelatedServices({
   basePath?: string;
 }) {
   const others = services.filter((service) => service.slug !== currentSlug);
+  // Always exactly three cards (four services minus the current one), so the
+  // column count goes straight from 1 to 3. A 2-column step stranded the third
+  // card beside an empty cell on every tablet-width screen.
   return (
-    <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <ul className="grid gap-4 md:grid-cols-3">
       {others.map((service) => (
         <li key={service.slug}>
           <Link
             href={`${basePath}/${service.slug}`}
-            className="card card-interactive flex h-full flex-col p-5 text-center lg:text-left"
+            className="card card-interactive flex h-full flex-col p-5"
           >
             <h3 className="font-semibold">{service.name}</h3>
             <p className="mt-1.5 flex-1 text-sm text-[color:var(--color-muted)]">
               {service.summary}
             </p>
             <span
-              className="mt-4 inline-flex items-center justify-center gap-1.5 text-[14px] font-semibold lg:justify-start"
+              className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-semibold"
               style={{ color: "var(--color-accent)" }}
             >
               View service

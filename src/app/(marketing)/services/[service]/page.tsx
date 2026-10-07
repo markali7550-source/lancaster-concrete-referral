@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -8,7 +9,6 @@ import {
   ReferralDisclosureStrip,
   Section,
   SectionDivider,
-  RoutingControls,
 } from "@/components/marketing/sections";
 import {
   Breadcrumbs,
@@ -24,15 +24,17 @@ import {
 } from "@/components/marketing/service-sections";
 import {
   MayInclude,
-  MoreInformation,
   ReferralSteps,
   ServiceCtaBand,
   ServiceDisclosureBlock,
 } from "@/components/marketing/service-detail-sections";
 import { serviceDetails } from "@/content/service-details";
-import { getService, publishedServices } from "@/content/services";
-import { publishedLocationServices } from "@/content/location-services";
-import { OUT_OF_AREA_POSTAL_CODE, getLocation, serviceAreaOptions } from "@/content/locations";
+import {
+  getService,
+  publishedServices,
+  type ServiceSectionId,
+} from "@/content/services";
+import { OUT_OF_AREA_POSTAL_CODE, serviceAreaOptions } from "@/content/locations";
 import { site } from "@/lib/env";
 import { pageMetadata } from "@/lib/seo/metadata";
 import {
@@ -44,6 +46,58 @@ import {
 } from "@/lib/schema/graph";
 
 export const dynamicParams = false;
+
+/**
+ * Each service page carries photographs of its own work. These used to be a
+ * single shared driveway photo, which is how a patio page ends up closing on
+ * somebody else's garage.
+ */
+const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-driveways": { src: "/images/driveway-drainage-detail.webp", alt: "Driveway edge pitched away from the lawn with a gravel drainage margin" },
+  "concrete-patios": { src: "/images/patio-backyard-slab.webp", alt: "Plain concrete patio slab at the rear of a single story brick home" },
+  "concrete-slabs": { src: "/images/slab-formwork-pad.webp", alt: "Concrete pad still sitting inside its timber forms on an open lot" },
+  "concrete-repair": { src: "/images/repair-detail-crack.webp", alt: "Settled concrete walkway slab with a cracked, lifted edge" },
+};
+
+/**
+ * The closing band carries a photograph of the service it belongs to. One
+ * shared photo meant a driveway closed the patio, slab and repair pages.
+ */
+/**
+ * Optional photograph for the Process band, keyed by service.
+ *
+ * Deliberately sparse. Only repair has one, because a repair genuinely starts
+ * with an identifiable physical act — sawing the failed section out — that a
+ * photograph can show. Placing, screeding and curing look much the same across
+ * driveways, patios and slabs, and the generated images that used to fill
+ * those bands are exactly what had to be deleted. A missing key renders no
+ * image rather than a generic one.
+ */
+const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-repair": {
+    src: "/images/repair-sawcutting-slab.webp",
+    alt: "Worker cutting into a concrete slab with a handheld cut off saw, throwing up a cloud of dust beside a chain link fence",
+  },
+};
+
+const SERVICE_CTA_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-driveways": {
+    src: "/images/cta-service-driveways.webp",
+    alt: "Finished concrete driveway running up to the attached garage of a single story brick home",
+  },
+  "concrete-patios": {
+    src: "/images/cta-service-patios.webp",
+    alt: "Stamped and colored concrete patio with outdoor furniture and a shade umbrella behind a suburban home",
+  },
+  "concrete-slabs": {
+    src: "/images/cta-service-slabs.webp",
+    alt: "Concrete shed pad with a compacted gravel border in a fenced back yard",
+  },
+  "concrete-repair": {
+    src: "/images/cta-service-repair.webp",
+    alt: "Section of failed concrete cut out and replaced beside the surviving original slab",
+  },
+};
 
 export function generateStaticParams() {
   return publishedServices.map((service) => ({ service: service.slug }));
@@ -63,36 +117,6 @@ function titleFor(name: string) {
 function descriptionFor(nameLower: string, projectNoun: string) {
   return `What ${nameLower} referral covers in Lancaster, SC, what falls outside it, and how your ${projectNoun} request reaches an independent service provider.`;
 }
-
-/*
- * Section imagery for the service detail pages.
- *
- * The hero and the service card are NOT configured here -- both read
- * `service.image` from content/services.ts and are deliberately left alone.
- * Every map below is a secondary section, and each entry owns a file that is
- * used in exactly one place site-wide.
- */
-const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
-  "concrete-driveways": { src: "/images/driveway-drainage-detail.webp", alt: "Representative driveway edge with drainage pitch and lawn border" },
-  "concrete-patios": { src: "/images/patio-backyard-slab.webp", alt: "Representative plain concrete patio slab at the rear of a single-story brick home" },
-  "concrete-slabs": { src: "/images/slab-formwork-pad.webp", alt: "Representative concrete pad still sitting inside its timber forms on an open lot" },
-  "concrete-repair": { src: "/images/repair-detail-crack.webp", alt: "Representative settled concrete walkway slab with a cracked, lifted edge" },
-};
-
-const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
-  "concrete-driveways": { src: "/images/driveway-pour-joints.webp", alt: "Representative concrete driveway control joints and broom finish" },
-  "concrete-patios": { src: "/images/patios-process-walkway.webp", alt: "Representative finished backyard patio with a garden border and seating area" },
-  "concrete-slabs": { src: "/images/slabs-process-pad.webp", alt: "Representative finished residential concrete pad set into a lawn" },
-  "concrete-repair": { src: "/images/repair-process-trowel.webp", alt: "Representative hand trowel finishing a concrete repair patch" },
-};
-
-/** Closing CTA photography, one dedicated file per service page. */
-const SERVICE_CTA_IMAGES: Record<string, { src: string; alt: string }> = {
-  "concrete-driveways": { src: "/images/cta-service-driveways.webp", alt: "Representative wide residential concrete driveway beside a brick home" },
-  "concrete-patios": { src: "/images/cta-service-patios.webp", alt: "Representative stamped concrete patio with outdoor furniture" },
-  "concrete-slabs": { src: "/images/cta-service-slabs.webp", alt: "Representative concrete shed pad in a fenced backyard" },
-  "concrete-repair": { src: "/images/cta-service-repair.webp", alt: "Representative broken concrete edge beside a freshly poured repair section" },
-};
 
 export async function generateMetadata({
   params,
@@ -118,33 +142,24 @@ export default async function ServicePage({ params }: { params: Params }) {
   const h1 = `${service.name} in Lancaster County, SC`;
   const description = descriptionFor(service.nameLower, service.projectNoun);
 
-  const cityLinks = publishedLocationServices
-    .filter((record) => record.serviceSlug === service.slug)
-    .map((record) => ({ record, location: getLocation(record.locationSlug) }))
-    .filter(
-      (entry): entry is { record: (typeof publishedLocationServices)[number]; location: NonNullable<ReturnType<typeof getLocation>> } =>
-        Boolean(entry.location),
-    );
-
   const detail = serviceDetails[service.slug];
 
-  // `nameLower` carries its own article for countable services ("a concrete
-  // driveway") but not for mass nouns ("concrete repair"), so add one only
-  // when it is missing.
-  const projectPhrase = service.nameLower.startsWith("a ")
-    ? service.nameLower
-    : `a ${service.nameLower}`;
+  /*
+   * Built from the service's own sectionOrder so the sub-nav always matches
+   * the order the sections are actually rendered in. Hardcoding it meant the
+   * nav claimed every page ran scope -> options -> process -> cost -> prepare,
+   * which stopped being true once the pages were allowed to differ.
+   */
+  const mainNavLabels: Record<ServiceSectionId, string> = {
+    scope: "What's covered",
+    options: "Options",
+    process: "Process",
+    cost: "What drives cost",
+    prepare: "Prepare",
+  };
 
   const navItems = [
-    { id: "scope", label: "What's covered" },
-    { id: "more-information", label: "More information" },
-    { id: "may-include", label: "May include" },
-    { id: "options", label: "Options" },
-    { id: "process", label: "Process" },
-    { id: "cost", label: "What drives cost" },
-    { id: "prepare", label: "Prepare" },
-    { id: "routing", label: "How routing works" },
-    { id: "how-it-works", label: "How it works" },
+    ...service.sectionOrder.map((id) => ({ id, label: mainNavLabels[id] })),
     { id: "quote-form", label: "Get a quote" },
     { id: "faq", label: "FAQ" },
   ];
@@ -192,86 +207,121 @@ export default async function ServicePage({ params }: { params: Params }) {
         <div className="grid gap-6 lg:grid-cols-12 lg:gap-12">
           {/* ---------------------------------------------------- Main column */}
           <div className="min-w-0 lg:col-span-7 xl:col-span-8">
-            <section id="scope" className="scroll-mt-36 py-12 md:py-20">
-              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Scope</p>
-              <h2 className="h2 mt-4 text-center md:text-left">
-                What we route under {service.name.toLowerCase()}
-              </h2>
-              <p className="lede mx-auto mt-4 max-w-prose text-center md:mx-0 md:text-left">
-                {service.summary}
+            {service.sectionOrder.map((id, index) => {
+              /*
+               * Rendered from the service's own sectionOrder, not a fixed
+               * sequence, so the four pages lead with whatever actually
+               * matters for that job. The first section carries no top rule
+               * and the rest are separated by one, wherever they land.
+               */
+              const first = index === 0;
+              const cls = first
+                ? "scroll-mt-36 py-12 md:py-20"
+                : "scroll-mt-36 border-t py-12 md:py-20";
+              const style = first
+                ? undefined
+                : { borderColor: "var(--color-line-soft)" };
+
+              if (id === "scope") {
+                return (
+                  <section key={id} id="scope" className={cls} style={style}>
+                    <p className="eyebrow flex">Scope</p>
+                      <h2 className="h2 mt-4">
+                        {service.headings.scope}
+                      </h2>
+                    <p className="lede mt-4 max-w-prose">{service.summary}</p>
+                    <div className="mt-8">
+                      <ScopeColumns
+                        covered={service.covered}
+                        outOfScope={service.outOfScope}
+                      />
+                    </div>
+                  </section>
+                );
+              }
+
+              if (id === "options") {
+                return (
+                  <section key={id} id="options" className={cls} style={style}>
+                    <p className="eyebrow flex">Specification</p>
+                    <h2 className="h2 mt-4">{service.headings.options}</h2>
+                    <p className="lede mt-4 max-w-prose">
+                      {service.optionsLead}
+                    </p>
+                    <div className="mt-8">
+                      <OptionsList options={service.options} />
+                    </div>
+                  </section>
+                );
+              }
+
+              if (id === "process") {
+                return (
+                  <section key={id} id="process" className={cls} style={style}>
+                    <p className="eyebrow flex">Process</p>
+                    <h2 className="h2 mt-4">{service.headings.process}</h2>
+                    <p className="lede mt-4 max-w-prose">
+                      {service.processLead}
+                    </p>
+                    {SERVICE_PROCESS_IMAGES[service.slug] ? (
+                      <Image
+                        src={SERVICE_PROCESS_IMAGES[service.slug].src}
+                        alt={SERVICE_PROCESS_IMAGES[service.slug].alt}
+                        width={1100}
+                        height={741}
+                        sizes="(min-width: 1024px) 48rem, 100vw"
+                        className="mt-8 h-56 w-full rounded-[12px] object-cover md:h-64"
+                      />
+                    ) : null}
+                    <div className="mt-8">
+                      <Timeline phases={service.process} />
+                    </div>
+                  </section>
+                );
+              }
+
+              if (id === "cost") {
+                return (
+                  <section key={id} id="cost" className={cls} style={style}>
+                    <p className="eyebrow flex">Pricing</p>
+                    <h2 className="h2 mt-4">{service.headings.cost}</h2>
+                    <p className="lede mt-4 max-w-prose">{service.costLead}</p>
+                    <div className="mt-8">
+                      <CostTable rows={service.costFactors} />
+                    </div>
+                  </section>
+                );
+              }
+
+              return (
+                <section key={id} id="prepare" className={cls} style={style}>
+                  <p className="eyebrow flex">Preparation</p>
+                  <h2 className="h2 mt-4">{service.headings.prepare}</h2>
+                  <div className="mt-8">
+                    <PrepColumns
+                      checklist={service.prepChecklist}
+                      questions={service.quoteQuestions}
+                    />
+                  </div>
+                </section>
+              );
+            })}
+
+            {/*
+              The four routing controls used to be repeated in full here, on
+              every service page, every combo page and the home page -- the
+              same four paragraphs on eleven URLs. They are explained once, on
+              /how-it-works, and linked from the places that need them.
+            */}
+            <section className="scroll-mt-36 border-t py-10" style={{ borderColor: "var(--color-line-soft)" }}>
+              <p className="max-w-prose text-[15px] leading-relaxed text-[color:var(--color-muted)]">
+                Before anything is sent we check written coverage, project type,
+                an active referral agreement and current capacity.{" "}
+                <Link href="/how-it-works" className="underline underline-offset-4">
+                  How a request is checked and routed
+                </Link>
+                .
               </p>
-              <div className="mt-8">
-                <ScopeColumns
-                  covered={service.covered}
-                  outOfScope={service.outOfScope}
-                />
-              </div>
-            </section>
-
-            <section id="options" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Specification</p>
-              <h2 className="h2 mt-4 text-center md:text-left">
-                Choices your contractor will raise
-              </h2>
-              <p className="lede mx-auto mt-4 max-w-prose text-center md:mx-0 md:text-left">
-                We do not specify your project. These are the decisions that
-                come up so you are not hearing them for the first time on site.
-              </p>
-              <div className="mt-8">
-                <OptionsList options={service.options} />
-              </div>
-            </section>
-
-            <section id="process" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Process</p>
-              <h2 className="h2 mt-4 text-center md:text-left">
-                How a {service.projectNoun} project usually runs
-              </h2>
-              <p className="lede mx-auto mt-4 max-w-prose text-center md:mx-0 md:text-left">
-                Durations below are typical ranges reported by partners, not
-                commitments. Your contractor sets the actual schedule.
-              </p>
-              <div className="mt-8">
-                <Timeline phases={service.process} />
-              </div>
-            </section>
-
-            <section id="cost" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Pricing</p>
-              <h2 className="h2 mt-4 text-center md:text-left">
-                What actually drives the price
-              </h2>
-              <p className="lede mx-auto mt-4 max-w-prose text-center md:mx-0 md:text-left">
-                We publish no prices, ranges, or per foot figures. Doing so
-                would be a guess on a project nobody has seen. What we can do is
-                tell you which variables move the number.
-              </p>
-              <div className="mt-8">
-                <CostTable rows={service.costFactors} />
-              </div>
-            </section>
-
-            <section id="prepare" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Preparation</p>
-              <h2 className="h2 mt-4 text-center md:text-left">
-                Get more out of the estimate visit
-              </h2>
-              <div className="mt-8">
-                <PrepColumns
-                  checklist={service.prepChecklist}
-                  questions={service.quoteQuestions}
-                />
-              </div>
-            </section>
-
-            <section id="routing" className="scroll-mt-36 border-t py-12 md:py-20" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">How routing works</p>
-              <h2 className="h2 mt-4 text-center md:text-left">
-                How your request reaches an independent provider
-              </h2>
-              <div className="mt-8">
-                <RoutingControls />
-              </div>
             </section>
           </div>
 
@@ -290,7 +340,7 @@ export default async function ServicePage({ params }: { params: Params }) {
                 fallbackDisplay={site.phoneDisplay}
                 fallbackE164={site.phoneE164}
               />
-              <div className="card mt-4 p-5 text-center lg:text-left">
+              <div className="card mt-4 p-5">
                 <p className="text-sm font-semibold">Prefer to talk it through?</p>
                 <p className="mt-1.5 text-sm text-[color:var(--color-muted)]">
                   Our referral team can confirm whether we have approved
@@ -310,77 +360,34 @@ export default async function ServicePage({ params }: { params: Params }) {
 
       <SectionDivider />
 
-      <section id="more-information" className="scroll-mt-32">
-        <Section
-          eyebrow="More information"
-          title={`Understanding ${projectPhrase} project in Lancaster, SC`}
-          lead={`A plain language look at what ${projectPhrase} project involves, what homeowners in Lancaster County typically ask about, and what is worth settling before any work begins.`}
-        >
-          <MoreInformation blocks={detail.moreInfo} />
-        </Section>
-      </section>
-
       <section id="may-include" className="scroll-mt-32">
         <Section
           backgroundImage={SERVICE_DETAIL_IMAGES[service.slug]}
           eyebrow="Include"
-          title={`What ${projectPhrase} project may include`}
+          title={`What a ${service.projectNoun} project may include`}
         >
-          <MayInclude
-            items={detail.mayInclude}
-            serviceName={projectPhrase}
-          />
-        </Section>
-      </section>
-
-      <section id="how-it-works" className="scroll-mt-32">
-        <Section
-          eyebrow="How it works"
-          title="Three steps to a referral"
-          lead="Requesting a referral takes a few minutes. Here is what happens after you submit your project details."
-        >
-          <ReferralSteps />
+          <MayInclude items={detail.mayInclude} serviceName={service.projectNoun} />
         </Section>
       </section>
 
       <ServiceDisclosureBlock />
 
-      {cityLinks.length > 0 ? (
-        <Section
-          eyebrow="Local pages"
-          title={`${service.name} by city`}
-          compact
-          backgroundImage={SERVICE_PROCESS_IMAGES[service.slug]}
-        >
-          <ul className="flex flex-wrap justify-center gap-3 lg:justify-start">
-            {cityLinks.map(({ record, location }) => (
-              <li key={record.locationSlug}>
-                <Link
-                  href={`/locations/${record.locationSlug}/${record.serviceSlug}`}
-                  className="btn btn-secondary"
-                >
-                  {service.name} in {location.city}, {location.region}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </Section>
-      ) : null}
-
       <section id="faq" className="scroll-mt-32">
-        <Section eyebrow="FAQ" title={`${service.name} questions`}>
+        <Section compact eyebrow="FAQ" title={service.headings.faq}>
           <FaqSection faqs={service.considerations} name="service-faq" />
         </Section>
       </section>
 
       <SectionDivider />
 
-      <Section eyebrow="Other services" title="Also routed in Lancaster">
+      <Section compact eyebrow="Other services" title="Also routed in Lancaster">
         <RelatedServices services={publishedServices} currentSlug={service.slug} />
       </Section>
 
 
       <ServiceCtaBand
+        title={service.headings.cta}
+        body={service.ctaLead}
         imageSrc={SERVICE_CTA_IMAGES[service.slug]?.src}
         imageAlt={SERVICE_CTA_IMAGES[service.slug]?.alt}
       />

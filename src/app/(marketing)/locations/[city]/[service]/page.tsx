@@ -8,8 +8,8 @@ import {
   Hero,
   HowMatchingWorks,
   ReferralDisclosureStrip,
-  Section,
   RoutingControls,
+  Section,
 } from "@/components/marketing/sections";
 import {
   Breadcrumbs,
@@ -39,22 +39,25 @@ import {
 export const dynamicParams = false;
 
 /*
- * The four location-service combo pages share one template, so the process and
- * CTA bands are keyed by service slug to keep every rendered section on its own
- * dedicated image file rather than repeating a single shared band photo.
+ * Combo pages are local pages. Sequence, cost drivers and estimate-visit prep
+ * are identical whatever city the work is in, so they live on the service hub
+ * and are linked from here rather than re-rendered -- these four pages used to
+ * repeat all three, which is why they read as copies of each other.
+ *
+ * The closing CTA band on every page of the site renders one shared photo
+ * (CTA_IMAGE in components/marketing/cta-band.tsx). Because that photo was
+ * previously the driveways localImage, content/location-services.ts points the
+ * driveways pair at cta-combo-driveways.webp so no page shows it twice.
  */
-const COMBO_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
-  "concrete-driveways": { src: "/images/process-combo-driveways.webp", alt: "Independent contractor inspecting the formed edge of a new residential driveway slab" },
-  "concrete-patios": { src: "/images/process-combo-patios.webp", alt: "Two workers screeding a freshly poured backyard patio between timber forms" },
-  "concrete-slabs": { src: "/images/process-combo-slabs.webp", alt: "Compacted gravel subbase and reinforcing mesh set inside timber forms before a slab pour" },
-  "concrete-repair": { src: "/images/process-combo-repair.webp", alt: "Worker saw-cutting a cracked section out of an existing concrete driveway" },
-};
+
+
+
 
 const COMBO_CTA_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-driveways": { src: "/images/cta-combo-driveways.webp", alt: "Finished residential concrete driveway running up to an attached garage" },
-  "concrete-patios": { src: "/images/cta-combo-patios.webp", alt: "Backyard concrete patio bordered by lawn and mature planting" },
-  "concrete-slabs": { src: "/images/cta-combo-slabs.webp", alt: "Level concrete slab poured beside a residential property" },
-  "concrete-repair": { src: "/images/cta-combo-repair.webp", alt: "Weathered concrete walkway section prepared for a repair pour" },
+  "concrete-patios": { src: "/images/cta-combo-patios.webp", alt: "Rectangular concrete patio with two chairs set behind a single story brick home" },
+  "concrete-slabs": { src: "/images/cta-combo-slabs.webp", alt: "Concrete equipment pad carrying an air conditioning condenser beside a brick house" },
+  "concrete-repair": { src: "/images/cta-repair-replacement.webp", alt: "Freshly placed concrete section meeting the older cracked surface it replaces, with the joint between new and existing concrete running down the middle" },
 };
 
 export function generateStaticParams() {
@@ -90,7 +93,7 @@ export default async function ComboPage({ params }: { params: Params }) {
   if (!record || !location || !serviceRecord) notFound();
 
   const path = `/locations/${city}/${service}`;
-  const h1 = comboMeta.h1(serviceRecord.name, location.city);
+  const h1 = comboMeta.h1(serviceRecord.slug, location.city);
   const description = comboMeta.description(
     serviceRecord.slug,
     location.city,
@@ -152,12 +155,18 @@ export default async function ComboPage({ params }: { params: Params }) {
         <div className="grid gap-6 lg:grid-cols-12 lg:gap-12">
           <div className="min-w-0 lg:col-span-7 xl:col-span-8">
             <section className="scroll-mt-36 py-12 md:py-20">
-              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">{`${serviceRecord.name} · ${location.city}`}</p>
-              <h2 className="h2 mt-4 text-center md:text-left">
-                What we see on {location.city}{" "}
-                {serviceRecord.shortName.toLowerCase()} requests
+              <p className="eyebrow flex">{`${serviceRecord.name} · ${location.city}`}</p>
+              {/*
+                Was "What we see on Lancaster patio requests", which claims the
+                publisher has observed its own request history. It has none.
+                The section is about site conditions, so the heading says that
+                and keeps the geography.
+              */}
+              <h2 className="h2 mt-4">
+                What affects a {serviceRecord.projectNoun} project in{" "}
+                {location.city}
               </h2>
-              <div className="mx-auto mt-8 max-w-prose space-y-6 text-center lg:mx-0 lg:text-left">
+              <div className="mt-8 max-w-prose space-y-6">
                 {record.localBody.map((block) => (
                   <div key={block.heading}>
                     <h3 className="text-[22px] font-semibold leading-snug">
@@ -171,13 +180,13 @@ export default async function ComboPage({ params }: { params: Params }) {
               </div>
               <nav
                 aria-label="Related pages"
-                className="mt-9 flex flex-wrap justify-center gap-3 lg:justify-start"
+                className="mt-9 flex flex-wrap gap-3"
               >
                 <Link
                   href={`/services/${serviceRecord.slug}`}
                   className="btn btn-secondary"
                 >
-                  All {serviceRecord.shortName.toLowerCase()} referrals
+                  All {serviceRecord.projectNoun} referrals
                 </Link>
                 <Link
                   href={`/locations/${location.slug}`}
@@ -194,7 +203,7 @@ export default async function ComboPage({ params }: { params: Params }) {
             >
               <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Process</p>
               <h2 className="h2 mt-4 text-center md:text-left">
-                How the project usually runs here
+                How the project usually runs
               </h2>
               <p className="lede mx-auto mt-4 max-w-prose text-center md:mx-0 md:text-left">
                 Typical ranges reported by participating providers, not commitments. Your
@@ -260,7 +269,7 @@ export default async function ComboPage({ params }: { params: Params }) {
                 fallbackDisplay={site.phoneDisplay}
                 fallbackE164={site.phoneE164}
               />
-              <div className="card mt-4 p-5 text-center lg:text-left">
+              <div className="card mt-4 p-5">
                 <p className="text-sm font-semibold">
                   Checking coverage first?
                 </p>
@@ -280,38 +289,37 @@ export default async function ComboPage({ params }: { params: Params }) {
         </div>
       </div>
 
-      <Section
-        tone="surface"
-        backgroundImage={COMBO_PROCESS_IMAGES[serviceRecord.slug]}
-        eyebrow="Process"
-        title="Three steps, no obligation"
-      >
+        {/*
+          Owner override: reuses the concrete texture from the home process
+          band. It is an abstract surface crop with no people, tools or
+          finished product in frame, so it reads the same across every
+          service x location combination and claims no real job. Decorative,
+          so the alt is empty. The shared Section supplies the scrim, the edge
+          fade and the z-30 content layer, and it renders a next/image element
+          rather than a CSS background, so nothing is attachment-fixed and the
+          picture scrolls with the band.
+        */}
+        <Section
+          tone="surface"
+          backgroundImage={{
+            src: "/images/process-texture-bg.webp",
+            alt: "",
+          }}
+          eyebrow="Process"
+          title="Three steps, no obligation"
+        >
         <HowMatchingWorks />
       </Section>
 
-      <Section
-        eyebrow="Before you call"
-        title="Worth settling first"
-        lead={`The questions worth answering before any ${serviceRecord.name.toLowerCase()} quote apply wherever the work happens, so we keep them in one place rather than repeating them on every local page.`}
-      >
-        <Link
-          href={`/services/${serviceRecord.slug}#prepare`}
-          className="btn btn-secondary"
-        >
-          What to settle before quoting{" "}
-          {serviceRecord.name.toLowerCase()} in {location.city}
-        </Link>
-      </Section>
-
-      <Section
+      <Section compact
         tone="surface"
         eyebrow="FAQ"
-        title={`${location.city} ${serviceRecord.shortName.toLowerCase()} questions`}
+        title={`${location.city} ${serviceRecord.projectNoun} questions`}
       >
         <FaqSection faqs={record.localFaqs} name="combo-faq" />
       </Section>
 
-      <Section eyebrow="Other services" title={`Also routed in ${location.city}`}>
+      <Section compact eyebrow="Other services" title={`Also routed in ${location.city}`}>
         <RelatedServices
           services={publishedServices.filter((s) =>
             publishedLocationServices.some(
@@ -327,10 +335,10 @@ export default async function ComboPage({ params }: { params: Params }) {
 
       <CtaBand
         tone="section"
-        title={`${serviceRecord.name} in ${location.city}, SC`}
-        body="One request, one eligible independent contractor. If nobody approved for your area can take it, we will tell you plainly."
         imageSrc={COMBO_CTA_IMAGES[serviceRecord.slug]?.src}
         imageAlt={COMBO_CTA_IMAGES[serviceRecord.slug]?.alt}
+        title={serviceRecord.headings.cta}
+        body="One request, one eligible independent contractor. If nobody approved for your area can take it, we will tell you plainly."
       />
 
     </>

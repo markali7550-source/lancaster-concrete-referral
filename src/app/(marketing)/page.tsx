@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -8,13 +9,14 @@ import {
   FaqSection,
   Hero,
   HowMatchingWorks,
-  ProjectExamples,
   ProjectTypeChooser,
+  RoutingControls,
   Section,
   SectionDivider,
-  RoutingControls,
 } from "@/components/marketing/sections";
-import { CtaBand } from "@/components/marketing/service-sections";
+import {
+  CtaBand,
+} from "@/components/marketing/service-sections";
 import { OUT_OF_AREA_POSTAL_CODE, publishedLocations, serviceAreaOptions } from "@/content/locations";
 import { publishedServices, serviceCardImages } from "@/content/services";
 import { site } from "@/lib/env";
@@ -98,7 +100,7 @@ export default function HomePage() {
       <Hero
         locationCue="Lancaster County, South Carolina"
         h1="Connect With a Local Concrete Service Provider in Lancaster, SC"
-        summary="Tell us what you need and where the property is. We’ll match your request with one eligible independent concrete service provider serving your area."
+        summary="Tell us what you need and where the property is. We will match your request with one eligible independent concrete service provider serving your area."
         imageSrc="/home-hero.webp"
         imageAlt="Broom finished concrete front walkway and entry steps leading to the porch of a two-story home"
         overlay
@@ -111,7 +113,7 @@ export default function HomePage() {
         lead="Four residential concrete service categories, each with at least one participating provider holding written coverage for Lancaster areas. Foundation repair, structural engineering, and retaining walls sit outside this scope."
       >
         <ProjectTypeChooser images={serviceCardImages} />
-        <p className="mt-8 text-center text-sm lg:text-left">
+        <p className="mt-8 text-sm">
           <Link
             href="/services"
             className="font-semibold underline underline-offset-4"
@@ -122,17 +124,59 @@ export default function HomePage() {
         </p>
       </Section>
 
-      <Section
-        backgroundImage={{
-          src: "/process-band.webp",
-          alt: "Residential concrete driveway forms and a fresh pour on a neighborhood street",
-        }}
-        eyebrow="Process"
-        title="Three steps, no obligation"
-        lead="You are never passed to a call center, and your details are never sold to a list of providers who bid against each other."
-      >
-        <HowMatchingWorks />
-      </Section>
+        {/*
+          Concrete texture background, requested by the owner at this exact
+          path. It is not a generated image: it is a crop of the broom
+          finished slab in cta-combo-driveways.webp, taken at native
+          resolution with no upscaling, so it is a real concrete surface.
+          A flat even texture is deliberate here -- the three step cards sit
+          on top, and a busier scene competed with the numerals.
+
+          process-band.webp is kept in public/ rather than deleted. Swapping
+          the url() below back restores the street pour if that is preferred.
+
+          Written as an explicit section rather than <Section> because the
+          owner specified the exact layer stack: texture at z-0 on bg-scroll,
+          a 50% #0D1110 wash at z-10, a top-and-bottom #0D1110 gradient at
+          z-20, and the step cards at z-30. Routing this through <Section>
+          would have meant editing the shared component, which would have
+          moved every other photo band on the site.
+
+          cta-photo is kept on the section because it is the rule that flips
+          the eyebrow, heading, lead and card text to their light-on-dark
+          variants. Without it the type renders dark ink on a dark band.
+        */}
+        <section className="cta-photo relative w-full overflow-hidden py-16 md:py-24 bg-[#0D1110]">
+          <div
+            className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-scroll"
+            style={{
+              backgroundImage: "url('/images/process-texture-bg.webp')",
+            }}
+            aria-hidden="true"
+          />
+          <div
+            className="absolute inset-0 z-10 bg-[#0D1110]/50"
+            aria-hidden="true"
+          />
+          <div
+            className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-[#0D1110] via-transparent to-[#0D1110]"
+            aria-hidden="true"
+          />
+          <div className="container-page relative z-30">
+            <div className="text-left">
+              <p className="eyebrow">Process</p>
+              <h2 className="h2 mt-3">Three steps, no obligation</h2>
+              <p className="lede mt-4">
+                You are never passed to a call center, and your details are
+                never sold to a list of providers who bid against each other.
+              </p>
+            </div>
+            <div className="mt-7">
+              <HowMatchingWorks />
+            </div>
+          </div>
+        </section>
+
 
 
       <Section
@@ -145,9 +189,9 @@ export default function HomePage() {
       </Section>
 
       <Section
-        eyebrow="Common questions"
-        title="Questions worth settling before you call"
-        lead="Straight answers, including the ones that tell you we are not the right service for your project."
+        eyebrow="Before you call"
+        title="Four things worth deciding yourself"
+        lead="None of these need a contractor to answer, and knowing them makes the first conversation shorter."
       >
         <DecisionSupport items={DECISION_ITEMS} />
       </Section>
@@ -155,7 +199,7 @@ export default function HomePage() {
       <Section
         backgroundImage={{
           src: "/home-service-area-band.webp",
-          alt: "Quiet Lancaster County South Carolina residential street with concrete driveways, front walkways, and mature trees",
+          alt: "Single story brick ranch home behind a mature shade tree, with a curved concrete front walkway running out to the sidewalk",
         }}
         eyebrow="Service area"
         title="Areas we currently serve"
@@ -172,11 +216,11 @@ export default function HomePage() {
       <Section
         tone="surface"
         eyebrow="Request a referral"
-        title="Start with your project type and location"
+        title="What we need from you"
         lead="Two short steps. A participating service provider may contact you, and if no provider covering your area can take it, we will say so plainly."
       >
         <p
-          className="mb-8 rounded-[12px] border p-4 text-center text-[13.5px] leading-relaxed lg:text-left"
+          className="mb-8 rounded-[12px] border p-4 text-[13.5px] leading-relaxed"
           style={{
             borderColor: "var(--color-line)",
             color: "var(--color-muted)",
@@ -192,7 +236,7 @@ export default function HomePage() {
         </p>
 
         <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
-          <div className="mx-auto w-full max-w-xl lg:mx-0">
+          <div className="w-full max-w-xl">
             <QuoteForm
               services={publishedServices.map((s) => ({
                 slug: s.slug,
@@ -205,31 +249,15 @@ export default function HomePage() {
               fallbackE164={site.phoneE164}
             />
           </div>
-          <div className="text-center lg:pt-4 lg:text-left">
+          <div className="lg:pt-4">
             <p className="eyebrow-plain">What happens after you submit</p>
-            <ol className="mt-5 space-y-5">
-              {[
-                "Your location and project type are checked against participating providers with written coverage.",
-                "Service availability depends on participating providers, so coverage and current capacity are checked before anything is sent.",
-                "One independent third party service provider receives the request and may contact you.",
-                "If they do not acknowledge in time, it is reassigned once to another participating provider.",
-              ].map((item, index) => (
-                <li key={item} className="flex justify-center gap-4 text-left lg:justify-start">
-                  <span
-                    className="grid h-8 w-8 shrink-0 place-items-center rounded-full text-[13px] font-bold"
-                    style={{
-                      backgroundColor: "var(--color-accent-soft)",
-                      color: "var(--color-accent)",
-                    }}
-                  >
-                    {index + 1}
-                  </span>
-                  <span className="text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ol>
+            <p className="mt-4 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
+              Your location and project type are checked against participating
+              providers with written coverage. One provider receives the
+              request and may contact you. If they do not acknowledge in time
+              it is reassigned once, and if nobody covers your area we tell you
+              so rather than forwarding it anyway.
+            </p>
             <div className="card mt-8 p-5">
               <p className="text-sm font-semibold">Rather just talk?</p>
               <p className="mt-1.5 text-[14px] text-[color:var(--color-muted)]">
@@ -248,17 +276,9 @@ export default function HomePage() {
       </Section>
 
 
-      <Section
-        eyebrow="PROJECT PHOTOGRAPHY"
-        title="Representative quality details, built on transparency"
-      >
-        <ProjectExamples />
-      </Section>
-
-
       <SectionDivider />
 
-      <Section eyebrow="FAQ" title="Straight answers">
+      <Section compact eyebrow="FAQ" title="How this service works">
         <FaqSection faqs={FAQS} name="home-faq" />
         <p className="mt-6 text-sm text-[color:var(--color-muted)]">
           Full detail on how we are paid and what we do not do is on the{" "}
@@ -272,8 +292,6 @@ export default function HomePage() {
       <CtaBand
         title="Ready to connect with an independent concrete service provider?"
         body="One request, one independent third party service provider, no charge to you and no obligation to proceed."
-        imageSrc="/cta-pour-band.webp"
-        imageAlt="Two independent concrete workers screeding a freshly poured residential driveway slab between timber forms"
       />
 
 

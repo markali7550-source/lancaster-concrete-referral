@@ -54,10 +54,10 @@ export const locations: readonly LocationRecord[] = [
       "Red clay subsoil common through the county holds water, so participating providers are asked about drainage handling before a driveway or slab quote is confirmed.",
     ],
     intro:
-      "Looking for concrete services in Lancaster, SC? We help connect homeowners with independent concrete service providers who may be available for projects in the area. Lancaster is the core market for this referral service, and inquiries are matched against participating providers who have explicitly approved that coverage in writing.",
+      "Lancaster is the only area this service covers right now. Every request is checked against providers who have approved that coverage in writing, which is why the list here is short and why it grows slowly. If nobody covers your address, we say so instead of passing your details along anyway.",
     heroImage: "/lancaster-hero.webp",
     heroImageAlt:
-      "Residential street in Lancaster, South Carolina with concrete driveways in natural daylight",
+      "Quiet residential street of brick ranch houses and pines, with red clay verges and concrete driveways",
     adjacent: [],
   },
   {

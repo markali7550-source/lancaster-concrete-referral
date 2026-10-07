@@ -21,24 +21,24 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-driveways",
     state: "published",
-    localImage: "/images/local-driveways-lancaster.webp",
+    localImage: "/images/service-driveways.webp",
     localImageAlt:
-      "Finished concrete driveway on a narrow Lancaster SC lot meeting the street at a poured apron",
+      "Concrete driveway running up to the garage of a single story brick ranch house, with saw cut control joints across its width",
     localBody: [
       {
-        heading: "Two kinds of request",
+        heading: "Two kinds of job",
         body:
-          "Driveway inquiries from Lancaster split fairly evenly between replacement of 1970s to 1990s pours in the older neighborhoods off Chesterfield Avenue and first time pours on rural parcels where a gravel drive has become unworkable.",
+          "Driveway requests usually fall into one of two jobs. One is replacing an aging slab that has cracked, settled, or lost its surface. The other is a first concrete pour where a gravel drive has become unworkable. The two price differently, because only one of them carries demolition and haul away.",
       },
       {
         heading: "Access and water come first",
         body:
-          "The two questions participating providers raise most often on Lancaster driveways are truck access and water. Narrow lots in town restrict where a mixer can stage, and the county's clay subsoil holds water long enough that subbase preparation and edge drainage change the price of the job more than the square footage does.",
+          "Square footage affects the price, and access and drainage can move it just as much. Where a mixer can stage decides whether concrete is chuted straight into the forms or has to be barrowed or pumped, and clay subsoil that holds water puts more weight on subbase preparation and edge drainage.",
       },
       {
         heading: "When to ask for a visit",
         body:
-          "Seasonality matters here too. Requests cluster in late spring and early fall, which is when provider capacity tightens and acknowledgment times stretch. If your driveway is already failing, an inquiry in the quieter winter weeks usually gets a faster site visit, even though the pour itself may be scheduled for milder weather.",
+          "Weather shapes the schedule more than the calendar does. Temperature, humidity, and rain all affect site preparation, placement, and curing, so a contractor may move a pour rather than fight the conditions. If a driveway is already failing, it is worth asking for an assessment early rather than waiting for the season you would prefer to pour in.",
       },
       {
         heading: "Who actually does the work",
@@ -69,29 +69,29 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-patios",
     state: "published",
-    localImage: "/images/local-patios-lancaster.webp",
+    localImage: "/images/service-patios.webp",
     localImageAlt:
-      "Broom finished concrete patio in a shaded Lancaster SC back yard under mature oak and pine trees",
+      "Stamped concrete backyard patio in a random stone pattern with a curved edge, set against a mown lawn and a split rail fence",
     localBody: [
       {
-        heading: "What most requests look like",
+        heading: "What the work usually is",
         body:
-          "Patio inquiries in Lancaster are dominated by rear yard slabs behind single-story ranch houses built between the 1960s and the 1990s, and by homeowners converting a tired screened porch footprint into an open entertaining surface.",
+          "Patio work is usually either a new slab in a rear yard or a replacement of a surface that has cracked, settled, or drains the wrong way. An old porch or stoop footprint opened up into an uncovered seating area is a common variation, and it pulls the existing structure into the scope.",
       },
       {
         heading: "Shade decides the finish",
         body:
-          "Shade is the variable homeowners underestimate. Mature oaks and pines keep much of a Lancaster back yard damp into the morning, and a smooth troweled finish there grows algae and turns slippery within a couple of seasons. Participating providers usually steer these patios toward a broom or exposed aggregate finish for grip.",
+          "Shade changes which finish makes sense. A patio under mature trees stays damp well into the morning, and a smooth troweled surface in that position grows algae and gets slippery. A broom finish or exposed aggregate keeps grip where a smooth trowel will not, and it is worth settling before the slab is ordered rather than after.",
       },
       {
         heading: "Humidity and scheduling",
         body:
-          "Humidity drives scheduling more than temperature does. A July pour in Lancaster County can skin over faster than the crew can finish it, so participating providers often start at first light or push the date rather than fight the slab. Expect a contractor to talk about curing and moisture protection, not just the pour day itself.",
+          "Heat and humidity drive scheduling more than temperature alone. In hot, humid conditions a slab can skin over faster than it can be finished, so pours are often started early in the day or moved rather than fought. Expect a contractor to talk about curing and moisture protection, not only the pour day itself.",
       },
       {
         heading: "Tying into existing concrete",
         body:
-          "Tying a new patio into an existing porch footing or stoop is the other recurring detail. The old footing and the new slab move independently unless the joint is detailed deliberately, which is why participating providers inspect the existing structure before quoting rather than pricing from a square foot figure over the phone.",
+          "Tying a new patio into an existing porch footing or stoop is the other detail worth raising early. The old footing and the new slab move independently unless the joint is detailed deliberately, which is why the existing structure needs looking at before anyone quotes, rather than pricing it from a square foot figure over the phone.",
       },
     ],
     localFaqs: [
@@ -108,7 +108,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         question: "Is summer a bad time to pour a patio here?",
         answer:
-          "It is workable but less forgiving. Lancaster humidity and heat shorten finishing time, so participating providers often schedule early morning pours or move the date. That is a contractor decision, not ours.",
+          "It is workable but less forgiving. Humidity and heat shorten finishing time, so a pour here may be scheduled for early morning or moved to a better week. That is a contractor decision, not ours.",
       },
     ],
   },
@@ -116,24 +116,24 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-slabs",
     state: "published",
-    localImage: "/images/local-slabs-lancaster.webp",
+    localImage: "/images/service-slabs.webp",
     localImageAlt:
-      "Finished residential concrete slab beside a landscaped yard in Lancaster, South Carolina",
+      "Finished concrete shed pad in a back yard, sitting proud of the ground with form marks down its side and backfilled soil around the edge",
     localBody: [
       {
-        heading: "Mostly outbuilding pads",
+        heading: "What pads are usually for",
         body:
-          "Slab requests around Lancaster are mostly outbuilding pads: detached workshops, equipment and mower storage, carports, hot tub bases, and pads for replacement HVAC condensers. Rural parcels outside the town limits account for most of the larger ones.",
+          "Residential pads are commonly poured for outbuildings: detached workshops, equipment and mower storage, carports, hot tub bases, and pads for replacement HVAC condensers. Each of those carries a different load, and the load decides the slab rather than the footprint does.",
       },
       {
         heading: "Load comes before price",
         body:
-          "Load is the first question a participating provider asks, because it changes the slab rather than just its price. A pad that will carry a lifted truck, a tractor, or a loaded workshop bench needs thickened edges and different reinforcement from a simple storage floor, and retrofitting that later means breaking out the slab.",
+          "Load is the first thing to settle, because it changes the slab rather than just its price. A pad that will carry a lifted truck, a tractor, or a loaded workshop bench needs thickened edges and different reinforcement from a simple storage floor, and retrofitting that later means breaking out the slab.",
       },
       {
         heading: "Siting on rural parcels",
         body:
-          "On rural Lancaster parcels, siting is the second question. Septic fields, well heads, and their setbacks constrain where a pad can legally and sensibly go, and participating providers will want those locations identified before they quote. Homeowners frequently discover the obvious flat spot is the one place the pad cannot sit.",
+          "On rural Lancaster parcels, siting is the second question. Septic fields, well heads, and their setbacks constrain where a pad can legally and sensibly go, and those locations need identifying before anyone quotes. The obvious flat spot is often the one place the pad cannot sit.",
       },
       {
         heading: "Heated buildings need more",
@@ -155,7 +155,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         question: "Do I need a vapor barrier under an outbuilding slab?",
         answer:
-          "For a heated or finished space, participating providers generally recommend one because the clay subsoil here holds moisture. For an open carport it is usually unnecessary. The assigned contractor specifies it, not us.",
+          "A vapor barrier is standard practice under a heated or finished space, because clay subsoil holds moisture that would otherwise rise through the slab. Under an open carport it is normally unnecessary. The assigned contractor specifies it, not us.",
       },
     ],
   },
@@ -163,14 +163,14 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-repair",
     state: "published",
-    localImage: "/images/local-repair-lancaster.webp",
+    localImage: "/images/repair-hero-walkway.webp",
     localImageAlt:
-      "Uneven residential concrete walkway needing a repair assessment in Lancaster, South Carolina",
+      "Residential concrete walkway where one slab has been lifted and tilted by tree roots, leaving a raised lip against the next panel",
     localBody: [
       {
-        heading: "Three shapes of request",
+        heading: "Three shapes it takes",
         body:
-          "Repair inquiries from Lancaster arrive in three recognizable shapes: surface spalling and flaking on slabs poured decades ago, joints that have opened and now trap water, and sections that have dropped out of level at an apron, walkway, or garage threshold.",
+          "Repair work usually takes one of three shapes: surface spalling and flaking on an older slab, joints that have opened and now trap water, and sections that have dropped out of level at an apron, walkway, or garage threshold. Which one you have decides whether the fix is cosmetic or structural.",
       },
       {
         heading: "Settlement is a soil story",
@@ -180,7 +180,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         heading: "Tree roots and lifted panels",
         body:
-          "Mature hardwoods cause the opposite problem. Roots from oaks planted close to older in town walkways lift panels from below, and cutting the root to level the slab can destabilize the tree. Participating providers will tell you plainly when that tradeoff is the real decision.",
+          "Mature hardwoods cause the opposite problem. Roots from oaks planted close to older in town walkways lift panels from below, and cutting the root to level the slab can destabilize the tree. A contractor worth hiring will tell you plainly when that tradeoff is the real decision.",
       },
       {
         heading: "When replacement wins",
@@ -192,7 +192,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         question: "Why does one section of my driveway keep sinking after it is fixed?",
         answer:
-          "Almost always water. If stormwater is washing fines out from under that section, leveling the surface without redirecting the water means the void reopens. Ask the contractor to explain what is being done about drainage.",
+          "Usually water. If stormwater is washing fines out from under that section, leveling the surface without redirecting the water means the void reopens. Ask the contractor to explain what is being done about drainage.",
       },
       {
         question: "Can a lifted slab near a tree be leveled without killing the tree?",

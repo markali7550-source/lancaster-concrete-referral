@@ -46,19 +46,19 @@ export default function HowItWorksPage() {
           />
         }
         imageSrc="/how-it-works-hero.webp"
-        imageAlt="Two concrete workers screeding and floating a freshly poured residential driveway slab between timber forms outside a brick home"
+        imageAlt="Freshly placed residential concrete slab floated smooth and still inside its timber forms, with a brick home beyond the lawn"
       >
         <p
-          className="eyebrow before:hidden lg:before:block"
+          className="eyebrow"
           style={{ color: overlayEyebrow }}
         >
           Our process
         </p>
-        <h1 className="h1 mx-auto mt-5 max-w-3xl lg:mx-0" style={{ color: overlayHeading }}>
+        <h1 className="h1 mt-5 max-w-3xl" style={{ color: overlayHeading }}>
           How Our Concrete Service Provider Referrals Work
         </h1>
         <p
-          className="lede mx-auto mt-5 max-w-2xl lg:mx-0"
+          className="lede mt-5 max-w-2xl"
           style={{ color: overlayBody }}
         >
           What happens between the moment you submit a request and the
@@ -71,18 +71,34 @@ export default function HowItWorksPage() {
         <RoutingControls />
       </Section>
 
-      <Section
-        backgroundImage={{
-          src: "/estimate-visit-measuring.webp",
-          alt: "Independent contractor measuring a residential concrete driveway during an estimate visit",
-        }}
-        eyebrow="Process"
-        title="Three steps, no obligation"
-      >
+        {/*
+          Restores the photograph removed from this band. The previous one was
+          generated — the man's fingers merged into the slab edge. This is a
+          real photograph: the glove has five separately articulated fingers
+          with worn seams, the concrete splatter dried on the boot is
+          irregular, and the sun direction is consistent across the frame.
+
+          It stays on this page only. The identical "Three steps" band also
+          renders on all four city-service pages, so wiring the image into the
+          shared section would put one supporting photograph in five places.
+
+          Deliberately service-neutral: this page covers driveways, patios,
+          slabs and repair, so the picture shows concrete being placed and
+          worked rather than any one finished product. The alt describes the
+          formed edge that is actually in frame and claims no location.
+        */}
+        <Section
+          backgroundImage={{
+            src: "/images/process-placing-edge.webp",
+            alt: "Worker in a high-visibility vest working wet concrete along a formed edge with a long handled tool, with excavated ground and broken rubble behind",
+          }}
+          eyebrow="Process"
+          title="Three steps, no obligation"
+        >
         <HowMatchingWorks />
       </Section>
       <Section eyebrow="Our role" title="What we are, and what we are not">
-        <div className="card p-7 text-center lg:text-left">
+        <div className="card p-7">
           <p className="eyebrow-plain">Required disclosure</p>
           {FULL_DISCLOSURE_PARAGRAPHS.map((paragraph) => (
             <p
@@ -94,7 +110,7 @@ export default function HowItWorksPage() {
           ))}
         </div>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          <div className="card p-6 text-center lg:text-left">
+          <div className="card p-6">
             <p className="font-semibold">We do</p>
             <ul className="mt-2 inline-block list-disc space-y-1.5 pl-5 text-left text-sm text-[color:var(--color-muted)] lg:block">
               <li>Collect and validate your request</li>
@@ -103,7 +119,7 @@ export default function HowItWorksPage() {
               <li>Reassign once if the first contractor does not acknowledge</li>
             </ul>
           </div>
-          <div className="card p-6 text-center lg:text-left">
+          <div className="card p-6">
             <p className="font-semibold">We do not</p>
             <ul className="mt-2 inline-block list-disc space-y-1.5 pl-5 text-left text-sm text-[color:var(--color-muted)] lg:block">
               <li>Pour, supervise, inspect, or warrant any concrete work</li>
@@ -116,11 +132,11 @@ export default function HowItWorksPage() {
       </Section>
 
       <CtaBand
+        imageSrc="/images/cta-how-it-works.webp"
+        imageAlt="Two story home with a broad concrete driveway and front path"
         title="Ready to start?"
         body="Submit a request and we will route it to one eligible independent contractor, or call the referral team first to check coverage."
         showFormLink={false}
-        imageSrc="/images/cta-how-it-works.webp"
-        imageAlt="Wide residential concrete driveway and walkway in afternoon daylight"
       />
 
     </>

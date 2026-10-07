@@ -44,24 +44,25 @@ export default function ContactPage() {
           src="/contact-front-walkway.webp"
           alt=""
           fill
+          priority
           sizes="100vw"
           className="-z-20 object-cover"
           aria-hidden="true"
         />
         <div
-          className="absolute inset-0 -z-10 bg-gradient-to-b from-[#070b09]/85 via-[#070b09]/75 to-[#070b09]/85 lg:bg-gradient-to-r lg:from-[#070b09]/92 lg:via-[#070b09]/78 lg:to-[#070b09]/35"
+          className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0B1017]/88 via-[#0B1017]/78 to-[#0B1017]/88 lg:bg-gradient-to-r lg:from-[#0B1017]/92 lg:via-[#0B1017]/80 lg:to-[#0B1017]/38"
           aria-hidden="true"
         />
-        <div className="container-page py-12 text-center md:py-16 lg:text-left">
+        <div className="container-page py-12 md:py-16">
           <Breadcrumbs
             overlay
             items={[{ name: "Home", path: "/" }, { name: "Contact" }]}
           />
-          <p className="eyebrow before:hidden lg:before:block">Contact</p>
-          <h1 className="h1 mx-auto mt-5 max-w-3xl lg:mx-0">
+          <p className="eyebrow">Contact</p>
+          <h1 className="h1 mt-5 max-w-3xl">
             Contact Our Lancaster, SC Concrete Referral Team
           </h1>
-          <p className="lede mx-auto mt-5 max-w-2xl lg:mx-0">
+          <p className="lede mt-5 max-w-2xl">
             We can confirm whether we have approved coverage for your area
             before you go any further.
           </p>
@@ -71,8 +72,8 @@ export default function ContactPage() {
       <Section>
         <h2 className="sr-only">Contact details and referral request</h2>
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
-          <div className="text-center lg:text-left">
-            <p className="lede mx-auto max-w-prose lg:mx-0">
+          <div className="text-left">
+            <p className="lede max-w-prose">
               We are the referral service, not the contractor. Our referral team can tell
               you whether we have approved coverage for your area and what
               happens after you submit a request. Questions about a quote, a
@@ -81,7 +82,7 @@ export default function ContactPage() {
             </p>
             <dl className="mt-8 space-y-5">
               <div>
-                <dt className="eyebrow justify-center before:hidden lg:justify-start lg:before:block">
+                <dt className="eyebrow">
                   Phone
                 </dt>
                 <dd className="mt-1">
@@ -94,7 +95,7 @@ export default function ContactPage() {
                 </dd>
               </div>
               <div>
-                <dt className="eyebrow justify-center before:hidden lg:justify-start lg:before:block">
+                <dt className="eyebrow">
                   Email
                 </dt>
                 <dd className="mt-1">
@@ -107,7 +108,7 @@ export default function ContactPage() {
                 </dd>
               </div>
               <div>
-                <dt className="eyebrow justify-center before:hidden lg:justify-start lg:before:block">
+                <dt className="eyebrow">
                   Coverage today
                 </dt>
                 <dd className="mt-1 text-[color:var(--color-muted)]">
@@ -115,7 +116,7 @@ export default function ContactPage() {
                 </dd>
               </div>
             </dl>
-            <p className="mx-auto mt-8 max-w-prose text-xs leading-relaxed text-[color:var(--color-muted)] lg:mx-0">
+            <p className="mt-8 max-w-prose text-xs leading-relaxed text-[color:var(--color-muted)]">
               {CALL_DISCLOSURE} We publish no street address because we are an
               online referral business, not a contracting premises.
             </p>

@@ -3,14 +3,14 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import {
   FaqSection,
   HowMatchingWorks,
-  ProjectTypeChooser,
   OverlayHeader,
-  overlayBody,
-  overlayEyebrow,
-  overlayHeading,
+  ProjectTypeChooser,
   ReferralDisclosureStrip,
   Section,
   SectionDivider,
+  overlayBody,
+  overlayEyebrow,
+  overlayHeading,
 } from "@/components/marketing/sections";
 import { Breadcrumbs, CtaBand } from "@/components/marketing/service-sections";
 import { publishedServices, serviceCardImages } from "@/content/services";
@@ -69,22 +69,22 @@ export default function ServicesPage() {
           />
         }
         imageSrc="/services-overview.webp"
-        imageAlt="Broom finished residential concrete surface in Lancaster SC with a tooled edge and control joint beside a lawn"
+        imageAlt="Broom finished residential concrete walkway with a tooled control joint and radiused edge beside a lawn"
       >
         <p
-          className="eyebrow before:hidden lg:before:block"
+          className="eyebrow"
           style={{ color: overlayEyebrow }}
         >
           Service directory
         </p>
         <h1
-          className="h1 mx-auto mt-4 max-w-3xl lg:mx-0"
+          className="h1 mt-4 max-w-3xl"
           style={{ color: overlayHeading }}
         >
           Concrete Services We Route in Lancaster County, SC
         </h1>
         <p
-          className="mx-auto mt-4 max-w-2xl text-[17px] leading-relaxed lg:mx-0"
+          className="mt-4 max-w-2xl text-[17px] leading-relaxed"
           style={{ color: overlayBody }}
         >
           Four residential concrete services, each with at least one
@@ -102,7 +102,7 @@ export default function ServicesPage() {
 
       <Section tone="soft" eyebrow="Compare" title="Scope at a glance">
         <div
-          className="max-w-full overflow-x-auto rounded-[16px] border"
+          className="max-w-full overflow-x-auto rounded-[12px] border"
           style={{ borderColor: "var(--color-line)", backgroundColor: "var(--color-surface)" }}
         >
           <table className="w-full min-w-[42rem] border-collapse text-left text-sm">
@@ -137,10 +137,22 @@ export default function ServicesPage() {
         </div>
       </Section>
 
+      {/*
+        Restored at the owner's explicit direction. I had cut this photograph
+        because the clipboard's clip does not resolve into a real mechanism
+        (see WEBSITE-AUDIT-2026-10-06). The owner reviewed that finding and
+        chose to keep the image, so it stands.
+
+        It shows a provider assessing and quoting on site rather than any one
+        finished product, which matches this band's subject and does not
+        favour driveways, patios, slabs or repair on the page that lists all
+        four. The alt claims no location.
+      */}
       <Section
+        tone="soft"
         backgroundImage={{
           src: "/images/process-services-index.webp",
-          alt: "Independent contractor noting measurements on a clipboard beside a residential concrete driveway",
+          alt: "Contractor in a cap writing on a clipboard while standing on a residential concrete driveway, with a work pickup parked at the kerb behind him",
         }}
         eyebrow="Process"
         title="How a request reaches an independent provider"
@@ -148,8 +160,8 @@ export default function ServicesPage() {
         <HowMatchingWorks />
       </Section>
 
-      <Section eyebrow="Out of scope" title="What we decline outright">
-        <div className="card p-6 text-center lg:text-left">
+      <Section compact eyebrow="Out of scope" title="What we decline outright">
+        <div className="card p-6">
           <p className="text-[color:var(--color-muted)]">
             Foundation repair, structural engineering assessments, retaining
             walls, slab jacking, material supply, and commercial contracts are
@@ -163,17 +175,17 @@ export default function ServicesPage() {
 
       <SectionDivider />
 
-      <Section eyebrow="FAQ" title="About these services">
+      <Section compact eyebrow="FAQ" title="About these services">
         <FaqSection faqs={FAQS} name="services-faq" />
       </Section>
 
       <CtaBand
         tone="section"
+        imageSrc="/images/cta-services-index.webp"
+        imageAlt="Wide residential concrete driveway and front walkway on a tree lined street"
         title="Not sure which service fits?"
         body="Describe the project in the quote form and we will route it on the closest match, or call and our referral team will tell you whether we cover it at all."
         showFormLink={false}
-        imageSrc="/images/cta-services-index.webp"
-        imageAlt="Finished residential concrete driveway sweeping up to a suburban home"
       />
 
     </>

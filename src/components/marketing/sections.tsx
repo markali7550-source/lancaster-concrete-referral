@@ -14,25 +14,103 @@ import { SHORT_DISCLOSURE } from "@/lib/seo/disclosure";
  * previously written inline per component as a fully opaque fill, which hid
  * the photograph completely.
  *
- * 70% is not arbitrary: it is the lowest opacity at which the *brightest*
+ * 72% is not arbitrary: it is the lowest opacity at which the *brightest*
  * glyph-scale region of every photo in /public still clears WCAG AA (4.5:1)
  * against the lightest text color used on these bands. The binding constraint
- * is the mint eyebrow #5fe3a8, which needs 0.70; muted body #cfdbd5 needs 0.67
- * and white needs 0.57. Lower this and the eyebrow fails on the bright pours.
+ * is the mint eyebrow #4ED29A, which needs 0.72; muted body #A8B3C0 needs
+ * 0.70 and white needs 0.57. Lower this and the eyebrow fails on the bright
+ * pours.
+ *
+ * The colour is --color-band-deep (#0B1017), the same navy the footer, the
+ * CTA and the header glass are built from, so a photo band reads as the same
+ * material as every other heavy surface on the site rather than as a
+ * separate green-black.
  */
-export const PHOTO_SCRIM = "bg-[#0D1110]/70";
-
-/** Blends the band into the page background at the top and bottom seams. */
-export const PHOTO_EDGE_FADE =
-  "bg-gradient-to-b from-[#0D1110] via-transparent to-[#0D1110]";
+/**
+ * Base scrim over a photo band.
+ *
+ * Three values have been tried. At 72% every band rendered as a flat
+ * near-black rectangle and the photograph did no work at all. A flat 56% let
+ * the photograph through but measured 4.36:1 for white body copy and 2.29:1
+ * for the mint eyebrow against the brightest highlight in these images, both
+ * under AA.
+ *
+ * So the darkening is no longer uniform. This base keeps the whole band in the
+ * same material as the footer and the CTA, and PHOTO_COPY_WASH below adds the
+ * contrast where the text actually sits, which leaves the right of the frame
+ * light enough to read as a photograph.
+ */
+export const PHOTO_SCRIM = "bg-[#0B1017]/48";
 
 /**
- * Heroes only. Deepens the copy side on desktop and releases to transparent on
- * the right so the photograph stays visible. Gated to lg because the mobile
- * hero centers its copy, where a left-weighted wash would do nothing useful.
+ * Extra darkening under the copy.
+ *
+ * Below lg the content spans the full width, so the wash does too. From lg the
+ * copy is left aligned in roughly the first half of the band, so it ramps out
+ * to transparent and the photograph survives on the right.
+ *
+ * With the 48% base this puts the copy column at 74% combined on small screens
+ * and 77% at the left edge on desktop, which holds white body copy at 4.9:1
+ * and the mint eyebrow at 4.6:1 against a pure white highlight, the worst case
+ * any of these photographs can produce.
+ */
+export const PHOTO_COPY_WASH =
+  "bg-[#0B1017]/50 lg:bg-transparent lg:bg-gradient-to-r lg:from-[#0B1017]/58 lg:via-[#0B1017]/40 lg:to-transparent";
+
+/**
+ * Vignette at the top and bottom of a photo band.
+ *
+ * It used to ramp to FULLY OPAQUE navy at both edges, which made sense when
+ * it was described as "blending into the page background" -- except the page
+ * is warm off-white, so the band was blending into a colour that is nowhere
+ * near it and the seam read as a hard black strip above the next section.
+ * At 70% the vignette still does its real job (holding contrast under the
+ * glass header and over the bottom edge) without stamping a black bar
+ * between two sections.
+ */
+export const PHOTO_EDGE_FADE =
+  "bg-gradient-to-b from-[#0B1017]/55 via-transparent to-[#0B1017]/55";
+
+/**
+ * Opt-in variant for a band that should dissolve into the page instead of
+ * ending on a visible horizontal edge.
+ *
+ * This ramps to FULLY opaque at both edges, which is the thing the comment
+ * above says went wrong last time. The difference is the colour. The earlier
+ * attempt hardcoded navy, so in light mode the band blended into a dark
+ * colour the page does not use and stamped a black strip between sections.
+ * This ramps to `var(--color-page)`, which resolves to the warm off-white in
+ * light mode and to #0c1117 in dark mode, so the seam disappears in both
+ * themes rather than only the one being looked at.
+ *
+ * Do not hardcode a hex here. A fixed dark value is only correct for one of
+ * the two themes.
+ */
+export const PHOTO_EDGE_FADE_SEAMLESS =
+  "bg-gradient-to-b from-[var(--color-page)] via-transparent to-[var(--color-page)]";
+
+/**
+ * Heroes only. Deepens the copy side and releases on the right so the
+ * photograph stays visible.
+ *
+ * This used to be gated to lg and layered over the full-strength PHOTO_SCRIM,
+ * which meant it could never do its job: 72% flat dark plus a wash left the
+ * right-hand side of the hero at a measured mean luminance of 28 against 151
+ * in the source file, so the photograph was effectively a dark rectangle. The
+ * hero now pairs this with HERO_SCRIM instead, and the mobile hero -- whose
+ * copy is also flush left now -- gets the same left-weighted treatment rather
+ * than being excluded from it.
  */
 export const PHOTO_SIDE_WASH =
-  "hidden lg:block bg-gradient-to-r from-[#0D1110]/55 via-[#0D1110]/25 to-transparent";
+  "bg-gradient-to-r from-[#0B1017]/72 via-[#0B1017]/42 to-[#0B1017]/8";
+
+/**
+ * Hero-only base scrim, deliberately lighter than PHOTO_SCRIM because the hero
+ * stacks a side wash on top of it and PHOTO_SCRIM is tuned for bands that have
+ * only one layer. Kept heavier on small screens, where there is no horizontal
+ * room for the wash to fall away before the copy starts.
+ */
+export const HERO_SCRIM = "bg-[#0B1017]/52 lg:bg-[#0B1017]/30";
 
 /* ---------------------------------------------------------------- Section */
 
@@ -46,6 +124,7 @@ export function Section({
   align = "left",
   compact = false,
   backgroundImage,
+  seamlessEdges = false,
 }: {
   id?: string;
   eyebrow?: string;
@@ -58,6 +137,12 @@ export function Section({
   compact?: boolean;
   /** Optional full bleed photograph behind the section, with a dark scrim. */
   backgroundImage?: { src: string; alt: string };
+  /**
+   * Ramp the top and bottom of a photo band all the way to the page colour so
+   * it dissolves into the surrounding page rather than ending on a visible
+   * horizontal edge. Only meaningful alongside `backgroundImage`.
+   */
+  seamlessEdges?: boolean;
 }) {
   const background =
     tone === "soft"
@@ -70,7 +155,9 @@ export function Section({
     <section
       id={id}
       className={`${
-        compact ? "scroll-mt-32 py-8 md:py-12" : "scroll-mt-32 py-12 md:py-20"
+        compact
+          ? "scroll-mt-32 py-10 md:py-14"
+          : "scroll-mt-32 py-14 md:py-20 lg:py-24"
       }${backgroundImage ? " cta-photo relative isolate overflow-hidden" : ""}`}
       style={
         backgroundImage
@@ -94,7 +181,13 @@ export function Section({
             aria-hidden="true"
           />
           <div
-            className={`pointer-events-none absolute inset-0 z-20 ${PHOTO_EDGE_FADE}`}
+            className={`absolute inset-0 z-10 ${PHOTO_COPY_WASH}`}
+            aria-hidden="true"
+          />
+          <div
+            className={`pointer-events-none absolute inset-0 z-20 ${
+              seamlessEdges ? PHOTO_EDGE_FADE_SEAMLESS : PHOTO_EDGE_FADE
+            }`}
             aria-hidden="true"
           />
         </>
@@ -105,19 +198,11 @@ export function Section({
             className={
               align === "center"
                 ? "mx-auto max-w-2xl text-center"
-                : "text-center md:text-left"
+                : "text-left"
             }
           >
             {eyebrow ? (
-              <p
-                className={
-                  align === "center"
-                    ? "eyebrow before:hidden"
-                    : "eyebrow before:hidden md:before:block"
-                }
-              >
-                {eyebrow}
-              </p>
+              <p className="eyebrow">{eyebrow}</p>
             ) : null}
             {title ? <h2 className="h2 mt-3">{title}</h2> : null}
             {lead ? <p className="lede mt-4">{lead}</p> : null}
@@ -149,7 +234,7 @@ export function SectionDivider() {
 /* ------------------------------------------------------------------- Hero */
 
 /* Hero scrim: the shared photo layers, stacked over the full-bleed image. */
-const HERO_IMAGE_OVERLAY = `absolute inset-0 z-10 ${PHOTO_SCRIM}`;
+const HERO_IMAGE_OVERLAY = `absolute inset-0 z-10 ${HERO_SCRIM}`;
 const HERO_IMAGE_SIDE_WASH = `pointer-events-none absolute inset-0 z-10 ${PHOTO_SIDE_WASH}`;
 const HERO_IMAGE_FADE = `pointer-events-none absolute inset-0 z-20 ${PHOTO_EDGE_FADE}`;
 
@@ -189,7 +274,7 @@ export function OverlayHeader({
       <div className={HERO_IMAGE_SIDE_WASH} aria-hidden="true" />
       <div className={HERO_IMAGE_FADE} aria-hidden="true" />
       <div className="container-page relative z-30 flex items-center py-14 md:py-20 lg:py-24">
-        <div className="mx-auto w-full max-w-2xl text-center lg:mx-0 lg:text-left">
+        <div className="w-full max-w-2xl">
           {breadcrumbs}
           {children}
         </div>
@@ -198,10 +283,10 @@ export function OverlayHeader({
   );
 }
 
-export const overlayEyebrow = "#5fe3a8";
-export const overlayHeading = "#ffffff";
-export const overlayBody = "rgba(255,255,255,0.88)";
-export const overlayMuted = "rgba(255,255,255,0.82)";
+export const overlayEyebrow = "var(--color-band-accent)";
+export const overlayHeading = "var(--color-band-ink)";
+export const overlayBody = "rgba(255,255,255,0.86)";
+export const overlayMuted = "rgba(255,255,255,0.80)";
 
 const HERO_TRUST = [
   "Free for homeowners",
@@ -258,27 +343,27 @@ export function Hero({
               : "container-page relative z-30 flex min-h-[calc(100svh-6.25rem)] items-center py-14 lg:py-20"
           }
         >
-          <div className="mx-auto w-full max-w-2xl text-center lg:mx-0 lg:text-left">
+          <div className="w-full max-w-2xl">
             {breadcrumbs}
             <p
-              className="eyebrow before:hidden lg:before:block"
-              style={{ color: "#5fe3a8" }}
+              className="eyebrow"
+              style={{ color: "var(--color-band-accent)" }}
             >
               {locationCue}
             </p>
-            <h1 className="h1 mt-5" style={{ color: "#ffffff" }}>
+            <h1 className="h1 mt-5" style={{ color: "var(--color-band-ink)" }}>
               {h1}
             </h1>
             <p
-              className="lede mx-auto mt-5 max-w-prose lg:mx-0"
-              style={{ color: "rgba(255,255,255,0.88)" }}
+              className="lede mt-5 max-w-prose"
+              style={{ color: "rgba(255,255,255,0.86)" }}
             >
               {summary}
             </p>
 
             <div
               id="hero-actions"
-              className="mx-auto mt-8 grid w-full max-w-sm gap-3 lg:mx-0 lg:max-w-none lg:grid-cols-[repeat(2,minmax(0,15rem))]"
+              className="mt-8 grid w-full max-w-sm gap-3 lg:max-w-none lg:grid-cols-[repeat(2,minmax(0,15rem))]"
             >
               <DynamicPhone
                 fallbackDisplay={site.phoneDisplay}
@@ -293,12 +378,12 @@ export function Hero({
             </div>
 
             <ul
-              className="mt-7 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[13px] lg:justify-start"
-              style={{ color: "rgba(255,255,255,0.82)" }}
+              className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-[13px]"
+              style={{ color: "rgba(255,255,255,0.80)" }}
             >
               {HERO_TRUST.map((item) => (
                 <li key={item} className="flex items-center gap-1.5">
-                  <span style={{ color: "#5fe3a8" }}>
+                  <span style={{ color: "var(--color-band-accent)" }}>
                     <Icon name="check" className="h-4 w-4" />
                   </span>
                   {item}
@@ -307,7 +392,7 @@ export function Hero({
             </ul>
           </div>
           {aside ? (
-            <div className="mobile-sticky-form sticky bottom-0 z-40 mx-auto w-full max-w-xl rounded-t-xl bg-[#0D1110] p-2 lg:static lg:mx-0 lg:max-w-xl lg:rounded-none lg:bg-transparent lg:p-0">{aside}</div>
+            <div className="mobile-sticky-form sticky bottom-0 z-40 w-full max-w-xl rounded-t-xl bg-[#0B1017] p-2 lg:static lg:max-w-xl lg:rounded-none lg:bg-transparent lg:p-0">{aside}</div>
           ) : null}
         </div>
       </section>
@@ -323,16 +408,16 @@ export function Hero({
       }}
     >
       <div className="container-page grid items-center gap-10 py-14 md:py-20 lg:grid-cols-12 lg:gap-16 lg:py-24">
-        <div className="text-center lg:col-span-7 lg:text-left">
-          <p className="eyebrow before:hidden lg:before:block">
+        <div className="lg:col-span-7">
+          <p className="eyebrow">
             {locationCue}
           </p>
           <h1 className="h1 mt-5">{h1}</h1>
-          <p className="lede mx-auto mt-5 max-w-prose lg:mx-0">{summary}</p>
+          <p className="lede mt-5 max-w-prose">{summary}</p>
 
           <div
             id="hero-actions"
-            className="mx-auto mt-8 grid w-full max-w-sm gap-3 lg:mx-0 lg:max-w-none lg:grid-cols-2"
+            className="mt-8 grid w-full max-w-sm gap-3 lg:max-w-none lg:grid-cols-2"
           >
             <DynamicPhone
               fallbackDisplay={site.phoneDisplay}
@@ -346,7 +431,7 @@ export function Hero({
             </a>
           </div>
 
-          <ul className="mt-7 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[13px] text-[color:var(--color-muted)] lg:justify-start">
+          <ul className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-[13px] text-[color:var(--color-muted)]">
             {HERO_TRUST.map((item) => (
               <li key={item} className="flex items-center gap-1.5">
                 <span style={{ color: "var(--color-accent)" }}>
@@ -361,10 +446,10 @@ export function Hero({
         <div className="lg:col-span-5">
           <figure className="mx-auto w-full max-w-md sm:max-w-lg lg:max-w-none">
             <div
-              className="aspect-[4/3] overflow-hidden rounded-[20px] border"
+              className="aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] border"
               style={{
                 borderColor: "var(--color-line-soft)",
-                boxShadow: "var(--shadow-raised)",
+                boxShadow: "var(--shadow-card)",
               }}
             >
               <Image
@@ -398,7 +483,7 @@ export function BenefitBadges({ items }: { items: string[] }) {
           {items.map((item) => (
             <li
               key={item}
-              className="flex items-center justify-center gap-2.5 text-sm font-semibold lg:justify-start"
+              className="flex items-center gap-2.5 text-sm font-semibold"
             >
               <span style={{ color: "var(--color-accent)" }}>
                 <Icon name="check" className="h-4 w-4" />
@@ -424,7 +509,7 @@ export function StatStrip({
           {items.map((item) => (
             <div
               key={item.label}
-              className="py-6 text-center sm:px-6 sm:first:pl-0 lg:py-7 lg:text-left"
+              className="py-6 sm:px-6 sm:first:pl-0 lg:py-7"
               style={{ borderColor: "var(--color-line-soft)" }}
             >
               <dt className="sr-only">{item.label}</dt>
@@ -459,7 +544,7 @@ export function ReferralDisclosureStrip() {
       }}
     >
       <div className="container-page flex flex-col gap-2 py-3.5 text-[13.5px] sm:flex-row sm:items-center sm:justify-between">
-        <p className="flex items-start justify-center gap-2.5 text-center sm:justify-start sm:text-left">
+        <p className="flex items-start gap-2.5">
           <span style={{ color: "var(--color-accent)" }}>
             <Icon name="shield" className="mt-px h-[18px] w-[18px]" />
           </span>
@@ -521,18 +606,28 @@ export function ProjectTypeChooser({
                 className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
             ) : null}
-            <div className="flex flex-1 flex-col p-6 text-center lg:text-left">
+            <div className="flex flex-1 flex-col p-6 text-left">
               <h3 className="text-[17px] font-semibold">{service.name}</h3>
               <p className="mt-2 flex-1 text-[15px] leading-relaxed text-[color:var(--color-muted)]">
                 {service.summary}
               </p>
               <span
-                className="mt-5 inline-flex items-center justify-center gap-1.5 text-[14px] font-semibold lg:justify-start"
+                className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold"
                 style={{ color: "var(--color-accent)" }}
               >
+                {/*
+                  The "in {city}" form takes the plural short name, because
+                  "View driveways in Lancaster" is correct. The referrals form
+                  must not: English wants a singular attributive noun, so the
+                  plural produced "View driveways referrals" and "View slabs
+                  and pads referrals". This is the same interpolation fault
+                  that produced "Concrete Driveways Referrals" in the H1, and
+                  it is fixed the same way -- from projectNoun, not by
+                  slicing the plural.
+                */}
                 {cityLabel
                   ? `View ${service.shortName.toLowerCase()} in ${cityLabel}`
-                  : `View ${service.shortName.toLowerCase()} referrals`}
+                  : `View ${service.projectNoun} referrals`}
                 <Icon name="arrow" className="card-go h-4 w-4" />
               </span>
             </div>
@@ -568,40 +663,35 @@ const ROUTING_CONTROLS = [
 export function RoutingControls() {
   return (
     <>
-      <ul className="grid gap-px overflow-hidden rounded-[16px] border sm:grid-cols-2"
+      <ul className="grid gap-px overflow-hidden rounded-[var(--radius-card)] border sm:grid-cols-2"
         style={{
           borderColor: "var(--color-line-soft)",
           backgroundColor: "var(--color-line-soft)",
         }}
       >
-        {ROUTING_CONTROLS.map((check, index) => (
+        {ROUTING_CONTROLS.map((check) => (
           <li
             key={check.title}
             className="p-6"
             style={{ backgroundColor: "var(--color-surface)" }}
           >
-            <div className="flex flex-col items-center gap-3 text-center lg:flex-row lg:items-start lg:gap-3.5 lg:text-left">
-              <span
-                className="marker-count grid h-8 w-8 shrink-0 place-items-center rounded-full text-[13px] font-bold"
-                style={{
-                  backgroundColor: "var(--color-accent-soft)",
-                  color: "var(--color-accent)",
-                }}
-                aria-hidden="true"
-              >
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <div>
-                <p className="font-semibold">{check.title}</p>
-                <p className="mt-2 text-[14px] leading-relaxed text-[color:var(--color-muted)]">
-                  {check.body}
-                </p>
-              </div>
+            {/*
+              These four used to carry 01-04 step markers, directly above the
+              genuine three-step sequence on the same page. They are not steps
+              -- every one of them is checked on every request -- so numbering
+              them stated an order that does not exist and repeated the
+              numbered-card pattern twice in a row. Title and body only.
+            */}
+            <div className="text-left">
+              <p className="font-semibold">{check.title}</p>
+              <p className="mt-2 text-[14px] leading-relaxed text-[color:var(--color-muted)]">
+                {check.body}
+              </p>
             </div>
           </li>
         ))}
       </ul>
-      <p className="mt-6 text-center text-[13.5px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
+      <p className="mt-6 text-[13.5px] leading-relaxed text-[color:var(--color-muted)]">
         These are routing controls only. They are not a verification of any
         provider&apos;s license, insurance, or workmanship, and they are not a
         warranty, an endorsement, or a substitute for your own checks. Confirm
@@ -609,25 +699,6 @@ export function RoutingControls() {
         and through SC LLR before you hire.
       </p>
     </>
-  );
-}
-
-/* ----------------------------------------------------------- ProjectExamples */
-
-export function ProjectExamples() {
-  return (
-    <div className="card p-7 text-center lg:text-left">
-      <p className="eyebrow-plain">PHOTOGRAPHY POLICY</p>
-      <h3 className="mt-3 text-2xl font-semibold">
-        Concept imagery for reference — verified portfolios on request.
-      </h3>
-      <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--color-muted)]">
-        We use clear illustrative concrete photography to showcase project
-        standards, never claiming direct execution. Authentic contractor
-        portfolio photos are published only after source, ownership, and
-        permission verification.
-      </p>
-    </div>
   );
 }
 
@@ -650,10 +721,13 @@ const STEPS = [
 ];
 
 export function HowMatchingWorks() {
+  // Three across only from lg. At md the columns fell to ~239px, which left
+  // the body copy about 25 characters wide and wrapped step 02's heading onto
+  // four lines while its neighbours used two.
   return (
-    <ol className="grid gap-5 md:grid-cols-3">
+    <ol className="grid gap-5 lg:grid-cols-3">
       {STEPS.map((step, index) => (
-        <li key={step.verb} className="card flex h-full flex-col p-6 text-center lg:text-left">
+        <li key={step.verb} className="card flex h-full flex-col p-6">
           <span
             className="text-[30px] font-extrabold leading-none tracking-tight md:text-[34px]"
             style={{ color: "var(--color-accent)" }}
@@ -661,7 +735,7 @@ export function HowMatchingWorks() {
             {String(index + 1).padStart(2, "0")}
           </span>
           <span
-            className="mx-auto mt-4 block h-px w-10 lg:mx-0"
+            className="mt-4 block h-px w-10"
             style={{ backgroundColor: "var(--color-line)" }}
             aria-hidden="true"
           />
@@ -677,44 +751,44 @@ export function HowMatchingWorks() {
 
 /* ------------------------------------------------------------ DecisionSupport */
 
+/**
+ * Plain text, deliberately not an accordion. The pages that use this already
+ * carry a real FAQ accordion further down, and two identical disclosure groups
+ * on one page read as a component being reused rather than a decision. These
+ * four answers are also short and worth reading without a click.
+ */
 export function DecisionSupport({
   items,
-  name = "decision-support",
+  columns = 2,
 }: {
   items: { question: string; answer: string }[];
-  /**
-   * Shared name that makes the group an exclusive accordion: opening one row
-   * closes the row that was open. Pass a distinct value if two groups ever
-   * render on the same page.
-   */
-  name?: string;
+  /** Two across in a full-width section, one where it sits in a sidebar. */
+  columns?: 1 | 2;
 }) {
   return (
-    <div
-      className="divide-y overflow-hidden rounded-[16px] border"
-      style={{ borderColor: "var(--color-line-soft)", backgroundColor: "var(--color-surface)" }}
+    <dl
+      /*
+       * Both branches are complete literal strings. Building the class list by
+       * interpolating next to a utility produces the token "gap-y-7$", which
+       * Tailwind never generates, and the rows silently lose their gap.
+       */
+      className={
+        columns === 2
+          ? "grid gap-x-12 gap-y-7 md:grid-cols-2"
+          : "grid gap-x-12 gap-y-7"
+      }
     >
       {items.map((item) => (
-        <details key={item.question} name={name} className="group">
-          <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-medium md:px-6">
-            <span className="flex-1 text-left">{item.question}</span>
-            <span
-              className="grid h-8 w-8 shrink-0 place-items-center rounded-[10px] transition-colors"
-              style={{
-                backgroundColor: "var(--color-accent-soft)",
-                color: "var(--color-accent)",
-              }}
-              aria-hidden="true"
-            >
-              <Icon name="plus" className="h-4 w-4" />
-            </span>
-          </summary>
-          <p className="px-5 py-4 text-left text-[15px] leading-relaxed text-[color:var(--color-muted)] md:px-6">
+        <div key={item.question}>
+          <dt className="text-[17px] font-semibold leading-snug">
+            {item.question}
+          </dt>
+          <dd className="mt-2 max-w-[54ch] text-[15px] leading-relaxed text-[color:var(--color-muted)]">
             {item.answer}
-          </p>
-        </details>
+          </dd>
+        </div>
       ))}
-    </div>
+    </dl>
   );
 }
 
@@ -742,12 +816,7 @@ export function FaqSection({
         <details
           key={faq.question}
           name={name}
-          className="group overflow-hidden rounded-[14px]"
-          style={{
-            backgroundColor: "#121816",
-            border: "1px solid rgba(95, 227, 168, 0.16)",
-            boxShadow: "0 8px 20px rgba(0, 0, 0, 0.18)",
-          }}
+          className="group card overflow-hidden"
         >
           <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-semibold md:px-6">
             <span className="flex-1 text-left text-[16px]">{faq.question}</span>
@@ -780,7 +849,7 @@ export function AdjacentAreas({
 }) {
   if (locations.length === 0) {
     return (
-      <div className="card p-6 text-center lg:text-left">
+      <div className="card p-6">
         <p className="font-semibold">Lancaster only, for now</p>
         <p className="mt-2.5 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
           Additional South Carolina areas are added one at a time, and only
@@ -792,7 +861,7 @@ export function AdjacentAreas({
     );
   }
   return (
-    <ul className="flex flex-wrap justify-center gap-3 lg:justify-start">
+    <ul className="flex flex-wrap gap-3">
       {locations.map((location) => (
         <li key={location.slug}>
           <Link href={`/locations/${location.slug}`} className="btn btn-secondary">

@@ -23,7 +23,12 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#1f6b4e",
+  /* Matches the header glass at rest in each scheme, so the browser chrome on
+     mobile continues the bar instead of cutting a coloured strip above it. */
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f6f4f1" },
+    { media: "(prefers-color-scheme: dark)", color: "#0c1117" },
+  ],
 };
 
 export default function RootLayout({

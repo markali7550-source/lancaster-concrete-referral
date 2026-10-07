@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMetadata({
 
 export default function ReferralDisclosurePage() {
   return (
-    <LegalPage title="Referral disclosure" updated="24 September 2026" currentPath="/referral-disclosure">
+    <LegalPage title="Referral disclosure" updated="September 24, 2026" currentPath="/referral-disclosure">
       {FULL_DISCLOSURE_PARAGRAPHS.map((paragraph) => (
         <p key={paragraph} className="text-[color:var(--color-ink)]">
           {paragraph}
@@ -55,6 +55,14 @@ export default function ReferralDisclosurePage() {
           SC LLR
         </a>{" "}
         and request current insurance evidence before you hire anyone.
+      </p>
+
+      <h2>Photography</h2>
+      <p>
+        Photographs on this site illustrate the kind of work we route. They do
+        not depict jobs completed by us, and we perform no concrete work. Where
+        a provider&apos;s own project photos appear, we confirm ownership and
+        permission first.
       </p>
     </LegalPage>
   );

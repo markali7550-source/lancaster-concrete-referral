@@ -12,9 +12,9 @@ import {
   HowMatchingWorks,
   ProjectTypeChooser,
   ReferralDisclosureStrip,
+  RoutingControls,
   Section,
   StatStrip,
-  RoutingControls,
 } from "@/components/marketing/sections";
 import {
   Breadcrumbs,
@@ -150,32 +150,33 @@ export default async function LocationPage({ params }: { params: Params }) {
       <Section
         eyebrow="Local conditions"
         title={`What shapes concrete work in ${location.city}`}
-        lead="Notes gathered from participating provider conversations about this specific market, not generic filler with a city name dropped in."
+        lead="Notes from participating provider conversations about this market."
       >
-        <Image
-          src="/locations/lancaster-residential-street.webp"
-          alt={`Single-story brick homes with concrete driveways and front walkways on a residential street in ${location.city}, ${location.region}`}
-          width={900}
-          height={491}
-          sizes="(min-width: 1024px) 80rem, 100vw"
-          className="mb-8 h-56 w-full rounded-[18px] object-cover md:h-72"
-        />
-        <ul className="grid gap-5 lg:grid-cols-3">
-          {location.localEvidence.map((item, index) => (
-            <li key={item} className="card p-6 text-center lg:text-left">
-              <span
-                className="mx-auto grid h-8 w-8 place-items-center rounded-full text-[13px] font-bold lg:mx-0"
-                style={{
-                  backgroundColor: "var(--color-accent-soft)",
-                  color: "var(--color-accent)",
-                }}
-                aria-hidden="true"
-              >
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <p className="mt-4 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
-                {item}
-              </p>
+          {/*
+            Replaces the generated shot that had red clay painted along the
+            lawn edges. This one is a real photograph and it earns its place
+            here rather than filling space: the section is about subbase,
+            drainage and tight lots, and the frame shows exactly that — a
+            finished pad with its subbase still open around the edges on a
+            lot hemmed in by neighbours. The alt describes the soil as it
+            actually appears, not as red clay, and claims no location.
+          */}
+          <Image
+            src="/images/site-conditions-slab-subbase.webp"
+            alt="Freshly finished concrete pad in a fenced back yard, with bare soil and gravel still exposed around its edges and neighbouring houses close behind"
+            width={944}
+            height={531}
+            sizes="(min-width: 1024px) 80rem, 100vw"
+            className="mb-8 h-56 w-full rounded-[12px] object-cover md:h-72"
+          />
+        <ul className="grid gap-x-10 gap-y-6 md:grid-cols-3">
+          {location.localEvidence.map((item) => (
+            <li
+              key={item}
+              className="border-t pt-4 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]"
+              style={{ borderColor: "var(--color-line)" }}
+            >
+              {item}
             </li>
           ))}
         </ul>
@@ -197,10 +198,18 @@ export default async function LocationPage({ params }: { params: Params }) {
         />
       </Section>
 
+
+      {/*
+        Recovered. This band carried process-band.webp until 857f176 removed it,
+        on the grounds that the only photograph suiting a routing band was
+        needed by the home page. The home process band has since moved to
+        process-texture-bg.webp, so this one is free again and no other section
+        loses an image by restoring it. Same src and same alt as before.
+      */}
       <Section
         backgroundImage={{
-          src: "/images/process-location-lancaster.webp",
-          alt: "Residential concrete driveway on a Lancaster neighborhood street",
+          src: "/process-band.webp",
+          alt: "Timber forms set along the edge of a residential street beside a contractor's truck, with excavated clay heaped alongside",
         }}
         eyebrow="Process"
         title="How a Lancaster request is routed"
@@ -222,7 +231,7 @@ export default async function LocationPage({ params }: { params: Params }) {
         title={`Tell us about your ${location.city} project`}
       >
         <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
-          <div className="mx-auto w-full max-w-xl lg:mx-0">
+          <div className="w-full max-w-xl">
             <QuoteForm
               services={publishedServices.map((s) => ({
                 slug: s.slug,
@@ -235,10 +244,11 @@ export default async function LocationPage({ params }: { params: Params }) {
               fallbackE164={site.phoneE164}
             />
           </div>
-          <div className="text-center lg:pt-4 lg:text-left">
+          <div className="lg:pt-4">
             <p className="eyebrow-plain">Before you send it</p>
-            <div className="mx-auto mt-5 max-w-xl lg:mx-0">
+            <div className="mt-5 max-w-xl">
               <DecisionSupport
+                columns={1}
                 items={[
                   {
                     question: "Is my area covered?",
@@ -261,11 +271,11 @@ export default async function LocationPage({ params }: { params: Params }) {
         </div>
       </Section>
 
-      <Section eyebrow="FAQ" title={`${location.city} questions`}>
+      <Section compact eyebrow="FAQ" title={`${location.city} questions`}>
         <FaqSection faqs={faqs} name="city-faq" />
       </Section>
 
-      <Section tone="surface" eyebrow="Nearby" title="Adjacent published areas">
+      <Section compact tone="surface" eyebrow="Nearby" title="Adjacent published areas">
         <AdjacentAreas
           locations={publishedLocations.filter((l) => l.slug !== location.slug)}
         />
@@ -273,10 +283,10 @@ export default async function LocationPage({ params }: { params: Params }) {
 
 
       <CtaBand
+        imageSrc="/images/cta-location-lancaster.webp"
+        imageAlt="Brick ranch home with a concrete driveway meeting the street between red clay verges"
         title={`Get matched with a ${location.city} concrete contractor`}
         body="One request, one eligible independent contractor, no charge and no obligation."
-        imageSrc="/images/cta-location-lancaster.webp"
-        imageAlt="Concrete driveway apron meeting the street outside a Lancaster area home"
       />
 
     </>

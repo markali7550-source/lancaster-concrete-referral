@@ -22,20 +22,27 @@ export default function ThankYouPage() {
   return (
     <div className="container-page py-16 md:py-24">
       <div className="mx-auto max-w-2xl text-center lg:mx-0 lg:text-left">
-        <p className="eyebrow justify-center before:hidden lg:justify-start lg:before:block">
-          Request received
+        {/* The form's own success card is the receipt: it already says
+            "Request received", names the routing queue and shows the reference
+            number. Arriving here by pressing "What happens next" and reading a
+            second receipt made the two screens read as one sentence said
+            twice. This page answers the question the button asks. */}
+        <p className="eyebrow">
+          What happens next
         </p>
         <h1 className="h1 mt-4">
-          Thanks, your request is in the routing queue
+          How your request reaches a contractor
         </h1>
         <p className="lede mt-5">
           You will be contacted by one independent service provider, not by a call
-          center and not by us pretending to be the crew. Here is exactly what
-          happens next.
+          center and not by us pretending to be the crew.
         </p>
+        {/* Rows are start-aligned. justify-center here only bit the one step
+            whose text fits on a single line, centring that row and pushing its
+            number 42px right of the other three. */}
         <ol className="mt-8 space-y-4">
           {NEXT_STEPS.map((step, index) => (
-            <li key={step} className="card flex justify-center gap-4 p-6 text-left">
+            <li key={step} className="card flex gap-4 p-6 text-left">
               <span
                 className="grid h-8 w-8 shrink-0 place-items-center rounded-full font-semibold"
                 style={{
