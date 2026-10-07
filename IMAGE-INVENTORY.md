@@ -37,7 +37,7 @@ Brand marks (`logo.webp`, `logo-dark.webp`) are excluded: a logo is meant to rep
 | `/lancaster-hero.webp` | `/locations` | Concrete referrals in Lancaster, SC | Location card -> page (approved) |
 | `/lancaster-hero.webp` | `/locations/lancaster-sc` | Concrete Contractor Referrals in Lancaster, SC | Location card -> page (approved) |
 | `/contact-front-walkway.webp` | `/contact` | Contact Our Lancaster, SC Concrete Referral Team | Unique |
-| `/home-hero-street-pour.webp` | `/` | Connect With a Local Concrete Service Provider in Lancaster, | Unique |
+| `/images/hero-main-bg.webp` | `/` | Connect With a Local Concrete Service Provider in Lancaster, | Unique |
 | `/home-service-area-band.webp` | `/` | Areas we currently serve | Unique |
 | `/how-it-works-hero.webp` | `/how-it-works` | How Our Concrete Service Provider Referrals Work | Unique |
 | `/images/cta-combo-driveways.webp` | `/locations/lancaster-sc/concrete-driveways` | Ready to price a driveway? | Unique |
