@@ -1404,3 +1404,171 @@ resolve.
   - **The home page hero carries a slight denoise.** The source was unusually
     noisy and would not reach 100KB at 1440px wide without it. At the size it
     renders, behind the hero scrim, the softening is not visible.
+
+## 31. Strict image usage and uniqueness pass
+
+This pass applied one rule to every published route: **one image, one purpose.**
+It supersedes part of section 30 — that pass stripped the photographs off the
+home page service cards, and this rule requires them back, because a service
+card is supposed to be the first link in the card to hero to location-hero
+chain. The two rules genuinely conflicted; this one wins.
+
+### What was actually wrong
+
+Three real duplicates existed. Not "could be improved" — the same file served
+into two unrelated places.
+
+1. **The home page service cards had no images at all.** The previous pass made
+   them text-only. That broke the one reuse the rules explicitly bless: a
+   service card should carry the same photograph as that service's page hero
+   and that service's location hero. The cards now pass `serviceCardImages`,
+   which is derived directly from each service's canonical `image` field, so
+   the card, the service hero and the Lancaster service hero cannot drift apart
+   — they read the same source. Fixing this by restoring the existing
+   derivation rather than by hand-assigning four images is the difference
+   between a fix that holds and a fix that rots.
+
+2. **`repair-detail-crack.webp` was doing two jobs.** It was the supporting
+   photograph in "What a repair project may include" on the repair service
+   page *and* the CTA band on the Lancaster repair page. CTA imagery is
+   reserved for CTAs, so the CTA was reassigned to a photograph that had been
+   sitting unused in the library. The supporting section keeps the original.
+
+3. **`process-band.webp` was on two process bands** — the home page and the
+   Lancaster city page. I introduced that duplicate myself in the previous
+   pass. The city band lost its photograph rather than borrowing another
+   section's: every construction photograph in the library is already spoken
+   for, and the rule is explicit that no image beats an unrelated one. The band
+   now runs on type alone and reads fine; the screenshot shows no hole where
+   the picture was.
+
+### Two things found by looking rather than measuring
+
+The scripted audit passed these. Opening the actual files did not.
+
+- **The replacement CTA photograph was described wrongly.** I wrote its alt
+  text from the filename before viewing it — "a slab with a long crack running
+  through it." The photograph is actually a *freshly placed* concrete section
+  meeting the older cracked surface it replaces, with the joint between new and
+  old running down the frame. Better suited to the repair CTA than what I
+  assumed, and the alt now says what the picture shows.
+- **The file was named `local-repair-lancaster.webp`.** Filenames appear in the
+  page source and the network tab. Nothing verifies that photograph was taken
+  in Lancaster, so the name asserted something unproven. Renamed to
+  `cta-repair-replacement.webp`, which describes its content and its role.
+
+### One optimisation defect
+
+`/contact` was the only page hero in the site loading lazily. Every other hero
+is marked `priority`; this one was not, which makes the largest image on the
+page wait for a second pass. Added `priority`. Its `alt=""` was left alone on
+purpose — that image is `aria-hidden` decoration behind a heading, and empty
+alt is the correct markup for it, not an oversight.
+
+### Image inventory
+
+34 distinct content images, 51 placements, 18 routes. Brand marks (`logo.webp`,
+`logo-dark.webp`, 72 header and footer placements) are excluded — a logo is
+required to repeat.
+
+| Image | Page | Section | Purpose |
+| --- | --- | --- | --- |
+| `contact-front-walkway` | `/contact` | Contact Our Lancaster, SC Concrete Referral Team | Page hero |
+| `home-cta-concrete-finish` | `/` | Ready to connect with an independent concrete service provider? | CTA band |
+| `home-hero-concrete-work` | `/` | Connect With a Local Concrete Service Provider in Lancaster, SC | Page hero |
+| `home-service-area-band` | `/` | Areas we currently serve | Service-area band |
+| `how-it-works-hero` | `/how-it-works` | How Our Concrete Service Provider Referrals Work | Page hero |
+| `concrete-edge-inspection` | `/how-it-works` | Three steps, no obligation | Process band |
+| `cta-combo-driveways` | `/locations/lancaster-sc/concrete-driveways` | Ready to price a driveway? | CTA band |
+| `cta-combo-patios` | `/locations/lancaster-sc/concrete-patios` | Thinking about a patio? | CTA band |
+| `cta-combo-slabs` | `/locations/lancaster-sc/concrete-slabs` | Need a pad poured? | CTA band |
+| `cta-how-it-works` | `/how-it-works` | Ready to start? | CTA band |
+| `cta-location-lancaster` | `/locations/lancaster-sc` | Get matched with a Lancaster concrete contractor | CTA band |
+| `cta-repair-replacement` | `/locations/lancaster-sc/concrete-repair` | Want someone to look at the damage? | CTA band |
+| `cta-service-driveways` | `/services/concrete-driveways` | Ready to price a driveway? | CTA band |
+| `cta-service-patios` | `/services/concrete-patios` | Thinking about a patio? | CTA band |
+| `cta-service-repair` | `/services/concrete-repair` | Want someone to look at the damage? | CTA band |
+| `cta-service-slabs` | `/services/concrete-slabs` | Need a pad poured? | CTA band |
+| `cta-services-index` | `/services` | Not sure which service fits? | CTA band |
+| `driveway-drainage-detail` | `/services/concrete-driveways` | What a driveway project may include | Supporting section |
+| `patio-backyard-slab` | `/services/concrete-patios` | What a patio project may include | Supporting section |
+| `process-combo-patios` | `/locations/lancaster-sc/concrete-patios` | Three steps, no obligation | Process band |
+| `process-combo-repair` | `/locations/lancaster-sc/concrete-repair` | Three steps, no obligation | Process band |
+| `process-combo-slabs` | `/locations/lancaster-sc/concrete-slabs` | Three steps, no obligation | Process band |
+| `process-location-lancaster` | `/locations/lancaster-sc` | What shapes concrete work in Lancaster | Supporting section |
+| `process-steps-formwork` | `/locations/lancaster-sc/concrete-driveways` | Three steps, no obligation | Process band |
+| `repair-detail-crack` | `/services/concrete-repair` | What a repair project may include | Supporting section |
+| `repair-hero-walkway` | `/` | Concrete Repair | Service card |
+| `repair-hero-walkway` | `/locations/lancaster-sc` | Concrete Repair | Service card |
+| `repair-hero-walkway` | `/locations/lancaster-sc/concrete-repair` | Concrete Repair Referrals in Lancaster, SC | Page hero |
+| `repair-hero-walkway` | `/services` | Concrete Repair | Service card |
+| `repair-hero-walkway` | `/services/concrete-repair` | Concrete Repair in Lancaster County, SC | Page hero |
+| `service-driveways` | `/` | Concrete Driveways | Service card |
+| `service-driveways` | `/locations/lancaster-sc` | Concrete Driveways | Service card |
+| `service-driveways` | `/locations/lancaster-sc/concrete-driveways` | Concrete Driveway Referrals in Lancaster, SC | Page hero |
+| `service-driveways` | `/services` | Concrete Driveways | Service card |
+| `service-driveways` | `/services/concrete-driveways` | Concrete Driveways in Lancaster County, SC | Page hero |
+| `service-patios` | `/` | Concrete Patios | Service card |
+| `service-patios` | `/locations/lancaster-sc` | Concrete Patios | Service card |
+| `service-patios` | `/locations/lancaster-sc/concrete-patios` | Concrete Patio Referrals in Lancaster, SC | Page hero |
+| `service-patios` | `/services` | Concrete Patios | Service card |
+| `service-patios` | `/services/concrete-patios` | Concrete Patios in Lancaster County, SC | Page hero |
+| `service-slabs` | `/` | Concrete Slabs | Service card |
+| `service-slabs` | `/locations/lancaster-sc` | Concrete Slabs | Service card |
+| `service-slabs` | `/locations/lancaster-sc/concrete-slabs` | Concrete Slab Referrals in Lancaster, SC | Page hero |
+| `service-slabs` | `/services` | Concrete Slabs | Service card |
+| `service-slabs` | `/services/concrete-slabs` | Concrete Slabs in Lancaster County, SC | Page hero |
+| `slab-formwork-pad` | `/services/concrete-slabs` | What a slab project may include | Supporting section |
+| `lancaster-hero` | `/locations` | Concrete referrals in Lancaster, SC | Location card |
+| `lancaster-hero` | `/locations/lancaster-sc` | Concrete Contractor Referrals in Lancaster, SC | Page hero |
+| `process-band` | `/` | Three steps, no obligation | Process band |
+| `service-areas-hero` | `/locations` | Concrete Referral Service Areas in South Carolina | Page hero |
+| `services-overview` | `/services` | Concrete Services We Route in Lancaster County, SC | Page hero |
+
+### Every repeat in that table, justified
+
+Seventeen of the 51 placements are repeats. All of them fall inside the two
+permitted patterns:
+
+- **Four service chains (20 placements).** `service-driveways`,
+  `service-patios`, `service-slabs` and `repair-hero-walkway` each appear five
+  times: the home page card, the `/services` card, the service page hero, the
+  Lancaster city page card, and the Lancaster service page hero. That is the
+  approved card to hero to location-hero chain, counted once per service, with
+  the index and city cards being the same kind of object as the home page card.
+- **`lancaster-hero` twice.** The card for Lancaster on `/locations` and the
+  hero of `/locations/lancaster-sc`. This is the same card to hero relationship
+  applied to a place instead of a service, and it is deliberate: the card is a
+  preview of the page it opens.
+
+Everything else is used exactly once. No CTA image appears outside a CTA band.
+No supporting image appears twice. No service's image appears on another
+service.
+
+### Verification
+
+- **Unapproved duplicates: 0**, measured from the rendered DOM at 1366px and
+  again at 390px, counting both `<img>` elements and CSS background images.
+- **CTA images outside CTA bands: 0.**
+- **Alt text:** 0 alts claim a location, 0 alts are shared between two
+  different images, and the only empty alt is the intentionally decorative
+  contact backdrop.
+- **Weight:** 46 WebP files, every one under 100KB, average 83KB, 3.7MB total.
+- **Layout shift: 0.0000 on all 18 routes**, at both 390px and 1366px.
+- **18/18 routes return 200**, typecheck clean, 36/36 tests pass.
+- Looked at, not just measured: the home page card grid and the repair CTA at
+  both breakpoints, and the city process band with its photograph removed.
+
+### Two things left alone deliberately
+
+- **CTA bands are CSS backgrounds, not `next/image`.** That makes them eager
+  and unresponsive, which is a soft miss against the optimisation rule. They
+  are also what produces the parallax on desktop, which is part of the existing
+  design. Converting them would be a redesign to satisfy a technicality, so
+  they stay and are recorded here instead.
+- **Six unused photographs remain in `public/images/`** —
+  `local-driveways-lancaster`, `local-patios-lancaster`,
+  `local-slabs-lancaster`, `patios-process-walkway`, `repair-process-trowel`
+  and `slabs-process-pad`. They are never requested by any route, so they cost
+  a visitor nothing, and they are the obvious source if a section later needs
+  an image it does not have. Kept, not deleted.

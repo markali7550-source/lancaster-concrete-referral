@@ -18,7 +18,7 @@ import {
   CtaBand,
 } from "@/components/marketing/service-sections";
 import { OUT_OF_AREA_POSTAL_CODE, publishedLocations, serviceAreaOptions } from "@/content/locations";
-import { publishedServices } from "@/content/services";
+import { publishedServices, serviceCardImages } from "@/content/services";
 import { site } from "@/lib/env";
 import { REFERRAL_SERVICE_DISCLOSURE } from "@/lib/seo/disclosure";
 import { pageMetadata } from "@/lib/seo/metadata";
@@ -112,7 +112,7 @@ export default function HomePage() {
         title="What we can route in Lancaster today"
         lead="Four residential concrete service categories, each with at least one participating provider holding written coverage for Lancaster areas. Foundation repair, structural engineering, and retaining walls sit outside this scope."
       >
-        <ProjectTypeChooser />
+        <ProjectTypeChooser images={serviceCardImages} />
         <p className="mt-8 text-sm">
           <Link
             href="/services"

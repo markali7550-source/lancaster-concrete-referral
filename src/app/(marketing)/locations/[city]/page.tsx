@@ -190,11 +190,13 @@ export default async function LocationPage({ params }: { params: Params }) {
       </Section>
 
 
+      {/*
+        No background photograph here on purpose. Every construction photograph
+        in the library is already assigned to one section elsewhere, and the one
+        that fits a routing band carries the home page. An unrelated photograph
+        would be worse than none, so this band runs on type alone.
+      */}
       <Section
-        backgroundImage={{
-          src: "/process-band.webp",
-          alt: "Timber forms set along the edge of a residential street beside a contractor's truck, with excavated clay heaped alongside",
-        }}
         eyebrow="Process"
         title="How a Lancaster request is routed"
       >

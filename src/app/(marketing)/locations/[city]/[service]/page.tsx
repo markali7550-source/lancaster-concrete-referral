@@ -62,7 +62,7 @@ const COMBO_CTA_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-driveways": { src: "/images/cta-combo-driveways.webp", alt: "Finished residential concrete driveway running up to an attached garage" },
   "concrete-patios": { src: "/images/cta-combo-patios.webp", alt: "Rectangular concrete patio with two chairs set behind a single story brick home" },
   "concrete-slabs": { src: "/images/cta-combo-slabs.webp", alt: "Concrete equipment pad carrying an air conditioning condenser beside a brick house" },
-  "concrete-repair": { src: "/images/repair-detail-crack.webp", alt: "Concrete walkway slab cracked and lifted by a tree root alongside a lawn" },
+  "concrete-repair": { src: "/images/cta-repair-replacement.webp", alt: "Freshly placed concrete section meeting the older cracked surface it replaces, with the joint between new and existing concrete running down the middle" },
 };
 
 export function generateStaticParams() {
