@@ -49,9 +49,9 @@ const CTA_BACKGROUND_LAYER =
  * photograph survives the crop. Check the contrast of any replacement at that
  * crop, under the copy, before trusting it.
  */
-const CTA_IMAGE = "/home-cta-concrete-finish.webp";
+const CTA_IMAGE = "/images/cta-home-driveway.webp";
 const CTA_IMAGE_ALT =
-  "Bull float resting on the wet surface of a freshly placed concrete slab, with timber edge forms and gravel alongside";
+  "Finished broom finished concrete driveway curving up to the side entrance of a single story brick home, edged by pine straw";
 
 export function CtaBand({
   title,

@@ -1572,3 +1572,100 @@ service.
   and `slabs-process-pad`. They are never requested by any route, so they cost
   a visitor nothing, and they are the obvious source if a section later needs
   an image it does not have. Kept, not deleted.
+
+## 32. The AI-generated images I had put on the site
+
+The image rules were re-issued, so I re-ran the pass. The scripted checks all
+came back clean, exactly as they had the first time. Then I opened the image
+files and looked at them, and found the thing the scripts cannot see.
+
+**Three of the photographs on this site were AI-generated, and I generated
+them.** They were the home page hero, the home page closing CTA, and the
+driveway process band — including the single most prominent image on the
+website. Rule 7 forbids exactly this. The scripted audit will never catch it,
+because a generated file is a perfectly valid WebP of the right size that
+resolves at the right URL.
+
+### How they were identified
+
+Not by "looks too polished" — that is not evidence. By provenance and by
+physical impossibility at 2x magnification.
+
+`home-hero-concrete-work.webp`:
+
+- The mixer chute emerges from behind the truck's rear bumper rather than from
+  a drum discharge, and the assembly it attaches to matches no real truck.
+- The chute has no end. It fades into a concrete-coloured blob.
+- The chute is clean, dry metal while concrete is supposedly flowing down it.
+- Nothing is actually being poured; the "pour" is a static mound with no
+  connection to the chute.
+- **The rake handle passes through the form board** and reappears on the far
+  side.
+- The rake tines fuse into the gravel with no shadow and uneven spacing.
+
+`home-cta-concrete-finish.webp`:
+
+- The bull float is two overlapping tools. The handle meets the blade through a
+  bracket that belongs to neither.
+- The handle disappears behind the blade and reappears at the wrong offset.
+- No cast shadow under a tool lying in direct light.
+- Stake heads are melted into the form timber with no nail or bracket.
+- The form board changes thickness along its length.
+
+`process-steps-formwork.webp`:
+
+- **The reinforcing mesh lies flat on the subbase while the chairs sit on top
+  of it.** Chairs go underneath to lift the mesh. The image is physically
+  backwards.
+- The mesh has no wire gauge and casts no shadow; it is a grid drawn over the
+  photo, and it passes over debris piles instead of resting on them.
+- Form stakes are evenly spaced dowels with no fixings, several not touching
+  the ground.
+- The spoil pile repeats the same few clay chunks.
+
+### What replaced them
+
+No new images were generated — that is what caused the problem. Everything
+below is an image that was already in the repository.
+
+- **Home page hero** now uses the residential street pour that was on the home
+  page process band, renamed `home-hero-street-pour.webp`. I checked it at 2x
+  first: the truck is a coherent Super Duty with a correct grille, badge and
+  mirror, the portable mixer is a real machine, and the formwork, stakes, mesh
+  and clay all behave physically. It is general construction rather than one
+  service, which is what rule 6 asks a home page hero to be.
+- **Home page CTA** now uses a finished broom-finished driveway at a brick
+  ranch, renamed `cta-home-driveway.webp` from `local-driveways-lancaster`.
+  Also checked at 2x: coherent brick coursing, real broom texture, correct
+  control joints. The rename drops the unverifiable Lancaster claim from the
+  URL, the same problem fixed in the previous section.
+- **Home page process band** and **driveway city-service process band** now
+  have no photograph. Every remaining process image is already assigned, and
+  rules 5 and 7 both say no image beats a wrong one. The CTA component already
+  falls back to a solid band colour, so nothing needed redesigning.
+- The three generated files were deleted, not left in `public/` where they
+  could be picked up again.
+
+### Honest note on the rest of the library
+
+The remaining photographs were in the repository before this work. Several are
+plainly stock-styled, and I cannot verify the origin of any of them — that is
+"unclear, cannot verify", not a clean bill of health. What I can say is that
+the ones I checked at magnification behave physically, and that the images
+earlier passes swapped in moved the site away from the glossy look and toward
+flat overcast shots with cracks, weeds, stains and utility clutter. The
+difference is visible in the before and after of `service-driveways`,
+`service-slabs`, `lancaster-hero`, `how-it-works-hero` and
+`services-overview`.
+
+### Verification after the change
+
+- 32 distinct content images, 49 placements, **0 unapproved duplicates** at
+  1366px and 390px.
+- 0 CTA images outside CTA bands, 0 alts claiming a location, 0 alts shared
+  between images.
+- **CLS 0.0000 on all 18 routes at both widths.** 18/18 routes 200.
+- 43 WebP files, every one under 100KiB, average 82KB.
+- Typecheck clean, 36/36 tests pass.
+- Looked at, not just measured: home page hero, process band and CTA at desktop
+  and mobile, and the driveway process band with its image removed.

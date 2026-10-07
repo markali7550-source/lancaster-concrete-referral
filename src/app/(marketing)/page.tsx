@@ -101,8 +101,8 @@ export default function HomePage() {
         locationCue="Lancaster County, South Carolina"
         h1="Connect With a Local Concrete Service Provider in Lancaster, SC"
         summary="Tell us what you need and where the property is. We will match your request with one eligible independent concrete service provider serving your area."
-        imageSrc="/home-hero-concrete-work.webp"
-        imageAlt="Ready mix truck chute discharging wet concrete into timber forms on a residential lot, with gravel subbase and red clay spoil alongside"
+          imageSrc="/home-hero-street-pour.webp"
+          imageAlt="Contractor's pickup and portable mixer parked at a residential street where a concrete walkway and apron sit in timber forms, with excavated red clay heaped alongside"
         overlay
       />
 
@@ -124,12 +124,14 @@ export default function HomePage() {
         </p>
       </Section>
 
-      <Section
-        backgroundImage={{
-          src: "/process-band.webp",
-          alt: "Timber forms set along the edge of a residential street beside a contractor's truck, with excavated clay heaped alongside",
-        }}
-        eyebrow="Process"
+        {/*
+          This band's photograph became the home page hero, where a general
+          construction scene is required. Nothing else in the library is a
+          process photograph that is not already assigned, so the band runs on
+          type rather than borrowing an unrelated image.
+        */}
+        <Section
+          eyebrow="Process"
         title="Three steps, no obligation"
         lead="You are never passed to a call center, and your details are never sold to a list of providers who bid against each other."
       >

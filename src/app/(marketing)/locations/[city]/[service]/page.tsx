@@ -52,7 +52,6 @@ export const dynamicParams = false;
 
 
 const COMBO_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
-  "concrete-driveways": { src: "/images/process-steps-formwork.webp", alt: "Residential driveway formed and ready to pour, with welded wire mesh on chairs over a gravel subbase and red clay spoil heaped along one edge" },
   "concrete-patios": { src: "/images/process-combo-patios.webp", alt: "Two workers screeding a freshly poured backyard patio between timber forms" },
   "concrete-slabs": { src: "/images/process-combo-slabs.webp", alt: "Compacted gravel subbase and reinforcing mesh set inside timber forms before a slab pour" },
   "concrete-repair": { src: "/images/process-combo-repair.webp", alt: "Worker saw-cutting a cracked section out of an existing concrete driveway" },
