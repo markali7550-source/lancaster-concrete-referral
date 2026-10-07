@@ -72,6 +72,24 @@ export const PHOTO_EDGE_FADE =
   "bg-gradient-to-b from-[#0B1017]/55 via-transparent to-[#0B1017]/55";
 
 /**
+ * Opt-in variant for a band that should dissolve into the page instead of
+ * ending on a visible horizontal edge.
+ *
+ * This ramps to FULLY opaque at both edges, which is the thing the comment
+ * above says went wrong last time. The difference is the colour. The earlier
+ * attempt hardcoded navy, so in light mode the band blended into a dark
+ * colour the page does not use and stamped a black strip between sections.
+ * This ramps to `var(--color-page)`, which resolves to the warm off-white in
+ * light mode and to #0c1117 in dark mode, so the seam disappears in both
+ * themes rather than only the one being looked at.
+ *
+ * Do not hardcode a hex here. A fixed dark value is only correct for one of
+ * the two themes.
+ */
+export const PHOTO_EDGE_FADE_SEAMLESS =
+  "bg-gradient-to-b from-[var(--color-page)] via-transparent to-[var(--color-page)]";
+
+/**
  * Heroes only. Deepens the copy side and releases on the right so the
  * photograph stays visible.
  *
@@ -106,6 +124,7 @@ export function Section({
   align = "left",
   compact = false,
   backgroundImage,
+  seamlessEdges = false,
 }: {
   id?: string;
   eyebrow?: string;
@@ -118,6 +137,12 @@ export function Section({
   compact?: boolean;
   /** Optional full bleed photograph behind the section, with a dark scrim. */
   backgroundImage?: { src: string; alt: string };
+  /**
+   * Ramp the top and bottom of a photo band all the way to the page colour so
+   * it dissolves into the surrounding page rather than ending on a visible
+   * horizontal edge. Only meaningful alongside `backgroundImage`.
+   */
+  seamlessEdges?: boolean;
 }) {
   const background =
     tone === "soft"
@@ -160,7 +185,9 @@ export function Section({
             aria-hidden="true"
           />
           <div
-            className={`pointer-events-none absolute inset-0 z-20 ${PHOTO_EDGE_FADE}`}
+            className={`pointer-events-none absolute inset-0 z-20 ${
+              seamlessEdges ? PHOTO_EDGE_FADE_SEAMLESS : PHOTO_EDGE_FADE
+            }`}
             aria-hidden="true"
           />
         </>

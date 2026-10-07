@@ -124,11 +124,19 @@ export default function HomePage() {
         </p>
       </Section>
 
+        {/*
+          `seamlessEdges` is set here and nowhere else. This band sits between
+          two flat sections, so its top and bottom read as hard horizontal
+          lines where the photograph stops. Ramping both edges to the page
+          colour dissolves them. Every other photo band keeps the standard
+          55% vignette.
+        */}
         <Section
           backgroundImage={{
             src: "/process-band.webp",
             alt: "Contractor's pickup and portable mixer parked at a residential street where a concrete walkway and apron sit in timber forms, with excavated red clay heaped alongside",
           }}
+          seamlessEdges
           eyebrow="Process"
         title="Three steps, no obligation"
         lead="You are never passed to a call center, and your details are never sold to a list of providers who bid against each other."
