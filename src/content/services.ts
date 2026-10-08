@@ -30,13 +30,11 @@ export interface ServiceRecord {
    * "What actually drives the price" just because the driveway page is.
    */
   /*
-   * Main-column section order, per service. The four pages used to render one
-   * hardcoded sequence -- scope, specification, process, cost, prepare -- which
-   * is why they still read as the same page once the wording was fixed. A
-   * homeowner does not approach these four jobs the same way, so the page does
-   * not either: you price a patio before you care how it is built, you cannot
-   * price a slab until you have said what it carries, and you diagnose a
-   * repair before anyone specifies a method for it.
+   * Main-column section order. Identical on all four services by owner
+   * direction: every service page and every location/service page follows
+   * the one master template (scope, specification, process, cost,
+   * prepare), and only the title, the service/city-specific text and the
+   * image differ between pages.
    */
   sectionOrder: readonly ServiceSectionId[];
   headings: {
@@ -311,7 +309,7 @@ export const services: readonly ServiceRecord[] = [
       "New patio pours, replacements, and stamped finishes where a participating provider has documented that capability.",
     heroSummary:
       "A patio is the one concrete project where the finish matters as much as the slab under it. Color, texture, and where the joints fall are decisions you live with every time you walk outside. We route your details to one independent provider who will walk the space with you and quote it directly.",
-    sectionOrder: ["scope", "options", "cost", "process", "prepare"],
+    sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "Where patio work starts and stops",
       options: "Finish, color and layout choices",
@@ -516,7 +514,7 @@ export const services: readonly ServiceRecord[] = [
       "Residential slabs and pads for sheds, equipment, vehicles, and outbuildings, nonstructural work only.",
     heroSummary:
       "Shed bases, equipment pads, RV and boat parking. Flatwork that has to carry a known weight and stay level for years, which makes what goes under the slab the part that matters. If the pad will hold up a building, or needs an engineer's stamp, we decline it rather than route it.",
-    sectionOrder: ["scope", "options", "process", "prepare", "cost"],
+    sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "Pads this category covers",
       options: "Specifying a pad for what it carries",
@@ -716,7 +714,7 @@ export const services: readonly ServiceRecord[] = [
       "Nonstructural crack repair, surface repair, and resurfacing. Structural assessment is out of scope.",
     heroSummary:
       "Some concrete is worth saving and some is not. We route surface problems on slabs that are otherwise sound: crazing, spalling, shrinkage cracks, a finish that has simply worn out. If what you describe sounds like movement or a failing base, we will tell you, because resurfacing it would be money wasted.",
-    sectionOrder: ["scope", "process", "options", "cost", "prepare"],
+    sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "Damage we route, and damage we do not",
       options: "Repair methods and when each applies",
