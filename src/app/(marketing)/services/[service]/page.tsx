@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumbs } from "@/components/marketing/service-sections";
 import { ServicePageTemplate } from "@/components/marketing/service-page-template";
+import { getLocationService } from "@/content/location-services";
 import { serviceDetails } from "@/content/service-details";
 import { getService, publishedServices } from "@/content/services";
 import { pageMetadata } from "@/lib/seo/metadata";
@@ -60,6 +61,8 @@ export default async function ServicePage({ params }: { params: Params }) {
   const description = descriptionFor(service.nameLower, service.projectNoun);
 
   const detail = serviceDetails[service.slug];
+  // Hero uses the Lancaster location/service page photo for this service.
+  const heroPhoto = getLocationService("lancaster-sc", service.slug);
 
   const graph = buildGraph([
     serviceNode({
@@ -96,6 +99,11 @@ export default async function ServicePage({ params }: { params: Params }) {
         cityLabel="Lancaster County, South Carolina"
         h1={h1}
         summary={service.heroSummary}
+        heroImage={
+          heroPhoto
+            ? { src: heroPhoto.localImage, alt: heroPhoto.localImageAlt }
+            : null
+        }
         keyFacts={service.keyFacts}
         faqTitle={service.headings.faq}
         faqs={service.considerations}
