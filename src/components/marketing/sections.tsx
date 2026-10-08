@@ -378,7 +378,7 @@ export function Hero({
             </div>
 
             <ul
-              className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-[13px]"
+              className="mt-7 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[13px] lg:justify-start"
               style={{ color: "rgba(255,255,255,0.80)" }}
             >
               {HERO_TRUST.map((item) => (
@@ -431,7 +431,7 @@ export function Hero({
             </a>
           </div>
 
-          <ul className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-[13px] text-[color:var(--color-muted)]">
+          <ul className="mt-7 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[13px] text-[color:var(--color-muted)] lg:justify-start">
             {HERO_TRUST.map((item) => (
               <li key={item} className="flex items-center gap-1.5">
                 <span style={{ color: "var(--color-accent)" }}>
@@ -549,7 +549,7 @@ export function ProjectTypeChooser({
                 {service.summary}
               </p>
               <span
-                className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold"
+                className="mt-5 inline-flex items-center justify-center gap-1.5 text-[14px] font-semibold lg:justify-start"
                 style={{ color: "var(--color-accent)" }}
               >
                 {/*
@@ -814,7 +814,7 @@ export function AdjacentAreas({
     );
   }
   return (
-    <ul className="flex flex-wrap gap-3">
+    <ul className="flex flex-wrap justify-center gap-3 lg:justify-start">
       {locations.map((location) => (
         <li key={location.slug}>
           <Link href={`/locations/${location.slug}`} className="btn btn-secondary">

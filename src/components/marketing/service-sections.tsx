@@ -23,7 +23,7 @@ export function Breadcrumbs({
 }) {
   const trail = (
     <ol
-      className={`flex flex-wrap items-center gap-x-2 gap-y-1 text-sm ${
+      className={`flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm lg:justify-start ${
         overlay
           ? " "
           : "py-3 text-[color:var(--color-muted)]"
@@ -109,7 +109,7 @@ export function ServiceHero({
       >
         {summary}
       </p>
-      <ul className="mt-5 flex flex-wrap gap-2">
+      <ul className="mt-5 flex flex-wrap justify-center gap-2 lg:justify-start">
         {service.projectTypes.map((type) => (
           <li
             key={type}
