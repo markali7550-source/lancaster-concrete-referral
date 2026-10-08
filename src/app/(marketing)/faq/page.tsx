@@ -65,8 +65,6 @@ function linkify(answer: string, links: readonly FaqLink[]): ReactNode {
   return <>{parts}</>;
 }
 
-const TONES = ["soft", undefined] as const;
-
 /*
  * Interim hero bytes: a copy of the service-neutral walkway detail from the
  * services index, at a page-unique path so the future real photograph is a
@@ -114,32 +112,39 @@ export default function FaqPage() {
         </p>
       </OverlayHeader>
       <ReferralDisclosureStrip />
-      {faqCategories.map((category, index) => (
-        <Section
-          key={category.id}
-          id={category.id}
-          tone={TONES[index % TONES.length]}
-        >
-          <div className="max-w-3xl">
-            <FaqSection
-              name={`faq-${category.id}`}
-              faqs={category.faqs.map((faq) => ({
+      {/*
+        One continuous accordion: all categories render as a single mixed
+        list with no headers or gaps between them, at the owner's request.
+        The guide links survive as one compact row under the list.
+      */}
+      <Section tone="soft">
+        <div className="max-w-3xl">
+          <FaqSection
+            name="faq"
+            faqs={faqCategories.flatMap((category) =>
+              category.faqs.map((faq) => ({
                 question: faq.question,
                 answer: linkify(faq.answer, faq.links),
-              }))}
-            />
-            <p className="mt-5">
-              <Link
-                href={category.more.href}
-                className="font-semibold underline underline-offset-4"
-                style={{ color: "var(--color-accent)" }}
-              >
-                {category.more.text} →
-              </Link>
-            </p>
-          </div>
-        </Section>
-      ))}
+              })),
+            )}
+          />
+          <p className="mt-6 text-[15px] text-[color:var(--color-muted)]">
+            Related guides:{" "}
+            {faqCategories.map((category, categoryIndex) => (
+              <span key={category.id}>
+                {categoryIndex > 0 ? " · " : null}
+                <Link
+                  href={category.more.href}
+                  className="font-semibold underline underline-offset-4"
+                  style={{ color: "var(--color-accent)" }}
+                >
+                  {category.more.text}
+                </Link>
+              </span>
+            ))}
+          </p>
+        </div>
+      </Section>
 
       <CtaBand
         title="Still have questions?"
