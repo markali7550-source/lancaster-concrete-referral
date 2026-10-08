@@ -90,7 +90,7 @@ export default function HowItWorksPage() {
       <Section
         backgroundImage={{
           src: "/images/process-placing-edge.webp",
-          alt: "Worker in a high-visibility vest working wet concrete along a formed edge with a long handled tool, with excavated ground and broken rubble behind",
+            alt: "Worker in a high visibility vest working wet concrete along a formed edge with a long handled tool, with excavated ground and broken rubble behind",
         }}
         eyebrow="Process"
         title="Three steps, no obligation"

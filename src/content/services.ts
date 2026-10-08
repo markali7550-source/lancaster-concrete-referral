@@ -115,7 +115,7 @@ export const services: readonly ServiceRecord[] = [
     optionsLead:
       "We do not specify your driveway. These are the calls the contractor will ask you to make, so they are not the first time you hear them.",
     processLead:
-      "A driveway is a one-day pour on the end of a week of preparation. The sequence below is what that week usually looks like; your contractor sets the real dates.",
+      "A driveway is a one day pour on the end of a week of preparation. The sequence below is what that week usually looks like; your contractor sets the real dates.",
     costLead:
       "Nobody can price a driveway from an address. Square footage is only the start of it. What the old slab costs to break up and haul away, and whether a truck can reach the pour, often move the number more.",
     ctaLead:
