@@ -853,3 +853,30 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ------------------------------------------------- mobile alignment (<768px)
+   Mobile content is centred across the page: headings, paragraphs, buttons,
+   cards, forms, the footer and contact details. Exceptions, kept left:
+     - FAQ questions and answers, which are <details> accordions (the FAQ
+       page, service and location FAQs, and the "Before you call" panel).
+     - The site header, which is outside <main> and is not touched here.
+   Explicit text-left classes are overridden only outside accordions. */
+@media (max-width: 767px) {
+  main#main,
+  footer {
+    text-align: center;
+  }
+
+  main#main .text-left:not(details *) {
+    text-align: center !important;
+  }
+
+  main#main details,
+  main#main details * {
+    text-align: left !important;
+  }
+
+  footer .text-left {
+    text-align: center !important;
+  }
+}
