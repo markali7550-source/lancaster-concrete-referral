@@ -97,12 +97,17 @@ export default function HomePage() {
     <>
       <JsonLd data={graph} />
 
+      {/*
+        Owner-supplied real photograph (source: real-photos/home-hero-source.jpg,
+        committed for provenance; shipped bytes are the converted WebP below).
+        Hand-floating shot, so the alt names the act, the gear and the forms.
+      */}
       <Hero
         locationCue="Lancaster County, South Carolina"
         h1="Connect With a Local Concrete Service Provider in Lancaster, SC"
         summary="Tell us what you need and where the property is. We will match your request with one eligible independent concrete service provider serving your area."
-        imageSrc="/images/home/home-hero-pour.webp"
-        imageAlt="Two workers finishing a newly poured concrete driveway in timber forms at a suburban brick home, with a mixer truck at the street"
+        imageSrc="/images/home/home-hero-float.webp"
+        imageAlt="Worker in a high-visibility vest and cap hand-floating freshly poured concrete beside timber forms"
         overlay
       />
 
