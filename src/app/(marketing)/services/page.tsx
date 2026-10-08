@@ -103,6 +103,7 @@ export default function ServicesPage() {
 
       <Section tone="soft" eyebrow="Compare" title="Scope at a glance">
         <div
+          tabIndex={0}
           className="max-w-full overflow-x-auto rounded-[12px] border"
           style={{ borderColor: "var(--color-line)", backgroundColor: "var(--color-surface)" }}
         >

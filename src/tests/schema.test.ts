@@ -30,6 +30,13 @@ describe("JSON-LD graph", () => {
     }
   });
 
+  it("never presents the referral publisher as the service provider", () => {
+    const service = (graph["@graph"] as Record<string, unknown>[]).find((n) => n["@type"] === "Service");
+    expect(service).toBeDefined();
+    expect(service).not.toHaveProperty("provider");
+    expect(service).toHaveProperty("broker");
+  });
+
   it("uses absolute @id values on the production host", () => {
     const nodes = graph["@graph"] as { "@id"?: string }[];
     for (const node of nodes) {

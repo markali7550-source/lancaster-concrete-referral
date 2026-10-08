@@ -347,7 +347,11 @@ export function CostTable({
   rows: { factor: string; impact: string; note: string }[];
 }) {
   return (
-    <div className="max-w-full overflow-x-auto rounded-[12px] border" style={{ borderColor: "var(--color-line)" }}>
+    <div
+      tabIndex={0}
+      className="max-w-full overflow-x-auto rounded-[12px] border"
+      style={{ borderColor: "var(--color-line)" }}
+    >
       <table className="w-full min-w-[34rem] border-collapse text-left text-sm">
         <caption className="sr-only">
           Factors that affect the price quoted by the contractor

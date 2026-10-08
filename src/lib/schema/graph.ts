@@ -72,7 +72,9 @@ export function serviceNode(input: {
     name: input.name,
     description: input.description,
     serviceType: input.name,
-    provider: { "@id": ORG_ID() },
+    /* The publisher arranges the referral; it does not perform the work, so it
+       is the broker, never the provider (schema.org Service.broker). */
+    broker: { "@id": ORG_ID() },
     areaServed: input.areaServed.map((city) => ({
       "@type": "City",
       name: `${city}, SC`,
