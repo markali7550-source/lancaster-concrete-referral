@@ -5,14 +5,17 @@ import { site } from "@/lib/env";
 /**
  * The closing call-to-action band, shared by every page that ends in one.
  *
- * Every band shows the same photograph (CTA_IMAGE below), viewport-locked via
- * `background-attachment: fixed`: the image holds still against the viewport
- * while the band -- and its copy -- scroll past it, so a different slice of
- * the photo shows through the band at every scroll offset. That parallax is
- * the owner's explicit choice, applied site-wide at their request; an earlier
- * version scrolled the photo with the band and gave each page its own subject.
+ * Every band shows the same photograph (CTA_IMAGE below). On desktop (above
+ * 1024px) the photo is viewport-locked via `background-attachment: fixed`
+ * (see `.cta-photo-fixed` in globals.css): the image holds still against the
+ * viewport while the band scrolls past it. On tablet and mobile the photo
+ * scrolls normally with the band, so it never moves independently.
  *
- * Consequences of the fixed attachment, kept here so they are not rediscovered:
+ * NOTE: the brief in the 2026-10 polish pass supersedes the earlier site-wide
+ * parallax request. Parallax is kept on desktop only, and the photo is static
+ * at 1024px and below.
+ *
+ * Consequences of the fixed attachment (desktop only), kept here so they are not rediscovered:
  * it forces body to use `overflow-x: clip` rather than `hidden`, because
  * `hidden` turns body into a scrolling box and breaks viewport-locked
  * backgrounds; and the visible slice is no longer one crop, so the contrast
@@ -22,7 +25,7 @@ import { site } from "@/lib/env";
  *
  * Layers, back to front:
  *
- *   z-0   the photograph        viewport-locked (fixed), at every width
+ *   z-0   the photograph        viewport-locked (fixed) above 1024px, static below
  *   z-10  50% dark overlay
  *   z-20  top/bottom fade       pointer-events-none
  *   z-30  heading and buttons
@@ -105,17 +108,10 @@ export function CtaBand({
           <div
             className={
               fixedBackground
-                ? "absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+                ? "cta-photo-fixed absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
                 : CTA_BACKGROUND_LAYER
             }
-            style={
-              fixedBackground
-                ? {
-                    backgroundImage: `url("${imageSrc}")`,
-                    backgroundAttachment: "fixed",
-                  }
-                : { backgroundImage: `url("${imageSrc}")` }
-            }
+            style={{ backgroundImage: `url("${imageSrc}")` }}
             aria-hidden="true"
           />
           {/* Flat scrim. Unchanged on mobile, where the copy centres over the

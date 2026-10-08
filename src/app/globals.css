@@ -539,6 +539,15 @@
     }
   }
 
+  /* CTA photograph: viewport-locked only on desktop. At 1024px and below the
+     photo scrolls with its band (the polish-pass brief supersedes the earlier
+     site-wide parallax request). */
+  @media (min-width: 1025px) {
+    .cta-photo-fixed {
+      background-attachment: fixed;
+    }
+  }
+
   /* -------------------------------------------------------------- controls */
 
   /* Three ranks, one shape. Filled emerald for the single most important
