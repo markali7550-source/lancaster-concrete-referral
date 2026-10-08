@@ -658,28 +658,35 @@ const STEPS = [
 ];
 
 export function HowMatchingWorks() {
-  // Three across only from lg. At md the columns fell to ~239px, which left
-  // the body copy about 25 characters wide and wrapped step 02's heading onto
-  // four lines while its neighbours used two.
+  // Mobile reads as a numbered sequence with hairline dividers, not three
+  // stacked boxes. Boxed cards return from lg, where three across is the
+  // comparison the copy depends on. At md the columns fell to ~239px, which
+  // left the body copy about 25 characters wide and wrapped step 02's heading
+  // onto four lines while its neighbours used two.
   return (
-    <ol className="grid gap-5 lg:grid-cols-3">
+    <ol className="divide-y divide-[color:var(--color-line)] lg:grid lg:grid-cols-3 lg:gap-5 lg:divide-y-0">
       {STEPS.map((step, index) => (
-        <li key={step.verb} className="card flex h-full flex-col p-6">
+        <li
+          key={step.verb}
+          className="flex gap-5 py-6 first:pt-0 last:pb-0 lg:h-full lg:flex-col lg:justify-start lg:gap-0 lg:rounded-[var(--radius-card)] lg:border lg:border-[color:var(--color-line-soft)] lg:bg-[color:var(--color-surface)] lg:!p-6 lg:shadow-[var(--shadow-card)]"
+        >
           <span
-            className="text-[30px] font-extrabold leading-none tracking-tight md:text-[34px]"
+            className="w-9 shrink-0 text-[26px] font-extrabold leading-none tracking-tight md:text-[30px] lg:w-auto lg:text-[34px]"
             style={{ color: "var(--color-accent)" }}
           >
             {String(index + 1).padStart(2, "0")}
           </span>
-          <span
-            className="mt-4 block h-px w-10"
-            style={{ backgroundColor: "var(--color-line)" }}
-            aria-hidden="true"
-          />
-          <p className="mt-4 text-[17px] font-semibold">{step.verb}</p>
-          <p className="mt-2 text-[14px] leading-relaxed text-[color:var(--color-muted)]">
-            {step.body}
-          </p>
+          <div className="min-w-0 flex-1 lg:mt-4">
+            <span
+              className="hidden lg:block lg:h-px lg:w-10"
+              style={{ backgroundColor: "var(--color-line)" }}
+              aria-hidden="true"
+            />
+            <p className="text-[17px] font-semibold leading-snug lg:mt-4">{step.verb}</p>
+            <p className="mt-2 text-[15px] leading-relaxed text-[color:var(--color-muted)] lg:text-[14px]">
+              {step.body}
+            </p>
+          </div>
         </li>
       ))}
     </ol>
