@@ -117,7 +117,7 @@ export default function FaqPage() {
         The guide links survive as one compact row under the list.
       */}
       <Section tone="soft">
-        <div className="max-w-3xl">
+        <div className="mx-auto w-full max-w-3xl">
           <FaqSection
             name="faq"
             faqs={faqCategories.flatMap((category) =>
