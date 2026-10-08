@@ -5,24 +5,24 @@ import { site } from "@/lib/env";
 /**
  * The closing call-to-action band, shared by every page that ends in one.
  *
- * Every band shows the same photograph (CTA_IMAGE below) with a
- * sticky-contained parallax: the photo layer is taller than the band and
- * sticks while the band scrolls past it, so the image reads as stationary
- * behind the moving copy -- then it rides out with the band and never
- * touches another section. That contained parallax is the owner's explicit
- * choice, applied site-wide at their request; it replaces an earlier
- * `background-attachment: fixed` version that locked the photo to the
- * viewport instead of the band and was ignored by iOS Safari.
+ * Every band shows the same photograph (CTA_IMAGE below), viewport-locked via
+ * `background-attachment: fixed`: the image holds still against the viewport
+ * while the band -- and its copy -- scroll past it, so a different slice of
+ * the photo shows through the band at every scroll offset. That parallax is
+ * the owner's explicit choice, applied site-wide at their request; an earlier
+ * version scrolled the photo with the band and gave each page its own subject.
  *
- * Consequences of the sticky layer, kept here so they are not rediscovered:
- * the section must use `overflow-clip`, not `overflow-hidden`, because
- * `hidden` makes the section the scroll container and pins the sticky child
- * dead; and the visible slice is not one crop, so the contrast audit's
- * letterbox measurement holds only approximately across scroll offsets.
+ * Consequences of the fixed attachment, kept here so they are not rediscovered:
+ * it forces body to use `overflow-x: clip` rather than `hidden`, because
+ * `hidden` turns body into a scrolling box and breaks viewport-locked
+ * backgrounds; and the visible slice is no longer one crop, so the contrast
+ * audit's letterbox measurement holds only approximately across scroll offsets.
+ * iOS Safari ignores `background-attachment: fixed` and renders the photo
+ * scrolled, which is the graceful fallback, not a defect.
  *
  * Layers, back to front:
  *
- *   z-0   the photograph        sticky-contained parallax, at every width
+ *   z-0   the photograph        viewport-locked (fixed), at every width
  *   z-10  50% dark overlay
  *   z-20  top/bottom fade       pointer-events-none
  *   z-30  heading and buttons
@@ -32,6 +32,9 @@ import { site } from "@/lib/env";
  * margin renders as a strip of page background between the photograph and the
  * footer, which reads as a black gap under the image.
  */
+const CTA_BACKGROUND_LAYER =
+  "absolute inset-0 bg-cover bg-center bg-no-repeat z-0 bg-scroll";
+
 /**
  * The one photograph behind every closing CTA band on the site.
  *
@@ -58,7 +61,7 @@ export function CtaBand({
   imageAlt = CTA_IMAGE_ALT,
   actionLabel = "Request a referral",
   actionIcon = false,
-  stickyBackground = true,
+  fixedBackground = true,
 }: {
   title: string;
   body: string;
@@ -77,20 +80,19 @@ export function CtaBand({
   actionLabel?: string;
   actionIcon?: boolean;
   /**
-   * Sticky-contained parallax for this band's photograph: taller than the
-   * band, stuck while the band scrolls past, clipped to the band at all
-   * times. On by default, site-wide, at the owner's request -- pass false
-   * only to restore a plain scrolled background on one band. See the header
-   * comment for why the section must keep `overflow-clip`.
+   * Viewport-locks this band's photograph (`background-attachment: fixed`).
+   * On by default, site-wide, at the owner's request -- pass false only to
+   * restore the anchored behaviour on one band. See the header comment for
+   * what the fixed attachment does to the visible slice while scrolling.
    */
-  stickyBackground?: boolean;
+  fixedBackground?: boolean;
 }) {
   void tone;
   void imageAlt;
 
   return (
     <section
-      className="cta-photo relative isolate my-[40px] h-auto overflow-clip py-[44px] last:mb-0"
+      className="cta-photo relative isolate my-[40px] h-auto overflow-hidden py-[44px] last:mb-0"
       /* Flat band navy, not the three-stop green gradient this used to
          carry. The CTA earns its prominence from being the only full-bleed
          dark surface between two warm paper sections, plus the single filled
@@ -100,22 +102,22 @@ export function CtaBand({
     >
       {imageSrc ? (
         <>
-          {/* Sticky-contained parallax -- see the header comment. The wrapper
-              carries the positioning; the inner layer is 140% of the band
-              height and sticks 20% above the viewport top, so the photo
-              holds still while the copy scrolls past, then exits with the
-              band. No overflow declaration here: anything but `visible`
-              would trap the sticky child. */}
-          <div className="absolute inset-0 z-0" aria-hidden="true">
-            <div
-              className={
-                stickyBackground
-                  ? "sticky top-[-20%] h-[140%] w-full bg-cover bg-center bg-no-repeat"
-                  : "h-full w-full bg-cover bg-center bg-no-repeat"
-              }
-              style={{ backgroundImage: `url("${imageSrc}")` }}
-            />
-          </div>
+          <div
+            className={
+              fixedBackground
+                ? "absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+                : CTA_BACKGROUND_LAYER
+            }
+            style={
+              fixedBackground
+                ? {
+                    backgroundImage: `url("${imageSrc}")`,
+                    backgroundAttachment: "fixed",
+                  }
+                : { backgroundImage: `url("${imageSrc}")` }
+            }
+            aria-hidden="true"
+          />
           {/* Flat scrim. Unchanged on mobile, where the copy centres over the
               whole band and there is nowhere to hide it, and much lighter from
               lg up, where the side wash below takes over behind the text. */}
