@@ -12,8 +12,8 @@ export function ComplianceFooter() {
       className="footer-band"
     >
       <div className="container-page py-14">
-        <div className="grid grid-cols-2 gap-x-6 gap-y-9 text-left sm:gap-10 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
-          <div className="col-span-2 max-w-sm lg:col-span-1">
+        <div className="grid grid-cols-1 gap-x-6 gap-y-9 text-left sm:grid-cols-2 sm:gap-10 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
+          <div className="max-w-sm sm:col-span-2 lg:col-span-1">
             <div className="flex items-center">
               <Logo height={52} />
             </div>
