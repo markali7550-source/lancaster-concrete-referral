@@ -66,14 +66,14 @@ function linkify(answer: string, links: readonly FaqLink[]): ReactNode {
 }
 
 /*
- * Interim hero bytes: a copy of the service-neutral walkway detail from the
- * services index, at a page-unique path so the future real photograph is a
- * byte swap with no code change. The alt describes these bytes, not the
- * replacement.
+ * Interim AI-generated hero bytes, unique to this page. Stands in for a
+ * real photograph until the owner supplies one: same path, so the swap
+ * needs no code change beyond the alt below. The alt describes these
+ * bytes, not the replacement.
  */
 const FAQ_HERO = {
   src: "/images/faq/faq-hero.webp",
-  alt: "Broom finished residential concrete walkway with a tooled control joint and radiused edge beside a lawn",
+  alt: "Concrete crew standing beside a newly finished driveway at a brick ranch home, with red clay soil and pine trees",
 };
 
 export default function FaqPage() {
