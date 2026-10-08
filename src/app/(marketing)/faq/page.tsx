@@ -73,7 +73,7 @@ function linkify(answer: string, links: readonly FaqLink[]): ReactNode {
  */
 const FAQ_HERO = {
   src: "/images/faq/faq-hero.webp",
-  alt: "Concrete crew standing beside a newly finished driveway at a brick ranch home, with red clay soil and pine trees",
+  alt: "Concrete crew standing beside a newly finished driveway at a brick ranch home, with a mixer truck, hand tools, and red clay soil",
 };
 
 export default function FaqPage() {
