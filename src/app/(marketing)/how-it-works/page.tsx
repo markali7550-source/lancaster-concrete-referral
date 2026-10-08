@@ -45,7 +45,7 @@ export default function HowItWorksPage() {
             items={[{ name: "Home", path: "/" }, { name: "How it works" }]}
           />
         }
-        imageSrc="/how-it-works-hero.webp"
+        imageSrc="/images/how-it-works/how-it-works-hero.webp"
         imageAlt="Freshly placed residential concrete slab floated smooth and still inside its timber forms, with a brick home beyond the lawn"
       >
         <p
@@ -71,30 +71,30 @@ export default function HowItWorksPage() {
         <RoutingControls />
       </Section>
 
-        {/*
-          Restores the photograph removed from this band. The previous one was
-          generated — the man's fingers merged into the slab edge. This is a
-          real photograph: the glove has five separately articulated fingers
-          with worn seams, the concrete splatter dried on the boot is
-          irregular, and the sun direction is consistent across the frame.
+      {/*
+        Restores the photograph removed from this band. The previous one was
+        generated — the man's fingers merged into the slab edge. This is a
+        real photograph: the glove has five separately articulated fingers
+        with worn seams, the concrete splatter dried on the boot is
+        irregular, and the sun direction is consistent across the frame.
 
-          It stays on this page only. The identical "Three steps" band also
-          renders on all four city-service pages, so wiring the image into the
-          shared section would put one supporting photograph in five places.
+        It stays on this page only. The identical "Three steps" band also
+        renders on all four city-service pages, so wiring the image into the
+        shared section would put one supporting photograph in five places.
 
-          Deliberately service-neutral: this page covers driveways, patios,
-          slabs and repair, so the picture shows concrete being placed and
-          worked rather than any one finished product. The alt describes the
-          formed edge that is actually in frame and claims no location.
-        */}
-        <Section
-          backgroundImage={{
-            src: "/images/process-placing-edge.webp",
-            alt: "Worker in a high-visibility vest working wet concrete along a formed edge with a long handled tool, with excavated ground and broken rubble behind",
-          }}
-          eyebrow="Process"
-          title="Three steps, no obligation"
-        >
+        Deliberately service-neutral: this page covers driveways, patios,
+        slabs and repair, so the picture shows concrete being placed and
+        worked rather than any one finished product. The alt describes the
+        formed edge that is actually in frame and claims no location.
+      */}
+      <Section
+        backgroundImage={{
+          src: "/images/how-it-works/how-it-works-process.webp",
+            alt: "Worker in a high visibility vest working wet concrete along a formed edge with a long handled tool, with excavated ground and broken rubble behind",
+        }}
+        eyebrow="Process"
+        title="Three steps, no obligation"
+      >
         <HowMatchingWorks />
       </Section>
       <Section eyebrow="Our role" title="What we are, and what we are not">
@@ -132,8 +132,6 @@ export default function HowItWorksPage() {
       </Section>
 
       <CtaBand
-        imageSrc="/images/cta-how-it-works.webp"
-        imageAlt="Two story home with a broad concrete driveway and front path"
         title="Ready to start?"
         body="Submit a request and we will route it to one eligible independent contractor, or call the referral team first to check coverage."
         showFormLink={false}

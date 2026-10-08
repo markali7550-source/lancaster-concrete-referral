@@ -9,8 +9,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "Referral service connecting Lancaster, South Carolina homeowners with independent concrete service providers.",
     start_url: "/",
     display: "browser",
-    background_color: "#f2f5f3",
-    theme_color: "#1f6b4e",
+    background_color: "#f6f4f1",
+    theme_color: "#0b6b45",
     icons: [
       { src: "/icon.webp", sizes: "512x512", type: "image/webp" },
       { src: "/apple-icon.webp", sizes: "180x180", type: "image/webp" },

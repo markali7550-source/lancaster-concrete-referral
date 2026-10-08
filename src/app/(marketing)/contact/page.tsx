@@ -41,7 +41,7 @@ export default function ContactPage() {
         style={{ borderColor: "var(--color-line-soft)" }}
       >
         <Image
-          src="/contact-front-walkway.webp"
+          src="/images/contact/contact-hero.webp"
           alt=""
           fill
           priority

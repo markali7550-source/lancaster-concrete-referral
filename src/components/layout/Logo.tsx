@@ -11,15 +11,15 @@ const LOGO_HEIGHT = 556;
  * band) — swapped purely in CSS via the existing `.logo-light` / `.logo-dark`
  * utilities so no client JS is needed to pick the right one.
  *
- * Loading strategy (performance-critical, do not revert casually):
+ * Loading strategy: the variant CSS hides must never cost a byte.
  *
- * `<Logo>` is only ever rendered inside `.header-band` and `.footer-band`, and
- * both of those force `.logo-light { display: none }` / `.logo-dark { display:
- * block }`. The light-ink variant is therefore never painted in current usage.
- * It is kept so the CSS theme swap still works if the lockup is ever placed on
- * a light surface, but it must NOT be preloaded: only `logo-dark` carries
- * `priority`, and the light variant is explicitly `loading="lazy"` so a
- * `display:none` element never costs a byte.
+ * Only the footer pins the light-ink variant (`.footer-band .logo-dark`);
+ * everywhere else the global `.logo-light` / `.logo-dark` rules swap by
+ * colour scheme, so in light mode the painted lockup is the `logo-light`
+ * image below. It stays `loading="lazy"`: above the fold it starts loading
+ * immediately anyway. The header instance passes `priority` so the
+ * dark-scheme variant is preloaded; in light mode that preload fetches a
+ * hidden twin, which `sizes` keeps to a small derivative.
  *
  * Both variants also declare `sizes`, which is what stops Next.js emitting a
  * density-based `1x/2x` srcset pinned to the 1808px intrinsic width. Without

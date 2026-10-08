@@ -1,32 +1,15 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { QuoteForm } from "@/components/lead/QuoteForm";
-import {
-  FaqSection,
-  Hero,
-  HowMatchingWorks,
-  ReferralDisclosureStrip,
-  RoutingControls,
-  Section,
-} from "@/components/marketing/sections";
-import {
-  Breadcrumbs,
-  CostTable,
-  CtaBand,
-  KeyFacts,
-  PrepColumns,
-  RelatedServices,
-  Timeline,
-} from "@/components/marketing/service-sections";
+import { Breadcrumbs } from "@/components/marketing/service-sections";
+import { ServicePageTemplate } from "@/components/marketing/service-page-template";
+import { serviceDetails } from "@/content/service-details";
 import {
   getLocationService,
   publishedLocationServices,
 } from "@/content/location-services";
-import { OUT_OF_AREA_POSTAL_CODE, getLocation, serviceAreaOptions } from "@/content/locations";
+import { getLocation } from "@/content/locations";
 import { getService, publishedServices } from "@/content/services";
-import { site } from "@/lib/env";
 import { comboMeta, pageMetadata } from "@/lib/seo/metadata";
 import {
   breadcrumbNode,
@@ -39,26 +22,11 @@ import {
 export const dynamicParams = false;
 
 /*
- * Combo pages are local pages. Sequence, cost drivers and estimate-visit prep
- * are identical whatever city the work is in, so they live on the service hub
- * and are linked from here rather than re-rendered -- these four pages used to
- * repeat all three, which is why they read as copies of each other.
- *
- * The closing CTA band on every page of the site renders one shared photo
- * (CTA_IMAGE in components/marketing/cta-band.tsx). Because that photo was
- * previously the driveways localImage, content/location-services.ts points the
- * driveways pair at cta-combo-driveways.webp so no page shows it twice.
+ * Location/service pages render the same master template as the service hubs:
+ * same sections, same order, same components, same spacing. Only the title,
+ * the city-specific text (the local intro, FAQs, key facts and call card)
+ * and the image differ.
  */
-
-
-
-
-const COMBO_CTA_IMAGES: Record<string, { src: string; alt: string }> = {
-  "concrete-driveways": { src: "/images/cta-combo-driveways.webp", alt: "Finished residential concrete driveway running up to an attached garage" },
-  "concrete-patios": { src: "/images/cta-combo-patios.webp", alt: "Rectangular concrete patio with two chairs set behind a single story brick home" },
-  "concrete-slabs": { src: "/images/cta-combo-slabs.webp", alt: "Concrete equipment pad carrying an air conditioning condenser beside a brick house" },
-  "concrete-repair": { src: "/images/cta-repair-replacement.webp", alt: "Freshly placed concrete section meeting the older cracked surface it replaces, with the joint between new and existing concrete running down the middle" },
-};
 
 export function generateStaticParams() {
   return publishedLocationServices.map((record) => ({
@@ -99,6 +67,8 @@ export default async function ComboPage({ params }: { params: Params }) {
     location.city,
   );
 
+  const detail = serviceDetails[serviceRecord.slug];
+
   const graph = buildGraph([
     serviceNode({
       path,
@@ -119,7 +89,9 @@ export default async function ComboPage({ params }: { params: Params }) {
   return (
     <>
       <JsonLd data={graph} />
-      <Hero
+      <ServicePageTemplate
+        service={serviceRecord}
+        detail={detail}
         breadcrumbs={
           <Breadcrumbs
             overlay
@@ -134,213 +106,38 @@ export default async function ComboPage({ params }: { params: Params }) {
             ]}
           />
         }
-        locationCue={`${location.city}, ${location.region}`}
+        cityLabel={`${location.city}, ${location.region}`}
         h1={h1}
         summary={description}
-        imageSrc={record.localImage}
-        imageAlt={record.localImageAlt}
-        overlay
-      />
-      <KeyFacts
-        facts={[
+        heroImage={{ src: record.localImage, alt: record.localImageAlt }}
+        keyFacts={[
           { label: "Service", value: serviceRecord.name },
           { label: "Area", value: `${location.city}, ${location.county}` },
           { label: "Routed project types", value: serviceRecord.projectTypes.join(" · ") },
           { label: "Cost to you", value: "No charge for the referral" },
         ]}
+        localIntro={{
+          eyebrow: `${serviceRecord.name} · ${location.city}`,
+          title: `What affects a ${serviceRecord.projectNoun} project in ${location.city}`,
+          blocks: record.localBody,
+        }}
+        faqTitle={`${location.city} ${serviceRecord.projectNoun} questions`}
+        faqs={record.localFaqs}
+        faqName="combo-faq"
+        relatedServices={publishedServices.filter((s) =>
+          publishedLocationServices.some(
+            (r) =>
+              r.locationSlug === location.slug && r.serviceSlug === s.slug,
+          ),
+        )}
+        relatedBasePath={`/locations/${location.slug}`}
+        relatedTitle={`Also routed in ${location.city}`}
+        ctaTitle={serviceRecord.headings.cta}
+        ctaBody={serviceRecord.ctaLead}
+        defaultServiceSlug={serviceRecord.slug}
+        callCardTitle="Checking coverage first?"
+        callCardBody={`We route ${location.city}, ${location.region} today. Call and we will confirm in a minute.`}
       />
-      <ReferralDisclosureStrip />
-
-      <div className="container-page">
-        <div className="grid gap-6 lg:grid-cols-12 lg:gap-12">
-          <div className="min-w-0 lg:col-span-7 xl:col-span-8">
-            <section className="scroll-mt-36 py-12 md:py-20">
-              <p className="eyebrow flex">{`${serviceRecord.name} · ${location.city}`}</p>
-              {/*
-                Was "What we see on Lancaster patio requests", which claims the
-                publisher has observed its own request history. It has none.
-                The section is about site conditions, so the heading says that
-                and keeps the geography.
-              */}
-              <h2 className="h2 mt-4">
-                What affects a {serviceRecord.projectNoun} project in{" "}
-                {location.city}
-              </h2>
-              <div className="mt-8 max-w-prose space-y-6">
-                {record.localBody.map((block) => (
-                  <div key={block.heading}>
-                    <h3 className="text-[22px] font-semibold leading-snug">
-                      {block.heading}
-                    </h3>
-                    <p className="mt-1.5 text-[16px] leading-relaxed text-[color:var(--color-muted)]">
-                      {block.body}
-                    </p>
-                  </div>
-                ))}
-              </div>
-              <nav
-                aria-label="Related pages"
-                className="mt-9 flex flex-wrap gap-3"
-              >
-                <Link
-                  href={`/services/${serviceRecord.slug}`}
-                  className="btn btn-secondary"
-                >
-                  All {serviceRecord.projectNoun} referrals
-                </Link>
-                <Link
-                  href={`/locations/${location.slug}`}
-                  className="btn btn-secondary"
-                >
-                  All services in {location.city}
-                </Link>
-              </nav>
-            </section>
-
-            <section
-              className="scroll-mt-36 border-t py-12 md:py-20"
-              style={{ borderColor: "var(--color-line-soft)" }}
-            >
-              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Process</p>
-              <h2 className="h2 mt-4 text-center md:text-left">
-                How the project usually runs
-              </h2>
-              <p className="lede mx-auto mt-4 max-w-prose text-center md:mx-0 md:text-left">
-                Typical ranges reported by participating providers, not commitments. Your
-                contractor sets the actual schedule for your site.
-              </p>
-              <div className="mt-8">
-                <Timeline phases={serviceRecord.process} />
-              </div>
-            </section>
-
-            <section
-              className="scroll-mt-36 border-t py-12 md:py-20"
-              style={{ borderColor: "var(--color-line-soft)" }}
-            >
-              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Pricing</p>
-              <h2 className="h2 mt-4 text-center md:text-left">What drives the price locally</h2>
-              <p className="lede mx-auto mt-4 max-w-prose text-center md:mx-0 md:text-left">
-                We publish no figures. These are the variables that move the
-                number on a {location.city} property.
-              </p>
-              <div className="mt-8">
-                <CostTable rows={serviceRecord.costFactors} />
-              </div>
-            </section>
-
-            <section
-              className="scroll-mt-36 border-t py-12 md:py-20"
-              style={{ borderColor: "var(--color-line-soft)" }}
-            >
-              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">Preparation</p>
-              <h2 className="h2 mt-4 text-center md:text-left">Get more out of the estimate visit</h2>
-              <div className="mt-8">
-                <PrepColumns
-                  checklist={serviceRecord.prepChecklist}
-                  questions={serviceRecord.quoteQuestions}
-                />
-              </div>
-            </section>
-
-            <section
-              className="scroll-mt-36 border-t py-12 md:py-20"
-              style={{ borderColor: "var(--color-line-soft)" }}
-            >
-              <p className="eyebrow flex justify-center before:hidden md:justify-start md:before:block">How routing works</p>
-              <h2 className="h2 mt-4 text-center md:text-left">Before your request is passed on</h2>
-              <div className="mt-8">
-                <RoutingControls />
-              </div>
-            </section>
-          </div>
-
-          <aside className="order-first min-w-0 lg:order-none lg:col-span-5 xl:col-span-4">
-            <div className="lg:sticky lg:top-[4.5rem] lg:pt-2 lg:pb-16">
-              <QuoteForm
-                services={publishedServices.map((s) => ({
-                  slug: s.slug,
-                  name: s.name,
-                }))}
-                defaultServiceSlug={serviceRecord.slug}
-                serviceAreas={serviceAreaOptions}
-                outOfAreaValue={OUT_OF_AREA_POSTAL_CODE}
-                consentVersion={site.consentVersion}
-                fallbackDisplay={site.phoneDisplay}
-                fallbackE164={site.phoneE164}
-              />
-              <div className="card mt-4 p-5">
-                <p className="text-sm font-semibold">
-                  Checking coverage first?
-                </p>
-                <p className="mt-1.5 text-[14px] text-[color:var(--color-muted)]">
-                  We route {`${location.city}, ${location.region}`} today. Call and we will
-                  confirm in a minute.
-                </p>
-                <a
-                  href={`tel:${site.phoneE164}`}
-                  className="btn btn-secondary mt-4 w-full"
-                >
-                  Call {site.phoneDisplay}
-                </a>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </div>
-
-        {/*
-          Owner override: reuses the concrete texture from the home process
-          band. It is an abstract surface crop with no people, tools or
-          finished product in frame, so it reads the same across every
-          service x location combination and claims no real job. Decorative,
-          so the alt is empty. The shared Section supplies the scrim, the edge
-          fade and the z-30 content layer, and it renders a next/image element
-          rather than a CSS background, so nothing is attachment-fixed and the
-          picture scrolls with the band.
-        */}
-        <Section
-          tone="surface"
-          backgroundImage={{
-            src: "/images/process-texture-bg.webp",
-            alt: "",
-          }}
-          eyebrow="Process"
-          title="Three steps, no obligation"
-        >
-        <HowMatchingWorks />
-      </Section>
-
-      <Section compact
-        tone="surface"
-        eyebrow="FAQ"
-        title={`${location.city} ${serviceRecord.projectNoun} questions`}
-      >
-        <FaqSection faqs={record.localFaqs} name="combo-faq" />
-      </Section>
-
-      <Section compact eyebrow="Other services" title={`Also routed in ${location.city}`}>
-        <RelatedServices
-          services={publishedServices.filter((s) =>
-            publishedLocationServices.some(
-              (r) =>
-                r.locationSlug === location.slug && r.serviceSlug === s.slug,
-            ),
-          )}
-          currentSlug={serviceRecord.slug}
-          basePath={`/locations/${location.slug}`}
-        />
-      </Section>
-
-
-      <CtaBand
-        tone="section"
-        imageSrc={COMBO_CTA_IMAGES[serviceRecord.slug]?.src}
-        imageAlt={COMBO_CTA_IMAGES[serviceRecord.slug]?.alt}
-        title={serviceRecord.headings.cta}
-        body="One request, one eligible independent contractor. If nobody approved for your area can take it, we will tell you plainly."
-      />
-
     </>
   );
 }

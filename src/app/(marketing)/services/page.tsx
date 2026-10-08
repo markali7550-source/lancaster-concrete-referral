@@ -68,7 +68,7 @@ export default function ServicesPage() {
             items={[{ name: "Home", path: "/" }, { name: "Services" }]}
           />
         }
-        imageSrc="/services-overview.webp"
+        imageSrc="/images/services/services-index-hero.webp"
         imageAlt="Broom finished residential concrete walkway with a tooled control joint and radiused edge beside a lawn"
       >
         <p
@@ -151,7 +151,7 @@ export default function ServicesPage() {
       <Section
         tone="soft"
         backgroundImage={{
-          src: "/images/process-services-index.webp",
+          src: "/images/services/services-index-process.webp",
           alt: "Contractor in a cap writing on a clipboard while standing on a residential concrete driveway, with a work pickup parked at the kerb behind him",
         }}
         eyebrow="Process"
@@ -181,8 +181,6 @@ export default function ServicesPage() {
 
       <CtaBand
         tone="section"
-        imageSrc="/images/cta-services-index.webp"
-        imageAlt="Wide residential concrete driveway and front walkway on a tree lined street"
         title="Not sure which service fits?"
         body="Describe the project in the quote form and we will route it on the closest match, or call and our referral team will tell you whether we cover it at all."
         showFormLink={false}

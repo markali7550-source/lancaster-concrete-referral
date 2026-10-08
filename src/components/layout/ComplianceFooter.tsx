@@ -29,7 +29,7 @@ export function ComplianceFooter() {
               </a>
               <a
                 href={`mailto:${site.email}`}
-                className="block text-[color:var(--color-muted)]"
+                className="block break-all text-[color:var(--color-muted)]"
               >
                 {site.email}
               </a>
@@ -88,6 +88,14 @@ export function ComplianceFooter() {
                   className="text-[color:var(--color-muted)] hover:text-[color:var(--color-ink)]"
                 >
                   How it works
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/faq/"
+                  className="text-[color:var(--color-muted)] hover:text-[color:var(--color-ink)]"
+                >
+                  FAQ
                 </Link>
               </li>
               <li>

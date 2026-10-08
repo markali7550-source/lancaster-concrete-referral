@@ -469,69 +469,6 @@ export function Hero({
   );
 }
 
-/* -------------------------------------------------------------- StatStrip */
-
-/**
- * Compact benefit row under the hero. Reuses the stat bar shell, the existing
- * check icon and the existing text classes, so no new typography is added.
- */
-export function BenefitBadges({ items }: { items: string[] }) {
-  return (
-    <div className="border-b" style={{ borderColor: "var(--color-line-soft)" }}>
-      <div className="container-page">
-        <ul className="grid gap-x-8 gap-y-3 py-5 sm:grid-cols-3">
-          {items.map((item) => (
-            <li
-              key={item}
-              className="flex items-center gap-2.5 text-sm font-semibold"
-            >
-              <span style={{ color: "var(--color-accent)" }}>
-                <Icon name="check" className="h-4 w-4" />
-              </span>
-              {item}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-}
-
-export function StatStrip({
-  items,
-}: {
-  items: { value: string; label: string }[];
-}) {
-  return (
-    <div className="border-b" style={{ borderColor: "var(--color-line-soft)" }}>
-      <div className="container-page">
-        <dl className="grid divide-y sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4 lg:divide-x [&>div]:border-[color:var(--color-line-soft)]">
-          {items.map((item) => (
-            <div
-              key={item.label}
-              className="py-6 sm:px-6 sm:first:pl-0 lg:py-7"
-              style={{ borderColor: "var(--color-line-soft)" }}
-            >
-              <dt className="sr-only">{item.label}</dt>
-              <dd>
-                <span
-                  className="block text-[2.4rem] font-extrabold leading-none tracking-[-0.03em] md:text-[3rem]"
-                  style={{ color: "var(--color-accent)" }}
-                >
-                  {item.value}
-                </span>
-                <span className="mt-3 block text-[13px] font-semibold uppercase tracking-[0.12em] text-[color:var(--color-subtle)]">
-                  {item.label}
-                </span>
-              </dd>
-            </div>
-          ))}
-        </dl>
-      </div>
-    </div>
-  );
-}
-
 /* -------------------------------------------------- ReferralDisclosureStrip */
 
 export function ReferralDisclosureStrip() {
@@ -752,43 +689,52 @@ export function HowMatchingWorks() {
 /* ------------------------------------------------------------ DecisionSupport */
 
 /**
- * Plain text, deliberately not an accordion. The pages that use this already
- * carry a real FAQ accordion further down, and two identical disclosure groups
- * on one page read as a component being reused rather than a decision. These
- * four answers are also short and worth reading without a click.
+ * Restored accordion. This was flattened to plain text on the theory that two
+ * disclosure groups on one page read as a reused component; in practice the
+ * flattening left the home "Before you call" section and the city "Before you
+ * send it" panel as unstyled text with no card, no border and no rhythm. The
+ * two groups carry genuinely different content (project decisions vs how the
+ * service works) with distinct exclusive-group names, so both render as
+ * accordions again.
  */
 export function DecisionSupport({
   items,
-  columns = 2,
+  name = "decision-support",
 }: {
   items: { question: string; answer: string }[];
-  /** Two across in a full-width section, one where it sits in a sidebar. */
-  columns?: 1 | 2;
+  /**
+   * Shared name that makes the group an exclusive accordion: opening one row
+   * closes the row that was open. Pass a distinct value if two groups ever
+   * render on the same page.
+   */
+  name?: string;
 }) {
   return (
-    <dl
-      /*
-       * Both branches are complete literal strings. Building the class list by
-       * interpolating next to a utility produces the token "gap-y-7$", which
-       * Tailwind never generates, and the rows silently lose their gap.
-       */
-      className={
-        columns === 2
-          ? "grid gap-x-12 gap-y-7 md:grid-cols-2"
-          : "grid gap-x-12 gap-y-7"
-      }
+    <div
+      className="divide-y overflow-hidden rounded-[var(--radius-card)] border"
+      style={{ borderColor: "var(--color-line-soft)", backgroundColor: "var(--color-surface)" }}
     >
       {items.map((item) => (
-        <div key={item.question}>
-          <dt className="text-[17px] font-semibold leading-snug">
-            {item.question}
-          </dt>
-          <dd className="mt-2 max-w-[54ch] text-[15px] leading-relaxed text-[color:var(--color-muted)]">
+        <details key={item.question} name={name} className="group">
+          <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-medium md:px-6">
+            <span className="flex-1 text-left">{item.question}</span>
+            <span
+              className="grid h-8 w-8 shrink-0 place-items-center rounded-[10px] transition-colors"
+              style={{
+                backgroundColor: "var(--color-accent-soft)",
+                color: "var(--color-accent)",
+              }}
+              aria-hidden="true"
+            >
+              <Icon name="plus" className="h-4 w-4" />
+            </span>
+          </summary>
+          <p className="px-5 py-4 text-left text-[15px] leading-relaxed text-[color:var(--color-muted)] md:px-6">
             {item.answer}
-          </dd>
-        </div>
+          </p>
+        </details>
       ))}
-    </dl>
+    </div>
   );
 }
 
@@ -798,7 +744,7 @@ export function FaqSection({
   faqs,
   name = "faq",
 }: {
-  faqs: { question: string; answer: string }[];
+  faqs: { question: string; answer: React.ReactNode }[];
   /**
    * Shared name makes the group an exclusive accordion. Pass a distinct value
    * when two FAQ groups render on the same page.

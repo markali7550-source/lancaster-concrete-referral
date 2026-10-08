@@ -97,12 +97,17 @@ export default function HomePage() {
     <>
       <JsonLd data={graph} />
 
+      {/*
+        Owner-supplied real photograph (source: real-photos/home-hero-source.webp,
+        committed for provenance; shipped bytes are the converted WebP below).
+        Hand-floating shot, so the alt names the act, the gear and the forms.
+      */}
       <Hero
         locationCue="Lancaster County, South Carolina"
         h1="Connect With a Local Concrete Service Provider in Lancaster, SC"
         summary="Tell us what you need and where the property is. We will match your request with one eligible independent concrete service provider serving your area."
-        imageSrc="/home-hero.webp"
-        imageAlt="Broom finished concrete front walkway and entry steps leading to the porch of a two-story home"
+        imageSrc="/images/home/home-hero-float.webp"
+        imageAlt="Worker in a high-visibility vest and cap hand-floating freshly poured concrete beside timber forms"
         overlay
       />
 
@@ -125,15 +130,12 @@ export default function HomePage() {
       </Section>
 
         {/*
-          Concrete texture background, requested by the owner at this exact
-          path. It is not a generated image: it is a crop of the broom
-          finished slab in cta-combo-driveways.webp, taken at native
-          resolution with no upscaling, so it is a real concrete surface.
-          A flat even texture is deliberate here -- the three step cards sit
-          on top, and a busier scene competed with the numerals.
-
-          process-band.webp is kept in public/ rather than deleted. Swapping
-          the url() below back restores the street pour if that is preferred.
+          Flat concrete texture under the three step cards. A flat even
+          surface is deliberate here -- the cards sit on top, and a busier
+          scene competed with the numerals. Interim bytes: the previous
+          generated texture, kept in place until a real photographic
+          texture replaces it. Any replacement must stay flat and even
+          for the same reason.
 
           Written as an explicit section rather than <Section> because the
           owner specified the exact layer stack: texture at z-0 on bg-scroll,
@@ -150,7 +152,7 @@ export default function HomePage() {
           <div
             className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-scroll"
             style={{
-              backgroundImage: "url('/images/process-texture-bg.webp')",
+              backgroundImage: "url('/images/home/home-process.webp')",
             }}
             aria-hidden="true"
           />
@@ -198,7 +200,7 @@ export default function HomePage() {
 
       <Section
         backgroundImage={{
-          src: "/home-service-area-band.webp",
+          src: "/images/home/home-service-area.webp",
           alt: "Single story brick ranch home behind a mature shade tree, with a curved concrete front walkway running out to the sidewalk",
         }}
         eyebrow="Service area"

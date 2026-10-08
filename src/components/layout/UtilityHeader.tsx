@@ -46,6 +46,9 @@ export function UtilityHeader() {
             <Link href="/how-it-works" className="btn btn-ghost whitespace-nowrap px-2.5 text-[15px] font-medium xl:px-3.5">
               How it works
             </Link>
+            <Link href="/faq/" className="btn btn-ghost whitespace-nowrap px-2.5 text-[15px] font-medium xl:px-3.5">
+              FAQ
+            </Link>
             <Link href="/contact" className="btn btn-ghost whitespace-nowrap px-2.5 text-[15px] font-medium xl:px-3.5">
               Contact
             </Link>
@@ -104,6 +107,9 @@ export function UtilityHeader() {
               </Link>
               <Link href="/how-it-works" className="block rounded-[10px] px-3 py-2.5 text-[15px]">
                 How it works
+              </Link>
+              <Link href="/faq/" className="block rounded-[10px] px-3 py-2.5 text-[15px]">
+                FAQ
               </Link>
               <Link href="/contact" className="block rounded-[10px] px-3 py-2.5 text-[15px]">
                 Contact

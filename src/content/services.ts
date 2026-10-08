@@ -30,13 +30,11 @@ export interface ServiceRecord {
    * "What actually drives the price" just because the driveway page is.
    */
   /*
-   * Main-column section order, per service. The four pages used to render one
-   * hardcoded sequence -- scope, specification, process, cost, prepare -- which
-   * is why they still read as the same page once the wording was fixed. A
-   * homeowner does not approach these four jobs the same way, so the page does
-   * not either: you price a patio before you care how it is built, you cannot
-   * price a slab until you have said what it carries, and you diagnose a
-   * repair before anyone specifies a method for it.
+   * Main-column section order. Identical on all four services by owner
+   * direction: every service page and every location/service page follows
+   * the one master template (scope, specification, process, cost,
+   * prepare), and only the title, the service/city-specific text and the
+   * image differ between pages.
    */
   sectionOrder: readonly ServiceSectionId[];
   headings: {
@@ -115,12 +113,12 @@ export const services: readonly ServiceRecord[] = [
     optionsLead:
       "We do not specify your driveway. These are the calls the contractor will ask you to make, so they are not the first time you hear them.",
     processLead:
-      "A driveway is a one-day pour on the end of a week of preparation. The sequence below is what that week usually looks like; your contractor sets the real dates.",
+      "A driveway is a one day pour on the end of a week of preparation. The sequence below is what that week usually looks like; your contractor sets the real dates.",
     costLead:
       "Nobody can price a driveway from an address. Square footage is only the start of it. What the old slab costs to break up and haul away, and whether a truck can reach the pour, often move the number more.",
     ctaLead:
       "Tell us the length of the drive and whether the old slab has to come out. One provider with written coverage for your area takes it from there.",
-    image: "/images/service-driveways.webp",
+    image: "/images/services/concrete-driveways/concrete-driveways-hero.webp",
     imageAlt:
       "Concrete driveway running up to the garage of a single story brick ranch house, with saw cut control joints across its width",
     projectTypes: ["New driveway", "Driveway replacement"],
@@ -311,7 +309,7 @@ export const services: readonly ServiceRecord[] = [
       "New patio pours, replacements, and stamped finishes where a participating provider has documented that capability.",
     heroSummary:
       "A patio is the one concrete project where the finish matters as much as the slab under it. Color, texture, and where the joints fall are decisions you live with every time you walk outside. We route your details to one independent provider who will walk the space with you and quote it directly.",
-    sectionOrder: ["scope", "options", "cost", "process", "prepare"],
+    sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "Where patio work starts and stops",
       options: "Finish, color and layout choices",
@@ -329,7 +327,7 @@ export const services: readonly ServiceRecord[] = [
       "Patios are the project people most often price before they commit, so it is worth knowing what actually moves the figure. Finish and shape change it far more than size does.",
     ctaLead:
       "Send the rough size, and say whether it ties into an existing porch or stoop. It goes to a single participating provider, not a panel of bidders.",
-    image: "/images/service-patios.webp",
+    image: "/images/services/concrete-patios/concrete-patios-hero.webp",
     imageAlt:
       "Stamped concrete backyard patio in a random stone pattern with a curved edge, set against a mown lawn and a split rail fence",
     projectTypes: ["New patio", "Patio replacement", "Stamped patio"],
@@ -516,7 +514,7 @@ export const services: readonly ServiceRecord[] = [
       "Residential slabs and pads for sheds, equipment, vehicles, and outbuildings, nonstructural work only.",
     heroSummary:
       "Shed bases, equipment pads, RV and boat parking. Flatwork that has to carry a known weight and stay level for years, which makes what goes under the slab the part that matters. If the pad will hold up a building, or needs an engineer's stamp, we decline it rather than route it.",
-    sectionOrder: ["scope", "options", "process", "prepare", "cost"],
+    sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "Pads this category covers",
       options: "Specifying a pad for what it carries",
@@ -534,7 +532,7 @@ export const services: readonly ServiceRecord[] = [
       "Pricing comes last here for a reason: until the load, the access and the base are known, any number is a guess. Once those are settled a contractor can quote a pad quickly.",
     ctaLead:
       "Say what the pad has to carry and roughly where it goes. We route it to one provider approved for your area.",
-    image: "/images/service-slabs.webp",
+    image: "/images/services/concrete-slabs/concrete-slabs-hero.webp",
     imageAlt:
       "Finished concrete shed pad in a back yard, sitting proud of the ground with form marks down its side and backfilled soil around the edge",
     projectTypes: ["Residential slab", "Concrete pad"],
@@ -716,7 +714,7 @@ export const services: readonly ServiceRecord[] = [
       "Nonstructural crack repair, surface repair, and resurfacing. Structural assessment is out of scope.",
     heroSummary:
       "Some concrete is worth saving and some is not. We route surface problems on slabs that are otherwise sound: crazing, spalling, shrinkage cracks, a finish that has simply worn out. If what you describe sounds like movement or a failing base, we will tell you, because resurfacing it would be money wasted.",
-    sectionOrder: ["scope", "process", "options", "cost", "prepare"],
+    sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "Damage we route, and damage we do not",
       options: "Repair methods and when each applies",
@@ -734,7 +732,7 @@ export const services: readonly ServiceRecord[] = [
       "Repair quotes vary more than any other concrete work, because two slabs with identical cracks can need completely different work underneath. These are the things that move it.",
     ctaLead:
       "Describe the damage and where it is. The provider looks at it on site before anyone talks about price.",
-    image: "/images/repair-hero-walkway.webp",
+    image: "/images/services/concrete-repair/concrete-repair-hero.webp",
     imageAlt:
       "Residential concrete walkway where one slab has been lifted and tilted by tree roots, leaving a raised lip against the next panel",
     projectTypes: ["Crack and surface repair", "Resurfacing"],
