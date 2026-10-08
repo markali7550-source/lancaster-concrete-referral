@@ -5,16 +5,24 @@ import { site } from "@/lib/env";
 /**
  * The closing call-to-action band, shared by every page that ends in one.
  *
- * Every band shows the same photograph (CTA_IMAGE below) as a plain stable
- * CSS background that scrolls with the band: background-size cover,
- * centered, no repeat, default scroll attachment. No fixed or sticky
- * positioning, no parallax, no scroll-driven movement of any kind -- the
- * image and its overlay hold still relative to the band at every scroll
- * offset, on every browser including iOS Safari.
+ * Every band shows the same photograph (CTA_IMAGE below), viewport-locked via
+ * `background-attachment: fixed`: the image holds still against the viewport
+ * while the band -- and its copy -- scroll past it, so a different slice of
+ * the photo shows through the band at every scroll offset. That parallax is
+ * the owner's explicit choice, applied site-wide at their request; an earlier
+ * version scrolled the photo with the band and gave each page its own subject.
+ *
+ * Consequences of the fixed attachment, kept here so they are not rediscovered:
+ * it forces body to use `overflow-x: clip` rather than `hidden`, because
+ * `hidden` turns body into a scrolling box and breaks viewport-locked
+ * backgrounds; and the visible slice is no longer one crop, so the contrast
+ * audit's letterbox measurement holds only approximately across scroll offsets.
+ * iOS Safari ignores `background-attachment: fixed` and renders the photo
+ * scrolled, which is the graceful fallback, not a defect.
  *
  * Layers, back to front:
  *
- *   z-0   the photograph        normal scroll background, at every width
+ *   z-0   the photograph        viewport-locked (fixed), at every width
  *   z-10  50% dark overlay
  *   z-20  top/bottom fade       pointer-events-none
  *   z-30  heading and buttons
@@ -25,19 +33,20 @@ import { site } from "@/lib/env";
  * footer, which reads as a black gap under the image.
  */
 const CTA_BACKGROUND_LAYER =
-  "absolute inset-0 z-0 bg-cover bg-center bg-no-repeat";
+  "absolute inset-0 bg-cover bg-center bg-no-repeat z-0 bg-scroll";
 
 /**
  * The one photograph behind every closing CTA band on the site.
  *
- * Every page shows this same image. It is a brick ranch home with a concrete
- * driveway -- residential and service-neutral enough to close a driveway
- * page, a patio page, or the index without favouring one service, which is
- * what the role needs now that the photo is shared.
+ * Every page shows this same image, at the owner's explicit request. It is a
+ * brick ranch home with a concrete driveway -- residential and service-neutral
+ * enough to close a driveway page, a patio page, or the index without favouring
+ * one service, which is what the role needs now that the photo is shared.
  *
- * The band is a letterbox of roughly 207px, so only a thin middle slice of
- * any photograph survives the crop. Check the contrast of any replacement
- * under the copy before trusting it.
+ * The band is a letterbox of roughly 207px, so only a thin middle slice of any
+ * photograph survives the crop -- and with the viewport-locked attachment that
+ * slice moves as the page scrolls. Check the contrast of any replacement under
+ * the copy at several scroll offsets, not just one, before trusting it.
  */
 const CTA_IMAGE = "/images/cta/cta-concrete-service.webp";
 const CTA_IMAGE_ALT =
@@ -52,6 +61,7 @@ export function CtaBand({
   imageAlt = CTA_IMAGE_ALT,
   actionLabel = "Request a referral",
   actionIcon = false,
+  fixedBackground = true,
 }: {
   title: string;
   body: string;
@@ -60,15 +70,22 @@ export function CtaBand({
   /** "section" uses the neutral alternate background instead of the mint tint. */
   tone?: "accent" | "section";
   /**
-   * Reserved override. Every page takes the default, and it must stay that
-   * way: the CTA photograph is intentionally the one global image on the
-   * site. Do not pass a per-page image here.
+   * Overrides the shared CTA photograph. Every page currently takes the
+   * default; pass this only for a band that genuinely needs its own image,
+   * and check it against the letterbox crop first.
    */
   imageSrc?: string;
   imageAlt?: string;
   /** Service detail pages use title case and a trailing arrow. */
   actionLabel?: string;
   actionIcon?: boolean;
+  /**
+   * Viewport-locks this band's photograph (`background-attachment: fixed`).
+   * On by default, site-wide, at the owner's request -- pass false only to
+   * restore the anchored behaviour on one band. See the header comment for
+   * what the fixed attachment does to the visible slice while scrolling.
+   */
+  fixedBackground?: boolean;
 }) {
   void tone;
   void imageAlt;
@@ -86,8 +103,19 @@ export function CtaBand({
       {imageSrc ? (
         <>
           <div
-            className={CTA_BACKGROUND_LAYER}
-            style={{ backgroundImage: `url("${imageSrc}")` }}
+            className={
+              fixedBackground
+                ? "absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+                : CTA_BACKGROUND_LAYER
+            }
+            style={
+              fixedBackground
+                ? {
+                    backgroundImage: `url("${imageSrc}")`,
+                    backgroundAttachment: "fixed",
+                  }
+                : { backgroundImage: `url("${imageSrc}")` }
+            }
             aria-hidden="true"
           />
           {/* Flat scrim. Unchanged on mobile, where the copy centres over the
