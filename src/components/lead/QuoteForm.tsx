@@ -59,8 +59,6 @@ export function QuoteForm({
   const baseId = useId();
   const [step, setStep] = useState<1 | 2>(1);
   const [status, setStatus] = useState<Status>("idle");
-  const [waitlistEmail, setWaitlistEmail] = useState("");
-  const [waitlistDone, setWaitlistDone] = useState(false);
 
   // On success the form is replaced in place by the confirmation panel. Without
   // this the page keeps its old scroll offset, which left the confirmation
@@ -292,7 +290,7 @@ export function QuoteForm({
         </p>
         <p className="mt-4 text-sm text-[color:var(--color-muted)]">
           Reference:{" "}
-          <span className="font-semibold tabular-nums tracking-wide text-[color:var(--color-ink)]">
+          <span className="font-semibold tabular-nums tracking-wide break-all text-[color:var(--color-ink)]">
             {leadId}
           </span>
         </p>
@@ -487,49 +485,17 @@ export function QuoteForm({
               className="rounded-[12px] border p-4"
               style={{ borderColor: "var(--color-line)" }}
             >
-              {waitlistDone ? (
-                <p
-                  className="text-sm"
-                  role="status"
-                  style={{ color: "var(--color-accent)" }}
-                >
-                  Thanks. We will email you when a participating provider covers
-                  your area.
-                </p>
-              ) : (
-                <>
-                  <label
-                    htmlFor={`${baseId}-waitlistEmail`}
-                    className="text-sm font-semibold"
-                  >
-                    We will tell you when we cover your area
-                  </label>
-                  <p className="mt-1.5 text-sm text-[color:var(--color-muted)]">
-                    Optional. Leave an email and we will let you know when a
-                    participating provider takes your area on.
-                  </p>
-                  <input
-                    id={`${baseId}-waitlistEmail`}
-                    name="waitlistEmail"
-                    type="email"
-                    autoComplete="email"
-                    className="field mt-2.5"
-                    value={waitlistEmail}
-                    onChange={(event) => setWaitlistEmail(event.target.value)}
-                  />
-                  <button
-                    type="button"
-                    className="btn btn-secondary mt-3 w-full"
-                    onClick={() => {
-                      // Demo stub: the waitlist is not wired to /api/leads so an
-                      // uncovered address never reaches the routing engine.
-                      if (waitlistEmail.includes("@")) setWaitlistDone(true);
-                    }}
-                  >
-                    Keep me posted
-                  </button>
-                </>
-              )}
+              {/* Honest notice, not a capture: there is no waitlist store, so
+                  the box that used to collect an email address and promise a
+                  notification it could never send now says what is true. */}
+              <p className="text-sm font-semibold">Not covered yet</p>
+              <p className="mt-1.5 text-sm text-[color:var(--color-muted)]">
+                No participating provider has confirmed that area in writing,
+                so a request there cannot be routed today. You can still
+                continue — coverage is rechecked on submit and nothing is sent
+                to a contractor unless it passes — or call {fallbackDisplay} to
+                ask first.
+              </p>
             </div>
           ) : null}
 

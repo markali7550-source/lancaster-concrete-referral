@@ -22,6 +22,7 @@ export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {
   // leaving, and clicking again (or Escape / outside / navigation) unpins it.
   const [pinned, setPinned] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pathname = usePathname();
   // Stable id so `aria-expanded` can be paired with `aria-controls`, letting
@@ -68,7 +69,11 @@ export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {
       if (!containerRef.current?.contains(event.target as Node)) closeAll();
     }
     function onKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") closeAll();
+      if (event.key !== "Escape") return;
+      closeAll();
+      // The focused link unmounts with the panel; return focus to the toggle
+      // so keyboard users are not stranded on <body>.
+      toggleRef.current?.focus();
     }
 
     document.addEventListener("pointerdown", onPointerDown);
@@ -96,6 +101,7 @@ export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {
         </Link>
         <button
           type="button"
+          ref={toggleRef}
           className="btn btn-ghost cursor-pointer px-1.5 transition-colors duration-150 hover:bg-[color:var(--color-accent-soft)] hover:text-[color:var(--color-accent)]"
           aria-expanded={open}
           // Only advertised while the panel is mounted: the dropdown is

@@ -469,69 +469,6 @@ export function Hero({
   );
 }
 
-/* -------------------------------------------------------------- StatStrip */
-
-/**
- * Compact benefit row under the hero. Reuses the stat bar shell, the existing
- * check icon and the existing text classes, so no new typography is added.
- */
-export function BenefitBadges({ items }: { items: string[] }) {
-  return (
-    <div className="border-b" style={{ borderColor: "var(--color-line-soft)" }}>
-      <div className="container-page">
-        <ul className="grid gap-x-8 gap-y-3 py-5 sm:grid-cols-3">
-          {items.map((item) => (
-            <li
-              key={item}
-              className="flex items-center gap-2.5 text-sm font-semibold"
-            >
-              <span style={{ color: "var(--color-accent)" }}>
-                <Icon name="check" className="h-4 w-4" />
-              </span>
-              {item}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-}
-
-export function StatStrip({
-  items,
-}: {
-  items: { value: string; label: string }[];
-}) {
-  return (
-    <div className="border-b" style={{ borderColor: "var(--color-line-soft)" }}>
-      <div className="container-page">
-        <dl className="grid divide-y sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4 lg:divide-x [&>div]:border-[color:var(--color-line-soft)]">
-          {items.map((item) => (
-            <div
-              key={item.label}
-              className="py-6 sm:px-6 sm:first:pl-0 lg:py-7"
-              style={{ borderColor: "var(--color-line-soft)" }}
-            >
-              <dt className="sr-only">{item.label}</dt>
-              <dd>
-                <span
-                  className="block text-[2.4rem] font-extrabold leading-none tracking-[-0.03em] md:text-[3rem]"
-                  style={{ color: "var(--color-accent)" }}
-                >
-                  {item.value}
-                </span>
-                <span className="mt-3 block text-[13px] font-semibold uppercase tracking-[0.12em] text-[color:var(--color-subtle)]">
-                  {item.label}
-                </span>
-              </dd>
-            </div>
-          ))}
-        </dl>
-      </div>
-    </div>
-  );
-}
-
 /* -------------------------------------------------- ReferralDisclosureStrip */
 
 export function ReferralDisclosureStrip() {

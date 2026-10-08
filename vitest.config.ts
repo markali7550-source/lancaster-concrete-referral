@@ -23,6 +23,9 @@ export default defineConfig({
   test: {
     environment: "node",
     include: ["src/tests/**/*.test.ts"],
-    env: loadEnv(".env.local"),
+    // .env.local is gitignored, so a fresh checkout has no public env and any
+    // suite importing @/lib/env fails at collection. The committed example
+    // carries schema-valid values, so it is the fallback; local overrides win.
+    env: { ...loadEnv(".env.example"), ...loadEnv(".env.local") },
   },
 });

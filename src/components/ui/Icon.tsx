@@ -1,5 +1,5 @@
 interface IconProps {
-  name: "phone" | "check" | "arrow" | "shield" | "menu" | "form" | "plus";
+  name: "phone" | "check" | "arrow" | "shield" | "menu" | "plus";
   className?: string;
 }
 
@@ -10,7 +10,6 @@ const paths: Record<IconProps["name"], string> = {
   arrow: "M5 12h14m-6-6 6 6-6 6",
   shield: "M12 3 4 6v6c0 5 3.4 8.4 8 9 4.6-.6 8-4 8-9V6Z",
   menu: "M4 7h16M4 12h16M4 17h16",
-  form: "M8 4h8a2 2 0 0 1 2 2v14l-6-3-6 3V6a2 2 0 0 1 2-2Z",
   plus: "M5 12h14",
 };
 

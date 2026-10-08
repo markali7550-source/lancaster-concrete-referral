@@ -14,7 +14,6 @@ import {
   ReferralDisclosureStrip,
   RoutingControls,
   Section,
-  StatStrip,
 } from "@/components/marketing/sections";
 import {
   Breadcrumbs,

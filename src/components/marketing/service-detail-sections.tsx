@@ -50,57 +50,6 @@ export function MayInclude({
   );
 }
 
-/* --------------------------------------------------------- ReferralSteps */
-
-/*
-  Sentence case, matching every other heading on the site ("Three steps, no
-  obligation", "Diagnosis on site", "What a repair project may include").
-  These three were Title Case, which was the only place that happened and
-  which reads as template output.
-*/
-const REFERRAL_STEPS = [
-  {
-    title: "Tell us about your project",
-    body: "Submit your project details and location.",
-  },
-  {
-    title: "Request a referral",
-    body: "We connect your request with an independent concrete service provider serving the area.",
-  },
-  {
-    title: "Discuss your project",
-    body: "The independent provider can contact you to discuss the project, availability, and next steps.",
-  },
-] as const;
-
-export function ReferralSteps() {
-  return (
-    <div>
-      <ol className="grid gap-5 md:grid-cols-3">
-        {REFERRAL_STEPS.map((step, index) => (
-          <li key={step.title} className="card process-step-card flex h-full flex-col p-6">
-            <span
-              className="grid h-10 w-10 place-items-center rounded-full text-[15px] font-bold"
-              style={{
-                backgroundColor: "var(--color-accent)",
-                color: "var(--color-on-accent)",
-              }}
-            >
-              {index + 1}
-            </span>
-            <p className="mt-4 text-[16px] font-semibold">
-              Step {index + 1}: {step.title}
-            </p>
-            <p className="mt-2 text-[14px] leading-relaxed text-[color:var(--color-muted)]">
-              {step.body}
-            </p>
-          </li>
-        ))}
-      </ol>
-    </div>
-  );
-}
-
 /* ------------------------------------------------- ServiceDisclosureBlock */
 
 /**
