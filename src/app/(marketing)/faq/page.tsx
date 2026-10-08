@@ -66,14 +66,13 @@ function linkify(answer: string, links: readonly FaqLink[]): ReactNode {
 }
 
 /*
- * Interim AI-generated hero bytes, unique to this page. Stands in for a
- * real photograph until the owner supplies one: same path, so the swap
- * needs no code change beyond the alt below. The alt describes these
- * bytes, not the replacement.
+ * Real owner-supplied photograph: crew placing a concrete pour. Source
+ * kept at real-photos/faq-hero-source.jpg for provenance. Unique to
+ * this page.
  */
 const FAQ_HERO = {
   src: "/images/faq/faq-hero.webp",
-  alt: "Concrete crew standing beside a newly finished driveway at a brick ranch home, with a mixer truck, hand tools, and red clay soil",
+  alt: "Workers placing wet concrete inside timber forms, leveling it with long handled tools as a pump hose pours",
 };
 
 export default function FaqPage() {
