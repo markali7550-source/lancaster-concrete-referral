@@ -234,3 +234,15 @@ export function publishedServicesForLocation(locationSlug: string) {
     .map((r) => getService(r.serviceSlug)!)
     .filter(Boolean);
 }
+
+/**
+ * Card imagery for the service grid on / and /services. Each card uses the
+ * Lancaster location/service photograph, the same image as that service's
+ * hub hero, so a card shows the photo of the page it opens.
+ */
+export const serviceCardImages: Record<string, { src: string; alt: string }> =
+  Object.fromEntries(
+    publishedLocationServices
+      .filter((r) => r.locationSlug === "lancaster-sc")
+      .map((r) => [r.serviceSlug, { src: r.localImage, alt: r.localImageAlt }]),
+  );

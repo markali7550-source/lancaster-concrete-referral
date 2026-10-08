@@ -18,7 +18,8 @@ import {
   CtaBand,
 } from "@/components/marketing/service-sections";
 import { OUT_OF_AREA_POSTAL_CODE, publishedLocations, serviceAreaOptions } from "@/content/locations";
-import { publishedServices, serviceCardImages } from "@/content/services";
+import { publishedServices } from "@/content/services";
+import { serviceCardImages } from "@/content/location-services";
 import { site } from "@/lib/env";
 import { REFERRAL_SERVICE_DISCLOSURE } from "@/lib/seo/disclosure";
 import { pageMetadata } from "@/lib/seo/metadata";

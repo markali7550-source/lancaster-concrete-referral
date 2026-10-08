@@ -13,7 +13,8 @@ import {
   overlayHeading,
 } from "@/components/marketing/sections";
 import { Breadcrumbs, CtaBand } from "@/components/marketing/service-sections";
-import { publishedServices, serviceCardImages } from "@/content/services";
+import { publishedServices } from "@/content/services";
+import { serviceCardImages } from "@/content/location-services";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { breadcrumbNode, buildGraph, faqNode, webPageNode } from "@/lib/schema/graph";
 import { site } from "@/lib/env";
