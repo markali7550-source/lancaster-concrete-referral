@@ -734,7 +734,7 @@ export const services: readonly ServiceRecord[] = [
       "Describe the damage and where it is. The provider looks at it on site before anyone talks about price.",
     image: "/images/services/concrete-repair/concrete-repair-hero.webp",
     imageAlt:
-      "Residential concrete walkway where one slab has been lifted and tilted by tree roots, leaving a raised lip against the next panel",
+      "Jackhammer breaking up cracked concrete, with broken chunks scattered across the slab and a worker in gloves at the bit",
     projectTypes: ["Crack and surface repair", "Resurfacing"],
     keyFacts: [
       { label: "Routed for", value: "Nonstructural repair and resurfacing" },

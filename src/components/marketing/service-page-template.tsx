@@ -57,7 +57,7 @@ const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
 const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-driveways": {
     src: "/images/services/concrete-driveways/concrete-driveways-process.webp",
-    alt: "Wet concrete pouring from a mixer chute into timber forms for a residential driveway, with a screed board resting across the forms",
+    alt: "Two workers screeding fresh concrete on a residential driveway with a long straightedge, a pickup and cones at the street",
   },
   "concrete-patios": {
     src: "/images/services/concrete-patios/concrete-patios-process.webp",
@@ -65,11 +65,11 @@ const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
   },
   "concrete-slabs": {
     src: "/images/services/concrete-slabs/concrete-slabs-process.webp",
-    alt: "Freshly poured concrete slab inside timber forms with a bull float resting on its surface, gravel and tools alongside",
+    alt: "Stacked precast concrete slabs with wood spacers resting on asphalt beside a grass verge",
   },
   "concrete-repair": {
     src: "/images/services/concrete-repair/concrete-repair-process.webp",
-    alt: "Worker cutting into a concrete slab with a handheld cut off saw, throwing up a cloud of dust beside a chain link fence",
+    alt: "Worker with a pry bar beside an orange cut-off saw, cutting along the cracked edge of a concrete slab",
   },
 };
 

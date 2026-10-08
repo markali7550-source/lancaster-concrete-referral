@@ -153,7 +153,7 @@ export default function ServicesPage() {
         tone="soft"
         backgroundImage={{
           src: "/images/services/services-index-process.webp",
-          alt: "Contractor in a cap writing on a clipboard while standing on a residential concrete driveway, with a work pickup parked at the kerb behind him",
+          alt: "Concrete poured from a mixer and worked with a shovel along a form board, a worker in orange coveralls and boots",
         }}
         eyebrow="Process"
         title="How a request reaches an independent provider"
