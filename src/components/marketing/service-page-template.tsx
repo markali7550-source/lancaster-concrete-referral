@@ -96,6 +96,7 @@ export function ServicePageTemplate({
   cityLabel,
   h1,
   summary,
+  heroImage = null,
   keyFacts,
   localIntro = null,
   faqTitle,
@@ -116,6 +117,11 @@ export function ServicePageTemplate({
   cityLabel: string;
   h1: string;
   summary: string;
+  /**
+   * Hero photo override. Location/service pages pass their own distinct
+   * photograph; hubs omit it and use the service hero.
+   */
+  heroImage?: { src: string; alt: string } | null;
   keyFacts: { label: string; value: string }[];
   localIntro?: LocalIntro | null;
   faqTitle: string;
@@ -130,6 +136,10 @@ export function ServicePageTemplate({
   callCardTitle: string;
   callCardBody: string;
 }) {
+  const heroService = heroImage
+    ? { ...service, image: heroImage.src, imageAlt: heroImage.alt }
+    : service;
+
   const navItems = [
     ...service.sectionOrder.map((id) => ({ id, label: MAIN_NAV_LABELS[id] })),
     { id: "quote-form", label: "Get a quote" },
@@ -140,7 +150,7 @@ export function ServicePageTemplate({
     <>
       <ServiceHero
         breadcrumbs={breadcrumbs}
-        service={service}
+        service={heroService}
         cityLabel={cityLabel}
         h1={h1}
         summary={summary}
