@@ -227,7 +227,7 @@ export function ScopeColumns({
       <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
         {covered.map((item) => (
           <li key={item.title} className="card p-6">
-            <div className="flex flex-col gap-2.5 lg:flex-row lg:gap-3">
+            <div className="flex flex-col items-center gap-2.5 text-center lg:flex-row lg:items-stretch lg:gap-3 lg:text-left">
               <span style={{ color: "var(--color-accent)" }}>
                 <Icon name="check" className="mt-0.5 h-5 w-5" />
               </span>
