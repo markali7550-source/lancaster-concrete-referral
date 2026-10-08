@@ -658,17 +658,16 @@ const STEPS = [
 ];
 
 export function HowMatchingWorks() {
-  // Mobile reads as a numbered sequence with hairline dividers, not three
-  // stacked boxes. Boxed cards return from lg, where three across is the
-  // comparison the copy depends on. At md the columns fell to ~239px, which
-  // left the body copy about 25 characters wide and wrapped step 02's heading
-  // onto four lines while its neighbours used two.
+  // Every step is a card on all sizes. On mobile the steps are stacked, and
+  // the card surface keeps the text readable over the photo behind them.
+  // From lg the cards sit three across, which is the comparison the copy
+  // depends on.
   return (
-    <ol className="divide-y divide-[color:var(--color-line)] lg:grid lg:grid-cols-3 lg:gap-5 lg:divide-y-0">
+    <ol className="flex flex-col gap-4 lg:grid lg:grid-cols-3 lg:gap-5">
       {STEPS.map((step, index) => (
         <li
           key={step.verb}
-          className="flex flex-col items-center gap-3 py-6 text-center first:pt-0 last:pb-0 lg:h-full lg:flex-col lg:items-stretch lg:justify-start lg:gap-0 lg:text-left lg:rounded-[var(--radius-card)] lg:border lg:border-[color:var(--color-line-soft)] lg:bg-[color:var(--color-surface)] lg:!p-6 lg:shadow-[var(--shadow-card)]"
+          className="card flex flex-col items-center gap-3 p-5 text-center lg:h-full lg:items-stretch lg:justify-start lg:gap-0 lg:p-6 lg:text-left"
         >
           <span
             className="shrink-0 text-[26px] font-extrabold leading-none tracking-tight md:text-[30px] lg:text-[34px]"
