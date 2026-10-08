@@ -245,7 +245,6 @@ export default async function LocationPage({ params }: { params: Params }) {
             <p className="eyebrow-plain">Before you send it</p>
             <div className="mt-5 max-w-xl">
               <DecisionSupport
-                columns={1}
                 items={[
                   {
                     question: "Is my area covered?",

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { QuoteForm } from "@/components/lead/QuoteForm";
+import { Icon } from "@/components/ui/Icon";
 import {
   FaqSection,
   ReferralDisclosureStrip,
@@ -293,15 +294,32 @@ export default async function ServicePage({ params }: { params: Params }) {
               same four paragraphs on eleven URLs. They are explained once, on
               /how-it-works, and linked from the places that need them.
             */}
-            <section className="scroll-mt-36 border-t py-10" style={{ borderColor: "var(--color-line-soft)" }}>
-              <p className="max-w-prose text-[15px] leading-relaxed text-[color:var(--color-muted)]">
-                Before anything is sent we check written coverage, project type,
-                an active referral agreement and current capacity.{" "}
-                <Link href="/how-it-works" className="underline underline-offset-4">
-                  How a request is checked and routed
-                </Link>
-                .
-              </p>
+            {/*
+              Routing note, set as a card row rather than a bare paragraph. The
+              words are unchanged; the unstyled single-paragraph section read as
+              a stray line between two rules instead of an intentional element.
+            */}
+            <section aria-label="Routing checks" className="scroll-mt-36 border-t py-10" style={{ borderColor: "var(--color-line-soft)" }}>
+              <div className="card flex items-start gap-3 p-5">
+                <span
+                  className="mt-0.5 shrink-0"
+                  style={{ color: "var(--color-accent)" }}
+                >
+                  <Icon name="shield" className="h-[18px] w-[18px]" />
+                </span>
+                <p className="text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
+                  Before anything is sent we check written coverage, project type,
+                  an active referral agreement and current capacity.{" "}
+                  <Link
+                    href="/how-it-works"
+                    className="font-semibold underline underline-offset-4"
+                    style={{ color: "var(--color-accent)" }}
+                  >
+                    How a request is checked and routed
+                  </Link>
+                  .
+                </p>
+              </div>
             </section>
           </div>
 
