@@ -119,8 +119,6 @@ export default function FaqPage() {
           key={category.id}
           id={category.id}
           tone={TONES[index % TONES.length]}
-          eyebrow="FAQ"
-          title={category.name}
         >
           <div className="max-w-3xl">
             <FaqSection
