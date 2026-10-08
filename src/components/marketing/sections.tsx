@@ -735,7 +735,7 @@ export function FaqSection({
   faqs,
   name = "faq",
 }: {
-  faqs: { question: string; answer: string }[];
+  faqs: { question: string; answer: React.ReactNode }[];
   /**
    * Shared name makes the group an exclusive accordion. Pass a distinct value
    * when two FAQ groups render on the same page.

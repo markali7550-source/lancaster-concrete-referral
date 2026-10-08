@@ -92,6 +92,14 @@ export function ComplianceFooter() {
               </li>
               <li>
                 <Link
+                  href="/faq/"
+                  className="text-[color:var(--color-muted)] hover:text-[color:var(--color-ink)]"
+                >
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/contact"
                   className="text-[color:var(--color-muted)] hover:text-[color:var(--color-ink)]"
                 >

@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ),
     "/how-it-works",
     "/contact",
+    "/faq",
     "/privacy",
     "/terms",
     "/referral-disclosure",
