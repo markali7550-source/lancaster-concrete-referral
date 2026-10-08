@@ -28,7 +28,7 @@ export default function LocationsPage() {
   return (
     <>
       <OverlayHeader
-        imageSrc="/service-areas-hero.webp"
+        imageSrc="/images/locations/locations-index-hero.webp"
         imageAlt="Elevated view of a suburban residential neighborhood of brick homes with concrete driveways along a curving street"
       >
         <p

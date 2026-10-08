@@ -498,5 +498,6 @@ export function RelatedServices({
 /* ----------------------------------------------------------------- CtaBand */
 
 /** Re-exported so existing imports keep working. The band itself, and the
-    site's only viewport-locked background, live in cta-band.tsx. */
+    site's one global CTA photograph on a stable scroll background, live in
+    cta-band.tsx. */
 export { CtaBand } from "@/components/marketing/cta-band";

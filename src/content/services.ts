@@ -120,7 +120,7 @@ export const services: readonly ServiceRecord[] = [
       "Nobody can price a driveway from an address. Square footage is only the start of it. What the old slab costs to break up and haul away, and whether a truck can reach the pour, often move the number more.",
     ctaLead:
       "Tell us the length of the drive and whether the old slab has to come out. One provider with written coverage for your area takes it from there.",
-    image: "/images/service-driveways.webp",
+    image: "/images/services/concrete-driveways/concrete-driveways-hero.webp",
     imageAlt:
       "Concrete driveway running up to the garage of a single story brick ranch house, with saw cut control joints across its width",
     projectTypes: ["New driveway", "Driveway replacement"],
@@ -329,7 +329,7 @@ export const services: readonly ServiceRecord[] = [
       "Patios are the project people most often price before they commit, so it is worth knowing what actually moves the figure. Finish and shape change it far more than size does.",
     ctaLead:
       "Send the rough size, and say whether it ties into an existing porch or stoop. It goes to a single participating provider, not a panel of bidders.",
-    image: "/images/service-patios.webp",
+    image: "/images/services/concrete-patios/concrete-patios-hero.webp",
     imageAlt:
       "Stamped concrete backyard patio in a random stone pattern with a curved edge, set against a mown lawn and a split rail fence",
     projectTypes: ["New patio", "Patio replacement", "Stamped patio"],
@@ -534,7 +534,7 @@ export const services: readonly ServiceRecord[] = [
       "Pricing comes last here for a reason: until the load, the access and the base are known, any number is a guess. Once those are settled a contractor can quote a pad quickly.",
     ctaLead:
       "Say what the pad has to carry and roughly where it goes. We route it to one provider approved for your area.",
-    image: "/images/service-slabs.webp",
+    image: "/images/services/concrete-slabs/concrete-slabs-hero.webp",
     imageAlt:
       "Finished concrete shed pad in a back yard, sitting proud of the ground with form marks down its side and backfilled soil around the edge",
     projectTypes: ["Residential slab", "Concrete pad"],
@@ -734,7 +734,7 @@ export const services: readonly ServiceRecord[] = [
       "Repair quotes vary more than any other concrete work, because two slabs with identical cracks can need completely different work underneath. These are the things that move it.",
     ctaLead:
       "Describe the damage and where it is. The provider looks at it on site before anyone talks about price.",
-    image: "/images/repair-hero-walkway.webp",
+    image: "/images/services/concrete-repair/concrete-repair-hero.webp",
     imageAlt:
       "Residential concrete walkway where one slab has been lifted and tilted by tree roots, leaving a raised lip against the next panel",
     projectTypes: ["Crack and surface repair", "Resurfacing"],

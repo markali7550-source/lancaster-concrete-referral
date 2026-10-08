@@ -45,7 +45,7 @@ export default function HowItWorksPage() {
             items={[{ name: "Home", path: "/" }, { name: "How it works" }]}
           />
         }
-        imageSrc="/how-it-works-hero.webp"
+        imageSrc="/images/how-it-works/how-it-works-hero.webp"
         imageAlt="Freshly placed residential concrete slab floated smooth and still inside its timber forms, with a brick home beyond the lawn"
       >
         <p
@@ -89,7 +89,7 @@ export default function HowItWorksPage() {
       */}
       <Section
         backgroundImage={{
-          src: "/images/process-placing-edge.webp",
+          src: "/images/how-it-works/how-it-works-process.webp",
             alt: "Worker in a high visibility vest working wet concrete along a formed edge with a long handled tool, with excavated ground and broken rubble behind",
         }}
         eyebrow="Process"

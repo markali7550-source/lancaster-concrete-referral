@@ -45,9 +45,8 @@ export const dynamicParams = false;
  * repeat all three, which is why they read as copies of each other.
  *
  * The closing CTA band on every page of the site renders one shared photo
- * (CTA_IMAGE in components/marketing/cta-band.tsx). Because that photo was
- * previously the driveways localImage, content/location-services.ts points the
- * driveways pair at cta-combo-driveways.webp so no page shows it twice.
+ * (CTA_IMAGE in components/marketing/cta-band.tsx), which is the only
+ * image intentionally reused across pages.
  */
 
 
@@ -295,7 +294,7 @@ export default async function ComboPage({ params }: { params: Params }) {
         <Section
           tone="surface"
           backgroundImage={{
-            src: "/images/process-texture-bg.webp",
+            src: "/images/home/home-process.webp",
             alt: "",
           }}
           eyebrow="Process"

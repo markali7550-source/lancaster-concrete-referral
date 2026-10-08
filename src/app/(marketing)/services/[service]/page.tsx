@@ -52,10 +52,10 @@ export const dynamicParams = false;
  * somebody else's garage.
  */
 const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
-  "concrete-driveways": { src: "/images/driveway-drainage-detail.webp", alt: "Driveway edge pitched away from the lawn with a gravel drainage margin" },
-  "concrete-patios": { src: "/images/patio-backyard-slab.webp", alt: "Plain concrete patio slab at the rear of a single story brick home" },
-  "concrete-slabs": { src: "/images/slab-formwork-pad.webp", alt: "Concrete pad still sitting inside its timber forms on an open lot" },
-  "concrete-repair": { src: "/images/repair-detail-crack.webp", alt: "Settled concrete walkway slab with a cracked, lifted edge" },
+  "concrete-driveways": { src: "/images/services/concrete-driveways/concrete-driveways-detail.webp", alt: "Driveway edge pitched away from the lawn with a gravel drainage margin" },
+  "concrete-patios": { src: "/images/services/concrete-patios/concrete-patios-detail.webp", alt: "Plain concrete patio slab at the rear of a single story brick home" },
+  "concrete-slabs": { src: "/images/services/concrete-slabs/concrete-slabs-detail.webp", alt: "Concrete pad still sitting inside its timber forms on an open lot" },
+  "concrete-repair": { src: "/images/services/concrete-repair/concrete-repair-detail.webp", alt: "Settled concrete walkway slab with a cracked, lifted edge" },
 };
 
 /**
@@ -74,7 +74,7 @@ const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
  */
 const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-repair": {
-    src: "/images/repair-sawcutting-slab.webp",
+    src: "/images/services/concrete-repair/concrete-repair-process.webp",
     alt: "Worker cutting into a concrete slab with a handheld cut off saw, throwing up a cloud of dust beside a chain link fence",
   },
 };

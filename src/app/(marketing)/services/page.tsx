@@ -68,7 +68,7 @@ export default function ServicesPage() {
             items={[{ name: "Home", path: "/" }, { name: "Services" }]}
           />
         }
-        imageSrc="/services-overview.webp"
+        imageSrc="/images/services/services-index-hero.webp"
         imageAlt="Broom finished residential concrete walkway with a tooled control joint and radiused edge beside a lawn"
       >
         <p
@@ -151,7 +151,7 @@ export default function ServicesPage() {
       <Section
         tone="soft"
         backgroundImage={{
-          src: "/images/process-services-index.webp",
+          src: "/images/services/services-index-process.webp",
           alt: "Contractor in a cap writing on a clipboard while standing on a residential concrete driveway, with a work pickup parked at the kerb behind him",
         }}
         eyebrow="Process"

@@ -10,7 +10,11 @@ export interface LocationServiceRecord {
    * Each entry renders as a titled block so the section scans.
    */
   localBody: { heading: string; body: string }[];
-  /** Supporting photo for the local section. Distinct from the service hero. */
+  /**
+   * Combo-page hero and city-card photo, from one field so the card always
+   * matches the page it opens. Interim: currently the service hero, until a
+   * distinct local photograph per pair replaces it.
+   */
   localImage: string;
   localImageAlt: string;
   localFaqs: { question: string; answer: string }[];
@@ -21,7 +25,7 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-driveways",
     state: "published",
-    localImage: "/images/service-driveways.webp",
+    localImage: "/images/services/concrete-driveways/concrete-driveways-hero.webp",
     localImageAlt:
       "Concrete driveway running up to the garage of a single story brick ranch house, with saw cut control joints across its width",
     localBody: [
@@ -69,7 +73,7 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-patios",
     state: "published",
-    localImage: "/images/service-patios.webp",
+    localImage: "/images/services/concrete-patios/concrete-patios-hero.webp",
     localImageAlt:
       "Stamped concrete backyard patio in a random stone pattern with a curved edge, set against a mown lawn and a split rail fence",
     localBody: [
@@ -116,7 +120,7 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-slabs",
     state: "published",
-    localImage: "/images/service-slabs.webp",
+    localImage: "/images/services/concrete-slabs/concrete-slabs-hero.webp",
     localImageAlt:
       "Finished concrete shed pad in a back yard, sitting proud of the ground with form marks down its side and backfilled soil around the edge",
     localBody: [
@@ -163,7 +167,7 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-repair",
     state: "published",
-    localImage: "/images/repair-hero-walkway.webp",
+    localImage: "/images/services/concrete-repair/concrete-repair-hero.webp",
     localImageAlt:
       "Residential concrete walkway where one slab has been lifted and tilted by tree roots, leaving a raised lip against the next panel",
     localBody: [

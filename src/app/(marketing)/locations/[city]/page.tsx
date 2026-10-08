@@ -161,7 +161,7 @@ export default async function LocationPage({ params }: { params: Params }) {
             actually appears, not as red clay, and claims no location.
           */}
           <Image
-            src="/images/site-conditions-slab-subbase.webp"
+            src="/images/locations/lancaster-sc/lancaster-sc-site-conditions.webp"
             alt="Freshly finished concrete pad in a fenced back yard, with bare soil and gravel still exposed around its edges and neighbouring houses close behind"
             width={944}
             height={531}
@@ -199,15 +199,13 @@ export default async function LocationPage({ params }: { params: Params }) {
 
 
       {/*
-        Recovered. This band carried process-band.webp until 857f176 removed it,
-        on the grounds that the only photograph suiting a routing band was
-        needed by the home page. The home process band has since moved to
-        process-texture-bg.webp, so this one is free again and no other section
-        loses an image by restoring it. Same src and same alt as before.
+        Routing band photograph: forms and a contractor truck at a
+        residential street edge. Interim bytes until a real photograph
+        replaces them; the subject is already the right one for this band.
       */}
       <Section
         backgroundImage={{
-          src: "/process-band.webp",
+          src: "/images/locations/lancaster-sc/lancaster-sc-routing.webp",
           alt: "Timber forms set along the edge of a residential street beside a contractor's truck, with excavated clay heaped alongside",
         }}
         eyebrow="Process"
