@@ -10,16 +10,6 @@ background band with the section heading it sits under.
 
 Brand marks (`logo.webp`, `logo-dark.webp`) are excluded: a logo is meant to repeat.
 
-> Correction 2026-10-08: the paths below predate the `/public/images/` route
-> restructure, and the restructure itself crossed the wires — eight pairs of
-> files ended up with each other's bytes (service heroes driveways↔repair and
-> patios↔slabs, both driveway/repair detail shots, home hero↔process texture,
-> home service-area↔services process, how-it-works hero↔process, services
-> index hero↔Lancaster hero, Lancaster routing↔site-conditions). Every alt and
-> every content mapping already described the intended file, so the fix moves
-> bytes back under their own names with no code or copy changes. Placements in
-> the table stay valid once read against the corrected files.
-
 ## Image -> page -> section
 
 | Image | Page | Section | Status |
