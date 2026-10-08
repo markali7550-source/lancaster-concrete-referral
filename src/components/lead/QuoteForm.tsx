@@ -352,7 +352,7 @@ export function QuoteForm({
             {step === 1 ? "Your project and location" : "How to reach you"}
           </h3>
         </div>
-        <div className="flex gap-1.5" aria-hidden="true">
+        <div className="flex justify-center gap-1.5 sm:justify-start" aria-hidden="true">
           <span
             className="h-1.5 w-10 rounded-full"
             style={{ backgroundColor: "var(--color-accent)" }}

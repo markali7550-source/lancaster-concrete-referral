@@ -879,4 +879,11 @@
   footer .text-left {
     text-align: center !important;
   }
+
+  /* Eyebrow labels (with their leading rule) sit on the centre line. */
+  main#main .eyebrow,
+  footer .eyebrow {
+    display: flex;
+    justify-content: center;
+  }
 }

@@ -13,8 +13,8 @@ export function ComplianceFooter() {
     >
       <div className="container-page py-14">
         <div className="grid grid-cols-1 gap-x-6 gap-y-9 text-left sm:grid-cols-2 sm:gap-10 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
-          <div className="max-w-sm sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center">
+          <div className="mx-auto max-w-sm text-center sm:col-span-2 sm:mx-0 sm:text-left lg:col-span-1">
+            <div className="flex items-center justify-center sm:justify-start">
               <Logo height={52} />
             </div>
             <p className="mt-4 text-[13.5px] leading-relaxed text-[color:var(--color-muted)]">

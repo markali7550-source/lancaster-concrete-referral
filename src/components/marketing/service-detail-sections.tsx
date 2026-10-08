@@ -28,7 +28,7 @@ export function MayInclude({
         {items.map((item) => (
           <li
             key={item}
-            className="card mb-3 flex break-inside-avoid items-start gap-3 p-4"
+            className="card mb-3 flex break-inside-avoid flex-col items-center gap-3 p-4 text-center lg:flex-row lg:items-start lg:text-left"
           >
             <span
               className="mt-0.5 shrink-0"

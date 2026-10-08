@@ -482,7 +482,7 @@ export function RelatedServices({
               {service.summary}
             </p>
             <span
-              className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-semibold"
+              className="mt-4 inline-flex items-center justify-center gap-1.5 text-[14px] font-semibold lg:justify-start"
               style={{ color: "var(--color-accent)" }}
             >
               View service

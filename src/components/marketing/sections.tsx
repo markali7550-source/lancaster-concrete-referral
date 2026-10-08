@@ -668,15 +668,15 @@ export function HowMatchingWorks() {
       {STEPS.map((step, index) => (
         <li
           key={step.verb}
-          className="flex gap-5 py-6 first:pt-0 last:pb-0 lg:h-full lg:flex-col lg:justify-start lg:gap-0 lg:rounded-[var(--radius-card)] lg:border lg:border-[color:var(--color-line-soft)] lg:bg-[color:var(--color-surface)] lg:!p-6 lg:shadow-[var(--shadow-card)]"
+          className="flex flex-col items-center gap-3 py-6 text-center first:pt-0 last:pb-0 lg:h-full lg:flex-col lg:items-stretch lg:justify-start lg:gap-0 lg:text-left lg:rounded-[var(--radius-card)] lg:border lg:border-[color:var(--color-line-soft)] lg:bg-[color:var(--color-surface)] lg:!p-6 lg:shadow-[var(--shadow-card)]"
         >
           <span
-            className="w-9 shrink-0 text-[26px] font-extrabold leading-none tracking-tight md:text-[30px] lg:w-auto lg:text-[34px]"
+            className="shrink-0 text-[26px] font-extrabold leading-none tracking-tight md:text-[30px] lg:text-[34px]"
             style={{ color: "var(--color-accent)" }}
           >
             {String(index + 1).padStart(2, "0")}
           </span>
-          <div className="min-w-0 flex-1 lg:mt-4">
+          <div className="w-full min-w-0 lg:mt-4">
             <span
               className="hidden lg:block lg:h-px lg:w-10"
               style={{ backgroundColor: "var(--color-line)" }}
