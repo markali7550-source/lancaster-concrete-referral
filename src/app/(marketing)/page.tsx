@@ -101,8 +101,8 @@ export default function HomePage() {
         locationCue="Lancaster County, South Carolina"
         h1="Connect With a Local Concrete Service Provider in Lancaster, SC"
         summary="Tell us what you need and where the property is. We will match your request with one eligible independent concrete service provider serving your area."
-        imageSrc="/images/home/home-hero.webp"
-        imageAlt="Brick suburban home with a concrete front walkway, stoop, and driveway apron in daylight"
+        imageSrc="/images/home/home-hero-walkway.webp"
+        imageAlt="Brick ranch home with a concrete front walkway leading to the stoop and a driveway apron to the side, shaded by a mature tree"
         overlay
       />
 
