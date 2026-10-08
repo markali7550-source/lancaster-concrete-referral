@@ -67,7 +67,7 @@ function linkify(answer: string, links: readonly FaqLink[]): ReactNode {
 
 /*
  * Real owner-supplied photograph: crew placing a concrete pour. Source
- * kept at real-photos/faq-hero-source.jpg for provenance. Unique to
+ * kept at real-photos/faq-hero-source.webp for provenance. Unique to
  * this page.
  */
 const FAQ_HERO = {

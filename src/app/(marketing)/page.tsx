@@ -98,7 +98,7 @@ export default function HomePage() {
       <JsonLd data={graph} />
 
       {/*
-        Owner-supplied real photograph (source: real-photos/home-hero-source.jpg,
+        Owner-supplied real photograph (source: real-photos/home-hero-source.webp,
         committed for provenance; shipped bytes are the converted WebP below).
         Hand-floating shot, so the alt names the act, the gear and the forms.
       */}
