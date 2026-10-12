@@ -277,8 +277,11 @@ export default function HomePage() {
         <FaqSection faqs={FAQS} name="home-faq" />
         <p className="mt-6 text-sm text-[color:var(--color-muted)]">
           Full detail on how we are paid and what we do not do is on the{" "}
-          <Link href="/service-disclosure" className="underline underline-offset-4">
-            disclosure page
+          <Link
+            href="/service-disclosure"
+            className="font-medium text-[color:var(--color-ink)] underline underline-offset-4"
+          >
+            service disclosure page
           </Link>
           .
         </p>
