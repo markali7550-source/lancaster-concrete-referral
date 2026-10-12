@@ -60,8 +60,8 @@ const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
     alt: "Two workers screeding fresh concrete on a residential driveway with a long straightedge, a pickup and cones at the street",
   },
   "concrete-patios": {
-    src: "/images/services/concrete-patios/concrete-patios-process.webp",
-    alt: "Stone-pattern stamping mats laid on a freshly poured patio with hand trowels, a mallet and a bucket beside the forms",
+    src: "/images/services/concrete-driveways/concrete-driveways-process.webp",
+    alt: "Two workers screeding freshly placed concrete flatwork with a long straightedge, a pickup parked beyond the pour",
   },
   "concrete-slabs": {
     src: "/images/services/concrete-slabs/concrete-slabs-process.webp",
