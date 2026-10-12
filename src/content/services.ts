@@ -534,7 +534,7 @@ export const services: readonly ServiceRecord[] = [
       "Say what the pad has to carry and roughly where it goes. We send it to one provider approved for your area.",
     image: "/images/services/concrete-slabs/concrete-slabs-hero.webp",
     imageAlt:
-      "Newly poured concrete slab in a back yard, set between timber form boards with a wooden fence and mature trees behind it",
+      "Finished concrete shed pad in a back yard, sitting proud of the ground with form marks down its side and backfilled soil around the edge",
     projectTypes: ["Residential slab", "Concrete pad"],
     keyFacts: [
       {
