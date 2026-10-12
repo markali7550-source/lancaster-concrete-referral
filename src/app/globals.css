@@ -46,7 +46,7 @@
   --color-raised: #ffffff;
 
   --color-ink: #141a22; /* deep navy charcoal: headings and body */
-  --color-muted: #3e4857; /* secondary copy: darker grey so body text reads crisp, not dull (~9:1 on page) */
+  --color-muted: #55606e; /* neutral grey: secondary copy (5.8:1 on page) */
   --color-subtle: #66707d; /* micro labels; still clears AA at 4.6:1 */
 
   --color-line: #cfcac2; /* warm separator */
@@ -114,7 +114,7 @@
     --color-surface: #141b24;
     --color-raised: #19212b;
     --color-ink: #eceff3;
-    --color-muted: #c4cdd9; /* dark-mode secondary copy, lifted so it doesn't look grey-washed */
+    --color-muted: #a3aebc;
     --color-subtle: #8b96a4;
     --color-line: #28323f;
     --color-line-soft: #222b37;
@@ -475,6 +475,12 @@
     color: var(--color-accent);
   }
 
+  /* Column labels (SERVICES, SERVICE AREA, LEGAL) read as headings, so they take
+     the footer's main ink rather than the dimmer muted grey used for body copy. */
+  .footer-band .eyebrow-plain {
+    color: var(--color-footer-ink);
+  }
+
   /* The wordmark ships as dark ink, so the dark band needs the light variant. */
   .footer-band .logo-light {
     display: none;
@@ -693,7 +699,6 @@
     color: var(--color-subtle);
   }
 
-
   /* Display scale, roughly a 1.25 ratio between steps. Both sizes came down
      at the top end (h1 3.375rem -> 3rem) because the old maximum filled a
      1440px hero with three lines of 54px type and left the page no room to
@@ -879,16 +884,6 @@
 
   footer .text-left {
     text-align: center !important;
-  }
-
-  /* Quote form fields: labels and typed text are left-aligned on mobile so
-     the form reads as a column. Only the field labels and inputs change;
-     option rows, buttons and the consent text stay centred. */
-  main#main .quote-field-label,
-  main#main form input:not([type="radio"]):not([type="checkbox"]),
-  main#main form select,
-  main#main form textarea {
-    text-align: left !important;
   }
 
   /* Quote form fields: labels and typed text are left-aligned on mobile so
