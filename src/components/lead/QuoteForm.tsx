@@ -80,7 +80,7 @@ export function QuoteForm({
     el.focus({ preventScroll: true });
   }, [status]);
 
-  // A "Request a referral" CTA points at #quote-form. The browser scrolls, and
+  // A "Request a quote" CTA points at #quote-form. The browser scrolls, and
   // this moves keyboard focus to the first control so the jump is usable
   // without a mouse. Submission behavior is untouched.
   useEffect(() => {
@@ -645,7 +645,7 @@ export function QuoteForm({
               disabled={status === "submitting"}
               aria-busy={status === "submitting"}
             >
-              {status === "submitting" ? "Sending…" : "Request a referral"}
+              {status === "submitting" ? "Sending…" : "Request a quote"}
             </button>
             <button
               type="button"
@@ -664,7 +664,7 @@ export function QuoteForm({
       </p>
       <p className="mt-2 text-xs leading-relaxed text-[color:var(--color-muted)]">
         Submitting this form does not create a contract, a price, or a booking.
-        We are a referral service, not a concrete contractor.
+        We are a local concrete service site, not a concrete contractor.
       </p>
     </form>
   );

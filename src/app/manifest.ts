@@ -3,10 +3,10 @@ import { site } from "@/lib/env";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: `${site.brand} | Concrete Referrals in Lancaster, SC`,
+    name: `${site.brand} | Concrete Quotes in Lancaster, SC`,
     short_name: site.brand,
     description:
-      "Referral service connecting Lancaster, South Carolina homeowners with independent concrete service providers.",
+      "Local concrete service for Lancaster, South Carolina homeowners, with work done by independent local crews.",
     start_url: "/",
     display: "browser",
     background_color: "#f6f4f1",

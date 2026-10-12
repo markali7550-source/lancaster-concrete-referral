@@ -11,7 +11,6 @@ import {
   Hero,
   HowMatchingWorks,
   ProjectTypeChooser,
-  ReferralDisclosureStrip,
   RoutingControls,
   Section,
 } from "@/components/marketing/sections";
@@ -63,7 +62,7 @@ export async function generateMetadata({
   const location = getLocation(city);
   if (!location) return {};
   return pageMetadata({
-    title: `Concrete Contractors in ${location.city}, SC | Referral Service`,
+    title: `Concrete Contractors in ${location.city}, SC | Local Service`,
     description: `Looking for a concrete contractor in ${location.city}, SC? Call now or request a quote. We connect you with an independent local contractor. Availability varies.`,
     path: `/locations/${location.slug}`,
   });
@@ -87,7 +86,7 @@ export default async function LocationPage({ params }: { params: Params }) {
     {
       question: `Do you employ concrete crews in ${location.city}?`,
       answer:
-        "No. We are a referral service. Every crew that contacts you is an independent contractor responsible for their own licensing, insurance, pricing, and workmanship.",
+        "No. We are a local concrete service site. Every crew that contacts you is an independent contractor responsible for their own licensing, insurance, pricing, and workmanship.",
     },
     {
       question: `How quickly does a ${location.city} contractor respond?`,
@@ -97,15 +96,15 @@ export default async function LocationPage({ params }: { params: Params }) {
     {
       question: `Is there a ${location.city} office I can visit?`,
       answer:
-        "No, and we will not publish an address implying otherwise. We are an online referral business. The contractor assigned to your project is the party with a local presence.",
+        "No, and we will not publish an address implying otherwise. We are an online service business. The contractor assigned to your project is the party with a local presence.",
     },
   ];
 
   const graph = buildGraph([
     webPageNode(
       path,
-      `Concrete contractor referrals in ${location.city}, SC`,
-      `Referral coverage for ${location.city}, ${location.county}.`,
+      `Concrete service requests in ${location.city}, SC`,
+      `Service coverage for ${location.city}, ${location.county}.`,
     ),
     breadcrumbNode(path, [
       { name: "Home", path: "/" },
@@ -130,7 +129,7 @@ export default async function LocationPage({ params }: { params: Params }) {
           />
         }
         locationCue={`${location.county}, South Carolina`}
-        h1={`Concrete Contractor Referrals in ${location.city}, SC`}
+        h1={`Concrete Contractor Quotes in ${location.city}, SC`}
         summary={location.intro}
         imageSrc={location.heroImage}
         imageAlt={location.heroImageAlt}
@@ -141,10 +140,9 @@ export default async function LocationPage({ params }: { params: Params }) {
           { label: "Approved area", value: `${location.city}, ${location.region}` },
           { label: "County", value: location.county },
           { label: "Services routed", value: `${publishedServices.length} residential services` },
-          { label: "Cost to you", value: "No charge for the referral" },
+          { label: "Cost to you", value: "No charge for the quote request" },
         ]}
       />
-      <ReferralDisclosureStrip />
 
       <Section
         eyebrow="Local conditions"
@@ -224,7 +222,7 @@ export default async function LocationPage({ params }: { params: Params }) {
 
       <Section
         tone="surface"
-        eyebrow="Request a referral"
+        eyebrow="Request a quote"
         title={`Tell us about your ${location.city} project`}
       >
         <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr] lg:gap-16">

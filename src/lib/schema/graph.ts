@@ -19,7 +19,7 @@ export function rootGraph(): Node[] {
       telephone: site.phoneE164,
       email: site.email,
       description:
-        "Online referral service that connects South Carolina homeowners with independent concrete contractors. Not a contractor.",
+        "Local concrete service site for South Carolina homeowners, with work done by independent concrete contractors. Not a contractor.",
     },
     {
       "@type": "WebSite",
@@ -72,7 +72,7 @@ export function serviceNode(input: {
     name: input.name,
     description: input.description,
     serviceType: input.name,
-    /* The publisher arranges the referral; it does not perform the work, so it
+    /* The publisher arranges the request; it does not perform the work, so it
        is the broker, never the provider (schema.org Service.broker). */
     broker: { "@id": ORG_ID() },
     areaServed: input.areaServed.map((city) => ({

@@ -23,14 +23,14 @@ describe("JSON-LD graph", () => {
     expect(serialised).not.toContain("HomeAndConstructionBusiness");
   });
 
-  it("publishes no address, rating, or review on the referral brand", () => {
+  it("publishes no address, rating, or review on the brand", () => {
     const serialised = JSON.stringify(graph);
     for (const forbidden of ["aggregateRating", "review", "address", "priceRange"]) {
       expect(serialised).not.toContain(forbidden);
     }
   });
 
-  it("never presents the referral publisher as the service provider", () => {
+  it("never presents the publisher as the service provider", () => {
     const service = (graph["@graph"] as Record<string, unknown>[]).find((n) => n["@type"] === "Service");
     expect(service).toBeDefined();
     expect(service).not.toHaveProperty("provider");

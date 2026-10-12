@@ -6,7 +6,6 @@ import {
   overlayBody,
   overlayEyebrow,
   overlayHeading,
-  ReferralDisclosureStrip,
   Section,
   RoutingControls,
 } from "@/components/marketing/sections";
@@ -16,7 +15,7 @@ import { breadcrumbNode, buildGraph, webPageNode } from "@/lib/schema/graph";
 import { site } from "@/lib/env";
 import { FULL_DISCLOSURE_PARAGRAPHS } from "@/lib/seo/disclosure";
 
-const TITLE = `How Our Concrete Referrals Work | ${site.brand}`;
+const TITLE = `How Our Concrete Service Works | ${site.brand}`;
 const DESCRIPTION =
   "How a request is validated, checked against participating provider eligibility, routed to one independent contractor, and what our role is and is not.";
 
@@ -55,7 +54,7 @@ export default function HowItWorksPage() {
           Our process
         </p>
         <h1 className="h1 mt-5 max-w-3xl" style={{ color: overlayHeading }}>
-          How Our Concrete Service Provider Referrals Work
+          How Our Concrete Service Works
         </h1>
         <p
           className="lede mt-5 max-w-2xl"
@@ -66,7 +65,6 @@ export default function HowItWorksPage() {
           that stop a request from being routed at all.
         </p>
       </OverlayHeader>
-      <ReferralDisclosureStrip />
       <Section tone="soft" eyebrow="Eligibility" title="What blocks a provider from receiving your request">
         <RoutingControls />
       </Section>
@@ -133,7 +131,7 @@ export default function HowItWorksPage() {
 
       <CtaBand
         title="Ready to start?"
-        body="Submit a request and we will route it to one eligible independent contractor, or call the referral team first to check coverage."
+        body="Submit a request and we will route it to one eligible independent contractor, or call our team first to check coverage."
         showFormLink={false}
       />
 

@@ -114,7 +114,7 @@ export default async function ComboPage({ params }: { params: Params }) {
           { label: "Service", value: serviceRecord.name },
           { label: "Area", value: `${location.city}, ${location.county}` },
           { label: "Routed project types", value: serviceRecord.projectTypes.join(" · ") },
-          { label: "Cost to you", value: "No charge for the referral" },
+          { label: "Cost to you", value: "No charge for the quote request" },
         ]}
         localIntro={{
           eyebrow: `${serviceRecord.name} · ${location.city}`,

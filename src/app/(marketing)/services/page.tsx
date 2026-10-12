@@ -5,7 +5,6 @@ import {
   HowMatchingWorks,
   OverlayHeader,
   ProjectTypeChooser,
-  ReferralDisclosureStrip,
   Section,
   SectionDivider,
   overlayBody,
@@ -23,7 +22,7 @@ import { site } from "@/lib/env";
 
 const TITLE = "Concrete Services in Lancaster, SC | Driveways to Repair";
 const DESCRIPTION =
-  "Driveways, patios, slabs and nonstructural repair in Lancaster, SC. See what each referral covers and how your request reaches an independent provider.";
+  "Driveways, patios, slabs and nonstructural repair in Lancaster, SC. See what each service covers and how your request reaches an independent local crew.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,
@@ -43,7 +42,7 @@ const FAQS = [
       "Pick the closest match and describe the rest in the project note. The contractor scopes the whole job on site. The category only affects which participating providers are eligible to receive it.",
   },
   {
-    question: "Do you charge for the referral?",
+    question: "Do you charge to request a quote?",
     answer:
       "No. Service providers pay us a commission on revenue they actually collect from completed work. Nothing is charged to the homeowner, and that arrangement does not make us a party to your contract.",
   },
@@ -94,8 +93,6 @@ export default function ServicesPage() {
           request to one eligible participating provider.
         </p>
       </OverlayHeader>
-
-      <ReferralDisclosureStrip />
 
       <Section eyebrow="Choose a service" title="What we can route today">
         <ProjectTypeChooser images={serviceCardImages} />
@@ -184,7 +181,7 @@ export default function ServicesPage() {
       <CtaBand
         tone="section"
         title="Not sure which service fits?"
-        body="Describe the project in the quote form and we will route it on the closest match, or call and our referral team will tell you whether we cover it at all."
+        body="Describe the project in the quote form and we will send it to the closest local crew, or call and our team will tell you whether we cover it at all."
         showFormLink={false}
       />
 

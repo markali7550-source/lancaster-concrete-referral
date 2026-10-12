@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { QuoteForm } from "@/components/lead/QuoteForm";
-import { ReferralDisclosureStrip, Section } from "@/components/marketing/sections";
+import { Section } from "@/components/marketing/sections";
 import { publishedServices } from "@/content/services";
 import { site } from "@/lib/env";
 import { Breadcrumbs } from "@/components/marketing/service-sections";
@@ -14,7 +14,7 @@ import { pageMetadata } from "@/lib/seo/metadata";
 import { breadcrumbNode, buildGraph, webPageNode } from "@/lib/schema/graph";
 import { CALL_DISCLOSURE } from "@/lib/seo/disclosure";
 
-const TITLE = "Contact Us | Concrete Referrals in Lancaster, SC";
+const TITLE = "Contact Us | Concrete Quotes in Lancaster, SC";
 const DESCRIPTION =
   "Call or send a request and we will route it to an independent third party concrete service provider serving your covered area.";
 
@@ -60,7 +60,7 @@ export default function ContactPage() {
           />
           <p className="eyebrow">Contact</p>
           <h1 className="h1 mt-5 max-w-3xl">
-            Contact Our Lancaster, SC Concrete Referral Team
+            Contact Our Lancaster, SC Concrete Team
           </h1>
           <p className="lede mt-5 max-w-2xl">
             We can confirm whether we have approved coverage for your area
@@ -68,17 +68,12 @@ export default function ContactPage() {
           </p>
         </div>
       </div>
-      <ReferralDisclosureStrip />
       <Section>
-        <h2 className="sr-only">Contact details and referral request</h2>
+        <h2 className="sr-only">Contact details and service request</h2>
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
           <div className="text-left">
             <p className="lede max-w-prose">
-              We are the referral service, not the contractor. Our referral team can tell
-              you whether we have approved coverage for your area and what
-              happens after you submit a request. Questions about a quote, a
-              schedule, or completed work belong with the contractor assigned to
-              you.
+              Our team can tell you whether we have a local crew for your area and what happens after you submit a request. Questions about a quote, a schedule, or completed work belong with the contractor assigned to you.
             </p>
             <dl className="mt-8 space-y-5">
               <div>
@@ -118,7 +113,7 @@ export default function ContactPage() {
             </dl>
             <p className="mt-8 max-w-prose text-xs leading-relaxed text-[color:var(--color-muted)]">
               {CALL_DISCLOSURE} We publish no street address because we are an
-              online referral business, not a contracting premises.
+              online service business, not a contracting premises.
             </p>
           </div>
           <div>

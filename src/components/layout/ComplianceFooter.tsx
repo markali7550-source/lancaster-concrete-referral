@@ -18,10 +18,7 @@ export function ComplianceFooter() {
               <Logo height={52} />
             </div>
             <p className="mt-4 text-[13.5px] leading-relaxed text-[color:var(--color-muted)]">
-              An online referral service that connects South Carolina
-              homeowners with independent third party concrete service
-              providers. We hold no contractor license and perform no
-              concrete work.
+              A local concrete service site for South Carolina homeowners. Work is done by independent third party concrete service providers. We hold no contractor license and perform no concrete work.
             </p>
             <div className="mt-5 space-y-1.5 text-sm">
               <a href={`tel:${site.phoneE164}`} className="block font-semibold">
@@ -117,7 +114,7 @@ export function ComplianceFooter() {
                   href="/referral-disclosure"
                   className="text-[color:var(--color-muted)] hover:text-[color:var(--color-ink)]"
                 >
-                  Referral disclosure
+                  Service disclosure
                 </Link>
               </li>
               <li>

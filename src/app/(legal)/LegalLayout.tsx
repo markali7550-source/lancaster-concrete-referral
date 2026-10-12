@@ -4,10 +4,10 @@ import { Breadcrumbs } from "@/components/marketing/service-sections";
 /** Every legal surface links to the others. The current page is filtered out
  *  so the Related card never links to itself. */
 const RELATED_LINKS = [
-  { href: "/referral-disclosure", label: "Referral disclosure" },
+  { href: "/referral-disclosure", label: "Service disclosure" },
   { href: "/privacy", label: "Privacy policy" },
   { href: "/terms", label: "Terms of use" },
-  { href: "/how-it-works", label: "How the referral works" },
+  { href: "/how-it-works", label: "How requests work" },
 ] as const;
 
 export function LegalPage({
@@ -60,7 +60,7 @@ export function LegalPage({
                 ))}
               </ul>
               <p className="mt-6 border-t pt-5 text-[13px] leading-relaxed text-[color:var(--color-muted)] hairline">
-                We are a referral service, not a concrete contractor. Nothing on
+                We are a local concrete service site, not a concrete contractor. Nothing on
                 this page creates a contract between you and us for construction
                 work.
               </p>

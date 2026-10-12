@@ -5,7 +5,7 @@ const OG_IMAGE = {
   url: "/opengraph-image.webp",
   width: 1200,
   height: 630,
-  alt: `${site.brand}, concrete referrals in Lancaster, South Carolina`,
+  alt: `${site.brand}, concrete service in Lancaster, South Carolina`,
 } as const;
 
 interface PageMetaInput {
@@ -53,7 +53,7 @@ export function pageMetadata({
  *
  * Keyed by service slug rather than built from `nameLower`, because
  * `nameLower` carries an indefinite article ("a concrete driveway"), which the
- * previous single template spliced into "Explore a concrete driveway referral
+ * previous single template spliced into "Explore a concrete driveway quote
  * options…" — ungrammatical on all four pages. Writing each line out also lets
  * every page open with a different, natural sentence instead of one boilerplate
  * string, which is better for both readers and duplicate-content signals.
@@ -77,25 +77,25 @@ const COMBO_DESCRIPTIONS: Record<string, (city: string) => string> = {
 /*
  * H1s are written out per service rather than built by concatenation.
  *
- * `service.name` is plural ("Concrete Driveways"), so `${name} Referrals`
- * produced "Concrete Driveways Referrals" — plural noun stacked on plural noun.
+ * `service.name` is plural ("Concrete Driveways"), so `${name} Quotes`
+ * produced "Concrete Driveways Services" — plural noun stacked on plural noun.
  * Three of the four combo pages shipped with that in their H1 and in search
  * results. A lookup keyed by slug cannot regress the same way: a missing key is
  * caught by the fallback below rather than silently reading wrong.
  */
 const COMBO_H1: Record<string, (city: string) => string> = {
-  "concrete-driveways": (city) => `Concrete Driveway Referrals in ${city}, SC`,
-  "concrete-patios": (city) => `Concrete Patio Referrals in ${city}, SC`,
-  "concrete-slabs": (city) => `Concrete Slab Referrals in ${city}, SC`,
-  "concrete-repair": (city) => `Concrete Repair Referrals in ${city}, SC`,
+  "concrete-driveways": (city) => `Concrete Driveway Quotes in ${city}, SC`,
+  "concrete-patios": (city) => `Concrete Patio Quotes in ${city}, SC`,
+  "concrete-slabs": (city) => `Concrete Slab Quotes in ${city}, SC`,
+  "concrete-repair": (city) => `Concrete Repair Quotes in ${city}, SC`,
 };
 
 export const comboMeta = {
   title: (serviceName: string, city: string) =>
-    `${city}, SC ${serviceName} | Local Provider Referrals`,
+    `${city}, SC ${serviceName} | Local Service`,
   description: (serviceSlug: string, city: string) =>
     COMBO_DESCRIPTIONS[serviceSlug]?.(city) ??
     `Tell us about your ${serviceSlug.replace(/-/g, " ")} project in ${city}, SC and we can connect you with one independent provider serving your area.`,
   h1: (serviceSlug: string, city: string) =>
-    COMBO_H1[serviceSlug]?.(city) ?? `Concrete Referrals in ${city}, SC`,
+    COMBO_H1[serviceSlug]?.(city) ?? `Concrete Services in ${city}, SC`,
 };

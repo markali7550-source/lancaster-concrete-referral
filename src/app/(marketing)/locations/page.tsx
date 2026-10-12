@@ -18,9 +18,9 @@ import { pageMetadata } from "@/lib/seo/metadata";
  * coverage is granted and links through to each published local page.
  */
 export const metadata: Metadata = pageMetadata({
-  title: "Concrete Referral Service Areas in South Carolina",
+  title: "Concrete Service Areas in South Carolina",
   description:
-    "The South Carolina areas where we currently route concrete referrals. Coverage is added only once a participating provider approves it in writing.",
+    "The South Carolina areas we currently serve. Coverage is added only once a local crew confirms it can take work there.",
   path: "/locations",
 });
 
@@ -38,7 +38,7 @@ export default function LocationsPage() {
           Service areas
         </p>
         <h1 className="h1 mt-5 max-w-3xl" style={{ color: overlayHeading }}>
-          Concrete Referral Service Areas in South Carolina
+          Concrete Service Areas in South Carolina
         </h1>
         <p className="lede mt-5 max-w-2xl" style={{ color: overlayBody }}>
           One service area today. Additional South Carolina cities appear
@@ -47,7 +47,7 @@ export default function LocationsPage() {
       </OverlayHeader>
       <Section
         eyebrow="Coverage"
-        title="Where we route concrete referrals today"
+        title="Where we currently take quote requests"
         lead="Every area below has a participating provider who has confirmed in writing that they accept work there."
       >
         <div className="grid gap-x-12 gap-y-6 md:grid-cols-2">
@@ -102,7 +102,7 @@ export default function LocationsPage() {
                 />
                 <div className="flex flex-1 flex-col justify-center p-6 sm:p-7">
                   <h3 className="text-[17px] font-semibold">
-                    Concrete referrals in {location.city}, {location.region}
+                    Concrete quotes in {location.city}, {location.region}
                   </h3>
                   <p className="mt-2 flex-1 text-[14px] leading-relaxed text-[color:var(--color-muted)]">
                     Driveways, patios, slabs and repair routed to independent
@@ -112,7 +112,7 @@ export default function LocationsPage() {
                     className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold"
                     style={{ color: "var(--color-accent)" }}
                   >
-                    View {location.city} referrals
+                    View {location.city} services
                     <Icon name="arrow" className="card-go h-4 w-4" />
                   </span>
                 </div>

@@ -21,13 +21,13 @@ import { OUT_OF_AREA_POSTAL_CODE, publishedLocations, serviceAreaOptions } from 
 import { publishedServices } from "@/content/services";
 import { serviceCardImages } from "@/content/location-services";
 import { site } from "@/lib/env";
-import { REFERRAL_SERVICE_DISCLOSURE } from "@/lib/seo/disclosure";
+import { SERVICE_DISCLOSURE } from "@/lib/seo/disclosure";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { buildGraph, faqNode, webPageNode } from "@/lib/schema/graph";
 
-const TITLE = `Lancaster SC Concrete Referrals | ${site.brand}`;
+const TITLE = `Lancaster SC Concrete Quotes | ${site.brand}`;
 const DESCRIPTION =
-  "Connect with independent concrete service providers in Lancaster, SC for driveways, patios, slabs and repair. We are a referral service, not a contractor.";
+  "Local concrete service in Lancaster, SC for driveways, patios, slabs and repair. Work is done by independent local crews, not by this website.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,
@@ -218,7 +218,7 @@ export default function HomePage() {
 
       <Section
         tone="surface"
-        eyebrow="Request a referral"
+        eyebrow="Request a quote"
         title="What we need from you"
         lead="Two short steps. A participating service provider may contact you, and if no provider covering your area can take it, we will say so plainly."
       >
@@ -230,12 +230,9 @@ export default function HomePage() {
           }}
         >
           <strong className="font-semibold text-[color:var(--color-ink)]">
-            Referral Service Disclosure:
+            About the work:
           </strong>{" "}
-          {REFERRAL_SERVICE_DISCLOSURE.replace(
-            "Referral Service Disclosure: ",
-            "",
-          )}
+          {SERVICE_DISCLOSURE}
         </p>
 
         <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
@@ -255,17 +252,12 @@ export default function HomePage() {
           <div className="lg:pt-4">
             <p className="eyebrow-plain">What happens after you submit</p>
             <p className="mt-4 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
-              Your location and project type are checked against participating
-              providers with written coverage. One provider receives the
-              request and may contact you. If they do not acknowledge in time
-              it is reassigned once, and if nobody covers your area we tell you
-              so rather than forwarding it anyway.
+              Your location and project type are checked against the crews that work in your area. One local crew receives the request and may contact you. If they do not respond in time, it goes to the next crew once, and if nobody covers your area we tell you so.
             </p>
             <div className="card mt-8 p-5">
               <p className="text-sm font-semibold">Rather just talk?</p>
               <p className="mt-1.5 text-[14px] text-[color:var(--color-muted)]">
-                Call the referral team and we will tell you in one minute
-                whether a participating provider covers your area.
+                Call our team and we will tell you in one minute whether a local crew covers your area.
               </p>
               <a
                 href={`tel:${site.phoneE164}`}
@@ -286,7 +278,7 @@ export default function HomePage() {
         <p className="mt-6 text-sm text-[color:var(--color-muted)]">
           Full detail on how we are paid and what we do not do is on the{" "}
           <Link href="/referral-disclosure" className="underline underline-offset-4">
-            referral disclosure page
+            disclosure page
           </Link>
           .
         </p>

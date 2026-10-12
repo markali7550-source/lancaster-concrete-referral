@@ -62,7 +62,7 @@ export function MayInclude({
 export function ServiceDisclosureBlock() {
   return (
     <section
-      aria-label="Referral disclosure"
+      aria-label="Service disclosure"
       className="border-y"
       style={{
         borderColor: "var(--color-line-soft)",
@@ -108,7 +108,7 @@ export function ServiceCtaBand({
     <CtaBand
       title={title}
       body={body}
-      actionLabel="Request a referral"
+      actionLabel="Request a quote"
       actionIcon
     />
   );

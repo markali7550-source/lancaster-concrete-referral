@@ -66,7 +66,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         question: "Can you guarantee a price before anyone visits?",
         answer:
-          "No. We are a referral service, not the contractor. Pricing, scheduling, and project eligibility are set by the independent contractor after a site visit.",
+          "No. We are a local service site, not the contractor. Pricing, scheduling, and project eligibility are set by the independent contractor after a site visit.",
       },
     ],
   },

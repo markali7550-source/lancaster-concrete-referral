@@ -8,7 +8,6 @@ import {
   overlayBody,
   overlayEyebrow,
   overlayHeading,
-  ReferralDisclosureStrip,
   Section,
 } from "@/components/marketing/sections";
 import { Breadcrumbs, CtaBand } from "@/components/marketing/service-sections";
@@ -28,7 +27,7 @@ import { site } from "@/lib/env";
 
 const TITLE = `Concrete Services FAQs | ${site.brand}`;
 const DESCRIPTION =
-  "Answers about concrete driveways, patios, slabs, and repair, plus how our referral process connects you with one independent provider.";
+  "Answers about concrete driveways, patios, slabs, and repair, plus how a request moves from your form to a local crew.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,
@@ -105,12 +104,9 @@ export default function FaqPage() {
           Frequently Asked Questions
         </h1>
         <p className="lede mt-5 max-w-2xl" style={{ color: overlayBody }}>
-          Short answers about our concrete services and how the referral
-          process works, including what we do, what providers do, and which
-          areas are covered.
+          Short answers about our concrete services and how a request works, including what we do, what local crews do, and which areas are covered.
         </p>
       </OverlayHeader>
-      <ReferralDisclosureStrip />
       {/*
         One continuous accordion: all categories render as a single mixed
         list with no headers or gaps between them, at the owner's request.
@@ -147,7 +143,7 @@ export default function FaqPage() {
 
       <CtaBand
         title="Still have questions?"
-        body="Call the referral team and we will answer directly, or submit a request and let one eligible contractor take it from there."
+        body="Call our team and we will answer directly, or submit a request and let one eligible contractor take it from there."
         showFormLink={false}
       />
     </>

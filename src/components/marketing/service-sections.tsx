@@ -134,12 +134,12 @@ export function ServiceHero({
           className="btn btn-primary"
         />
         <a href="#quote-form" className="btn btn-secondary">
-          Request a referral
+          Request a quote
           <Icon name="arrow" />
         </a>
       </div>
       <p className="mt-3 text-xs" style={{ color: overlayMuted }}>
-        Free referral. We are not the contractor and do not set prices.
+        No charge to request a quote. We are not the contractor and do not set prices.
       </p>
     </OverlayHeader>
   );

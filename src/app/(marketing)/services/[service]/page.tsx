@@ -24,7 +24,7 @@ export function generateStaticParams() {
 type Params = Promise<{ service: string }>;
 
 function titleFor(name: string) {
-  return `${name} in Lancaster, SC | Contractor Referrals`;
+  return `${name} in Lancaster, SC | Contractor Quotes`;
 }
 
 /**
@@ -33,7 +33,7 @@ function titleFor(name: string) {
  * between /services/[service] and /locations/lancaster-sc/[service].
  */
 function descriptionFor(nameLower: string, projectNoun: string) {
-  return `What ${nameLower} referral covers in Lancaster, SC, what falls outside it, and how your ${projectNoun} request reaches an independent service provider.`;
+  return `What ${nameLower} covers in Lancaster, SC, what falls outside it, and how your ${projectNoun} request reaches an independent local crew.`;
 }
 
 export async function generateMetadata({
@@ -114,7 +114,7 @@ export default async function ServicePage({ params }: { params: Params }) {
         ctaBody={service.ctaLead}
         defaultServiceSlug={service.slug}
         callCardTitle="Prefer to talk it through?"
-        callCardBody="Our referral team can confirm whether we have approved coverage for your area before you go any further."
+        callCardBody="Our team can confirm whether we have approved coverage for your area before you go any further."
       />
     </>
   );

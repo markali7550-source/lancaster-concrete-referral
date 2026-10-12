@@ -372,7 +372,7 @@ export function Hero({
                 className="btn btn-primary"
               />
               <a href="#quote-form" className="btn btn-secondary">
-                Request a referral
+                Request a quote
                 <Icon name="arrow" />
               </a>
             </div>
@@ -426,7 +426,7 @@ export function Hero({
               className="btn btn-primary"
             />
             <a href="#quote-form" className="btn btn-secondary">
-              Request a referral
+              Request a quote
               <Icon name="arrow" />
             </a>
           </div>
@@ -469,35 +469,6 @@ export function Hero({
   );
 }
 
-/* -------------------------------------------------- ReferralDisclosureStrip */
-
-export function ReferralDisclosureStrip() {
-  return (
-    <div
-      className="border-b"
-      style={{
-        backgroundColor: "var(--color-accent-soft)",
-        borderColor: "var(--color-line-soft)",
-      }}
-    >
-      <div className="container-page flex flex-col gap-2 py-3.5 text-[13.5px] sm:flex-row sm:items-center sm:justify-between">
-        <p className="flex items-start gap-2.5">
-          <span style={{ color: "var(--color-accent)" }}>
-            <Icon name="shield" className="mt-px h-[18px] w-[18px]" />
-          </span>
-          <span>{SHORT_DISCLOSURE}</span>
-        </p>
-        <Link
-          href="/referral-disclosure"
-          className="shrink-0 self-center font-semibold underline underline-offset-4 sm:self-auto"
-          style={{ color: "var(--color-accent)" }}
-        >
-          Full disclosure
-        </Link>
-      </div>
-    </div>
-  );
-}
 
 /* ---------------------------------------------------- ProjectTypeChooser */
 
@@ -554,17 +525,17 @@ export function ProjectTypeChooser({
               >
                 {/*
                   The "in {city}" form takes the plural short name, because
-                  "View driveways in Lancaster" is correct. The referrals form
+                  "View driveways in Lancaster" is correct. The services form
                   must not: English wants a singular attributive noun, so the
-                  plural produced "View driveways referrals" and "View slabs
-                  and pads referrals". This is the same interpolation fault
-                  that produced "Concrete Driveways Referrals" in the H1, and
+                  plural produced "View driveways services" and "View slabs
+                  and pads services". This is the same interpolation fault
+                  that produced "Concrete Driveways Services" in the H1, and
                   it is fixed the same way -- from projectNoun, not by
                   slicing the plural.
                 */}
                 {cityLabel
                   ? `View ${service.shortName.toLowerCase()} in ${cityLabel}`
-                  : `View ${service.projectNoun} referrals`}
+                  : `View ${service.projectNoun} services`}
                 <Icon name="arrow" className="card-go h-4 w-4" />
               </span>
             </div>
@@ -584,8 +555,8 @@ const ROUTING_CONTROLS = [
     body: "Participating providers confirm in writing which areas they accept work in. Coverage is never inferred from a radius drawn on a map.",
   },
   {
-    title: "Signed referral agreement",
-    body: "Requests are only passed to independent service providers operating under an active referral agreement with documented response expectations.",
+    title: "Signed crew agreement",
+    body: "Requests are only passed to independent local crews that have agreed in writing to documented response expectations.",
   },
   {
     title: "Project type match",
@@ -648,7 +619,7 @@ const STEPS = [
   },
   {
     // Heading wording is fixed by the brief and must stay exact.
-    verb: "We check coverage, project type match, referral agreement, and current capacity.",
+    verb: "We check coverage, project type match, crew agreement, and current capacity.",
     body: "Eligibility is confirmed before anything is sent, and nothing is sent if no participating provider covers the area.",
   },
   {

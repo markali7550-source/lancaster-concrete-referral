@@ -129,7 +129,7 @@ export const services: readonly ServiceRecord[] = [
         label: "Typical site visit",
         value: "Within the participating provider's contracted response window",
       },
-      { label: "Cost to you", value: "No charge for the referral" },
+      { label: "Cost to you", value: "No charge for the quote request" },
     ],
     covered: [
       {
@@ -273,7 +273,7 @@ export const services: readonly ServiceRecord[] = [
       {
         question: "Do you pour the driveway yourselves?",
         answer:
-          "No. We are a referral service that connects homeowners with independent third party concrete service providers. Excavation, subbase preparation, forming, and the pour itself are carried out by the provider you engage, and your contract is with them.",
+          "No. We are a local concrete service site that passes requests to independent third party concrete crews. Excavation, subbase preparation, forming, and the pour itself are carried out by the provider you engage, and your contract is with them.",
       },
       {
         question: "How long does a residential driveway pour take?",
@@ -341,7 +341,7 @@ export const services: readonly ServiceRecord[] = [
         label: "Decorative work",
         value: "Only where a participating provider documents the capability",
       },
-      { label: "Cost to you", value: "No charge for the referral" },
+      { label: "Cost to you", value: "No charge for the quote request" },
     ],
     covered: [
       {
@@ -546,7 +546,7 @@ export const services: readonly ServiceRecord[] = [
         label: "Never routed",
         value: "Foundations and engineered structural slabs",
       },
-      { label: "Cost to you", value: "No charge for the referral" },
+      { label: "Cost to you", value: "No charge for the quote request" },
     ],
     covered: [
       {
@@ -678,17 +678,17 @@ export const services: readonly ServiceRecord[] = [
       {
         question: "Is the slab poured by your own crew?",
         answer:
-          "We have no crew. We are a referral service, and slab work is performed by an independent third party service provider serving the requested area. We do not perform, supervise, or guarantee that work.",
+          "We have no crew. We are a local service site, and slab work is performed by an independent third party service provider serving the requested area. We do not perform, supervise, or guarantee that work.",
       },
       {
         question: "Do you handle foundations or structural slabs?",
         answer:
-          "No. Foundation repair, structural engineering, and retaining walls are outside this referral scope. Those inquiries are declined rather than routed to a concrete finisher who should not be taking them on.",
+          "No. Foundation repair, structural engineering, and retaining walls are outside this service's scope. Those inquiries are declined rather than routed to a concrete finisher who should not be taking them on.",
       },
       {
         question: "What thickness does a pad need?",
         answer:
-          "Thickness and reinforcement follow the load, the soil, and applicable code. That specification comes from your contractor after seeing the site, not from a table on a referral website.",
+          "Thickness and reinforcement follow the load, the soil, and applicable code. That specification comes from your contractor after seeing the site, not from a table on a website.",
       },
       {
         question: "Does the site need to be cleared first?",
@@ -743,7 +743,7 @@ export const services: readonly ServiceRecord[] = [
         label: "Never routed",
         value: "Structural, heaving, or load failure assessment",
       },
-      { label: "Cost to you", value: "No charge for the referral" },
+      { label: "Cost to you", value: "No charge for the quote request" },
     ],
     covered: [
       {

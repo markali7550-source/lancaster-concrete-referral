@@ -31,16 +31,16 @@ export const faqCategories: readonly FaqCategory[] = [
   {
     id: "general",
     name: "General questions",
-    more: { text: "Read our referral disclosure", href: "/referral-disclosure" },
+    more: { text: "Read our full disclosure", href: "/referral-disclosure" },
     faqs: [
       {
         question: "Do you pour concrete or employ contractors?",
         answer:
-          "Neither. We are a referral service: we collect your project details, check them against participating providers with written coverage for your area, and route the request to one independent contractor. That contractor inspects, quotes, schedules, and performs the work under a contract with you, not with us. See how the referral process works.",
-        links: [{ text: "how the referral process works", href: "/how-it-works" }],
+          "Neither. We are a local concrete service site: we take your project details, check them against the crews that work in your area, and pass the request to one independent contractor. That contractor inspects, quotes, schedules, and performs the work under a contract with you, not with us. See how a request moves from start to finish.",
+        links: [{ text: "how a request moves from start to finish", href: "/how-it-works" }],
       },
       {
-        question: "Why use a referral service instead of calling contractors directly?",
+        question: "Why use this service instead of calling contractors directly?",
         answer:
           "Calling around means repeating your project to every contractor and guessing who actually covers your area. We take your details once, check them against providers with written coverage for your area, and route the request to one eligible contractor. If that contractor does not acknowledge it, the request is reassigned once.",
         links: [{ text: "route the request", href: "/how-it-works" }],
@@ -96,7 +96,7 @@ export const faqCategories: readonly FaqCategory[] = [
         links: [{ text: "Stamped and colored work", href: "/services/concrete-patios" }],
       },
       {
-        question: "How can I request a referral for patio work?",
+        question: "How do I request a patio quote?",
         answer:
           "Send the rough size through our contact page, and say whether the patio ties into an existing porch or stoop. Your request goes to a single participating provider with written coverage for your area, not a panel of bidders. The provider then walks the space with you and quotes directly.",
         links: [{ text: "contact page", href: "/contact" }],
@@ -146,40 +146,40 @@ export const faqCategories: readonly FaqCategory[] = [
         links: [],
       },
       {
-        question: "How can I request a referral for concrete repair?",
+        question: "How do I request a concrete repair quote?",
         answer:
-          "Describe the damage and where it is, with daylight photos, wide and close up. The assigned provider inspects it on site and diagnoses the cause before anyone talks about price, since the right fix depends on why the concrete failed. Start with a referral request.",
-        links: [{ text: "referral request", href: "/contact" }],
+          "Describe the damage and where it is, with daylight photos, wide and close up. The assigned provider inspects it on site and diagnoses the cause before anyone talks about price, since the right fix depends on why the concrete failed. Start with a service request.",
+        links: [{ text: "service request", href: "/contact" }],
       },
     ],
   },
   {
-    id: "referral-process",
-    name: "Referral process",
+    id: "request-process",
+    name: "How requests work",
     more: { text: "How it works in detail", href: "/how-it-works" },
     faqs: [
       {
-        question: "What is Lancaster Concrete Referral?",
+        question: "What is this website?",
         answer:
-          "This website. It is a referral service that connects Lancaster homeowners with independent concrete service providers. We are not a contractor, we employ no crews, and we perform no work. Our only role is taking your request once and routing it to one eligible provider.",
-        links: [{ text: "referral service", href: "/referral-disclosure" }],
+          "This website. It is a local concrete service site for Lancaster homeowners. The work is done by independent local crews. We are not a contractor, we employ no crews, and we perform no work. Our role is taking your request once and passing it to one eligible crew.",
+        links: [{ text: "about this site", href: "/referral-disclosure" }],
       },
       {
-        question: "How does the referral process work?",
+        question: "How does a request work?",
         answer:
           "You submit one request with your project details and location. We validate it, check it against participating providers with written coverage for your area, and route it to one eligible contractor. That contractor contacts you directly to inspect, quote, and schedule. If they do not acknowledge it, the request is reassigned once.",
         links: [{ text: "submit one request", href: "/contact" }],
       },
       {
-        question: "Is there a charge to request a referral?",
+        question: "Is there a charge to request a quote?",
         answer:
-          "No. Requesting a referral costs you nothing. You pay only the contractor you choose to hire, under a contract entirely between you and them. We never add fees to your project.",
+          "No. Requesting a quote costs you nothing. You pay only the contractor you choose to hire, under a contract entirely between you and them. We never add fees to your project.",
         links: [],
       },
       {
         question: "Am I obligated to hire a service provider?",
         answer:
-          "No. A referral creates no obligation. The contractor inspects your project and quotes it, and you decide whether to hire them. You can decline the quote with nothing owed to us.",
+          "No. A request creates no obligation. The contractor inspects your project and quotes it, and you decide whether to hire them. You can decline the quote with nothing owed to us.",
         links: [],
       },
       {

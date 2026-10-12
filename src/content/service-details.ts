@@ -4,7 +4,7 @@ import type { ServiceSlug } from "@/content/services";
  * Extended, homeowner-facing detail for each Phase 1 service.
  *
  * Editorial rules that apply to every string in this file:
- * - The publisher is a referral service. Nothing here may imply that we pour,
+ * - The publisher is a local service site. Nothing here may imply that we pour,
  *   supervise, inspect, or warrant concrete work.
  * - No specific prices, no guaranteed timelines, no licensing, insurance,
  *   certification, or outcome guarantees.
