@@ -23,7 +23,7 @@ const PUBLISHED = [
   "/contact",
   "/privacy",
   "/terms",
-  "/referral-disclosure",
+  "/service-disclosure",
 ];
 
 // Demo deployment: DEMO_NOINDEX in src/lib/seo/metadata.ts marks every route

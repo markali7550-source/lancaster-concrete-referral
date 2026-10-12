@@ -111,7 +111,7 @@ export function ComplianceFooter() {
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
                 <Link
-                  href="/referral-disclosure"
+                  href="/service-disclosure"
                   className="text-[color:var(--color-muted)] hover:text-[color:var(--color-ink)]"
                 >
                   Service disclosure

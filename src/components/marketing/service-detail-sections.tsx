@@ -77,7 +77,7 @@ export function ServiceDisclosureBlock() {
           <span>{SERVICE_PAGE_DISCLOSURE}</span>
         </p>
         <Link
-          href="/referral-disclosure"
+          href="/service-disclosure"
           className="shrink-0 self-center font-semibold underline underline-offset-4 sm:self-auto"
           style={{ color: "var(--color-accent)" }}
         >

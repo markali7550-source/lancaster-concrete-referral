@@ -29,7 +29,7 @@ const ROUTES = [
   ["/contact", "contact.html"],
   ["/privacy", "privacy.html"],
   ["/terms", "terms.html"],
-  ["/referral-disclosure", "referral-disclosure.html"],
+  ["/service-disclosure", "service-disclosure.html"],
   ["/thank-you", "thank-you.html"],
 ];
 

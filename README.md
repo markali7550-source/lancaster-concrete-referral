@@ -25,7 +25,7 @@ npm run assert:geos          # excluded Phase 2 geography scan
 | `/locations/lancaster-sc/{patios,slabs,repair}` | **gated → 404** |
 | `/locations/indian-land-sc`, `/locations/elgin-sc` | **gated/blocked → 404** |
 | Charlotte / Rock Hill / Fort Mill | zero output, CI-enforced |
-| `/how-it-works`, `/contact`, `/privacy`, `/terms`, `/referral-disclosure` | published |
+| `/how-it-works`, `/contact`, `/privacy`, `/terms`, `/service-disclosure` | published |
 | `/thank-you` | published, noindex nofollow |
 
 `dynamicParams = false` everywhere; static params come from explicit allowlists

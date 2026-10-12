@@ -4,7 +4,7 @@ import { Breadcrumbs } from "@/components/marketing/service-sections";
 /** Every legal surface links to the others. The current page is filtered out
  *  so the Related card never links to itself. */
 const RELATED_LINKS = [
-  { href: "/referral-disclosure", label: "Service disclosure" },
+  { href: "/service-disclosure", label: "Service disclosure" },
   { href: "/privacy", label: "Privacy policy" },
   { href: "/terms", label: "Terms of use" },
   { href: "/how-it-works", label: "How requests work" },
