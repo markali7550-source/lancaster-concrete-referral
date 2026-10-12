@@ -118,9 +118,9 @@ export const services: readonly ServiceRecord[] = [
       "Nobody can price a driveway from an address. Square footage is only the start of it. What the old slab costs to break up and haul away, and whether a truck can reach the pour, often move the number more.",
     ctaLead:
       "Tell us the length of the drive and whether the old slab has to come out. One provider with written coverage for your area takes it from there.",
-    image: "/images/services/concrete-driveways/concrete-driveways-hero.webp",
+    image: "/images/locations/lancaster-sc/lancaster-sc-driveways.webp",
     imageAlt:
-      "Concrete driveway running up to the garage of a single story brick ranch house, with saw cut control joints across its width",
+      "Concrete driveway with control joints and weather staining running up to the garage of a brick ranch house, with patchy lawn, red clay at the verge and pines behind",
     projectTypes: ["New driveway", "Driveway replacement"],
     keyFacts: [
       { label: "Served for", value: "Residential driveways and aprons" },
@@ -327,9 +327,9 @@ export const services: readonly ServiceRecord[] = [
       "Patios are the project people most often price before they commit, so it is worth knowing what actually moves the figure. Finish and shape change it far more than size does.",
     ctaLead:
       "Send the rough size, and say whether it ties into an existing porch or stoop. It goes to a single participating provider, not a panel of bidders.",
-    image: "/images/services/concrete-patios/concrete-patios-hero.webp",
+    image: "/images/locations/lancaster-sc/lancaster-sc-patios.webp",
     imageAlt:
-      "Stamped concrete backyard patio in a random stone pattern with a curved edge, set against a mown lawn and a split rail fence",
+      "Stamped concrete patio with a curved edge and a metal table and chairs beside a siding house, with a mown lawn and split rail fence",
     projectTypes: ["New patio", "Patio replacement", "Stamped patio"],
     keyFacts: [
       {
@@ -532,9 +532,9 @@ export const services: readonly ServiceRecord[] = [
       "Pricing comes last here for a reason: until the load, the access and the base are known, any number is a guess. Once those are settled a contractor can quote a pad quickly.",
     ctaLead:
       "Say what the pad has to carry and roughly where it goes. We send it to one provider approved for your area.",
-    image: "/images/services/concrete-slabs/concrete-slabs-hero.webp",
+    image: "/images/locations/lancaster-sc/lancaster-sc-slabs.webp",
     imageAlt:
-      "Finished concrete shed pad in a back yard, sitting proud of the ground with form marks down its side and backfilled soil around the edge",
+      "Newly poured concrete slab with form lines on its edge, set in a lawn beside a house",
     projectTypes: ["Residential slab", "Concrete pad"],
     keyFacts: [
       {
@@ -732,9 +732,9 @@ export const services: readonly ServiceRecord[] = [
       "Repair quotes vary more than any other concrete work, because two slabs with identical cracks can need completely different work underneath. These are the things that move it.",
     ctaLead:
       "Describe the damage and where it is. The provider looks at it on site before anyone talks about price.",
-    image: "/images/services/concrete-repair/concrete-repair-hero.webp",
+    image: "/images/locations/lancaster-sc/lancaster-sc-repair.webp",
     imageAlt:
-      "Jackhammer breaking up cracked concrete, with broken chunks scattered across the slab and a worker in gloves at the bit",
+      "Sidewalk slab heaved and cracked by exposed tree roots beside a large oak, with a residential street behind",
     projectTypes: ["Crack and surface repair", "Resurfacing"],
     keyFacts: [
       { label: "Served for", value: "Nonstructural repair and resurfacing" },

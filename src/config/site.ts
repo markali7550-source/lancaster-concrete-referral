@@ -17,4 +17,8 @@ export const siteConfig = {
   /** Placeholder mailbox. */
   email: "hello@example-referral-brand.com",
   serviceArea: { city: "Lancaster", region: "SC", country: "US" },
+  /** Street address and postcode are optional. Leave them empty until verified:
+   *  the schema then carries city, region and country only. */
+  streetAddress: "",
+  postalCode: "",
 } as const;

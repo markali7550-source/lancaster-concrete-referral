@@ -15,6 +15,20 @@ const BUSINESS_DESCRIPTION =
  * GeneralContractor or HomeAndConstructionBusiness, and neither carries an
  * address, because no verified address is supplied in src/config/site.ts.
  */
+/** PostalAddress with locality, region and country. Street and postcode are
+ *  added only when the config supplies them; empty values are omitted, so a
+ *  missing street never produces an invalid or blank field. */
+function postalAddress(): Node {
+  return {
+    "@type": "PostalAddress",
+    ...(site.streetAddress ? { streetAddress: site.streetAddress } : {}),
+    addressLocality: site.serviceArea.city,
+    addressRegion: site.serviceArea.region,
+    ...(site.postalCode ? { postalCode: site.postalCode } : {}),
+    addressCountry: site.serviceArea.country,
+  };
+}
+
 export function rootGraph(): Node[] {
   return [
     {
@@ -34,6 +48,7 @@ export function rootGraph(): Node[] {
       telephone: site.phoneE164,
       email: site.email,
       description: BUSINESS_DESCRIPTION,
+      address: postalAddress(),
       areaServed: {
         "@type": "City",
         name: `${site.serviceArea.city}, ${site.serviceArea.region}`,

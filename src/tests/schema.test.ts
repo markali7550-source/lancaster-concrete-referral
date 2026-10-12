@@ -22,6 +22,16 @@ describe("JSON-LD graph", () => {
     expect(serialised).not.toContain("HomeAndConstructionBusiness");
   });
 
+  it("keeps LocalBusiness address to locality, region and country when no street is set", () => {
+    const local = rootGraph().find((n) => n["@type"] === "LocalBusiness") as Record<string, unknown>;
+    expect(local.address).toEqual({
+      "@type": "PostalAddress",
+      addressLocality: "Lancaster",
+      addressRegion: "SC",
+      addressCountry: "US",
+    });
+  });
+
   it("describes the brand as a LocalBusiness serving Lancaster, SC", () => {
     const local = rootGraph().find((n) => n["@type"] === "LocalBusiness");
     expect(local).toBeDefined();
@@ -30,7 +40,7 @@ describe("JSON-LD graph", () => {
 
   it("publishes no address, rating, or review on the brand", () => {
     const serialised = JSON.stringify(graph);
-    for (const forbidden of ["aggregateRating", "review", "address", "priceRange"]) {
+    for (const forbidden of ["aggregateRating", "review", "streetAddress", "priceRange"]) {
       expect(serialised).not.toContain(forbidden);
     }
   });

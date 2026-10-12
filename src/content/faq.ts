@@ -161,7 +161,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         question: "What is this website?",
         answer:
-          "This website. It is a local concrete service site for Lancaster homeowners. The work is done by independent local concrete specialists. We are not a contractor, we employ no field teams, and we perform no work. Our role is taking your request once and passing it to one eligible crew.",
+          "This website. It is a local concrete service site for Lancaster homeowners. The work is done by independent local concrete specialists. We are not a contractor, we employ no field teams, and we perform no work. Our role is taking your request once and passing it to one eligible team.",
         links: [{ text: "about this site", href: "/service-disclosure" }],
       },
       {

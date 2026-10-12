@@ -24,7 +24,7 @@ export function generateStaticParams() {
 type Params = Promise<{ service: string }>;
 
 function titleFor(name: string) {
-  return `${name} in Lancaster, SC | Contractor Quotes`;
+  return `${name} in Lancaster, SC | Service Quotes`;
 }
 
 /**

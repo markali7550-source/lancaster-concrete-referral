@@ -88,7 +88,7 @@ test.describe("quote form", () => {
     await fillContact(page);
     await serviceConsent(page).check();
     await page.getByRole("button", { name: /request concrete service/i }).click();
-    await expect(page.getByText(/routing team/i)).toBeVisible({
+    await expect(page.getByText(/request is with our team/i)).toBeVisible({
       timeout: 15000,
     });
   });

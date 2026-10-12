@@ -10,7 +10,8 @@ import { publishedServices } from "../src/content/services";
  */
 // LocalBusiness is allowed (owner request). Contractor types would claim construction work.
 const FORBIDDEN_TYPES = ["GeneralContractor", "HomeAndConstructionBusiness"];
-const FORBIDDEN_FIELDS = ["aggregateRating", "review", "priceRange", "address", "license"];
+// "address" is allowed as a PostalAddress (locality/region/country). A street address is not.
+const FORBIDDEN_FIELDS = ["aggregateRating", "review", "priceRange", "streetAddress", "license"];
 
 function loadEnvFile(file: string): void {
   try {

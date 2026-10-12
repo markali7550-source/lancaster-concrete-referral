@@ -62,7 +62,7 @@ export async function generateMetadata({
   const location = getLocation(city);
   if (!location) return {};
   return pageMetadata({
-    title: `Concrete Contractors in ${location.city}, SC | Local Service`,
+    title: `Concrete Services in ${location.city}, SC | Local Service`,
     description: `Looking for a concrete contractor in ${location.city}, SC? Call now or request concrete service. A local contractor replies to each request. Availability varies.`,
     path: `/locations/${location.slug}`,
   });

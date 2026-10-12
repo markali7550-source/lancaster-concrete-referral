@@ -43,6 +43,8 @@ export const site = {
   phoneDisplay: env.NEXT_PUBLIC_FALLBACK_PHONE_DISPLAY,
   email: env.NEXT_PUBLIC_CONTACT_EMAIL,
   serviceArea: siteConfig.serviceArea,
+  streetAddress: siteConfig.streetAddress,
+  postalCode: siteConfig.postalCode,
   consentVersion: "referral-consent-2026-09-24",
 } as const;
 

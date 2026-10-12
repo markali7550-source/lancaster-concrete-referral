@@ -48,7 +48,7 @@ const FORBIDDEN_SCHEMA = [
   "HomeAndConstructionBusiness",
   "aggregateRating",
   '"review"',
-  '"address"',
+  '"streetAddress"',
   "priceRange",
 ];
 
