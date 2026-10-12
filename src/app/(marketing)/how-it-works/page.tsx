@@ -17,7 +17,7 @@ import { FULL_DISCLOSURE_PARAGRAPHS } from "@/lib/seo/disclosure";
 
 const TITLE = `How Our Concrete Service Works | ${site.brand}`;
 const DESCRIPTION =
-  "How a request is validated, checked against participating provider eligibility, routed to one independent contractor, and what our role is and is not.";
+  "How a request is validated, checked against the crews that serve your area, passed to one independent contractor, and what our role is and is not.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,
@@ -62,7 +62,7 @@ export default function HowItWorksPage() {
         >
           What happens between the moment you submit a request and the
           moment an independent contractor calls you, including the checks
-          that stop a request from being routed at all.
+          that stop a request from going any further.
         </p>
       </OverlayHeader>
       <Section tone="soft" eyebrow="Eligibility" title="What blocks a provider from receiving your request">

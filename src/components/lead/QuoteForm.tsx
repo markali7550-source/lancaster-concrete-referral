@@ -491,7 +491,7 @@ export function QuoteForm({
               <p className="text-sm font-semibold">Not covered yet</p>
               <p className="mt-1.5 text-sm text-[color:var(--color-muted)]">
                 No participating provider has confirmed that area in writing,
-                so a request there cannot be routed today. You can still
+                so a request there cannot be served today. You can still
                 continue, coverage is rechecked on submit and nothing is sent
                 to a contractor unless it passes, or call {fallbackDisplay} to
                 ask first.

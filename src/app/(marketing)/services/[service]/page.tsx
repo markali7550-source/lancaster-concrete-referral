@@ -109,7 +109,7 @@ export default async function ServicePage({ params }: { params: Params }) {
         faqs={service.considerations}
         faqName="service-faq"
         relatedServices={publishedServices}
-        relatedTitle="Also routed in Lancaster"
+        relatedTitle="Also serving Lancaster"
         ctaTitle={service.headings.cta}
         ctaBody={service.ctaLead}
         defaultServiceSlug={service.slug}

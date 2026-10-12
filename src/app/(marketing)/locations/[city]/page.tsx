@@ -139,7 +139,7 @@ export default async function LocationPage({ params }: { params: Params }) {
         facts={[
           { label: "Approved area", value: `${location.city}, ${location.region}` },
           { label: "County", value: location.county },
-          { label: "Services routed", value: `${publishedServices.length} residential services` },
+          { label: "Services offered", value: `${publishedServices.length} residential services` },
           { label: "Cost to you", value: "No charge for the quote request" },
         ]}
       />
@@ -182,7 +182,7 @@ export default async function LocationPage({ params }: { params: Params }) {
       <Section
         tone="surface"
         eyebrow="Services"
-        title={`Concrete services routed in ${location.city}`}
+        title={`Concrete services in ${location.city}`}
         lead="Pick the closest match. The category only decides which participating providers are eligible. The contractor scopes the whole job on site."
       >
         <ProjectTypeChooser
@@ -207,7 +207,7 @@ export default async function LocationPage({ params }: { params: Params }) {
           alt: "Timber forms set along the edge of a residential street beside a contractor's truck, with excavated clay heaped alongside",
         }}
         eyebrow="Process"
-        title="How a Lancaster request is routed"
+        title="How a Lancaster request is handled"
       >
         <HowMatchingWorks />
       </Section>
@@ -256,7 +256,7 @@ export default async function LocationPage({ params }: { params: Params }) {
                   {
                     question: "What if my project is out of scope?",
                     answer:
-                      "Foundation, structural, and retaining wall work is declined rather than routed. We will tell you that instead of passing it to a concrete finisher.",
+                      "Foundation, structural, and retaining wall work is declined rather than handled. We will tell you that instead of passing it to a concrete finisher.",
                   },
                 ]}
               />

@@ -113,7 +113,7 @@ export default async function ComboPage({ params }: { params: Params }) {
         keyFacts={[
           { label: "Service", value: serviceRecord.name },
           { label: "Area", value: `${location.city}, ${location.county}` },
-          { label: "Routed project types", value: serviceRecord.projectTypes.join(" · ") },
+          { label: "Project types served", value: serviceRecord.projectTypes.join(" · ") },
           { label: "Cost to you", value: "No charge for the quote request" },
         ]}
         localIntro={{
@@ -131,7 +131,7 @@ export default async function ComboPage({ params }: { params: Params }) {
           ),
         )}
         relatedBasePath={`/locations/${location.slug}`}
-        relatedTitle={`Also routed in ${location.city}`}
+        relatedTitle={`Also serving ${location.city}`}
         ctaTitle={serviceRecord.headings.cta}
         ctaBody={serviceRecord.ctaLead}
         defaultServiceSlug={serviceRecord.slug}

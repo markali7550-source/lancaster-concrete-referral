@@ -106,12 +106,12 @@ export default function ServicesPage() {
         >
           <table className="w-full min-w-[42rem] border-collapse text-left text-sm">
             <caption className="sr-only">
-              Comparison of routed project types and scope limits by service
+              Comparison of project types served and scope limits by service
             </caption>
             <thead>
               <tr>
                 <th scope="col" className="px-4 py-3 font-semibold">Service</th>
-                <th scope="col" className="px-4 py-3 font-semibold">Routed project types</th>
+                <th scope="col" className="px-4 py-3 font-semibold">Project types served</th>
                 <th scope="col" className="px-4 py-3 font-semibold">Main scope limit</th>
               </tr>
             </thead>
@@ -164,7 +164,7 @@ export default function ServicesPage() {
           <p className="text-[color:var(--color-muted)]">
             Foundation repair, structural engineering assessments, retaining
             walls, slab jacking, material supply, and commercial contracts are
-            not routed in Phase 1. These need separate demand, provider, and
+            not served in Phase 1. These need separate demand, provider, and
             compliance approval, and several of them need a licensed
             professional we do not currently work with. We would rather tell you
             no than hand your project to the wrong trade.

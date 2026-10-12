@@ -245,7 +245,7 @@ export function ScopeColumns({
         className="rounded-[12px] border p-5"
         style={{ borderColor: "var(--color-line)" }}
       >
-        <p className="font-semibold">Not routed under this service</p>
+        <p className="font-semibold">Not served under this service</p>
         <ul className="mt-3 space-y-2.5 text-sm text-[color:var(--color-muted)]">
           {outOfScope.map((item) => (
             <li key={item} className="text-left">

@@ -291,7 +291,7 @@ export function ServicePageTemplate({
               a stray line between two rules instead of an intentional element.
             */}
             <section
-              aria-label="Routing checks"
+              aria-label="Scheduling checks"
               className="scroll-mt-36 border-t py-10"
               style={{ borderColor: "var(--color-line-soft)" }}
             >
@@ -309,7 +309,7 @@ export function ServicePageTemplate({
                     className="font-semibold underline underline-offset-4"
                     style={{ color: "var(--color-accent)" }}
                   >
-                    How a request is checked and routed
+                    How your request is reviewed and scheduled
                   </Link>
                   .
                 </p>

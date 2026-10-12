@@ -186,7 +186,7 @@ export default function HomePage() {
         tone="soft"
         eyebrow="How requests are checked"
         title="How your request reaches an independent provider"
-        lead="These are routing controls, not credential verification. License, insurance, and workmanship remain matters to confirm directly with the independent provider who contacts you."
+        lead="These are scheduling checks, not credential verification. License, insurance, and workmanship remain matters to confirm directly with the independent provider who contacts you."
       >
         <RoutingControls />
       </Section>

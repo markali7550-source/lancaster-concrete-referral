@@ -600,7 +600,7 @@ export function RoutingControls() {
         ))}
       </ul>
       <p className="mt-6 text-[13.5px] leading-relaxed text-[color:var(--color-muted)]">
-        These are routing controls only. They are not a verification of any
+        These are scheduling checks only. They are not a verification of any
         provider&apos;s license, insurance, or workmanship, and they are not a
         warranty, an endorsement, or a substitute for your own checks. Confirm
         license status, insurance, and credentials directly with the provider

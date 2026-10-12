@@ -23,7 +23,7 @@ export default function ThankYouPage() {
     <div className="container-page py-16 md:py-24">
       <div className="mx-auto max-w-2xl text-center lg:mx-0 lg:text-left">
         {/* The form's own success card is the receipt: it already says
-            "Request received", names the routing queue and shows the reference
+            "Request received", names the review queue and shows the reference
             number. Arriving here by pressing "What happens next" and reading a
             second receipt made the two screens read as one sentence said
             twice. This page answers the question the button asks. */}

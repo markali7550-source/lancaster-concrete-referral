@@ -61,7 +61,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         question: "Which Lancaster areas can you match right now?",
         answer:
-          "Lancaster, South Carolina is the approved coverage area at launch. Requests from outside it return an honest no coverage response rather than being routed to a contractor who does not serve the area.",
+          "Lancaster, South Carolina is the approved coverage area at launch. Requests from outside it return an honest no coverage response rather than being passed to a contractor who does not serve the area.",
       },
       {
         question: "Can you guarantee a price before anyone visits?",

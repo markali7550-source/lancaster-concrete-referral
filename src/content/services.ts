@@ -39,7 +39,7 @@ export interface ServiceRecord {
   sectionOrder: readonly ServiceSectionId[];
   headings: {
     /** Scope heading. Per service because the component hardcoded
-     *  "What we route under {name}", which opened all four pages on the
+     *  "What we take on under {name}", which opened all four pages on the
      *  same sentence with one noun swapped. */
     scope: string;
     options: string;
@@ -66,7 +66,7 @@ export interface ServiceRecord {
   projectTypes: string[];
   /** Quick-reference facts strip under the hero. */
   keyFacts: { label: string; value: string }[];
-  /** Scope we will route. */
+  /** Scope we will send. */
   covered: { title: string; body: string }[];
   /** Scope we decline outright. */
   outOfScope: string[];
@@ -123,7 +123,7 @@ export const services: readonly ServiceRecord[] = [
       "Concrete driveway running up to the garage of a single story brick ranch house, with saw cut control joints across its width",
     projectTypes: ["New driveway", "Driveway replacement"],
     keyFacts: [
-      { label: "Routed for", value: "Residential driveways and aprons" },
+      { label: "Served for", value: "Residential driveways and aprons" },
       { label: "Coverage today", value: "Lancaster, SC" },
       {
         label: "Typical site visit",
@@ -174,7 +174,7 @@ export const services: readonly ServiceRecord[] = [
       {
         name: "Exposed aggregate or stamped edge",
         description:
-          "Decorative options are only routed when a participating provider has documented that capability. Otherwise the request goes through as a standard pour.",
+          "Decorative options are only offered when a participating provider has documented that capability. Otherwise the request goes through as a standard pour.",
       },
     ],
     process: [
@@ -333,7 +333,7 @@ export const services: readonly ServiceRecord[] = [
     projectTypes: ["New patio", "Patio replacement", "Stamped patio"],
     keyFacts: [
       {
-        label: "Routed for",
+        label: "Served for",
         value: "Residential patios and walkway connections",
       },
       { label: "Coverage today", value: "Lancaster, SC" },
@@ -358,7 +358,7 @@ export const services: readonly ServiceRecord[] = [
       },
       {
         title: "Stamped and colored finishes",
-        body: "Pattern stamped or integrally colored slabs, routed only to participating providers who have documented that capability for your area.",
+        body: "Pattern stamped or integrally colored slabs, offered only by participating providers who have documented that capability for your area.",
       },
     ],
     outOfScope: [
@@ -483,7 +483,7 @@ export const services: readonly ServiceRecord[] = [
       {
         question: "Is a stamped finish always available?",
         answer:
-          "No. Stamped work is routed only when a participating provider has documented that capability for your area. If it is not supported, your request goes through as a standard patio inquiry and we say so rather than promising a finish nobody can deliver.",
+          "No. Stamped work is only offered when a participating provider has documented that capability for your area. If it is not supported, your request goes through as a standard patio inquiry and we say so rather than promising a finish nobody can deliver.",
       },
       {
         question: "What size should a usable patio be?",
@@ -513,7 +513,7 @@ export const services: readonly ServiceRecord[] = [
     summary:
       "Residential slabs and pads for sheds, equipment, vehicles, and outbuildings, nonstructural work only.",
     heroSummary:
-      "Shed bases, equipment pads, RV and boat parking. Flatwork that has to carry a known weight and stay level for years, which makes what goes under the slab the part that matters. If the pad will hold up a building, or needs an engineer's stamp, we decline it rather than route it.",
+      "Shed bases, equipment pads, RV and boat parking. Flatwork that has to carry a known weight and stay level for years, which makes what goes under the slab the part that matters. If the pad will hold up a building, or needs an engineer's stamp, we decline it rather than send it.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "Pads this category covers",
@@ -538,12 +538,12 @@ export const services: readonly ServiceRecord[] = [
     projectTypes: ["Residential slab", "Concrete pad"],
     keyFacts: [
       {
-        label: "Routed for",
+        label: "Served for",
         value: "Nonstructural residential slabs and pads",
       },
       { label: "Coverage today", value: "Lancaster, SC" },
       {
-        label: "Never routed",
+        label: "Direct communication / No middleman",
         value: "Foundations and engineered structural slabs",
       },
       { label: "Cost to you", value: "No charge for the quote request" },
@@ -683,7 +683,7 @@ export const services: readonly ServiceRecord[] = [
       {
         question: "Do you handle foundations or structural slabs?",
         answer:
-          "No. Foundation repair, structural engineering, and retaining walls are outside this service's scope. Those inquiries are declined rather than routed to a concrete finisher who should not be taking them on.",
+          "No. Foundation repair, structural engineering, and retaining walls are outside this service's scope. Those inquiries are declined rather than passed to a concrete finisher who should not be taking them on.",
       },
       {
         question: "What thickness does a pad need?",
@@ -737,10 +737,10 @@ export const services: readonly ServiceRecord[] = [
       "Jackhammer breaking up cracked concrete, with broken chunks scattered across the slab and a worker in gloves at the bit",
     projectTypes: ["Crack and surface repair", "Resurfacing"],
     keyFacts: [
-      { label: "Routed for", value: "Nonstructural repair and resurfacing" },
+      { label: "Served for", value: "Nonstructural repair and resurfacing" },
       { label: "Coverage today", value: "Lancaster, SC" },
       {
-        label: "Never routed",
+        label: "Direct communication / No middleman",
         value: "Structural, heaving, or load failure assessment",
       },
       { label: "Cost to you", value: "No charge for the quote request" },
@@ -771,7 +771,7 @@ export const services: readonly ServiceRecord[] = [
     ],
     options: [
       {
-        name: "Routed and sealed crack repair",
+        name: "Sealed crack repair",
         description:
           "The crack is opened slightly, cleaned, and filled so the repair bonds instead of sitting on the surface.",
       },
@@ -875,7 +875,7 @@ export const services: readonly ServiceRecord[] = [
       {
         question: "What counts as nonstructural?",
         answer:
-          "Surface spalling, shrinkage cracking, and cosmetic deterioration on a slab that is not moving. Movement, heaving, a height difference across a crack, or load bearing failure needs a licensed professional assessment instead, and we will not route it as a repair job.",
+          "Surface spalling, shrinkage cracking, and cosmetic deterioration on a slab that is not moving. Movement, heaving, a height difference across a crack, or load bearing failure needs a licensed professional assessment instead, and we will not send it as a repair job.",
       },
       {
         question: "Is resurfacing a permanent fix?",

@@ -92,7 +92,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         question: "What options are available for a concrete patio?",
         answer:
-          "Contractors typically offer broom, smooth trowel, stamped pattern, and integrally colored finishes, plus sealing on decorative work. Stamped and colored work is only routed where a participating provider has documented that capability. Finish, color, and edge detail are priced before the pour.",
+          "Contractors typically offer broom, smooth trowel, stamped pattern, and integrally colored finishes, plus sealing on decorative work. Stamped and colored work is only offered where a participating provider has documented that capability. Finish, color, and edge detail are priced before the pour.",
         links: [{ text: "Stamped and colored work", href: "/services/concrete-patios" }],
       },
       {
@@ -210,13 +210,13 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         question: "How do I know whether my location is covered?",
         answer:
-          "Submit a request with your address, or call and we will confirm in a minute. If your address sits inside an approved ZIP, the request is routed; if not, you get an honest no coverage answer instead of being passed along anyway.",
+          "Submit a request with your address, or call and we will confirm in a minute. If your address sits inside an approved ZIP, the request is handled; if not, you get an honest no coverage answer instead of being passed along anyway.",
         links: [{ text: "Submit a request", href: "/contact" }],
       },
       {
         question: "What happens if my location is outside the current service area?",
         answer:
-          "Nothing is routed. Out of area requests are declined with an honest no coverage answer rather than passed to a contractor who does not serve the address. The quote form includes a My area is not listed option for exactly this case.",
+          "Nothing is sent out. Out of area requests are declined with an honest no coverage answer rather than passed to a contractor who does not serve the address. The quote form includes a My area is not listed option for exactly this case.",
         links: [{ text: "quote form", href: "/contact" }],
       },
     ],
