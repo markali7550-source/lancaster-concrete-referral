@@ -475,6 +475,12 @@
     color: var(--color-accent);
   }
 
+  /* Column labels (SERVICES, SERVICE AREA, LEGAL) read as headings, so they take
+     the footer's main ink rather than the dimmer muted grey used for body copy. */
+  .footer-band .eyebrow-plain {
+    color: var(--color-footer-ink);
+  }
+
   /* The wordmark ships as dark ink, so the dark band needs the light variant. */
   .footer-band .logo-light {
     display: none;
