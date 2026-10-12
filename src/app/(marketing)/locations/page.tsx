@@ -9,6 +9,7 @@ import {
   Section,
 } from "@/components/marketing/sections";
 import { Icon } from "@/components/ui/Icon";
+import { CtaBand } from "@/components/marketing/cta-band";
 import { publishedLocations } from "@/content/locations";
 import { pageMetadata } from "@/lib/seo/metadata";
 
@@ -122,6 +123,11 @@ export default function LocationsPage() {
         </ul>
 
       </Section>
+      <CtaBand
+        title="Ready to request concrete service?"
+        body="Choose your city above, or send your project details and we will check whether a local independent contractor covers your area."
+        formHref="/contact#quote-form"
+      />
     </>
   );
 }

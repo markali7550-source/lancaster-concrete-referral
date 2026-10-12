@@ -23,7 +23,7 @@ export default function ReferralDisclosurePage() {
       <h2>Our role</h2>
       <p>
         {site.brand} operates an online referral service. We collect project
-        inquiries from homeowners and route them to independent contractors who
+        inquiries from homeowners and pass them to independent contractors who
         hold an active agreement with us and who have approved coverage for the
         relevant area and project type.
       </p>
@@ -48,7 +48,7 @@ export default function ReferralDisclosurePage() {
 
       <h2>Verification is your right</h2>
       <p>
-        Our partner checks are internal routing controls, not an endorsement.
+        Our partner checks are internal service-area checks, not an endorsement.
         South Carolina requirements vary by project type, scope, and total cost.
         Verify license and registration status directly through{" "}
         <a href={SC_LLR_URL} rel="noopener noreferrer nofollow" target="_blank">
@@ -59,7 +59,7 @@ export default function ReferralDisclosurePage() {
 
       <h2>Photography</h2>
       <p>
-        Photographs on this site illustrate the kind of work we route. They do
+        Photographs on this site illustrate the kind of work we arrange. They do
         not depict jobs completed by us, and we perform no concrete work. Where
         a provider&apos;s own project photos appear, we confirm ownership and
         permission first.

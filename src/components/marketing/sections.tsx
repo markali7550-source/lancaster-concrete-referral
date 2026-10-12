@@ -547,9 +547,9 @@ export function ProjectTypeChooser({
   );
 }
 
-/* ---------------------------------------------------------- RoutingControls */
+/* ---------------------------------------------------------- ServiceAreaControls */
 
-const ROUTING_CONTROLS = [
+const SERVICE_AREA_CONTROLS = [
   {
     title: "Written coverage area",
     body: "Participating providers confirm in writing which areas they accept work in. Coverage is never inferred from a radius drawn on a map.",
@@ -568,7 +568,7 @@ const ROUTING_CONTROLS = [
   },
 ];
 
-export function RoutingControls() {
+export function ServiceAreaControls() {
   return (
     <>
       <ul className="grid gap-px overflow-hidden rounded-[var(--radius-card)] border sm:grid-cols-2"
@@ -577,7 +577,7 @@ export function RoutingControls() {
           backgroundColor: "var(--color-line-soft)",
         }}
       >
-        {ROUTING_CONTROLS.map((check) => (
+        {SERVICE_AREA_CONTROLS.map((check) => (
           <li
             key={check.title}
             className="p-6"

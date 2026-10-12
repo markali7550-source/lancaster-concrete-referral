@@ -26,7 +26,7 @@ export const SERVICE_PAGE_DISCLOSURE = `We are a local concrete service site, no
 
 export const SHORT_DISCLOSURE = `We are a local concrete service site, not a concrete contractor. We connect homeowners with independent third party concrete service providers.`;
 
-export const CALL_DISCLOSURE = `Calls may be routed to an independent contractor and call details may be recorded for routing and quality purposes where permitted.`;
+export const CALL_DISCLOSURE = `Calls are handled directly by our Lancaster team and may be passed to an independent contractor. Call details may be recorded for quality purposes where permitted.`;
 
 export const SERVICE_CONSENT = `I agree that my request may be shared with an independent service provider serving my area so they can contact me about this project.`;
 

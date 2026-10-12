@@ -123,7 +123,7 @@ const records: readonly LocationServiceRecord[] = [
     state: "published",
     localImage: "/images/locations/lancaster-sc/lancaster-sc-slabs.webp",
     localImageAlt:
-      "Newly poured concrete shed pad with form lines on its sides, surrounded by gravel and soil with a shovel, bucket and hose nearby, beside a fenced backyard",
+      "Newly poured concrete slab with form lines on its edge, set in a lawn beside a house",
     localBody: [
       {
         heading: "What pads are usually for",

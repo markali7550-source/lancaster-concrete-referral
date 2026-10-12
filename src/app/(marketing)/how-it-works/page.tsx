@@ -7,7 +7,7 @@ import {
   overlayEyebrow,
   overlayHeading,
   Section,
-  RoutingControls,
+  ServiceAreaControls,
 } from "@/components/marketing/sections";
 import { Breadcrumbs, CtaBand } from "@/components/marketing/service-sections";
 import { pageMetadata } from "@/lib/seo/metadata";
@@ -66,7 +66,7 @@ export default function HowItWorksPage() {
         </p>
       </OverlayHeader>
       <Section tone="soft" eyebrow="Eligibility" title="What blocks a provider from receiving your request">
-        <RoutingControls />
+        <ServiceAreaControls />
       </Section>
 
       {/*

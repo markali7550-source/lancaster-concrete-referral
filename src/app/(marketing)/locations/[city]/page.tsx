@@ -11,7 +11,7 @@ import {
   Hero,
   HowMatchingWorks,
   ProjectTypeChooser,
-  RoutingControls,
+  ServiceAreaControls,
   Section,
 } from "@/components/marketing/sections";
 import {
@@ -197,7 +197,7 @@ export default async function LocationPage({ params }: { params: Params }) {
 
 
       {/*
-        Routing band photograph: forms and a contractor truck at a
+        Service-area band photograph: forms and a contractor truck at a
         residential street edge. Interim bytes until a real photograph
         replaces them; the subject is already the right one for this band.
       */}
@@ -217,7 +217,7 @@ export default async function LocationPage({ params }: { params: Params }) {
         eyebrow="How requests are checked"
         title="How a request is checked before it goes out"
       >
-        <RoutingControls />
+        <ServiceAreaControls />
       </Section>
 
       <Section

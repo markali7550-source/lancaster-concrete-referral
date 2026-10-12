@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMetadata({
 export default function TermsPage() {
   return (
     <LegalPage title="Terms of use" updated="September 24, 2026" currentPath="/terms">
-      <h2>Referral service only</h2>
+      <h2>Service scope</h2>
       <p>
         {site.brand} provides introductions to independent contractors. We are
         not a contractor, builder, engineer, or government agency, and we are
@@ -38,7 +38,7 @@ export default function TermsPage() {
       <h2>Availability</h2>
       <p>
         Coverage is limited to published, approved areas. We may decline or stop
-        routing a request at any time, including where no eligible contractor is
+        arranging a request at any time, including where no eligible contractor is
         available.
       </p>
 

@@ -18,6 +18,10 @@ export function rootGraph(): Node[] {
       url: absoluteUrl("/"),
       telephone: site.phoneE164,
       email: site.email,
+      areaServed: {
+        "@type": "City",
+        name: `${site.serviceArea.city}, ${site.serviceArea.region}`,
+      },
       description:
         "Local concrete service site for South Carolina homeowners, with work done by independent concrete contractors. Not a contractor.",
     },

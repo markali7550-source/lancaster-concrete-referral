@@ -4,7 +4,7 @@
  * the spec (gates 1-7, 13, 14 partial, 23, 24).
  */
 const ORIGIN = "http://localhost:3000";
-const SITE = "https://example-referral-brand.com";
+const SITE = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
 const PUBLISHED = [
   "/",

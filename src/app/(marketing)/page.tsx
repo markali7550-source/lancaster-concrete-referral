@@ -10,7 +10,7 @@ import {
   Hero,
   HowMatchingWorks,
   ProjectTypeChooser,
-  RoutingControls,
+  ServiceAreaControls,
   Section,
   SectionDivider,
 } from "@/components/marketing/sections";
@@ -188,7 +188,7 @@ export default function HomePage() {
         title="How your request reaches an independent provider"
         lead="These are scheduling checks, not credential verification. License, insurance, and workmanship remain matters to confirm directly with the independent provider who contacts you."
       >
-        <RoutingControls />
+        <ServiceAreaControls />
       </Section>
 
       <Section

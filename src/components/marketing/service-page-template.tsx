@@ -43,7 +43,7 @@ import { site } from "@/lib/env";
 const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-driveways": { src: "/images/services/concrete-driveways/concrete-driveways-detail.webp", alt: "Driveway edge pitched away from the lawn with a gravel drainage margin" },
   "concrete-patios": { src: "/images/services/concrete-patios/concrete-patios-detail.webp", alt: "Plain concrete patio slab at the rear of a single story brick home" },
-  "concrete-slabs": { src: "/images/services/concrete-slabs/concrete-slabs-detail.webp", alt: "Concrete slabs laid with gravel joints beside a timber bench with cushions and potted plants" },
+  "concrete-slabs": { src: "/images/services/concrete-slabs/concrete-slabs-detail.webp", alt: "Level backyard concrete slab set in a lawn with a brick house and trees behind" },
   "concrete-repair": { src: "/images/services/concrete-repair/concrete-repair-detail.webp", alt: "Settled concrete walkway slab with a cracked, lifted edge" },
 };
 
@@ -60,7 +60,7 @@ const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
   },
   "concrete-patios": {
     src: "/images/services/concrete-patios/concrete-patios-process.webp",
-    alt: "Freshly poured backyard patio slab, still wet and smoothed, held by timber forms, with the house and sliding doors behind it",
+    alt: "Two crew members levelling freshly placed concrete with a screed board, with a work truck and traffic cones behind",
   },
   "concrete-slabs": {
     src: "/images/services/concrete-slabs/concrete-slabs-process.webp",
@@ -149,7 +149,7 @@ export function ServicePageTemplate({
 
   const navItems = [
     ...service.sectionOrder.map((id) => ({ id, label: MAIN_NAV_LABELS[id] })),
-    { id: "quote-form", label: "Get a quote" },
+    { id: "quote-form", label: "Request Concrete Service" },
     { id: "faq", label: "FAQ" },
   ];
 

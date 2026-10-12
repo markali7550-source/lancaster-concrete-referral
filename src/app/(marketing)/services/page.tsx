@@ -181,8 +181,8 @@ export default function ServicesPage() {
       <CtaBand
         tone="section"
         title="Not sure which service fits?"
-        body="Describe the project in the quote form and we will send it to the closest local crew, or call and our team will tell you whether we cover it at all."
-        showFormLink={false}
+        body="Describe the project in the request form and we will pass it to a local independent contractor, or call and our team will tell you whether we cover it at all."
+        formHref="/contact#quote-form"
       />
 
     </>

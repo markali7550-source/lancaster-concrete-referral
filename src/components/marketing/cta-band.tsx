@@ -65,6 +65,7 @@ export function CtaBand({
   actionLabel = "Request Concrete Service",
   actionIcon = false,
   fixedBackground = true,
+  formHref = "#quote-form",
 }: {
   title: string;
   body: string;
@@ -89,6 +90,8 @@ export function CtaBand({
    * what the fixed attachment does to the visible slice while scrolling.
    */
   fixedBackground?: boolean;
+  /** Where the form link points. Pages without the form pass its route. */
+  formHref?: string;
 }) {
   void tone;
   void imageAlt;
@@ -170,7 +173,7 @@ export function CtaBand({
             className="btn btn-primary"
           />
           {showFormLink ? (
-            <a href="#quote-form" className="btn btn-secondary">
+            <a href={formHref} className="btn btn-secondary">
               {actionLabel}
               {actionIcon ? <Icon name="arrow" /> : null}
             </a>
