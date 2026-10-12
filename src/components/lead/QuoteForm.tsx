@@ -407,7 +407,7 @@ export function QuoteForm({
       {step === 1 ? (
         <div className="mt-4 space-y-3.5">
           <fieldset>
-            <legend className="text-sm font-semibold">Project type</legend>
+            <legend className="quote-field-label text-sm font-semibold">Project type</legend>
             <div className="mt-1.5 grid grid-cols-1 gap-2 min-[380px]:grid-cols-2">
               {services.map((service) => {
                 const checked = values.serviceSlug === service.slug;
@@ -447,7 +447,7 @@ export function QuoteForm({
           <div>
             <label
               htmlFor={`${baseId}-postalCode`}
-              className="text-sm font-semibold"
+              className="quote-field-label text-sm font-semibold"
             >
               Location
             </label>
@@ -513,7 +513,7 @@ export function QuoteForm({
           <div>
             <label
               htmlFor={`${baseId}-fullName`}
-              className="text-sm font-semibold"
+              className="quote-field-label text-sm font-semibold"
             >
               Full name
             </label>
@@ -534,7 +534,7 @@ export function QuoteForm({
           </div>
 
           <div>
-            <label htmlFor={`${baseId}-email`} className="text-sm font-semibold">
+            <label htmlFor={`${baseId}-email`} className="quote-field-label text-sm font-semibold">
               Email
             </label>
             <input
@@ -558,7 +558,7 @@ export function QuoteForm({
           </div>
 
           <div>
-            <label htmlFor={`${baseId}-phone`} className="text-sm font-semibold">
+            <label htmlFor={`${baseId}-phone`} className="quote-field-label text-sm font-semibold">
               Phone
             </label>
             <input
@@ -583,7 +583,7 @@ export function QuoteForm({
           </div>
 
           <div>
-            <label htmlFor={`${baseId}-note`} className="text-sm font-semibold">
+            <label htmlFor={`${baseId}-note`} className="quote-field-label text-sm font-semibold">
               Project details{" "}
               <span className="font-normal text-[color:var(--color-muted)]">
                 (optional)
