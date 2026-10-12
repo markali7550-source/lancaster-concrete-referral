@@ -414,7 +414,7 @@ export function QuoteForm({
                 return (
                   <label
                     key={service.slug}
-                    className="flex min-h-12 cursor-pointer items-center gap-3 rounded-[12px] border p-3 text-sm font-medium"
+                    className="flex min-h-12 cursor-pointer flex-col items-center justify-center gap-2 rounded-[12px] border p-3 text-center text-sm font-medium sm:flex-row sm:justify-start sm:gap-3 sm:text-left"
                     style={{
                       borderColor: checked
                         ? "var(--color-accent)"
