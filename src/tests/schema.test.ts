@@ -17,9 +17,9 @@ describe("JSON-LD graph", () => {
   });
 
   it("never types the publisher as a contractor", () => {
-    const serialised = JSON.stringify(graph);
-    expect(serialised).not.toContain("GeneralContractor");
-    expect(serialised).not.toContain("HomeAndConstructionBusiness");
+    const serialized = JSON.stringify(graph);
+    expect(serialized).not.toContain("GeneralContractor");
+    expect(serialized).not.toContain("HomeAndConstructionBusiness");
   });
 
   it("keeps LocalBusiness address to locality, region and country when no street is set", () => {
@@ -39,9 +39,9 @@ describe("JSON-LD graph", () => {
   });
 
   it("publishes no address, rating, or review on the brand", () => {
-    const serialised = JSON.stringify(graph);
+    const serialized = JSON.stringify(graph);
     for (const forbidden of ["aggregateRating", "review", "streetAddress", "priceRange"]) {
-      expect(serialised).not.toContain(forbidden);
+      expect(serialized).not.toContain(forbidden);
     }
   });
 

@@ -37,6 +37,7 @@ export function pageMetadata({
       description,
       url: canonical,
       siteName: site.brand,
+      locale: "en_US",
       type: "website",
       images: [OG_IMAGE],
     },

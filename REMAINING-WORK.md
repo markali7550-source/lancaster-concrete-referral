@@ -59,7 +59,7 @@ invocation. Until then a submitted lead reaches storage and stops there.
 
 ### 2.1 Dynamic number insertion is a stub
 `/api/tracking-number` always returns `pool_exhausted` — there is no pool, no provider,
-no allocation or release. Correct failure behaviour (static fallback keeps working) is
+no allocation or release. Correct failure behavior (static fallback keeps working) is
 already implemented and tested; the allocation path itself is not built.
 
 ### 2.2 Call tracking webhook has no source

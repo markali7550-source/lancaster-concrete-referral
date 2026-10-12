@@ -15,7 +15,7 @@ const LOGO_HEIGHT = 556;
  *
  * Only the footer pins the light-ink variant (`.footer-band .logo-dark`);
  * everywhere else the global `.logo-light` / `.logo-dark` rules swap by
- * colour scheme, so in light mode the painted lockup is the `logo-light`
+ * color scheme, so in light mode the painted lockup is the `logo-light`
  * image below. It stays `loading="lazy"`: above the fold it starts loading
  * immediately anyway. The header instance passes `priority` so the
  * dark-scheme variant is preloaded; in light mode that preload fetches a

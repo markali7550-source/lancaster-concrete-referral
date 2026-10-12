@@ -70,7 +70,7 @@ page component *also* emits a graph that re-defines those same two nodes:
 Same on `/services`, `/contact`, `/locations/lancaster-sc` — it is site-wide. Google will
 generally reconcile duplicate `@id` nodes, so this is not breaking rich results, but it is
 redundant bytes on every page and a correctness smell: if the two definitions ever drift,
-the resolved entity is undefined behaviour. Page graphs should reference
+the resolved entity is undefined behavior. Page graphs should reference
 `{ "@id": ".../#organization" }` rather than redefining the node.
 
 Minor related inconsistency: the page-level `@id`s omit the trailing slash that the root nodes
@@ -130,7 +130,7 @@ combination page publishes"* when four now do.
 
 Chromium could not be installed in this sandbox (`cdn.playwright.dev` connection reset, and
 `fonts-freefont-ttf` is unavailable to `--with-deps`). So **no browser-based checks ran**:
-the 19 Playwright specs, visual/responsive layout, colour contrast, focus-visible styling, and
+the 19 Playwright specs, visual/responsive layout, color contrast, focus-visible styling, and
 the consent-banner focus trap are all unconfirmed by me this round. The previously-reported
 consent-banner overlap is marked fixed in `SITE-REVIEW.md` but I could not independently confirm
 it. These remain the biggest untested surface, consistent with `REMAINING-WORK.md` §3.1.

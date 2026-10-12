@@ -38,7 +38,7 @@ export default function ThankYouPage() {
           center and not by us pretending to be the team.
         </p>
         {/* Rows are start-aligned. justify-center here only bit the one step
-            whose text fits on a single line, centring that row and pushing its
+            whose text fits on a single line, centering that row and pushing its
             number 42px right of the other three. */}
         <ol className="mt-8 space-y-4">
           {NEXT_STEPS.map((step, index) => (

@@ -93,7 +93,7 @@ measured results.
 
 - **Real iOS Safari, Android Chrome, Firefox and desktop Safari** — only
   Chromium is available. The iOS-Safari fixed-background caveat in particular is
-  reasoned from known engine behaviour, not observed.
+  reasoned from known engine behavior, not observed.
 - **Lighthouse scores and field/CrUX data** — Lighthouse is not installed and
   there is no real-user telemetry. LCP/CLS below are lab figures from a local
   server, so network time is unrealistically fast; treat the *element* and the
@@ -545,7 +545,7 @@ advertising only WebP, and JPEG otherwise — all three confirmed by request.
 | `outline: none` | 1 occurrence, on `.field:focus`, but paired with a 4 px `box-shadow` ring — acceptable |
 | Touch targets | 48–52 px, above the 44 px guideline |
 | Keyboard operability | FAQ accordions and mobile menu are native `<details>`/`<summary>` — operable without JS |
-| Colour contrast | see below — all pass |
+| Color contrast | see below — all pass |
 
 ### Contrast measured per-pixel over every photograph
 
@@ -795,7 +795,7 @@ A consolidated list of what was tested and found correct:
 | 6 | All pages — header dropdowns | Add `aria-controls` alongside `aria-expanded`. |
 | 7 | 13 pages — `src/app/layout.tsx:37` | Remove the duplicate JSON-LD block. |
 | 8 | `/locations` | Expand beyond 268 words and add a title suffix, or accept as a stub until more cities exist. |
-| 9 | `.process-step-card` | Consider flattening `backdrop-filter` to a solid colour. |
+| 9 | `.process-step-card` | Consider flattening `backdrop-filter` to a solid color. |
 | 9b | `/locations`, `/services`, disclosure links | Give standalone list links `display:inline-block; padding-block:4px` so each clears the 24 px WCAG 2.2 target-size minimum (currently 19-20 px). |
 | 9c | `/thank-you` | The form confirms in place and never navigates here, so the route is unreachable from the funnel. Either link it from "What happens next" or retire it. |
 | 10 | `src/components/marketing/sections.tsx` | Remove the unused `ILLUSTRATIVE_IMAGE_NOTE` export. Also, `README.md:53` contains a `min-h-[calc(100dvh-3.5rem)]` string that causes Tailwind to generate dead CSS. |
@@ -839,7 +839,7 @@ moments on the site: the hero and the confirmation screen.
 
 **Remaining conditions on this verdict** — genuinely untestable here:
 
-1. **Real iOS Safari and Android Chrome.** Chromium was the only engine available. The iPad-Safari fixed-background behaviour between 768-1024 px is the single highest-value manual spot-check.
+1. **Real iOS Safari and Android Chrome.** Chromium was the only engine available. The iPad-Safari fixed-background behavior between 768-1024 px is the single highest-value manual spot-check.
 2. **Lighthouse / field Core Web Vitals.** The LCP numbers above come from a local server and are a floor, not a field measurement.
 3. **A real screen reader.** ARIA was verified structurally and by live-region presence, not by listening.
 4. **Production environment variables** — confirm `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_CONTACT_EMAIL` and the fallback phone values are real, not the `.env.example` placeholders (`example-referral-brand.com`, `(803) 555-0123`).

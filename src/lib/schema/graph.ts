@@ -15,7 +15,7 @@ const BUSINESS_DESCRIPTION =
  * GeneralContractor or HomeAndConstructionBusiness, and neither carries an
  * address, because no verified address is supplied in src/config/site.ts.
  */
-/** PostalAddress with locality, region and country. Street and postcode are
+/** PostalAddress with locality, region and country. Street and ZIP code are
  *  added only when the config supplies them; empty values are omitted, so a
  *  missing street never produces an invalid or blank field. */
 function postalAddress(): Node {

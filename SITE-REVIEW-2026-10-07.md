@@ -102,8 +102,8 @@ underbuilt. Options unchanged: extend it with a real coverage explanation, or
 
 No browser in this sandbox (`~/.cache/ms-playwright` empty, and `cdn.playwright.dev`
 is outside the egress allowlist so Chromium cannot be installed). The 3 Playwright
-spec files, visual/responsive layout, colour contrast, focus-visible styling, and the
-consent-banner behaviour are all unconfirmed by me. This is the same blind spot as
+spec files, visual/responsive layout, color contrast, focus-visible styling, and the
+consent-banner behavior are all unconfirmed by me. This is the same blind spot as
 the last two reviews, and it remains the biggest untested surface. Getting a browser
 into CI is still the highest-value process change.
 

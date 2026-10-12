@@ -142,7 +142,7 @@ are usually consequences of it.
 
 1. In your Vercel project: **Settings → Domains**
 2. Type your domain, e.g. `yourdomain.com`, click **Add**
-3. Choose the redirect behaviour when prompted. **Recommended:** add
+3. Choose the redirect behavior when prompted. **Recommended:** add
    `yourdomain.com` as primary and let Vercel redirect `www` to it. Pick one and
    redirect the other — serving both as canonical splits your SEO.
 4. Vercel now displays the DNS records you must create. **Leave this tab open.**

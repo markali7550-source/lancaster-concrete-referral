@@ -69,20 +69,20 @@ async function main() {
   }
 
   for (const { id, graph, faqCount } of graphs) {
-    let serialised: string;
+    let serialized: string;
     try {
-      serialised = JSON.stringify(graph);
-      JSON.parse(serialised);
+      serialized = JSON.stringify(graph);
+      JSON.parse(serialized);
     } catch (error) {
       failures.push(`${id}: graph is not valid JSON (${String(error)})`);
       continue;
     }
 
     for (const type of FORBIDDEN_TYPES) {
-      if (serialised.includes(type)) failures.push(`${id}: forbidden entity type ${type}`);
+      if (serialized.includes(type)) failures.push(`${id}: forbidden entity type ${type}`);
     }
     for (const field of FORBIDDEN_FIELDS) {
-      if (serialised.includes(`"${field}"`)) failures.push(`${id}: unsupported claim field ${field}`);
+      if (serialized.includes(`"${field}"`)) failures.push(`${id}: unsupported claim field ${field}`);
     }
 
     const nodes = (graph as { "@graph": { "@id"?: string; "@type"?: unknown }[] })["@graph"];
@@ -92,7 +92,7 @@ async function main() {
       }
     }
 
-    const hasFaqNode = serialised.includes('"FAQPage"');
+    const hasFaqNode = serialized.includes('"FAQPage"');
     if (hasFaqNode && faqCount === 0) failures.push(`${id}: FAQ schema without visible FAQ`);
     if (!hasFaqNode && faqCount > 0) failures.push(`${id}: visible FAQ without FAQ schema`);
   }

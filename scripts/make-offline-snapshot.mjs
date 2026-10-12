@@ -108,8 +108,8 @@ async function inlineCss(css) {
 
 function rewriteLinks(html) {
   return html.replace(/href="(\/[^"#]*)(#[^"]*)?"/g, (match, path, hash) => {
-    const normalised = path.length > 1 ? path.replace(/\/$/, "") : "/";
-    const target = ROUTE_MAP.get(normalised);
+    const normalized = path.length > 1 ? path.replace(/\/$/, "") : "/";
+    const target = ROUTE_MAP.get(normalized);
     if (!target) return match; // sitemap.xml, robots.txt, gated routes: leave alone
     return `href="${target}${hash ?? ""}"`;
   });

@@ -29,14 +29,14 @@ export default function ServiceDisclosurePage() {
         service types that an independent provider has agreed to cover. When a
         request fits, we send your details to one independent concrete service
         provider, who contacts you to schedule the project. Each provider works
-        under its own licence, insurance and contract with you.
+        under its own license, insurance and contract with you.
       </p>
 
       <h2>What we do not do</h2>
       <ul>
         <li>We do not perform, supervise, inspect, or manage construction work.</li>
         <li>We do not warrant or guarantee any provider&apos;s work, pricing, or timeline.</li>
-        <li>We do not hold a contractor licence and do not act as a general contractor.</li>
+        <li>We do not hold a contractor license and do not act as a general contractor.</li>
         <li>We are not a party to the contract you sign with a provider.</li>
       </ul>
 

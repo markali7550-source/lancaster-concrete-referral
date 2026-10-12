@@ -19,7 +19,7 @@ So the AI signal was **architectural, not verbal**. Six specific things produced
 2. **Sentence-level duplication.** **87 of 323 distinct sentences (27%)** appeared on two or more pages.
 3. **A templated SEO opener on five pages**: "Looking for a concrete *X* contractor in Lancaster, SC?"
 4. **Broken H1 grammar from string interpolation.** The service name is stored plural, so the combo pages rendered "Concrete Driveways Referrals in Lancaster, SC".
-5. **Mobile was stacked, not designed.** **33 of 44** long reading paragraphs were centre-aligned at 390 px.
+5. **Mobile was stacked, not designed.** **33 of 44** long reading paragraphs were center-aligned at 390 px.
 6. **One structural skeleton under all four service pages.** Even after the wording was fixed, every service page rendered the same hardcoded sequence — scope, specification, process, cost, prepare — with the same five eyebrows in the same five slots. The pages said different things in the same shape.
 7. **One padding value for the whole site.** All 24 `Section` instances used identical vertical padding, so every page breathed the same from first section to last. Consistent, but machine-even, with no hierarchy between a page's main argument and its appendix.
 8. **Numbered cards used for things that are not sequences.** *How it works* ran a 01–04 grid of routing checks directly above the genuine 01–03 process steps. The checks all apply at once, so the numerals asserted an order that does not exist, and the same numbered-card pattern appeared twice in one scroll.
@@ -37,7 +37,7 @@ So the AI signal was **architectural, not verbal**. Six specific things produced
 | Distinct sentences appearing on 2+ pages | 87/323 = **27%** | 36/544 = **7%** |
 | "Looking for a concrete X contractor…?" openers | 5 | **0** |
 | Title Case headings | 5 | **0** |
-| Reading paragraphs centred @390px | 33 / 44 | **0 / 101** |
+| Reading paragraphs centered @390px | 33 / 44 | **0 / 101** |
 | Hero right-half mean luminance | 26–46 | **42–69** (stddev 19–30) |
 | CTA buttons per page | 7–9 | **2.9** (23 across 8 pages) |
 | Cards on the driveways page | 39 | **28** |
@@ -50,7 +50,7 @@ So the AI signal was **architectural, not verbal**. Six specific things produced
 | Distinct section padding tiers in use | 1 | **4** (96 / 80 / 56 / 44) |
 | Numbered card sequences on *How it works* | 2 | **1** |
 
-The one remaining shared service-page H2 is the cross-link section ("Also routed in Lancaster"), which *should* match across pages. Of the 101 long paragraphs at 390 px, the only centred text left is 4 CTA-band bodies, centred deliberately.
+The one remaining shared service-page H2 is the cross-link section ("Also routed in Lancaster"), which *should* match across pages. Of the 101 long paragraphs at 390 px, the only centered text left is 4 CTA-band bodies, centered deliberately.
 
 ---
 
@@ -74,7 +74,7 @@ That last one is worth stating plainly. It was a staged golden-hour patio render
 
 **Kept because they are credible, not merely polished** — verified at native resolution, not thumbnail scale:
 
-- `service-patios.webp`, `local-patios-lancaster.webp` — genuine stamped-concrete pattern and colour-release variation, sling furniture whose legs resolve and cast consistent shadows, bullnose border, natural edge curve.
+- `service-patios.webp`, `local-patios-lancaster.webp` — genuine stamped-concrete pattern and color-release variation, sling furniture whose legs resolve and cast consistent shadows, bullnose border, natural edge curve.
 - `process-location-lancaster.webp`, `process-band.webp` — red clay spoil, a staked form line, a work truck. The strongest local-authenticity images on the site.
 - `repair-hero-walkway.webp`, `local-repair-lancaster.webp` — root-heaved slabs and map cracking that read correctly.
 - `cta-combo-driveways.webp`, `cta-combo-repair.webp`, `cta-service-driveways.webp`, `local-driveways-lancaster.webp`, `local-slabs-lancaster.webp`, `contact-front-walkway.webp`, `service-areas-hero.webp`.
@@ -94,14 +94,14 @@ Images now vary by angle (ground level, standing, aerial), weather (overcast, fl
 
 ## 6. Sections simplified
 
-- The home page's **"Areas we currently serve"** band went from a full card section to one quiet sentence, set at tighter padding than its neighbours so it reads as a footnote rather than a claim.
+- The home page's **"Areas we currently serve"** band went from a full card section to one quiet sentence, set at tighter padding than its neighbors so it reads as a footnote rather than a claim.
 - **Two home-page question sections** that asked near-identical questions became distinct: "Four things worth deciding yourself" and "How this service works".
 - The **key-facts strip** and the **covered/out-of-scope block** were de-carded where cards added nothing.
 - The **covered-scope grid** stopped splitting into two columns at `lg` while the page had already given a column to the sticky form — four cards were 151 px wide and wrapping after three words. Both splits now wait for `xl`.
 - The **sub-navigation** no longer overflows its container at desktop (was 1258 px of content in 1136 px).
 - **Vertical rhythm became a hierarchy.** All 24 sections shared one padding value and the `Section` component's `compact` variant was unused. One rule now applies: material that resolves a page rather than carrying it — FAQ blocks, "Also routed in" and "Adjacent published areas" cross-links, the out-of-scope note — sits in a tighter tier. Pages step 96 / 80 / 56 / 44 instead of flat 96.
 - **The routing checks on *How it works* lost their step numbers.** All four are checked on every request, so 01–04 stated an order that does not exist, directly above the real three-step sequence. They are now a hairline-divided list of titled criteria.
-- The **mobile footer** was one centred column: a four-line centred tagline, then four link groups single-file, then a seven-line centred disclaimer. Now left-aligned with the link groups two-up.
+- The **mobile footer** was one centered column: a four-line centered tagline, then four link groups single-file, then a seven-line centered disclaimer. Now left-aligned with the link groups two-up.
 
 ## 7. Copy rewritten
 
@@ -110,10 +110,10 @@ Because the prose was already clean, rewriting was targeted, not wholesale:
 - **Five templated SEO openers** deleted.
 - **Every service-page heading** rewritten to be specific to its service — see §8.
 - **Four closing CTA headings** written per service: "Ready to price a driveway?", "Ready to price a patio?", "Ready to price a pad?", "Want someone to look at the damage?". These replaced a bare keyword string, `"Concrete Driveways in Lancaster, SC"`, which was being used as a call to action and repeated the H1 almost verbatim.
-- **Two British spellings** in visitor-facing copy — "Colour, texture, and where the joints fall" and the heading "Finish, colour and layout choices" — corrected to American spelling for an American business.
+- **Two British spellings** in visitor-facing copy — "Color, texture, and where the joints fall" and the heading "Finish, color and layout choices" — corrected to American spelling for an American business.
 - `"Lancaster, SC"` was reduced in body copy and kept where it carries meaning: H1s, the service-area sentence, and schema.
 
-No statistic, review, rating, licence, award, partnership, address or contractor name was invented. There is no fake urgency, no countdown, no "trusted by N homeowners", no badge the business has not earned.
+No statistic, review, rating, license, award, partnership, address or contractor name was invented. There is no fake urgency, no countdown, no "trusted by N homeowners", no badge the business has not earned.
 
 ## 8. How service-page repetition was fixed
 
@@ -165,7 +165,7 @@ All 14 H1s were re-verified from rendered HTML. The grammar cannot regress by ad
 Named specifically, as asked:
 
 1. **The published contact details are placeholders.** `(803) 555-0123` is in the reserved-fiction 555 range and the email is `hello@example-referral-brand.com`. They come from `.env.example`, not source, so this is a deployment-time fix — but as the site stands it is the single largest trust defect, and I deliberately did not invent real ones.
-2. **Two kept patio photos read as Northern, not Carolina.** `service-patios.webp` and `local-patios-lancaster.webp` show split-rail and cedar fencing, spruce/fir in the background and no red clay. I considered replacing them and decided against it, which is worth explaining: both read convincingly as real photographs — slightly soft, handheld, mundane composition, correct stamp pattern and colour-release variation. Regenerating them would trade a credible photograph for a fresh render against the one defect the brief cares most about. Neither has an actual defect, and the rule is to replace only for defects. They stay, and this is the weakest local-authenticity link on the site.
+2. **Two kept patio photos read as Northern, not Carolina.** `service-patios.webp` and `local-patios-lancaster.webp` show split-rail and cedar fencing, spruce/fir in the background and no red clay. I considered replacing them and decided against it, which is worth explaining: both read convincingly as real photographs — slightly soft, handheld, mundane composition, correct stamp pattern and color-release variation. Regenerating them would trade a credible photograph for a fresh render against the one defect the brief cares most about. Neither has an actual defect, and the rule is to replace only for defects. They stay, and this is the weakest local-authenticity link on the site.
 3. **The four service pages still share one component vocabulary** — timeline, cost table, prep checklist. Their order, headings, ledes and content now differ, but a visitor who reads all four will recognise the same building blocks. That is a design system doing its job rather than a defect, but it is the honest reason the structural variation is not total.
 4. **The locations index has one service area**, so its card grid renders a single card with empty space beside it. That is the truthful state of the business — one approved area — and padding it with unapproved cities would be inventing coverage. Left as is.
 5. **A `CAPTION.sr-only` element reports as overflowing** (363 px of content in 1 px) on the driveways page. It is screen-reader-only and invisible; not a visual defect, listed for completeness.
@@ -181,7 +181,7 @@ Scored honestly against the brief's targets, after a second pass that fixed the 
 | **Human-designed** | ≥9 | 8 | **9** | Section order is now an editorial judgement per service rather than a template, spacing carries hierarchy, and section shapes genuinely vary — table, timeline, hairline list, checklist, accordion, quiet one-line interstitial. Not 10: the four pages still draw on one component vocabulary. |
 | **Professional** | ≥9 | 9 | **9** | Typecheck, 36/36 tests and four content-assert gates pass. 18/18 routes 200, 0 orphaned images, 0 broken image requests, 0 real layout overflows at 390px or 1440px. Titles 41–60 chars, descriptions 97–154. One typeface, restrained tokens, real legal disclosures, an SC LLR verification link. |
 | **Generic / template** | ≤2 | 3 | **2** | The chassis is no longer uniform: each service page runs its own order and the rhythm has tiers. It is not 1 because the overall shape is still recognisably a local-service site, which is appropriate rather than wrong. |
-| **Trust** | ≥9 | 8 | **8** | Unchanged, and I am not moving it. No fabricated reviews, ratings, licences, awards or statistics; the referral relationship is disclosed in the hero, body, footer and a dedicated page; no fake urgency or badges. It is held at 8 solely by the 555 placeholder phone number and the example.com email, which a careful visitor will notice. Nothing I can do in the repository changes that. |
+| **Trust** | ≥9 | 8 | **8** | Unchanged, and I am not moving it. No fabricated reviews, ratings, licenses, awards or statistics; the referral relationship is disclosed in the hero, body, footer and a dedicated page; no fake urgency or badges. It is held at 8 solely by the 555 placeholder phone number and the example.com email, which a careful visitor will notice. Nothing I can do in the repository changes that. |
 
 The highest-leverage remaining action is still item 1 — set the five `NEXT_PUBLIC_*` environment variables to real details at deploy. That alone moves trust to 9.
 
@@ -348,11 +348,11 @@ names.
 `/how-it-works` — showed a gloved hand running a hand float. At magnification:
 
 - the float's handle rises from a **single asymmetric post** where a real hand
-  float has a two-point mount, and the plate **dissolves into loose grey
+  float has a two-point mount, and the plate **dissolves into loose gray
   rectangular fragments** at its right end rather than forming a tool edge
 - the grip **passes through** the handle instead of around it, with a
   flesh-toned element surfacing where the glove should be continuous
-- a **disembodied grey blob** sits in the top-right corner, attached to nothing
+- a **disembodied gray blob** sits in the top-right corner, attached to nothing
 - the float's **shadow does not match the float**, and the hand casts almost none
 - the wet slurry ridge on the left bears **no relationship** to where the tool is
 
@@ -370,7 +370,7 @@ clay spoil heaped along one edge, tire ruts and footprints in the subgrade, a
 brick ranch and loblolly pines behind.
 
 It also fills a gap in the set. Every other photograph is summer or early
-autumn; this one is **winter, bare deciduous trees under flat grey overcast**.
+autumn; this one is **winter, bare deciduous trees under flat gray overcast**.
 It is the only ground-level camera position and the only image showing the
 reinforcement stage. That is §6 variation earned by circumstance rather than
 applied as an effect.
@@ -400,7 +400,7 @@ trailer. It is the most convincing photograph on the site.
 | Named target | Status |
 |---|---|
 | Driveway without realistic control joints | **Resolved.** `service-driveways` shows longitudinal and transverse joints forming roughly square panels, with hairline cracking and a red clay verge. |
-| Concrete surface resembling polished tile | **Resolved.** `service-patios` is matte stamped random-stone with real grout lines, antiquing-release colour variation and a hairline crack. No specular tile sheen anywhere in the set. |
+| Concrete surface resembling polished tile | **Resolved.** `service-patios` is matte stamped random-stone with real grout lines, antiquing-release color variation and a hairline crack. No specular tile sheen anywhere in the set. |
 | Clipboard/clip with unnatural metal fragments | **Gone.** No clipboard appears in any of the eighteen images. Its nearest surviving relative was the fragmented float plate described above, replaced this pass. |
 | AI-looking handwriting | **None.** No handwriting or rendered lettering appears in any image. The only text is a manufacturer's badge on a real truck grille. |
 | Suspicious homepage service-card imagery | **Checked at 2x and kept.** All four — `service-driveways`, `service-patios`, `service-slabs`, `repair-hero-walkway` — show correct construction: a formed slab edge with slight aggregate exposure, and a root-heaved panel with a visible fracture face and exposed aggregate at the break. |
@@ -431,7 +431,7 @@ that changes a score.
 ## 17. Fifth pass — opening the site on a phone
 
 Mobile had been measured but never looked at. The earlier passes recorded
-counts at 390px — zero overflows, footer height, centred-paragraph ratios —
+counts at 390px — zero overflows, footer height, centered-paragraph ratios —
 and all of those numbers were correct. They were also blind to the two
 largest remaining problems, both of which were obvious within about thirty
 seconds of actually scrolling the page.
@@ -512,7 +512,7 @@ on what is checked before routing, the disclosure, the FAQ, other services.
   location"** — the same words twice, three lines apart. The step label is
   functional and stays; the section heading is now "What we need from you".
   A sitewide check for headings that echo a nearby heading now returns zero.
-- "Nobody can price a driveway from a **postcode**." Postcode is British.
+- "Nobody can price a driveway from a **ZIP code**." ZIP code is British.
   This is the third pass running in which a defect was found in copy I wrote
   myself, and the second British usage. Now "from an address".
 
@@ -812,7 +812,7 @@ column from `lg` up and now renders at 441px.
 
 `/thank-you` renders four numbered steps. Their rows carried `justify-center`.
 Three of the four have text long enough to fill the row, so it did nothing
-visible. Step 3 fits on one line, so that row centred itself and its number sat
+visible. Step 3 fits on one line, so that row centered itself and its number sat
 42px right of the other three. Measured badge offsets were **57, 57, 99, 57** —
 a ragged left edge on the page a homeowner sees immediately after submitting a
 request, which is the single worst place on the site to look unfinished.
@@ -954,7 +954,7 @@ the single most common way generated construction copy gets caught — a
 confident, plausible, wrong number.
 
 Across 1,353 lines of rendered copy there are **zero dollar amounts, zero
-percentages and zero counting claims**. Every mention of a licence, rating,
+percentages and zero counting claims**. Every mention of a license, rating,
 review or guarantee is a disclaimer rather than a claim. Sections 6 and 11 are
 satisfied by measurement, not assertion.
 
@@ -1595,7 +1595,7 @@ physical impossibility at 2x magnification.
 
 - The mixer chute emerges from behind the truck's rear bumper rather than from
   a drum discharge, and the assembly it attaches to matches no real truck.
-- The chute has no end. It fades into a concrete-coloured blob.
+- The chute has no end. It fades into a concrete-colored blob.
 - The chute is clean, dry metal while concrete is supposedly flowing down it.
 - Nothing is actually being poured; the "pour" is a static mound with no
   connection to the chute.
@@ -1642,7 +1642,7 @@ below is an image that was already in the repository.
 - **Home page process band** and **driveway city-service process band** now
   have no photograph. Every remaining process image is already assigned, and
   rules 5 and 7 both say no image beats a wrong one. The CTA component already
-  falls back to a solid band colour, so nothing needed redesigning.
+  falls back to a solid band color, so nothing needed redesigning.
 - The three generated files were deleted, not left in `public/` where they
   could be picked up again.
 
@@ -1783,7 +1783,7 @@ clay painted along the lawn edges.
 It earns the slot rather than filling it. The section's three notes are about
 subbase prep, drainage, and narrow access on tight lots; the frame shows a
 finished pad with its subbase still open around the perimeter, on a lot hemmed
-in by a neighbour's fence. That is the subject the copy is discussing.
+in by a neighbor's fence. That is the subject the copy is discussing.
 
 It is also the most clearly photographic file in the library: phone-camera
 softness, a weed with a single yellow flower at the slab edge, gravel with real
@@ -1794,7 +1794,7 @@ Two §32 obligations applied to it directly:
 - The file was named `local-slabs-lancaster`. Nothing establishes where it was
   taken, so the name was a location claim the site cannot support. Renamed.
 - The alt describes **bare soil and gravel**, not red clay — the soil in the
-  frame is grey-brown. The copy beside it discusses red clay; the alt does not
+  frame is gray-brown. The copy beside it discusses red clay; the alt does not
   borrow that word just because it sits nearby.
 
 ### What was not done, and why
@@ -1809,7 +1809,7 @@ The remaining gap is sourcing, and it is environmental. This sandbox has no
 network route to stock photo hosts — `curl` to `images.pexels.com` and
 `unsplash.com` both return HTTP 000. Images can only arrive through the image
 search proxy, which returns free-licensed results at 500-800px (too soft for a
-full-width band), while every full-resolution result is behind a paid licence
+full-width band), while every full-resolution result is behind a paid license
 (Unsplash+, Getty). A large share of what the proxy labels "free" is itself
 AI-generated stock. Generating replacements is banned by rule 6.
 
@@ -1858,7 +1858,7 @@ Anchoring the image drops that dependency.
 One measurement looked like a failure and was not. `/services/concrete-repair`
 reported 28% difference despite `scroll`. The photograph is pixel-identical in
 both frames; the difference is the sticky in-page sub-nav overlaying the top of
-the band at one offset. Ordinary sticky behaviour, not image drift.
+the band at one offset. Ordinary sticky behavior, not image drift.
 
 ### Two photographs restored to bands that had been emptied
 
@@ -1940,7 +1940,7 @@ the screed rides a form rail, and the throttle cable routes correctly from
 handle to engine. Generated images reliably get that transition wrong.
 
 Free-licensed Pexels source, 1200x799, 92.0 KB WebP. It shows placing and
-levelling rather than any one finished product, so it does not favour
+leveling rather than any one finished product, so it does not favor
 driveways, patios, slabs or repair on the page that lists all four. The alt
 claims no location.
 

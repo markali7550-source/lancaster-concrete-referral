@@ -67,7 +67,7 @@ Brand marks (`logo.webp`, `logo-dark.webp`) are excluded: a logo is meant to rep
 - `/images/repair-hero-walkway.webp` — Residential concrete walkway where one slab has been lifted and tilted by tree roots, leaving a raised lip against the next panel
 - `/images/service-driveways.webp` — Concrete driveway running up to the garage of a single story brick ranch house, with saw cut control joints across its width
 - `/images/service-patios.webp` — Stamped concrete backyard patio in a random stone pattern with a curved edge, set against a mown lawn and a split rail fence
-- `/images/service-slabs.webp` — Finished concrete shed pad in a back yard, sitting proud of the ground with form marks down its side and backfilled soil around the edge
+- `/images/service-slabs.webp` — Finished concrete shed pad in a backyard, sitting proud of the ground with form marks down its side and backfilled soil around the edge
 - `/lancaster-hero.webp` — Quiet residential street of brick ranch houses and pines, with red clay verges and concrete driveways
 - `/contact-front-walkway.webp` — _CSS background band, decorative, copy sits over it_
 - `/home-hero-street-pour.webp` — Contractor's pickup and portable mixer parked at a residential street where a concrete walkway and apron sit in timber forms, with excavated red clay heaped alongside
@@ -90,7 +90,7 @@ Brand marks (`logo.webp`, `logo-dark.webp`) are excluded: a logo is meant to rep
 - `/images/process-placing-edge.webp` — Worker in a high-visibility vest working wet concrete along a formed edge with a long handled tool, with excavated ground and broken rubble behind
 - `/images/repair-detail-crack.webp` — Settled concrete walkway slab with a cracked, lifted edge
 - `/images/repair-sawcutting-slab.webp` — Worker cutting into a concrete slab with a handheld cut off saw, throwing up a cloud of dust beside a chain link fence
-- `/images/site-conditions-slab-subbase.webp` — Freshly finished concrete pad in a fenced back yard, with bare soil and gravel still exposed around its edges and neighbouring houses close behind
+- `/images/site-conditions-slab-subbase.webp` — Freshly finished concrete pad in a fenced backyard, with bare soil and gravel still exposed around its edges and neighboring houses close behind
 - `/images/slab-formwork-pad.webp` — Concrete pad still sitting inside its timber forms on an open lot
 - `/service-areas-hero.webp` — Elevated view of a suburban residential neighborhood of brick homes with concrete driveways along a curving street
 - `/services-overview.webp` — Broom finished residential concrete walkway with a tooled control joint and radiused edge beside a lawn

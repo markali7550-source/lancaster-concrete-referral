@@ -60,7 +60,7 @@ const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
   },
   "concrete-patios": {
     src: "/images/services/concrete-patios/concrete-patios-process.webp",
-    alt: "Two crew members levelling freshly placed concrete with a screed board, with a work truck and traffic cones behind",
+    alt: "Two crew members leveling freshly placed concrete with a screed board, with a work truck and traffic cones behind",
   },
   "concrete-slabs": {
     src: "/images/services/concrete-slabs/concrete-slabs-process.webp",

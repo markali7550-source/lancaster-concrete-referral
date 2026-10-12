@@ -48,7 +48,7 @@ business site, because the writing underneath is already there.
 | `box-shadow` utilities | **0** | Genuinely restrained. |
 | Gradient utilities | **5** total site-wide, 1 CSS gradient | Minimal. No "AI gradient" problem. |
 | `backdrop-filter` | 2 places (header, process-step card) | Restrained. Not glassmorphism-everywhere. |
-| Accent colours | **1** green (`#0b6b45` light / `#3fc98a` dark) | Single accent. No neon, no rainbow. |
+| Accent colors | **1** green (`#0b6b45` light / `#3fc98a` dark) | Single accent. No neon, no rainbow. |
 | Typeface | Geist Sans only | Consistent. |
 
 **This is the strongest part of the site and should not be touched.** The brief
@@ -60,7 +60,7 @@ there. Anyone reporting otherwise is pattern-matching rather than measuring.
 **1.1 — The eyebrow→H2→lede→content rhythm, 18 times on one page. HIGH**
 
 Every single section opens identically: a small uppercase green label, then a
-large heading, then a 2–3 line grey lede, then the content. On
+large heading, then a 2–3 line gray lede, then the content. On
 `/services/concrete-driveways` there are **18** such labels:
 
 > Lancaster County, South Carolina · Routed for · Coverage today · Typical site
@@ -297,8 +297,8 @@ lists a concrete physical or optical impossibility.
 
 | Image | Used on | Verdict | Confidence | Evidence |
 |---|---|---|---|---|
-| `process-services-index.webp` **[zoomed]** | `/services` process band | **AI-generated** | High | The clipboard clip resolves into incoherent metallic shards, not a spring mechanism. The "handwriting" on the page is illegible grey squiggle forming no letters. The supporting hand's fingers merge into an undifferentiated mass. The pen nib does not contact the paper and its lower shaft vanishes into the hand with no exit point. |
-| `driveway-pour-joints.webp` **[zoomed]** | `/services/concrete-driveways` | **AI-generated** | High | The surface is large-format polished **tile**, not concrete: uniform pale grey with a faint brushed vertical grain and a glassy sheen. Joints are uniform-width dark hairlines with no tooled radius and no saw-cut chamfer. The slab meets loose soil on the right with no form, no edge thickening and no haunch. A yellow line floats unattached. |
+| `process-services-index.webp` **[zoomed]** | `/services` process band | **AI-generated** | High | The clipboard clip resolves into incoherent metallic shards, not a spring mechanism. The "handwriting" on the page is illegible gray squiggle forming no letters. The supporting hand's fingers merge into an undifferentiated mass. The pen nib does not contact the paper and its lower shaft vanishes into the hand with no exit point. |
+| `driveway-pour-joints.webp` **[zoomed]** | `/services/concrete-driveways` | **AI-generated** | High | The surface is large-format polished **tile**, not concrete: uniform pale gray with a faint brushed vertical grain and a glassy sheen. Joints are uniform-width dark hairlines with no tooled radius and no saw-cut chamfer. The slab meets loose soil on the right with no form, no edge thickening and no haunch. A yellow line floats unattached. |
 | `service-driveways.webp` **[zoomed]** | **home service card** | **Likely AI-generated** | High | Garage-door window panes are flat saturated blue fills with no reflection, no frame depth and no sky gradient. A driveway of this span carries **no control joints at all** — physically impossible; it would crack within a season. No broom texture anywhere on a surface that requires it for traction. |
 | `service-slabs.webp` **[zoomed]** | **home service card** | **Likely AI-generated** | High | The pad has a ~6" vertical face that is perfectly crisp on every visible side with **no form marks, no stake holes, no backfill disturbance** — and it rests on undisturbed turf rather than set into grade. The top is a texture-free plane: no broom, no trowel swirl, no aggregate. |
 | `patios-process-walkway.webp` **[zoomed]** | `/services/concrete-patios` | **Possibly AI-generated** | Medium | Low sun behind the trees, yet the dining set casts **almost no shadow** across the slab. Joint layout is non-structural — one joint runs diagonally and stops. Slab is texture-free and meets the lawn on a razor line with no haunching. |
@@ -371,18 +371,18 @@ they could not be captured in one pass. That is a useful objective threshold:
 the page is longer than the browser's own limit for rendering a page to an
 image. No homeowner choosing a driveway contractor reads 21 screens.
 
-**5.2 — Mobile centres almost all body copy. HIGH**
+**5.2 — Mobile centers almost all body copy. HIGH**
 
 Measured on `/services/concrete-driveways`:
 
-| Viewport | Body paragraphs ≥15 words | Centre-aligned |
+| Viewport | Body paragraphs ≥15 words | Center-aligned |
 |---|---|---|
 | 390px | 44 | **33** |
 | 1440px | 44 | **0** |
 
-Centred multi-line body text is hard to read — the eye loses the left edge on
+Centered multi-line body text is hard to read — the eye loses the left edge on
 every return sweep — and it is a hallmark of template/page-builder output.
-Centring works for a hero line; it does not work for a six-line paragraph, and
+Centering works for a hero line; it does not work for a six-line paragraph, and
 the mobile hero lede is exactly that.
 
 **5.3 — Horizontal overflow. MEDIUM**
@@ -422,7 +422,7 @@ that each step is three times longer than it needs to be.
 - **The disclosure is everywhere and unambiguous.** "We are a referral service,
   not a concrete contractor" on 16 of 17 pages, in a persistent banner, in the
   footer, in the form, on its own page.
-- **It links to SC LLR for licence verification** and explicitly tells the
+- **It links to SC LLR for license verification** and explicitly tells the
   visitor to check credentials themselves.
 - **It says no.** "Foundation repair, structural engineering, and retaining
   walls sit outside this scope." "A category nobody has accepted produces an
@@ -432,7 +432,7 @@ that each step is three times longer than it needs to be.
   repeatedly.
 - **No invented trust signals.** No fabricated review counts, no fake star
   ratings, no "500+ projects completed", no stock-photo testimonials, no
-  made-up licence numbers, no fictional team headshots. This is rarer than it
+  made-up license numbers, no fictional team headshots. This is rarer than it
   should be and it is the site's single best authenticity asset.
 
 ### What undermines trust
@@ -490,7 +490,7 @@ honest thing nine times starts to sound defensive.
   preparation matter" / FAQ *"Why does clay soil keep coming up?"* — genuine
   regional soil knowledge, the kind only someone who has worked there mentions.
 - **FAQ: "Do I need a permit in Lancaster County?"** — correct local question.
-- **SC LLR** as the licence authority — correct state body.
+- **SC LLR** as the license authority — correct state body.
 - **Indian Land and Elgin** named as future areas — real nearby SC communities,
   correctly chosen.
 - **`process-location-lancaster.webp` and `process-band.webp`** — red-clay spoil
@@ -513,7 +513,7 @@ honest thing nine times starts to sound defensive.
 | Dimension | Score | Reasoning |
 |---|---|---|
 | **AI-looking** | **6.5 / 10** | Structure is transparently programmatic — four identical service pages, 27% duplicated sentences, scaffolding rendering one row, a grammar bug from string concatenation, and a homepage section about its own photography. Pulled *down* from 8 by copy that has none of the usual lexical tells. |
-| **Human-designed** | **5 / 10** | Token discipline, the colour system and the writing voice are clearly human. Section rhythm, card density, image handling and mobile text alignment are clearly not. Split personality. |
+| **Human-designed** | **5 / 10** | Token discipline, the color system and the writing voice are clearly human. Section rhythm, card density, image handling and mobile text alignment are clearly not. Split personality. |
 | **Professional** | **7 / 10** | Technically well-built: clean token architecture, real accessibility work (CTA band contrast was repaired to pass AA at every pixel), correct metadata lengths, validated env, sitemap, legal pages, a test suite. Held back by the layout defects in §5.3 and the page lengths. |
 | **Generic / template** | **7 / 10** | High. The programmatic-SEO skeleton is the dominant impression on the inner pages, and it is the thing a visitor who clicks two service pages will notice immediately. |
 | **Trust / authenticity** | **6 / 10** | Would be 8 on the strength of the disclosure discipline and the complete absence of invented credentials. Dragged down by the fictional-range phone number in this build, the photography-policy section, and the absence of any human being. |
@@ -532,7 +532,7 @@ honest thing nine times starts to sound defensive.
 | 6 | `/services` process band | `process-services-index.webp` — clipboard clip resolves to metal shards, illegible squiggle "handwriting", merged fingers, pen not touching paper | Textbook generative artifacts in the one image with a human face | **HIGH** | Replace. Prefer no people over synthetic people |
 | 7 | `/services/concrete-driveways` | `driveway-pour-joints.webp` is polished tile, not concrete | Wrong material entirely on a concrete company's page. Uniform hairline joints with no tooled radius, glassy sheen, slab meeting soil with no form | **HIGH** | Replace |
 | 8 | Home — "Areas we currently serve"; `/services/*` — "{Service} by city" | Full sections wrapping one pill and one link | Multi-city components rendering a single row. Advertises that the template expected more data | **HIGH** | Replace both with a sentence until a second city exists |
-| 9 | Mobile, all pages | 33 of 44 body paragraphs centre-aligned (0 on desktop) | Centred multi-line body copy is page-builder default styling and hurts readability | **HIGH** | Left-align body copy below `sm`. Keep centring for short hero lines only |
+| 9 | Mobile, all pages | 33 of 44 body paragraphs center-aligned (0 on desktop) | Centered multi-line body copy is page-builder default styling and hurts readability | **HIGH** | Left-align body copy below `sm`. Keep centering for short hero lines only |
 | 10 | All pages | Eligibility block + disclosure repeated verbatim on 11 pages; 27% of all sentences appear on 2+ pages | Reading two pages means reading the same site twice | **HIGH** | Keep the legal line everywhere; render the four-point eligibility explainer once on `/how-it-works` and link to it |
 | 11 | Home | Three numbered sequences (01-02-03, 01-02-03-04, 1-2-3-4) describing one process | Numbered step-cards are the most recognisable AI-template component; three sets in 3,000px | **MEDIUM** | Keep one. Fold the other two into prose or remove |
 | 12 | `/services/*`, `/locations/*` | 11,538px desktop / 18,058px mobile — past Chrome's 16,384px screenshot ceiling | Length produced by a content generator meeting a word target, not by a writer | **MEDIUM** | Target ≤6,000px desktop |
@@ -632,11 +632,11 @@ cracks, and loose soil cannot hold a crisp slab edge without a form.
 *What a professional would do:* Replace with real photography, even if it is
 less pretty. Imperfect real beats flawless impossible on a trades site.
 
-**9. Centred body copy on mobile**
-*What:* 33 of 44 paragraphs centred at 390px; none at 1440px.
+**9. Centered body copy on mobile**
+*What:* 33 of 44 paragraphs centered at 390px; none at 1440px.
 *Where:* Every page, mobile.
-*Why it reads AI:* Centre-aligned multi-line body text is page-builder default
-styling. No typographer centres a six-line paragraph.
+*Why it reads AI:* Center-aligned multi-line body text is page-builder default
+styling. No typographer centers a six-line paragraph.
 *What a professional would do:* Left-align body copy at every breakpoint.
 
 **10. The eligibility block on eleven pages**
@@ -661,14 +661,14 @@ and a link everywhere else.
    change only the containers they sit in.
 
 2. **The design token system.** Two radii, zero box-shadows, five gradient
-   utilities site-wide, one accent colour, one typeface. This is more disciplined
+   utilities site-wide, one accent color, one typeface. This is more disciplined
    than most agency work. The brief asked me to hunt for excessive rounding,
    gradients and glassmorphism — they are measurably absent.
 
 3. **The honesty architecture.** Stating what is out of scope, "an honest no
    coverage answer", "including the ones that tell you we are not the right
    service", linking to SC LLR, and refusing to claim credentials. **No invented
-   reviews, ratings, project counts, licences or testimonials anywhere** — the
+   reviews, ratings, project counts, licenses or testimonials anywhere** — the
    most common failure mode of generated trade sites, entirely avoided here.
 
 4. **The FAQ questions.** "Do I need a permit in Lancaster County?", "Why does
@@ -754,5 +754,5 @@ a site a human wrote and an AI duplicated.** The fix is to undo the duplication.
 ---
 
 *Audit only. No files modified, no images replaced, no copy edited, no contact
-details, routes, SEO structure, typography, colours or legal positioning
+details, routes, SEO structure, typography, colors or legal positioning
 changed.*

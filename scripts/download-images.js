@@ -66,7 +66,7 @@ const SLOTS = [
     file: "process-texture-bg.webp",
     subject: "Real concrete broom finish texture",
     queries: ["brushed concrete texture", "concrete floor texture"],
-    requireAny: ["concrete", "cement", "pavement"],
+    requireAny: ["concrete", "cement", "sidewalk"],
     rejectAny: ["wall", "painted", "plaster", "stucco"],
   },
   {

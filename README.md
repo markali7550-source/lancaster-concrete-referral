@@ -31,7 +31,7 @@ npm run assert:geos          # excluded Phase 2 geography scan
 `dynamicParams = false` everywhere; static params come from explicit allowlists
 in `src/content/*`. No Cartesian product is ever generated.
 
-## Verified behaviour (dev-server smoke test)
+## Verified behavior (dev-server smoke test)
 
 - `/locations/lancaster-sc/concrete-patios` → 404, `/locations/indian-land-sc` → 404
 - `POST /api/leads` approved ZIP → `202 {leadId, state:"routed"}`

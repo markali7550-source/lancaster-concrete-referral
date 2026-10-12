@@ -101,7 +101,7 @@ const records: readonly LocationServiceRecord[] = [
     ],
     localFaqs: [
       {
-        question: "What patio finish holds up best in a shaded Lancaster back yard?",
+        question: "What patio finish holds up best in a shaded Lancaster backyard?",
         answer:
           "Textured finishes such as broom or exposed aggregate stay usable in damp shade, where a smooth troweled surface tends to grow algae and get slippery. The assigned contractor makes the call after seeing the canopy and drainage on your lot.",
       },

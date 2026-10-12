@@ -155,12 +155,12 @@ export default async function LocationPage({ params }: { params: Params }) {
             here rather than filling space: the section is about subbase,
             drainage and tight lots, and the frame shows exactly that — a
             finished pad with its subbase still open around the edges on a
-            lot hemmed in by neighbours. The alt describes the soil as it
+            lot hemmed in by neighbors. The alt describes the soil as it
             actually appears, not as red clay, and claims no location.
           */}
           <Image
             src="/images/locations/lancaster-sc/lancaster-sc-site-conditions.webp"
-            alt="Freshly finished concrete pad in a fenced back yard, with bare soil and gravel still exposed around its edges and neighbouring houses close behind"
+            alt="Freshly finished concrete pad in a fenced backyard, with bare soil and gravel still exposed around its edges and neighboring houses close behind"
             width={944}
             height={531}
             sizes="(min-width: 1024px) 80rem, 100vw"

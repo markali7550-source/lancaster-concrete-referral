@@ -144,7 +144,7 @@ export default function ServicesPage() {
 
         It shows a provider assessing and quoting on site rather than any one
         finished product, which matches this band's subject and does not
-        favour driveways, patios, slabs or repair on the page that lists all
+        favor driveways, patios, slabs or repair on the page that lists all
         four. The alt claims no location.
       */}
       <Section

@@ -194,4 +194,4 @@ specific heroes raised to ~150 KB.
 
 Gallery · hero images · test phone `(803) 555-0123` · test email
 `hello@example-referral-brand.com` · CTA band position · sticky bar stays removed ·
-header CTA on all 12 pages · mobile centring rules · full-width sections.
+header CTA on all 12 pages · mobile centering rules · full-width sections.

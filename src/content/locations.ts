@@ -104,13 +104,13 @@ export const approvedZips: ReadonlySet<string> = new Set(
 
 /**
  * Sentinel submitted when a visitor selects "My area is not listed".
- * It is a structurally valid postal code that is never an approved ZIP,
+ * It is a structurally valid ZIP code that is never an approved ZIP,
  * so the routing engine returns no coverage without any special casing.
  */
 export const OUT_OF_AREA_POSTAL_CODE = "00000";
 
 export interface ServiceAreaOption {
-  /** Wire value: still a postal code, so the lead contract is unchanged. */
+  /** Wire value: still a ZIP code, so the lead contract is unchanged. */
   value: string;
   label: string;
 }
@@ -120,7 +120,7 @@ export const serviceAreaOptions: readonly ServiceAreaOption[] = [
   ...publishedLocations
     .filter((l) => l.zips.length > 0)
     .map((l) => ({
-      // One entry per served place. The wire value stays a postal code the
+      // One entry per served place. The wire value stays a ZIP code the
       // participating provider registry already approves, so routing is unchanged.
       value: l.zips[0] as string,
       label: `${l.city}, ${l.region}`,

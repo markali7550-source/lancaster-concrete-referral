@@ -43,7 +43,7 @@ const CTA_BACKGROUND_LAYER =
  *
  * Every page shows this same image, at the owner's explicit request. It is a
  * brick ranch home with a concrete driveway -- residential and service-neutral
- * enough to close a driveway page, a patio page, or the index without favouring
+ * enough to close a driveway page, a patio page, or the index without favoring
  * one service, which is what the role needs now that the photo is shared.
  *
  * The band is a letterbox of roughly 207px, so only a thin middle slice of any
@@ -86,7 +86,7 @@ export function CtaBand({
   /**
    * Viewport-locks this band's photograph (`background-attachment: fixed`).
    * On by default, site-wide, at the owner's request -- pass false only to
-   * restore the anchored behaviour on one band. See the header comment for
+   * restore the anchored behavior on one band. See the header comment for
    * what the fixed attachment does to the visible slice while scrolling.
    */
   fixedBackground?: boolean;
@@ -117,7 +117,7 @@ export function CtaBand({
             style={{ backgroundImage: `url("${imageSrc}")` }}
             aria-hidden="true"
           />
-          {/* Flat scrim. Unchanged on mobile, where the copy centres over the
+          {/* Flat scrim. Unchanged on mobile, where the copy centers over the
               whole band and there is nowhere to hide it, and much lighter from
               lg up, where the side wash below takes over behind the text. */}
           <div
@@ -128,8 +128,8 @@ export function CtaBand({
               where the words are instead of over the whole photograph. The
               copy sits left and the buttons right, so this deepens the left,
               releases the right, and lets the band read as a photograph again
-              rather than a grey panel. Desktop only -- the mobile layout
-              centres its copy, where a left-weighted wash does nothing. */}
+              rather than a gray panel. Desktop only -- the mobile layout
+              centers its copy, where a left-weighted wash does nothing. */}
           <div
             className="pointer-events-none absolute inset-0 z-10 hidden lg:block bg-gradient-to-r from-[#0B1017]/72 via-[#0B1017]/32 to-transparent"
             aria-hidden="true"

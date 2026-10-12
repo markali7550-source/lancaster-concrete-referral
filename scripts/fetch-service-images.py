@@ -97,7 +97,7 @@ SLOTS: list[Slot] = [
         "Process band background (decorative)",
         ["brushed concrete texture", "broom finished concrete",
          "concrete floor texture"],
-        require_any=["concrete", "cement", "pavement"],
+        require_any=["concrete", "cement", "sidewalk"],
         reject_any=["wall", "painted", "plaster", "stucco"],
     ),
     Slot(

@@ -21,7 +21,7 @@ import { SHORT_DISCLOSURE } from "@/lib/seo/disclosure";
  * 0.70 and white needs 0.57. Lower this and the eyebrow fails on the bright
  * pours.
  *
- * The colour is --color-band-deep (#0B1017), the same navy the footer, the
+ * The color is --color-band-deep (#0B1017), the same navy the footer, the
  * CTA and the header glass are built from, so a photo band reads as the same
  * material as every other heavy surface on the site rather than as a
  * separate green-black.
@@ -62,7 +62,7 @@ export const PHOTO_COPY_WASH =
  *
  * It used to ramp to FULLY OPAQUE navy at both edges, which made sense when
  * it was described as "blending into the page background" -- except the page
- * is warm off-white, so the band was blending into a colour that is nowhere
+ * is warm off-white, so the band was blending into a color that is nowhere
  * near it and the seam read as a hard black strip above the next section.
  * At 70% the vignette still does its real job (holding contrast under the
  * glass header and over the bottom edge) without stamping a black bar
@@ -76,9 +76,9 @@ export const PHOTO_EDGE_FADE =
  * ending on a visible horizontal edge.
  *
  * This ramps to FULLY opaque at both edges, which is the thing the comment
- * above says went wrong last time. The difference is the colour. The earlier
+ * above says went wrong last time. The difference is the color. The earlier
  * attempt hardcoded navy, so in light mode the band blended into a dark
- * colour the page does not use and stamped a black strip between sections.
+ * color the page does not use and stamped a black strip between sections.
  * This ramps to `var(--color-page)`, which resolves to the warm off-white in
  * light mode and to #0c1117 in dark mode, so the seam disappears in both
  * themes rather than only the one being looked at.
@@ -138,7 +138,7 @@ export function Section({
   /** Optional full bleed photograph behind the section, with a dark scrim. */
   backgroundImage?: { src: string; alt: string };
   /**
-   * Ramp the top and bottom of a photo band all the way to the page colour so
+   * Ramp the top and bottom of a photo band all the way to the page color so
    * it dissolves into the surrounding page rather than ending on a visible
    * horizontal edge. Only meaningful alongside `backgroundImage`.
    */

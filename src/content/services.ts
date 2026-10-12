@@ -563,7 +563,7 @@ export const services: readonly ServiceRecord[] = [
       },
       {
         title: "Utility and walkway flatwork",
-        body: "Landing pads, bin pads, and short connecting flatwork poured alongside a larger job.",
+        body: "Landing pads, trash can pads, and short connecting flatwork poured alongside a larger job.",
       },
     ],
     outOfScope: [
@@ -788,7 +788,7 @@ export const services: readonly ServiceRecord[] = [
       {
         name: "Joint resealing",
         description:
-          "Low cost preventative work that keeps water out of the base. Often the most useful thing to do on an ageing slab.",
+          "Low-cost preventive work that keeps water out of the base. Often the most useful thing to do on an aging slab.",
       },
     ],
     process: [
