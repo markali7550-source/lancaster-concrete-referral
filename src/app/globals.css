@@ -901,7 +901,14 @@
   /* Quote form fields: labels and typed text are left-aligned on mobile so
      the form reads as a column. Only the field labels and inputs change;
      option rows, buttons and the consent text stay centred. */
-  main#main .quote-field-label,
+  /* Labels are inline by default, so text-align on them alone does nothing:
+     the parent's centring still places them. Block display makes the label
+     take its own line and honour the left alignment. */
+  main#main .quote-field-label {
+    display: block;
+    text-align: left !important;
+  }
+
   main#main form input:not([type="radio"]):not([type="checkbox"]),
   main#main form select,
   main#main form textarea {
