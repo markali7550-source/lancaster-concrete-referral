@@ -113,7 +113,7 @@ export default function HowItWorksPage() {
             <ul className="mt-2 inline-block list-disc space-y-1.5 pl-5 text-left text-sm text-[color:var(--color-muted)] lg:block">
               <li>Collect and validate your request</li>
               <li>Match your request to a participating provider with written coverage</li>
-              <li>Route the request to one eligible contractor</li>
+              <li>Send the request to one eligible contractor</li>
               <li>Reassign once if the first contractor does not acknowledge</li>
             </ul>
           </div>
@@ -131,7 +131,7 @@ export default function HowItWorksPage() {
 
       <CtaBand
         title="Ready to start?"
-        body="Submit a request and we will route it to one eligible independent contractor, or call our team first to check coverage."
+        body="Submit a request and we will send it to one eligible independent contractor, or call our team first to check coverage."
         showFormLink={false}
       />
 

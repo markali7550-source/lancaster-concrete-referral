@@ -65,13 +65,13 @@ export function pageMetadata({
  * still carried on each page by `openGraph.siteName` and the JSON-LD graph. */
 const COMBO_DESCRIPTIONS: Record<string, (city: string) => string> = {
   "concrete-driveways": (city) =>
-    `Planning a concrete driveway in ${city}, SC? Tell us about the project and we can connect you with one independent provider serving your area.`,
+    `Planning a concrete driveway in ${city}, SC? Tell us about the project and a local contractor can reply to your request.`,
   "concrete-patios": (city) =>
-    `Thinking about a concrete patio in ${city}, SC? Share a few details and we can connect you with one independent provider covering your area.`,
+    `Thinking about a concrete patio in ${city}, SC? Share a few details and a local contractor can reply to your request.`,
   "concrete-slabs": (city) =>
-    `Need a concrete slab or pad in ${city}, SC? Tell us what it will support and we can connect you with one independent provider serving your area.`,
+    `Need a concrete slab or pad in ${city}, SC? Tell us what it will support and a local contractor can reply to your request.`,
   "concrete-repair": (city) =>
-    `Have cracked or settled concrete in ${city}, SC? Describe the problem and we can connect you with one independent provider serving your area.`,
+    `Have cracked or settled concrete in ${city}, SC? Describe the problem and a local contractor can reply to your request.`,
 };
 
 /*
@@ -95,7 +95,7 @@ export const comboMeta = {
     `${city}, SC ${serviceName} | Local Service`,
   description: (serviceSlug: string, city: string) =>
     COMBO_DESCRIPTIONS[serviceSlug]?.(city) ??
-    `Tell us about your ${serviceSlug.replace(/-/g, " ")} project in ${city}, SC and we can connect you with one independent provider serving your area.`,
+    `Tell us about your ${serviceSlug.replace(/-/g, " ")} project in ${city}, SC and a local contractor can reply to your request.`,
   h1: (serviceSlug: string, city: string) =>
     COMBO_H1[serviceSlug]?.(city) ?? `Concrete Services in ${city}, SC`,
 };

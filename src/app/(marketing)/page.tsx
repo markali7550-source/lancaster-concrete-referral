@@ -49,7 +49,7 @@ const DECISION_ITEMS = [
   {
     question: "Do I need more than one quote?",
     answer:
-      "Comparing quotes is sensible. We route your request to one participating provider at a time so you are not called by five companies, and you remain completely free to seek other quotes independently.",
+      "Comparing quotes is sensible. We send your request to one participating provider at a time so you are not called by five companies, and you remain completely free to seek other quotes independently.",
   },
   {
     question: "What does this service cost me?",
@@ -64,7 +64,7 @@ const FAQS = [
   {
     question: "Do you perform concrete work?",
     answer:
-      "No. An independent provider performs the work. We route your request and nothing else.",
+      "No. An independent provider performs the work. We pass your request along and nothing else.",
   },
   {
     question: "Who performs the work?",
@@ -72,7 +72,7 @@ const FAQS = [
       "An independent provider serving your area. They hold the relationship, the contract, and the responsibility for the work.",
   },
   {
-    question: "Which areas can you route right now?",
+    question: "Which areas can you take work in right now?",
     answer:
       "Lancaster, South Carolina. Service availability depends on participating providers, so requests outside covered areas receive an honest no coverage answer instead of being forwarded to a provider who does not serve the area.",
   },
@@ -115,7 +115,7 @@ export default function HomePage() {
       <Section
         tone="surface"
         eyebrow="Project types"
-        title="What we can route in Lancaster today"
+        title="Where we can take work in Lancaster today"
         lead="Four residential concrete service categories, each with at least one participating provider holding written coverage for Lancaster areas. Foundation repair, structural engineering, and retaining walls sit outside this scope."
       >
         <ProjectTypeChooser images={serviceCardImages} />
@@ -184,7 +184,7 @@ export default function HomePage() {
 
       <Section
         tone="soft"
-        eyebrow="How routing works"
+        eyebrow="How requests are checked"
         title="How your request reaches an independent provider"
         lead="These are routing controls, not credential verification. License, insurance, and workmanship remain matters to confirm directly with the independent provider who contacts you."
       >
@@ -218,7 +218,7 @@ export default function HomePage() {
 
       <Section
         tone="surface"
-        eyebrow="Request a quote"
+        eyebrow="Request Concrete Service"
         title="What we need from you"
         lead="Two short steps. A participating service provider may contact you, and if no provider covering your area can take it, we will say so plainly."
       >
@@ -285,8 +285,8 @@ export default function HomePage() {
       </Section>
 
       <CtaBand
-        title="Ready to connect with an independent concrete service provider?"
-        body="One request, one independent third party service provider, no charge to you and no obligation to proceed."
+        title="Ready to request concrete service?"
+        body="Send your project details and a local contractor will reply. No charge to you and no obligation to proceed."
       />
 
 

@@ -108,7 +108,7 @@ export function ServiceCtaBand({
     <CtaBand
       title={title}
       body={body}
-      actionLabel="Request a quote"
+      actionLabel="Request Concrete Service"
       actionIcon
     />
   );

@@ -42,8 +42,8 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         question: "Why use this service instead of calling contractors directly?",
         answer:
-          "Calling around means repeating your project to every contractor and guessing who actually covers your area. We take your details once, check them against providers with written coverage for your area, and route the request to one eligible contractor. If that contractor does not acknowledge it, the request is reassigned once.",
-        links: [{ text: "route the request", href: "/how-it-works" }],
+          "Calling around means repeating your project to every contractor and guessing who actually covers your area. We take your details once, check them against providers with written coverage for your area, and send the request to one eligible contractor. If that contractor does not acknowledge it, the request is reassigned once.",
+        links: [{ text: "send the request", href: "/how-it-works" }],
       },
       {
         question: "How quickly will a provider contact me?",
@@ -73,7 +73,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         question: "How do I get connected with a driveway service provider?",
         answer:
-          "Submit a request with the length of the drive and whether the old slab has to come out. We check it against participating providers with written coverage for your area and route it to one eligible contractor, who contacts you directly to inspect and quote.",
+          "Submit a request with the length of the drive and whether the old slab has to come out. We check it against participating providers with written coverage for your area and send it to one eligible contractor, who contacts you directly to inspect and quote.",
         links: [{ text: "Submit a request", href: "/contact" }],
       },
     ],
@@ -111,7 +111,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         question: "What are concrete slabs commonly used for?",
         answer:
-          "Residential slabs and pads carry sheds, outbuildings, HVAC units, generators, and parked vehicles or trailers. We route nonstructural work only: house foundations, footings, and engineered structural slabs are declined rather than passed to a finisher.",
+          "Residential slabs and pads carry sheds, outbuildings, HVAC units, generators, and parked vehicles or trailers. We take on nonstructural work only: house foundations, footings, and engineered structural slabs are declined rather than passed to a finisher.",
         links: [{ text: "nonstructural work only", href: "/services/concrete-slabs" }],
       },
       {
@@ -123,7 +123,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         question: "How can I get connected with a qualified service provider?",
         answer:
-          "Submit a request saying what the pad has to carry and roughly where it goes. We route it to one provider with written coverage for your area, who confirms the specification on site. We never specify thickness or reinforcement ourselves.",
+          "Submit a request saying what the pad has to carry and roughly where it goes. We send it to one provider with written coverage for your area, who confirms the specification on site. We never specify thickness or reinforcement ourselves.",
         links: [{ text: "Submit a request", href: "/contact" }],
       },
     ],
@@ -136,7 +136,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         question: "What types of concrete problems may need repair?",
         answer:
-          "We route nonstructural problems on otherwise sound slabs: shrinkage cracks, surface spalling, crazing, worn finishes, and failing joint sealant. Movement, heaving, height differences across cracks, and load failure need a licensed professional assessment instead.",
+          "We take on nonstructural problems on otherwise sound slabs: shrinkage cracks, surface spalling, crazing, worn finishes, and failing joint sealant. Movement, heaving, height differences across cracks, and load failure need a licensed professional assessment instead.",
         links: [{ text: "nonstructural problems", href: "/services/concrete-repair" }],
       },
       {
@@ -167,11 +167,11 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         question: "How does a request work?",
         answer:
-          "You submit one request with your project details and location. We validate it, check it against participating providers with written coverage for your area, and route it to one eligible contractor. That contractor contacts you directly to inspect, quote, and schedule. If they do not acknowledge it, the request is reassigned once.",
+          "You submit one request with your project details and location. We validate it, check it against participating providers with written coverage for your area, and send it to one eligible contractor. That contractor contacts you directly to inspect, quote, and schedule. If they do not acknowledge it, the request is reassigned once.",
         links: [{ text: "submit one request", href: "/contact" }],
       },
       {
-        question: "Is there a charge to request a quote?",
+        question: "Is there a charge to request concrete service?",
         answer:
           "No. Requesting a quote costs you nothing. You pay only the contractor you choose to hire, under a contract entirely between you and them. We never add fees to your project.",
         links: [],

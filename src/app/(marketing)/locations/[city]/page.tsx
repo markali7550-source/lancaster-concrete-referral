@@ -63,7 +63,7 @@ export async function generateMetadata({
   if (!location) return {};
   return pageMetadata({
     title: `Concrete Contractors in ${location.city}, SC | Local Service`,
-    description: `Looking for a concrete contractor in ${location.city}, SC? Call now or request a quote. We connect you with an independent local contractor. Availability varies.`,
+    description: `Looking for a concrete contractor in ${location.city}, SC? Call now or request concrete service. A local contractor replies to each request. Availability varies.`,
     path: `/locations/${location.slug}`,
   });
 }
@@ -214,15 +214,15 @@ export default async function LocationPage({ params }: { params: Params }) {
 
       <Section
         tone="soft"
-        eyebrow="How routing works"
-        title="How a request is matched to a provider"
+        eyebrow="How requests are checked"
+        title="How a request is checked before it goes out"
       >
         <RoutingControls />
       </Section>
 
       <Section
         tone="surface"
-        eyebrow="Request a quote"
+        eyebrow="Request Concrete Service"
         title={`Tell us about your ${location.city} project`}
       >
         <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
@@ -246,7 +246,7 @@ export default async function LocationPage({ params }: { params: Params }) {
                 items={[
                   {
                     question: "Is my area covered?",
-                    answer: `We route ${location.city}, ${location.region} today. Anything else returns a no coverage response and nothing is shared with a contractor.`,
+                    answer: `We take work in ${location.city}, ${location.region} today. Anything else returns a no coverage response and nothing is shared with a contractor.`,
                   },
                   {
                     question: "Will I be called repeatedly?",
@@ -277,8 +277,8 @@ export default async function LocationPage({ params }: { params: Params }) {
 
 
       <CtaBand
-        title={`Get matched with a ${location.city} concrete contractor`}
-        body="One request, one eligible independent contractor, no charge and no obligation."
+        title={`Request concrete service in ${location.city}`}
+        body="Send your project details and a local contractor will reply. No charge and no obligation."
       />
 
     </>

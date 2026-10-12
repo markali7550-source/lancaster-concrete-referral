@@ -80,7 +80,7 @@ export function QuoteForm({
     el.focus({ preventScroll: true });
   }, [status]);
 
-  // A "Request a quote" CTA points at #quote-form. The browser scrolls, and
+  // A "Request Concrete Service" CTA points at #quote-form. The browser scrolls, and
   // this moves keyboard focus to the first control so the jump is usable
   // without a mouse. Submission behavior is untouched.
   useEffect(() => {
@@ -281,7 +281,7 @@ export function QuoteForm({
       >
         <p className="eyebrow">Request received</p>
         <h3 className="mt-2 text-2xl font-semibold">
-          Your request is with our routing team
+          Your request is with our team
         </h3>
         <p className="mt-3 text-[color:var(--color-muted)]">
           An independent contractor serving your area will contact you
@@ -310,7 +310,7 @@ export function QuoteForm({
           We do not cover that area today
         </h3>
         <p className="mt-3 text-[color:var(--color-muted)]">
-          Nothing was sent to a contractor. We only route requests to providers
+          Nothing was sent to a contractor. We only send requests to providers
           who have confirmed in writing that they cover your area, so we would rather tell you
           plainly than pass your details to someone who cannot help.
         </p>
@@ -645,7 +645,7 @@ export function QuoteForm({
               disabled={status === "submitting"}
               aria-busy={status === "submitting"}
             >
-              {status === "submitting" ? "Sending…" : "Request a quote"}
+              {status === "submitting" ? "Sending…" : "Request Concrete Service"}
             </button>
             <button
               type="button"

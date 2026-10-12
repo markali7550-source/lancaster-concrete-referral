@@ -308,7 +308,7 @@ export const services: readonly ServiceRecord[] = [
     summary:
       "New patio pours, replacements, and stamped finishes where a participating provider has documented that capability.",
     heroSummary:
-      "A patio is the one concrete project where the finish matters as much as the slab under it. Color, texture, and where the joints fall are decisions you live with every time you walk outside. We route your details to one independent provider who will walk the space with you and quote it directly.",
+      "A patio is the one concrete project where the finish matters as much as the slab under it. Color, texture, and where the joints fall are decisions you live with every time you walk outside. We take on your details to one independent provider who will walk the space with you and quote it directly.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "Where patio work starts and stops",
@@ -478,7 +478,7 @@ export const services: readonly ServiceRecord[] = [
       {
         question: "Who designs and builds the patio?",
         answer:
-          "An independent third party service provider does. We connect you with a provider who may be able to assist; layout, finish selection, scheduling, and construction are entirely their work, and availability depends on participating providers.",
+          "An independent third party service provider does. We pass your request to a local crew who may be able to assist; layout, finish selection, scheduling, and construction are entirely their work, and availability depends on participating providers.",
       },
       {
         question: "Is a stamped finish always available?",
@@ -531,7 +531,7 @@ export const services: readonly ServiceRecord[] = [
     costLead:
       "Pricing comes last here for a reason: until the load, the access and the base are known, any number is a guess. Once those are settled a contractor can quote a pad quickly.",
     ctaLead:
-      "Say what the pad has to carry and roughly where it goes. We route it to one provider approved for your area.",
+      "Say what the pad has to carry and roughly where it goes. We send it to one provider approved for your area.",
     image: "/images/services/concrete-slabs/concrete-slabs-hero.webp",
     imageAlt:
       "Finished concrete shed pad in a back yard, sitting proud of the ground with form marks down its side and backfilled soil around the edge",
@@ -713,10 +713,10 @@ export const services: readonly ServiceRecord[] = [
     summary:
       "Nonstructural crack repair, surface repair, and resurfacing. Structural assessment is out of scope.",
     heroSummary:
-      "Some concrete is worth saving and some is not. We route surface problems on slabs that are otherwise sound: crazing, spalling, shrinkage cracks, a finish that has simply worn out. If what you describe sounds like movement or a failing base, we will tell you, because resurfacing it would be money wasted.",
+      "Some concrete is worth saving and some is not. We take on surface problems on slabs that are otherwise sound: crazing, spalling, shrinkage cracks, a finish that has simply worn out. If what you describe sounds like movement or a failing base, we will tell you, because resurfacing it would be money wasted.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
-      scope: "Damage we route, and damage we do not",
+      scope: "Damage we take on, and damage we do not",
       options: "Repair methods and when each applies",
       process: "How a repair job is assessed and done",
       cost: "Why repair quotes vary so widely",
@@ -748,7 +748,7 @@ export const services: readonly ServiceRecord[] = [
     covered: [
       {
         title: "Crack repair",
-        body: "Routing, cleaning, and filling shrinkage and surface cracks on slabs that are otherwise stable.",
+        body: "Cleaning and filling shrinkage and surface cracks on slabs that are otherwise stable.",
       },
       {
         title: "Spalling and surface damage",

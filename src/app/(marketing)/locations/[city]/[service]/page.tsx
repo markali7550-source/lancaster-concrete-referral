@@ -136,7 +136,7 @@ export default async function ComboPage({ params }: { params: Params }) {
         ctaBody={serviceRecord.ctaLead}
         defaultServiceSlug={serviceRecord.slug}
         callCardTitle="Checking coverage first?"
-        callCardBody={`We route ${location.city}, ${location.region} today. Call and we will confirm in a minute.`}
+        callCardBody={`We take work in ${location.city}, ${location.region} today. Call and we will confirm in a minute.`}
       />
     </>
   );

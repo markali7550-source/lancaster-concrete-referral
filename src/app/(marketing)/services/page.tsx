@@ -42,7 +42,7 @@ const FAQS = [
       "Pick the closest match and describe the rest in the project note. The contractor scopes the whole job on site. The category only affects which participating providers are eligible to receive it.",
   },
   {
-    question: "Do you charge to request a quote?",
+    question: "Do you charge to request concrete service?",
     answer:
       "No. Service providers pay us a commission on revenue they actually collect from completed work. Nothing is charged to the homeowner, and that arrangement does not make us a party to your contract.",
   },
@@ -81,7 +81,7 @@ export default function ServicesPage() {
           className="h1 mt-4 max-w-3xl"
           style={{ color: overlayHeading }}
         >
-          Concrete Services We Route in Lancaster County, SC
+          Concrete Services in Lancaster County, SC
         </h1>
         <p
           className="mt-4 max-w-2xl text-[17px] leading-relaxed"
@@ -89,12 +89,12 @@ export default function ServicesPage() {
         >
           Four residential concrete services, each with at least one
           independent service provider holding written coverage for the
-          Lancaster area. Pick the closest match and we route your
+          Lancaster area. Pick the closest match and we send your
           request to one eligible participating provider.
         </p>
       </OverlayHeader>
 
-      <Section eyebrow="Choose a service" title="What we can route today">
+      <Section eyebrow="Choose a service" title="Services we can take on today">
         <ProjectTypeChooser images={serviceCardImages} />
       </Section>
 

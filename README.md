@@ -1,4 +1,4 @@
-# Lancaster Concrete Referral Platform — Phase 1 build
+# Lancaster Concrete Connect — Phase 1 build
 
 Next.js App Router + TypeScript + Tailwind v4. Static public site, working lead
 API with in-memory canonical store (the agreed scope: UI-first, real API, no

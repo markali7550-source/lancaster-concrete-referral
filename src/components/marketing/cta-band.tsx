@@ -62,7 +62,7 @@ export function CtaBand({
   tone = "accent",
   imageSrc = CTA_IMAGE,
   imageAlt = CTA_IMAGE_ALT,
-  actionLabel = "Request a quote",
+  actionLabel = "Request Concrete Service",
   actionIcon = false,
   fixedBackground = true,
 }: {

@@ -372,7 +372,7 @@ export function Hero({
                 className="btn btn-primary"
               />
               <a href="#quote-form" className="btn btn-secondary">
-                Request a quote
+                Request Concrete Service
                 <Icon name="arrow" />
               </a>
             </div>
@@ -426,7 +426,7 @@ export function Hero({
               className="btn btn-primary"
             />
             <a href="#quote-form" className="btn btn-secondary">
-              Request a quote
+              Request Concrete Service
               <Icon name="arrow" />
             </a>
           </div>
@@ -560,7 +560,7 @@ const ROUTING_CONTROLS = [
   },
   {
     title: "Project type match",
-    body: "Your project type is matched against the categories a provider has agreed to receive. A category nobody has accepted produces an honest no coverage answer.",
+    body: "Your project type is checked against the categories a local crew has agreed to take. A category nobody has accepted produces an honest no coverage answer.",
   },
   {
     title: "One request at a time",
