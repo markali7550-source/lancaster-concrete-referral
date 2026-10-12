@@ -43,7 +43,7 @@ export function Logo({
   return (
     <span className="relative inline-block" style={{ height, width }}>
       <Image
-        src="/logo.webp"
+        src="/logo-2026.webp"
         alt={site.brand}
         width={LOGO_WIDTH}
         height={LOGO_HEIGHT}
@@ -52,7 +52,7 @@ export function Logo({
         className="logo-light absolute inset-0 h-full w-full object-contain"
       />
       <Image
-        src="/logo-dark.webp"
+        src="/logo-dark-2026.webp"
         alt={site.brand}
         width={LOGO_WIDTH}
         height={LOGO_HEIGHT}
