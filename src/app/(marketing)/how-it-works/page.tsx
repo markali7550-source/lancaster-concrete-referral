@@ -17,7 +17,7 @@ import { FULL_DISCLOSURE_PARAGRAPHS } from "@/lib/seo/disclosure";
 
 const TITLE = `How Our Concrete Service Works | ${site.brand}`;
 const DESCRIPTION =
-  "How a request is validated, checked against the crews that serve your area, passed to one independent contractor, and what our role is and is not.";
+  "How a request is validated, checked against the teams that serve your area, passed to one independent contractor, and what our role is and is not.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,

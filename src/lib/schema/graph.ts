@@ -4,10 +4,16 @@ type Node = Record<string, unknown>;
 
 const ORG_ID = () => `${absoluteUrl("/")}/#organization`;
 const SITE_ID = () => `${absoluteUrl("/")}/#website`;
+const LOCAL_ID = () => `${absoluteUrl("/")}/#localbusiness`;
+
+const BUSINESS_DESCRIPTION =
+  "Local concrete service site for South Carolina homeowners, with work done by independent concrete contractors. Not a contractor.";
 
 /**
- * Root publisher is an OnlineBusiness. Never LocalBusiness,
- * HomeAndConstructionBusiness, or GeneralContractor (spec 6.1).
+ * Root publisher is an OnlineBusiness. The LocalBusiness node below describes
+ * the same brand for local search and points back to it. Neither node is a
+ * GeneralContractor or HomeAndConstructionBusiness, and neither carries an
+ * address, because no verified address is supplied in src/config/site.ts.
  */
 export function rootGraph(): Node[] {
   return [
@@ -18,12 +24,21 @@ export function rootGraph(): Node[] {
       url: absoluteUrl("/"),
       telephone: site.phoneE164,
       email: site.email,
+      description: BUSINESS_DESCRIPTION,
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": LOCAL_ID(),
+      name: site.brand,
+      url: absoluteUrl("/"),
+      telephone: site.phoneE164,
+      email: site.email,
+      description: BUSINESS_DESCRIPTION,
       areaServed: {
         "@type": "City",
         name: `${site.serviceArea.city}, ${site.serviceArea.region}`,
       },
-      description:
-        "Local concrete service site for South Carolina homeowners, with work done by independent concrete contractors. Not a contractor.",
+      parentOrganization: { "@id": ORG_ID() },
     },
     {
       "@type": "WebSite",

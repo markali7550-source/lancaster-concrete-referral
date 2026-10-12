@@ -84,9 +84,9 @@ export default async function LocationPage({ params }: { params: Params }) {
       answer: `${location.city}, ${location.region}. Participating providers approve this area in writing. A request from outside them returns an honest no coverage response rather than being forwarded to someone who does not work there.`,
     },
     {
-      question: `Do you employ concrete crews in ${location.city}?`,
+      question: `Do you employ concrete specialists in ${location.city}?`,
       answer:
-        "No. We are a local concrete service site. Every crew that contacts you is an independent contractor responsible for their own licensing, insurance, pricing, and workmanship.",
+        "No. We are a local concrete service site. Every team that contacts you is an independent contractor responsible for their own licensing, insurance, pricing, and workmanship.",
     },
     {
       question: `How quickly does a ${location.city} contractor respond?`,

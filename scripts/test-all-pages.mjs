@@ -42,9 +42,9 @@ const MUST_404 = [
   "/nonsense-route",
 ];
 
+// LocalBusiness is allowed (owner request). Contractor types would claim construction work.
 const FORBIDDEN_SCHEMA = [
   "GeneralContractor",
-  "LocalBusiness",
   "HomeAndConstructionBusiness",
   "aggregateRating",
   '"review"',

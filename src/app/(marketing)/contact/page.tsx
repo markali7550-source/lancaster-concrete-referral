@@ -73,7 +73,7 @@ export default function ContactPage() {
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
           <div className="text-left">
             <p className="lede max-w-prose">
-              Our team can tell you whether we have a local crew for your area and what happens after you submit a request. Questions about a quote, a schedule, or completed work belong with the contractor assigned to you.
+              Our team can tell you whether we have a local team for your area and what happens after you submit a request. Questions about a quote, a schedule, or completed work belong with the contractor assigned to you.
             </p>
             <dl className="mt-8 space-y-5">
               <div>

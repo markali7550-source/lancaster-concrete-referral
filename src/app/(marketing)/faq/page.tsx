@@ -27,7 +27,7 @@ import { site } from "@/lib/env";
 
 const TITLE = `Concrete Services FAQs | ${site.brand}`;
 const DESCRIPTION =
-  "Answers about concrete driveways, patios, slabs, and repair, plus how a request moves from your form to a local crew.";
+  "Answers about concrete driveways, patios, slabs, and repair, plus how a request moves from your form to a local team.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,
@@ -104,7 +104,7 @@ export default function FaqPage() {
           Frequently Asked Questions
         </h1>
         <p className="lede mt-5 max-w-2xl" style={{ color: overlayBody }}>
-          Short answers about our concrete services and how a request works, including what we do, what local crews do, and which areas are covered.
+          Short answers about our concrete services and how a request works, including what we do, what local teams do, and which areas are covered.
         </p>
       </OverlayHeader>
       {/*

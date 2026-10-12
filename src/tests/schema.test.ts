@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildGraph, serviceNode, webPageNode } from "@/lib/schema/graph";
+import { buildGraph, rootGraph, serviceNode, webPageNode } from "@/lib/schema/graph";
 
 describe("JSON-LD graph", () => {
   const graph = buildGraph([
@@ -16,11 +16,16 @@ describe("JSON-LD graph", () => {
     expect(() => JSON.parse(JSON.stringify(graph))).not.toThrow();
   });
 
-  it("never types the publisher as a contractor or local business", () => {
+  it("never types the publisher as a contractor", () => {
     const serialised = JSON.stringify(graph);
     expect(serialised).not.toContain("GeneralContractor");
-    expect(serialised).not.toContain("LocalBusiness");
     expect(serialised).not.toContain("HomeAndConstructionBusiness");
+  });
+
+  it("describes the brand as a LocalBusiness serving Lancaster, SC", () => {
+    const local = rootGraph().find((n) => n["@type"] === "LocalBusiness");
+    expect(local).toBeDefined();
+    expect(local?.areaServed).toEqual({ "@type": "City", name: "Lancaster, SC" });
   });
 
   it("publishes no address, rating, or review on the brand", () => {

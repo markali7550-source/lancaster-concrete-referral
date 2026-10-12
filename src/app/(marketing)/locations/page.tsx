@@ -21,7 +21,7 @@ import { pageMetadata } from "@/lib/seo/metadata";
 export const metadata: Metadata = pageMetadata({
   title: "Concrete Service Areas in South Carolina",
   description:
-    "The South Carolina areas we currently serve. Coverage is added only once a local crew confirms it can take work there.",
+    "The South Carolina areas we currently serve. Coverage is added only once a local team confirms it can take work there.",
   path: "/locations",
 });
 

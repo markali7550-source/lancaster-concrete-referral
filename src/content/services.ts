@@ -273,7 +273,7 @@ export const services: readonly ServiceRecord[] = [
       {
         question: "Do you pour the driveway yourselves?",
         answer:
-          "No. We are a local concrete service site that passes requests to independent third party concrete crews. Excavation, subbase preparation, forming, and the pour itself are carried out by the provider you engage, and your contract is with them.",
+          "No. We are a local concrete service site that passes requests to independent third party concrete specialists. Excavation, subbase preparation, forming, and the pour itself are carried out by the provider you engage, and your contract is with them.",
       },
       {
         question: "How long does a residential driveway pour take?",
@@ -478,7 +478,7 @@ export const services: readonly ServiceRecord[] = [
       {
         question: "Who designs and builds the patio?",
         answer:
-          "An independent third party service provider does. We pass your request to a local crew who may be able to assist; layout, finish selection, scheduling, and construction are entirely their work, and availability depends on participating providers.",
+          "An independent third party service provider does. We pass your request to a local team who may be able to assist; layout, finish selection, scheduling, and construction are entirely their work, and availability depends on participating providers.",
       },
       {
         question: "Is a stamped finish always available?",
@@ -676,9 +676,9 @@ export const services: readonly ServiceRecord[] = [
     ],
     considerations: [
       {
-        question: "Is the slab poured by your own crew?",
+        question: "Is the slab poured by your own team?",
         answer:
-          "We have no crew. We are a local service site, and slab work is performed by an independent third party service provider serving the requested area. We do not perform, supervise, or guarantee that work.",
+          "We have no field team. We are a local service site, and slab work is performed by an independent third party service provider serving the requested area. We do not perform, supervise, or guarantee that work.",
       },
       {
         question: "Do you handle foundations or structural slabs?",

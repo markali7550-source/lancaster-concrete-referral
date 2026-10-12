@@ -8,7 +8,8 @@ import { publishedServices } from "../src/content/services";
  * Gate 23 — the JSON-LD graph must not contain contractor entity types or
  * unsupported claims, and FAQ schema must correspond to visible content.
  */
-const FORBIDDEN_TYPES = ["GeneralContractor", "LocalBusiness", "HomeAndConstructionBusiness"];
+// LocalBusiness is allowed (owner request). Contractor types would claim construction work.
+const FORBIDDEN_TYPES = ["GeneralContractor", "HomeAndConstructionBusiness"];
 const FORBIDDEN_FIELDS = ["aggregateRating", "review", "priceRange", "address", "license"];
 
 function loadEnvFile(file: string): void {

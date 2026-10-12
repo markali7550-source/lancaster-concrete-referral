@@ -27,7 +27,7 @@ import { buildGraph, faqNode, webPageNode } from "@/lib/schema/graph";
 
 const TITLE = `Lancaster SC Concrete Quotes | ${site.brand}`;
 const DESCRIPTION =
-  "Local concrete service in Lancaster, SC for driveways, patios, slabs and repair. Work is done by independent local crews, not by this website.";
+  "Local concrete service in Lancaster, SC for driveways, patios, slabs and repair. Work is done by independent local concrete specialists, not by this website.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,
@@ -252,12 +252,12 @@ export default function HomePage() {
           <div className="lg:pt-4">
             <p className="eyebrow-plain">What happens after you submit</p>
             <p className="mt-4 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
-              Your location and project type are checked against the crews that work in your area. One local crew receives the request and may contact you. If they do not respond in time, it goes to the next crew once, and if nobody covers your area we tell you so.
+              Your location and project type are checked against the teams that work in your area. One local team receives the request and may contact you. If they do not respond in time, it goes to the next team once, and if nobody covers your area we tell you so.
             </p>
             <div className="card mt-8 p-5">
               <p className="text-sm font-semibold">Rather just talk?</p>
               <p className="mt-1.5 text-[14px] text-[color:var(--color-muted)]">
-                Call our team and we will tell you in one minute whether a local crew covers your area.
+                Call our team and we will tell you in one minute whether a local team covers your area.
               </p>
               <a
                 href={`tel:${site.phoneE164}`}

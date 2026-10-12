@@ -36,7 +36,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         question: "Do you pour concrete or employ contractors?",
         answer:
-          "Neither. We are a local concrete service site: we take your project details, check them against the crews that work in your area, and pass the request to one independent contractor. That contractor inspects, quotes, schedules, and performs the work under a contract with you, not with us. See how a request moves from start to finish.",
+          "Neither. We are a local concrete service site: we take your project details, check them against the teams that work in your area, and pass the request to one independent contractor. That contractor inspects, quotes, schedules, and performs the work under a contract with you, not with us. See how a request moves from start to finish.",
         links: [{ text: "how a request moves from start to finish", href: "/how-it-works" }],
       },
       {
@@ -161,7 +161,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         question: "What is this website?",
         answer:
-          "This website. It is a local concrete service site for Lancaster homeowners. The work is done by independent local crews. We are not a contractor, we employ no crews, and we perform no work. Our role is taking your request once and passing it to one eligible crew.",
+          "This website. It is a local concrete service site for Lancaster homeowners. The work is done by independent local concrete specialists. We are not a contractor, we employ no field teams, and we perform no work. Our role is taking your request once and passing it to one eligible crew.",
         links: [{ text: "about this site", href: "/referral-disclosure" }],
       },
       {

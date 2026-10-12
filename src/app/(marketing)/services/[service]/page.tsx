@@ -33,7 +33,7 @@ function titleFor(name: string) {
  * between /services/[service] and /locations/lancaster-sc/[service].
  */
 function descriptionFor(nameLower: string, projectNoun: string) {
-  return `What ${nameLower} covers in Lancaster, SC, what falls outside it, and how your ${projectNoun} request reaches an independent local crew.`;
+  return `What ${nameLower} covers in Lancaster, SC, what falls outside it, and how your ${projectNoun} request reaches an independent local concrete specialist.`;
 }
 
 export async function generateMetadata({

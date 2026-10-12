@@ -6,7 +6,7 @@ import { site } from "@/lib/env";
 export const metadata: Metadata = pageMetadata({
   title: "Request Received | Next Steps for Your Concrete Project",
   description:
-    "Your request has been received. A local crew serving your area may contact you directly to arrange a site visit.",
+    "Your request has been received. A local team serving your area may contact you directly to arrange a site visit.",
   path: "/thank-you",
   noindex: true,
 });
@@ -35,7 +35,7 @@ export default function ThankYouPage() {
         </h1>
         <p className="lede mt-5">
           You will be contacted by one independent service provider, not by a call
-          center and not by us pretending to be the crew.
+          center and not by us pretending to be the team.
         </p>
         {/* Rows are start-aligned. justify-center here only bit the one step
             whose text fits on a single line, centring that row and pushing its
@@ -65,7 +65,7 @@ export default function ThankYouPage() {
           </Link>
         </div>
         <p className="mt-8 text-sm text-[color:var(--color-muted)]">
-          Reminder: the crew that does the work is independent and contracts with you directly.
+          Reminder: the team that does the work is independent and contracts with you directly.
           Pricing, scheduling, and the contract itself are between you and the
           contractor assigned to your area.
         </p>

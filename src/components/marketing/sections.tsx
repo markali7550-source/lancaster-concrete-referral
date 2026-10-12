@@ -555,12 +555,12 @@ const SERVICE_AREA_CONTROLS = [
     body: "Participating providers confirm in writing which areas they accept work in. Coverage is never inferred from a radius drawn on a map.",
   },
   {
-    title: "Signed crew agreement",
-    body: "Requests are only passed to independent local crews that have agreed in writing to documented response expectations.",
+    title: "Signed team agreement",
+    body: "Requests are only passed to independent local concrete specialists that have agreed in writing to documented response expectations.",
   },
   {
     title: "Project type match",
-    body: "Your project type is checked against the categories a local crew has agreed to take. A category nobody has accepted produces an honest no coverage answer.",
+    body: "Your project type is checked against the categories a local team has agreed to take. A category nobody has accepted produces an honest no coverage answer.",
   },
   {
     title: "One request at a time",
@@ -619,7 +619,7 @@ const STEPS = [
   },
   {
     // Heading wording is fixed by the brief and must stay exact.
-    verb: "We check coverage, project type match, crew agreement, and current capacity.",
+    verb: "We check coverage, project type match, team agreement, and current capacity.",
     body: "Eligibility is confirmed before anything is sent, and nothing is sent if no participating provider covers the area.",
   },
   {
