@@ -332,6 +332,18 @@
      the plateau (it starts 36px in, past the 22px ramp), so text contrast is
      identical to before. Only the hue moved, from the old green-black to the
      band navy. */
+  /* Light mode only: the band is a dark navy block on a light page, so its
+     top and bottom edges read as a hard dark bar. Fade the outer 24px of the
+     whole band (photo and navy) into the page colour. The copy sits well
+     inside that zone, so text contrast is unchanged. Dark mode keeps the
+     hard edge because the page itself is dark there. */
+  @media (prefers-color-scheme: light) {
+    .cta-photo {
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%);
+      mask-image: linear-gradient(to bottom, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%);
+    }
+  }
+
   .cta-photo-fade {
     background-image: linear-gradient(
       to bottom,
