@@ -9,7 +9,7 @@ import { site } from "@/lib/env";
 
 function Wordmark() {
   return (
-    <Link href="/" className="flex items-center" aria-label={site.brand}>
+    <Link href="/" className="flex shrink-0 items-center" aria-label={site.brand}>
       <Logo height={44} priority />
     </Link>
   );
@@ -54,7 +54,7 @@ export function UtilityHeader() {
             </Link>
           </nav>
 
-          <div className="hidden items-center gap-2.5 lg:flex">
+          <div className="hidden shrink-0 items-center gap-2.5 lg:flex">
             <DynamicPhone
               fallbackDisplay={site.phoneDisplay}
               fallbackE164={site.phoneE164}
@@ -62,7 +62,7 @@ export function UtilityHeader() {
               className="btn btn-secondary hidden min-h-12 whitespace-nowrap px-3.5 text-[15px] xl:inline-flex"
             />
             <Link href="/contact" className="btn btn-primary min-h-12 whitespace-nowrap px-3.5 text-[15px]">
-              Request Concrete Service
+              Request Service
             </Link>
           </div>
 
@@ -75,7 +75,7 @@ export function UtilityHeader() {
               <Icon name="menu" />
             </summary>
             <div
-              className="card absolute right-0 top-14 w-[17rem] p-2"
+              className="card absolute right-0 top-14 w-[17rem] p-3"
               style={{ boxShadow: "var(--shadow-raised)" }}
             >
               <p className="eyebrow-plain px-3 pb-1 pt-2">Services</p>
