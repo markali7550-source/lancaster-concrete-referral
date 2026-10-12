@@ -43,7 +43,7 @@ import { site } from "@/lib/env";
 const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-driveways": { src: "/images/services/concrete-driveways/concrete-driveways-detail.webp", alt: "Driveway edge pitched away from the lawn with a gravel drainage margin" },
   "concrete-patios": { src: "/images/services/concrete-patios/concrete-patios-detail.webp", alt: "Plain concrete patio slab at the rear of a single story brick home" },
-  "concrete-slabs": { src: "/images/services/concrete-slabs/concrete-slabs-detail.webp", alt: "Concrete pad still sitting inside its timber forms on an open lot" },
+  "concrete-slabs": { src: "/images/services/concrete-slabs/concrete-slabs-detail.webp", alt: "Concrete slabs laid with gravel joints beside a timber bench with cushions and potted plants" },
   "concrete-repair": { src: "/images/services/concrete-repair/concrete-repair-detail.webp", alt: "Settled concrete walkway slab with a cracked, lifted edge" },
 };
 
