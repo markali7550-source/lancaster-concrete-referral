@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { UtilityHeader } from "@/components/layout/UtilityHeader";
 import { ComplianceFooter } from "@/components/layout/ComplianceFooter";
+import { MobileCallBar } from "@/components/layout/MobileCallBar";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ConsentBanner } from "@/components/consent/ConsentBanner";
 import { AttributionBootstrap } from "@/components/consent/AttributionBootstrap";
@@ -38,7 +39,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en-US" className={geistSans.variable}>
-      <body>
+      <body className="pb-[calc(6rem+env(safe-area-inset-bottom))] md:pb-0">
         <JsonLd data={{ "@context": "https://schema.org", "@graph": rootGraph() }} />
         <a
           href="#main"
@@ -49,6 +50,7 @@ export default function RootLayout({
         <UtilityHeader />
         <main id="main">{children}</main>
         <ComplianceFooter />
+        <MobileCallBar />
         <AttributionBootstrap />
         <ConsentBanner />
       </body>
