@@ -89,6 +89,7 @@ export default async function ComboPage({ params }: { params: Params }) {
   return (
     <>
       <JsonLd data={graph} />
+      <div className="location-polish">
       <ServicePageTemplate
         service={serviceRecord}
         detail={detail}
@@ -137,6 +138,7 @@ export default async function ComboPage({ params }: { params: Params }) {
         callCardTitle="Questions before you request a quote?"
         callCardBody={`Call to ask whether a local provider serves your address in ${location.city}, ${location.region}.`}
       />
+      </div>
     </>
   );
 }

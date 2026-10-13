@@ -150,6 +150,7 @@ export function ServicePageTemplate({
   callCardTitle,
   callCardBody,
   locationLayout = null,
+  localLinks = [],
 }: {
   service: ServiceRecord;
   detail: ServiceDetail;
@@ -176,6 +177,8 @@ export function ServicePageTemplate({
   callCardTitle: string;
   callCardBody: string;
   locationLayout?: LocationLayout | null;
+  /** Lancaster SC location pages for this service, linked from the related section. */
+  localLinks?: { href: string; label: string }[];
 }) {
   const heroService = heroImage
     ? { ...service, image: heroImage.src, imageAlt: heroImage.alt }
@@ -481,6 +484,22 @@ export function ServicePageTemplate({
           currentSlug={service.slug}
           basePath={relatedBasePath}
         />
+        {localLinks.length > 0 ? (
+          <div className="mt-8 border-t pt-6 text-[15px] leading-relaxed" style={{ borderColor: "var(--color-line-soft)" }}>
+            <p className="text-[color:var(--color-muted)]">
+              Local pages for Lancaster, SC cover climate, soil, and nearby towns for this service.
+            </p>
+            <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
+              {localLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="font-semibold underline underline-offset-4" style={{ color: "var(--color-accent)" }}>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
       </Section>
 
       <ServiceCtaBand title={ctaTitle} body={ctaBody} />

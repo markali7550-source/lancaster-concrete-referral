@@ -922,3 +922,54 @@
     justify-content: center;
   }
 }
+
+/*
+ * Location-service polish (approved 2026-10-13). Scoped to the
+ * /locations/[city]/[service] wrapper only, so service pages keep their
+ * current type, spacing, and card styling. Layout, breakpoints, and images
+ * are unchanged.
+ */
+.location-polish {
+  --color-muted: #414b59;
+}
+
+@media (prefers-color-scheme: dark) {
+  .location-polish {
+    --color-muted: #b7c0cc;
+  }
+}
+
+.location-polish h1 {
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+
+.location-polish h2 {
+  font-weight: 650;
+  letter-spacing: -0.015em;
+}
+
+.location-polish h3 {
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.location-polish section.scroll-mt-36,
+.location-polish section.scroll-mt-32 {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .location-polish section.scroll-mt-36,
+  .location-polish section.scroll-mt-32 {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+
+.location-polish .card {
+  border-color: var(--color-line);
+  box-shadow: 0 1px 2px rgba(20, 26, 34, 0.04), 0 10px 28px -16px rgba(20, 26, 34, 0.18);
+}

@@ -3,7 +3,10 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumbs } from "@/components/marketing/service-sections";
 import { ServicePageTemplate } from "@/components/marketing/service-page-template";
-import { getLocationService } from "@/content/location-services";
+import {
+  getLocationService,
+  publishedLocationServices,
+} from "@/content/location-services";
 import { serviceDetails } from "@/content/service-details";
 import { getService, publishedServices } from "@/content/services";
 import { pageMetadata } from "@/lib/seo/metadata";
@@ -110,6 +113,12 @@ export default async function ServicePage({ params }: { params: Params }) {
         faqName="service-faq"
         relatedServices={publishedServices}
         relatedTitle="Also serving Lancaster"
+        localLinks={publishedLocationServices
+          .filter((r) => r.serviceSlug === service.slug)
+          .map((r) => ({
+            href: `/locations/${r.locationSlug}/${r.serviceSlug}`,
+            label: `${service.name} in Lancaster, SC`,
+          }))}
         ctaTitle={service.headings.cta}
         ctaBody={service.ctaLead}
         defaultServiceSlug={service.slug}

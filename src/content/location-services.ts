@@ -50,6 +50,16 @@ const records: readonly LocationServiceRecord[] = [
         body:
           "Local concrete providers do the pouring. After you submit a request, a local provider contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set directly between you and that provider, and finish, thickness, and reinforcement are decided with them after they inspect your property.",
       },
+      {
+        heading: "Local climate and soil",
+        body:
+          "Lancaster summers run hot and humid, with July highs near 90°F and about 13 wet days, so crews start pours early and protect the curing slab. Winter nights can dip near freezing. Water that sits at a driveway edge in red clay freezes and thaws, so keep the edge graded away from the slab.",
+      },
+      {
+        heading: "Communities and landmarks nearby",
+        body:
+          "Pages in this series cover the City of Lancaster. Nearby Lancaster County places include Van Wyck, Heath Springs, and Kershaw, and local landmarks include the Catawba River, Forty Acre Rock Heritage Preserve, and Andrew Jackson State Park. Confirm your address when you request a quote, because coverage is set per address.",
+      },
     ],
     localFaqs: [
       {
@@ -105,6 +115,16 @@ const records: readonly LocationServiceRecord[] = [
         heading: "Tying into existing concrete",
         body:
           "Tying a new patio into an existing porch footing or stoop is the other detail worth raising early. The old footing and the new slab move independently unless the joint is detailed deliberately, which is why the existing structure needs looking at before anyone quotes, rather than pricing it from a square foot figure over the phone.",
+      },
+      {
+        heading: "Local climate and soil",
+        body:
+          "Heat and humidity set the patio schedule, since a surface can skin over before it is finished on a hot afternoon. Red clay under Lancaster lawns swells after the wet spring and summer storms and shrinks in dry spells, so a patio needs edge drainage and a plan for seasonal movement.",
+      },
+      {
+        heading: "Communities and landmarks nearby",
+        body:
+          "Pages in this series cover the City of Lancaster. Nearby Lancaster County places include Van Wyck, Heath Springs, and Kershaw, and local landmarks include the Catawba River, Forty Acre Rock Heritage Preserve, and Andrew Jackson State Park. Confirm your address when you request a quote, because coverage is set per address.",
       },
     ],
     localFaqs: [
@@ -162,6 +182,16 @@ const records: readonly LocationServiceRecord[] = [
         body:
           "If the building on top will be heated or used as a workshop, expect the contractor to raise a vapor barrier beneath the slab. Lancaster County clay stays wet, and moisture rising through an unprotected pad ruins stored tools and flooring. Ask whether your structure also needs a permit.",
       },
+      {
+        heading: "Local climate and soil",
+        body:
+          "Summer storms bring heavy rain, and August averages about 3.6 inches. Clay that stays wet holds moisture under a slab for weeks, so a pour is planned around drainage, a moisture barrier, and curing protection from the heat. Winter nights near freezing can slow curing in the cold months.",
+      },
+      {
+        heading: "Communities and landmarks nearby",
+        body:
+          "Pages in this series cover the City of Lancaster. Nearby Lancaster County places include Van Wyck, Heath Springs, and Kershaw, and local landmarks include the Catawba River, Forty Acre Rock Heritage Preserve, and Andrew Jackson State Park. Confirm your address when you request a quote, because coverage is set per address.",
+      },
     ],
     localFaqs: [
       {
@@ -217,6 +247,16 @@ const records: readonly LocationServiceRecord[] = [
         heading: "When replacement wins",
         body:
           "Sometimes repair is not worth it. Once a slab is cracked across multiple panels, has lost surface depth, or sits on a compromised subbase, resurfacing buys a few seasons at a real fraction of replacement cost. Advice to replace rather than patch is usually not an upsell.",
+      },
+      {
+        heading: "Local climate and soil",
+        body:
+          "Patch products need dry surfaces and mild temperatures to bond. Summer heat dries a patch too fast, and winter nights near freezing can stop curing. In Lancaster clay, cracks and lifted edges often come from water moving under the slab, so the water path matters as much as the patch.",
+      },
+      {
+        heading: "Communities and landmarks nearby",
+        body:
+          "Pages in this series cover the City of Lancaster. Nearby Lancaster County places include Van Wyck, Heath Springs, and Kershaw, and local landmarks include the Catawba River, Forty Acre Rock Heritage Preserve, and Andrew Jackson State Park. Confirm your address when you request a quote, because coverage is set per address.",
       },
     ],
     localFaqs: [
@@ -274,6 +314,16 @@ const records: readonly LocationServiceRecord[] = [
         body:
           "Afternoon thunderstorms and summer heat both affect a foundation pour. Rain on fresh concrete can wash the surface, and hot weather can cure it too fast. Providers often schedule pours for the morning and protect the surface until it has set.",
       },
+      {
+        heading: "Local climate and soil",
+        body:
+          "Foundation pours are scheduled around both summer heat and winter cold, since curing depends on temperature. Red clay swells as it wets and shrinks as it dries across the year, so bearing soil is checked after heavy rain and before the footing is set.",
+      },
+      {
+        heading: "Communities and landmarks nearby",
+        body:
+          "Pages in this series cover the City of Lancaster. Nearby Lancaster County places include Van Wyck, Heath Springs, and Kershaw, and local landmarks include the Catawba River, Forty Acre Rock Heritage Preserve, and Andrew Jackson State Park. Confirm your address when you request a quote, because coverage is set per address.",
+      },
     ],
     localFaqs: [
       {
@@ -321,6 +371,16 @@ const records: readonly LocationServiceRecord[] = [
         body:
           "A walk that meets a porch stoop or a step needs a deliberate joint, because the two pieces of concrete settle on their own footings. Look at the existing porch structure before the walk is priced, not after the forms are set.",
       },
+      {
+        heading: "Local climate and soil",
+        body:
+          "Walkways face the same summer heat, humid storms, and red clay as driveways. Freeze-thaw is light in Lancaster, but clay that stays wet or dries out can heave a walk, so the path is graded away from the house and set with an edge restraint.",
+      },
+      {
+        heading: "Communities and landmarks nearby",
+        body:
+          "Pages in this series cover the City of Lancaster. Nearby Lancaster County places include Van Wyck, Heath Springs, and Kershaw, and local landmarks include the Catawba River, Forty Acre Rock Heritage Preserve, and Andrew Jackson State Park. Confirm your address when you request a quote, because coverage is set per address.",
+      },
     ],
     localFaqs: [
       {
@@ -367,6 +427,16 @@ const records: readonly LocationServiceRecord[] = [
         heading: "Joints and cracking",
         body:
           "Stamped slabs still need control joints, and cracks can occur as the concrete cures and moves. Ask where the joints will fall relative to the pattern, because a joint placed through a pattern is harder to hide than one placed along a border.",
+      },
+      {
+        heading: "Local climate and soil",
+        body:
+          "Stamping has to happen before the surface sets, and summer heat can set it quickly, so crews work early in the day. Humid weather and summer storms affect the window. Sealers wear faster in strong sun, and red clay tracked onto a stamped surface makes staining more likely.",
+      },
+      {
+        heading: "Communities and landmarks nearby",
+        body:
+          "Pages in this series cover the City of Lancaster. Nearby Lancaster County places include Van Wyck, Heath Springs, and Kershaw, and local landmarks include the Catawba River, Forty Acre Rock Heritage Preserve, and Andrew Jackson State Park. Confirm your address when you request a quote, because coverage is set per address.",
       },
     ],
     localFaqs: [
@@ -419,6 +489,16 @@ const records: readonly LocationServiceRecord[] = [
         heading: "Water at the base",
         body:
           "Water that runs down a wall and pools at the base of the steps can undermine the footing and cause the lowest tread to crack. Grade the ground away from the steps, and ask how the joint against the house wall will be sealed.",
+      },
+      {
+        heading: "Local climate and soil",
+        body:
+          "Steps take the full range of Lancaster weather on several sides: summer heat, humid storms, and winter nights near freezing. Water that collects at the base of a step is the usual cause of settling in red clay, so the footing and drainage are planned with the steps.",
+      },
+      {
+        heading: "Communities and landmarks nearby",
+        body:
+          "Pages in this series cover the City of Lancaster. Nearby Lancaster County places include Van Wyck, Heath Springs, and Kershaw, and local landmarks include the Catawba River, Forty Acre Rock Heritage Preserve, and Andrew Jackson State Park. Confirm your address when you request a quote, because coverage is set per address.",
       },
     ],
     localFaqs: [
