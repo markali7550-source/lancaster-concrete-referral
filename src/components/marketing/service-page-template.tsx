@@ -214,6 +214,26 @@ export function ServicePageTemplate({
                         outOfScope={service.outOfScope}
                       />
                     </div>
+                    <div className="mt-10">
+                      <h3 className="h3">What We Include</h3>
+                      <ol className="mt-5 grid gap-3 md:grid-cols-2">
+                        {service.workIncluded.map((step, index) => (
+                          <li
+                            key={step}
+                            className="flex items-start gap-3 text-[15px] leading-relaxed"
+                          >
+                            <span
+                              className="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[13px] font-semibold text-white"
+                              style={{ backgroundColor: "var(--color-accent)" }}
+                              aria-hidden="true"
+                            >
+                              {index + 1}
+                            </span>
+                            <span>{step}</span>
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
                   </section>
                 );
               }
@@ -228,6 +248,29 @@ export function ServicePageTemplate({
                     </p>
                     <div className="mt-8">
                       <OptionsList options={service.options} />
+                    </div>
+                    <div className="mt-10">
+                      <h3 className="h3">
+                        Typical specifications to confirm with your provider
+                      </h3>
+                      <p className="mt-2 max-w-prose text-[15px] leading-relaxed text-[color:var(--color-muted,inherit)]">
+                        Final mix, reinforcement, and joint layout are set for
+                        each job during the site visit.
+                      </p>
+                      <ul className="mt-5 grid gap-3 md:grid-cols-2">
+                        {service.tradeSpecs.map((spec) => (
+                          <li
+                            key={spec}
+                            className="flex items-start gap-3 rounded-lg border border-black/10 bg-white p-4 text-[15px] leading-relaxed"
+                          >
+                            <Icon
+                              name="check"
+                              className="mt-0.5 h-5 w-5 shrink-0 text-[color:var(--color-accent,currentColor)]"
+                            />
+                            <span>{spec}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </section>
                 );

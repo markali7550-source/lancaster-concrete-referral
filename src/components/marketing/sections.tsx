@@ -519,6 +519,10 @@ export function ProjectTypeChooser({
               <p className="mt-2 flex-1 text-[15px] leading-relaxed text-[color:var(--color-muted)]">
                 {service.summary}
               </p>
+              <p className="mt-4 border-t pt-4 text-[14px] leading-relaxed" style={{ borderColor: "var(--color-line)" }}>
+                <span className="font-semibold">Covers: </span>
+                {service.cardScope}
+              </p>
               <span
                 className="mt-5 inline-flex items-center justify-center gap-1.5 text-[14px] font-semibold lg:justify-start"
                 style={{ color: "var(--color-accent)" }}

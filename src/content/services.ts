@@ -20,6 +20,10 @@ export interface ServiceRecord {
   intent: string;
   /** One-line card summary. */
   summary: string;
+  /** Short scope line shown on the service card, e.g. the main jobs covered. */
+  cardScope: string;
+  /** Steps the provider's work typically includes, shown under What We Include. */
+  workIncluded: readonly string[];
   /** Hero paragraph on the service hub. */
   heroSummary: string;
   /*
@@ -72,6 +76,8 @@ export interface ServiceRecord {
   outOfScope: string[];
   /** Specification choices the contractor will raise. */
   options: { name: string; description: string }[];
+  /** Construction specifications presented as items to confirm with the provider. */
+  tradeSpecs: readonly string[];
   /** Typical project sequence. Durations are ranges, never promises. */
   process: { phase: string; duration: string; detail: string }[];
   /** What actually moves the price. */
@@ -118,6 +124,20 @@ export const services: readonly ServiceRecord[] = [
       "Nobody can price a driveway from an address. Square footage is only the start of it. What the old slab costs to break up and haul away, and whether a truck can reach the pour, often move the number more.",
     ctaLead:
       "Tell us the length of the drive and whether the old slab has to come out. One provider with written coverage for your area takes it from there.",
+    cardScope: "Tear-out, replacement, and expansions",
+    workIncluded: [
+      "Grading and excavation to the planned subgrade",
+      "Forming and reinforcement set to the layout",
+      "Placing and pouring the concrete",
+      "Finishing to the chosen texture",
+      "Site clean-up and haul-away of debris",
+    ],
+    tradeSpecs: [
+      "High-strength concrete mix, commonly 4,000 PSI for residential work. Your provider confirms the mix for your project.",
+      "Steel rebar or welded wire reinforcement placed to help limit cracking.",
+      "Compacted gravel sub-base and a planned drainage slope set before the forms go in.",
+      "Control and expansion joints laid out for South Carolina's seasonal heat, rain, and clay soil movement.",
+    ],
     image: "/images/locations/lancaster-sc/lancaster-sc-driveways.webp",
     imageAlt:
       "Concrete driveway with control joints and weather staining running up to the garage of a brick ranch house, with patchy lawn, red clay at the verge and pines behind",
@@ -327,6 +347,20 @@ export const services: readonly ServiceRecord[] = [
       "Patios are the project people most often price before they commit, so it is worth knowing what actually moves the figure. Finish and shape change it far more than size does.",
     ctaLead:
       "Send the rough size, and say whether it ties into an existing porch or stoop. It goes to a single participating provider, not a panel of bidders.",
+    cardScope: "Stamped, colored, decorative, and broom-finish patios, plus walkways and entryways",
+    workIncluded: [
+      "Grading and excavation to the planned subgrade",
+      "Forming and reinforcement set to the layout",
+      "Placing and pouring the concrete",
+      "Finishing to the chosen texture",
+      "Site clean-up and haul-away of debris",
+    ],
+    tradeSpecs: [
+      "High-strength concrete mix, commonly 4,000 PSI for residential work. Your provider confirms the mix for your project.",
+      "Steel rebar or welded wire reinforcement placed to help limit cracking.",
+      "Compacted gravel sub-base and a planned drainage slope set before the forms go in.",
+      "Control and expansion joints laid out for South Carolina's seasonal heat, rain, and clay soil movement.",
+    ],
     image: "/images/locations/lancaster-sc/lancaster-sc-patios.webp",
     imageAlt:
       "Stamped concrete patio with a curved edge and a metal table and chairs beside a siding house, with a mown lawn and split rail fence",
@@ -532,6 +566,20 @@ export const services: readonly ServiceRecord[] = [
       "Pricing comes last here for a reason: until the load, the access and the base are known, any number is a guess. Once those are settled a contractor can quote a pad quickly.",
     ctaLead:
       "Say what the pad has to carry and roughly where it goes. We send it to one provider approved for your area.",
+    cardScope: "Garages, sheds, pole barns, equipment pads, and sidewalks",
+    workIncluded: [
+      "Grading and excavation to the planned subgrade",
+      "Forming and reinforcement set to the layout",
+      "Placing and pouring the concrete",
+      "Finishing to the chosen texture",
+      "Site clean-up and haul-away of debris",
+    ],
+    tradeSpecs: [
+      "High-strength concrete mix, commonly 4,000 PSI for residential work. Your provider confirms the mix for your project.",
+      "Steel rebar or welded wire reinforcement placed to help limit cracking.",
+      "Compacted gravel sub-base and a planned drainage slope set before the forms go in.",
+      "Control and expansion joints laid out for South Carolina's seasonal heat, rain, and clay soil movement.",
+    ],
     image: "/images/locations/lancaster-sc/lancaster-sc-slabs.webp",
     imageAlt:
       "Newly poured concrete slab with form lines on its edge, set in a lawn beside a house",
@@ -732,6 +780,20 @@ export const services: readonly ServiceRecord[] = [
       "Repair quotes vary more than any other concrete work, because two slabs with identical cracks can need completely different work underneath. These are the things that move it.",
     ctaLead:
       "Describe the damage and where it is. The provider looks at it on site before anyone talks about price.",
+    cardScope: "Crack filling, joint restoration, and sealing",
+    workIncluded: [
+      "Surface preparation and cleaning",
+      "Crack routing or patch layout",
+      "Repair material placement",
+      "Finishing and joint sealing",
+      "Site clean-up and haul-away of debris",
+    ],
+    tradeSpecs: [
+      "Cracks and spalled areas cleaned and prepared before any filler or overlay goes on.",
+      "Repair mortar or flexible sealant chosen for the surface and the movement it has to handle.",
+      "Drainage checked first, because water is a common cause of repeat cracking.",
+      "Joints restored, a sealer selected for the finish, and a cure time confirmed before traffic returns.",
+    ],
     image: "/images/locations/lancaster-sc/lancaster-sc-repair.webp",
     imageAlt:
       "Sidewalk slab heaved and cracked by exposed tree roots beside a large oak, with a residential street behind",
