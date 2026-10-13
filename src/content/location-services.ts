@@ -297,9 +297,9 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-walkways",
     state: "published",
-    localImage: "/images/services/concrete-walkways/concrete-walkways-band.webp",
+    localImage: "/images/services/concrete-walkways/concrete-walkways-hero.webp",
     localImageAlt:
-      "Curved concrete walkway with saw-cut expansion joints beside a lawn",
+      "Worker's hands setting gray concrete pavers with a rubber mallet on a sand base",
     localBody: [
       {
         heading: "What a front entry path involves",
@@ -344,9 +344,9 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "stamped-concrete",
     state: "published",
-    localImage: "/images/services/stamped-concrete/stamped-concrete-band.webp",
+    localImage: "/images/services/stamped-concrete/stamped-concrete-hero.webp",
     localImageAlt:
-      "Stamped concrete surface with a paver-style pattern and curved edge beside a lawn",
+      "Worker's hands and a red-handled finishing tool on freshly placed gray concrete",
     localBody: [
       {
         heading: "What stamped work involves",
