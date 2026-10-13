@@ -336,7 +336,7 @@ const coreServices: readonly ServiceRecord[] = [
     summary:
       "Backyard patios and outdoor living spaces, poured with a broom or smooth finish and sealed for weather.",
     heroSummary:
-      "A backyard patio is an outdoor room, so layout, grade, and drainage matter as much as the finish. Requests cover new backyard patios, patio replacement, and extensions of an existing patio. Typical work includes a compacted base, a planned drainage slope away from the house, and control joints. Stamped and decorative finishes are covered on our Stamped Concrete page. Request a concrete service and a local provider will confirm the layout and sealing plan at a site visit.",
+      "A backyard patio is an outdoor room, so layout, grade, and drainage matter as much as the finish. Requests cover new backyard patios, patio replacement, and extensions of an existing patio. Typical work includes a compacted base, a planned drainage slope away from the house, and control joints. Request a concrete service and a local provider will confirm the layout and sealing plan at a site visit.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "Where patio work starts and stops",
@@ -372,7 +372,7 @@ const coreServices: readonly ServiceRecord[] = [
     image: "/images/services/concrete-patios/concrete-patios-hero.webp",
     imageAlt:
       "Plain concrete patio slab at the rear of a single story brick home",
-    projectTypes: ["New patio", "Patio replacement", "Stamped patio"],
+    projectTypes: ["New patio", "Patio replacement"],
     keyFacts: [
       {
         label: "Served for",
@@ -400,7 +400,7 @@ const coreServices: readonly ServiceRecord[] = [
       },
       {
         title: "Finish options",
-        body: "Broom or smooth trowel finishes for a working backyard patio. Stamped and decorative finishes are covered on our Stamped Concrete page.",
+        body: "Broom or smooth trowel finishes for a working backyard patio.",
       },
     ],
     outOfScope: [
@@ -472,7 +472,7 @@ const coreServices: readonly ServiceRecord[] = [
       {
         factor: "Finish type",
         impact: "High",
-        note: "Stamped and colored work is substantially more labor intensive than a broom finish.",
+        note: "Colored and decorative finishes are substantially more labor intensive than a broom finish.",
       },
       {
         factor: "Footprint and shape",
@@ -525,7 +525,7 @@ const coreServices: readonly ServiceRecord[] = [
       {
         question: "Which finishes are available for a backyard patio?",
         answer:
-          "Broom and smooth trowel finishes are the common choices for a backyard patio. Stamped and decorative finishes are covered on our Stamped Concrete page.",
+          "Broom and smooth trowel finishes are the common choices for a backyard patio.",
       },
       {
         question: "What size should a usable patio be?",

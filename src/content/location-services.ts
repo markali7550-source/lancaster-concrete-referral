@@ -82,9 +82,9 @@ const records: readonly LocationServiceRecord[] = [
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-patios",
     state: "published",
-    localImage: "/images/locations/lancaster-sc/lancaster-sc-patios.webp",
+    localImage: "/images/services/concrete-patios/concrete-patios-hero.webp",
     localImageAlt:
-      "Stamped concrete patio with a curved edge and a metal table and chairs beside a siding house, with a mown lawn and split rail fence",
+      "Plain concrete patio behind a brick house, with two chairs and a small table in a wooded backyard",
     localBody: [
       {
         heading: "What the work usually is",
