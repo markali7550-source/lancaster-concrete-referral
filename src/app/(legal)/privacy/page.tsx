@@ -17,7 +17,7 @@ export default function PrivacyPage() {
       <ul>
         <li>Project details you submit: project type, location, name, contact method, and any note.</li>
         <li>Consent records: the consent text version you accepted, the timestamp, and the page you accepted it on.</li>
-        <li>Attribution data: referring source, campaign parameters, landing page, and an opaque session identifier.</li>
+        <li>Attribution data: traffic source, campaign parameters, landing page, and an opaque session identifier.</li>
         <li>Call events where phone tracking is active: time, duration, and call result.</li>
       </ul>
 

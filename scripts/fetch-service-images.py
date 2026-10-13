@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch + optimize service photography for the Lancaster Concrete referral site.
+"""Fetch + optimize service photography for the Lancaster Concrete site.
 
 Two modes (one pipeline, two entry points):
 

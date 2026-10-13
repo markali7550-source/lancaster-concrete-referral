@@ -6,7 +6,7 @@ import { site } from "@/lib/env";
 export const metadata: Metadata = pageMetadata({
   title: `Terms of Use | ${site.brand}`,
   description:
-    "Terms governing use of this referral website, including the limits of our role and the absence of any warranty on contractor work.",
+    "Terms governing use of this Lancaster Concrete website, including the limits of our role and the absence of any warranty on contractor work.",
   path: "/terms",
 });
 

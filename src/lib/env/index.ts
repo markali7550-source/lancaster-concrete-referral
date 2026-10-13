@@ -45,7 +45,7 @@ export const site = {
   serviceArea: siteConfig.serviceArea,
   streetAddress: siteConfig.streetAddress,
   postalCode: siteConfig.postalCode,
-  consentVersion: "referral-consent-2026-09-24",
+  consentVersion: "service-consent-2026-09-24",
 } as const;
 
 export function absoluteUrl(path: string): string {

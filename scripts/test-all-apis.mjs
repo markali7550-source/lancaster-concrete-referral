@@ -27,7 +27,7 @@ const lead = (overrides = {}) => ({
   phone: runPhone,
   serviceConsent: true,
   marketingConsent: false,
-  consentVersion: "referral-consent-2026-09-24",
+  consentVersion: "service-consent-2026-09-24",
   sourcePath: "/",
   attribution: { visitorId: "v1", sessionId: "s1", utmSource: "google", gclid: "abc" },
   ...overrides,
