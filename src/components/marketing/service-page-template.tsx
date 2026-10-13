@@ -69,6 +69,18 @@ const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
     src: "/images/services/concrete-slabs/concrete-slabs-process.webp",
     alt: "Stacked precast concrete slabs with wood spacers resting on asphalt beside a grass verge",
   },
+  "stamped-concrete": {
+    src: "/images/services/stamped-concrete/stamped-concrete-process.webp",
+    alt: "Example photo: a stamping tool pressed into freshly placed concrete to form a stone-pattern surface",
+  },
+  "concrete-foundations": {
+    src: "/images/services/concrete-foundations/concrete-foundations-process.webp",
+    alt: "Example photo: aerial view of crews screeding fresh concrete over steel reinforcing mesh",
+  },
+  "concrete-walkways": {
+    src: "/images/services/concrete-walkways/concrete-walkways-process.webp",
+    alt: "Example photo: crew finishing a concrete walkway edge with hand trowels beside a form board",
+  },
   "concrete-steps": {
     src: "/images/services/concrete-steps/concrete-steps-process.webp",
     alt: "Example photo: concrete steps being formed with timber forms and a rough, freshly placed surface beside a brick edge",
