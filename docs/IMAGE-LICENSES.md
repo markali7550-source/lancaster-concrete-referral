@@ -24,3 +24,10 @@ Each image used on the site, with its source and license basis.
 
 ## Notes
 - iStock Standard licenses permit use on websites. Keep the iStock content ID and the license on file in your iStock account download history.
+
+## Notes (2026-10-13)
+
+- **Size rule override (client-confirmed):** hero and band images target 90–97 KB WebP for crisp HD quality. This overrides the general 25–60 KB range for those slots.
+- **Process bands with people removed:** the process photos for driveways, foundations, walkways, stamped concrete, and repair showed visible people, hands, or running equipment. They are no longer used. Those process sections now render text only, with no image, until compliant photos are supplied.
+- **Detail bands:** the foundations and stamped-concrete detail bands had no compliant repo photo and now render text only. The walkways detail band uses `concrete-steps-hero.webp` (a porch-stoop photo, no people). It is not repeated on the walkways page. Its iStock record is in the table above, and it appears on the steps page as well.
+- **Pending files:** no new foundation, walkway, or stamped hero photos were found in the workspace. Those three heroes still use the current files.
