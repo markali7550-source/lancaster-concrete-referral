@@ -3,6 +3,7 @@ import { DynamicPhone } from "@/components/lead/DynamicPhone";
 import { Icon } from "@/components/ui/Icon";
 import { Logo } from "@/components/layout/Logo";
 import { MobileMenu } from "@/components/layout/MobileMenu";
+import { RequestFormLink } from "@/components/layout/RequestFormLink";
 import { ServicesMenu } from "@/components/layout/ServicesMenu";
 import { publishedServices } from "@/content/services";
 import { site } from "@/lib/env";
@@ -61,9 +62,9 @@ export function UtilityHeader() {
               placement="header"
               className="btn btn-secondary hidden min-h-12 whitespace-nowrap px-3.5 text-[15px] xl:inline-flex"
             />
-            <Link href="/services" className="btn btn-primary min-h-12 shrink-0 whitespace-nowrap px-3.5 text-[15px]">
+            <RequestFormLink className="btn btn-primary min-h-12 shrink-0 whitespace-nowrap px-3.5 text-[15px]">
               Request Service
-            </Link>
+            </RequestFormLink>
           </div>
 
           {/* Mobile menu — native <details>, closed on navigation by MobileMenu */}
