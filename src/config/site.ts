@@ -10,7 +10,7 @@
 export const siteConfig = {
   brandName: "Lancaster Concrete Connect",
   /** Placeholder domain. Replace with the production domain. */
-  domain: "https://example-referral-brand.com",
+  domain: "https://lancaster-concrete-one.vercel.app",
   /** Placeholder number (555-01xx is reserved for fiction). */
   phoneE164: "+18035550123",
   phoneDisplay: "(803) 555-0123",
