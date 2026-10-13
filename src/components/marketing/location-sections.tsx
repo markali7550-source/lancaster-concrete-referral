@@ -44,7 +44,6 @@ export function LocationHero({
                 color: "var(--color-accent)",
               }}
             >
-              <span aria-hidden="true">📍</span>
               {badge}
             </p>
             <p className="eyebrow mt-6">{eyebrow}</p>
