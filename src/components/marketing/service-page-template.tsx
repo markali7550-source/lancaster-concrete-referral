@@ -73,11 +73,11 @@ const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
   },
   "stamped-concrete": {
     src: "/images/services/stamped-concrete/stamped-concrete-process.webp",
-    alt: "Example photo: a stamping tool pressed into freshly placed concrete to form a stone-pattern surface",
+    alt: "Worker in dark trousers pressing a red-handled stamping tool into freshly placed concrete, shown in black-and-white with red accents",
   },
   "concrete-foundations": {
     src: "/images/services/concrete-foundations/concrete-foundations-process.webp",
-    alt: "Example photo: aerial view of crews screeding fresh concrete over steel reinforcing mesh",
+    alt: "Concrete pumped from a hose onto a steel rebar grid inside timber forms, with a worker in camouflage pants and boots standing on the steel",
   },
   "concrete-walkways": {
     src: "/images/services/concrete-walkways/concrete-walkways-process.webp",
