@@ -103,7 +103,6 @@ const MAIN_NAV_LABELS: Record<ServiceSectionId, string> = {
 
 /** Location/service layout: split hero, quick quote box, local context. */
 export interface LocationLayout {
-  badge: string;
   quoteTitle: string;
   quoteBody: string;
   climateTitle: string;
@@ -195,7 +194,6 @@ export function ServicePageTemplate({
       {locationLayout ? (
         <LocationHero
           breadcrumbs={breadcrumbs}
-          badge={locationLayout.badge}
           eyebrow={cityLabel}
           h1={h1}
           summary={summary}

@@ -7,13 +7,12 @@ import {
 } from "@/components/marketing/sections";
 
 /**
- * Location/service-only sections: an overlay hero with a local badge and a
+ * Location/service-only sections: an overlay hero with a quick quote card on
  * quick quote card on top of the photo, and a local context block.
  */
 
 export function LocationHero({
   breadcrumbs,
-  badge,
   eyebrow,
   h1,
   summary,
@@ -23,7 +22,6 @@ export function LocationHero({
   quoteBody,
 }: {
   breadcrumbs: React.ReactNode;
-  badge: string;
   eyebrow: string;
   h1: string;
   summary: string;
@@ -43,15 +41,6 @@ export function LocationHero({
       imageAlt={imageAlt}
       breadcrumbs={breadcrumbs}
     >
-      <p
-        className="inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[14px] font-semibold"
-        style={{
-          borderColor: "var(--color-band-accent)",
-          color: "var(--color-band-accent)",
-        }}
-      >
-        {badge}
-      </p>
       <p className="eyebrow mt-6 flex" style={{ color: overlayEyebrow }}>
         {eyebrow}
       </p>
