@@ -64,7 +64,7 @@ const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
   },
   "concrete-patios": {
     src: "/images/services/concrete-patios/concrete-patios-process.webp",
-    alt: "Example photo: a screed board pulled across freshly placed concrete to level the surface",
+    alt: "Worker in boots moving wet concrete with a shovel into wood forms on a residential patio site",
   },
   "concrete-slabs": {
     src: "/images/services/concrete-slabs/concrete-slabs-process.webp",
@@ -84,7 +84,7 @@ const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
   },
   "concrete-steps": {
     src: "/images/services/concrete-steps/concrete-steps-process.webp",
-    alt: "Example photo: concrete steps being formed with timber forms and a rough, freshly placed surface beside a brick edge",
+    alt: "Concrete poured from a chute into wood forms for front steps beside a sided wall",
   },
   "concrete-repair": {
     src: "/images/services/concrete-repair/concrete-repair-process.webp",
