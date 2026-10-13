@@ -253,7 +253,7 @@ export function ServicePageTemplate({
                       <h3 className="h3">
                         Typical specifications to confirm with your provider
                       </h3>
-                      <p className="mt-2 max-w-prose text-[15px] leading-relaxed text-[color:var(--color-muted,inherit)]">
+                      <p className="mt-2 max-w-prose text-[15px] leading-relaxed text-[color:var(--color-muted)]">
                         Final mix, reinforcement, and joint layout are set for
                         each job during the site visit.
                       </p>
@@ -261,11 +261,11 @@ export function ServicePageTemplate({
                         {service.tradeSpecs.map((spec) => (
                           <li
                             key={spec}
-                            className="flex items-start gap-3 rounded-lg border border-black/10 bg-white p-4 text-[15px] leading-relaxed"
+                            className="card flex items-start gap-3 p-5 text-[15px] leading-relaxed text-[color:var(--color-ink)]"
                           >
                             <Icon
                               name="check"
-                              className="mt-0.5 h-5 w-5 shrink-0 text-[color:var(--color-accent,currentColor)]"
+                              className="mt-0.5 h-5 w-5 shrink-0 text-[color:var(--color-accent)]"
                             />
                             <span>{spec}</span>
                           </li>
