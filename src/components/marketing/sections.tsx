@@ -256,17 +256,19 @@ export function OverlayHeader({
 }) {
   return (
     <section
-      className="relative isolate overflow-hidden"
+      className={`relative isolate overflow-hidden${imageSrc ? "" : " bg-stone-900"}`}
       style={{ borderColor: "var(--color-line-soft)" }}
     >
-      <Image
-        src={imageSrc}
-        alt={imageAlt}
-        fill
-        priority
-        sizes="100vw"
-        className="-z-20 object-cover"
-      />
+      {imageSrc ? (
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          fill
+          priority
+          sizes="100vw"
+          className="-z-20 object-cover"
+        />
+      ) : null}
       <div
         className={HERO_IMAGE_OVERLAY}
         aria-hidden="true"

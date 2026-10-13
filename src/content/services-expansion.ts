@@ -47,9 +47,9 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Stamped work costs more than a broom finish because it takes more labor, more material, and a sealing step. Area is only part of the figure.",
     ctaLead:
       "Send the pattern you have in mind, the area, and any photos. A local provider will confirm what is achievable on your slab.",
-    image: "/images/services/stamped-concrete/stamped-concrete-hero.jpg",
+    image: "/images/services/stamped-concrete/stamped-concrete-hero.webp",
     imageAlt:
-      "Stamped concrete patio with a slate pattern and warm tan integral color behind a brick house",
+      "Stamped concrete surface with a paver-style pattern and curved edge beside a lawn",
     projectTypes: ["Stamped patio", "Stamped entry", "Decorative slab"],
     keyFacts: [
       { label: "Finish types", value: "Stamped, integral color, texture" },
@@ -222,9 +222,9 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Foundation cost follows depth, length, soil conditions, and the engineered reinforcement. Access and excavation often move the figure more than concrete volume does.",
     ctaLead:
       "Send the plan set, the soil report if you have one, and the location. A local provider will confirm what the engineer requires.",
-    image: "/images/services/concrete-foundations/concrete-foundations-hero.jpg",
+    image: "/images/services/concrete-foundations/concrete-foundations-hero.webp",
     imageAlt:
-      "Exposed footing trench with rebar cages and a poured stem wall at a residential building site",
+      "Concrete foundation slab with steel reinforcing bars and formwork on a construction site",
     projectTypes: ["House foundation", "Footing", "Addition foundation"],
     keyFacts: [
       { label: "Scope", value: "Footings and stem walls" },
@@ -393,9 +393,9 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Walkway cost follows length, width, grade changes, and removal of the old walk. Short walks cost more per foot because setup stays the same.",
     ctaLead:
       "Send the route, the approximate length, and photos. A local provider will confirm the grade and joint layout.",
-    image: "/images/services/concrete-walkways/concrete-walkways-hero.jpg",
+    image: "/images/services/concrete-walkways/concrete-walkways-hero.webp",
     imageAlt:
-      "Broom finished front walkway leading from a driveway to a brick house entrance with a lawn edge",
+      "Curved concrete walkway with saw-cut expansion joints beside a lawn",
     projectTypes: ["New walkway", "Walk replacement", "Sidewalk section"],
     keyFacts: [
       { label: "Scope", value: "Front walks and sidewalks" },
@@ -563,9 +563,9 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Steps are priced by the number of risers, the landing size, and the work to remove or form the existing entry. A small set of steps costs more per step than the count suggests.",
     ctaLead:
       "Send the number of steps, the height to the door, and photos. A local provider will confirm the rise, run, and code requirements.",
-    image: "/images/services/concrete-steps/concrete-steps-hero.jpg",
+    image: "",
     imageAlt:
-      "New broom finished concrete porch steps and a square landing at a brick house entrance",
+      "",
     projectTypes: ["Front steps", "Porch landing", "Step replacement"],
     keyFacts: [
       { label: "Scope", value: "Front steps and porch landings" },
