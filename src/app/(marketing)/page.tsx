@@ -110,6 +110,20 @@ export default function HomePage() {
         imageSrc="/images/home/home-hero-float.webp"
         imageAlt="Worker in a high-visibility vest and cap hand-floating freshly poured concrete beside timber forms"
         overlay
+        aside={
+          <QuoteForm
+            formId="hero-quote-form"
+            services={publishedServices.map((s) => ({
+              slug: s.slug,
+              name: s.name,
+            }))}
+            serviceAreas={serviceAreaOptions}
+            outOfAreaValue={OUT_OF_AREA_POSTAL_CODE}
+            consentVersion={site.consentVersion}
+            fallbackDisplay={site.phoneDisplay}
+            fallbackE164={site.phoneE164}
+          />
+        }
       />
 
       <Section

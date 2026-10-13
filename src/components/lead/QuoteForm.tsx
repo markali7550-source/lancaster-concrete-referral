@@ -22,6 +22,8 @@ interface QuoteFormProps {
   /** Sentinel value for "My area is not listed", also supplied by the server. */
   outOfAreaValue: string;
   defaultServiceSlug?: string;
+  /** DOM id for the form root. Lets a second instance (the hero) coexist with the page's #quote-form. */
+  formId?: string;
   consentVersion: string;
   fallbackDisplay: string;
   fallbackE164: string;
@@ -52,6 +54,7 @@ export function QuoteForm({
   serviceAreas,
   outOfAreaValue,
   defaultServiceSlug,
+  formId = "quote-form",
   consentVersion,
   fallbackDisplay,
   fallbackE164,
@@ -273,7 +276,7 @@ export function QuoteForm({
   if (status === "success") {
     return (
       <div
-        id="quote-form"
+        id={formId}
         ref={successRef}
         tabIndex={-1}
         className="card scroll-mt-32 p-6 md:p-8 focus:outline-none"
@@ -303,7 +306,7 @@ export function QuoteForm({
 
   if (status === "no_coverage") {
     return (
-      <div id="quote-form" className="card scroll-mt-32 p-6 md:p-8" role="status">
+      <div id={formId} className="card scroll-mt-32 p-6 md:p-8" role="status">
         <p className="eyebrow">No provider covers that area yet</p>
         <h3 className="mt-2 text-2xl font-semibold">
           Your area isn&apos;t covered yet
@@ -342,7 +345,7 @@ export function QuoteForm({
       className="card scroll-mt-32 p-5 md:p-6"
       onSubmit={onSubmit}
       noValidate
-      id="quote-form"
+      id={formId}
     >
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
         <div>
@@ -598,7 +601,7 @@ export function QuoteForm({
             />
           </div>
 
-          <div id="consent-section" className="space-y-2">
+          <div id={`${baseId}-consent-section`} className="space-y-2">
             <label
               className="flex gap-3 text-sm"
               htmlFor={`${baseId}-serviceConsent`}
