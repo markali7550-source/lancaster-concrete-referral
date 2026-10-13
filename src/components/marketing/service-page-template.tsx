@@ -43,7 +43,7 @@ import { site } from "@/lib/env";
  */
 const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-driveways": { src: "/images/services/concrete-driveways/concrete-driveways-detail.webp", alt: "Driveway edge pitched away from the lawn with a gravel drainage margin" },
-  "concrete-patios": { src: "/images/services/concrete-patios/concrete-patios-detail.webp", alt: "Plain concrete patio slab at the rear of a single story brick home" },
+  "concrete-patios": { src: "/images/services/concrete-patios/concrete-patios-detail.webp", alt: "New concrete patio slab set between wood edge forms beside a two-story vinyl-sided house with a screened porch" },
   "concrete-slabs": { src: "/images/services/concrete-slabs/concrete-slabs-detail.webp", alt: "Precast concrete slab panels laid over a brick base beside grass" },
   "stamped-concrete": { src: "/images/services/stamped-concrete/stamped-concrete-hero.webp", alt: "Stamped concrete surface with a paver-style pattern and curved edge beside a lawn" },
   "concrete-foundations": { src: "/images/services/concrete-foundations/concrete-foundations-hero.webp", alt: "Concrete foundation slab with steel reinforcing bars and formwork on a construction site" },
