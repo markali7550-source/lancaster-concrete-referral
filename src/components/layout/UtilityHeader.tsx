@@ -61,7 +61,7 @@ export function UtilityHeader() {
               placement="header"
               className="btn btn-secondary hidden min-h-12 whitespace-nowrap px-3.5 text-[15px] xl:inline-flex"
             />
-            <Link href="/contact" className="btn btn-primary min-h-12 shrink-0 whitespace-nowrap px-3.5 text-[15px]">
+            <Link href="/services" className="btn btn-primary min-h-12 shrink-0 whitespace-nowrap px-3.5 text-[15px]">
               Request Service
             </Link>
           </div>
