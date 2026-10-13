@@ -89,7 +89,6 @@ export function LocationHero({
 }
 
 export function LocalContext({
-  cityLabel,
   climateTitle,
   climate,
   neighborhoodsTitle,
@@ -109,7 +108,7 @@ export function LocalContext({
     >
       <div className="container-page grid gap-10 lg:grid-cols-2 lg:gap-14">
         <div>
-          <p className="eyebrow flex">Local conditions · {cityLabel}</p>
+          <p className="eyebrow flex">Local conditions</p>
           <h2 id="local-context-title" className="h2 mt-4">
             {climateTitle}
           </h2>
