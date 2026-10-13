@@ -1,10 +1,14 @@
-import Image from "next/image";
 import Link from "next/link";
+import {
+  OverlayHeader,
+  overlayBody,
+  overlayEyebrow,
+  overlayHeading,
+} from "@/components/marketing/sections";
 
 /**
- * Location/service-only sections. These give city pages their own visual
- * identity: a two-column split hero with a local badge and a quick quote
- * box, and a local context block with neighborhood tags.
+ * Location/service-only sections: an overlay hero with a local badge and a
+ * quick quote card on top of the photo, and a local context block.
  */
 
 export function LocationHero({
@@ -28,68 +32,59 @@ export function LocationHero({
   quoteTitle: string;
   quoteBody: string;
 }) {
+  /*
+   * Overlay hero (approved 2026-10-13): the photo is the full background,
+   * with the same scrim as the service-page hero. Badge, headline, summary,
+   * and the quote card sit on top of it.
+   */
   return (
-    <section
-      className="relative border-b"
-      style={{ borderColor: "var(--color-line-soft)" }}
+    <OverlayHeader
+      imageSrc={image}
+      imageAlt={imageAlt}
+      breadcrumbs={breadcrumbs}
     >
-      <div className="container-page py-10 md:py-14">
-        {breadcrumbs}
-        <div className="mt-6 grid items-start gap-10 lg:grid-cols-12 lg:gap-12">
-          <div className="lg:col-span-7">
-            <p
-              className="inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[14px] font-semibold"
-              style={{
-                borderColor: "var(--color-accent)",
-                color: "var(--color-accent)",
-              }}
-            >
-              {badge}
-            </p>
-            <p className="eyebrow mt-6">{eyebrow}</p>
-            <h1 className="h1 mt-4 text-balance">{h1}</h1>
-            <p className="lede mt-5 max-w-prose">{summary}</p>
+      <p
+        className="inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[14px] font-semibold"
+        style={{
+          borderColor: "var(--color-band-accent)",
+          color: "var(--color-band-accent)",
+        }}
+      >
+        {badge}
+      </p>
+      <p className="eyebrow mt-6" style={{ color: overlayEyebrow }}>
+        {eyebrow}
+      </p>
+      <h1 className="h1 mt-4 text-balance" style={{ color: overlayHeading }}>
+        {h1}
+      </h1>
+      <p className="lede mt-5 max-w-prose" style={{ color: overlayBody }}>
+        {summary}
+      </p>
 
-            <div
-              className="mt-8 rounded-[12px] border p-5 md:p-6"
-              style={{
-                borderColor: "var(--color-line-soft)",
-                backgroundColor: "var(--color-surface)",
-              }}
-              aria-labelledby="quick-quote-title"
-            >
-              <p
-                id="quick-quote-title"
-                className="text-[17px] font-semibold"
-              >
-                {quoteTitle}
-              </p>
-              <p className="mt-1.5 text-[15px] leading-relaxed text-[color:var(--color-muted)]">
-                {quoteBody}
-              </p>
-              <Link
-                href="#quote-form"
-                className="btn btn-primary mt-4 inline-flex min-h-[48px] w-full items-center justify-center sm:w-auto"
-              >
-                Request Concrete Service
-              </Link>
-            </div>
-          </div>
-
-          <div className="relative overflow-hidden rounded-[16px] lg:col-span-5">
-            <Image
-              src={image}
-              alt={imageAlt}
-              width={1100}
-              height={741}
-              priority
-              sizes="(min-width: 1024px) 40vw, 100vw"
-              className="h-72 w-full object-cover md:h-96 lg:h-full lg:min-h-[420px]"
-            />
-          </div>
-        </div>
+      <div
+        className="mt-8 rounded-[12px] border p-5 md:p-6"
+        style={{
+          borderColor: "rgba(255,255,255,0.16)",
+          backgroundColor: "rgba(11,16,23,0.72)",
+          color: "var(--color-band-ink)",
+        }}
+        aria-labelledby="quick-quote-title"
+      >
+        <p id="quick-quote-title" className="text-[17px] font-semibold">
+          {quoteTitle}
+        </p>
+        <p className="mt-1.5 text-[15px] leading-relaxed" style={{ color: overlayBody }}>
+          {quoteBody}
+        </p>
+        <Link
+          href="#quote-form"
+          className="btn btn-primary mt-4 inline-flex min-h-[48px] w-full items-center justify-center sm:w-auto"
+        >
+          Request Concrete Service
+        </Link>
       </div>
-    </section>
+    </OverlayHeader>
   );
 }
 
