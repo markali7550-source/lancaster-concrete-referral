@@ -154,9 +154,6 @@ export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {
               <span className="block text-[15px] font-semibold transition-colors duration-150 group-hover/item:text-[color:var(--color-accent)]">
                 {service.name}
               </span>
-              <span className="mt-0.5 block text-[13px] leading-snug text-[color:var(--color-muted)]">
-                {service.projectTypes.join(" · ")}
-              </span>
             </Link>
           ))}
           <Link
