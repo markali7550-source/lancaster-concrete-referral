@@ -48,6 +48,7 @@ const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
   "stamped-concrete": { src: "/images/services/stamped-concrete/stamped-concrete-band.webp", alt: "Stamped concrete surface with a paver-style pattern and curved edge beside a lawn" },
   "concrete-foundations": { src: "/images/services/concrete-foundations/concrete-foundations-band.webp", alt: "Concrete foundation slab with steel reinforcing bars and formwork on a construction site" },
   "concrete-walkways": { src: "/images/services/concrete-walkways/concrete-walkways-band.webp", alt: "Curved concrete walkway with saw-cut expansion joints beside a lawn" },
+  "concrete-steps": { src: "/images/services/concrete-steps/concrete-steps-detail.webp", alt: "Example photo: concrete steps formed in wood boards with a brick edge and marking tape at the base" },
   "concrete-repair": { src: "/images/services/concrete-repair/concrete-repair-detail.webp", alt: "Settled concrete walkway slab with a cracked, lifted edge" },
 };
 
