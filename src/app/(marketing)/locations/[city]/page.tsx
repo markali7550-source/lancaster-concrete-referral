@@ -13,6 +13,7 @@ import {
   ProjectTypeChooser,
   ServiceAreaControls,
   Section,
+  SectionDivider,
 } from "@/components/marketing/sections";
 import {
   Breadcrumbs,
@@ -145,6 +146,7 @@ export default async function LocationPage({ params }: { params: Params }) {
       />
 
       <Section
+        compact
         eyebrow="Service area"
         title={`${location.city} service area overview`}
         lead="Requests are matched to providers who have approved coverage for your address, so confirm your address when you request a quote."
@@ -175,6 +177,8 @@ export default async function LocationPage({ params }: { params: Params }) {
           </li>
         </ul>
       </Section>
+
+      <SectionDivider />
 
       <Section
         eyebrow="Local conditions"
