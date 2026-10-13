@@ -14,6 +14,7 @@ Each image used on the site, with its source and license basis.
 | `public/images/services/concrete-foundations/concrete-foundations-process.webp` | `/services/concrete-foundations` (process section) | iStock | 1182417821 | iStock Standard License (user-provided file; confirm in iStock download history) | Crews screeding over rebar mesh; alt text labels it as an example |
 | `public/images/services/concrete-walkways/concrete-walkways-process.webp` | `/services/concrete-walkways` (process section) | iStock | 1474354593 | iStock Standard License (user-provided file; confirm in iStock download history) | Crew finishing walkway edge; alt text labels it as an example |
 | `public/images/services/concrete-slabs/concrete-slabs-process.webp` | `/services/concrete-slabs` (process section) | iStock | not provided | iStock Standard License (user-confirmed) | Stacked precast slab panels; content ID still needed for the record |
+| `public/images/services/concrete-patios/concrete-patios-hero.webp` | `/services/concrete-patios` (hero) | Source not documented | not provided | Not confirmed. User approved use on 2026-10-13; the photo may look AI-generated | Replaces stamped-looking photo. Needs a licensed replacement or license record |
 
 ## Not in use
 - `istockphoto-818630724` (iStock, not used): wall formwork, not a steps match. Kept only in local scratch, not committed.

@@ -369,9 +369,9 @@ const coreServices: readonly ServiceRecord[] = [
       "Compacted gravel sub-base and a planned drainage slope set before the forms go in.",
       "Control and expansion joints laid out for South Carolina's seasonal heat, rain, and clay soil movement.",
     ],
-    image: "/images/locations/lancaster-sc/lancaster-sc-patios.webp",
+    image: "/images/services/concrete-patios/concrete-patios-hero.webp",
     imageAlt:
-      "Stamped concrete patio with a curved edge and a metal table and chairs beside a siding house, with a mown lawn and split rail fence",
+      "Plain concrete patio slab at the rear of a single story brick home",
     projectTypes: ["New patio", "Patio replacement", "Stamped patio"],
     keyFacts: [
       {
