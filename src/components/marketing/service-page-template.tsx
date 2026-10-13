@@ -69,6 +69,10 @@ const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
     src: "/images/services/concrete-slabs/concrete-slabs-process.webp",
     alt: "Stacked precast concrete slabs with wood spacers resting on asphalt beside a grass verge",
   },
+  "concrete-steps": {
+    src: "/images/services/concrete-steps/concrete-steps-process.webp",
+    alt: "Example photo: concrete steps being formed with timber forms and a rough, freshly placed surface beside a brick edge",
+  },
   "concrete-repair": {
     src: "/images/services/concrete-repair/concrete-repair-process.webp",
     alt: "Worker with a pry bar beside an orange cut-off saw, cutting along the cracked edge of a concrete slab",
