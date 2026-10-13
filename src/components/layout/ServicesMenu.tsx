@@ -18,8 +18,8 @@ export interface ServicesMenuItem {
  */
 export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {
   const [open, setOpen] = useState(false);
-  // Hover opens transiently; a click pins the menu so it survives the cursor
-  // leaving, and clicking again (or Escape / outside / navigation) unpins it.
+  // A click on the caret pins the menu open for keyboard and touch use. Leaving
+  // the menu with a mouse still closes it, pinned or not, so it never lingers.
   const [pinned, setPinned] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -45,9 +45,12 @@ export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {
 
   /** Small grace period so moving the cursor into the panel does not close it. */
   function handlePointerLeave(event: React.PointerEvent) {
-    if (event.pointerType !== "mouse" || pinned) return;
+    if (event.pointerType !== "mouse") return;
     cancelClose();
-    closeTimer.current = setTimeout(() => setOpen(false), 180);
+    closeTimer.current = setTimeout(() => {
+      setPinned(false);
+      setOpen(false);
+    }, 180);
   }
 
   useEffect(() => cancelClose, []);
@@ -76,11 +79,19 @@ export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {
       toggleRef.current?.focus();
     }
 
+    // Scrolling moves the page under a stationary cursor, which can leave the
+    // menu open with no pointer movement to close it. Close it on scroll.
+    function onScroll() {
+      closeAll();
+    }
+
     document.addEventListener("pointerdown", onPointerDown);
     document.addEventListener("keydown", onKeyDown);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
       document.removeEventListener("pointerdown", onPointerDown);
       document.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("scroll", onScroll);
     };
   }, [open]);
 
