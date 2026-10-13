@@ -246,6 +246,199 @@ const records: readonly LocationServiceRecord[] = [
       },
     ],
   },
+  {
+    locationSlug: "lancaster-sc",
+    serviceSlug: "concrete-foundations",
+    state: "published",
+    localImage: "/images/services/concrete-foundations/concrete-foundations-hero.webp",
+    localImageAlt:
+      "Worker's boots beside a concrete vibrator pipe on fresh concrete over a steel rebar grid",
+    localBody: [
+      {
+        heading: "What a foundation job covers",
+        body:
+          "Foundation requests in Lancaster County usually involve footings, stem walls, or a slab on grade for an addition, a garage, or an outbuilding. The footing depth, the reinforcement, and the concrete strength come from the engineer's drawings and the county's code, not from the crew's preference. Ask for those drawings before the price is set.",
+      },
+      {
+        heading: "Clay soil and water come first",
+        body:
+          "Many Lancaster County lots sit on red clay. Clay holds water after storms and moves as it wets and dries, so the soil under a footing can change over a season. A site review before the excavation is opened shows whether the bearing soil is sound, and whether the footing needs to go deeper or wider than the plan shows.",
+      },
+      {
+        heading: "Inspections happen before the pour",
+        body:
+          "Foundation work is usually inspected before concrete is placed, while the forms and rebar are still visible. Schedule the inspection around the pour, not after it. Ask the provider who requests the inspection and who handles the permit paperwork.",
+      },
+      {
+        heading: "Pour timing in heat and storms",
+        body:
+          "Afternoon thunderstorms and summer heat both affect a foundation pour. Rain on fresh concrete can wash the surface, and hot weather can cure it too fast. Providers often schedule pours for the morning and protect the surface until it has set.",
+      },
+    ],
+    localFaqs: [
+      {
+        question: "Does a Lancaster County foundation project need an engineer?",
+        answer:
+          "It depends on the project and on what the county requires for the permit. Additions, garages, and some outbuildings often need engineered drawings. Confirm with the county building department before you ask for a price.",
+      },
+      {
+        question: "Does the clay soil change the footing?",
+        answer:
+          "It can. Clay that stays wet or dries and shrinks can change the bearing conditions, so the provider should check the soil before the footing depth is set.",
+      },
+      {
+        question: "Is the price final before a site visit?",
+        answer:
+          "Usually not. Excavation depth, soil conditions, and access all affect cost, so an on-site review is normally needed before a final figure.",
+      },
+    ],
+  },
+  {
+    locationSlug: "lancaster-sc",
+    serviceSlug: "concrete-walkways",
+    state: "published",
+    localImage: "/images/services/concrete-walkways/concrete-walkways-band.webp",
+    localImageAlt:
+      "Curved concrete walkway with saw-cut expansion joints beside a lawn",
+    localBody: [
+      {
+        heading: "What a front entry path involves",
+        body:
+          "Walkway requests here usually mean a new front entry path from the driveway or sidewalk to the porch, or replacing a section that has cracked, heaved, or sunk. A new path through the lawn is a common variation. The layout is often set by the door, the approach, and where water runs off the roof.",
+      },
+      {
+        heading: "Grade and the lawn edge",
+        body:
+          "Clay soil heaves as it wets and dries, and a walk that sits on it can lift at the joints. Grade the path so water runs away from the house and off the walk, and set an edge restraint so the lawn does not push the slab out of line over time.",
+      },
+      {
+        heading: "Joints and finish",
+        body:
+          "Control joints guide where a walk cracks, which keeps the cracks straight and out of the way. A broom finish gives grip on a wet entry, and it matters more under a porch or a tree, where the surface stays damp longer.",
+      },
+      {
+        heading: "Tying into the porch",
+        body:
+          "A walk that meets a porch stoop or a step needs a deliberate joint, because the two pieces of concrete settle on their own footings. Look at the existing porch structure before the walk is priced, not after the forms are set.",
+      },
+    ],
+    localFaqs: [
+      {
+        question: "Can a cracked front walk be patched, or does it need replacing?",
+        answer:
+          "It depends on how much the slab has moved. A small crack in a level slab can often be sealed. A lifted or sunken section that creates a trip hazard usually needs to be raised or replaced. The provider assesses the walk on site.",
+      },
+      {
+        question: "What finish is best for a front entry?",
+        answer:
+          "A broom finish is the common choice because it gives grip when the surface is wet. A smooth trowel finish can become slippery in shade and under trees.",
+      },
+      {
+        question: "Is the price final before a site visit?",
+        answer:
+          "Usually not. Length, grade, demolition, and the joint layout all affect cost, so an on-site review is normally needed before a final figure.",
+      },
+    ],
+  },
+  {
+    locationSlug: "lancaster-sc",
+    serviceSlug: "stamped-concrete",
+    state: "published",
+    localImage: "/images/services/stamped-concrete/stamped-concrete-band.webp",
+    localImageAlt:
+      "Stamped concrete surface with a paver-style pattern and curved edge beside a lawn",
+    localBody: [
+      {
+        heading: "What stamped work involves",
+        body:
+          "Stamped concrete is a pattern pressed into freshly placed concrete, usually with integral color and a sealer. Requests here cover patios, entries, and porch areas. The pattern is set in a short window, so the scope, the pattern, and the color should be settled before the pour is booked.",
+      },
+      {
+        heading: "Heat and humidity set the window",
+        body:
+          "Humid, hot days shorten the time the surface stays workable. A stamp that goes on too late leaves a shallow or uneven pattern. Shade under mature trees can also slow the set, so the timing has to be planned around the spot and the weather rather than the calendar alone.",
+      },
+      {
+        heading: "Sealing and upkeep",
+        body:
+          "The sealer is what keeps a stamped surface from staining and wearing. Ask the provider for the sealer type and a recommended schedule. Sun, traffic, pollen, and red clay tracked onto the surface all affect how quickly the sealer wears.",
+      },
+      {
+        heading: "Joints and cracking",
+        body:
+          "Stamped slabs still need control joints, and cracks can occur as the concrete cures and moves. Ask where the joints will fall relative to the pattern, because a joint placed through a pattern is harder to hide than one placed along a border.",
+      },
+    ],
+    localFaqs: [
+      {
+        question: "Does stamped concrete crack?",
+        answer:
+          "It can. Control joints guide where cracks form, and the provider should set them before the pattern is stamped. Cracks are not a guarantee either way, so ask how the joints are laid out.",
+      },
+      {
+        question: "How often does stamped concrete need sealing?",
+        answer:
+          "It depends on sun exposure, foot traffic, and cleaning. Ask the provider for a schedule that fits the surface, and keep up with it.",
+      },
+      {
+        question: "Is stamped concrete slippery?",
+        answer:
+          "It can be when wet. Ask about a texture or an anti-slip additive for the sealer, especially for steps, pool areas, and shaded patios.",
+      },
+      {
+        question: "Is the price final before a site visit?",
+        answer:
+          "Usually not. Pattern complexity, area, and the sealing step all affect cost, so an on-site review is normally needed before a final figure.",
+      },
+    ],
+  },
+  {
+    locationSlug: "lancaster-sc",
+    serviceSlug: "concrete-steps",
+    state: "published",
+    localImage: "/images/services/concrete-steps/concrete-steps-hero.webp",
+    localImageAlt:
+      "Concrete front steps with four treads leading up to a sided house entry",
+    localBody: [
+      {
+        heading: "What a steps job covers",
+        body:
+          "Steps requests here usually mean new front or side steps for a porch or stoop, replacing treads that have spalled or cracked, or adding a landing. The steps are often tied to the house wall, so the existing footing and the drainage at the base need to be checked before the forms are set.",
+      },
+      {
+        heading: "Rise, run, and handrails",
+        body:
+          "The rise and run of each tread, and whether a handrail is required, come from the building code and the height of the step set. Ask the provider how those rules apply to your steps before the forms are built, since changing the layout afterward costs more.",
+      },
+      {
+        heading: "Forms and the pour",
+        body:
+          "Steps are poured into forms, and the surface is finished tread by tread. In hot or humid weather the surface can set faster than it can be finished, so pours are often moved to the morning. The steps should cure before anyone uses them.",
+      },
+      {
+        heading: "Water at the base",
+        body:
+          "Water that runs down a wall and pools at the base of the steps can undermine the footing and cause the lowest tread to crack. Grade the ground away from the steps, and ask how the joint against the house wall will be sealed.",
+      },
+    ],
+    localFaqs: [
+      {
+        question: "Do new steps in Lancaster County need a permit?",
+        answer:
+          "It depends on the height, the work, and the property. Check with Lancaster County's building department before you start, and ask your provider who handles any permit paperwork.",
+      },
+      {
+        question: "Can damaged steps be repaired, or do they need replacing?",
+        answer:
+          "It depends on the damage. Surface spalling on a sound tread can sometimes be resurfaced. Cracked or sunken treads, or steps that have moved away from the house, usually need to be rebuilt.",
+      },
+      {
+        question: "Is the price final before a site visit?",
+        answer:
+          "Usually not. The number of treads, the height, access, and the footing all affect cost, so an on-site review is normally needed before a final figure.",
+      },
+    ],
+  },
 ];
 
 /** Explicit allowlist consumed by generateStaticParams. Never a Cartesian product. */
