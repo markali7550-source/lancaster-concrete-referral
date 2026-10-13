@@ -73,6 +73,8 @@ export interface ServiceRecord {
   ctaLead: string;
   image: string;
   imageAlt: string;
+  /** Visible note under the hero photo, for example photos that are not the business's own work. */
+  imageCaption?: string;
   projectTypes: string[];
   /** Quick-reference facts strip under the hero. */
   keyFacts: { label: string; value: string }[];

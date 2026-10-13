@@ -245,11 +245,13 @@ const HERO_IMAGE_FADE = `pointer-events-none absolute inset-0 z-20 ${PHOTO_EDGE_
 export function OverlayHeader({
   imageSrc,
   imageAlt,
+  imageCaption,
   children,
   breadcrumbs,
 }: {
   imageSrc: string;
   imageAlt: string;
+  imageCaption?: string;
   children: React.ReactNode;
   /** Sits over the photo instead of in a band above it. */
   breadcrumbs?: React.ReactNode;
@@ -281,6 +283,11 @@ export function OverlayHeader({
           {children}
         </div>
       </div>
+      {imageCaption ? (
+        <p className="absolute bottom-2 right-3 z-30 max-w-xs text-right text-xs text-white/85 drop-shadow">
+          {imageCaption}
+        </p>
+      ) : null}
     </section>
   );
 }

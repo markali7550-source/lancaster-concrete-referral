@@ -563,9 +563,11 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Steps are priced by the number of risers, the landing size, and the work to remove or form the existing entry. A small set of steps costs more per step than the count suggests.",
     ctaLead:
       "Send the number of steps, the height to the door, and photos. A local provider will confirm the rise, run, and code requirements.",
-    image: "",
+    image: "/images/services/concrete-steps/concrete-steps-hero.webp",
     imageAlt:
-      "",
+      "Concrete front steps being formed and poured beside a brick edge and shrubs",
+    imageCaption:
+      "Example photo of concrete steps in progress. Work is performed by independent local providers, not by this site.",
     projectTypes: ["Front steps", "Porch landing", "Step replacement"],
     keyFacts: [
       { label: "Scope", value: "Front steps and porch landings" },

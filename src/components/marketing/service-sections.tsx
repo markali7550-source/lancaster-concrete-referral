@@ -92,6 +92,7 @@ export function ServiceHero({
     <OverlayHeader
       imageSrc={service.image}
       imageAlt={service.imageAlt}
+      imageCaption={service.imageCaption}
       breadcrumbs={breadcrumbs}
     >
       <p
