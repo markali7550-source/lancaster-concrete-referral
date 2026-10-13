@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { QuoteForm } from "@/components/lead/QuoteForm";
+import { LocalContext, LocationHero } from "@/components/marketing/location-sections";
 import { Icon } from "@/components/ui/Icon";
 import {
   FaqSection,
@@ -99,6 +100,17 @@ const MAIN_NAV_LABELS: Record<ServiceSectionId, string> = {
   prepare: "Prepare",
 };
 
+/** Location/service layout: split hero, quick quote box, local context. */
+export interface LocationLayout {
+  badge: string;
+  quoteTitle: string;
+  quoteBody: string;
+  climateTitle: string;
+  climate: string[];
+  neighborhoodsTitle: string;
+  neighborhoods: string[];
+}
+
 export interface LocalIntro {
   eyebrow: string;
   title: string;
@@ -136,6 +148,7 @@ export function ServicePageTemplate({
   defaultServiceSlug,
   callCardTitle,
   callCardBody,
+  locationLayout = null,
 }: {
   service: ServiceRecord;
   detail: ServiceDetail;
@@ -161,6 +174,7 @@ export function ServicePageTemplate({
   defaultServiceSlug?: string;
   callCardTitle: string;
   callCardBody: string;
+  locationLayout?: LocationLayout | null;
 }) {
   const heroService = heroImage
     ? { ...service, image: heroImage.src, imageAlt: heroImage.alt }
@@ -174,13 +188,27 @@ export function ServicePageTemplate({
 
   return (
     <>
-      <ServiceHero
-        breadcrumbs={breadcrumbs}
-        service={heroService}
-        cityLabel={cityLabel}
-        h1={h1}
-        summary={summary}
-      />
+      {locationLayout ? (
+        <LocationHero
+          breadcrumbs={breadcrumbs}
+          badge={locationLayout.badge}
+          eyebrow={cityLabel}
+          h1={h1}
+          summary={summary}
+          image={heroService.image}
+          imageAlt={heroService.imageAlt}
+          quoteTitle={locationLayout.quoteTitle}
+          quoteBody={locationLayout.quoteBody}
+        />
+      ) : (
+        <ServiceHero
+          breadcrumbs={breadcrumbs}
+          service={heroService}
+          cityLabel={cityLabel}
+          h1={h1}
+          summary={summary}
+        />
+      )}
       <KeyFacts facts={keyFacts} />
       <InPageNav items={navItems} />
 
@@ -188,6 +216,16 @@ export function ServicePageTemplate({
         <div className="grid gap-6 lg:grid-cols-12 lg:gap-12">
           {/* ---------------------------------------------------- Main column */}
           <div className="min-w-0 lg:col-span-7 xl:col-span-8">
+            {locationLayout ? (
+              <LocalContext
+                cityLabel={cityLabel}
+                climateTitle={locationLayout.climateTitle}
+                climate={locationLayout.climate}
+                neighborhoodsTitle={locationLayout.neighborhoodsTitle}
+                neighborhoods={locationLayout.neighborhoods}
+              />
+            ) : null}
+
             {localIntro ? (
               <section className="scroll-mt-36 py-12 md:py-20">
                 <p className="eyebrow flex">{localIntro.eyebrow}</p>

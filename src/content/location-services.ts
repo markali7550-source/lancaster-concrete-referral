@@ -48,25 +48,33 @@ const records: readonly LocationServiceRecord[] = [
       {
         heading: "Who actually does the work",
         body:
-          "Local concrete providers do the pouring. When your request is accepted for the Lancaster area, a local provider contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set directly between you and that provider, and finish, thickness, and reinforcement are decided with them after they inspect your property.",
+          "Local concrete providers do the pouring. After you submit a request, a local provider contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set directly between you and that provider, and finish, thickness, and reinforcement are decided with them after they inspect your property.",
       },
     ],
     localFaqs: [
       {
         question:
+          "Do I need a Lancaster County permit for a new driveway?",
+        answer:
+          "It depends on the work and the property. Check with Lancaster County's planning or building department before you order work, and ask your provider who handles any permit paperwork.",
+      },
+      {
+        question:
+          "How quickly can a local provider come out for an on-site estimate in Lancaster?",
+        answer:
+          "Timing depends on the provider's schedule and the season, and it is not something we can promise. After you submit a request, the provider contacts you to talk about timing for an on-site visit.",
+      },
+      {
+        question:
           "Do Lancaster driveway quotes include removing the old slab?",
         answer:
-          "Demolition and haul away are usually quoted as separate line items. Ask the assigned contractor to itemize removal so you can compare quotes honestly.",
+          "Demolition and haul away are often quoted as separate line items. Ask the provider to itemize removal so you can compare quotes on the same basis.",
       },
       {
-        question: "Which Lancaster areas can you match right now?",
+        question:
+          "Is the price final before a site visit?",
         answer:
-          "Lancaster, South Carolina is the approved coverage area at launch. Requests from outside it return an honest no coverage response rather than being passed to a contractor who does not serve the area.",
-      },
-      {
-        question: "Can you guarantee a price before anyone visits?",
-        answer:
-          "No. Pricing, scheduling, and project eligibility are set by the independent local contractor after a site visit.",
+          "Usually not. The base, the drainage, and the finish all affect cost, so an on-site review is normally needed before a final figure.",
       },
     ],
   },
@@ -101,19 +109,28 @@ const records: readonly LocationServiceRecord[] = [
     ],
     localFaqs: [
       {
-        question: "What patio finish holds up best in a shaded Lancaster backyard?",
+        question:
+          "Do I need a Lancaster County permit for this project?",
         answer:
-          "Textured finishes such as broom or exposed aggregate stay usable in damp shade, where a smooth troweled surface tends to grow algae and get slippery. The assigned contractor makes the call after seeing the canopy and drainage on your lot.",
+          "It depends on the work and the property. Check with Lancaster County's planning or building department before you start, and ask your provider who handles any permit paperwork.",
       },
       {
-        question: "Can a new patio be joined to my existing porch slab?",
+        question:
+          "How quickly can a local provider come out for an on-site estimate in Lancaster?",
         answer:
-          "Often yes, but the two slabs move independently, so the joint has to be detailed for it. The contractor will inspect the existing footing before quoting rather than assuming it can simply be butted up against.",
+          "Timing depends on the provider's schedule and the season, and it is not something we can promise. After you submit a request, the provider contacts you to talk about timing for an on-site visit.",
       },
       {
-        question: "Is summer a bad time to pour a patio here?",
+        question:
+          "Does shade change the finish I should choose?",
         answer:
-          "It is workable but less forgiving. Humidity and heat shorten finishing time, so a pour here may be scheduled for early morning or moved to a better week. That is a contractor decision, not ours.",
+          "Yes. A patio under mature trees stays damp longer, so a broom or exposed aggregate finish usually holds grip better than a smooth trowel. Settle the finish with the provider before the slab is ordered.",
+      },
+      {
+        question:
+          "Is the price final before a site visit?",
+        answer:
+          "Usually not. Site conditions, the base, and the finish all affect cost, so an on-site review is normally needed before a final figure.",
       },
     ],
   },
@@ -148,19 +165,28 @@ const records: readonly LocationServiceRecord[] = [
     ],
     localFaqs: [
       {
-        question: "Does my shed or workshop pad need to be thicker than a standard slab?",
+        question:
+          "Do I need a Lancaster County permit for this project?",
         answer:
-          "It depends entirely on what will sit on it. Vehicles, tractors, and heavy benches typically call for thickened edges and additional reinforcement. Tell the contractor the intended use at the site visit, because changing it afterwards means removing the slab.",
+          "It depends on the work and the property. Check with Lancaster County's planning or building department before you start, and ask your provider who handles any permit paperwork.",
       },
       {
-        question: "Will a septic field limit where my pad can go?",
+        question:
+          "How quickly can a local provider come out for an on-site estimate in Lancaster?",
         answer:
-          "It can, and so can a well head and its setback. Identify both before the site visit so the contractor can position the pad legally rather than redesigning it after the fact.",
+          "Timing depends on the provider's schedule and the season, and it is not something we can promise. After you submit a request, the provider contacts you to talk about timing for an on-site visit.",
       },
       {
-        question: "Do I need a vapor barrier under an outbuilding slab?",
+        question:
+          "Does red clay soil affect a new slab?",
         answer:
-          "A vapor barrier is standard practice under a heated or finished space, because clay subsoil holds moisture that would otherwise rise through the slab. Under an open carport it is normally unnecessary. The assigned contractor specifies it, not us.",
+          "It can. Clay holds moisture, so providers often plan a compacted base, control joints, and drainage at the edges. Ask how they will prepare the ground under your slab.",
+      },
+      {
+        question:
+          "Is the price final before a site visit?",
+        answer:
+          "Usually not. Ground preparation, access, and finish all affect cost, so an on-site review is normally needed before a final figure.",
       },
     ],
   },
@@ -195,19 +221,28 @@ const records: readonly LocationServiceRecord[] = [
     ],
     localFaqs: [
       {
-        question: "Why does one section of my driveway keep sinking after it is fixed?",
+        question:
+          "Do I need a Lancaster County permit for this project?",
         answer:
-          "Usually water. If stormwater is washing fines out from under that section, leveling the surface without redirecting the water means the void reopens. Ask the contractor to explain what is being done about drainage.",
+          "It depends on the work and the property. Check with Lancaster County's planning or building department before you start, and ask your provider who handles any permit paperwork.",
       },
       {
-        question: "Can a lifted slab near a tree be leveled without killing the tree?",
+        question:
+          "How quickly can a local provider come out for an on-site estimate in Lancaster?",
         answer:
-          "Sometimes, but cutting a structural root to level a panel can destabilize a mature oak. That tradeoff is a site specific judgment the assigned contractor will walk you through.",
+          "Timing depends on the provider's schedule and the season, and it is not something we can promise. After you submit a request, the provider contacts you to talk about timing for an on-site visit.",
       },
       {
-        question: "When is resurfacing a waste of money?",
+        question:
+          "Can a cracked slab be repaired instead of replaced?",
         answer:
-          "When the cracking runs across several panels, the surface has lost real depth, or the subbase has failed. In those cases resurfacing buys a few seasons for a large share of the replacement price, and a straight contractor will say so.",
+          "Sometimes. It depends on crack width, whether the slab is still moving, and what caused the damage. The provider assesses this on site before recommending a repair or replacement.",
+      },
+      {
+        question:
+          "Is the price final before a site visit?",
+        answer:
+          "Usually not. The cause of the damage and the extent of the repair are usually clear only after an on-site review.",
       },
     ],
   },
