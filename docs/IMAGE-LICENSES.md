@@ -13,6 +13,7 @@ Each image used on the site, with its source and license basis.
 | `public/images/services/stamped-concrete/stamped-concrete-process.webp` | `/services/stamped-concrete` (process section) | iStock | 2189302811 | iStock Standard License (user-provided file; confirm in iStock download history) | Stamping tool on concrete; alt text labels it as an example |
 | `public/images/services/concrete-foundations/concrete-foundations-process.webp` | `/services/concrete-foundations` (process section) | iStock | 1182417821 | iStock Standard License (user-provided file; confirm in iStock download history) | Crews screeding over rebar mesh; alt text labels it as an example |
 | `public/images/services/concrete-walkways/concrete-walkways-process.webp` | `/services/concrete-walkways` (process section) | iStock | 1474354593 | iStock Standard License (user-provided file; confirm in iStock download history) | Crew finishing walkway edge; alt text labels it as an example |
+| `public/images/services/concrete-slabs/concrete-slabs-process.webp` | `/services/concrete-slabs` (process section) | iStock | not provided | iStock Standard License (user-confirmed) | Stacked precast slab panels; content ID still needed for the record |
 
 ## Not in use
 - `istockphoto-818630724` (iStock, not used): wall formwork, not a steps match. Kept only in local scratch, not committed.
