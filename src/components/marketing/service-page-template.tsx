@@ -45,7 +45,9 @@ const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-driveways": { src: "/images/services/concrete-driveways/concrete-driveways-detail.webp", alt: "Driveway edge pitched away from the lawn with a gravel drainage margin" },
   "concrete-patios": { src: "/images/services/concrete-patios/concrete-patios-detail.webp", alt: "New concrete patio slab set between wood edge forms beside a two-story vinyl-sided house with a screened porch" },
   "concrete-slabs": { src: "/images/services/concrete-slabs/concrete-slabs-detail.webp", alt: "Precast concrete slab panels laid over a brick base beside grass" },
-  "concrete-walkways": { src: "/images/services/concrete-steps/concrete-steps-hero.webp", alt: "Concrete front steps with four treads leading up to a sided house entry" },
+  "stamped-concrete": { src: "/images/services/stamped-concrete/stamped-concrete-band.webp", alt: "Stamped concrete surface with a paver-style pattern and curved edge beside a lawn" },
+  "concrete-foundations": { src: "/images/services/concrete-foundations/concrete-foundations-band.webp", alt: "Concrete foundation slab with steel reinforcing bars and formwork on a construction site" },
+  "concrete-walkways": { src: "/images/services/concrete-walkways/concrete-walkways-band.webp", alt: "Curved concrete walkway with saw-cut expansion joints beside a lawn" },
   "concrete-repair": { src: "/images/services/concrete-repair/concrete-repair-detail.webp", alt: "Settled concrete walkway slab with a cracked, lifted edge" },
 };
 
@@ -56,6 +58,10 @@ const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
  * slabs; owner-supplied real photographs remain the endpoint.
  */
 const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-driveways": {
+    src: "/images/services/concrete-driveways/concrete-driveways-process.webp",
+    alt: "Two workers screeding fresh concrete on a residential driveway with a long straightedge, a pickup and cones at the street",
+  },
   "concrete-patios": {
     src: "/images/services/concrete-patios/concrete-patios-process.webp",
     alt: "Example photo: a screed board pulled across freshly placed concrete to level the surface",
@@ -64,9 +70,25 @@ const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
     src: "/images/services/concrete-slabs/concrete-slabs-process.webp",
     alt: "Stacked precast concrete slabs with wood spacers resting on asphalt beside a grass verge",
   },
+  "stamped-concrete": {
+    src: "/images/services/stamped-concrete/stamped-concrete-process.webp",
+    alt: "Example photo: a stamping tool pressed into freshly placed concrete to form a stone-pattern surface",
+  },
+  "concrete-foundations": {
+    src: "/images/services/concrete-foundations/concrete-foundations-process.webp",
+    alt: "Example photo: aerial view of crews screeding fresh concrete over steel reinforcing mesh",
+  },
+  "concrete-walkways": {
+    src: "/images/services/concrete-walkways/concrete-walkways-process.webp",
+    alt: "Example photo: crew finishing a concrete walkway edge with hand trowels beside a form board",
+  },
   "concrete-steps": {
     src: "/images/services/concrete-steps/concrete-steps-process.webp",
     alt: "Example photo: concrete steps being formed with timber forms and a rough, freshly placed surface beside a brick edge",
+  },
+  "concrete-repair": {
+    src: "/images/services/concrete-repair/concrete-repair-process.webp",
+    alt: "Worker with a pry bar beside an orange cut-off saw, cutting along the cracked edge of a concrete slab",
   },
 };
 

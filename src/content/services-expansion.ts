@@ -49,7 +49,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Send the pattern you have in mind, the area, and any photos. A local provider will confirm what is achievable on your slab.",
     image: "/images/services/stamped-concrete/stamped-concrete-hero.webp",
     imageAlt:
-      "Stamped concrete surface with a paver-style pattern and curved edge beside a lawn",
+      "Worker's hands and a red-handled finishing tool on freshly placed gray concrete",
     projectTypes: ["Stamped patio", "Stamped entry", "Decorative slab"],
     keyFacts: [
       { label: "Finish types", value: "Stamped, integral color, texture" },
@@ -224,7 +224,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Send the plan set, the soil report if you have one, and the location. A local provider will confirm what the engineer requires.",
     image: "/images/services/concrete-foundations/concrete-foundations-hero.webp",
     imageAlt:
-      "Concrete foundation slab with steel reinforcing bars and formwork on a construction site",
+      "Worker's boots beside a concrete vibrator pipe on fresh concrete over a steel rebar grid",
     projectTypes: ["House foundation", "Footing", "Addition foundation"],
     keyFacts: [
       { label: "Scope", value: "Footings and stem walls" },
@@ -395,7 +395,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Send the path, the approximate length, and photos. A local provider will confirm the grade and joint layout.",
     image: "/images/services/concrete-walkways/concrete-walkways-hero.webp",
     imageAlt:
-      "Curved concrete walkway with saw-cut expansion joints beside a lawn",
+      "Worker's hands setting gray concrete pavers with a rubber mallet on a sand base",
     projectTypes: ["New walkway", "Walk replacement", "Sidewalk section"],
     keyFacts: [
       { label: "Scope", value: "Front walks and sidewalks" },

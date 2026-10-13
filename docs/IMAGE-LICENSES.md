@@ -4,9 +4,9 @@ Each image used on the site, with its source and license basis.
 
 | File | Used on | Source | Content ID | License | Status |
 |---|---|---|---|---|---|
-| `public/images/services/concrete-foundations/concrete-foundations-hero.webp` | `/services/concrete-foundations` (hero) | iStock | 1418215833 | iStock Standard License (user-confirmed purchase/download) | Confirmed by user |
-| `public/images/services/concrete-walkways/concrete-walkways-hero.webp` | `/services/concrete-walkways` (hero) | iStock | 2097212421 | iStock Standard License (user-confirmed purchase/download) | Confirmed by user |
-| `public/images/services/stamped-concrete/stamped-concrete-hero.webp` | `/services/stamped-concrete` (hero) | iStock | 876439542 | iStock Standard License (user-confirmed purchase/download) | Confirmed by user |
+| `public/images/services/concrete-foundations/concrete-foundations-band.webp` | `/services/concrete-foundations` (detail band; previous hero) | iStock | 1418215833 | iStock Standard License (user-confirmed purchase/download) | Confirmed by user |
+| `public/images/services/concrete-walkways/concrete-walkways-band.webp` | `/services/concrete-walkways` (detail band; previous hero) | iStock | 2097212421 | iStock Standard License (user-confirmed purchase/download) | Confirmed by user |
+| `public/images/services/stamped-concrete/stamped-concrete-band.webp` | `/services/stamped-concrete` (detail band; previous hero) | iStock | 876439542 | iStock Standard License (user-confirmed purchase/download) | Confirmed by user |
 | `public/images/services/concrete-steps/concrete-steps-hero.webp` | `/services/concrete-steps` (hero, with caption) | iStock | 2222087639 | iStock Standard License (user-provided file; confirm in iStock download history) | Replaced in-progress photo 1210328306 with a finished stoop photo. Caption states work is by independent local providers |
 | `public/images/services/concrete-slabs/concrete-slabs-detail.webp` | `/services/concrete-slabs` (detail band) | iStock | 1475642604 | iStock Standard License (user-provided file; confirm in iStock download history) | Shows precast slab panels on a brick base, not a poured slab. Replaces duplicate patio photo |
 | `public/images/services/concrete-steps/concrete-steps-process.webp` | `/services/concrete-steps` (process section) | iStock | 1210328306 | iStock Standard License (user-provided file; confirm in iStock download history) | In-progress steps photo, labeled as an example in alt text |
@@ -24,10 +24,15 @@ Each image used on the site, with its source and license basis.
 
 ## Notes
 - iStock Standard licenses permit use on websites. Keep the iStock content ID and the license on file in your iStock account download history.
+| `public/images/services/concrete-foundations/concrete-foundations-hero.webp` | `/services/concrete-foundations` (hero; homepage and services card) | Client-supplied (`Foundations process.jpg`, commit 5038c4e) | not applicable (client-supplied) | Client-supplied. Client attests rights to use. No stock license applies | Foundation pour with rebar grid and a vibrator pipe. Contains a worker's boots. 90 KB WebP, quality 96, native 612×315 |
+| `public/images/services/concrete-walkways/concrete-walkways-hero.webp` | `/services/concrete-walkways` (hero; homepage and services card) | Client-supplied (`Walkways process.jpg`, commit 5038c4e) | not applicable (client-supplied) | Client-supplied. Client attests rights to use. No stock license applies | Pavers being set on sand with a mallet, not a poured walkway. Contains worker's hands. 95 KB WebP, quality 84, native 612×408 |
+| `public/images/services/stamped-concrete/stamped-concrete-hero.webp` | `/services/stamped-concrete` (hero; homepage and services card) | Client-supplied (`Stamped process.webp`, commit 5038c4e) | not applicable (client-supplied) | Client-supplied. Client attests rights to use. No stock license applies | Red-handled finishing tool on gray concrete. Does not show a stamped or textured pattern. Contains worker's hands. 92 KB WebP, 1400 px wide, quality 88 |
 
 ## Notes (2026-10-13)
 
 - **Size rule override (client-confirmed):** hero and band images target 90–97 KB WebP for crisp HD quality. This overrides the general 25–60 KB range for those slots.
-- **Process bands with people removed:** the process photos for driveways, foundations, walkways, stamped concrete, and repair showed visible people, hands, or running equipment. They are no longer used. Those process sections now render text only, with no image, until compliant photos are supplied.
-- **Detail bands:** the foundations and stamped-concrete detail bands had no compliant repo photo and now render text only. The walkways detail band uses `concrete-steps-hero.webp` (a porch-stoop photo, no people). It is not repeated on the walkways page. Its iStock record is in the table above, and it appears on the steps page as well.
-- **Pending files:** no new foundation, walkway, or stamped hero photos were found in the workspace. Those three heroes still use the current files.
+- **No-people rule removed (client, 2026-10-13):** photos with people, workers, or visible hands are allowed. The topic, no-duplicate-on-page, and no-stamped-on-patios rules still apply.
+- **Process bands restored:** process photos removed earlier are back in place (driveways, foundations, walkways, stamped concrete, repair).
+- **Previous heroes now bands:** the earlier foundations, walkways, and stamped hero files are used as detail bands, so no page repeats a photo.
+- **Topic fit to review:** the walkways hero shows pavers, not poured concrete. The stamped hero does not show a stamped pattern.
+- **Not placed:** `concrete-patios.jpg` and `concrete-steps-process.jpg` from the latest upload were not used. The patios hero is still the approved brick-house photo.
