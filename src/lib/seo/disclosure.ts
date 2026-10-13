@@ -16,7 +16,7 @@ export const FULL_DISCLOSURE_PARAGRAPHS: readonly string[] = [
 export const FOOTER_DISCLOSURE = `This website is a local concrete service site and is not a concrete contractor. We connect consumers with independent third party service providers. We do not perform, supervise, or guarantee services provided by third parties.`;
 
 /** Shown beside the primary lead-generation form. */
-export const SERVICE_DISCLOSURE = `We are a local concrete service site that passes requests to independent concrete service providers. We do not perform concrete work ourselves. Services are provided by independent third party contractors.`;
+export const SERVICE_DISCLOSURE = `Requests are sent to independent local concrete service providers, who set their own pricing and perform the work.`;
 
 /** Shown inside the lead form, visually secondary to the fields. */
 export const LEAD_FORM_DISCLOSURE = `By submitting this form, you are requesting a quote from an independent local concrete service provider. Your project information and contact details may be shared with a participating provider for the purpose of responding to your request.`;

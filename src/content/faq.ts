@@ -48,7 +48,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         question: "How quickly will a provider contact me?",
         answer:
-          "The assigned contractor contacts you directly within their contracted response window. We do not set their schedule, so timing varies by provider and workload. If the first contractor does not acknowledge your request, it is reassigned once to another eligible provider.",
+          "The assigned contractor contacts you directly within their contracted response window. Timing depends on each provider's schedule and workload. If the first contractor does not acknowledge your request, it is reassigned once to another eligible provider.",
         links: [],
       },
     ],
@@ -161,7 +161,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         question: "What is this website?",
         answer:
-          "This website. It is a local concrete service site for Lancaster homeowners. The work is done by independent local concrete specialists. We are not a contractor, we employ no field teams, and we perform no work. Our role is taking your request once and passing it to one eligible team.",
+          "This is a local concrete service site for Lancaster homeowners. Independent local concrete specialists do the work. We take your request once and pass it to one eligible team.",
         links: [{ text: "about this site", href: "/service-disclosure" }],
       },
       {
@@ -185,7 +185,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         question: "Who actually performs the concrete work?",
         answer:
-          "An independent third party contractor, never us. Excavation, forming, pouring, and finishing are carried out by the provider you engage, and your contract is with them. We do not supervise, inspect, or warrant their work.",
+          "An independent local contractor. Excavation, forming, pouring, and finishing are carried out by the provider you engage, and your contract is with them.",
         links: [],
       },
       {

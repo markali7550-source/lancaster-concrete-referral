@@ -139,7 +139,7 @@ export function ServiceHero({
         </a>
       </div>
       <p className="mt-3 text-xs" style={{ color: overlayMuted }}>
-        No charge to request concrete service. We are not the contractor and do not set prices.
+        No charge to request a quote. Independent local providers set their own prices.
       </p>
     </OverlayHeader>
   );

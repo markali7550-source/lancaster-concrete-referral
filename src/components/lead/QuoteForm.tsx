@@ -284,9 +284,8 @@ export function QuoteForm({
           Your request is with our team
         </h3>
         <p className="mt-3 text-[color:var(--color-muted)]">
-          An independent contractor serving your area will contact you
-          directly. We are not the contractor and do not set pricing or
-          schedules.
+          An independent local contractor serving your area will contact you
+          directly to discuss pricing and scheduling.
         </p>
         <p className="mt-4 text-sm text-[color:var(--color-muted)]">
           Reference:{" "}
@@ -307,7 +306,7 @@ export function QuoteForm({
       <div id="quote-form" className="card scroll-mt-32 p-6 md:p-8" role="status">
         <p className="eyebrow">No provider covers that area yet</p>
         <h3 className="mt-2 text-2xl font-semibold">
-          We do not cover that area today
+          Your area isn&apos;t covered yet
         </h3>
         <p className="mt-3 text-[color:var(--color-muted)]">
           Nothing was sent to a contractor. We only send requests to providers

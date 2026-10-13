@@ -48,7 +48,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         heading: "Who actually does the work",
         body:
-          "We do not pour concrete. When your request matches an approved participating provider for the Lancaster area, that independent contractor contacts you to inspect the site, confirm scope, and quote the work directly. We stay out of the pricing conversation entirely, and we do not take a position on which finish, thickness, or reinforcement your property needs.",
+          "Independent local providers do the pouring. When your request matches an approved participating provider for the Lancaster area, that independent contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set directly between you and that contractor, and finish, thickness, and reinforcement are decided with them after they inspect your property.",
       },
     ],
     localFaqs: [
@@ -66,7 +66,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         question: "Can you guarantee a price before anyone visits?",
         answer:
-          "No. We are a local service site, not the contractor. Pricing, scheduling, and project eligibility are set by the independent contractor after a site visit.",
+          "No. Pricing, scheduling, and project eligibility are set by the independent local contractor after a site visit.",
       },
     ],
   },

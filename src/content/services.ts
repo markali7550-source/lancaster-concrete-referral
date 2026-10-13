@@ -111,7 +111,7 @@ export const services: readonly ServiceRecord[] = [
       cta: "Ready to price a driveway?",
     },
     optionsLead:
-      "We do not specify your driveway. These are the calls the contractor will ask you to make, so they are not the first time you hear them.",
+      "Your contractor specifies the driveway. These are the calls they will ask you to make, so you will already know them when they arrive.",
     processLead:
       "A driveway is a one day pour on the end of a week of preparation. The sequence below is what that week usually looks like; your contractor sets the real dates.",
     costLead:
@@ -212,7 +212,7 @@ export const services: readonly ServiceRecord[] = [
         phase: "Cure and return to use",
         duration: "Ask the contractor",
         detail:
-          "Foot and vehicle traffic timing depend on mix, weather, and thickness. Your contractor gives the figures for your pour. We do not.",
+          "Foot and vehicle traffic timing depend on mix, weather, and thickness. Your contractor gives the figures for your pour.",
       },
     ],
     costFactors: [
@@ -678,7 +678,7 @@ export const services: readonly ServiceRecord[] = [
       {
         question: "Is the slab poured by your own team?",
         answer:
-          "We have no field team. We are a local service site, and slab work is performed by an independent third party service provider serving the requested area. We do not perform, supervise, or guarantee that work.",
+          "No. Slab work is performed by an independent local service provider serving the requested area.",
       },
       {
         question: "Do you handle foundations or structural slabs?",
@@ -716,7 +716,7 @@ export const services: readonly ServiceRecord[] = [
       "Some concrete is worth saving and some is not. We take on surface problems on slabs that are otherwise sound: crazing, spalling, shrinkage cracks, a finish that has simply worn out. If what you describe sounds like movement or a failing base, we will tell you, because resurfacing it would be money wasted.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
-      scope: "Damage we take on, and damage we do not",
+      scope: "Responsibility for damage",
       options: "Repair methods and when each applies",
       process: "How a repair job is assessed and done",
       cost: "Why repair quotes vary so widely",

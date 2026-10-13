@@ -166,8 +166,8 @@ export default function ServicesPage() {
             walls, slab jacking, material supply, and commercial contracts are
             not served in Phase 1. These need separate demand, provider, and
             compliance approval, and several of them need a licensed
-            professional we do not currently work with. We would rather tell you
-            no than hand your project to the wrong trade.
+            professional outside our current provider network. We would rather
+            tell you that up front than send your project to the wrong trade.
           </p>
         </div>
       </Section>

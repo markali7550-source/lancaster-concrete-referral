@@ -64,7 +64,7 @@ const FAQS = [
   {
     question: "Do you perform concrete work?",
     answer:
-      "No. An independent provider performs the work. We pass your request along and nothing else.",
+      "Independent local concrete specialists do the work. We match your request with one eligible provider serving your area.",
   },
   {
     question: "Who performs the work?",

@@ -95,7 +95,7 @@ export default function HowItWorksPage() {
       >
         <HowMatchingWorks />
       </Section>
-      <Section eyebrow="Our role" title="What we are, and what we are not">
+      <Section eyebrow="Our role" title="How we work">
         <div className="card p-7">
           <p className="eyebrow-plain">Required disclosure</p>
           {FULL_DISCLOSURE_PARAGRAPHS.map((paragraph) => (
@@ -118,12 +118,12 @@ export default function HowItWorksPage() {
             </ul>
           </div>
           <div className="card p-6">
-            <p className="font-semibold">We do not</p>
+            <p className="font-semibold">Your local provider handles</p>
             <ul className="mt-2 inline-block list-disc space-y-1.5 pl-5 text-left text-sm text-[color:var(--color-muted)] lg:block">
-              <li>Pour, supervise, inspect, or warrant any concrete work</li>
-              <li>Set prices, schedules, or scope</li>
-              <li>Become a party to your contract</li>
-              <li>Guarantee a contractor is available in your area</li>
+              <li>Pouring, supervision, inspection, and workmanship</li>
+              <li>Pricing, scheduling, and project scope</li>
+              <li>Your contract, which is between you and that provider</li>
+              <li>Confirming contractor availability in your area</li>
             </ul>
           </div>
         </div>

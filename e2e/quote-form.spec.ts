@@ -142,7 +142,7 @@ test.describe("quote form", () => {
     await fillContact(page);
     await serviceConsent(page).check();
     await page.getByRole("button", { name: /request concrete service/i }).click();
-    await expect(page.getByText(/do not cover that area/i)).toBeVisible({
+    await expect(page.getByText(/isn't covered yet/i)).toBeVisible({
       timeout: 15000,
     });
     await expect(
