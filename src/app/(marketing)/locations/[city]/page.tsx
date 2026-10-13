@@ -129,7 +129,7 @@ export default async function LocationPage({ params }: { params: Params }) {
           />
         }
         locationCue={`${location.county}, South Carolina`}
-        h1={`Concrete Contractor Quotes in ${location.city}, SC`}
+        h1={`Concrete Services & Estimates in ${location.city}, SC`}
         summary={location.intro}
         imageSrc={location.heroImage}
         imageAlt={location.heroImageAlt}

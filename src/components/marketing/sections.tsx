@@ -298,7 +298,7 @@ export const overlayBody = "rgba(255,255,255,0.86)";
 export const overlayMuted = "rgba(255,255,255,0.80)";
 
 const HERO_TRUST = [
-  "Free for homeowners",
+  "No-obligation estimates",
   "One independent provider, not five",
   "Written coverage areas only",
 ];

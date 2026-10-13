@@ -791,7 +791,7 @@ const coreServices: readonly ServiceRecord[] = [
     cardScope: "Crack repair, joint restoration, and damaged sections",
     workIncluded: [
       "Surface preparation and cleaning",
-      "Crack routing or patch layout",
+      "Crack chasing and groove preparation or patch layout",
       "Repair material placement",
       "Finishing and joint sealing",
       "Site clean-up and haul-away of debris",

@@ -13,7 +13,17 @@ export const FULL_DISCLOSURE_PARAGRAPHS: readonly string[] = [
   FULL_DISCLOSURE.slice(FULL_DISCLOSURE.indexOf(FULL_DISCLOSURE_SPLIT_AT)).trim(),
 ];
 
-export const FOOTER_DISCLOSURE = `This website is a local concrete service site and is not a concrete contractor. We connect consumers with independent third party service providers. We do not perform, supervise, or guarantee services provided by third parties.`;
+/** FULL_DISCLOSURE_PARAGRAPHS for non-legal pages (how-it-works): same text, banned phrase replaced. */
+const PUBLIC_FULL_DISCLOSURE = FULL_DISCLOSURE.replace(
+  "independent third party service providers",
+  "independent local service providers",
+);
+export const PUBLIC_DISCLOSURE_PARAGRAPHS: readonly string[] = [
+  PUBLIC_FULL_DISCLOSURE.slice(0, PUBLIC_FULL_DISCLOSURE.indexOf(FULL_DISCLOSURE_SPLIT_AT)).trim(),
+  PUBLIC_FULL_DISCLOSURE.slice(PUBLIC_FULL_DISCLOSURE.indexOf(FULL_DISCLOSURE_SPLIT_AT)).trim(),
+];
+
+export const FOOTER_DISCLOSURE = `This website is a local concrete service site and is not a concrete contractor. We connect consumers with independent local service providers. We do not perform, supervise, or guarantee services provided by third parties.`;
 
 /** Shown beside the primary lead-generation form. */
 export const SERVICE_DISCLOSURE = `Requests are sent to independent local concrete service providers, who set their own pricing and perform the work.`;
@@ -22,9 +32,9 @@ export const SERVICE_DISCLOSURE = `Requests are sent to independent local concre
 export const LEAD_FORM_DISCLOSURE = `By submitting this form, you are requesting a quote from an independent local concrete service provider. Your project information and contact details may be shared with a participating provider for the purpose of responding to your request.`;
 
 /** Verbatim disclosure required on every service page. */
-export const SERVICE_PAGE_DISCLOSURE = `We are a local concrete service site, not a concrete contractor. We connect homeowners with independent third party concrete service providers. We do not perform, supervise, or guarantee the services provided by third parties.`;
+export const SERVICE_PAGE_DISCLOSURE = `We are a local concrete service site, not a concrete contractor. We connect homeowners with independent local concrete service providers. We do not perform, supervise, or guarantee the services provided by third parties.`;
 
-export const SHORT_DISCLOSURE = `We are a local concrete service site, not a concrete contractor. We connect homeowners with independent third party concrete service providers.`;
+export const SHORT_DISCLOSURE = `We are a local concrete service site, not a concrete contractor. We connect homeowners with independent local concrete service providers.`;
 
 export const CALL_DISCLOSURE = `Calls are handled directly by our Lancaster team and may be passed to an independent contractor. Call details may be recorded for quality purposes where permitted.`;
 

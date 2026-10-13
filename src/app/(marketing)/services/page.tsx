@@ -74,7 +74,7 @@ export default function ServicesPage() {
           className="eyebrow"
           style={{ color: overlayEyebrow }}
         >
-          Service directory
+          Our Concrete Services
         </p>
         <h1
           className="h1 mt-4 max-w-3xl"
@@ -164,7 +164,7 @@ export default function ServicesPage() {
             walls, slab jacking, material supply, and commercial contracts are
             not served in Phase 1. These need separate demand, provider, and
             compliance approval, and several of them need a licensed
-            professional outside our current provider network. We would rather
+            professional outside our experienced local concrete teams. We would rather
             tell you that up front than send your project to the wrong trade.
           </p>
         </div>

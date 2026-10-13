@@ -13,7 +13,7 @@ import { Breadcrumbs, CtaBand } from "@/components/marketing/service-sections";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { breadcrumbNode, buildGraph, webPageNode } from "@/lib/schema/graph";
 import { site } from "@/lib/env";
-import { FULL_DISCLOSURE_PARAGRAPHS } from "@/lib/seo/disclosure";
+import { PUBLIC_DISCLOSURE_PARAGRAPHS } from "@/lib/seo/disclosure";
 
 const TITLE = `How Our Concrete Service Works | ${site.brand}`;
 const DESCRIPTION =
@@ -98,7 +98,7 @@ export default function HowItWorksPage() {
       <Section eyebrow="Our role" title="How we work">
         <div className="card p-7">
           <p className="eyebrow-plain">Required disclosure</p>
-          {FULL_DISCLOSURE_PARAGRAPHS.map((paragraph) => (
+          {PUBLIC_DISCLOSURE_PARAGRAPHS.map((paragraph) => (
             <p
               key={paragraph}
               className="mt-4 text-[15px] leading-relaxed text-[color:var(--color-muted)]"

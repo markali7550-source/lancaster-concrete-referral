@@ -369,12 +369,12 @@ export const expansionServices: readonly ServiceRecord[] = [
     workIncluded: [
       "Removal of the old walk when replacement is needed",
       "Base excavation and compaction to the planned grade",
-      "Forms set to the route and the drainage slope",
+      "Forms set to the path and the drainage slope",
       "Placing, edging, and broom finishing the concrete",
       "Site clean-up and haul-away of debris",
     ],
     heroSummary:
-      "A front walkway is the first thing guests see, and it gets walked on every day. Requests cover new front walks from the driveway or sidewalk to the door, replacement of cracked walks, and individual sidewalk sections. Typical work includes a compacted base, control joints, a broom finish, and edges set to grade. Request a concrete service and a local provider will confirm the route, slope, and joint layout at a site visit.",
+      "A front walkway is the first thing guests see, and it gets walked on every day. Requests cover new front walks from the driveway or sidewalk to the door, replacement of cracked walks, and individual sidewalk sections. Typical work includes a compacted base, control joints, a broom finish, and edges set to grade. Request a concrete service and a local provider will confirm the path, slope, and joint layout at a site visit.",
     sectionOrder: [...STANDARD_SECTIONS],
     headings: {
       scope: "What a walkway project includes",
@@ -392,7 +392,7 @@ export const expansionServices: readonly ServiceRecord[] = [
     costLead:
       "Walkway cost follows length, width, grade changes, and removal of the old walk. Short walks cost more per foot because setup stays the same.",
     ctaLead:
-      "Send the route, the approximate length, and photos. A local provider will confirm the grade and joint layout.",
+      "Send the path, the approximate length, and photos. A local provider will confirm the grade and joint layout.",
     image: "/images/services/concrete-walkways/concrete-walkways-hero.webp",
     imageAlt:
       "Curved concrete walkway with saw-cut expansion joints beside a lawn",
@@ -412,7 +412,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       },
       {
         title: "Sidewalk sections",
-        body: "Replacement of individual sidewalk panels, with matching finish and joints where the layout allows.",
+        body: "Replacement of individual sidewalk panels, with consistent decorative finish and joints where the layout allows.",
       },
     ],
     outOfScope: [
@@ -423,7 +423,7 @@ export const expansionServices: readonly ServiceRecord[] = [
     options: [
       {
         name: "Width",
-        description: "Set to the route and the number of people using it, confirmed at the visit.",
+        description: "Set to the path and the number of people using it, confirmed at the visit.",
       },
       {
         name: "Finish",
@@ -449,7 +449,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         phase: "Site visit and layout",
         duration: "Scheduled by provider",
-        detail: "The provider checks the route, the grade to the door, and drainage away from the house.",
+        detail: "The provider checks the path, the grade to the door, and drainage away from the house.",
       },
       {
         phase: "Removal and base",
@@ -490,10 +490,10 @@ export const expansionServices: readonly ServiceRecord[] = [
       },
     ],
     prepChecklist: [
-      "Mark the route from the driveway or sidewalk to the door",
+      "Mark the path from the driveway or sidewalk to the door",
       "Note any drainage problems near the walk",
       "Photograph the existing walk and its edges",
-      "Clear the route for the crew",
+      "Clear the walkway layout for the crew",
     ],
     quoteQuestions: [
       "How is the walk graded to drain away from the house?",
@@ -530,7 +530,7 @@ export const expansionServices: readonly ServiceRecord[] = [
     name: "Concrete Steps",
     shortName: "Steps & Porches",
     nameLower: "concrete steps and porch landings",
-    projectNoun: "steps project",
+    projectNoun: "steps",
     state: "published",
     intent: "Front steps and porch landing requests",
     summary:
