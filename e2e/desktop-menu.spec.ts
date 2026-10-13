@@ -64,8 +64,8 @@ test.describe("Services menu hover", () => {
     for (const name of [
       "Concrete Driveways",
       "Concrete Patios",
-      "Concrete Slabs",
-      "Concrete Repair",
+      "Concrete Slabs & Foundations",
+      "Concrete Repair & Resurfacing",
     ]) {
       await expect(page.locator(panel).getByText(name, { exact: true })).toBeVisible();
     }

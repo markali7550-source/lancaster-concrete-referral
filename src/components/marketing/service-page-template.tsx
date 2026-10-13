@@ -346,7 +346,7 @@ export function ServicePageTemplate({
                   <Icon name="shield" className="h-[18px] w-[18px]" />
                 </span>
                 <p className="text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
-                  Before anything is sent we check written coverage, project type, an active team agreement and current capacity.{" "}
+                  Before a request moves forward, we check the service area, the project type, and provider availability.{" "}
                   <Link
                     href="/how-it-works"
                     className="font-semibold underline underline-offset-4"

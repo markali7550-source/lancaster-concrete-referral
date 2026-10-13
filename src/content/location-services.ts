@@ -48,7 +48,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         heading: "Who actually does the work",
         body:
-          "Independent local providers do the pouring. When your request matches an approved participating provider for the Lancaster area, that independent contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set directly between you and that contractor, and finish, thickness, and reinforcement are decided with them after they inspect your property.",
+          "Local concrete providers do the pouring. When your request is accepted for the Lancaster area, a local provider contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set directly between you and that provider, and finish, thickness, and reinforcement are decided with them after they inspect your property.",
       },
     ],
     localFaqs: [

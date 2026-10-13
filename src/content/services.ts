@@ -101,11 +101,11 @@ export const services: readonly ServiceRecord[] = [
     nameLower: "a concrete driveway",
     projectNoun: "driveway",
     state: "published",
-    intent: "New and replacement driveway inquiries",
+    intent: "Driveway tear-out, replacement, and new pour requests",
     summary:
-      "New pours and full replacements, including tear out of failed slabs and the drainage questions that come with Lancaster County clay.",
+      "Tear-out, replacement, and new pours on a 4,000 PSI high-strength mix with rebar reinforcement and a broom finish.",
     heroSummary:
-      "A driveway project is usually one of two jobs: putting concrete over a gravel drive that no longer holds up, or replacing a slab that has cracked and settled past the point where patching is worth it. Tell us which one you have and we pass it to one independent provider who pours driveways in your area. They quote it, schedule it, and do the work. We do not.",
+      "A driveway carries vehicles every day, so the details matter. Requests cover tear-out and removal of a failed slab, full replacement, and expansions of an existing drive. Typical specifications include a 4,000 PSI high-strength mix, steel rebar reinforcement, and a broom finish for traction. Request a quote and a local provider will confirm the scope, mix, and joint layout at a site visit.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "What counts as a driveway job",
@@ -123,7 +123,7 @@ export const services: readonly ServiceRecord[] = [
     costLead:
       "Nobody can price a driveway from an address. Square footage is only the start of it. What the old slab costs to break up and haul away, and whether a truck can reach the pour, often move the number more.",
     ctaLead:
-      "Tell us the length of the drive and whether the old slab has to come out. One provider with written coverage for your area takes it from there.",
+      "Share the length of the drive and whether the old slab has to come out. A local provider will confirm the scope at a site visit.",
     cardScope: "Tear-out, replacement, and expansions",
     workIncluded: [
       "Grading and excavation to the planned subgrade",
@@ -147,7 +147,7 @@ export const services: readonly ServiceRecord[] = [
       { label: "Coverage today", value: "Lancaster, SC" },
       {
         label: "Typical site visit",
-        value: "Within the participating provider's contracted response window",
+        value: "Response timing confirmed by the local provider",
       },
       { label: "Cost to you", value: "No charge for the quote request" },
     ],
@@ -158,7 +158,7 @@ export const services: readonly ServiceRecord[] = [
       },
       {
         title: "Full replacement",
-        body: "Demolition and haul away of a failed slab, regrading, and a new pour. Participating providers quote demolition separately so you can see what you are paying for.",
+        body: "Demolition and haul away of a failed slab, regrading, and a new pour. Local providers quote demolition separately so you can see what you are paying for.",
       },
       {
         title: "Widening and extensions",
@@ -194,7 +194,7 @@ export const services: readonly ServiceRecord[] = [
       {
         name: "Exposed aggregate or stamped edge",
         description:
-          "Decorative options are only offered when a participating provider has documented that capability. Otherwise the request goes through as a standard pour.",
+          "Decorative options are only offered when a local provider has confirmed that capability. Otherwise the job is quoted as a standard pour.",
       },
     ],
     process: [
@@ -293,7 +293,7 @@ export const services: readonly ServiceRecord[] = [
       {
         question: "Do you pour the driveway yourselves?",
         answer:
-          "No. We are a local concrete service site that passes requests to independent third party concrete specialists. Excavation, subbase preparation, forming, and the pour itself are carried out by the provider you engage, and your contract is with them.",
+          "No. Excavation, subbase preparation, forming, and the pour are carried out by the local provider who takes your request. Confirm their insurance and license status with the provider and on the SC LLR website before work begins.",
       },
       {
         question: "How long does a residential driveway pour take?",
@@ -324,11 +324,11 @@ export const services: readonly ServiceRecord[] = [
     nameLower: "a concrete patio",
     projectNoun: "patio",
     state: "published",
-    intent: "Residential patio inquiries",
+    intent: "Stamped, colored, and decorative patio requests",
     summary:
-      "New patio pours, replacements, and stamped finishes where a participating provider has documented that capability.",
+      "Stamped, colored, and decorative patios for backyard living spaces, finished with a weather-resistant sealant.",
     heroSummary:
-      "A patio is the one concrete project where the finish matters as much as the slab under it. Color, texture, and where the joints fall are decisions you live with every time you walk outside. We take on your details to one independent provider who will walk the space with you and quote it directly.",
+      "A patio is where the finish matters as much as the slab under it. Requests cover stamped concrete, colored and decorative finishes, and broom-finished patios for backyard living spaces. Sealing is part of the plan: a weather-resistant sealant helps protect color and surface from rain, sun, and staining. Request a quote and a local provider will confirm the finish, layout, and sealing schedule at a site visit.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "Where patio work starts and stops",
@@ -346,7 +346,7 @@ export const services: readonly ServiceRecord[] = [
     costLead:
       "Patios are the project people most often price before they commit, so it is worth knowing what actually moves the figure. Finish and shape change it far more than size does.",
     ctaLead:
-      "Send the rough size, and say whether it ties into an existing porch or stoop. It goes to a single participating provider, not a panel of bidders.",
+      "Send the rough size and say whether it ties into an existing porch or stoop. A local provider will review it and reply.",
     cardScope: "Stamped, colored, decorative, and broom-finish patios, plus walkways and entryways",
     workIncluded: [
       "Grading and excavation to the planned subgrade",
@@ -373,7 +373,7 @@ export const services: readonly ServiceRecord[] = [
       { label: "Coverage today", value: "Lancaster, SC" },
       {
         label: "Decorative work",
-        value: "Only where a participating provider documents the capability",
+        value: "Only where a local provider confirms the capability",
       },
       { label: "Cost to you", value: "No charge for the quote request" },
     ],
@@ -392,7 +392,7 @@ export const services: readonly ServiceRecord[] = [
       },
       {
         title: "Stamped and colored finishes",
-        body: "Pattern stamped or integrally colored slabs, offered only by participating providers who have documented that capability for your area.",
+        body: "Pattern stamped or integrally colored slabs, offered only by local providers who have confirmed that capability for your area.",
       },
     ],
     outOfScope: [
@@ -415,7 +415,7 @@ export const services: readonly ServiceRecord[] = [
       {
         name: "Stamped pattern",
         description:
-          "Stone, slate, or plank patterns pressed into the fresh slab. Availability depends on the participating provider and adds cost and cure time sensitivity.",
+          "Stone, slate, or plank patterns pressed into the fresh slab. Availability depends on the local provider and adds cost and cure time sensitivity.",
       },
       {
         name: "Integral color and release",
@@ -512,12 +512,12 @@ export const services: readonly ServiceRecord[] = [
       {
         question: "Who designs and builds the patio?",
         answer:
-          "An independent third party service provider does. We pass your request to a local team who may be able to assist; layout, finish selection, scheduling, and construction are entirely their work, and availability depends on participating providers.",
+          "The contractor confirms the scope on site. Layout, finish selection, scheduling, and construction are carried out by the local provider who takes your request, and availability depends on local providers in your area.",
       },
       {
         question: "Is a stamped finish always available?",
         answer:
-          "No. Stamped work is only offered when a participating provider has documented that capability for your area. If it is not supported, your request goes through as a standard patio inquiry and we say so rather than promising a finish nobody can deliver.",
+          "No. Stamped work is only offered when a local provider has confirmed that capability for your area. If it is not supported, the job is quoted as a standard patio, and the provider tells you so before any work begins.",
       },
       {
         question: "What size should a usable patio be?",
@@ -538,16 +538,16 @@ export const services: readonly ServiceRecord[] = [
   },
   {
     slug: "concrete-slabs",
-    name: "Concrete Slabs",
-    shortName: "Slabs and pads",
-    nameLower: "a concrete slab",
+    name: "Concrete Slabs & Foundations",
+    shortName: "Slabs & Foundations",
+    nameLower: "concrete slabs and foundations",
     projectNoun: "slab",
     state: "published",
-    intent: "Residential slab and pad inquiries",
+    intent: "Shed pads, garage slabs, and workshop foundations",
     summary:
-      "Residential slabs and pads for sheds, equipment, vehicles, and outbuildings, nonstructural work only.",
+      "Shed pads, garage slabs, and workshop foundations over a compacted gravel base, with a vapor barrier.",
     heroSummary:
-      "Shed bases, equipment pads, RV and boat parking. Flatwork that has to carry a known weight and stay level for years, which makes what goes under the slab the part that matters. If the pad will hold up a building, or needs an engineer's stamp, we decline it rather than send it.",
+      "A slab stays level only if what sits under it is right. Requests cover shed pads, garage slabs, and workshop foundations. Typical specifications include a compacted gravel base, a vapor barrier under the slab to limit moisture rising from the ground, and reinforcement sized to the load. Request a quote and a local provider will confirm base depth, drainage, and thickness at a site visit.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "Pads this category covers",
@@ -565,7 +565,7 @@ export const services: readonly ServiceRecord[] = [
     costLead:
       "Pricing comes last here for a reason: until the load, the access and the base are known, any number is a guess. Once those are settled a contractor can quote a pad quickly.",
     ctaLead:
-      "Say what the pad has to carry and roughly where it goes. We send it to one provider approved for your area.",
+      "Say what the pad has to carry and roughly where it goes. A local provider will review it and reply.",
     cardScope: "Garages, sheds, pole barns, equipment pads, and sidewalks",
     workIncluded: [
       "Grading and excavation to the planned subgrade",
@@ -720,18 +720,18 @@ export const services: readonly ServiceRecord[] = [
       "Is a vapor barrier included, and is it needed here?",
       "Are anchor bolts or sleeves set during the pour?",
       "How long before I can place the shed or park on it?",
-      "Does my project need anything you are not licensed to do?",
+      "Do I need a license to hire for this work?",
     ],
     considerations: [
       {
         question: "Is the slab poured by your own team?",
         answer:
-          "No. Slab work is performed by an independent local service provider serving the requested area.",
+          "Requirements vary by project type, scope, and total cost. Confirm licensing, insurance, and eligibility with the provider you hire, and verify credentials through SC LLR before you hire.",
       },
       {
         question: "Do you handle foundations or structural slabs?",
         answer:
-          "No. Foundation repair, structural engineering, and retaining walls are outside this service's scope. Those inquiries are declined rather than passed to a concrete finisher who should not be taking them on.",
+          "No. Foundation repair, structural engineering, and retaining walls are outside this service's scope. We decline those requests rather than send them to a concrete finisher who should not take them on.",
       },
       {
         question: "What thickness does a pad need?",
@@ -752,16 +752,16 @@ export const services: readonly ServiceRecord[] = [
   },
   {
     slug: "concrete-repair",
-    name: "Concrete Repair",
-    shortName: "Repair",
-    nameLower: "concrete repair",
+    name: "Concrete Repair & Resurfacing",
+    shortName: "Repair & Resurfacing",
+    nameLower: "concrete repair and resurfacing",
     projectNoun: "repair",
     state: "published",
-    intent: "Nonstructural repair inquiries",
+    intent: "Crack sealing, joint repair, and surface restoration",
     summary:
-      "Nonstructural crack repair, surface repair, and resurfacing. Structural assessment is out of scope.",
+      "Crack sealing, joint repair, and surface restoration that also address the water that causes further damage.",
     heroSummary:
-      "Some concrete is worth saving and some is not. We take on surface problems on slabs that are otherwise sound: crazing, spalling, shrinkage cracks, a finish that has simply worn out. If what you describe sounds like movement or a failing base, we will tell you, because resurfacing it would be money wasted.",
+      "Small cracks and worn joints cost less to fix early. Requests cover crack sealing, joint repair, and surface restoration. Every repair starts with finding the source of the damage, because water getting into cracks and joints is a common cause of further deterioration. Request a quote and a local provider will assess the surface at a site visit before recommending a method.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "Responsibility for damage",
@@ -779,7 +779,7 @@ export const services: readonly ServiceRecord[] = [
     costLead:
       "Repair quotes vary more than any other concrete work, because two slabs with identical cracks can need completely different work underneath. These are the things that move it.",
     ctaLead:
-      "Describe the damage and where it is. The provider looks at it on site before anyone talks about price.",
+      "Describe the damage and where it is. A local provider looks at it on site before anyone talks about price.",
     cardScope: "Crack filling, joint restoration, and sealing",
     workIncluded: [
       "Surface preparation and cleaning",
@@ -924,7 +924,7 @@ export const services: readonly ServiceRecord[] = [
       "What do you think caused this, and will the cause remain?",
       "Is this repair cosmetic or does it restore the surface properly?",
       "How long should the repair reasonably last?",
-      "Will the repair be visible, and how closely will it match?",
+      "Will the repair be visible, and how closely will the color match?",
       "Would replacement be the better value here, honestly?",
       "What temperature or weather conditions do you need to do the work?",
     ],
@@ -932,12 +932,12 @@ export const services: readonly ServiceRecord[] = [
       {
         question: "Do you carry out the repair?",
         answer:
-          "No. Repairs are carried out by an independent third party service provider. We connect homeowners with providers who may be able to assist, and the assessment, method, and result remain the provider's responsibility.",
+          "No. Repairs are carried out by a local provider who takes your request. The assessment, method, and result are that provider's responsibility under your agreement with them.",
       },
       {
         question: "What counts as nonstructural?",
         answer:
-          "Surface spalling, shrinkage cracking, and cosmetic deterioration on a slab that is not moving. Movement, heaving, a height difference across a crack, or load bearing failure needs a licensed professional assessment instead, and we will not send it as a repair job.",
+          "Surface spalling, shrinkage cracking, and cosmetic deterioration on a slab that is not moving. Movement, heaving, a height difference across a crack, or load bearing failure needs a professional structural assessment instead, and we decline those as repair jobs.",
       },
       {
         question: "Is resurfacing a permanent fix?",
