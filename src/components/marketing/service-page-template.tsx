@@ -63,7 +63,7 @@ const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
   },
   "concrete-patios": {
     src: "/images/services/concrete-patios/concrete-patios-process.webp",
-    alt: "Two crew members leveling freshly placed concrete with a screed board, with a work truck and traffic cones behind",
+    alt: "Example photo: a screed board pulled across freshly placed concrete to level the surface",
   },
   "concrete-slabs": {
     src: "/images/services/concrete-slabs/concrete-slabs-process.webp",
