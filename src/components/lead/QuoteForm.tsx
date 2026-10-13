@@ -408,43 +408,41 @@ export function QuoteForm({
 
       {step === 1 ? (
         <div className="mt-4 space-y-3.5">
-          <fieldset>
-            <legend className="quote-field-label text-sm font-semibold">Project type</legend>
-            <div className="mt-1.5 grid grid-cols-1 gap-2 min-[380px]:grid-cols-2">
-              {services.map((service) => {
-                const checked = values.serviceSlug === service.slug;
-                return (
-                  <label
-                    key={service.slug}
-                    className="flex min-h-12 cursor-pointer flex-col items-center justify-center gap-2 rounded-[12px] border p-3 text-center text-sm font-medium sm:flex-row sm:justify-start sm:gap-3 sm:text-left"
-                    style={{
-                      borderColor: checked
-                        ? "var(--color-accent)"
-                        : "var(--color-line)",
-                      backgroundColor: checked
-                        ? "var(--color-accent-soft)"
-                        : "transparent",
-                    }}
-                  >
-                    <input
-                      type="radio"
-                      name="serviceSlug"
-                      value={service.slug}
-                      checked={checked}
-                      onChange={() => set("serviceSlug", service.slug)}
-                      className="h-5 w-5 shrink-0"
-                      id={
-                        service.slug === services[0]?.slug
-                          ? `${baseId}-serviceSlug`
-                          : undefined
-                      }
-                    />
-                    {service.name}
-                  </label>
-                );
-              })}
-            </div>
-          </fieldset>
+          <div>
+            <label
+              htmlFor={`${baseId}-serviceSlug`}
+              className="quote-field-label text-sm font-semibold"
+            >
+              Project type
+            </label>
+            <select
+              id={`${baseId}-serviceSlug`}
+              name="serviceSlug"
+              className="field mt-1.5"
+              value={values.serviceSlug}
+              aria-invalid={Boolean(errors.serviceSlug)}
+              aria-describedby={
+                errors.serviceSlug ? `${baseId}-serviceSlug-error` : undefined
+              }
+              onChange={(event) => set("serviceSlug", event.target.value)}
+            >
+              <option value="">Select a project type</option>
+              {services.map((service) => (
+                <option key={service.slug} value={service.slug}>
+                  {service.name}
+                </option>
+              ))}
+            </select>
+            {errors.serviceSlug ? (
+              <p
+                id={`${baseId}-serviceSlug-error`}
+                className="mt-1.5 text-sm"
+                style={{ color: "var(--color-danger)" }}
+              >
+                {errors.serviceSlug}
+              </p>
+            ) : null}
+          </div>
 
           <div>
             <label

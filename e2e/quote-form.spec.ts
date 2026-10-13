@@ -44,7 +44,7 @@ async function fillContact(page: Page, email = uniqueEmail()) {
 }
 
 async function fillStepOne(page: Page, zip: string) {
-  await formOf(page).getByRole("radio", { name: /driveway/i }).first().check();
+  await formOf(page).getByLabel(/^project type$/i).selectOption({ label: "Concrete Driveways" });
   await formOf(page).getByLabel(/^location$/i).selectOption(zip);
   await formOf(page).getByRole("button", { name: /continue/i }).click();
 }
