@@ -73,7 +73,7 @@ const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
   },
   "stamped-concrete": {
     src: "/images/services/stamped-concrete/stamped-concrete-process.webp",
-    alt: "Worker in dark trousers pressing a red-handled stamping tool into freshly placed concrete, shown in black-and-white with red accents",
+    alt: "Three workers in orange shirts on a backyard patio, placing a stamped-pattern concrete border and finishing the slab beside a fence",
   },
   "concrete-foundations": {
     src: "/images/services/concrete-foundations/concrete-foundations-process.webp",
