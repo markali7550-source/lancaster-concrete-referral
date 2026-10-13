@@ -73,6 +73,14 @@ const COMBO_DESCRIPTIONS: Record<string, (city: string) => string> = {
     `Need a concrete slab or pad in ${city}, SC? Tell us what it will support and a local contractor can reply to your request.`,
   "concrete-repair": (city) =>
     `Have cracked or settled concrete in ${city}, SC? Describe the problem and a local contractor can reply to your request.`,
+  "concrete-foundations": (city) =>
+    `Planning a foundation or footing in ${city}, SC? Describe the project and a local contractor can reply to your request.`,
+  "concrete-walkways": (city) =>
+    `Thinking about a front walk or entry path in ${city}, SC? Share a few details and a local contractor can reply to your request.`,
+  "stamped-concrete": (city) =>
+    `Interested in stamped concrete in ${city}, SC? Tell us the area and pattern you have in mind, and a local contractor can reply to your request.`,
+  "concrete-steps": (city) =>
+    `Planning new or repaired steps in ${city}, SC? Tell us about the rise and location, and a local contractor can reply to your request.`,
 };
 
 /*
@@ -89,6 +97,10 @@ const COMBO_H1: Record<string, (city: string) => string> = {
   "concrete-patios": (city) => `Concrete Patio Quotes in ${city}, SC`,
   "concrete-slabs": (city) => `Concrete Slab Quotes in ${city}, SC`,
   "concrete-repair": (city) => `Concrete Repair Quotes in ${city}, SC`,
+  "concrete-foundations": (city) => `Concrete Foundation Quotes in ${city}, SC`,
+  "concrete-walkways": (city) => `Concrete Walkway Quotes in ${city}, SC`,
+  "stamped-concrete": (city) => `Stamped Concrete Quotes in ${city}, SC`,
+  "concrete-steps": (city) => `Concrete Steps Quotes in ${city}, SC`,
 };
 
 export const comboMeta = {

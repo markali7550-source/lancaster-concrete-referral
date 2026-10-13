@@ -73,7 +73,7 @@ export default async function ComboPage({ params }: { params: Params }) {
   const detail = serviceDetails[serviceRecord.slug];
 
   const locationLayout: LocationLayout = {
-    badge: "📍 Local Service: Lancaster County & Surrounding Communities",
+    badge: "Local Service: Lancaster County & Surrounding Communities",
     quoteTitle: "Request a quote",
     quoteBody:
       "Tell us about your project and where it is. A local provider contacts you to confirm the scope and give you a quote directly.",
