@@ -52,7 +52,7 @@ export function LocationHero({
       >
         {badge}
       </p>
-      <p className="eyebrow mt-6" style={{ color: overlayEyebrow }}>
+      <p className="eyebrow mt-6 flex" style={{ color: overlayEyebrow }}>
         {eyebrow}
       </p>
       <h1 className="h1 mt-4 text-balance" style={{ color: overlayHeading }}>
