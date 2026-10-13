@@ -1,10 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 import { DynamicPhone } from "@/components/lead/DynamicPhone";
 import { Icon } from "@/components/ui/Icon";
 import type { ServiceRecord } from "@/content/services";
 import { site } from "@/lib/env";
 import {
-  OverlayHeader,
   overlayBody,
   overlayEyebrow,
   overlayHeading,
@@ -89,12 +89,17 @@ export function ServiceHero({
   breadcrumbs?: React.ReactNode;
 }) {
   return (
-    <OverlayHeader
-      imageSrc={service.image}
-      imageAlt={service.imageAlt}
-      imageCaption={service.imageCaption}
-      breadcrumbs={breadcrumbs}
+    <section
+      className="relative border-b"
+      style={{
+        borderColor: "var(--color-line-soft)",
+        backgroundColor: "var(--color-band)",
+      }}
     >
+      <div className="container-page py-10 md:py-14">
+        {breadcrumbs}
+        <div className="mt-6 grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
+          <div className="text-center lg:col-span-7 lg:text-left">
       <p
         className="eyebrow"
         style={{ color: overlayEyebrow }}
@@ -142,7 +147,27 @@ export function ServiceHero({
       <p className="mt-3 text-xs" style={{ color: overlayMuted }}>
         No charge to request a quote. Independent local providers set their own prices.
       </p>
-    </OverlayHeader>
+          </div>
+          {/* Bounded photo box: the source images are small (about 612px wide),
+              so they are never stretched across the full screen width. */}
+          <figure className="relative mx-auto aspect-[4/3] w-full max-w-md overflow-hidden rounded-[16px] lg:col-span-5 lg:max-w-none">
+            <Image
+              src={service.image}
+              alt={service.imageAlt}
+              fill
+              priority
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              className="object-cover"
+            />
+            {service.imageCaption ? (
+              <figcaption className="absolute bottom-2 right-3 z-10 max-w-xs text-right text-xs text-white/85 drop-shadow">
+                {service.imageCaption}
+              </figcaption>
+            ) : null}
+          </figure>
+        </div>
+      </div>
+    </section>
   );
 }
 
