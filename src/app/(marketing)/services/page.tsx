@@ -12,8 +12,7 @@ import {
   overlayHeading,
 } from "@/components/marketing/sections";
 import { Breadcrumbs, CtaBand } from "@/components/marketing/service-sections";
-import { publishedServices } from "@/content/services";
-import { serviceCardImages } from "@/content/location-services";
+import { publishedServices, serviceCardImageMap } from "@/content/services";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { breadcrumbNode, buildGraph, faqNode, webPageNode } from "@/lib/schema/graph";
 import { site } from "@/lib/env";
@@ -32,9 +31,9 @@ export const metadata: Metadata = pageMetadata({
 
 const FAQS = [
   {
-    question: "Why are only four services listed?",
+    question: "Why is each service on its own page?",
     answer:
-      "Each service here has at least one participating provider with written coverage for Lancaster areas and an approved content and compliance review. We add a service when that is true, not when there is search demand for it.",
+      "Each trade has its own page, so the scope, specifications, process, and questions match that one service. Availability depends on the local provider serving your area, and the provider confirms what they take on before any work begins.",
   },
   {
     question: "What happens if my project spans two services?",
@@ -87,15 +86,14 @@ export default function ServicesPage() {
           className="mt-4 max-w-2xl text-[17px] leading-relaxed"
           style={{ color: overlayBody }}
         >
-          Four residential concrete services, each with at least one
-          independent service provider holding written coverage for the
-          Lancaster area. Pick the closest match and we send your
-          request to one eligible participating provider.
+          Eight residential concrete services, each on its own page. Pick
+          the service that matches your project and send a request. A local
+          provider reviews it and replies.
         </p>
       </OverlayHeader>
 
       <Section eyebrow="Choose a service" title="Services we can take on today">
-        <ProjectTypeChooser images={serviceCardImages} />
+        <ProjectTypeChooser images={serviceCardImageMap} />
       </Section>
 
       <Section tone="soft" eyebrow="Compare" title="Scope at a glance">

@@ -1,7 +1,13 @@
+import { expansionServices } from "./services-expansion";
+
 export type ServiceSlug =
   | "concrete-driveways"
   | "concrete-patios"
+  | "stamped-concrete"
   | "concrete-slabs"
+  | "concrete-foundations"
+  | "concrete-walkways"
+  | "concrete-steps"
   | "concrete-repair";
 
 export type PublicationState = "published" | "gated" | "blocked";
@@ -93,7 +99,7 @@ export interface ServiceRecord {
   considerations: { question: string; answer: string }[];
 }
 
-export const services: readonly ServiceRecord[] = [
+const coreServices: readonly ServiceRecord[] = [
   {
     slug: "concrete-driveways",
     name: "Concrete Driveways",
@@ -324,15 +330,15 @@ export const services: readonly ServiceRecord[] = [
     nameLower: "a concrete patio",
     projectNoun: "patio",
     state: "published",
-    intent: "Stamped, colored, and decorative patio requests",
+    intent: "Backyard patio and outdoor living requests",
     summary:
-      "Stamped, colored, and decorative patios for backyard living spaces, finished with a weather-resistant sealant.",
+      "Backyard patios and outdoor living spaces, poured with a broom or smooth finish and sealed for weather.",
     heroSummary:
-      "A patio is where the finish matters as much as the slab under it. Requests cover stamped concrete, colored and decorative finishes, and broom-finished patios for backyard living spaces. Sealing is part of the plan: a weather-resistant sealant helps protect color and surface from rain, sun, and staining. Request a quote and a local provider will confirm the finish, layout, and sealing schedule at a site visit.",
+      "A backyard patio is an outdoor room, so layout, grade, and drainage matter as much as the finish. Requests cover new backyard patios, patio replacement, and extensions of an existing patio. Typical work includes a compacted base, a planned drainage slope away from the house, and control joints. Stamped and decorative finishes are covered on our Stamped Concrete page. Request a concrete service and a local provider will confirm the layout and sealing plan at a site visit.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "Where patio work starts and stops",
-      options: "Finish, color and layout choices",
+      options: "Finish and layout choices",
       process: "How a patio build is sequenced",
       cost: "What makes one patio cost more than another",
       prepare: "Walking the space before you get a price",
@@ -347,7 +353,7 @@ export const services: readonly ServiceRecord[] = [
       "Patios are the project people most often price before they commit, so it is worth knowing what actually moves the figure. Finish and shape change it far more than size does.",
     ctaLead:
       "Send the rough size and say whether it ties into an existing porch or stoop. A local provider will review it and reply.",
-    cardScope: "Stamped, colored, decorative, and broom-finish patios, plus walkways and entryways",
+    cardScope: "Backyard patios, patio replacements, and extensions",
     workIncluded: [
       "Grading and excavation to the planned subgrade",
       "Forming and reinforcement set to the layout",
@@ -368,7 +374,7 @@ export const services: readonly ServiceRecord[] = [
     keyFacts: [
       {
         label: "Served for",
-        value: "Residential patios and walkway connections",
+        value: "Residential backyard patios",
       },
       { label: "Coverage today", value: "Lancaster, SC" },
       {
@@ -388,11 +394,11 @@ export const services: readonly ServiceRecord[] = [
       },
       {
         title: "Extensions and connections",
-        body: "Enlarging an existing patio or connecting it to a walkway, where the existing slab is sound enough to tie into.",
+        body: "Enlarging an existing patio where the existing slab is sound enough to tie into.",
       },
       {
-        title: "Stamped and colored finishes",
-        body: "Pattern stamped or integrally colored slabs, offered only by local providers who have confirmed that capability for your area.",
+        title: "Finish options",
+        body: "Broom or smooth trowel finishes for a working backyard patio. Stamped and decorative finishes are covered on our Stamped Concrete page.",
       },
     ],
     outOfScope: [
@@ -413,14 +419,14 @@ export const services: readonly ServiceRecord[] = [
           "Cleaner appearance for covered areas. Less grip when wet, so placement matters.",
       },
       {
-        name: "Stamped pattern",
+        name: "Edge detail",
         description:
-          "Stone, slate, or plank patterns pressed into the fresh slab. Availability depends on the local provider and adds cost and cure time sensitivity.",
+          "A formed edge profile for a cleaner line where the patio meets the lawn or a planting bed.",
       },
       {
-        name: "Integral color and release",
+        name: "Curing and release",
         description:
-          "Color mixed into the concrete rather than applied on top. Discuss fade expectations and sealing schedule with the contractor.",
+          "Curing protects the surface in the first days after the pour. Discuss the curing method and timing with the provider.",
       },
       {
         name: "Sealing",
@@ -479,7 +485,7 @@ export const services: readonly ServiceRecord[] = [
       {
         factor: "Grade and drainage correction",
         impact: "Medium",
-        note: "A patio that currently drains toward the house needs the fall rebuilt, not just resurfaced.",
+        note: "A patio that currently drains toward the house needs the fall rebuilt, not just patched.",
       },
       {
         factor: "Access to the rear yard",
@@ -489,7 +495,7 @@ export const services: readonly ServiceRecord[] = [
       {
         factor: "Sealing and maintenance",
         impact: "Low",
-        note: "A recurring cost on decorative slabs rather than a single job.",
+        note: "A recurring cost that depends on sun, traffic, and the sealer chosen.",
       },
     ],
     prepChecklist: [
@@ -502,7 +508,7 @@ export const services: readonly ServiceRecord[] = [
     ],
     quoteQuestions: [
       "Which way will the finished slab drain, and at what fall?",
-      "Is the stamped or colored option priced separately?",
+      "Is sealing priced separately from the pour?",
       "How will you tie into the existing slab or threshold height?",
       "Where will joints fall, and how will they look in the pattern?",
       "Do you seal it, and when is the first reseal due?",
@@ -515,9 +521,9 @@ export const services: readonly ServiceRecord[] = [
           "The contractor confirms the scope on site. Layout, finish selection, scheduling, and construction are carried out by the local provider who takes your request, and availability depends on local providers in your area.",
       },
       {
-        question: "Is a stamped finish always available?",
+        question: "Which finishes are available for a backyard patio?",
         answer:
-          "No. Stamped work is only offered when a local provider has confirmed that capability for your area. If it is not supported, the job is quoted as a standard patio, and the provider tells you so before any work begins.",
+          "Broom and smooth trowel finishes are the common choices for a backyard patio. Stamped and decorative finishes are covered on our Stamped Concrete page.",
       },
       {
         question: "What size should a usable patio be?",
@@ -538,16 +544,16 @@ export const services: readonly ServiceRecord[] = [
   },
   {
     slug: "concrete-slabs",
-    name: "Concrete Slabs & Foundations",
-    shortName: "Slabs & Foundations",
-    nameLower: "concrete slabs and foundations",
+    name: "Concrete Slabs",
+    shortName: "Slabs & Pads",
+    nameLower: "concrete slabs and pads",
     projectNoun: "slab",
     state: "published",
-    intent: "Shed pads, garage slabs, and workshop foundations",
+    intent: "Garage slabs, shed pads, workshop floors, and equipment pads",
     summary:
-      "Shed pads, garage slabs, and workshop foundations over a compacted gravel base, with a vapor barrier.",
+      "Garage slabs, shed pads, and equipment pads on a compacted gravel base, with a vapor barrier where needed.",
     heroSummary:
-      "A slab stays level only if what sits under it is right. Requests cover shed pads, garage slabs, and workshop foundations. Typical specifications include a compacted gravel base, a vapor barrier under the slab to limit moisture rising from the ground, and reinforcement sized to the load. Request a quote and a local provider will confirm base depth, drainage, and thickness at a site visit.",
+      "A slab stays level only if what sits under it is right. Requests cover garage slabs, shed pads, workshop floors, and equipment pads. Typical specifications include a compacted gravel base, a vapor barrier under the slab to limit moisture rising from the ground, and reinforcement sized to the load. Request a concrete service and a local provider will confirm base depth, drainage, and thickness at a site visit.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "Pads this category covers",
@@ -566,7 +572,7 @@ export const services: readonly ServiceRecord[] = [
       "Pricing comes last here for a reason: until the load, the access and the base are known, any number is a guess. Once those are settled a contractor can quote a pad quickly.",
     ctaLead:
       "Say what the pad has to carry and roughly where it goes. A local provider will review it and reply.",
-    cardScope: "Garages, sheds, pole barns, equipment pads, and sidewalks",
+    cardScope: "Garage slabs, shed pads, workshop floors, and equipment pads",
     workIncluded: [
       "Grading and excavation to the planned subgrade",
       "Forming and reinforcement set to the layout",
@@ -592,7 +598,7 @@ export const services: readonly ServiceRecord[] = [
       { label: "Coverage today", value: "Lancaster, SC" },
       {
         label: "Direct communication / No middleman",
-        value: "Foundations and engineered structural slabs",
+        value: "Garage slabs, shed pads, workshop floors",
       },
       { label: "Cost to you", value: "No charge for the quote request" },
     ],
@@ -610,14 +616,14 @@ export const services: readonly ServiceRecord[] = [
         body: "Thicker pads for heavier static loads, with reinforcement specified for the weight being parked.",
       },
       {
-        title: "Utility and walkway flatwork",
-        body: "Landing pads, trash can pads, and short connecting flatwork poured alongside a larger job.",
+        title: "Utility and equipment pads",
+        body: "Pads for trash cans, generators, and utility equipment, poured alongside a larger job.",
       },
     ],
     outOfScope: [
-      "House foundations, footings, and stem walls",
+      "Structural footings and house foundations, covered on our Concrete Foundations page",
       "Engineered or load bearing structural slabs",
-      "Garage foundations forming part of a permitted structure",
+      "Driveways and aprons",
       "Retaining walls and any earth retention design",
     ],
     options: [
@@ -729,9 +735,9 @@ export const services: readonly ServiceRecord[] = [
           "Requirements vary by project type, scope, and total cost. Confirm licensing, insurance, and eligibility with the provider you hire, and verify credentials through SC LLR before you hire.",
       },
       {
-        question: "Do you handle foundations or structural slabs?",
+        question: "Do you handle structural or load bearing slabs?",
         answer:
-          "No. Foundation repair, structural engineering, and retaining walls are outside this service's scope. We decline those requests rather than send them to a concrete finisher who should not take them on.",
+          "No. Structural engineering and load bearing slabs are outside this service's scope. We decline those requests rather than send them to a concrete finisher who should not take them on.",
       },
       {
         question: "What thickness does a pad need?",
@@ -752,16 +758,16 @@ export const services: readonly ServiceRecord[] = [
   },
   {
     slug: "concrete-repair",
-    name: "Concrete Repair & Resurfacing",
-    shortName: "Repair & Resurfacing",
-    nameLower: "concrete repair and resurfacing",
+    name: "Concrete Repair",
+    shortName: "Repair",
+    nameLower: "concrete repair and crack fixing",
     projectNoun: "repair",
     state: "published",
-    intent: "Crack sealing, joint repair, and surface restoration",
+    intent: "Crack repair, joint restoration, and damaged concrete",
     summary:
-      "Crack sealing, joint repair, and surface restoration that also address the water that causes further damage.",
+      "Crack repair, joint restoration, and patching of damaged or sunken concrete to keep water out.",
     heroSummary:
-      "Small cracks and worn joints cost less to fix early. Requests cover crack sealing, joint repair, and surface restoration. Every repair starts with finding the source of the damage, because water getting into cracks and joints is a common cause of further deterioration. Request a quote and a local provider will assess the surface at a site visit before recommending a method.",
+      "Small cracks and worn joints cost less to fix early, and water getting into them is the usual cause of further damage. Requests cover crack repair, joint restoration, and patching of damaged or sunken concrete. Every repair starts with finding the source of the damage before a method is recommended. Request a concrete service and a local provider will assess the surface at a site visit.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "Responsibility for damage",
@@ -780,7 +786,7 @@ export const services: readonly ServiceRecord[] = [
       "Repair quotes vary more than any other concrete work, because two slabs with identical cracks can need completely different work underneath. These are the things that move it.",
     ctaLead:
       "Describe the damage and where it is. A local provider looks at it on site before anyone talks about price.",
-    cardScope: "Crack filling, joint restoration, and sealing",
+    cardScope: "Crack repair, joint restoration, and damaged sections",
     workIncluded: [
       "Surface preparation and cleaning",
       "Crack routing or patch layout",
@@ -789,7 +795,7 @@ export const services: readonly ServiceRecord[] = [
       "Site clean-up and haul-away of debris",
     ],
     tradeSpecs: [
-      "Cracks and spalled areas cleaned and prepared before any filler or overlay goes on.",
+      "Cracks and spalled areas cleaned and prepared before any filler or patch goes in.",
       "Repair mortar or flexible sealant chosen for the surface and the movement it has to handle.",
       "Drainage checked first, because water is a common cause of repeat cracking.",
       "Joints restored, a sealer selected for the finish, and a cure time confirmed before traffic returns.",
@@ -797,9 +803,9 @@ export const services: readonly ServiceRecord[] = [
     image: "/images/locations/lancaster-sc/lancaster-sc-repair.webp",
     imageAlt:
       "Sidewalk slab heaved and cracked by exposed tree roots beside a large oak, with a residential street behind",
-    projectTypes: ["Crack and surface repair", "Resurfacing"],
+    projectTypes: ["Crack repair", "Joint repair", "Damaged section repair"],
     keyFacts: [
-      { label: "Served for", value: "Nonstructural repair and resurfacing" },
+      { label: "Served for", value: "Nonstructural crack and joint repair" },
       { label: "Coverage today", value: "Lancaster, SC" },
       {
         label: "Direct communication / No middleman",
@@ -817,8 +823,8 @@ export const services: readonly ServiceRecord[] = [
         body: "Patching flaked or pitted areas where the wearing surface has broken down but the slab beneath is sound.",
       },
       {
-        title: "Resurfacing and overlays",
-        body: "A new wearing surface over an existing slab to restore appearance and texture, where the substrate can carry it.",
+        title: "Sunken and damaged sections",
+        body: "Restoring damaged or sunken sections of concrete in place, once the cause is assessed and the substrate is found sound.",
       },
       {
         title: "Joint maintenance",
@@ -827,8 +833,8 @@ export const services: readonly ServiceRecord[] = [
     ],
     outOfScope: [
       "Structural assessment, engineering reports, and load calculations",
-      "Slab jacking, mudjacking, and foam leveling of settled slabs",
-      "Foundation crack repair and waterproofing",
+      "Structural repair and load bearing work",
+      "Below-grade waterproofing",
       "Anything caused by active ground movement or heave",
     ],
     options: [
@@ -843,9 +849,9 @@ export const services: readonly ServiceRecord[] = [
           "Damaged surface material is removed back to sound concrete and replaced. Color match is never perfect. Expect a visible repair.",
       },
       {
-        name: "Cementitious overlay",
+        name: "Patch repair",
         description:
-          "A thin resurfacing layer over the whole slab. Requires a clean, sound, properly prepared substrate to bond.",
+          "Repair mortar restores a damaged area to the surrounding surface once the substrate is sound and properly prepared.",
       },
       {
         name: "Joint resealing",
@@ -864,7 +870,7 @@ export const services: readonly ServiceRecord[] = [
         phase: "Written quote and honest limits",
         duration: "Varies by contractor",
         detail:
-          "A good repair quote says what it will not fix. If the subbase is the cause, resurfacing only buys time.",
+          "A good repair quote says what it will not fix. If the subbase is the cause, a surface repair only buys time.",
       },
       {
         phase: "Surface preparation",
@@ -873,7 +879,7 @@ export const services: readonly ServiceRecord[] = [
           "Cleaning, grinding, or profiling. Surface preparation has a direct bearing on whether the repair bonds and lasts.",
       },
       {
-        phase: "Repair or overlay application",
+        phase: "Repair application",
         duration: "Typically one day",
         detail:
           "Product specific and weather sensitive. Temperature limits are set by the material, not by the calendar.",
@@ -882,7 +888,7 @@ export const services: readonly ServiceRecord[] = [
         phase: "Cure and sealing",
         duration: "Ask the contractor",
         detail:
-          "Overlays and patches need protected cure time before traffic. Ask for the figure before you plan around it.",
+          "Patches need protected cure time before traffic. Ask for the figure before you plan around it.",
       },
     ],
     costFactors: [
@@ -894,7 +900,7 @@ export const services: readonly ServiceRecord[] = [
       {
         factor: "Area and extent",
         impact: "High",
-        note: "Spot patching a few square feet and overlaying an entire drive are different jobs.",
+        note: "Spot patching a few square feet and repairing a whole drive are different jobs.",
       },
       {
         factor: "Surface preparation required",
@@ -904,7 +910,7 @@ export const services: readonly ServiceRecord[] = [
       {
         factor: "Product selection",
         impact: "Medium",
-        note: "Overlay systems vary widely in price, durability, and cure requirements.",
+        note: "Repair materials vary widely in price, durability, and cure requirements.",
       },
       {
         factor: "Weather window",
@@ -940,9 +946,9 @@ export const services: readonly ServiceRecord[] = [
           "Surface spalling, shrinkage cracking, and cosmetic deterioration on a slab that is not moving. Movement, heaving, a height difference across a crack, or load bearing failure needs a professional structural assessment instead, and we decline those as repair jobs.",
       },
       {
-        question: "Is resurfacing a permanent fix?",
+        question: "Is a crack repair a permanent fix?",
         answer:
-          "Resurfacing addresses the wearing surface. If the subbase is the cause, the same failure returns through the new surface. Your contractor should tell you which situation you are in before taking the work.",
+          "A crack repair seals the opening and keeps water out. If the subbase is the cause, the same failure can return. Your contractor should tell you which situation you are in before taking the work.",
       },
       {
         question: "Can repair be scheduled in cold weather?",
@@ -957,6 +963,14 @@ export const services: readonly ServiceRecord[] = [
     ],
   },
 ] as const;
+
+export const services: readonly ServiceRecord[] = [
+  ...coreServices,
+  ...expansionServices,
+];
+
+export const serviceCardImageMap: Partial<Record<ServiceSlug, { src: string; alt: string }>> =
+  Object.fromEntries(services.map((s) => [s.slug, { src: s.image, alt: s.imageAlt }]));
 
 export const publishedServices = services.filter(
   (s) => s.state === "published",

@@ -38,8 +38,8 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
       "Patio slab work",
       "Outdoor concrete areas",
       "Patio extensions",
-      "Walkway connections to an existing patio",
-      "Steps and landings tied into a patio slab",
+      "Patio slab work at the rear of the home",
+      "Outdoor living areas with a sealed finish",
     ],
   },
 
@@ -49,7 +49,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
       "Residential slabs",
       "Garage slabs",
       "Shed and outbuilding slabs",
-      "Foundation related slab projects where appropriate",
+      "Workshop floors",
       "Replacement of damaged slabs",
       "Equipment and HVAC pads",
       "Slabs prepared for a future structure",
@@ -66,6 +66,49 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
       "Repair or replacement assessment",
       "Spalling, flaking, and pitted surfaces",
       "Trip hazards at joints and edges",
+    ],
+  },
+
+  /* ------------------------------------------------- stamped concrete */
+  "stamped-concrete": {
+    mayInclude: [
+      "Stamped patio finishes",
+      "Stamped entry and porch finishes",
+      "Integral color",
+      "Decorative texture and borders",
+      "Sealing and recoat planning",
+    ],
+  },
+
+  /* ----------------------------------------------------- foundations */
+  "concrete-foundations": {
+    mayInclude: [
+      "Continuous and spread footings",
+      "Stem walls",
+      "Foundation reinforcement",
+      "Anchor bolts and sleeves",
+      "Foundations for new homes and additions",
+    ],
+  },
+
+  /* -------------------------------------------------------- walkways */
+  "concrete-walkways": {
+    mayInclude: [
+      "New front walks",
+      "Walk replacement",
+      "Sidewalk sections",
+      "Broom finished walkway edges",
+      "Control joint layout",
+    ],
+  },
+
+  /* ----------------------------------------------------------- steps */
+  "concrete-steps": {
+    mayInclude: [
+      "New front steps",
+      "Porch landings",
+      "Step replacement",
+      "Nosing and broom finish",
     ],
   },
 };

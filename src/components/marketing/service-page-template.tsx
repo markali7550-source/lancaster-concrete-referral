@@ -44,6 +44,10 @@ const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-driveways": { src: "/images/services/concrete-driveways/concrete-driveways-detail.webp", alt: "Driveway edge pitched away from the lawn with a gravel drainage margin" },
   "concrete-patios": { src: "/images/services/concrete-patios/concrete-patios-detail.webp", alt: "Plain concrete patio slab at the rear of a single story brick home" },
   "concrete-slabs": { src: "/images/services/concrete-slabs/concrete-slabs-detail.webp", alt: "Level backyard concrete slab set in a lawn with a brick house and trees behind" },
+  "stamped-concrete": { src: "/images/services/stamped-concrete/stamped-concrete-hero.jpg", alt: "Stamped concrete patio with a slate pattern and integral color beside a brick house" },
+  "concrete-foundations": { src: "/images/services/concrete-foundations/concrete-foundations-hero.jpg", alt: "Exposed footing trench with rebar cages and a poured stem wall at a residential site" },
+  "concrete-walkways": { src: "/images/services/concrete-walkways/concrete-walkways-hero.jpg", alt: "Broom finished front walkway leading to a brick house entrance" },
+  "concrete-steps": { src: "/images/services/concrete-steps/concrete-steps-hero.jpg", alt: "New broom finished concrete porch steps and a square landing" },
   "concrete-repair": { src: "/images/services/concrete-repair/concrete-repair-detail.webp", alt: "Settled concrete walkway slab with a cracked, lifted edge" },
 };
 

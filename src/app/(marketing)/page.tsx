@@ -18,8 +18,7 @@ import {
   CtaBand,
 } from "@/components/marketing/service-sections";
 import { OUT_OF_AREA_POSTAL_CODE, publishedLocations, serviceAreaOptions } from "@/content/locations";
-import { publishedServices } from "@/content/services";
-import { serviceCardImages } from "@/content/location-services";
+import { publishedServices, serviceCardImageMap } from "@/content/services";
 import { site } from "@/lib/env";
 import { SERVICE_DISCLOSURE } from "@/lib/seo/disclosure";
 import { pageMetadata } from "@/lib/seo/metadata";
@@ -130,16 +129,16 @@ export default function HomePage() {
         tone="surface"
         eyebrow="Project types"
         title="Where we can take work in Lancaster today"
-        lead="Four residential concrete service categories, each with at least one participating provider holding written coverage for Lancaster areas. Foundation repair, structural engineering, and retaining walls sit outside this scope."
+        lead="Eight residential concrete services, each on its own page. Each request goes to a local provider who confirms the scope, and foundation repair, structural engineering, and retaining walls sit outside these services."
       >
-        <ProjectTypeChooser images={serviceCardImages} />
+        <ProjectTypeChooser images={serviceCardImageMap} />
         <p className="mt-8 text-sm">
           <Link
             href="/services"
             className="font-semibold underline underline-offset-4"
             style={{ color: "var(--color-accent)" }}
           >
-            Compare all four services and their scope limits →
+            Compare all eight services and their scope limits →
           </Link>
         </p>
       </Section>

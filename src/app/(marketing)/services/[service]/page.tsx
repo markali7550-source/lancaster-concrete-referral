@@ -24,7 +24,7 @@ export function generateStaticParams() {
 type Params = Promise<{ service: string }>;
 
 function titleFor(name: string) {
-  return `${name} in Lancaster, SC | Service Quotes`;
+  return `${name} in Lancaster, SC`;
 }
 
 /**
@@ -33,7 +33,7 @@ function titleFor(name: string) {
  * between /services/[service] and /locations/lancaster-sc/[service].
  */
 function descriptionFor(nameLower: string, projectNoun: string) {
-  return `What ${nameLower} covers in Lancaster, SC, what falls outside it, and how your ${projectNoun} request reaches an independent local concrete specialist.`;
+  return `What ${nameLower} covers in Lancaster, SC, what falls outside it, and how a ${projectNoun} request is handled by a local concrete provider.`;
 }
 
 export async function generateMetadata({
@@ -57,7 +57,7 @@ export default async function ServicePage({ params }: { params: Params }) {
   if (!service) notFound();
 
   const path = `/services/${service.slug}`;
-  const h1 = `${service.name} in Lancaster County, SC`;
+  const h1 = `${service.name} in Lancaster, SC`;
   const description = descriptionFor(service.nameLower, service.projectNoun);
 
   const detail = serviceDetails[service.slug];
