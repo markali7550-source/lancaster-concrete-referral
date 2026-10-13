@@ -77,7 +77,7 @@ const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
   },
   "concrete-foundations": {
     src: "/images/services/concrete-foundations/concrete-foundations-process.webp",
-    alt: ""Concrete pumped from a hose onto a steel rebar grid inside timber forms, with a worker in camouflage pants and boots standing on the steel",
+    alt: "Concrete pumped from a hose onto a steel rebar grid inside timber forms, with a worker in camouflage pants and boots standing on the steel",
   },
   "concrete-walkways": {
     src: "/images/services/concrete-walkways/concrete-walkways-process.webp",
