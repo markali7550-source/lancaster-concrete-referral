@@ -19,9 +19,9 @@ import { site } from "@/lib/env";
 
 
 
-const TITLE = "Concrete Services in Lancaster, SC | Driveways to Repair";
+const TITLE = "Lancaster County Concrete Services | Driveways to Repair";
 const DESCRIPTION =
-  "Driveways, patios, slabs and nonstructural repair in Lancaster, SC. See what each service covers and how your request reaches an independent local concrete specialist.";
+  "Driveways, patios, slabs, repair, foundations, walkways, stamped concrete, and steps in Lancaster, SC. Request a quote from a local provider.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,

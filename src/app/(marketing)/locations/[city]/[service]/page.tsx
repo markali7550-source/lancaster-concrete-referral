@@ -6,6 +6,7 @@ import { ServicePageTemplate } from "@/components/marketing/service-page-templat
 import type { LocationLayout } from "@/components/marketing/service-page-template";
 import { serviceDetails } from "@/content/service-details";
 import {
+  LOCAL_SOIL_BY_SERVICE,
   getLocationService,
   publishedLocationServices,
 } from "@/content/location-services";
@@ -70,16 +71,14 @@ export default async function ComboPage({ params }: { params: Params }) {
 
   const detail = serviceDetails[serviceRecord.slug];
 
+  const soil = LOCAL_SOIL_BY_SERVICE[serviceRecord.slug];
   const locationLayout: LocationLayout = {
     quoteTitle: "Request a quote",
     quoteBody:
       "Tell us about your project and where it is. A local provider contacts you to confirm the scope and give you a quote directly.",
-    climateTitle: `Building in ${location.city}: soil and summer weather`,
-    climate: [
-      "Much of Lancaster County sits on red clay. Clay holds water after heavy rain, and that moisture can soften the ground under a slab. Local providers often plan for it with a compacted base, control joints, and drainage at the edges before the concrete arrives.",
-      "Summers are hot and humid. In that weather concrete can dry faster than it sets, so pours are often scheduled for cooler hours and the surface is protected while it cures. Ask your provider how they will handle curing on the pour day.",
-    ],
-    neighborhoodsTitle: "Communities we work near",
+    climateTitle: soil.title,
+    climate: soil.paragraphs,
+    neighborhoodsTitle: "Communities near Lancaster",
     neighborhoods: [
       "City of Lancaster",
       "Kershaw",

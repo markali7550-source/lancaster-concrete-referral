@@ -68,7 +68,7 @@ export function LocationHero({
         </p>
         <Link
           href="#quote-form"
-          className="btn btn-primary mt-4 inline-flex min-h-[48px] w-full items-center justify-center sm:w-auto"
+          className="btn btn-primary mt-4 inline-flex min-h-[52px] w-full items-center justify-center sm:w-auto"
         >
           Request Concrete Service
         </Link>
@@ -113,7 +113,7 @@ export function LocalContext({
           </div>
         </div>
 
-        <div>
+        <div className="local-communities">
           <h3 className="text-[20px] font-semibold leading-snug">
             {neighborhoodsTitle}
           </h3>
