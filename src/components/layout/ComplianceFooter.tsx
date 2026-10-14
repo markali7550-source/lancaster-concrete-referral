@@ -5,6 +5,19 @@ import { publishedServices } from "@/content/services";
 import { site } from "@/lib/env";
 import { FOOTER_DISCLOSURE, SC_LLR_URL } from "@/lib/seo/disclosure";
 
+/** Main services shown in the footer. The full list lives at /services. */
+const FOOTER_SERVICE_SLUGS = [
+  "concrete-driveways",
+  "concrete-patios",
+  "concrete-slabs",
+  "concrete-repair",
+  "stamped-concrete",
+] as const;
+
+const footerServices = publishedServices.filter((service) =>
+  (FOOTER_SERVICE_SLUGS as readonly string[]).includes(service.slug),
+);
+
 export function ComplianceFooter() {
   return (
     <footer
@@ -45,7 +58,7 @@ export function ComplianceFooter() {
           <nav aria-label="Services">
             <p className="eyebrow-plain">Services</p>
             <ul className="mt-4 space-y-2.5 text-sm">
-              {publishedServices.map((service) => (
+              {footerServices.map((service) => (
                 <li key={service.slug}>
                   <Link
                     href={`/services/${service.slug}`}
