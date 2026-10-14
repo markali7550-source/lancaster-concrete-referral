@@ -10,7 +10,7 @@ const PATH = "/service-disclosure";
 export const metadata: Metadata = pageMetadata({
   title: `${TITLE} | ${site.brand}`,
   description:
-    "How we work with independent concrete service providers in Lancaster, SC, what we do and do not do, and how we are compensated.",
+    "How we work with independent concrete service providers in Lancaster, SC, what we do and do not do, and how we are compensated. Read before you request a quote.",
   path: PATH,
 });
 

@@ -93,7 +93,7 @@ export default async function ComboPage({ params }: { params: Params }) {
       path,
       name: `${serviceRecord.name} in ${location.city}, SC`,
       description,
-      areaServed: [`${location.city}, SC`],
+      areaServed: [location.city],
     }),
     webPageNode(path, h1, description),
     breadcrumbNode(path, [

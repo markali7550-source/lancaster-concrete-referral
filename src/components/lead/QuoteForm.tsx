@@ -27,6 +27,8 @@ interface QuoteFormProps {
   consentVersion: string;
   fallbackDisplay: string;
   fallbackE164: string;
+  /** Heading level of the step title. Defaults to h3; the homepage passes h2. Classes are unchanged, so the look does not change. */
+  headingLevel?: "h2" | "h3";
 }
 
 type Status =
@@ -58,7 +60,9 @@ export function QuoteForm({
   consentVersion,
   fallbackDisplay,
   fallbackE164,
+  headingLevel = "h3",
 }: QuoteFormProps) {
+  const StepHeading = headingLevel;
   const baseId = useId();
   const [step, setStep] = useState<1 | 2>(1);
   const [status, setStatus] = useState<Status>("idle");
@@ -350,9 +354,9 @@ export function QuoteForm({
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
         <div>
           <p className="eyebrow">Step {step} of 2</p>
-          <h3 className="mt-1 text-xl font-semibold md:text-2xl">
+          <StepHeading className="mt-1 text-xl font-semibold md:text-2xl">
             {step === 1 ? "Your project and location" : "How to reach you"}
-          </h3>
+          </StepHeading>
         </div>
         <div className="flex justify-center gap-1.5 sm:justify-start" aria-hidden="true">
           <span

@@ -6,7 +6,7 @@ import { site } from "@/lib/env";
 export const metadata: Metadata = pageMetadata({
   title: `Privacy Policy | ${site.brand}`,
   description:
-    "What we collect, why we share requests with independent contractors, how consent is recorded, and how to exercise your choices.",
+    "What we collect, why we share requests with independent contractors, how consent is recorded, and how to exercise your choices. Contact us with questions.",
   path: "/privacy",
 });
 

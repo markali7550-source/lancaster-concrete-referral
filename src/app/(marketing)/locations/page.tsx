@@ -12,25 +12,46 @@ import { Icon } from "@/components/ui/Icon";
 import { CtaBand } from "@/components/marketing/cta-band";
 import { publishedLocations } from "@/content/locations";
 import { pageMetadata } from "@/lib/seo/metadata";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { Breadcrumbs } from "@/components/marketing/service-sections";
+import { breadcrumbNode, buildGraph, webPageNode } from "@/lib/schema/graph";
 
 /**
  * Conditional route (spec 3.2): indexable once it carries distinct value beyond
  * a bare city list. It is a primary navigation destination, so it explains how
  * coverage is granted and links through to each published local page.
  */
+const TITLE = "Concrete Service Areas in South Carolina";
+const DESCRIPTION =
+  "The South Carolina areas we currently serve. Coverage is added only once a local team confirms it can take work there. Check whether we serve your city today.";
+
 export const metadata: Metadata = pageMetadata({
-  title: "Concrete Service Areas in South Carolina",
-  description:
-    "The South Carolina areas we currently serve. Coverage is added only once a local team confirms it can take work there.",
+  title: TITLE,
+  description: DESCRIPTION,
   path: "/locations",
 });
+
+const graph = buildGraph([
+  webPageNode("/locations", TITLE, DESCRIPTION),
+  breadcrumbNode("/locations", [
+    { name: "Home", path: "/" },
+    { name: "Service areas", path: "/locations" },
+  ]),
+]);
 
 export default function LocationsPage() {
   return (
     <>
+      <JsonLd data={graph} />
       <OverlayHeader
         imageSrc="/images/locations/locations-index-hero.webp"
         imageAlt="Elevated view of a suburban residential neighborhood of brick homes with concrete driveways along a curving street"
+        breadcrumbs={
+          <Breadcrumbs
+            overlay
+            items={[{ name: "Home", path: "/" }, { name: "Service areas" }]}
+          />
+        }
       >
         <p
           className="eyebrow"

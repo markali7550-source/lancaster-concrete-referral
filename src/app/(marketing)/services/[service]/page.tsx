@@ -26,8 +26,14 @@ export function generateStaticParams() {
 
 type Params = Promise<{ service: string }>;
 
+/**
+ * 50-60 characters. The long suffix fits most service names; the short suffix
+ * keeps the longest names (e.g. "Garage Floor Coatings") inside the range.
+ */
 function titleFor(name: string) {
-  return `${name} in Lancaster, SC`;
+  const base = `${name} in Lancaster, SC`;
+  const long = `${base} | Local Concrete Service`;
+  return long.length <= 60 ? long : `${base} | Local Service`;
 }
 
 /**
@@ -36,7 +42,9 @@ function titleFor(name: string) {
  * between /services/[service] and /locations/lancaster-sc/[service].
  */
 function descriptionFor(nameLower: string, projectNoun: string) {
-  return `What ${nameLower} covers in Lancaster, SC, what falls outside it, and how a ${projectNoun} request is handled by a local concrete provider.`;
+  const base = `What ${nameLower} covers in Lancaster, SC, what falls outside it, and how a ${projectNoun} request is handled by a local concrete provider.`;
+  // Short descriptions get a call to action so they land in the 140-160 range.
+  return base.length < 140 ? `${base} Request a free quote.` : base;
 }
 
 export async function generateMetadata({

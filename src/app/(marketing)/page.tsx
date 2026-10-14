@@ -110,6 +110,7 @@ export default function HomePage() {
         overlay
         aside={
           <QuoteForm
+            headingLevel="h2"
             formId="hero-quote-form"
             services={publishedServices.map((s) => ({
               slug: s.slug,
@@ -250,6 +251,7 @@ export default function HomePage() {
         <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
           <div className="w-full max-w-xl">
             <QuoteForm
+              headingLevel="h2"
               services={publishedServices.map((s) => ({
                 slug: s.slug,
                 name: s.name,

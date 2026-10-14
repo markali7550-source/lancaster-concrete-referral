@@ -16,7 +16,7 @@ import { CALL_DISCLOSURE } from "@/lib/seo/disclosure";
 
 const TITLE = "Contact Us | Concrete Quotes in Lancaster, SC";
 const DESCRIPTION =
-  "Get in touch with Lancaster Concrete for professional residential and commercial concrete services in Lancaster, SC.";
+  "Get in touch with Lancaster Concrete for professional residential and commercial concrete services in Lancaster, SC. Request a free quote or call today.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,

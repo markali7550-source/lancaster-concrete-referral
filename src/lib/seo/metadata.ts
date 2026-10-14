@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
 import { absoluteUrl, site } from "@/lib/env";
 
-const OG_IMAGE = {
-  url: "/opengraph-image.webp",
-  width: 1200,
-  height: 630,
-  alt: `${site.brand}, concrete service in Lancaster, South Carolina`,
-} as const;
+const OG_ALT = `${site.brand}, concrete service in Lancaster, South Carolina`;
+
+/**
+ * JPEG first: it is the format every social crawler accepts. The WebP stays
+ * listed second for crawlers that prefer it. Both are 1200x630.
+ */
+const OG_IMAGES: { url: string; width: number; height: number; alt: string; type: string }[] = [
+  { url: "/opengraph-image.jpg", width: 1200, height: 630, alt: OG_ALT, type: "image/jpeg" },
+  { url: "/opengraph-image.webp", width: 1200, height: 630, alt: OG_ALT, type: "image/webp" },
+];
 
 interface PageMetaInput {
   title: string;
@@ -39,13 +43,13 @@ export function pageMetadata({
       siteName: site.brand,
       locale: "en_US",
       type: "website",
-      images: [OG_IMAGE],
+      images: OG_IMAGES,
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [OG_IMAGE.url],
+      images: OG_IMAGES.map((image) => image.url),
     },
   };
 }
@@ -60,35 +64,35 @@ export function pageMetadata({
  * string, which is better for both readers and duplicate-content signals.
  *
  * Lengths are deliberately budgeted: titles 55-59 characters, descriptions
- * 142-146. The brand is intentionally NOT appended to these titles — at 26
+ * 140-160. The brand is intentionally NOT appended to these titles — at 26
  * characters "Lancaster Concrete Connect" pushes every one of them to 60-64,
  * which is the over-length problem these titles exist to fix. The brand is
  * still carried on each page by `openGraph.siteName` and the JSON-LD graph. */
 const COMBO_DESCRIPTIONS: Record<string, (city: string) => string> = {
   "concrete-driveways": (city) =>
-    `Planning a concrete driveway in ${city}, SC? Tell us about the project and a local contractor can reply to your request.`,
+    `Planning a concrete driveway in ${city}, SC? Tell us about the project and a local contractor will reply to your request. Ask for a free quote.`,
   "concrete-patios": (city) =>
-    `Thinking about a concrete patio in ${city}, SC? Share a few details and a local contractor can reply to your request.`,
+    `Thinking about a concrete patio in ${city}, SC? Share a few details and a local contractor will reply with next steps. Request a free quote today.`,
   "concrete-slabs": (city) =>
-    `Need a concrete slab or pad in ${city}, SC? Tell us what it will support and a local contractor can reply to your request.`,
+    `Need a concrete slab or pad in ${city}, SC? Tell us what it will support and a local contractor will reply to your request. Get a free quote.`,
   "concrete-repair": (city) =>
-    `Have cracked or settled concrete in ${city}, SC? Describe the problem and a local contractor can reply to your request.`,
+    `Have cracked or settled concrete in ${city}, SC? Describe the problem and a local contractor will reply to your request. Request a free quote.`,
   "concrete-foundations": (city) =>
-    `Planning a foundation or footing in ${city}, SC? Describe the project and a local contractor can reply to your request.`,
+    `Planning a foundation or footing in ${city}, SC? Describe the project and a local contractor will reply to your request. Get a free quote today.`,
   "concrete-walkways": (city) =>
-    `Thinking about a front walk or entry path in ${city}, SC? Share a few details and a local contractor can reply to your request.`,
+    `Thinking about a front walk or entry path in ${city}, SC? Share a few details and a local contractor will reply. Request a free quote today.`,
   "stamped-concrete": (city) =>
     `Interested in stamped concrete in ${city}, SC? Tell us the area and pattern you have in mind, and a local contractor can reply to your request.`,
   "concrete-steps": (city) =>
-    `Planning new or repaired steps in ${city}, SC? Tell us about the rise and location, and a local contractor can reply to your request.`,
+    `Planning new or repaired steps in ${city}, SC? Tell us about the rise and location, and a local contractor will reply. Ask for a free quote.`,
   "concrete-leveling": (city) =>
-    `Sunken slab in ${city}, SC? Tell us where it dropped and a local contractor can reply to your request about leveling options.`,
+    `Sunken slab in ${city}, SC? Tell us where it dropped and a local contractor will reply to your request about leveling options. Get a free quote.`,
   "concrete-garage-coatings": (city) =>
     `Planning a garage floor coating in ${city}, SC? Tell us the garage size and floor condition, and a local contractor can reply to your request.`,
   "concrete-resurfacing": (city) =>
-    `Worn driveway or patio in ${city}, SC? Tell us about the surface and a local contractor can reply to your request about a thin overlay.`,
+    `Worn driveway or patio in ${city}, SC? Tell us about the surface and a local contractor will reply about a thin overlay. Ask for a free quote.`,
   "concrete-aprons": (city) =>
-    `Need a concrete apron in ${city}, SC? Tell us where the driveway meets the street and a local contractor can reply to your request.`,
+    `Need a concrete apron in ${city}, SC? Tell us where the driveway meets the street and a local contractor will reply. Request a free quote today.`,
   "concrete-sealing": (city) =>
     `Want to seal concrete in ${city}, SC? Tell us the surface and its size, and a local contractor can reply to your request about cleaning and sealer.`,
   "concrete-exposed-aggregate": (city) =>
