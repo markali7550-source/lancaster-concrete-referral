@@ -214,8 +214,8 @@ export default function HomePage() {
 
       <Section
         backgroundImage={{
-          src: "/images/home/home-service-area.webp",
-          alt: "Single story brick ranch home behind a mature shade tree, with a curved concrete front walkway running out to the sidewalk",
+          src: "/images/locations/locations-index-hero.webp",
+          alt: "Elevated view of a suburban residential neighborhood of brick homes with concrete driveways along a curving street",
         }}
         eyebrow="Service area"
         title="Areas we currently serve"
