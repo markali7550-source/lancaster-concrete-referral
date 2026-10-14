@@ -30,19 +30,29 @@ export const metadata: Metadata = pageMetadata({
 
 const FAQS = [
   {
-    question: "Why is each service on its own page?",
+    question: "What concrete services do you offer in Lancaster?",
     answer:
-      "Each trade has its own page, so the scope, specifications, process, and questions match that one service. Availability depends on the local provider serving your area, and the provider confirms what they take on before any work begins.",
+      "Our network of independent local providers covers residential concrete work in Lancaster, including driveways, patios, walkways, foundations, slab pouring, concrete repairs, and decorative stamped concrete.",
   },
   {
-    question: "What happens if my project spans two services?",
+    question: "Can I combine multiple concrete services into one project?",
     answer:
-      "Pick the closest match and describe the rest in the project note. The contractor scopes the whole job on site. The category only affects which participating providers are eligible to receive it.",
+      "Yes. Many homeowners combine services, such as a new driveway with a matching front walkway or back patio. Tell us about the full project, and we will connect you with a provider who can bundle the work into a single estimate.",
   },
   {
-    question: "Do you charge to request concrete service?",
+    question: "Are project estimates and on-site visits free?",
     answer:
-      "No. Service providers pay us a commission on revenue they actually collect from completed work. Nothing is charged to the homeowner, and that arrangement does not make us a party to your contract.",
+      "Requesting a quote is 100% free with zero obligation. Local providers will confirm any on-site visit details with you before they come out.",
+  },
+  {
+    question: "Do you handle both standard and decorative/stamped concrete?",
+    answer:
+      "Yes. Our providers specialize in clean broom-finish concrete as well as custom decorative options, including stamped textures, custom stains, and exposed aggregate.",
+  },
+  {
+    question: "Are your providers licensed and insured in South Carolina?",
+    answer:
+      "Yes. The independent local providers in our network are licensed and insured, and their work follows Lancaster County building codes and safety standards.",
   },
 ];
 
