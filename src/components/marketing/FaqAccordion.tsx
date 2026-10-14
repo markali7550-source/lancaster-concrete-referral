@@ -34,7 +34,7 @@ export function FaqAccordion({ faqs }: { faqs: readonly FaqAccordionItem[] }) {
                 aria-expanded={isOpen}
                 aria-controls={panelId}
                 onClick={() => setOpenIndex(isOpen ? null : index)}
-                className="disclosure-row flex min-h-[48px] w-full cursor-pointer items-center justify-between gap-4 px-5 py-3 text-left font-semibold md:px-6"
+                className="disclosure-row flex min-h-[48px] w-full cursor-pointer items-center justify-between gap-4 px-5 py-3 text-left font-semibold [text-wrap:wrap] md:px-6"
               >
                 <span className="flex-1 text-[16px]">{faq.question}</span>
                 <span
