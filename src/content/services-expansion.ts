@@ -737,7 +737,6 @@ export const expansionServices: readonly ServiceRecord[] = [
     image: "/images/services/concrete-leveling/concrete-leveling-hero.webp",
     imageAlt:
       "Grey concrete driveway slab that has sunk at one edge, leaving a small gap against the curb",
-    imageCaption: "Illustration: AI-generated image. Replaced with a project photo when available.",
     projectTypes: ["Sunken driveway", "Uneven sidewalk", "Settled patio"],
     keyFacts: [
       { label: "Typical use", value: "Sunken or uneven slabs" },
@@ -907,7 +906,6 @@ export const expansionServices: readonly ServiceRecord[] = [
     image: "/images/services/concrete-garage-coatings/concrete-garage-coatings-hero.webp",
     imageAlt:
       "Clean two-car garage floor with a glossy grey epoxy coating and light decorative flakes",
-    imageCaption: "Illustration: AI-generated image. Replaced with a project photo when available.",
     projectTypes: ["Two-car garage", "Single-car garage", "Workshop floor"],
     keyFacts: [
       { label: "Coating types", value: "Epoxy, polyurea, flake systems" },
@@ -1085,7 +1083,6 @@ export const expansionServices: readonly ServiceRecord[] = [
     image: "/images/services/concrete-resurfacing/concrete-resurfacing-hero.webp",
     imageAlt:
       "Aging concrete driveway with a fresh, smooth, light-grey overlay",
-    imageCaption: "Illustration: AI-generated image. Replaced with a project photo when available.",
     projectTypes: ["Worn driveway", "Tired patio", "Faded walkway"],
     keyFacts: [
       { label: "Typical use", value: "Worn or faded concrete surfaces" },

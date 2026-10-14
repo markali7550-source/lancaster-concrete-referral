@@ -56,7 +56,7 @@ Each image used on the site, with its source and license basis.
 
 ## AI-generated placeholder images (2026-10-13)
 
-Generated with the image tool for the three new service pages, at the owner's request, and regenerated on 2026-10-13 with photo-style prompts for more realism. These are placeholders, not photos of real work. Each has a visible caption "Illustration: AI-generated image" and is to be replaced with a real project photo when one is supplied.
+Generated with the image tool for the three new service pages, at the owner's request, and regenerated on 2026-10-13 with photo-style prompts for more realism. These are placeholders, not photos of real work. The visible "Illustration: AI-generated image" caption was removed at the owner's request (2026-10-13), so these images now appear without a label. They are to be replaced with real project photos before launch.
 
 | File | Used on | Size (bytes) | Dimensions | Quality |
 |---|---|---:|---|---|
