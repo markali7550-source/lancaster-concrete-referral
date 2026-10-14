@@ -178,7 +178,7 @@ export default function ServicesPage() {
       <CtaBand
         tone="section"
         title="Not sure which service fits?"
-        body="Tell us about your concrete project to get connected with a qualified local specialist for a free, no-obligation quote — or give us a call to discuss your project today."
+        body="Tell us about your concrete project to get connected with a qualified local specialist for a free, no-obligation quote, or give us a call to discuss your project today."
         formHref="/contact#quote-form"
       />
 
