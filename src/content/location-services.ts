@@ -452,7 +452,7 @@ const records: readonly LocationServiceRecord[] = [
     state: "published",
     localImage: "/images/services/concrete-walkways/concrete-walkways-hero.webp",
     localImageAlt:
-      "Worker's hands setting gray concrete pavers with a rubber mallet on a sand base",
+      "Poured concrete walkway curving between trees, with sand and rock borders beside it",
     localBody: [
       {
         heading: "What a front entry path involves",

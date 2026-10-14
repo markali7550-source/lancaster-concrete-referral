@@ -395,7 +395,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Send the path, the approximate length, and photos. A local provider will confirm the grade and joint layout.",
     image: "/images/services/concrete-walkways/concrete-walkways-hero.webp",
     imageAlt:
-      "Worker's hands setting gray concrete pavers with a rubber mallet on a sand base",
+      "Poured concrete walkway curving between trees, with sand and rock borders beside it",
     projectTypes: ["New walkway", "Walk replacement", "Sidewalk section"],
     keyFacts: [
       { label: "Scope", value: "Front walks and sidewalks" },
