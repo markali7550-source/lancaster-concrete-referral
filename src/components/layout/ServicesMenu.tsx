@@ -142,20 +142,22 @@ export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {
       {open ? (
         <div
           id={panelId}
-          className="card absolute left-0 top-[calc(100%+0.5rem)] z-[110] w-80 p-2"
+          className="card absolute left-0 top-[calc(100%+0.5rem)] z-[110] w-[26rem] p-2"
           style={{ boxShadow: "var(--shadow-raised)" }}
         >
-          {items.map((service) => (
-            <Link
-              key={service.slug}
-              href={`/services/${service.slug}`}
-              className="group/item block rounded-[10px] p-3 transition-colors duration-150 hover:bg-[color:var(--color-accent-soft)]"
-            >
-              <span className="block text-[15px] font-semibold transition-colors duration-150 group-hover/item:text-[color:var(--color-accent)]">
-                {service.name}
-              </span>
-            </Link>
-          ))}
+          <div className="grid grid-cols-2 gap-x-1">
+            {items.map((service) => (
+              <Link
+                key={service.slug}
+                href={`/services/${service.slug}`}
+                className="group/item block rounded-[10px] p-3 transition-colors duration-150 hover:bg-[color:var(--color-accent-soft)]"
+              >
+                <span className="block text-[15px] font-semibold transition-colors duration-150 group-hover/item:text-[color:var(--color-accent)]">
+                  {service.name}
+                </span>
+              </Link>
+            ))}
+          </div>
           <Link
             href="/services"
             className="block rounded-[10px] p-3 text-[14px] font-semibold transition-colors duration-150 hover:bg-[color:var(--color-accent-soft)]"
