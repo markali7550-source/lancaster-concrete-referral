@@ -81,6 +81,18 @@ const COMBO_DESCRIPTIONS: Record<string, (city: string) => string> = {
     `Interested in stamped concrete in ${city}, SC? Tell us the area and pattern you have in mind, and a local contractor can reply to your request.`,
   "concrete-steps": (city) =>
     `Planning new or repaired steps in ${city}, SC? Tell us about the rise and location, and a local contractor can reply to your request.`,
+  "concrete-leveling": (city) =>
+    `Sunken slab in ${city}, SC? Tell us where it dropped and a local contractor can reply to your request about leveling options.`,
+  "concrete-garage-coatings": (city) =>
+    `Planning a garage floor coating in ${city}, SC? Tell us the garage size and floor condition, and a local contractor can reply to your request.`,
+  "concrete-resurfacing": (city) =>
+    `Worn driveway or patio in ${city}, SC? Tell us about the surface and a local contractor can reply to your request about a thin overlay.`,
+  "concrete-aprons": (city) =>
+    `Need a concrete apron in ${city}, SC? Tell us where the driveway meets the street and a local contractor can reply to your request.`,
+  "concrete-sealing": (city) =>
+    `Want to seal concrete in ${city}, SC? Tell us the surface and its size, and a local contractor can reply to your request about cleaning and sealer.`,
+  "concrete-exposed-aggregate": (city) =>
+    `Want an exposed aggregate driveway or patio in ${city}, SC? Tell us the area and look you like, and a local contractor can reply to your request.`
 };
 
 /*
@@ -101,6 +113,12 @@ const COMBO_H1: Record<string, (city: string) => string> = {
   "concrete-walkways": (city) => `Concrete Walkway Quotes in ${city}, SC`,
   "stamped-concrete": (city) => `Stamped Concrete Quotes in ${city}, SC`,
   "concrete-steps": (city) => `Concrete Steps Quotes in ${city}, SC`,
+  "concrete-leveling": (city) => `Concrete Leveling Quotes in ${city}, SC`,
+  "concrete-garage-coatings": (city) => `Garage Floor Coating Quotes in ${city}, SC`,
+  "concrete-resurfacing": (city) => `Concrete Resurfacing Quotes in ${city}, SC`,
+  "concrete-aprons": (city) => `Concrete Apron Quotes in ${city}, SC`,
+  "concrete-sealing": (city) => `Concrete Sealing Quotes in ${city}, SC`,
+  "concrete-exposed-aggregate": (city) => `Exposed Aggregate Quotes in ${city}, SC`
 };
 
 export const comboMeta = {
