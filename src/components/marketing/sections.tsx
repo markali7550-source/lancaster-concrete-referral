@@ -278,7 +278,7 @@ export function OverlayHeader({
       />
       <div className={HERO_IMAGE_SIDE_WASH} aria-hidden="true" />
       <div className={HERO_IMAGE_FADE} aria-hidden="true" />
-      <div className="container-page relative z-30 flex items-center py-14 md:py-20 lg:py-24">
+      <div className="container-page relative z-30 flex items-center py-12 sm:py-16 md:py-20 lg:py-24">
         <div className="w-full max-w-2xl">
           {breadcrumbs}
           {children}

@@ -76,7 +76,7 @@ export function UtilityHeader() {
               <Icon name="menu" />
             </summary>
             <div
-              className="card absolute right-0 top-14 w-[17rem] p-3"
+              className="card absolute right-0 top-14 max-h-[calc(100svh-4.5rem)] w-[17rem] overflow-y-auto overscroll-contain p-3"
               style={{ boxShadow: "var(--shadow-raised)" }}
             >
               <p className="eyebrow-plain px-3 pb-1 pt-2">Services</p>

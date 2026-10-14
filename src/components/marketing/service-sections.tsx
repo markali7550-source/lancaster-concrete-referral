@@ -475,7 +475,7 @@ export function RelatedServices({
   // column count goes straight from 1 to 3. A 2-column step stranded the third
   // card beside an empty cell on every tablet-width screen.
   return (
-    <ul className="grid gap-4 md:grid-cols-3">
+    <ul className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
       {others.map((service) => (
         <li key={service.slug}>
           <Link

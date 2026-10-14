@@ -102,14 +102,14 @@ export function ConsentBanner() {
       <div className="mt-3 grid grid-cols-2 gap-2 md:mt-4">
         <button
           type="button"
-          className="btn btn-secondary min-h-11 md:min-h-[52px]"
+          className="btn btn-secondary min-h-[48px] md:min-h-[52px]"
           onClick={() => dismiss("denied")}
         >
           Decline
         </button>
         <button
           type="button"
-          className="btn btn-primary min-h-11 md:min-h-[52px]"
+          className="btn btn-primary min-h-[48px] md:min-h-[52px]"
           onClick={() => dismiss("granted")}
         >
           Allow
