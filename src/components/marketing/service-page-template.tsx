@@ -68,7 +68,7 @@ const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-aprons": { src: "/images/services/concrete-aprons/concrete-aprons-process.webp", alt: "Worker drawing a long screed board across freshly placed grey concrete beside a street" },
   "concrete-sealing": { src: "/images/services/concrete-sealing/concrete-sealing-process.webp", alt: "Close-up of a white coating brushed across a grey concrete slab, meeting a darker sealed strip" },
   "concrete-exposed-aggregate": { src: "/images/services/concrete-exposed-aggregate/concrete-exposed-aggregate-process.webp", alt: "Exposed aggregate concrete walkway partly washed to reveal the stones, with a darker wet band" },
-  "concrete-leveling": { src: "/images/services/concrete-leveling/concrete-leveling-process.webp", alt: "Concrete sidewalk slab with small injection holes in its surface beside a flower bed" },
+  "concrete-leveling": { src: "/images/services/concrete-leveling/concrete-leveling-process.webp", alt: "Spirit level resting on a concrete surface beside a red hard hat, checking that the surface is level" },
   "concrete-garage-coatings": { src: "/images/services/concrete-garage-coatings/concrete-garage-coatings-process.webp", alt: "Garage floor partly coated with clear sealer, with roller marks and a paint tray at the edge" },
   "concrete-resurfacing": { src: "/images/services/concrete-resurfacing/concrete-resurfacing-process.webp", alt: "Two workers guiding a walk-behind power trowel over a fresh grey concrete floor" },
   "concrete-driveways": {

@@ -736,7 +736,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Send photos of the sunken area and tell us where it sits. A local provider will confirm whether leveling is suitable.",
     image: "/images/services/concrete-leveling/concrete-leveling-hero.webp",
     imageAlt:
-      "Grey concrete driveway slab that has sunk at one edge, leaving a small gap against the curb",
+      "Workers pulling a screed bar across wet grey concrete to level the surface",
     projectTypes: ["Sunken driveway", "Uneven sidewalk", "Settled patio"],
     keyFacts: [
       { label: "Typical use", value: "Sunken or uneven slabs" },

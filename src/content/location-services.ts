@@ -627,7 +627,7 @@ const records: readonly LocationServiceRecord[] = [
     serviceSlug: "concrete-leveling",
     state: "published",
     localImage: "/images/services/concrete-leveling/concrete-leveling-hero.webp",
-    localImageAlt: "Grey concrete driveway slab that has sunk at one edge, leaving a small gap against the curb",
+    localImageAlt: "Workers pulling a screed bar across wet grey concrete to level the surface",
     localBody: [
       {
         heading: "Why slabs sink here",
