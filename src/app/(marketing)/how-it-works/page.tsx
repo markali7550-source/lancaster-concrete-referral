@@ -45,7 +45,7 @@ export default function HowItWorksPage() {
           />
         }
         imageSrc="/images/how-it-works/how-it-works-hero.webp"
-        imageAlt="Freshly placed residential concrete slab floated smooth and still inside its timber forms, with a brick home beyond the lawn"
+        imageAlt="Crew pouring and leveling fresh concrete for a residential driveway from a mixer truck, with brick homes along the street"
       >
         <p
           className="eyebrow"
