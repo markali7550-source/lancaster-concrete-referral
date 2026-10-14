@@ -23,7 +23,7 @@ import { OUT_OF_AREA_POSTAL_CODE, getLocation, publishedLocations, serviceAreaOp
 import { publishedServices } from "@/content/services";
 import { publishedLocationServices } from "@/content/location-services";
 import { site } from "@/lib/env";
-import { pageMetadata } from "@/lib/seo/metadata";
+import { fitTitle, pageMetadata } from "@/lib/seo/metadata";
 
 import {
   breadcrumbNode,
@@ -62,7 +62,7 @@ export async function generateMetadata({
   const location = getLocation(city);
   if (!location) return {};
   return pageMetadata({
-    title: `Concrete Services in ${location.city}, SC | Local Service`,
+    title: fitTitle(`Concrete Services in ${location.city}, SC`),
     description: `Looking for a concrete contractor in ${location.city}, SC? Call now or request concrete service. A local contractor replies to each request. Availability varies.`,
     path: `/locations/${location.slug}`,
   });

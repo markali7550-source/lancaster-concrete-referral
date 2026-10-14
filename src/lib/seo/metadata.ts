@@ -63,11 +63,10 @@ export function pageMetadata({
  * every page open with a different, natural sentence instead of one boilerplate
  * string, which is better for both readers and duplicate-content signals.
  *
- * Lengths are deliberately budgeted: titles 55-59 characters, descriptions
- * 140-160. The brand is intentionally NOT appended to these titles — at 26
- * characters "Lancaster Concrete Connect" pushes every one of them to 60-64,
- * which is the over-length problem these titles exist to fix. The brand is
- * still carried on each page by `openGraph.siteName` and the JSON-LD graph. */
+ * Lengths are deliberately budgeted: titles 50-60 characters (see fitTitle),
+ * descriptions 140-160. The full brand is not appended, because it would push
+ * these titles past 60 characters. The brand is still carried on each page by
+ * `openGraph.siteName` and the JSON-LD graph. */
 const COMBO_DESCRIPTIONS: Record<string, (city: string) => string> = {
   "concrete-driveways": (city) =>
     `Planning a concrete driveway in ${city}, SC? Tell us about the project and a local contractor will reply to your request. Ask for a free quote.`,
@@ -125,9 +124,15 @@ const COMBO_H1: Record<string, (city: string) => string> = {
   "concrete-exposed-aggregate": (city) => `Exposed Aggregate Quotes in ${city}, SC`
 };
 
+/** Shared 50-60 character title rule: the long suffix when it fits, else the short one. */
+export function fitTitle(base: string): string {
+  const long = `${base} | Local Concrete Service`;
+  return long.length <= 60 ? long : `${base} | Local Service`;
+}
+
 export const comboMeta = {
   title: (serviceName: string, city: string) =>
-    `${city}, SC ${serviceName} | Local Service`,
+    fitTitle(`${city}, SC ${serviceName}`),
   description: (serviceSlug: string, city: string) =>
     COMBO_DESCRIPTIONS[serviceSlug]?.(city) ??
     `Tell us about your ${serviceSlug.replace(/-/g, " ")} project in ${city}, SC and a local contractor can reply to your request.`,

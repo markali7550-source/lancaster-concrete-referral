@@ -11,7 +11,7 @@ import {
 import { Icon } from "@/components/ui/Icon";
 import { CtaBand } from "@/components/marketing/cta-band";
 import { publishedLocations } from "@/content/locations";
-import { pageMetadata } from "@/lib/seo/metadata";
+import { fitTitle, pageMetadata } from "@/lib/seo/metadata";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumbs } from "@/components/marketing/service-sections";
 import { breadcrumbNode, buildGraph, webPageNode } from "@/lib/schema/graph";
@@ -21,7 +21,7 @@ import { breadcrumbNode, buildGraph, webPageNode } from "@/lib/schema/graph";
  * a bare city list. It is a primary navigation destination, so it explains how
  * coverage is granted and links through to each published local page.
  */
-const TITLE = "Concrete Service Areas in South Carolina";
+const TITLE = fitTitle("Concrete Service Areas in South Carolina");
 const DESCRIPTION =
   "The South Carolina areas we currently serve. Coverage is added only once a local team confirms it can take work there. Check whether we serve your city today.";
 
