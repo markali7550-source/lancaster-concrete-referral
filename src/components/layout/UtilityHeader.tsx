@@ -26,7 +26,7 @@ function Wordmark() {
  */
 export function UtilityHeader() {
   return (
-    <header className="header-band sticky top-0 z-[100] border-b transition-colors duration-300">
+    <header className="header-band gpu-layer sticky top-0 z-[100] border-b transition-colors duration-300">
         <div className="container-page flex h-16 items-center justify-between gap-4">
           <Wordmark />
 

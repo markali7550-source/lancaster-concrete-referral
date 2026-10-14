@@ -157,7 +157,7 @@ export function Section({
         compact
           ? "scroll-mt-32 py-10 md:py-14"
           : "scroll-mt-32 py-14 md:py-20 lg:py-24"
-      }${backgroundImage ? " cta-photo relative isolate overflow-hidden" : ""}`}
+      }${backgroundImage ? " cta-photo relative isolate overflow-hidden" : " content-section"}`}
       style={
         backgroundImage
           ? undefined
@@ -402,7 +402,7 @@ export function Hero({
             </ul>
           </div>
           {aside ? (
-            <div className="mobile-sticky-form sticky bottom-0 z-40 w-full max-w-xl rounded-t-xl bg-[#0B1017] p-2 lg:static lg:max-w-xl lg:rounded-none lg:bg-transparent lg:p-0">{aside}</div>
+            <div className="gpu-layer mobile-sticky-form sticky bottom-0 z-40 w-full max-w-xl rounded-t-xl bg-[#0B1017] p-2 lg:static lg:max-w-xl lg:rounded-none lg:bg-transparent lg:p-0">{aside}</div>
           ) : null}
         </div>
       </section>

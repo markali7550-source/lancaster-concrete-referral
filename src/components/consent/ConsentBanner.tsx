@@ -48,19 +48,26 @@ export function ConsentBanner() {
     // a feedback loop that thrashes layout while the page is being scrolled
     // on mobile, where the collapsing URL bar resizes the viewport anyway.
     let applied = "";
-    const apply = () => {
-      const next = mobile.matches ? `${node.offsetHeight}px` : "";
+    const apply = (height?: number) => {
+      const px = height ?? node.offsetHeight;
+      const next = mobile.matches ? `${px}px` : "";
       if (next === applied) return;
       applied = next;
       document.body.style.paddingBottom = next;
     };
+    const onMediaChange = () => apply();
     apply();
-    const observer = new ResizeObserver(apply);
+    // The observer already measured the box, so use its size rather than
+    // reading offsetHeight (which forces a synchronous layout) on each change.
+    const observer = new ResizeObserver((entries) => {
+      const box = entries[0]?.borderBoxSize?.[0];
+      apply(box ? Math.round(box.blockSize) : undefined);
+    });
     observer.observe(node);
-    mobile.addEventListener("change", apply);
+    mobile.addEventListener("change", onMediaChange);
     return () => {
       observer.disconnect();
-      mobile.removeEventListener("change", apply);
+      mobile.removeEventListener("change", onMediaChange);
       document.body.style.paddingBottom = "";
     };
   }, [decided]);
@@ -78,7 +85,7 @@ export function ConsentBanner() {
       ref={ref}
       role="region"
       aria-label="Tracking consent"
-      className="fixed inset-x-0 bottom-0 z-50 border-t p-3.5 md:inset-x-auto md:bottom-4 md:left-4 md:max-w-sm md:rounded-[12px] md:border md:p-4"
+      className="gpu-layer fixed inset-x-0 bottom-0 z-50 border-t p-3.5 md:inset-x-auto md:bottom-4 md:left-4 md:max-w-sm md:rounded-[12px] md:border md:p-4"
       style={{
         backgroundColor: "var(--color-surface)",
         borderColor: "var(--color-line)",

@@ -988,3 +988,17 @@
     justify-content: flex-start;
   }
 }
+
+/* Rendering performance. The sticky header and fixed bars get their own
+   compositor layer so scrolling does not repaint them. Plain sections skip
+   layout and paint until they are near the viewport. Visual output is
+   unchanged. Photo bands are excluded from content-visibility because their
+   fixed-attachment background must keep painting while scrolling. */
+.gpu-layer {
+  transform: translateZ(0);
+}
+
+.content-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
