@@ -553,14 +553,12 @@
     }
   }
 
-  /* CTA photograph: standard cover and center on every breakpoint. The photo
-     scrolls with its band. background-attachment: fixed was removed because
-     it forces the browser to repaint the photo on every scroll frame. */
+  /* CTA photograph: viewport-locked only on desktop. At 1024px and below the
+     photo scrolls with its band (the polish-pass brief supersedes the earlier
+     site-wide parallax request). */
   @media (min-width: 1025px) {
     .cta-photo-fixed {
-      background-size: cover;
-      background-position: center;
-      background-attachment: scroll;
+      background-attachment: fixed;
     }
   }
 
