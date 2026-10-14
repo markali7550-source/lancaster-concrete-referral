@@ -831,7 +831,7 @@ const records: readonly LocationServiceRecord[] = [
     serviceSlug: "concrete-sealing",
     state: "published",
     localImage: "/images/services/concrete-sealing/concrete-sealing-hero.webp",
-    localImageAlt: "Clean residential concrete patio with a freshly applied clear sealer giving a subtle sheen",
+    localImageAlt: "Worker in a safety vest applying black sealant along a crack in a concrete slab",
     localBody: [
       {
         heading: "Cleaning before sealing",

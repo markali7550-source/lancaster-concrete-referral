@@ -1424,7 +1424,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Send the area, the surface type, and photos. A local provider will confirm the cleaning and the sealer.",
     image: "/images/services/concrete-sealing/concrete-sealing-hero.webp",
     imageAlt:
-      "Clean residential concrete patio with a freshly applied clear sealer giving a subtle sheen",
+      "Worker in a safety vest applying black sealant along a crack in a concrete slab",
     projectTypes: ["Driveway sealing", "Patio sealing", "Walkway sealing"],
     keyFacts: [
       { label: "Sealer types", value: "Penetrating, film-forming" },
