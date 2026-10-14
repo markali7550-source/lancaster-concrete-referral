@@ -15,7 +15,7 @@ export const siteConfig = {
   phoneE164: "+18035550123",
   phoneDisplay: "(803) 555-0123",
   /** Placeholder mailbox. */
-  email: "hello@example-referral-brand.com",
+  email: "hello@example.com",
   serviceArea: { city: "Lancaster", region: "SC", country: "US" },
   /** Street address and ZIP code are optional. Leave them empty until verified:
    *  the schema then carries city, region and country only. */
