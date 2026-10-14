@@ -233,7 +233,7 @@ the redeploy did not pick up the change — confirm the variable is set for the
 
 ## Still outstanding before this is a real business site
 
-Deployment does not resolve these. From `REMAINING-WORK.md`:
+Deployment does not resolve these. Known open items:
 
 - **Leads are stored in memory.** They are lost on every redeploy and are not
   shared between server instances. Needs Postgres.

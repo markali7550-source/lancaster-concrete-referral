@@ -145,8 +145,8 @@ export default function ServicesPage() {
 
       {/*
         Restored at the owner's explicit direction. I had cut this photograph
-        because the clipboard's clip does not resolve into a real mechanism
-        (see WEBSITE-AUDIT-2026-10-06). The owner reviewed that finding and
+        because the clipboard's clip does not resolve into a real mechanism.
+        The owner reviewed that finding and
         chose to keep the image, so it stands.
 
         It shows a provider assessing and quoting on site rather than any one

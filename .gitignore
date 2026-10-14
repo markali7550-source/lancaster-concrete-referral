@@ -11,3 +11,14 @@ coverage
 .DS_Store
 test-results/
 playwright-report/
+
+# OS, editor, and backup junk
+Thumbs.db
+*.swp
+*.swo
+*~
+*.bak
+*.tmp
+*.tar.gz
+*.zip
+.idea/
