@@ -42,7 +42,7 @@ function titleFor(name: string) {
  * between /services/[service] and /locations/lancaster-sc/[service].
  */
 function descriptionFor(nameLower: string, projectNoun: string) {
-  const base = `What ${nameLower} covers in Lancaster, SC, what falls outside it, and how a ${projectNoun} request is handled by a local concrete provider.`;
+  const base = `What ${nameLower} covers in Lancaster, SC, what falls outside it, and how ${/^[aeiou]/i.test(projectNoun) ? "an" : "a"} ${projectNoun} request is handled by a local concrete provider.`;
   // Short descriptions get a call to action so they land in the 140-160 range.
   return base.length < 140 ? `${base} Request a free quote.` : base;
 }

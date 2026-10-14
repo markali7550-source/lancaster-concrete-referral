@@ -138,7 +138,7 @@ export default async function ComboPage({ params }: { params: Params }) {
         ]}
         localIntro={{
           eyebrow: `${serviceRecord.name} · ${location.city}`,
-          title: `What affects a ${serviceRecord.projectNoun} project in ${location.city}`,
+          title: `What affects ${/^[aeiou]/i.test(serviceRecord.projectNoun) ? "an" : "a"} ${serviceRecord.projectNoun} project in ${location.city}`,
           blocks: record.localBody,
         }}
         faqTitle={`${location.city} ${serviceRecord.projectNoun} questions`}
