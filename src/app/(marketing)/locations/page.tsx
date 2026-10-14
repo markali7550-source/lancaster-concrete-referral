@@ -72,7 +72,7 @@ export default function LocationsPage() {
         title="Where we currently take quote requests"
         lead="Every area below has a participating provider who has confirmed in writing that they accept work there."
       >
-        <div className="grid gap-x-12 gap-y-6 md:grid-cols-2">
+        <div className="grid gap-x-12 gap-y-6 sm:grid-cols-2">
           <div>
             <h3 className="text-[22px] font-semibold leading-snug">
               How an area gets added

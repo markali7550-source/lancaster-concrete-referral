@@ -647,17 +647,12 @@
     border: 1px solid var(--color-line-field);
     background-color: var(--color-raised);
     color: var(--color-ink);
-    /* 16px through tablets: iOS Safari and iPadOS zoom into any field set
-       below 16px. Desktop drops to the denser 15px. */
+    /* 16px at every width: iOS Safari and iPadOS zoom into any field set
+       below 16px. */
     font-size: 1rem;
     transition: border-color 120ms ease, box-shadow 120ms ease;
   }
 
-  @media (min-width: 1024px) {
-    .field {
-      font-size: 0.9375rem;
-    }
-  }
 
   .field:hover:not(:focus) {
     border-color: color-mix(

@@ -12,7 +12,7 @@ import { site } from "@/lib/env";
  */
 export function MobileCallBar() {
   return (
-    <div className="gpu-layer fixed inset-x-0 bottom-0 z-40 border-t bg-[color:var(--color-surface)] px-3 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] shadow-[0_-6px_18px_rgba(16,24,34,0.12)] md:hidden"
+    <div className="gpu-layer fixed inset-x-0 bottom-0 z-40 border-t bg-[color:var(--color-surface)] pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pl-[max(0.75rem,env(safe-area-inset-left))] pr-[max(0.75rem,env(safe-area-inset-right))] shadow-[0_-6px_18px_rgba(16,24,34,0.12)] md:hidden"
       style={{ borderColor: "var(--color-line)" }}
     >
       <a

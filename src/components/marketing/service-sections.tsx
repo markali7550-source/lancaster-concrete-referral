@@ -271,7 +271,7 @@ export function OptionsList({
   options: { name: string; description: string }[];
 }) {
   return (
-    <dl className="grid gap-x-10 gap-y-6 md:grid-cols-2">
+    <dl className="grid gap-x-10 gap-y-6 sm:grid-cols-2">
       {options.map((option) => (
         <div
           key={option.name}
@@ -406,7 +406,7 @@ export function PrepColumns({
   questions: string[];
 }) {
   return (
-    <div className="grid gap-6 md:grid-cols-2">
+    <div className="grid gap-6 sm:grid-cols-2">
       <div className="card p-6">
         <p className="font-semibold">Before the estimate visit</p>
         <ul className="mt-4 space-y-3 text-sm">
@@ -475,7 +475,7 @@ export function RelatedServices({
   // column count goes straight from 1 to 3. A 2-column step stranded the third
   // card beside an empty cell on every tablet-width screen.
   return (
-    <ul className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+    <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {others.map((service) => (
         <li key={service.slug}>
           <Link

@@ -24,6 +24,9 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  /* Lets env(safe-area-inset-*) return real values on notched phones and
+     home-indicator iPads. The header and call bar pad for them. */
+  viewportFit: "cover",
   /* Matches the header glass at rest in each scheme, so the browser chrome on
      mobile continues the bar instead of cutting a colored strip above it. */
   themeColor: [

@@ -25,6 +25,8 @@ export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const linkRef = useRef<HTMLAnchorElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  /** Pointer type of the most recent press on the link, read by focus and click. */
+  const pressType = useRef<string>("");
   const pathname = usePathname();
   const panelId = `${useId()}-services-panel`;
 
@@ -103,9 +105,26 @@ export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {
         ref={linkRef}
         href="/services"
         aria-controls={open ? panelId : undefined}
+        onPointerDown={(event) => {
+          pressType.current = event.pointerType;
+        }}
         onFocus={() => {
+          // A touch press focuses the link too. The click handler opens the
+          // panel for touch, so focus must not open it first and skip that step.
+          if (pressType.current === "touch" || pressType.current === "pen") return;
           cancelClose();
           setOpen(true);
+        }}
+        onClick={(event) => {
+          const touch = pressType.current === "touch" || pressType.current === "pen";
+          pressType.current = "";
+          // Touch has no hover, so the first tap opens the panel and the second
+          // tap follows the link. Mouse and keyboard keep their behavior.
+          if (touch && !open) {
+            event.preventDefault();
+            cancelClose();
+            setOpen(true);
+          }
         }}
         className="group btn btn-ghost pr-2.5 text-[15px] font-medium transition-colors duration-150 hover:bg-[color:var(--color-accent-soft)] hover:text-[color:var(--color-accent)] focus-visible:bg-[color:var(--color-accent-soft)]"
       >
