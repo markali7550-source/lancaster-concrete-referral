@@ -178,7 +178,7 @@ export default function ServicesPage() {
       <CtaBand
         tone="section"
         title="Not sure which service fits?"
-        body="Describe the project in the request form and we will pass it to a local independent contractor, or call and our team will tell you whether we cover it at all."
+        body="Tell us about your concrete project to get connected with a qualified local specialist for a free, no-obligation quote — or give us a call to discuss your project today."
         formHref="/contact#quote-form"
       />
 
