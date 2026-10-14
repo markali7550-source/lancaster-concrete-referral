@@ -65,12 +65,12 @@ const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
  * slabs; owner-supplied real photographs remain the endpoint.
  */
 const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
-  "concrete-aprons": { src: "/images/services/concrete-aprons/concrete-aprons-process.webp", alt: "Freshly poured concrete apron with wooden forms along its edges and a wet, smooth surface" },
-  "concrete-sealing": { src: "/images/services/concrete-sealing/concrete-sealing-process.webp", alt: "Concrete driveway half sealed, with a visible sheen line and a roller on a long handle at the edge" },
+  "concrete-aprons": { src: "/images/services/concrete-aprons/concrete-aprons-process.webp", alt: "Worker drawing a long screed board across freshly placed grey concrete beside a street" },
+  "concrete-sealing": { src: "/images/services/concrete-sealing/concrete-sealing-process.webp", alt: "Close-up of a white coating brushed across a grey concrete slab, meeting a darker sealed strip" },
   "concrete-exposed-aggregate": { src: "/images/services/concrete-exposed-aggregate/concrete-exposed-aggregate-process.webp", alt: "Exposed aggregate concrete walkway partly washed to reveal the stones, with a darker wet band" },
   "concrete-leveling": { src: "/images/services/concrete-leveling/concrete-leveling-process.webp", alt: "Concrete sidewalk slab with small injection holes in its surface beside a flower bed" },
   "concrete-garage-coatings": { src: "/images/services/concrete-garage-coatings/concrete-garage-coatings-process.webp", alt: "Garage floor partly coated with clear sealer, with roller marks and a paint tray at the edge" },
-  "concrete-resurfacing": { src: "/images/services/concrete-resurfacing/concrete-resurfacing-process.webp", alt: "Concrete patio surface with a fresh thin overlay being smoothed, with hand tool marks visible" },
+  "concrete-resurfacing": { src: "/images/services/concrete-resurfacing/concrete-resurfacing-process.webp", alt: "Two workers guiding a walk-behind power trowel over a fresh grey concrete floor" },
   "concrete-driveways": {
     src: "/images/services/concrete-driveways/concrete-driveways-process.webp",
     alt: "Two workers screeding fresh concrete on a residential driveway with a long straightedge, a pickup and cones at the street",

@@ -1255,7 +1255,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Send photos of the driveway edge, the curb, and the gutter. A local provider will confirm the grade and the finish.",
     image: "/images/services/concrete-aprons/concrete-aprons-hero.webp",
     imageAlt:
-      "Grey concrete apron connecting a residential driveway to the street curb, sloping toward the gutter",
+      "Newly poured grey concrete sidewalk and apron with orange traffic cones along an open street edge",
     projectTypes: ["Street apron", "Garage apron", "Replacement apron"],
     keyFacts: [
       { label: "Typical use", value: "Driveway-to-street and garage connections" },

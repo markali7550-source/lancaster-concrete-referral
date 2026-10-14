@@ -197,7 +197,7 @@ const records: readonly LocationServiceRecord[] = [
     state: "published",
     localImage: "/images/services/concrete-patios/concrete-patios-hero.webp",
     localImageAlt:
-      "Plain concrete patio behind a brick house, with two chairs and a small table in a wooded backyard",
+      "Concrete patio beside a covered pergola and wicker daybed, with a brick-trimmed house and lawn",
     localBody: [
       {
         heading: "What the work usually is",
@@ -780,7 +780,7 @@ const records: readonly LocationServiceRecord[] = [
     serviceSlug: "concrete-aprons",
     state: "published",
     localImage: "/images/services/concrete-aprons/concrete-aprons-hero.webp",
-    localImageAlt: "Grey concrete apron connecting a residential driveway to the street curb, sloping toward the gutter",
+    localImageAlt: "Newly poured grey concrete sidewalk and apron with orange traffic cones along an open street edge",
     localBody: [
       {
         heading: "Grade decides the job",

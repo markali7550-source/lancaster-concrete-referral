@@ -377,7 +377,7 @@ const coreServices: readonly ServiceRecord[] = [
     ],
     image: "/images/services/concrete-patios/concrete-patios-hero.webp",
     imageAlt:
-      "Plain concrete patio slab at the rear of a single story brick home",
+      "Concrete patio beside a covered pergola and wicker daybed, with a brick-trimmed house and lawn",
     projectTypes: ["New patio", "Patio replacement"],
     keyFacts: [
       {
