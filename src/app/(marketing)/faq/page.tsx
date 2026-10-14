@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import type { ReactNode } from "react";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   FaqSection,
@@ -9,7 +11,11 @@ import {
   Section,
 } from "@/components/marketing/sections";
 import { Breadcrumbs, CtaBand } from "@/components/marketing/service-sections";
-import { allFaqsPlain, faqCategories } from "@/content/faq";
+import {
+  allFaqsPlain,
+  faqCategories,
+  type FaqLink,
+} from "@/content/faq";
 import { pageMetadata } from "@/lib/seo/metadata";
 import {
   breadcrumbNode,
@@ -28,6 +34,34 @@ export const metadata: Metadata = pageMetadata({
   description: DESCRIPTION,
   path: "/faq",
 });
+
+/**
+ * Renders an answer with its declared link substrings wrapped in internal
+ * links. Each link text occurs in its answer; unmatched text passes through
+ * as plain text. The schema keeps the raw string, so the two stay in step.
+ */
+function linkify(answer: string, links: readonly FaqLink[]): ReactNode {
+  let parts: ReactNode[] = [answer];
+  links.forEach(({ text, href }, index) => {
+    parts = parts.flatMap((part): ReactNode[] => {
+      if (typeof part !== "string") return [part];
+      const at = part.indexOf(text);
+      if (at === -1) return [part];
+      return [
+        part.slice(0, at),
+        <Link
+          key={`${index}-${at}`}
+          href={href}
+          className="font-medium text-[color:var(--color-accent)] underline underline-offset-4 decoration-[color:var(--color-accent)]/40 transition-colors duration-150 hover:decoration-[color:var(--color-accent)]"
+        >
+          {text}
+        </Link>,
+        part.slice(at + text.length),
+      ];
+    });
+  });
+  return <>{parts}</>;
+}
 
 /*
  * Real owner-supplied photograph: crew placing a concrete pour. Source
@@ -73,8 +107,8 @@ export default function FaqPage() {
         </p>
       </OverlayHeader>
       {/*
-        Every accordion shares the name "faq", so only one answer is open at
-        a time across the page.
+        Each category is its own single-open accordion. Answers link to the
+        matching service page where a service is named.
       */}
       <Section tone="soft">
         <div className="mx-auto w-full max-w-3xl space-y-12">
@@ -84,7 +118,12 @@ export default function FaqPage() {
                 {category.name}
               </h2>
               <div className="mt-5">
-                <FaqSection name="faq" faqs={category.faqs} />
+                <FaqSection
+                  faqs={category.faqs.map((faq) => ({
+                    question: faq.question,
+                    answer: linkify(faq.answer, faq.links),
+                  }))}
+                />
               </div>
             </section>
           ))}

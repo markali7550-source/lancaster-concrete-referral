@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { DynamicPhone } from "@/components/lead/DynamicPhone";
+import { FaqAccordion } from "@/components/marketing/FaqAccordion";
 import { Icon } from "@/components/ui/Icon";
 import { publishedServices, type ServiceRecord } from "@/content/services";
 import type { LocationRecord } from "@/content/locations";
@@ -734,48 +735,15 @@ export function DecisionSupport({
 
 export function FaqSection({
   faqs,
-  name = "faq",
 }: {
   faqs: { question: string; answer: React.ReactNode }[];
   /**
-   * Shared name makes the group an exclusive accordion. Pass a distinct value
-   * when two FAQ groups render on the same page.
+   * Accepted for backward compatibility with existing callers. Each section
+   * is its own single-open accordion, so the value is no longer needed.
    */
   name?: string;
 }) {
-  return (
-    <div
-      className="grid gap-2"
-      style={{
-        backgroundColor: "transparent",
-      }}
-    >
-      {faqs.map((faq) => (
-        <details
-          key={faq.question}
-          name={name}
-          className="faq-item group card overflow-hidden"
-        >
-          <summary className="disclosure-row flex min-h-[48px] cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-semibold md:px-6">
-            <span className="flex-1 text-left text-[16px]">{faq.question}</span>
-            <span
-              className="grid h-8 w-8 shrink-0 place-items-center rounded-[10px] transition-colors"
-              style={{
-                backgroundColor: "var(--color-accent-soft)",
-                color: "var(--color-accent)",
-              }}
-              aria-hidden="true"
-            >
-              <Icon name="chevron" className="h-4 w-4" />
-            </span>
-          </summary>
-          <p className="px-5 py-4 text-left text-[15px] leading-relaxed text-[color:var(--color-muted)] md:px-6">
-            {faq.answer}
-          </p>
-        </details>
-      ))}
-    </div>
-  );
+  return <FaqAccordion faqs={faqs} />;
 }
 
 /* --------------------------------------------------------------- AdjacentAreas */
