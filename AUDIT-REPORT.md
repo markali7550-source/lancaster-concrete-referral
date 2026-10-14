@@ -91,13 +91,13 @@ written.
 
 ## Remaining issues and manual verification
 
-1. **`NEXT_PUBLIC_SITE_URL` is still `https://example-referral-brand.com`.** Every
+1. **`NEXT_PUBLIC_SITE_URL` is still `https://lancasterconcreteconnect.com`.** Every
    canonical, every schema `@id` and all 17 sitemap entries point at a domain you
    do not own. Nothing can be indexed until this is set. **Needs you.**
 2. **Vercel Deployment Protection is on**, so the deployment returns a 302 to
    crawlers and to anyone without an SSO session. **Needs you.**
 3. **Phone and email are placeholders** by your instruction: `(803) 555-0123` dials
-   nothing and `hello@example-referral-brand.com` does not receive mail.
+   nothing and `contact@lancasterconcreteconnect.com` does not receive mail.
 4. **Three GitHub tokens were exposed** earlier in this project and none have been
    confirmed revoked. Worth rotating.
 5. The apex domain alias is unassigned on Vercel.

@@ -164,7 +164,7 @@ All 14 H1s were re-verified from rendered HTML. The grammar cannot regress by ad
 
 Named specifically, as asked:
 
-1. **The published contact details are placeholders.** `(803) 555-0123` is in the reserved-fiction 555 range and the email is `hello@example-referral-brand.com`. They come from `.env.example`, not source, so this is a deployment-time fix — but as the site stands it is the single largest trust defect, and I deliberately did not invent real ones.
+1. **The published contact details are placeholders.** `(803) 555-0123` is in the reserved-fiction 555 range and the email is `contact@lancasterconcreteconnect.com`. They come from `.env.example`, not source, so this is a deployment-time fix — but as the site stands it is the single largest trust defect, and I deliberately did not invent real ones.
 2. **Two kept patio photos read as Northern, not Carolina.** `service-patios.webp` and `local-patios-lancaster.webp` show split-rail and cedar fencing, spruce/fir in the background and no red clay. I considered replacing them and decided against it, which is worth explaining: both read convincingly as real photographs — slightly soft, handheld, mundane composition, correct stamp pattern and color-release variation. Regenerating them would trade a credible photograph for a fresh render against the one defect the brief cares most about. Neither has an actual defect, and the rule is to replace only for defects. They stay, and this is the weakest local-authenticity link on the site.
 3. **The four service pages still share one component vocabulary** — timeline, cost table, prep checklist. Their order, headings, ledes and content now differ, but a visitor who reads all four will recognise the same building blocks. That is a design system doing its job rather than a defect, but it is the honest reason the structural variation is not total.
 4. **The locations index has one service area**, so its card grid renders a single card with empty space beside it. That is the truthful state of the business — one approved area — and padding it with unapproved cities would be inventing coverage. Left as is.
@@ -320,7 +320,7 @@ left exactly as written. Flagging it here so it is not silently "fixed" later.
 | **Human-designed** | ≥9 | 9 | **9** | This pass changed almost no design. It corrected language and accuracy. A 10 would need the shared component vocabulary across the four service pages to break up, which was judged a design system working correctly rather than a fault. |
 | **Professional** | ≥9 | 9 | **9** | All gates still green: typecheck, 36/36 tests, four content asserts, 18/18 routes 200. Accurate alt text and consistent typography are what 9 already implied; they are a correction toward the claimed score, not evidence for a higher one. |
 | **Generic / template** | ≤2 | 2 | **2** | Unchanged. The four attributive plurals were template artefacts and are gone, but a reader was unlikely to read "All patios referrals" as *template* so much as *sloppy*. |
-| **Trust** | ≥9 | 8 | **8** | Still capped by the `(803) 555-0123` reserved-fiction number and the `example-referral-brand.com` email, both environment-supplied and deliberately not invented. One honest note: **pass two's 8 was slightly generous**, because the location copy was asserting invented statistics and I had not audited it yet. The number is the same; it is now accurate rather than flattering. |
+| **Trust** | ≥9 | 8 | **8** | Still capped by the `(803) 555-0123` reserved-fiction number and the `lancasterconcreteconnect.com` email, both environment-supplied and deliberately not invented. One honest note: **pass two's 8 was slightly generous**, because the location copy was asserting invented statistics and I had not audited it yet. The number is the same; it is now accurate rather than flattering. |
 
 No score was raised in this pass. Three of the findings — invented statistics,
 alt text contradicting the imagery disclosure, and text claiming photographs
@@ -413,7 +413,7 @@ trailer. It is the most convincing photograph on the site.
 | **Human-designed** | ≥9 | 9 | **9** | No design changed this pass. |
 | **Professional** | ≥9 | 9 | **9** | Typecheck, 36/36 tests, four content asserts, 18/18 routes 200, 0 orphaned images. |
 | **Generic / template** | ≤2 | 2 | **2** | Unchanged. |
-| **Trust** | ≥9 | 8 | **8** | Still capped by the `(803) 555-0123` reserved-fiction number and the `example-referral-brand.com` email, both environment-supplied and deliberately not invented. |
+| **Trust** | ≥9 | 8 | **8** | Still capped by the `(803) 555-0123` reserved-fiction number and the `lancasterconcreteconnect.com` email, both environment-supplied and deliberately not invented. |
 
 Two passes running, the honest conclusion has been that a previously reported
 score was slightly flattering because a defect had not yet been looked for in
@@ -524,7 +524,7 @@ on what is checked before routing, the disclosure, the FAQ, other services.
 | **Human-designed** | ≥9 | 9 | **9** | Removing a redundant section restores the judgement the page should always have shown; it does not add new design. Mobile was confirmed as deliberately laid out rather than stacked, which supports the 9 that was already claimed. |
 | **Professional** | ≥9 | 9 | **9** | Typecheck, 36/36 tests, four content asserts, 18/18 routes 200, 0 orphaned images, 0 genuine mobile overflows. |
 | **Generic / template** | ≤2 | 2 | **2** | The most template-like thing on the site has been deleted. Held at 2 rather than lowered, because the shape is still recognisably a local-service site, which is correct for what it is. |
-| **Trust** | ≥9 | 8 | **8** | Unchanged and still capped by the `(803) 555-0123` reserved-fiction number and the `example-referral-brand.com` email, both environment-supplied. |
+| **Trust** | ≥9 | 8 | **8** | Unchanged and still capped by the `(803) 555-0123` reserved-fiction number and the `lancasterconcreteconnect.com` email, both environment-supplied. |
 
 No score moved, for the fifth time running on at least one line, and the
 reason is worth stating once plainly: **the measurements were never wrong,
@@ -633,7 +633,7 @@ this pass's findings needed both.
 | **Human-designed** | ≥9 | 9 | **9** | This pass is the clearest evidence for the 9 rather than a reason to raise it. Deciding that one city should be a full-width row, and that four short answers should be read rather than clicked, is the kind of judgement the score already claimed. A 10 would need the four service pages to stop sharing one component vocabulary, which remains a design system working correctly. |
 | **Professional** | ≥9 | 9 | **9** | Typecheck, 36/36 tests, four content asserts, 18/18 routes 200, 0 underfilled grids, dark mode verified. The Tailwind gap bug was caught before it shipped, which is what the 9 is supposed to mean. |
 | **Generic / template** | ≤2 | 2 | **2** | "Two-up grid holding one item" is close to the definition of template residue, and it is gone. Held at 2 because the overall shape is still a local-service site, which is correct. |
-| **Trust** | ≥9 | 8 | **8** | Unchanged, still capped by the `(803) 555-0123` reserved-fiction number and the `example-referral-brand.com` email, both environment-supplied and deliberately not invented. |
+| **Trust** | ≥9 | 8 | **8** | Unchanged, still capped by the `(803) 555-0123` reserved-fiction number and the `lancasterconcreteconnect.com` email, both environment-supplied and deliberately not invented. |
 
 Six passes, and the pattern is now unambiguous enough to state as a
 conclusion: **every finding came from rendering the site through a lens not
@@ -754,7 +754,7 @@ at 3x, a phone, a desktop, and now four pages in four columns.
 | **Human-designed** | ≥9 | 9 | **9** | The headings now read as four people describing four jobs. Not raised to 10: the fix restored an intent the codebase already had — the `cta` field carried a comment saying it was per-service "so the four pages do not all end on the same sentence", and three of the four still ended on the same sentence anyway. |
 | **Professional** | ≥9 | 9 | **9** | Unchanged. A visitor comparing two service tabs no longer sees the same page twice. |
 | **Generic / template** | ≤2 | 2 | **2** | The literal template slot is gone from the two sections most likely to be read. Held at 2, not 1, because one identical cross-sell label remains by choice. |
-| **Trust** | ≥9 | 8 | **8** | Unchanged, still capped by the `(803) 555-0123` reserved-fiction number and the `example-referral-brand.com` email, both environment-supplied. |
+| **Trust** | ≥9 | 8 | **8** | Unchanged, still capped by the `(803) 555-0123` reserved-fiction number and the `lancasterconcreteconnect.com` email, both environment-supplied. |
 
 Scores are unchanged, and that is the honest reading. This pass removed a real
 section-3 defect, but it did not shift any dimension a full point — the four
@@ -868,7 +868,7 @@ equals the viewport.
 | **Human-designed** | ≥9 | 9 | **9** | A stranded card, a four-line heading beside two-line siblings, three-words-a-line body copy and a ragged step number are all things a person would have caught by looking. Fixing them removes evidence of nobody looking; it does not add evidence of design intent, so the number holds. |
 | **Professional** | ≥9 | 9 | **9** | Held. The 131px columns were the most unprofessional thing left on the site and they are gone, but the remaining cap is contact details, not craft. |
 | **Generic / template** | ≤2 | 2 | **2** | Unchanged. These were defects, not template residue. |
-| **Trust** | ≥9 | 8 | **8** | Unchanged, still capped by `(803) 555-0123` and `hello@example-referral-brand.com`, both environment-supplied. |
+| **Trust** | ≥9 | 8 | **8** | Unchanged, still capped by `(803) 555-0123` and `contact@lancasterconcreteconnect.com`, both environment-supplied. |
 
 Eight passes, and the rule has still not broken: **the finding always comes from
 a lens not yet used.** This time the lenses were the widths between the two we
@@ -987,7 +987,7 @@ Document heights match the eighth-pass baselines exactly on every page except
 | **Human-designed** | ≥9 | 9 | **9** | The form's error, no-coverage and failure states turn out to be the most human writing on the site — someone thought hard about them. That was already true before this pass, so it raises nothing; the duplicate receipt was the one place nobody had looked. |
 | **Professional** | ≥9 | 9 | **9** | Held. The technical copy survives a contractor's reading, which is the strongest evidence of professionalism found in nine passes. |
 | **Generic / template** | ≤2 | 2 | **2** | Unchanged. |
-| **Trust** | ≥9 | 8 | **8** | Unchanged, still capped by `(803) 555-0123` and `hello@example-referral-brand.com`, both environment-supplied. |
+| **Trust** | ≥9 | 8 | **8** | Unchanged, still capped by `(803) 555-0123` and `contact@lancasterconcreteconnect.com`, both environment-supplied. |
 
 Nine passes, and the rule has still not broken: **the finding always comes from a
 lens not yet used.** This time it was using the product instead of reading it,
@@ -1206,7 +1206,7 @@ to read as a photograph.
 ### 28.6 Still outstanding
 
 The phone number and email remain `(803) 555-0123` and
-`hello@example-referral-brand.com`, supplied by environment variables. They are
+`contact@lancasterconcreteconnect.com`, supplied by environment variables. They are
 labelled nowhere as verified and nothing was fabricated to replace them, but
 until the five `NEXT_PUBLIC_*` values are set at deploy the site cannot be fully
 trusted by a visitor who tries to call. This remains the single highest leverage
@@ -1905,7 +1905,7 @@ survive that ceiling because both have shallow depth of field.
 
 ### Placeholder contact details
 
-`(803) 555-0123` and `hello@example-referral-brand.com` appear only in
+`(803) 555-0123` and `contact@lancasterconcreteconnect.com` appear only in
 `.env.example`, which is the correct place for them. No source file hardcodes
 either; `src/lib/env/index.ts` reads them from the environment and validates
 with zod. Nothing was invented. If the deployment does not set real values the

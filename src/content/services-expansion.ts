@@ -99,7 +99,7 @@ export const expansionServices: readonly ServiceRecord[] = [
     tradeSpecs: [
       "High-strength concrete mix, commonly 4,000 PSI for residential work. Your provider confirms the mix for your project.",
       "Welded wire or fiber reinforcement placed to help limit cracking.",
-      "Compacted gravel sub-base and a planned drainage slope set before the forms go in.",
+      "Compacted gravel subbase and a planned drainage slope set before the forms go in.",
       "Control joints laid out along pattern lines, with the sealer schedule confirmed before the work starts.",
     ],
     process: [
@@ -442,7 +442,7 @@ export const expansionServices: readonly ServiceRecord[] = [
     tradeSpecs: [
       "High-strength concrete mix, commonly 4,000 PSI for residential work. Your provider confirms the mix for your project.",
       "Welded wire or fiber reinforcement placed to help limit cracking.",
-      "Compacted gravel sub-base and a planned drainage slope set before the forms go in.",
+      "Compacted gravel subbase and a planned drainage slope set before the forms go in.",
       "Control joints spaced to guide cracking, with edges tooled at the finish.",
     ],
     process: [
@@ -1111,7 +1111,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         name: "Texture",
         description:
-          "Broom, smooth, or stamped texture. Texture controls traction.",
+          "Broom, smooth, or stamped texture. The texture controls traction.",
       },
       {
         name: "Color",
@@ -1458,7 +1458,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         name: "Finish",
         description:
-          "Matte, satin, or gloss. Gloss shows more color but can look slick when wet.",
+          "Matte, satin, or gloss. The gloss level shows more color but can look slick when wet.",
       },
       {
         name: "Recoat schedule",

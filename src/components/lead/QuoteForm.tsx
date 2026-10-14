@@ -291,7 +291,7 @@ export function QuoteForm({
           Your request is with our team
         </h3>
         <p className="mt-3 text-[color:var(--color-muted)]">
-          An independent local contractor serving your area will contact you
+          An independent local service provider serving your area will contact you
           directly to discuss pricing and scheduling.
         </p>
         <p className="mt-4 text-sm text-[color:var(--color-muted)]">

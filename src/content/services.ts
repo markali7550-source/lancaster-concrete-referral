@@ -133,7 +133,7 @@ const coreServices: readonly ServiceRecord[] = [
     optionsLead:
       "Your contractor specifies the driveway. These are the calls they will ask you to make, so you will already know them when they arrive.",
     processLead:
-      "A driveway is a one day pour on the end of a week of preparation. The sequence below is what that week usually looks like; your contractor sets the real dates.",
+      "A driveway is a one-day pour on the end of a week of preparation. The sequence below is what that week usually looks like; your contractor sets the real dates.",
     costLead:
       "Nobody can price a driveway from an address. Square footage is only the start of it. What the old slab costs to break up and haul away, and whether a truck can reach the pour, often move the number more.",
     ctaLead:
@@ -149,7 +149,7 @@ const coreServices: readonly ServiceRecord[] = [
     tradeSpecs: [
       "High-strength concrete mix, commonly 4,000 PSI for residential work. Your provider confirms the mix for your project.",
       "Steel rebar or welded wire reinforcement placed to help limit cracking.",
-      "Compacted gravel sub-base and a planned drainage slope set before the forms go in.",
+      "Compacted gravel subbase and a planned drainage slope set before the forms go in.",
       "Control and expansion joints laid out for South Carolina's seasonal heat, rain, and clay soil movement.",
     ],
     image: "/images/locations/lancaster-sc/lancaster-sc-driveways.webp",
@@ -160,7 +160,7 @@ const coreServices: readonly ServiceRecord[] = [
       { label: "Served for", value: "Residential driveways and aprons" },
       { label: "Coverage today", value: "Lancaster, SC" },
       {
-        label: "Typical site visit",
+        label: "Site visit",
         value: "Response timing confirmed by the local provider",
       },
       { label: "Cost to you", value: "No charge for the quote request" },
@@ -234,7 +234,7 @@ const coreServices: readonly ServiceRecord[] = [
         phase: "Subbase, forms, and reinforcement",
         duration: "Typically one day",
         detail:
-          "Compacted base material, formwork set to grade, and reinforcement placed. On clay, compaction has a particular bearing on how the slab ages.",
+          "Compacted base material, formwork set to grade, and reinforcement placed. On clay soil, compaction strongly affects how long the slab lasts.",
       },
       {
         phase: "Pour and finish",
@@ -372,7 +372,7 @@ const coreServices: readonly ServiceRecord[] = [
     tradeSpecs: [
       "High-strength concrete mix, commonly 4,000 PSI for residential work. Your provider confirms the mix for your project.",
       "Steel rebar or welded wire reinforcement placed to help limit cracking.",
-      "Compacted gravel sub-base and a planned drainage slope set before the forms go in.",
+      "Compacted gravel subbase and a planned drainage slope set before the forms go in.",
       "Control and expansion joints laid out for South Carolina's seasonal heat, rain, and clay soil movement.",
     ],
     image: "/images/services/concrete-patios/concrete-patios-hero.webp",
@@ -591,7 +591,7 @@ const coreServices: readonly ServiceRecord[] = [
     tradeSpecs: [
       "High-strength concrete mix, commonly 4,000 PSI for residential work. Your provider confirms the mix for your project.",
       "Steel rebar or welded wire reinforcement placed to help limit cracking.",
-      "Compacted gravel sub-base and a planned drainage slope set before the forms go in.",
+      "Compacted gravel subbase and a planned drainage slope set before the forms go in.",
       "Control and expansion joints laid out for South Carolina's seasonal heat, rain, and clay soil movement.",
     ],
     image: "/images/locations/lancaster-sc/lancaster-sc-slabs.webp",

@@ -574,8 +574,8 @@ const SERVICE_AREA_CONTROLS = [
     body: "Requests are only passed to independent local concrete specialists that have agreed in writing to documented response expectations.",
   },
   {
-    title: "Project type match",
-    body: "Your project type is checked against the categories a local team has agreed to take. A category nobody has accepted produces an honest no coverage answer.",
+    title: "Project type",
+    body: "Your project type is checked against the categories a local team has agreed to take. A category nobody has accepted gets a clear answer that it is not covered.",
   },
   {
     title: "One request at a time",
@@ -634,7 +634,7 @@ const STEPS = [
   },
   {
     // Heading wording is fixed by the brief and must stay exact.
-    verb: "We check coverage, project type match, team agreement, and current capacity.",
+    verb: "We check coverage, project type, team agreement, and current capacity.",
     body: "Eligibility is confirmed before anything is sent, and nothing is sent if no participating provider covers the area.",
   },
   {
@@ -756,7 +756,7 @@ export function FaqSection({
           name={name}
           className="group card overflow-hidden"
         >
-          <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-semibold md:px-6">
+          <summary className="disclosure-row flex min-h-[48px] cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-semibold md:px-6">
             <span className="flex-1 text-left text-[16px]">{faq.question}</span>
             <span
               className="grid h-8 w-8 shrink-0 place-items-center rounded-[10px] transition-colors"

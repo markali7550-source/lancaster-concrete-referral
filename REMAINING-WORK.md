@@ -15,10 +15,10 @@ Every canonical URL, schema `@id`, sitemap entry and phone link currently uses p
 
 | Variable | Current value | Consequence |
 |---|---|---|
-| `NEXT_PUBLIC_SITE_URL` | `https://example-referral-brand.com` | Poisons every canonical, `@id`, and sitemap URL |
+| `NEXT_PUBLIC_SITE_URL` | `https://lancasterconcreteconnect.com` | Poisons every canonical, `@id`, and sitemap URL |
 | `NEXT_PUBLIC_FALLBACK_PHONE_E164` | `+18035550123` | Dials nothing |
 | `NEXT_PUBLIC_FALLBACK_PHONE_DISPLAY` | `(803) 555-0123` | Displayed on every page |
-| `NEXT_PUBLIC_CONTACT_EMAIL` | `hello@example-referral-brand.com` | Non-routable |
+| `NEXT_PUBLIC_CONTACT_EMAIL` | `contact@lancasterconcreteconnect.com` | Non-routable |
 | `NEXT_PUBLIC_BRAND_NAME` | `Lancaster Concrete Connect` | Confirm this is final |
 
 **Needed from you:** the real domain, tracking/fallback phone number, and contact inbox.

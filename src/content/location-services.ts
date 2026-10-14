@@ -156,7 +156,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         heading: "Weather and timing",
         body:
-          "Lancaster summers run hot and humid, with July highs near 90°F and about 13 wet days, so crews start pours early and protect the curing slab. Winter nights can dip near freezing. Water that sits at a driveway edge in red clay freezes and thaws, so keep the edge graded away from the slab.",
+          "Lancaster's hot, humid summers and seasonal rainfall patterns require properly cured mix designs and strategically placed control joints. Winter nights can dip near freezing. Water that sits at a driveway edge in red clay freezes and thaws, so keep the edge graded away from the slab.",
       },
       {
         heading: "Communities near Lancaster",
@@ -643,7 +643,7 @@ const records: readonly LocationServiceRecord[] = [
       },
       {
         heading: "Weather and timing",
-        body: "Lancaster summers run hot and humid, with July highs near 90\u00b0F and about 13 wet days, so crews plan around afternoon storms. Winter lows rarely fall below 19\u00b0F, but nights near freezing still freeze and thaw water in the joints.",
+        body: "Lancaster's hot, humid summers and seasonal rainfall patterns require properly cured mix designs and strategically placed control joints. Nights near freezing still freeze and thaw water in the joints.",
       },
       {
         heading: "Who does the work",
@@ -741,7 +741,7 @@ const records: readonly LocationServiceRecord[] = [
       },
       {
         heading: "Heat, rain, and timing",
-        body: "Lancaster summers run hot and humid, with July highs near 90\u00b0F and about 13 wet days, so crews plan around afternoon storms. Winter lows rarely fall below 19\u00b0F, but nights near freezing still freeze and thaw water in the joints.",
+        body: "Lancaster's hot, humid summers and seasonal rainfall patterns require properly cured mix designs and strategically placed control joints. Nights near freezing still freeze and thaw water in the joints.",
       },
       {
         heading: "Choosing texture",
@@ -796,7 +796,7 @@ const records: readonly LocationServiceRecord[] = [
       },
       {
         heading: "Weather and timing",
-        body: "Lancaster summers run hot and humid, with July highs near 90\u00b0F and about 13 wet days, so crews plan around afternoon storms. Winter lows rarely fall below 19\u00b0F, but nights near freezing still freeze and thaw water in the joints.",
+        body: "Lancaster's hot, humid summers and seasonal rainfall patterns require properly cured mix designs and strategically placed control joints. Nights near freezing still freeze and thaw water in the joints.",
       },
       {
         heading: "Who does the work",
@@ -847,7 +847,7 @@ const records: readonly LocationServiceRecord[] = [
       },
       {
         heading: "Weather and timing",
-        body: "Lancaster summers run hot and humid, with July highs near 90\u00b0F and about 13 wet days, so crews plan around afternoon storms. Winter lows rarely fall below 19\u00b0F, but nights near freezing still freeze and thaw water in the joints.",
+        body: "Lancaster's hot, humid summers and seasonal rainfall patterns require properly cured mix designs and strategically placed control joints. Nights near freezing still freeze and thaw water in the joints.",
       },
       {
         heading: "Who does the work",

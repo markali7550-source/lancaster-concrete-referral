@@ -18,7 +18,7 @@ import { breadcrumbNode, buildGraph, faqNode, webPageNode } from "@/lib/schema/g
 
 
 
-const TITLE = "Lancaster County Concrete Services | Driveways to Repair";
+const TITLE = "Concrete Services in Lancaster County, SC | Local Service";
 const DESCRIPTION =
   "Driveways, patios, slabs, repair, foundations, walkways, stamped concrete, and steps in Lancaster, SC. Request a quote from a local provider.";
 
@@ -52,7 +52,7 @@ const FAQS = [
   {
     question: "Are your providers licensed and insured in South Carolina?",
     answer:
-      "Yes. The independent local providers in our network are licensed and insured, and their work follows Lancaster County building codes and safety standards.",
+      "Each independent provider is responsible for its own license and insurance. Confirm both directly with the provider and through SC LLR before you hire, since we make no representation about any provider's credentials.",
   },
 ];
 
@@ -95,7 +95,7 @@ export default function ServicesPage() {
           className="mt-4 max-w-2xl text-[17px] leading-relaxed"
           style={{ color: overlayBody }}
         >
-          Eight residential concrete services, each on its own page. Pick
+          Fourteen residential concrete services, each on its own page. Pick
           the service that matches your project and send a request. A local
           provider reviews it and replies.
         </p>
@@ -173,8 +173,8 @@ export default function ServicesPage() {
             specifically on residential concrete flatwork, installations, and
             surface care. We do not provide major structural foundation
             repairs, retaining walls, mudjacking/slab jacking, raw materials
-            delivery, or heavy commercial contracts. We believe in transparency
-            upfront so you can find the right trade specialist for your specific
+            delivery, or heavy commercial contracts. We believe in being upfront,
+            so you can find the right trade specialist for your specific
             project.
           </p>
         </div>

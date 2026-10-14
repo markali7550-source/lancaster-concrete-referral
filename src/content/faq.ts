@@ -98,7 +98,7 @@ export const faqCategories: readonly FaqCategory[] = [
       },
       {
         "question": "Who actually performs the concrete work?",
-        "answer": "An independent local contractor. Excavation, forming, pouring, and finishing are carried out by the provider you engage, and your contract is with them.",
+        "answer": "An independent local service provider. Excavation, forming, pouring, and finishing are carried out by the provider you engage, and your contract is with them.",
         "links": []
       },
       {
@@ -163,7 +163,7 @@ export const faqCategories: readonly FaqCategory[] = [
       },
       {
         "question": "Does red clay soil affect a driveway in Lancaster, SC?",
-        "answer": "Red clay common across the Piedmont holds water and can shift as it wets and dries. Careful base preparation, compaction, and drainage slope reduce cracking and settling. Ask how the subgrade will be handled before the forms go in. See our Lancaster driveway quotes page for local details.",
+        "answer": "Red clay, which is common across the Piedmont, holds water and can shift as it wets and dries. Careful base preparation, compaction, and drainage slope reduce cracking and settling. Ask how the subgrade will be handled before the forms go in. See our Lancaster driveway quotes page for local details.",
         "links": [
           {
             "text": "Lancaster driveway quotes page",
@@ -288,7 +288,7 @@ export const faqCategories: readonly FaqCategory[] = [
       },
       {
         "question": "How do I prevent cracks in a new walkway?",
-        "answer": "Cracks are controlled by a solid base, good drainage, and control joints. Joints guide any cracking into straight lines instead of random breaks. Ask the provider where the joints will go before the pour.",
+        "answer": "Cracks are controlled by a solid base, good drainage, and control joints. These guide any cracking into straight lines instead of random breaks. Ask the provider where the joints will go before the pour.",
         "links": []
       },
       {
@@ -583,7 +583,7 @@ export const faqCategories: readonly FaqCategory[] = [
       },
       {
         "question": "How do I know whether my location is covered?",
-        "answer": "Submit a request with your address, or call and we will confirm in a minute. If your address sits inside an approved ZIP, the request is handled; if not, you get an honest no coverage answer instead of being passed along anyway.",
+        "answer": "Submit a request with your address, or call and we will confirm quickly. If your address sits inside an approved ZIP, the request is handled; if not, you get a clear answer that we do not cover it, instead of being passed along anyway.",
         "links": [
           {
             "text": "Submit a request",
@@ -593,7 +593,7 @@ export const faqCategories: readonly FaqCategory[] = [
       },
       {
         "question": "What happens if my location is outside the current service area?",
-        "answer": "Nothing is sent out. Out of area requests are declined with an honest no coverage answer rather than passed to a contractor who does not serve the address. The quote form includes a My area is not listed option for exactly this case.",
+        "answer": "Nothing is sent out. Out of area requests are declined with a clear answer that the area is not covered, rather than passed to a contractor who does not serve the address. The quote form includes a My area is not listed option for exactly this case.",
         "links": [
           {
             "text": "quote form",

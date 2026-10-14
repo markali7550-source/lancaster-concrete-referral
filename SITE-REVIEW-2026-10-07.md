@@ -71,8 +71,8 @@ underbuilt. Options unchanged: extend it with a real coverage explanation, or
   before validation). Eight fumbled submissions in a minute locks the user out with
   a bare `{"error":"rate_limited"}`. Count only accepted submissions, or return a
   friendlier message with `Retry-After`.
-- **Env placeholders remain** (`example-referral-brand.com`, `(803) 555-0123`,
-  `hello@example-referral-brand.com`). They poison every canonical, `@id` and
+- **Env placeholders remain** (`lancasterconcreteconnect.com`, `(803) 555-0123`,
+  `contact@lancasterconcreteconnect.com`). They poison every canonical, `@id` and
   sitemap entry. Deployment step, still the largest launch blocker.
 - **`dev-only-*` webhook/hash secrets** still in place (`CALL_WEBHOOK_SECRET`,
   `PARTNER_WEBHOOK_SECRET`, `LEAD_HASH_SECRET`). Regenerate before real traffic.

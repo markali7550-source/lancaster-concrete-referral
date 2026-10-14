@@ -286,7 +286,7 @@ export function ServicePageTemplate({
                       />
                     </div>
                     <div className="mt-10">
-                      <h3 className="h3">What We Include</h3>
+                      <h3 className="h3">What we include</h3>
                       <ol className="mt-5 grid gap-3 md:grid-cols-2">
                         {service.workIncluded.map((step, index) => (
                           <li
@@ -469,7 +469,7 @@ export function ServicePageTemplate({
         <Section
           backgroundImage={SERVICE_DETAIL_IMAGES[service.slug]}
           eyebrow="Include"
-          title={`What a ${service.projectNoun} project may include`}
+          title={`What ${/^[aeiou]/i.test(service.projectNoun) ? "an" : "a"} ${service.projectNoun} project may include`}
         >
           <MayInclude
             items={detail.mayInclude}

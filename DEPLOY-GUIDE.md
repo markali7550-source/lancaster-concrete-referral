@@ -212,7 +212,7 @@ curl -s https://yourdomain.com | grep -o '<link rel="canonical"[^>]*>'
 curl -s https://yourdomain.com/sitemap.xml | head -20
 ```
 
-Every URL must show your real domain. If you see `example-referral-brand.com`,
+Every URL must show your real domain. If you see `lancasterconcreteconnect.com`,
 the redeploy did not pick up the change — confirm the variable is set for the
 **Production** environment specifically, then redeploy again.
 

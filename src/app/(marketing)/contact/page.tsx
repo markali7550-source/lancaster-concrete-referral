@@ -14,7 +14,7 @@ import { pageMetadata } from "@/lib/seo/metadata";
 import { breadcrumbNode, buildGraph, webPageNode } from "@/lib/schema/graph";
 import { CALL_DISCLOSURE } from "@/lib/seo/disclosure";
 
-const TITLE = "Contact Us | Concrete Quotes in Lancaster, SC";
+const TITLE = "Contact Lancaster Concrete Connect | Lancaster, SC";
 const DESCRIPTION =
   "Get in touch with Lancaster Concrete for professional residential and commercial concrete services in Lancaster, SC. Request a free quote or call today.";
 

@@ -23,7 +23,7 @@ import { SERVICE_DISCLOSURE } from "@/lib/seo/disclosure";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { buildGraph, faqNode, webPageNode } from "@/lib/schema/graph";
 
-const TITLE = `Lancaster SC Concrete Quotes | ${site.brand}`;
+const TITLE = `Lancaster, SC Concrete Quotes | ${site.brand}`;
 const DESCRIPTION =
   "Local concrete service in Lancaster, SC for driveways, patios, slabs and repair. Work is done by independent local concrete specialists, not by this website.";
 
@@ -72,7 +72,7 @@ const FAQS = [
   {
     question: "Which areas can you take work in right now?",
     answer:
-      "Lancaster, South Carolina. Service availability depends on participating providers, so requests outside covered areas receive an honest no coverage answer instead of being forwarded to a provider who does not serve the area.",
+      "Lancaster, South Carolina. Service availability depends on participating providers, so requests outside covered areas receive a clear answer that we do not cover them, instead of being forwarded to a provider who does not serve the area.",
   },
   {
     question: "Are the service providers licensed and insured?",
@@ -129,7 +129,7 @@ export default function HomePage() {
         tone="surface"
         eyebrow="Project types"
         title="Where we can take work in Lancaster today"
-        lead="Eight residential concrete services, each on its own page. Each request goes to a local provider who confirms the scope, and foundation repair, structural engineering, and retaining walls sit outside these services."
+        lead="Fourteen residential concrete services, each on its own page. Each request goes to a local provider who confirms the scope, and foundation repair, structural engineering, and retaining walls sit outside these services."
       >
         <ProjectTypeChooser images={serviceCardImageMap} />
         <p className="mt-8 text-sm">
@@ -138,7 +138,7 @@ export default function HomePage() {
             className="font-semibold underline underline-offset-4"
             style={{ color: "var(--color-accent)" }}
           >
-            Compare all eight services and their scope limits →
+            Compare all fourteen services and their scope limits →
           </Link>
         </p>
       </Section>
@@ -269,9 +269,9 @@ export default function HomePage() {
               Your location and project type are checked against the teams that work in your area. One local team receives the request and may contact you. If they do not respond in time, it goes to the next team once, and if nobody covers your area we tell you so.
             </p>
             <div className="card mt-8 p-5">
-              <p className="text-sm font-semibold">Rather just talk?</p>
+              <p className="text-sm font-semibold">Prefer to talk?</p>
               <p className="mt-1.5 text-[14px] text-[color:var(--color-muted)]">
-                Call our team and we will tell you in one minute whether a local team covers your area.
+                Call our team and we will quickly tell you whether a local team covers your area.
               </p>
               <a
                 href={`tel:${site.phoneE164}`}
@@ -303,7 +303,7 @@ export default function HomePage() {
 
       <CtaBand
         title="Ready to request concrete service?"
-        body="Send your project details and a local contractor will reply. No charge to you and no obligation to proceed."
+        body="Send your project details and a local service provider will reply. No charge to you and no obligation to proceed."
       />
 
 

@@ -338,7 +338,7 @@ identical header and footer (verified by markup hash), so global issues
 
 ### `/contact`
 - **Status:** 200 · 392 words · 3 headings
-- **Functional:** `tel:+18035550123` and `mailto:hello@example-referral-brand.com` present and well-formed. **Not verified** that they dial/open correctly on a device
+- **Functional:** `tel:+18035550123` and `mailto:contact@lancasterconcreteconnect.com` present and well-formed. **Not verified** that they dial/open correctly on a device
 - **Note:** This is the only page with **no CTA band** among the main marketing pages — arguably correct, since the whole page is contact-focused
 - **All other categories:** —
 
@@ -367,7 +367,7 @@ identical header and footer (verified by markup hash), so global issues
 | Assets referenced (JS/CSS/fonts/images/srcset) | **338 tested — 0 failures** |
 | External links | 18 — all to the site's own canonical domain plus `https://llr.sc.gov/` (South Carolina licensing board, contextually correct) |
 | `tel:` link | `tel:+18035550123` — well-formed E.164 |
-| `mailto:` link | `mailto:hello@example-referral-brand.com` — well-formed |
+| `mailto:` link | `mailto:contact@lancasterconcreteconnect.com` — well-formed |
 | Trailing-slash URLs | 308 redirect to canonical form — correct |
 | `/api/leads` via GET | 405 Method Not Allowed — correct |
 
@@ -606,8 +606,8 @@ The following come from `.env.example`, which I copied to `.env.local` to run
 the build. They are **env-driven, not hardcoded**, so they are correct in code
 but **must be set to real values in production**:
 
-- `NEXT_PUBLIC_SITE_URL=https://example-referral-brand.com` — appears in all canonicals, OG URLs, the sitemap and `robots.txt`
-- `NEXT_PUBLIC_CONTACT_EMAIL=hello@example-referral-brand.com`
+- `NEXT_PUBLIC_SITE_URL=https://lancasterconcreteconnect.com` — appears in all canonicals, OG URLs, the sitemap and `robots.txt`
+- `NEXT_PUBLIC_CONTACT_EMAIL=contact@lancasterconcreteconnect.com`
 - `NEXT_PUBLIC_FALLBACK_PHONE_DISPLAY=(803) 555-0123` — a reserved fictional 555 number
 
 **If this site is already deployed, confirm these are overridden.** Shipping
@@ -842,7 +842,7 @@ moments on the site: the hero and the confirmation screen.
 1. **Real iOS Safari and Android Chrome.** Chromium was the only engine available. The iPad-Safari fixed-background behavior between 768-1024 px is the single highest-value manual spot-check.
 2. **Lighthouse / field Core Web Vitals.** The LCP numbers above come from a local server and are a floor, not a field measurement.
 3. **A real screen reader.** ARIA was verified structurally and by live-region presence, not by listening.
-4. **Production environment variables** — confirm `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_CONTACT_EMAIL` and the fallback phone values are real, not the `.env.example` placeholders (`example-referral-brand.com`, `(803) 555-0123`).
+4. **Production environment variables** — confirm `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_CONTACT_EMAIL` and the fallback phone values are real, not the `.env.example` placeholders (`lancasterconcreteconnect.com`, `(803) 555-0123`).
 5. **Human judgement on photo selection** and whether the flow feels intuitive to real visitors.
 
 With the two High-priority items fixed and the above spot-checked, this site is

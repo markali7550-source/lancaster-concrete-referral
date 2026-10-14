@@ -56,9 +56,9 @@ This is a dashboard toggle, not a code change — I cannot do it from here.
 `NEXT_PUBLIC_SITE_URL` is unset, so the build falls back to the placeholder:
 
 ```
-canonical              https://example-referral-brand.com
-sitemap.xml (16 URLs)  https://example-referral-brand.com/...
-robots.txt sitemap     https://example-referral-brand.com/sitemap.xml
+canonical              https://lancasterconcreteconnect.com
+sitemap.xml (16 URLs)  https://lancasterconcreteconnect.com/...
+robots.txt sitemap     https://lancasterconcreteconnect.com/sitemap.xml
 ```
 
 If this is indexed as-is, every page tells Google the real page lives on someone else's
@@ -69,7 +69,7 @@ NEXT_PUBLIC_SITE_URL=https://<your-real-domain>
 NEXT_PUBLIC_BRAND_NAME=Lancaster Concrete Connect
 NEXT_PUBLIC_FALLBACK_PHONE_E164=+18035550123
 NEXT_PUBLIC_FALLBACK_PHONE_DISPLAY=(803) 555-0123
-NEXT_PUBLIC_CONTACT_EMAIL=hello@example-referral-brand.com
+NEXT_PUBLIC_CONTACT_EMAIL=contact@lancasterconcreteconnect.com
 ```
 
 (Phone and email keep your intentional test values.)
@@ -193,5 +193,5 @@ specific heroes raised to ~150 KB.
 ## Explicitly unchanged
 
 Gallery · hero images · test phone `(803) 555-0123` · test email
-`hello@example-referral-brand.com` · CTA band position · sticky bar stays removed ·
+`contact@lancasterconcreteconnect.com` · CTA band position · sticky bar stays removed ·
 header CTA on all 12 pages · mobile centering rules · full-width sections.

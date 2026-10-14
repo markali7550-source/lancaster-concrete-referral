@@ -74,7 +74,7 @@ the resolved entity is undefined behavior. Page graphs should reference
 `{ "@id": ".../#organization" }` rather than redefining the node.
 
 Minor related inconsistency: the page-level `@id`s omit the trailing slash that the root nodes
-use — `https://example-referral-brand.com#webpage` vs `https://example-referral-brand.com/#organization`.
+use — `https://lancasterconcreteconnect.com#webpage` vs `https://lancasterconcreteconnect.com/#organization`.
 Worth normalising while you're in there.
 
 `npm run assert:schema` passes (8 graphs) because it checks parity, not node uniqueness.
@@ -121,7 +121,7 @@ combination page publishes"* when four now do.
   validation failures too, so a user who fumbles the form eight times is locked out for a minute
   with a bare `{"error":"rate_limited"}`. Worth only counting successful submissions, or at least
   returning a friendlier message.
-- **Env placeholders remain** (`example-referral-brand.com`, `+18035550123`). Already documented
+- **Env placeholders remain** (`lancasterconcreteconnect.com`, `+18035550123`). Already documented
   as a launch blocker; they still poison every canonical, `@id` and sitemap entry.
 
 ---

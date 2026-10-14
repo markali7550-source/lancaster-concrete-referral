@@ -443,7 +443,7 @@ The build I audited renders:
 
 - **(803) 555-0123** — `555-01xx` is the range reserved for fiction. Americans
   recognise it from films. It says "this is not a real business" instantly.
-- **hello@example-referral-brand.com** and **example-referral-brand.com**.
+- **contact@lancasterconcreteconnect.com** and **lancasterconcreteconnect.com**.
 
 **Important qualification:** these are **not hard-coded**. They come from
 `NEXT_PUBLIC_*` environment variables, and the only file carrying them is
@@ -546,7 +546,7 @@ honest thing nine times starts to sound defensive.
 | 20 | Consent dialog | Opens over content immediately on load | Blocks the first impression | **LOW** | Bottom-anchored, after first scroll |
 | 21 | All images | 800–1440px at 67–103 KB; upscaled in full-bleed bands | Soft imagery reads as "not a real company's photos" | **LOW** | Source at ≥2× the largest rendered width |
 | 22 | Site-wide | No founder, no name, no human, no history | For a trust-brokering service the absence of any person is conspicuous | **LOW** | Add one honest human line — only if a real one exists. Do not invent |
-| — | Deployment | `(803) 555-0123` (reserved fiction range), `hello@example-referral-brand.com` | Instant "demo site" signal if it reaches production | **HIGH if shipped** | Verify production env injects real values. Env validation checks format, not realness. **No change made — out of scope** |
+| — | Deployment | `(803) 555-0123` (reserved fiction range), `contact@lancasterconcreteconnect.com` | Instant "demo site" signal if it reaches production | **HIGH if shipped** | Verify production env injects real values. Env validation checks format, not realness. **No change made — out of scope** |
 
 ---
 

@@ -114,7 +114,7 @@ TypeScript clean · vitest 29/29 · build 28 static pages · page crawler ALL PA
 
 ## Still blocking real search visibility
 
-`NEXT_PUBLIC_SITE_URL` remains `https://example-referral-brand.com`, so every
+`NEXT_PUBLIC_SITE_URL` remains `https://lancasterconcreteconnect.com`, so every
 canonical, `@id` and sitemap entry points at a domain you do not own, and Vercel
 Deployment Protection returns a 302 to crawlers. Until both change, none of this
 can be indexed.

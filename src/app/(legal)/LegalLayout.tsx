@@ -39,7 +39,7 @@ export function LegalPage({
           </p>
           <h1 className="h1 mt-5 max-w-3xl">{title}</h1>
           <p className="mt-4 text-sm text-[color:var(--color-muted)]">
-            Last updated {updated}. Draft language pending counsel review.
+            Last updated {updated}.
           </p>
         </div>
       </div>

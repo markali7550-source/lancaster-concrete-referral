@@ -146,7 +146,7 @@ export default function LocationsPage() {
       </Section>
       <CtaBand
         title="Ready to request concrete service?"
-        body="Choose your city above, or send your project details and we will check whether a local independent contractor covers your area."
+        body="Choose your city above, or send your project details and we will check whether a local independent provider covers your area."
         formHref="/contact#quote-form"
       />
     </>

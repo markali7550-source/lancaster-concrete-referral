@@ -63,7 +63,7 @@ export async function generateMetadata({
   if (!location) return {};
   return pageMetadata({
     title: fitTitle(`Concrete Services in ${location.city}, SC`),
-    description: `Looking for a concrete contractor in ${location.city}, SC? Call now or request concrete service. A local contractor replies to each request. Availability varies.`,
+    description: `Looking for a concrete provider in ${location.city}, SC? Call now or request concrete service. A local contractor replies to each request. Availability varies.`,
     path: `/locations/${location.slug}`,
   });
 }
@@ -81,7 +81,7 @@ export default async function LocationPage({ params }: { params: Params }) {
   const faqs = [
     {
       question: `Which ${location.city} areas do you cover?`,
-      answer: `${location.city}, ${location.region}. Participating providers approve this area in writing. A request from outside them returns an honest no coverage response rather than being forwarded to someone who does not work there.`,
+      answer: `${location.city}, ${location.region}. Participating providers approve this area in writing. A request from outside them returns a clear answer that it is not covered, rather than being forwarded to someone who does not work there.`,
     },
     {
       question: `Do you employ concrete specialists in ${location.city}?`,
@@ -313,7 +313,7 @@ export default async function LocationPage({ params }: { params: Params }) {
 
       <CtaBand
         title={`Request concrete service in ${location.city}`}
-        body="Send your project details and a local contractor will reply. No charge and no obligation."
+        body="Send your project details and a local service provider will reply. No charge and no obligation."
       />
 
     </>

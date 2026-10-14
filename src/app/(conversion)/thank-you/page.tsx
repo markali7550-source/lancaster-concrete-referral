@@ -35,7 +35,7 @@ export default function ThankYouPage() {
         </h1>
         <p className="lede mt-5">
           You will be contacted by one independent service provider, not by a call
-          center and not by us pretending to be the team.
+          center and not by us acting as the provider.
         </p>
         {/* Rows are start-aligned. justify-center here only bit the one step
             whose text fits on a single line, centering that row and pushing its

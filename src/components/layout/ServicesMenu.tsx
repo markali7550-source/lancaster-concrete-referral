@@ -102,18 +102,20 @@ export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {
       onPointerEnter={handlePointerEnter}
       onPointerLeave={handlePointerLeave}
     >
-      <div className="flex items-center">
+      {/* One control, not two: the label and caret share a single hover fill
+          and focus ring. The children stay transparent so they read as one pill. */}
+      <div className="services-switch flex items-center rounded-[var(--radius-control)] transition-colors duration-150 hover:bg-[color:var(--color-accent-soft)] hover:text-[color:var(--color-accent)]">
         {/* The label navigates; the caret only toggles the panel. */}
         <Link
           href="/services"
-          className="btn btn-ghost pr-1.5 text-[15px] font-medium transition-colors duration-150 hover:bg-[color:var(--color-accent-soft)] hover:text-[color:var(--color-accent)]"
+          className="btn btn-ghost !bg-transparent !pr-0 text-[15px] font-medium"
         >
           Services
         </Link>
         <button
           type="button"
           ref={toggleRef}
-          className="btn btn-ghost cursor-pointer px-1.5 transition-colors duration-150 hover:bg-[color:var(--color-accent-soft)] hover:text-[color:var(--color-accent)]"
+          className="btn btn-ghost !bg-transparent cursor-pointer !px-0.5"
           aria-expanded={open}
           // Only advertised while the panel is mounted: the dropdown is
           // conditionally rendered, so pointing at the id when closed would be
