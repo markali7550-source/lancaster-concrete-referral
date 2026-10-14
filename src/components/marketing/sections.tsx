@@ -5,7 +5,6 @@ import { Icon } from "@/components/ui/Icon";
 import { publishedServices, type ServiceRecord } from "@/content/services";
 import type { LocationRecord } from "@/content/locations";
 import { site } from "@/lib/env";
-import { SHORT_DISCLOSURE } from "@/lib/seo/disclosure";
 
 /* ------------------------------------------------------------ Photo scrim */
 
@@ -267,6 +266,7 @@ export function OverlayHeader({
           alt={imageAlt}
           fill
           priority
+          fetchPriority="high"
           sizes="100vw"
           className="-z-20 object-cover"
         />
@@ -336,6 +336,7 @@ export function Hero({
           alt={imageAlt}
           fill
           priority
+          fetchPriority="high"
           sizes="100vw"
           className="-z-20 object-cover"
         />
@@ -467,6 +468,7 @@ export function Hero({
                 width={1200}
                 height={800}
                 priority
+                fetchPriority="high"
                 sizes="(min-width: 1024px) 40vw, 100vw"
                 className="h-full w-full object-cover"
               />

@@ -45,6 +45,7 @@ export default function ContactPage() {
           alt=""
           fill
           priority
+          fetchPriority="high"
           sizes="100vw"
           className="-z-20 object-cover"
           aria-hidden="true"

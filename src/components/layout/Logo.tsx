@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { site } from "@/lib/env";
 
 /** Native pixel dimensions of the shipped lockup artwork (both variants share
  * the same canvas), used to keep the aspect ratio correct at any height. */
