@@ -775,6 +775,31 @@
     }
   }
 
+  /* FAQ accordion motion. Browsers that support ::details-content animate
+     the panel both opening and closing. Older browsers keep the instant
+     toggle, which is still fully functional. */
+  :root {
+    interpolate-size: allow-keywords;
+  }
+
+  .faq-item::details-content {
+    block-size: 0;
+    overflow: hidden;
+    transition:
+      block-size 260ms ease,
+      content-visibility 260ms allow-discrete;
+  }
+
+  .faq-item[open]::details-content {
+    block-size: auto;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .faq-item::details-content {
+      transition: none;
+    }
+  }
+
   .disclosure-row:hover {
     background-color: color-mix(
       in srgb,

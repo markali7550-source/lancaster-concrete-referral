@@ -754,7 +754,7 @@ export function FaqSection({
         <details
           key={faq.question}
           name={name}
-          className="group card overflow-hidden"
+          className="faq-item group card overflow-hidden"
         >
           <summary className="disclosure-row flex min-h-[48px] cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-semibold md:px-6">
             <span className="flex-1 text-left text-[16px]">{faq.question}</span>
