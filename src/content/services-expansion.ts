@@ -1214,4 +1214,510 @@ export const expansionServices: readonly ServiceRecord[] = [
     ],
   },
 
+
+  {
+    slug: "concrete-aprons",
+    name: "Concrete Aprons",
+    shortName: "Aprons",
+    nameLower: "concrete aprons",
+    projectNoun: "concrete apron",
+    state: "published",
+    intent: "Driveway-to-street and driveway-to-garage aprons",
+    summary:
+      "Concrete aprons that connect a driveway to the garage or street, graded so water runs off instead of pooling.",
+    cardScope: "Driveway-to-street and driveway-to-garage aprons",
+    workIncluded: [
+      "Measuring the apron and checking the grade toward the street or gutter",
+      "Subbase preparation and form setting to the planned slope",
+      "Placing and finishing the concrete to match the driveway",
+      "Control joints placed to line up with the driveway joints",
+      "Site clean-up and haul-away of debris",
+    ],
+    heroSummary:
+      "A concrete apron is the slab that joins a driveway to the street or to the garage floor. Its slope decides whether water runs off the driveway or pools at the edge, so the grade is planned before the forms go in. Request a concrete service and a local provider will check the grade, the curb, and the existing driveway at a site visit.",
+    sectionOrder: ["scope", "options", "process", "cost", "prepare"],
+    headings: {
+      scope: "What an apron project covers",
+      options: "Finish and grade choices",
+      process: "How an apron pour is sequenced",
+      cost: "What moves the price of an apron",
+      prepare: "Before the provider visits",
+      faq: "Concrete apron questions",
+      cta: "Need a new apron?",
+    },
+    optionsLead:
+      "Aprons are usually finished to match the driveway, but finish and grade still need to be chosen before the pour.",
+    processLead:
+      "The grade is set before the concrete goes in. The sequence below shows the order the work usually follows; the provider sets the actual dates.",
+    costLead:
+      "Aprons are small slabs, so the cost depends more on access, the grade work, and the finish than on area alone.",
+    ctaLead:
+      "Send photos of the driveway edge, the curb, and the gutter. A local provider will confirm the grade and the finish.",
+    image: "/images/services/concrete-aprons/concrete-aprons-hero.webp",
+    imageAlt:
+      "Grey concrete apron connecting a residential driveway to the street curb, sloping toward the gutter",
+    projectTypes: ["Street apron", "Garage apron", "Replacement apron"],
+    keyFacts: [
+      { label: "Typical use", value: "Driveway-to-street and garage connections" },
+      { label: "Key factor", value: "Slope toward the gutter" },
+    ],
+    covered: [
+      {
+        title: "Street aprons",
+        body: "The slab between the driveway and the curb or gutter, graded so water runs off.",
+      },
+      {
+        title: "Garage aprons",
+        body: "The connection between the driveway and the garage floor.",
+      },
+      {
+        title: "Replacement aprons",
+        body: "Removal of a cracked or sunken apron and a new pour at the correct grade.",
+      },
+    ],
+    outOfScope: [
+      "Curb and gutter installation",
+      "Storm drain connections",
+      "Work in the public right of way without the required permit",
+    ],
+    options: [
+      {
+        name: "Finish",
+        description:
+          "Broom or smooth. Broom finish gives better traction; smooth is simpler to clean.",
+      },
+      {
+        name: "Color",
+        description:
+          "Natural gray matches most driveways. Integral color or a stain must be planned before the pour.",
+      },
+      {
+        name: "Joint layout",
+        description:
+          "Joints placed to line up with the driveway to reduce cracking.",
+      },
+    ],
+    tradeSpecs: [
+      "Compacted gravel base set to the planned slope before the forms go in.",
+      "Concrete placed and finished to the grade confirmed at the visit.",
+      "Control joints placed along the driveway joint lines.",
+      "Curing protection applied after finishing, as the mix requires.",
+    ],
+    process: [
+      {
+        phase: "Site visit and grade check",
+        duration: "Scheduled by provider",
+        detail:
+          "The provider measures the apron, checks the slope to the street, and confirms the finish.",
+      },
+      {
+        phase: "Excavation and forms",
+        duration: "1 day",
+        detail: "The old apron is removed if needed, the base is compacted, and forms are set.",
+      },
+      {
+        phase: "Pour and finish",
+        duration: "1 day",
+        detail: "Concrete is placed, finished to the grade, and joints are cut.",
+      },
+      {
+        phase: "Cure",
+        duration: "Several days",
+        detail: "The apron cures under protection before vehicles use it.",
+      },
+    ],
+    costFactors: [
+      {
+        factor: "Removal of the old apron",
+        impact: "High",
+        note: "Breaking out and hauling away old concrete adds labor and disposal.",
+      },
+      {
+        factor: "Grade work",
+        impact: "Medium",
+        note: "Changing the slope takes more base work and more forming.",
+      },
+      {
+        factor: "Finish and color",
+        impact: "Medium",
+        note: "Decorative finishes add material and labor.",
+      },
+      {
+        factor: "Access",
+        impact: "Low",
+        note: "Tight access can slow the pour.",
+      },
+    ],
+    prepChecklist: [
+      "Note which apron you want replaced or added",
+      "Photograph the edge, curb, and gutter",
+      "Clear vehicles and debris from the area",
+      "Note where water currently collects",
+    ],
+    quoteQuestions: [
+      "Will the new grade direct water toward the gutter?",
+      "Do I need a permit for work near the street?",
+      "How will the joints line up with my driveway?",
+      "How long before a vehicle can use the apron?",
+    ],
+    considerations: [
+      {
+        question: "Will an apron crack?",
+        answer:
+          "Concrete can crack. Control joints and proper base preparation reduce the risk, and the provider explains what can and cannot be prevented.",
+      },
+      {
+        question: "Do I need a permit?",
+        answer:
+          "Work near the street may need a permit from the local authority. The provider confirms whether one applies.",
+      },
+      {
+        question: "Can an apron be matched to my driveway color?",
+        answer:
+          "Gray concrete usually matches. Colored or stamped driveways need the finish planned before the pour.",
+      },
+      {
+        question: "Why does my apron hold water?",
+        answer:
+          "A flat or sunken apron can trap water. The provider checks the slope and recommends a grade correction when needed.",
+      },
+    ],
+  },
+
+  {
+    slug: "concrete-sealing",
+    name: "Concrete Sealing",
+    shortName: "Sealing",
+    nameLower: "concrete sealing",
+    projectNoun: "concrete sealing",
+    state: "published",
+    intent: "Concrete sealing and cleaning",
+    summary:
+      "Cleaning followed by a penetrating or film-forming sealer for driveways, patios, and walks, to help resist stains, water, and freeze-thaw damage.",
+    cardScope: "Cleaning, sealing, and recoat planning for driveways, patios, and walks",
+    workIncluded: [
+      "Inspection of the surface and any existing sealer",
+      "Cleaning to remove dirt, oil, and efflorescence",
+      "Repairing minor cracks before sealing",
+      "Applying the sealer in the planned coats",
+      "Recoat schedule and care instructions",
+    ],
+    heroSummary:
+      "Concrete sealing puts a protective layer over a clean slab. Penetrating sealers soak into the surface, while film-forming sealers sit on top. Cleaning comes first, since sealer bonds only to a clean, dry surface. Request a concrete service and a local provider will confirm the sealer and the cleaning method for your surface.",
+    sectionOrder: ["scope", "options", "process", "cost", "prepare"],
+    headings: {
+      scope: "What a sealing job covers",
+      options: "Sealer type and finish choices",
+      process: "How a sealing job is sequenced",
+      cost: "What moves the price of sealing",
+      prepare: "Before the provider visits",
+      faq: "Concrete sealing questions",
+      cta: "Ready to seal your concrete?",
+    },
+    optionsLead:
+      "Sealers differ in how they bond, how they look, and how often they need recoating. Cleaning method also changes with the surface.",
+    processLead:
+      "Cleaning and drying take as much attention as the sealer. The sequence below shows the usual order; the provider sets the actual dates.",
+    costLead:
+      "Sealing is usually priced by area, with cleaning and any crack repair added. The surface condition decides how much cleaning it needs.",
+    ctaLead:
+      "Send the area, the surface type, and photos. A local provider will confirm the cleaning and the sealer.",
+    image: "/images/services/concrete-sealing/concrete-sealing-hero.webp",
+    imageAlt:
+      "Clean residential concrete patio with a freshly applied clear sealer giving a subtle sheen",
+    projectTypes: ["Driveway sealing", "Patio sealing", "Walkway sealing"],
+    keyFacts: [
+      { label: "Sealer types", value: "Penetrating, film-forming" },
+      { label: "Typical use", value: "Driveways, patios, walks" },
+    ],
+    covered: [
+      {
+        title: "Cleaning before sealing",
+        body: "Removal of dirt, oil, and salt residue so the sealer can bond.",
+      },
+      {
+        title: "Penetrating sealers",
+        body: "Sealers that soak into the surface and keep its natural look.",
+      },
+      {
+        title: "Film-forming sealers",
+        body: "Sealers that sit on the surface and add a sheen or color depth.",
+      },
+    ],
+    outOfScope: [
+      "Garage floor epoxy and coatings",
+      "Sealing of wood, brick, or stone without a specific request",
+      "Waterproofing of below-grade walls",
+    ],
+    options: [
+      {
+        name: "Sealer type",
+        description:
+          "Penetrating sealers keep the natural look. Film-forming sealers add sheen and color depth but need more upkeep.",
+      },
+      {
+        name: "Finish",
+        description:
+          "Matte, satin, or gloss. Gloss shows more color but can look slick when wet.",
+      },
+      {
+        name: "Recoat schedule",
+        description:
+          "How often the sealer is reapplied, set by traffic, sun, and the product used.",
+      },
+    ],
+    tradeSpecs: [
+      "Surface cleaned and allowed to dry before sealing.",
+      "Sealer applied in thin, even coats at the rate the product requires.",
+      "Minor cracks repaired before sealing so the sealer covers them evenly.",
+      "Traffic restriction and cure time confirmed for the product chosen.",
+    ],
+    process: [
+      {
+        phase: "Site visit and surface check",
+        duration: "Scheduled by provider",
+        detail: "The provider checks the surface, any existing sealer, and the cleaning needed.",
+      },
+      {
+        phase: "Cleaning",
+        duration: "Typically 1 day",
+        detail: "The surface is cleaned and rinsed, then allowed to dry before sealing.",
+      },
+      {
+        phase: "Sealer application",
+        duration: "Typically 1 day",
+        detail: "The sealer is applied in the planned coats.",
+      },
+      {
+        phase: "Cure",
+        duration: "Several hours to several days",
+        detail: "The surface cures before foot and vehicle traffic resume.",
+      },
+    ],
+    costFactors: [
+      {
+        factor: "Area",
+        impact: "High",
+        note: "Larger areas take more sealer and more application time.",
+      },
+      {
+        factor: "Surface condition",
+        impact: "High",
+        note: "Heavy staining or old sealer needs more cleaning and stripping.",
+      },
+      {
+        factor: "Sealer type",
+        impact: "Medium",
+        note: "Film-forming sealers cost more to apply and to remove.",
+      },
+      {
+        factor: "Crack repairs",
+        impact: "Low",
+        note: "Minor repairs before sealing add a small amount of labor.",
+      },
+    ],
+    prepChecklist: [
+      "Note the area and surface type",
+      "Remove vehicles, furniture, and planters",
+      "Note any stains, oil spots, or old sealer",
+      "Decide on a finish before the visit",
+    ],
+    quoteQuestions: [
+      "Which sealer do you recommend for this surface?",
+      "What cleaning method do you use?",
+      "How long before vehicles and furniture can return?",
+      "When should the surface be resealed?",
+    ],
+    considerations: [
+      {
+        question: "How often should concrete be sealed?",
+        answer:
+          "The interval depends on traffic, sun, and the sealer used. The provider gives the schedule for the product recommended.",
+      },
+      {
+        question: "Will sealing make concrete slippery?",
+        answer:
+          "Gloss sealers can be slick when wet. Matte or slip-resistant additives reduce the risk.",
+      },
+      {
+        question: "Can I seal new concrete right away?",
+        answer:
+          "New concrete usually needs to cure first. The provider confirms how long to wait for the mix used.",
+      },
+      {
+        question: "Does sealing stop all cracking?",
+        answer:
+          "No. Sealing helps resist water and staining, but it does not stop slab movement or cracks.",
+      },
+    ],
+  },
+
+  {
+    slug: "concrete-exposed-aggregate",
+    name: "Exposed Aggregate",
+    shortName: "Exposed Aggregate",
+    nameLower: "exposed aggregate",
+    projectNoun: "exposed aggregate",
+    state: "published",
+    intent: "Decorative exposed aggregate finishes",
+    summary:
+      "Decorative concrete with the top layer removed to show the stones, for driveways, patios, and walkways.",
+    cardScope: "Exposed aggregate driveways, patios, and walkways",
+    workIncluded: [
+      "Site and surface assessment before the pour",
+      "Subbase preparation and form setting",
+      "Placing the concrete and spreading the aggregate",
+      "Exposing the stones by washing or grinding at the planned time",
+      "Sealing, if the provider recommends it",
+    ],
+    heroSummary:
+      "Exposed aggregate concrete shows the stones in the mix. After the surface sets, the top layer is removed to expose the aggregate, giving a textured, decorative finish. Stone choice, depth of exposure, and timing decide how the finished surface looks. Request a concrete service and a local provider will confirm the stone and the finish for your project.",
+    sectionOrder: ["scope", "options", "process", "cost", "prepare"],
+    headings: {
+      scope: "What an exposed aggregate finish covers",
+      options: "Stone, exposure, and finish choices",
+      process: "How an exposed aggregate pour is sequenced",
+      cost: "What moves the price of exposed aggregate",
+      prepare: "Before the provider visits",
+      faq: "Exposed aggregate questions",
+      cta: "Want a textured finish?",
+    },
+    optionsLead:
+      "Stone type, size, and the depth of exposure change the look and the traction. Samples help before the pour.",
+    processLead:
+      "Timing matters when the stones are exposed. The sequence below shows the usual order; the provider sets the actual dates.",
+    costLead:
+      "Exposed aggregate costs more than a plain broom finish, because of the stone, the extra steps, and the timing needed.",
+    ctaLead:
+      "Send the area and the look you like, and ask for stone samples. A local provider will confirm the finish on your slab.",
+    image: "/images/services/concrete-exposed-aggregate/concrete-exposed-aggregate-hero.webp",
+    imageAlt:
+      "Residential exposed aggregate concrete driveway with mixed tan and grey stones across the surface",
+    projectTypes: ["Exposed aggregate driveway", "Exposed aggregate patio", "Exposed aggregate walkway"],
+    keyFacts: [
+      { label: "Finish", value: "Stone-textured, decorative" },
+      { label: "Typical use", value: "Driveways, patios, walks" },
+    ],
+    covered: [
+      {
+        title: "Exposed aggregate driveways",
+        body: "A textured driveway with the stones showing across the surface.",
+      },
+      {
+        title: "Patios and walkways",
+        body: "Decorative patios and walks in a stone-textured finish.",
+      },
+      {
+        title: "Border and accent bands",
+        body: "Exposed aggregate bands that frame a plain or stamped field.",
+      },
+    ],
+    outOfScope: [
+      "Stone pavers and flagstone installation",
+      "Polished concrete grinding",
+      "Overlay over an old slab without a bond check",
+    ],
+    options: [
+      {
+        name: "Stone type",
+        description:
+          "River stone, crushed stone, or decorative aggregate. Stone color and shape change the look and traction.",
+      },
+      {
+        name: "Exposure depth",
+        description:
+          "A light exposure shows the top of the stones; a deeper one shows more of each stone and a more uniform surface.",
+      },
+      {
+        name: "Edge detail",
+        description:
+          "A troweled or formed edge around the exposed field to keep the stones contained.",
+      },
+    ],
+    tradeSpecs: [
+      "Aggregate spread evenly into the surface before it sets.",
+      "Surface exposed by washing or grinding at the time the provider sets.",
+      "Control joints placed to limit cracking in the textured slab.",
+      "Sealer applied only when the provider recommends one for the stone.",
+    ],
+    process: [
+      {
+        phase: "Site visit and sample review",
+        duration: "Scheduled by provider",
+        detail: "The provider reviews stone samples, the area, and the drainage.",
+      },
+      {
+        phase: "Subbase and forms",
+        duration: "1 to 2 days",
+        detail: "Excavation to depth, a compacted base, and forms set to the planned grade.",
+      },
+      {
+        phase: "Pour and aggregate",
+        duration: "1 day",
+        detail: "Concrete is placed and the aggregate is spread into the surface before it sets.",
+      },
+      {
+        phase: "Exposure and cure",
+        duration: "Several days",
+        detail: "The stones are exposed at the set time, then the surface cures under protection.",
+      },
+    ],
+    costFactors: [
+      {
+        factor: "Stone type",
+        impact: "High",
+        note: "Decorative stone costs more than standard aggregate.",
+      },
+      {
+        factor: "Area",
+        impact: "Medium",
+        note: "Larger areas take more material and more exposure time.",
+      },
+      {
+        factor: "Exposure method",
+        impact: "Medium",
+        note: "Grinding costs more than washing and takes more time.",
+      },
+      {
+        factor: "Sealing",
+        impact: "Low",
+        note: "Sealing after exposure adds a small cost and a recoat schedule.",
+      },
+    ],
+    prepChecklist: [
+      "Note the area and how it will be used",
+      "Choose a stone look from samples or photos",
+      "Note drainage problems near the pour",
+      "Clear the surface and the edges",
+    ],
+    quoteQuestions: [
+      "Which stones do you recommend, and can I see samples?",
+      "Will the stones be exposed by washing or by grinding?",
+      "How even will the exposure look across the slab?",
+      "What care does the finish need?",
+    ],
+    considerations: [
+      {
+        question: "Is exposed aggregate slippery?",
+        answer:
+          "The stones add grip, but very smooth stones can be slick when wet. The provider chooses stone size and exposure with traction in mind.",
+      },
+      {
+        question: "Does exposed aggregate crack?",
+        answer:
+          "Concrete can crack. Control joints and proper base preparation reduce the risk, and the provider explains what can and cannot be prevented.",
+      },
+      {
+        question: "Can exposed aggregate be done over an old slab?",
+        answer:
+          "Sometimes, but an overlay needs a sound surface to bond to. The provider checks the existing slab first.",
+      },
+      {
+        question: "How is it maintained?",
+        answer:
+          "Regular sweeping and occasional washing keep the stones clean. Sealing may be recommended for the stone and the area.",
+      },
+    ],
+  },
+
 ];

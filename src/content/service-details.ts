@@ -144,4 +144,37 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
       "Sealing after overlay",
     ],
   },
+
+  /* ------------------------------------------------------ aprons */
+  "concrete-aprons": {
+    mayInclude: [
+      "Driveway-to-street aprons",
+      "Driveway-to-garage aprons",
+      "Replacement of sunken or cracked aprons",
+      "Grade correction toward the gutter",
+      "Joints aligned with the driveway",
+    ],
+  },
+
+  /* ------------------------------------------------------ sealing */
+  "concrete-sealing": {
+    mayInclude: [
+      "Penetrating and film-forming sealers",
+      "Cleaning before sealing",
+      "Minor crack repair before sealing",
+      "Recoat planning",
+      "Driveways, patios, and walkways",
+    ],
+  },
+
+  /* ------------------------------------------------ exposed aggregate */
+  "concrete-exposed-aggregate": {
+    mayInclude: [
+      "Exposed aggregate driveways",
+      "Exposed aggregate patios and walkways",
+      "Decorative stone and color choices",
+      "Accent and border bands",
+      "Sealing after exposure, if recommended",
+    ],
+  },
 };

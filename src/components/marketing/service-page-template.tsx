@@ -42,6 +42,9 @@ import { site } from "@/lib/env";
  * somebody else's garage.
  */
 const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-aprons": { src: "/images/services/concrete-aprons/concrete-aprons-detail.webp", alt: "Edge of a grey concrete apron meeting a curb and gutter, with a neat saw-cut control joint" },
+  "concrete-sealing": { src: "/images/services/concrete-sealing/concrete-sealing-detail.webp", alt: "Sealed concrete surface with water beading on it and realistic reflections" },
+  "concrete-exposed-aggregate": { src: "/images/services/concrete-exposed-aggregate/concrete-exposed-aggregate-detail.webp", alt: "Exposed aggregate concrete with rounded river stones and a textured surface" },
   "concrete-leveling": { src: "/images/services/concrete-leveling/concrete-leveling-detail.webp", alt: "Grey concrete patio with small grout-patched holes from slab leveling work" },
   "concrete-garage-coatings": { src: "/images/services/concrete-garage-coatings/concrete-garage-coatings-detail.webp", alt: "Glossy speckled grey epoxy garage floor with a painted yellow parking line" },
   "concrete-resurfacing": { src: "/images/services/concrete-resurfacing/concrete-resurfacing-detail.webp", alt: "Broom-textured thin concrete overlay with a clean edge against an older cracked slab" },
@@ -62,6 +65,9 @@ const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
  * slabs; owner-supplied real photographs remain the endpoint.
  */
 const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-aprons": { src: "/images/services/concrete-aprons/concrete-aprons-process.webp", alt: "Freshly poured concrete apron with wooden forms along its edges and a wet, smooth surface" },
+  "concrete-sealing": { src: "/images/services/concrete-sealing/concrete-sealing-process.webp", alt: "Concrete driveway half sealed, with a visible sheen line and a roller on a long handle at the edge" },
+  "concrete-exposed-aggregate": { src: "/images/services/concrete-exposed-aggregate/concrete-exposed-aggregate-process.webp", alt: "Exposed aggregate concrete walkway partly washed to reveal the stones, with a darker wet band" },
   "concrete-leveling": { src: "/images/services/concrete-leveling/concrete-leveling-process.webp", alt: "Concrete sidewalk slab with small injection holes in its surface beside a flower bed" },
   "concrete-garage-coatings": { src: "/images/services/concrete-garage-coatings/concrete-garage-coatings-process.webp", alt: "Garage floor partly coated with clear sealer, with roller marks and a paint tray at the edge" },
   "concrete-resurfacing": { src: "/images/services/concrete-resurfacing/concrete-resurfacing-process.webp", alt: "Concrete patio surface with a fresh thin overlay being smoothed, with hand tool marks visible" },

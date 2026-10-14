@@ -71,3 +71,21 @@ Generated with the image tool for the three new service pages, at the owner's re
 | `concrete-resurfacing/concrete-resurfacing-process.webp` | `/services/concrete-resurfacing` process | 147,066 | 778×518 | 90 |
 
 Slots are smaller than the usual size where needed to meet the 150 KB limit at quality 89 or higher.
+
+## AI-generated placeholder images: aprons, sealing, exposed aggregate (2026-10-13)
+
+Generated with the image tool at the owner's request for three new service pages. These are placeholders, not photos of real work, and are to be replaced with real project photos before launch. The visible caption has been removed at the owner's request, so these images appear without a label.
+
+| File | Used on | Size (bytes) | Dimensions | Quality |
+|---|---|---:|---|---:|
+| `concrete-aprons/concrete-aprons-hero.webp` | `/services/concrete-aprons` hero | 143,628 | 768×428 | 91 |
+| `concrete-aprons/concrete-aprons-detail.webp` | `/services/concrete-aprons` detail band | 149,736 | 864×576 | 95 |
+| `concrete-aprons/concrete-aprons-process.webp` | `/services/concrete-aprons` process | 148,556 | 691×461 | 92 |
+| `concrete-sealing/concrete-sealing-hero.webp` | `/services/concrete-sealing` hero | 143,850 | 832×464 | 89 |
+| `concrete-sealing/concrete-sealing-detail.webp` | `/services/concrete-sealing` detail band | 137,004 | 864×576 | 97 |
+| `concrete-sealing/concrete-sealing-process.webp` | `/services/concrete-sealing` process | 143,032 | 778×518 | 89 |
+| `concrete-exposed-aggregate/concrete-exposed-aggregate-hero.webp` | `/services/concrete-exposed-aggregate` hero | 149,284 | 704×393 | 89 |
+| `concrete-exposed-aggregate/concrete-exposed-aggregate-detail.webp` | `/services/concrete-exposed-aggregate` detail band | 149,108 | 864×576 | 94 |
+| `concrete-exposed-aggregate/concrete-exposed-aggregate-process.webp` | `/services/concrete-exposed-aggregate` process | 148,946 | 605×403 | 91 |
+
+Some slots are smaller than the usual size, because each image was reduced until it met the 150 KB limit at quality 89 or higher.
