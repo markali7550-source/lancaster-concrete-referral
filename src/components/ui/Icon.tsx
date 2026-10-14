@@ -20,7 +20,7 @@ export function Icon({ name, className }: IconProps) {
       viewBox="0 0 24 24"
       aria-hidden="true"
       focusable="false"
-      className={className ?? "h-5 w-5"}
+      className={`${className ?? "h-5 w-5"}${name === "plus" ? " icon-plus" : ""}`}
       fill={filled ? "currentColor" : "none"}
       stroke={filled ? "none" : "currentColor"}
       strokeWidth={filled ? 0 : 2}
@@ -28,8 +28,8 @@ export function Icon({ name, className }: IconProps) {
       strokeLinejoin="round"
     >
       <path d={paths[name]} />
-      {/* The upright stroke collapses when the parent disclosure opens, so the
-          plus reads as a minus without swapping icons. */}
+      {/* The plus rotates into an x when its disclosure opens (see .icon-plus in
+          globals.css), so an open FAQ never shows a bare dash. */}
       {name === "plus" ? (
         <path className="icon-plus-upright" d="M12 5v14" />
       ) : null}
