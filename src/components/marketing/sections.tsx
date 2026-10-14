@@ -718,7 +718,7 @@ export function DecisionSupport({
               }}
               aria-hidden="true"
             >
-              <Icon name="plus" className="h-4 w-4" />
+              <Icon name="chevron" className="h-4 w-4" />
             </span>
           </summary>
           <p className="px-5 py-4 text-left text-[15px] leading-relaxed text-[color:var(--color-muted)] md:px-6">
@@ -766,7 +766,7 @@ export function FaqSection({
               }}
               aria-hidden="true"
             >
-              <Icon name="plus" className="h-4 w-4" />
+              <Icon name="chevron" className="h-4 w-4" />
             </span>
           </summary>
           <p className="px-5 py-4 text-left text-[15px] leading-relaxed text-[color:var(--color-muted)] md:px-6">

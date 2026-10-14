@@ -1,5 +1,5 @@
 interface IconProps {
-  name: "phone" | "check" | "arrow" | "shield" | "menu" | "plus";
+  name: "phone" | "check" | "arrow" | "shield" | "menu" | "chevron";
   className?: string;
 }
 
@@ -10,7 +10,7 @@ const paths: Record<IconProps["name"], string> = {
   arrow: "M5 12h14m-6-6 6 6-6 6",
   shield: "M12 3 4 6v6c0 5 3.4 8.4 8 9 4.6-.6 8-4 8-9V6Z",
   menu: "M4 7h16M4 12h16M4 17h16",
-  plus: "M5 12h14",
+  chevron: "M6 9l6 6 6-6",
 };
 
 export function Icon({ name, className }: IconProps) {
@@ -20,7 +20,7 @@ export function Icon({ name, className }: IconProps) {
       viewBox="0 0 24 24"
       aria-hidden="true"
       focusable="false"
-      className={`${className ?? "h-5 w-5"}${name === "plus" ? " icon-plus" : ""}`}
+      className={`${className ?? "h-5 w-5"}${name === "chevron" ? " icon-chevron" : ""}`}
       fill={filled ? "currentColor" : "none"}
       stroke={filled ? "none" : "currentColor"}
       strokeWidth={filled ? 0 : 2}
@@ -28,11 +28,6 @@ export function Icon({ name, className }: IconProps) {
       strokeLinejoin="round"
     >
       <path d={paths[name]} />
-      {/* The plus rotates into an x when its disclosure opens (see .icon-plus in
-          globals.css), so an open FAQ never shows a bare dash. */}
-      {name === "plus" ? (
-        <path className="icon-plus-upright" d="M12 5v14" />
-      ) : null}
     </svg>
   );
 }
