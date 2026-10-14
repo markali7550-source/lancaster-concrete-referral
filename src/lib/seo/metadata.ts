@@ -8,7 +8,6 @@ const OG_ALT = `${site.brand}, concrete service in Lancaster, South Carolina`;
  * listed second for crawlers that prefer it. Both are 1200x630.
  */
 const OG_IMAGES: { url: string; width: number; height: number; alt: string; type: string }[] = [
-  { url: "/opengraph-image.jpg", width: 1200, height: 630, alt: OG_ALT, type: "image/jpeg" },
   { url: "/opengraph-image.webp", width: 1200, height: 630, alt: OG_ALT, type: "image/webp" },
 ];
 
