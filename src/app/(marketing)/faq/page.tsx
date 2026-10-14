@@ -108,26 +108,27 @@ export default function FaqPage() {
         </p>
       </OverlayHeader>
       {/*
-        One continuous accordion: all categories render as a single mixed
-        list with no headers or gaps between them, at the owner's request.
-        The guide links survive as one compact row under the list.
+        Categories group the questions by service. Every accordion shares the
+        name "faq", so only one answer is open at a time across the page.
+        Each category closes with its guide link.
       */}
       <Section tone="soft">
-        <div className="mx-auto w-full max-w-3xl">
-          <FaqSection
-            name="faq"
-            faqs={faqCategories.flatMap((category) =>
-              category.faqs.map((faq) => ({
-                question: faq.question,
-                answer: linkify(faq.answer, faq.links),
-              })),
-            )}
-          />
-          <p className="mt-6 text-[15px] text-[color:var(--color-muted)]">
-            Related guides:{" "}
-            {faqCategories.map((category, categoryIndex) => (
-              <span key={category.id}>
-                {categoryIndex > 0 ? " · " : null}
+        <div className="mx-auto w-full max-w-3xl space-y-12">
+          {faqCategories.map((category) => (
+            <section key={category.id} aria-labelledby={`faq-${category.id}`}>
+              <h2 id={`faq-${category.id}`} className="h3">
+                {category.name}
+              </h2>
+              <div className="mt-5">
+                <FaqSection
+                  name="faq"
+                  faqs={category.faqs.map((faq) => ({
+                    question: faq.question,
+                    answer: linkify(faq.answer, faq.links),
+                  }))}
+                />
+              </div>
+              <p className="mt-5 text-[15px] text-[color:var(--color-muted)]">
                 <Link
                   href={category.more.href}
                   className="font-semibold underline underline-offset-4"
@@ -135,9 +136,9 @@ export default function FaqPage() {
                 >
                   {category.more.text}
                 </Link>
-              </span>
-            ))}
-          </p>
+              </p>
+            </section>
+          ))}
         </div>
       </Section>
 
