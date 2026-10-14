@@ -27,7 +27,7 @@ import { site } from "@/lib/env";
 
 const TITLE = `Concrete Services FAQs | ${site.brand}`;
 const DESCRIPTION =
-  "Answers about concrete driveways, patios, slabs, and repair, plus how a request moves from your form to a local team.";
+  "Answers about driveways, patios, slabs, repair, leveling, sealing, resurfacing, and more, plus how a request moves from your form to a local team.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,

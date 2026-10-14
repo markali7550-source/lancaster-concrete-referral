@@ -154,6 +154,156 @@ export const faqCategories: readonly FaqCategory[] = [
     ],
   },
   {
+    id: "concrete-leveling",
+    name: "Concrete leveling",
+    more: { text: "Read the Concrete Leveling guide", href: "/services/concrete-leveling" },
+    faqs: [
+      {
+        question: "How do I know if a sunken concrete slab can be leveled?",
+        answer:
+          "A slab that has settled at one edge, leaving a gap at a walk or step, is often a candidate for leveling. Providers look at the cause first, since water or soft soil under the slab must be addressed to keep it from settling again. Ask the provider to explain the cause before you compare quotes.",
+        links: [],
+      },
+      {
+        question: "What affects the price of concrete leveling?",
+        answer:
+          "The size of the area, how far the slab has dropped, and how much of the base or soil needs work all matter. Access to the site also plays a part. Each provider prices the scope after looking at the slab, so a first quote is not a flat rate.",
+        links: [],
+      },
+      {
+        question: "How do I request a leveling quote?",
+        answer:
+          "Send the location of the low spot and a rough size of the area through our contact page. Your request goes to one participating provider with written coverage for your area, and they confirm the scope on site.",
+        links: [{ text: "contact page", href: "/contact" }],
+      },
+    ],
+  },
+  {
+    id: "concrete-garage-coatings",
+    name: "Garage floor coatings",
+    more: { text: "Read the Garage Floor Coatings guide", href: "/services/concrete-garage-coatings" },
+    faqs: [
+      {
+        question: "What should be done before a garage floor coating is applied?",
+        answer:
+          "The floor needs to be clean, dry, and free of oil and loose paint. Cracks or flaking areas usually need repair first. Providers often check moisture and prepare the surface before recommending a coating system. Ask what preparation is included in your quote.",
+        links: [],
+      },
+      {
+        question: "How long does a garage floor coating take to cure?",
+        answer:
+          "Cure times depend on the product and the temperature, and most systems need time before vehicles can drive on them. Providers give a specific schedule with the quote. Plan for the garage to be out of use for the full period they state.",
+        links: [],
+      },
+      {
+        question: "How do I request a garage floor coating quote?",
+        answer:
+          "Use the contact page to share your garage size, the current floor condition, and your preferred finish. Your request goes to one participating provider with written coverage for your area, and they confirm the scope before work begins.",
+        links: [{ text: "contact page", href: "/contact" }],
+      },
+    ],
+  },
+  {
+    id: "concrete-resurfacing",
+    name: "Concrete resurfacing",
+    more: { text: "Read the Concrete Resurfacing guide", href: "/services/concrete-resurfacing" },
+    faqs: [
+      {
+        question: "When is resurfacing a better choice than replacement?",
+        answer:
+          "Resurfacing can work when the base slab is sound and the surface is worn, scaled, or stained. If the slab is cracked through or has settled, the problem is underneath, and repair or replacement may be needed. A provider checks the base before recommending an overlay.",
+        links: [],
+      },
+      {
+        question: "Will resurfacing change how my concrete looks?",
+        answer:
+          "Yes. An overlay gives the surface a new texture and color, so the finish is chosen before the work starts. Agree on the finish and color with your provider before you sign the quote, since they set the final appearance.",
+        links: [],
+      },
+      {
+        question: "How do I request a resurfacing quote?",
+        answer:
+          "Send the area you want resurfaced and a short note on its current condition through our contact page. Your request goes to one participating provider with written coverage for your area, and they check the base on site.",
+        links: [{ text: "contact page", href: "/contact" }],
+      },
+    ],
+  },
+  {
+    id: "concrete-aprons",
+    name: "Concrete aprons",
+    more: { text: "Read the Concrete Aprons guide", href: "/services/concrete-aprons" },
+    faqs: [
+      {
+        question: "What is a concrete apron, and why does its slope matter?",
+        answer:
+          "A concrete apron is the slab between a driveway and the street. It should slope toward the gutter so water drains away from the driveway and the home. Providers check the grade and curb height before forms go in.",
+        links: [],
+      },
+      {
+        question: "Does a damaged apron need repair or replacement?",
+        answer:
+          "Small cracks and surface flaking may be repairable, while a sunken or broken apron usually needs replacement. Damage at the curb edge often points to a drainage problem, so ask the provider to check the grade. The scope is confirmed on site.",
+        links: [],
+      },
+      {
+        question: "Do I need a permit to replace a concrete apron?",
+        answer:
+          "It depends on your town or county. Many areas require a permit when work touches the street or curb. Ask your provider whether a permit is needed and who will pull it before work begins.",
+        links: [],
+      },
+    ],
+  },
+  {
+    id: "concrete-sealing",
+    name: "Concrete sealing",
+    more: { text: "Read the Concrete Sealing guide", href: "/services/concrete-sealing" },
+    faqs: [
+      {
+        question: "What does concrete sealing protect against?",
+        answer:
+          "A sealer helps reduce staining and water absorption, and it can make cleaning easier. It does not fix cracks or a damaged surface. Sealing works best on concrete that is clean and in good condition.",
+        links: [],
+      },
+      {
+        question: "Does the concrete need to be cleaned before sealing?",
+        answer:
+          "Yes. Dirt, oil, and efflorescence should be removed before sealing, since a sealer locks in whatever is underneath. Cleaning is usually part of the sealing scope, so confirm what is included in your quote.",
+        links: [],
+      },
+      {
+        question: "How often does concrete need to be resealed?",
+        answer:
+          "Reseal intervals depend on foot and vehicle traffic, weather, and the product used. Providers can recommend a schedule after inspecting the surface. Choose the sealer finish before work begins, since it changes the look.",
+        links: [],
+      },
+    ],
+  },
+  {
+    id: "concrete-exposed-aggregate",
+    name: "Exposed aggregate",
+    more: { text: "Read the Exposed Aggregate guide", href: "/services/concrete-exposed-aggregate" },
+    faqs: [
+      {
+        question: "What is exposed aggregate concrete?",
+        answer:
+          "Exposed aggregate is a finish where the top layer of cement is removed to show the stones in the mix. It gives the surface a textured look. Stone color and size are chosen before the pour.",
+        links: [],
+      },
+      {
+        question: "Can exposed aggregate be added to an existing slab?",
+        answer:
+          "Usually not directly. Exposed aggregate is typically a new placement, or it can be applied as an overlay over a sound base. A provider checks the existing slab to see which option fits.",
+        links: [],
+      },
+      {
+        question: "How is the timing of exposed aggregate planned?",
+        answer:
+          "The top layer is removed by washing at the right point after the pour, so timing depends on weather and the mix. Providers plan the work around that window and explain it before the pour. Ask for the timing in writing with your quote.",
+        links: [],
+      },
+    ],
+  },
+  {
     id: "request-process",
     name: "How requests work",
     more: { text: "How it works in detail", href: "/how-it-works" },
