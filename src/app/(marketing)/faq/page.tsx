@@ -53,7 +53,7 @@ function linkify(answer: string, links: readonly FaqLink[]): ReactNode {
         <Link
           key={`${index}-${at}`}
           href={href}
-          className="underline underline-offset-4"
+          className="font-medium text-[color:var(--color-accent)] underline underline-offset-4 decoration-[color:var(--color-accent)]/40 transition-colors duration-150 hover:decoration-[color:var(--color-accent)]"
         >
           {text}
         </Link>,

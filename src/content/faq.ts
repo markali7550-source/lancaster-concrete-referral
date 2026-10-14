@@ -54,12 +54,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         "question": "Why use this service instead of calling contractors directly?",
         "answer": "Calling around means repeating your project to every contractor and guessing who actually covers your area. We take your details once, check them against providers with written coverage for your area, and send the request to one eligible contractor. If that contractor does not acknowledge it, the request is reassigned once.",
-        "links": [
-          {
-            "text": "send the request",
-            "href": "/how-it-works"
-          }
-        ]
+        "links": []
       },
       {
         "question": "How quickly will a provider contact me?",
@@ -69,12 +64,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         "question": "What is this website?",
         "answer": "This is a local concrete service site for Lancaster homeowners. Independent local concrete specialists do the work. We take your request once and pass it to one eligible team.",
-        "links": [
-          {
-            "text": "local concrete service site",
-            "href": "/service-disclosure"
-          }
-        ]
+        "links": []
       },
       {
         "question": "How does a request work?",
@@ -154,12 +144,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         "question": "How long before I can drive on a new driveway?",
         "answer": "Light foot traffic is often possible after about a day, but most providers keep vehicles off a new driveway for about a week. Concrete gains most of its strength over about 28 days. Your provider sets the exact schedule for the mix and the weather, so ask for it in writing.",
-        "links": [
-          {
-            "text": "new driveway",
-            "href": "/locations/lancaster-sc/concrete-driveways"
-          }
-        ]
+        "links": []
       },
       {
         "question": "Does red clay soil affect a driveway in Lancaster, SC?",
@@ -194,12 +179,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         "question": "Can an apron be poured with a new driveway?",
         "answer": "Often yes. Pouring the apron and the driveway together lets the slope and joints line up, and it can avoid a second setup. Ask the provider to show the grade on the same quote so the transition to the street is planned.",
-        "links": [
-          {
-            "text": "apron",
-            "href": "/services/concrete-aprons"
-          }
-        ]
+        "links": []
       }
     ]
   },
@@ -219,12 +199,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         "question": "What options are available for a concrete patio?",
         "answer": "Contractors typically offer broom, smooth trowel, stamped pattern, and integrally colored finishes, plus sealing on decorative work. Stamped and colored work is only offered where a participating provider has documented that capability. Finish, color, and edge detail are priced before the pour.",
-        "links": [
-          {
-            "text": "Stamped and colored work",
-            "href": "/services/concrete-patios"
-          }
-        ]
+        "links": []
       },
       {
         "question": "How do I request a patio quote?",
@@ -239,32 +214,17 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         "question": "How long should a new patio cure before furniture or a grill?",
         "answer": "Most patios can take light foot traffic within a day or two and furniture after about a week. A grill or heavy planters should wait longer, since full strength takes about 28 days. Your provider will confirm the schedule for the mix and the weather.",
-        "links": [
-          {
-            "text": "Most patios",
-            "href": "/services/concrete-patios"
-          }
-        ]
+        "links": []
       },
       {
         "question": "Does summer heat affect a patio pour in Lancaster?",
         "answer": "Hot, humid afternoons speed up setting and can dry the surface too fast, which causes cracks. Crews often schedule early morning patio pours, keep the surface damp, and use curing methods in heat. Ask your provider how they will handle the weather on pour day.",
-        "links": [
-          {
-            "text": "patio pours",
-            "href": "/locations/lancaster-sc/concrete-patios"
-          }
-        ]
+        "links": []
       },
       {
         "question": "How is stamped concrete different from a plain patio?",
         "answer": "Stamped concrete is pressed with patterned tools while it is still soft, so it can look like stone, brick, or tile. The base and mix work the same way. The stamping adds labor, so compare the pattern and finish on each quote.",
-        "links": [
-          {
-            "text": "Stamped concrete",
-            "href": "/services/stamped-concrete"
-          }
-        ]
+        "links": []
       },
       {
         "question": "How long does stamped concrete last?",
@@ -279,12 +239,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         "question": "How wide should a concrete walkway be?",
         "answer": "Many walkways are about three to four feet wide, which lets two people pass comfortably. The right width depends on use, the entry, and any steps. Your provider can suggest a width that fits the path and the landscaping.",
-        "links": [
-          {
-            "text": "Many walkways",
-            "href": "/services/concrete-walkways"
-          }
-        ]
+        "links": []
       },
       {
         "question": "How do I prevent cracks in a new walkway?",
@@ -294,12 +249,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         "question": "Why do concrete steps settle, and how is that prevented?",
         "answer": "Steps settle when the base is soft or water collects under them. Good compaction, a stable footing, and drainage away from the steps reduce movement. Ask how the base will be prepared for your concrete steps.",
-        "links": [
-          {
-            "text": "concrete steps",
-            "href": "/services/concrete-steps"
-          }
-        ]
+        "links": []
       }
     ]
   },
@@ -314,12 +264,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         "question": "What are concrete slabs commonly used for?",
         "answer": "Residential slabs and pads carry sheds, outbuildings, HVAC units, generators, and parked vehicles or trailers. We take on nonstructural work only: house foundations, footings, and engineered structural slabs are declined rather than passed to a finisher.",
-        "links": [
-          {
-            "text": "nonstructural work only",
-            "href": "/services/concrete-slabs"
-          }
-        ]
+        "links": []
       },
       {
         "question": "What should be considered before a slab project?",
@@ -339,12 +284,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         "question": "How should the base under a concrete slab be prepared?",
         "answer": "A concrete slab needs a compacted base, usually gravel or stable fill, so it resists settling. The soil should be firm, and drainage should move water away from the slab. Ask your provider what base they will install and how it will be compacted.",
-        "links": [
-          {
-            "text": "A concrete slab",
-            "href": "/services/concrete-slabs"
-          }
-        ]
+        "links": []
       },
       {
         "question": "How do I know if a sunken concrete slab can be leveled?",
@@ -369,12 +309,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         "question": "What is a concrete foundation used for?",
         "answer": "A concrete foundation supports a structure by spreading its load into the soil. Footings and foundation walls are the most common forms. Foundation work is structural, so the design has to match the building and local code.",
-        "links": [
-          {
-            "text": "concrete foundation",
-            "href": "/services/concrete-foundations"
-          }
-        ]
+        "links": []
       },
       {
         "question": "Does a foundation project need an engineer or a permit?",
@@ -399,12 +334,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         "question": "What types of concrete problems may need repair?",
         "answer": "We take on nonstructural problems on otherwise sound slabs: shrinkage cracks, surface spalling, crazing, worn finishes, and failing joint sealant. Movement, heaving, height differences across cracks, and load failure need a licensed professional assessment instead.",
-        "links": [
-          {
-            "text": "nonstructural problems",
-            "href": "/services/concrete-repair"
-          }
-        ]
+        "links": []
       },
       {
         "question": "When should concrete be repaired instead of replaced?",
@@ -424,12 +354,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         "question": "How long does a concrete repair last?",
         "answer": "A repair lasts when its cause is fixed. Cracks from settling or water keep coming back until the base or drainage is corrected. Patches can blend in, but they are not always invisible. Ask the provider what caused the damage before you compare repair quotes.",
-        "links": [
-          {
-            "text": "A repair lasts",
-            "href": "/services/concrete-repair"
-          }
-        ]
+        "links": []
       },
       {
         "question": "Can concrete be repaired during hot weather?",
@@ -459,12 +384,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         "question": "What affects the cost of resurfacing compared with replacement?",
         "answer": "Resurfacing usually costs less than replacement when the base is sound, but the finish, the area, and the prep work all change the price. Replacement costs more when the slab is failing or needs a new base. Only an on site quote sets a real number for your project.",
-        "links": [
-          {
-            "text": "Resurfacing usually costs less",
-            "href": "/services/concrete-resurfacing"
-          }
-        ]
+        "links": []
       }
     ]
   },
@@ -494,12 +414,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         "question": "How often should concrete be resealed in South Carolina?",
         "answer": "Reseal intervals depend on sun, rain, traffic, and the product used. Heat and humidity can wear sealers faster on exposed areas. A provider can inspect the surface and recommend a schedule. Watch for water that no longer beads on the surface.",
-        "links": [
-          {
-            "text": "Reseal intervals",
-            "href": "/services/concrete-sealing"
-          }
-        ]
+        "links": []
       },
       {
         "question": "How do I maintain concrete through hot Lancaster summers?",
@@ -529,12 +444,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         "question": "Can a garage floor coating handle hot tires?",
         "answer": "Some coatings soften or pick up under heat and tire weight. Ask for the product data sheet and confirm the system suits your climate and vehicles. Surface prep matters as much as the product choice.",
-        "links": [
-          {
-            "text": "Some coatings",
-            "href": "/services/concrete-garage-coatings"
-          }
-        ]
+        "links": []
       },
       {
         "question": "What is exposed aggregate concrete?",
@@ -554,12 +464,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         "question": "How do I care for exposed aggregate concrete?",
         "answer": "Sweep it regularly and rinse with water instead of harsh chemicals. Keep high pressure washing away from the stones, since it can dislodge them. Reseal if your provider recommends it to protect the mix and color.",
-        "links": [
-          {
-            "text": "Sweep it regularly",
-            "href": "/services/concrete-exposed-aggregate"
-          }
-        ]
+        "links": []
       }
     ]
   },
@@ -574,12 +479,7 @@ export const faqCategories: readonly FaqCategory[] = [
       {
         "question": "What areas do you serve?",
         "answer": "Lancaster, South Carolina, including ZIP codes 29720 and 29721. Coverage is checked against providers who have approved each area in writing, which is why the list is short. New areas are added only when a provider approves them.",
-        "links": [
-          {
-            "text": "Lancaster, South Carolina",
-            "href": "/locations/lancaster-sc"
-          }
-        ]
+        "links": []
       },
       {
         "question": "How do I know whether my location is covered?",
