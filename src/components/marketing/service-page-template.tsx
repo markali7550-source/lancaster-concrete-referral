@@ -42,6 +42,9 @@ import { site } from "@/lib/env";
  * somebody else's garage.
  */
 const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-leveling": { src: "/images/services/concrete-leveling/concrete-leveling-detail.webp", alt: "Grey concrete patio with small grout-patched holes from slab leveling work" },
+  "concrete-garage-coatings": { src: "/images/services/concrete-garage-coatings/concrete-garage-coatings-detail.webp", alt: "Glossy speckled grey epoxy garage floor with a painted yellow parking line" },
+  "concrete-resurfacing": { src: "/images/services/concrete-resurfacing/concrete-resurfacing-detail.webp", alt: "Broom-textured thin concrete overlay with a clean edge against an older cracked slab" },
   "concrete-driveways": { src: "/images/services/concrete-driveways/concrete-driveways-detail.webp", alt: "Driveway edge pitched away from the lawn with a gravel drainage margin" },
   "concrete-patios": { src: "/images/services/concrete-patios/concrete-patios-detail.webp", alt: "New concrete patio slab set between wood edge forms beside a two-story vinyl-sided house with a screened porch" },
   "concrete-slabs": { src: "/images/services/concrete-slabs/concrete-slabs-detail.webp", alt: "Precast concrete slab panels laid over a brick base beside grass" },
@@ -59,6 +62,9 @@ const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
  * slabs; owner-supplied real photographs remain the endpoint.
  */
 const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-leveling": { src: "/images/services/concrete-leveling/concrete-leveling-process.webp", alt: "Concrete sidewalk slab with small injection holes in its surface beside a flower bed" },
+  "concrete-garage-coatings": { src: "/images/services/concrete-garage-coatings/concrete-garage-coatings-process.webp", alt: "Garage floor partly coated with clear sealer, with roller marks and a paint tray at the edge" },
+  "concrete-resurfacing": { src: "/images/services/concrete-resurfacing/concrete-resurfacing-process.webp", alt: "Concrete patio surface with a fresh thin overlay being smoothed, with hand tool marks visible" },
   "concrete-driveways": {
     src: "/images/services/concrete-driveways/concrete-driveways-process.webp",
     alt: "Two workers screeding fresh concrete on a residential driveway with a long straightedge, a pickup and cones at the street",

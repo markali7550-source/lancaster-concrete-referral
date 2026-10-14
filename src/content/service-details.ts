@@ -111,4 +111,37 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
       "Nosing and broom finish",
     ],
   },
+
+  /* ------------------------------------------------------ leveling */
+  "concrete-leveling": {
+    mayInclude: [
+      "Sunken driveway slabs",
+      "Uneven sidewalks and patios",
+      "Settled slab edges at steps",
+      "Trip hazard correction at joints",
+      "Patching of drilled holes",
+    ],
+  },
+
+  /* ------------------------------------------------ garage coatings */
+  "concrete-garage-coatings": {
+    mayInclude: [
+      "Epoxy and polyurea floor coatings",
+      "Flake and decorative finishes",
+      "Crack and joint repair before coating",
+      "Moisture and surface preparation",
+      "Topcoat and recoat planning",
+    ],
+  },
+
+  /* ----------------------------------------------------- resurfacing */
+  "concrete-resurfacing": {
+    mayInclude: [
+      "Thin overlays on driveways",
+      "Patio and walkway overlays",
+      "Crack repair before overlay",
+      "Texture and color options",
+      "Sealing after overlay",
+    ],
+  },
 };

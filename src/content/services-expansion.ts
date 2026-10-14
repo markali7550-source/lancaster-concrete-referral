@@ -695,4 +695,526 @@ export const expansionServices: readonly ServiceRecord[] = [
       },
     ],
   },
+
+  {
+    slug: "concrete-leveling",
+    name: "Concrete Leveling",
+    shortName: "Concrete Leveling",
+    nameLower: "concrete leveling",
+    projectNoun: "concrete leveling",
+    state: "published",
+    intent: "Sunken, uneven, or settling slabs",
+    summary:
+      "Lifting sunken driveways, sidewalks, and patios by injecting filler under the slab, instead of replacing it.",
+    cardScope: "Sunken slabs, uneven walks and patios, settling driveways",
+    workIncluded: [
+      "Inspection of the slab and the likely cause of settling",
+      "Drilling small holes at planned points under the slab",
+      "Injecting a leveling material while the slab height is checked",
+      "Patching the holes after the lift",
+      "Site clean-up and haul-away of debris",
+    ],
+    heroSummary:
+      "Concrete leveling lifts a settled slab back toward its original height by injecting a filler through small holes drilled in the surface. It is often less disruptive than replacing a slab that has sunk at one edge, but the provider confirms whether a slab can be lifted at the site visit, and checks the cause of settling first. Request a concrete service and a local provider will look at the slab with you.",
+    sectionOrder: ["scope", "options", "process", "cost", "prepare"],
+    headings: {
+      scope: "What slab leveling can address",
+      options: "Leveling method and material choices",
+      process: "How a leveling job is sequenced",
+      cost: "What moves the price of leveling",
+      prepare: "Before the provider visits",
+      faq: "Concrete leveling questions",
+      cta: "Have a sunken slab?",
+    },
+    optionsLead:
+      "Leveling methods differ in the material used and the number of holes. The provider chooses based on the slab and the cause of settling.",
+    processLead:
+      "Leveling is usually quick once the holes are placed. The sequence below shows the order the work usually follows; the provider sets the actual dates.",
+    costLead:
+      "Leveling is often compared against replacement. The number of injection points and the size of the slab are the main drivers.",
+    ctaLead:
+      "Send photos of the sunken area and tell us where it sits. A local provider will confirm whether leveling is suitable.",
+    image: "/images/services/concrete-leveling/concrete-leveling-hero.webp",
+    imageAlt:
+      "Grey concrete driveway slab that has sunk at one edge, leaving a small gap against the curb",
+    imageCaption: "Illustration: AI-generated image. Replaced with a project photo when available.",
+    projectTypes: ["Sunken driveway", "Uneven sidewalk", "Settled patio"],
+    keyFacts: [
+      { label: "Typical use", value: "Sunken or uneven slabs" },
+      { label: "Method", value: "Injected filler under the slab" },
+    ],
+    covered: [
+      {
+        title: "Sunken driveway slabs",
+        body: "Slabs that have dropped at a joint or edge, lifted back toward their original grade.",
+      },
+      {
+        title: "Uneven walks and patios",
+        body: "Trip edges and settled sections of sidewalks and patios.",
+      },
+      {
+        title: "Gaps at steps and thresholds",
+        body: "Slabs that have settled away from a step or doorway threshold.",
+      },
+    ],
+    outOfScope: [
+      "Structural foundation repair",
+      "Full slab replacement when the slab is cracked through",
+      "Drainage and grading work beyond the slab edge",
+    ],
+    options: [
+      {
+        name: "Injection material",
+        description:
+          "Polyurethane foam or cement-based slurry. The provider chooses based on load, cure speed, and the soil.",
+      },
+      {
+        name: "Number of injection points",
+        description:
+          "More points give finer control over the lift and take more time.",
+      },
+      {
+        name: "Patch finish",
+        description:
+          "Patched holes can be matched to the surrounding color and texture.",
+      },
+    ],
+    tradeSpecs: [
+      "Small holes drilled at planned points, then patched after the lift.",
+      "Leveling material injected under the slab while its height is monitored.",
+      "Cause of settling checked first, such as soil moisture or drainage, before lifting.",
+    ],
+    process: [
+      {
+        phase: "Site visit and assessment",
+        duration: "Scheduled by provider",
+        detail:
+          "The provider checks the slab, the cause of settling, and where the holes will go.",
+      },
+      {
+        phase: "Drilling and injection",
+        duration: "Typically 1 day",
+        detail:
+          "Holes are drilled and the filler is injected while the slab height is checked.",
+      },
+      {
+        phase: "Cure and patching",
+        duration: "Several hours to a day",
+        detail: "The lifted slab is allowed to set, then the holes are patched.",
+      },
+      {
+        phase: "Final check",
+        duration: "Scheduled by provider",
+        detail: "Height and drainage are checked before the area is used again.",
+      },
+    ],
+    costFactors: [
+      {
+        factor: "Number of injection points",
+        impact: "High",
+        note: "More points mean more drilling, more material, and more time.",
+      },
+      {
+        factor: "Slab size and thickness",
+        impact: "Medium",
+        note: "Larger or thicker slabs need more material to lift evenly.",
+      },
+      {
+        factor: "Injection material",
+        impact: "Medium",
+        note: "Material type changes the cost per point and the cure time.",
+      },
+      {
+        factor: "Access and site conditions",
+        impact: "Low",
+        note: "Tight access or heavy soil can add setup time.",
+      },
+    ],
+    prepChecklist: [
+      "Note which slab has sunk and when you first noticed it",
+      "Photograph the gap or trip edge",
+      "Clear the surface around the area",
+      "Note any drainage problem near the slab",
+    ],
+    quoteQuestions: [
+      "Can this slab be lifted, or does it need replacement?",
+      "Which material is recommended, and why?",
+      "How many injection points are expected?",
+      "How will the patched holes look?",
+    ],
+    considerations: [
+      {
+        question: "Will the slab stay level?",
+        answer:
+          "Leveling can correct settling, but the cause must be addressed or the slab may settle again. The provider explains this risk before the work starts.",
+      },
+      {
+        question: "Is leveling cheaper than replacing?",
+        answer:
+          "It is often less disruptive than replacement, but the right choice depends on the slab. The provider compares the options at the visit.",
+      },
+      {
+        question: "Can leveling fix a cracked slab?",
+        answer:
+          "Cracks can be brought back into alignment, but a slab cracked through may need replacement. The provider checks the condition first.",
+      },
+      {
+        question: "When can I walk on it again?",
+        answer:
+          "The wait depends on the material used. The provider gives the wait time for the product chosen.",
+      },
+    ],
+  },
+
+  {
+    slug: "concrete-garage-coatings",
+    name: "Garage Floor Coatings",
+    shortName: "Garage Coatings",
+    nameLower: "garage floor coatings",
+    projectNoun: "garage floor coating",
+    state: "published",
+    intent: "Garage floor epoxy and coatings",
+    summary:
+      "Epoxy and polyurea coatings for garage floors that resist stains, make cleaning easier, and brighten the space.",
+    cardScope: "Epoxy and polyurea garage floors, flake systems, sealed floors",
+    workIncluded: [
+      "Surface assessment for cracks, moisture, and old coatings",
+      "Grinding or etching to open the surface for bonding",
+      "Crack and joint repair before coating",
+      "Primer and coating applied in the planned coats",
+      "Clean-up and cure-time guidance",
+    ],
+    heroSummary:
+      "A garage floor coating puts a protective layer over the slab. Epoxy and polyurea systems resist oil, salt, and staining, and decorative flakes or color give the floor a finished look. Surface preparation decides how well a coating bonds, so the provider checks the slab, moisture, and any existing coating before quoting. Request a concrete service and a local provider will confirm the right system for your garage.",
+    sectionOrder: ["scope", "options", "process", "cost", "prepare"],
+    headings: {
+      scope: "What a garage coating covers",
+      options: "Coating system and finish choices",
+      process: "How a coating job is sequenced",
+      cost: "What moves the price of a garage coating",
+      prepare: "Before the provider visits",
+      faq: "Garage coating questions",
+      cta: "Ready to coat your garage floor?",
+    },
+    optionsLead:
+      "Coating systems differ in hardness, look, and cure time. The choice affects how the floor handles cars, heat, and chemicals.",
+    processLead:
+      "Coatings only bond to a properly prepared surface, so preparation takes most of the time. The sequence below shows the usual order; the provider sets the actual dates.",
+    costLead:
+      "Garage coatings cost more per square foot than bare concrete. Preparation and the system chosen are the main drivers.",
+    ctaLead:
+      "Send the garage size, the current floor condition, and any photos. A local provider will confirm the system and the preparation it needs.",
+    image: "/images/services/concrete-garage-coatings/concrete-garage-coatings-hero.webp",
+    imageAlt:
+      "Clean two-car garage floor with a glossy grey epoxy coating and light decorative flakes",
+    imageCaption: "Illustration: AI-generated image. Replaced with a project photo when available.",
+    projectTypes: ["Two-car garage", "Single-car garage", "Workshop floor"],
+    keyFacts: [
+      { label: "Coating types", value: "Epoxy, polyurea, flake systems" },
+      { label: "Typical use", value: "Garages, workshops, storage" },
+    ],
+    covered: [
+      {
+        title: "Epoxy floor coatings",
+        body: "Solid, chemical-resistant coatings that bond to a prepared slab.",
+      },
+      {
+        title: "Flake and decorative systems",
+        body: "Colored flakes broadcast into the coating for a speckled, finished look.",
+      },
+      {
+        title: "Crack and joint repair",
+        body: "Cracks filled before coating so the surface stays even.",
+      },
+    ],
+    outOfScope: [
+      "Overlay concrete resurfacing",
+      "Garage slab replacement",
+      "Waterproofing of below-grade walls",
+    ],
+    options: [
+      {
+        name: "Coating type",
+        description:
+          "Epoxy is common for garages. Polyurea cures faster and handles more heat and moisture.",
+      },
+      {
+        name: "Finish",
+        description:
+          "Solid color, flake, or metallic. Flake hides wear and tire marks; solid color is simpler to clean.",
+      },
+      {
+        name: "Topcoat",
+        description:
+          "A clear topcoat adds gloss and stain resistance and needs recoating over time.",
+      },
+    ],
+    tradeSpecs: [
+      "Surface prepared by grinding or etching so the coating can bond.",
+      "Cracks and joints filled before coating so the surface stays even.",
+      "Primer, body coat, and topcoat applied in the sequence the system requires.",
+      "Moisture checked before coating, since moisture can cause bubbling or peeling.",
+    ],
+    process: [
+      {
+        phase: "Assessment and moisture check",
+        duration: "Scheduled by provider",
+        detail:
+          "The provider checks the slab, cracks, existing coatings, and moisture.",
+      },
+      {
+        phase: "Surface preparation",
+        duration: "Typically 1 day",
+        detail:
+          "The surface is ground or etched and cleaned to open it for bonding.",
+      },
+      {
+        phase: "Repairs and coating",
+        duration: "1 to 2 days",
+        detail:
+          "Cracks are filled, then primer and coating go on in planned coats.",
+      },
+      {
+        phase: "Cure and return",
+        duration: "Several days",
+        detail:
+          "The floor cures for the time the product requires before vehicles return.",
+      },
+    ],
+    costFactors: [
+      {
+        factor: "Surface preparation",
+        impact: "High",
+        note: "Grinding and cleaning take the most labor on most garages.",
+      },
+      {
+        factor: "Coating system",
+        impact: "Medium",
+        note: "Polyurea and specialty systems cost more than standard epoxy.",
+      },
+      {
+        factor: "Garage size",
+        impact: "Medium",
+        note: "Larger floors take more material and more time per coat.",
+      },
+      {
+        factor: "Crack and moisture repairs",
+        impact: "Medium",
+        note: "Repairs needed before coating add material and time.",
+      },
+      {
+        factor: "Topcoat and recoat schedule",
+        impact: "Low",
+        note: "Recoating adds a small ongoing cost.",
+      },
+    ],
+    prepChecklist: [
+      "Remove oil stains and loose debris where you can",
+      "Empty the garage so the floor is clear",
+      "Note any cracks, moisture, or peeling areas",
+      "Decide on a color or flake style before the visit",
+    ],
+    quoteQuestions: [
+      "Which coating system do you recommend for this slab?",
+      "How was moisture checked?",
+      "How long before vehicles can return?",
+      "What is the recoat schedule for the topcoat?",
+    ],
+    considerations: [
+      {
+        question: "Will a coating peel?",
+        answer:
+          "Coatings peel mainly when the surface is not prepared or when moisture is present. Preparation and a moisture check reduce this risk.",
+      },
+      {
+        question: "Can I park on it right away?",
+        answer:
+          "Most systems need several days before vehicles return. The provider gives the wait time for the product used.",
+      },
+      {
+        question: "Is epoxy slippery?",
+        answer:
+          "Flake finishes and textured topcoats add grip. A smooth gloss finish can be slippery when wet.",
+      },
+      {
+        question: "Does a coating need maintenance?",
+        answer:
+          "Regular sweeping and occasional recoating keep the finish looking good. The provider explains the schedule for the system chosen.",
+      },
+    ],
+  },
+
+  {
+    slug: "concrete-resurfacing",
+    name: "Concrete Resurfacing",
+    shortName: "Resurfacing",
+    nameLower: "concrete resurfacing",
+    projectNoun: "concrete resurfacing",
+    state: "published",
+    intent: "Worn surfaces and thin overlays",
+    summary:
+      "A thin new concrete overlay that renews worn driveways, patios, and walks without tearing out the existing slab.",
+    cardScope: "Worn driveways, patios, and walks; thin overlays",
+    workIncluded: [
+      "Inspection of the existing slab for cracks and movement",
+      "Cleaning and roughening the surface so the overlay can bond",
+      "Repair of cracks that would show through",
+      "Bonding agent and thin overlay applied",
+      "Texturing and curing of the new surface",
+    ],
+    heroSummary:
+      "Concrete resurfacing covers a worn slab with a thin new concrete layer. It can renew the look of a driveway, patio, or walk without full removal, when the existing slab is sound enough to bond to. The provider checks the slab first, because loose or moving slabs need repair or replacement instead. Request a concrete service and a local provider will confirm whether an overlay suits your slab.",
+    sectionOrder: ["scope", "options", "process", "cost", "prepare"],
+    headings: {
+      scope: "What a resurfacing job covers",
+      options: "Overlay finish and texture choices",
+      process: "How a resurfacing job is sequenced",
+      cost: "What moves the price of resurfacing",
+      prepare: "Before the provider visits",
+      faq: "Resurfacing questions",
+      cta: "Want to renew a worn surface?",
+    },
+    optionsLead:
+      "Overlay finishes change the look and the traction. Texture and color are chosen together.",
+    processLead:
+      "The bond depends on preparation, so the existing surface is cleaned and roughened before the overlay goes on. The sequence below shows the usual order; the provider sets the actual dates.",
+    costLead:
+      "Resurfacing usually costs less than replacement, but the condition of the existing surface decides how much preparation is needed.",
+    ctaLead:
+      "Send photos of the worn surface and its size. A local provider will tell you whether an overlay will bond.",
+    image: "/images/services/concrete-resurfacing/concrete-resurfacing-hero.webp",
+    imageAlt:
+      "Aging concrete driveway with a fresh, smooth, light-grey overlay",
+    imageCaption: "Illustration: AI-generated image. Replaced with a project photo when available.",
+    projectTypes: ["Worn driveway", "Tired patio", "Faded walkway"],
+    keyFacts: [
+      { label: "Typical use", value: "Worn or faded concrete surfaces" },
+      { label: "Overlay", value: "Thin new concrete layer" },
+    ],
+    covered: [
+      {
+        title: "Driveway overlays",
+        body: "A thin new surface over a sound driveway slab, textured for traction.",
+      },
+      {
+        title: "Patio and walk overlays",
+        body: "Renewed color and texture for patios and walkways.",
+      },
+      {
+        title: "Crack preparation",
+        body: "Cracks that would reflect through are repaired before the overlay goes on.",
+      },
+    ],
+    outOfScope: [
+      "Overlays on slabs that are moving or badly cracked",
+      "Full slab replacement",
+      "Paver or tile installation over concrete",
+    ],
+    options: [
+      {
+        name: "Texture",
+        description:
+          "Broom, smooth, or stamped texture. Texture controls traction.",
+      },
+      {
+        name: "Color",
+        description:
+          "Integral or stained color. Stain sits on top and needs upkeep.",
+      },
+      {
+        name: "Edge detail",
+        description:
+          "Feathered or formed edges, chosen to suit the surrounding slab.",
+      },
+    ],
+    tradeSpecs: [
+      "Existing surface cleaned and roughened so the overlay can bond.",
+      "Bonding agent applied before the overlay goes on.",
+      "Overlay placed in a thin layer, then textured while workable.",
+      "Control joints placed to match the existing joint pattern where possible.",
+    ],
+    process: [
+      {
+        phase: "Site visit and bond check",
+        duration: "Scheduled by provider",
+        detail:
+          "The provider checks the slab for cracks, movement, and likely bond strength.",
+      },
+      {
+        phase: "Cleaning and roughening",
+        duration: "Typically 1 day",
+        detail:
+          "The surface is cleaned and roughened so the overlay can bond.",
+      },
+      {
+        phase: "Overlay and texture",
+        duration: "Typically 1 day",
+        detail:
+          "The bonding agent and overlay are placed, then the surface is textured.",
+      },
+      {
+        phase: "Cure and seal",
+        duration: "Several days",
+        detail:
+          "The overlay cures under protection, then a sealer goes on if the provider recommends one.",
+      },
+    ],
+    costFactors: [
+      {
+        factor: "Surface condition",
+        impact: "High",
+        note: "A worn but sound slab needs less preparation than one with loose or cracked areas.",
+      },
+      {
+        factor: "Overlay area",
+        impact: "Medium",
+        note: "Larger areas take more material and more placement time.",
+      },
+      {
+        factor: "Texture and color",
+        impact: "Medium",
+        note: "Decorative texture and integral color add material and labor.",
+      },
+      {
+        factor: "Crack and edge repairs",
+        impact: "Low",
+        note: "Repairs before the overlay add a small amount of labor.",
+      },
+    ],
+    prepChecklist: [
+      "Note the surface and its approximate size",
+      "Photograph cracks, low spots, and stains",
+      "Decide on texture and color",
+      "Note any drainage problem that leaves water sitting on the surface",
+    ],
+    quoteQuestions: [
+      "Is the existing slab sound enough for an overlay?",
+      "How will the overlay bond to the old surface?",
+      "Which texture gives the traction I need?",
+      "How long before vehicles can drive on it?",
+    ],
+    considerations: [
+      {
+        question: "Will the overlay crack?",
+        answer:
+          "Thin overlays can crack if the old slab moves. Crack repair and control joints reduce this risk, and the provider explains what an overlay can and cannot prevent.",
+      },
+      {
+        question: "How long does an overlay last?",
+        answer:
+          "Lifespan depends on the surface condition, traffic, and maintenance. The provider gives an estimate for your slab.",
+      },
+      {
+        question: "Is resurfacing cheaper than replacement?",
+        answer:
+          "It can be, when the slab is sound. A failing slab usually needs replacement, and the provider will advise on that.",
+      },
+      {
+        question: "Can I resurface a stamped patio?",
+        answer:
+          "Sometimes. The provider checks the existing finish before recommending an overlay.",
+      },
+    ],
+  },
+
 ];

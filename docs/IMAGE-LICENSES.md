@@ -53,3 +53,21 @@ Each image used on the site, with its source and license basis.
 - **Rebar grid (2026-10-13, owner upload, placed in foundations detail band):** `concrete-foundations-band.webp` now shows a steel rebar grid over sandy ground (800×532, quality 89, about 175 KB, over the 150 KB limit approved for this image). Source: stock photo, file name `reinforced-foundation-pouring-concrete-construction-house-plot-land-148320994.webp`. **Pending:** the stock site, license name, and license ID are not yet recorded. The construction-site photo that was in this slot is no longer used on any page.
 
 - **Stamped concrete process (2026-10-13, owner upload, `Stamped Concrete.jpg`):** `stamped-concrete-process.webp` now shows three workers placing a stamped-pattern concrete border on a backyard patio (640×480, quality 99, 110 KB). Replaces the earlier stamping-tool photo in the process section. Source and license of this photo are not yet recorded. The stamping-tool photo is no longer used on any page.
+
+## AI-generated placeholder images (2026-10-13)
+
+Generated with the image tool for the three new service pages, at the owner's request. These are placeholders, not photos of real work. Each has a visible caption "Illustration: AI-generated image" and is to be replaced with a real project photo when one is supplied.
+
+| File | Used on | Size (bytes) | Dimensions | Quality |
+|---|---|---:|---|---|
+| `concrete-leveling/concrete-leveling-hero.webp` | `/services/concrete-leveling` hero | 142,442 | 768×428 | 91 |
+| `concrete-leveling/concrete-leveling-detail.webp` | `/services/concrete-leveling` detail band | 142,130 | 691×461 | 92 |
+| `concrete-leveling/concrete-leveling-process.webp` | `/services/concrete-leveling` process | 145,040 | 778×518 | 91 |
+| `concrete-garage-coatings/concrete-garage-coatings-hero.webp` | `/services/concrete-garage-coatings` hero | 148,566 | 1024×571 | 89 |
+| `concrete-garage-coatings/concrete-garage-coatings-detail.webp` | `/services/concrete-garage-coatings` detail band | 144,626 | 864×576 | 94 |
+| `concrete-garage-coatings/concrete-garage-coatings-process.webp` | `/services/concrete-garage-coatings` process | 148,044 | 864×576 | 93 |
+| `concrete-resurfacing/concrete-resurfacing-hero.webp` | `/services/concrete-resurfacing` hero | 149,060 | 832×464 | 89 |
+| `concrete-resurfacing/concrete-resurfacing-detail.webp` | `/services/concrete-resurfacing` detail band | 146,548 | 864×576 | 89 |
+| `concrete-resurfacing/concrete-resurfacing-process.webp` | `/services/concrete-resurfacing` process | 148,798 | 778×518 | 91 |
+
+Some of these are smaller than the usual slot size. Each was reduced until it met the 150 KB limit at quality 89 or higher.

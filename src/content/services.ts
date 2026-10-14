@@ -8,7 +8,10 @@ export type ServiceSlug =
   | "concrete-foundations"
   | "concrete-walkways"
   | "concrete-steps"
-  | "concrete-repair";
+  | "concrete-repair"
+  | "concrete-leveling"
+  | "concrete-garage-coatings"
+  | "concrete-resurfacing";
 
 export type PublicationState = "published" | "gated" | "blocked";
 
