@@ -179,7 +179,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         question: "Is stamped concrete slippery?",
         answer:
-          "Texture and sealer affect slip resistance. A lighter texture and a sealer with an anti-slip additive are common choices near pools and steps.",
+          "Texture and sealer affect slip resistance. A lighter texture and a sealer with an anti slip additive are common choices near pools and steps.",
       },
     ],
   },
@@ -1537,7 +1537,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         question: "Will sealing make concrete slippery?",
         answer:
-          "Gloss sealers can be slick when wet. Matte or slip-resistant additives reduce the risk.",
+          "Gloss sealers can be slick when wet. Matte or slip resistant additives reduce the risk.",
       },
       {
         question: "Can I seal new concrete right away?",

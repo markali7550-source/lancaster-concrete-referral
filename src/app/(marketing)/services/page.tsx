@@ -40,9 +40,9 @@ const FAQS = [
       "Yes. Many homeowners combine services, such as a new driveway with a matching front walkway or back patio. Tell us about the full project, and we will connect you with a provider who can bundle the work into a single estimate.",
   },
   {
-    question: "Are project estimates and on-site visits free?",
+    question: "Are project estimates and on site visits free?",
     answer:
-      "Requesting a quote is 100% free with zero obligation. Local providers will confirm any on-site visit details with you before they come out.",
+      "Requesting a quote is 100% free with zero obligation. Local providers will confirm any on site visit details with you before they come out.",
   },
   {
     question: "Do you handle both standard and decorative/stamped concrete?",

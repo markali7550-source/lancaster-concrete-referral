@@ -108,7 +108,7 @@ export const faqCategories: readonly FaqCategory[] = [
       },
       {
         "question": "How much does concrete cost in Lancaster, SC?",
-        "answer": "We do not publish prices. Costs depend on the size, thickness, access, base preparation, finish, removal of old concrete, and permits. Each provider prices the job after an on-site visit. Compare quotes by scope line by line, not only by the total.",
+        "answer": "We do not publish prices. Costs depend on the size, thickness, access, base preparation, finish, removal of old concrete, and permits. Each provider prices the job after an on site visit. Compare quotes by scope line by line, not only by the total.",
         "links": []
       },
       {
@@ -173,7 +173,7 @@ export const faqCategories: readonly FaqCategory[] = [
       },
       {
         "question": "Do I need a permit for a new driveway in Lancaster?",
-        "answer": "It depends on what the work touches. Changes near the street right-of-way, drainage, or property setbacks can require a permit from the City of Lancaster or Lancaster County. Do not assume none is needed. Ask the provider who pulls the permit and whether it is in the quote.",
+        "answer": "It depends on what the work touches. Changes near the street right of way, drainage, or property setbacks can require a permit from the City of Lancaster or Lancaster County. Do not assume none is needed. Ask the provider who pulls the permit and whether it is in the quote.",
         "links": []
       },
       {
@@ -248,7 +248,7 @@ export const faqCategories: readonly FaqCategory[] = [
       },
       {
         "question": "Does summer heat affect a patio pour in Lancaster?",
-        "answer": "Hot, humid afternoons speed up setting and can dry the surface too fast, which causes cracks. Crews often schedule early-morning patio pours, keep the surface damp, and use curing methods in heat. Ask your provider how they will handle the weather on pour day.",
+        "answer": "Hot, humid afternoons speed up setting and can dry the surface too fast, which causes cracks. Crews often schedule early morning patio pours, keep the surface damp, and use curing methods in heat. Ask your provider how they will handle the weather on pour day.",
         "links": [
           {
             "text": "patio pours",
@@ -268,7 +268,7 @@ export const faqCategories: readonly FaqCategory[] = [
       },
       {
         "question": "How long does stamped concrete last?",
-        "answer": "Lifespan depends on the base, the mix, the climate, and how well the surface is sealed and maintained. Stamped surfaces can show wear in high-traffic spots over time. Ask the provider to explain the expected life for your site and the care it needs.",
+        "answer": "Lifespan depends on the base, the mix, the climate, and how well the surface is sealed and maintained. Stamped surfaces can show wear in high traffic spots over time. Ask the provider to explain the expected life for your site and the care it needs.",
         "links": []
       },
       {
@@ -458,7 +458,7 @@ export const faqCategories: readonly FaqCategory[] = [
       },
       {
         "question": "What affects the cost of resurfacing compared with replacement?",
-        "answer": "Resurfacing usually costs less than replacement when the base is sound, but the finish, the area, and the prep work all change the price. Replacement costs more when the slab is failing or needs a new base. Only an on-site quote sets a real number for your project.",
+        "answer": "Resurfacing usually costs less than replacement when the base is sound, but the finish, the area, and the prep work all change the price. Replacement costs more when the slab is failing or needs a new base. Only an on site quote sets a real number for your project.",
         "links": [
           {
             "text": "Resurfacing usually costs less",
@@ -553,7 +553,7 @@ export const faqCategories: readonly FaqCategory[] = [
       },
       {
         "question": "How do I care for exposed aggregate concrete?",
-        "answer": "Sweep it regularly and rinse with water instead of harsh chemicals. Keep high-pressure washing away from the stones, since it can dislodge them. Reseal if your provider recommends it to protect the mix and color.",
+        "answer": "Sweep it regularly and rinse with water instead of harsh chemicals. Keep high pressure washing away from the stones, since it can dislodge them. Reseal if your provider recommends it to protect the mix and color.",
         "links": [
           {
             "text": "Sweep it regularly",

@@ -173,9 +173,9 @@ const records: readonly LocationServiceRecord[] = [
       },
       {
         question:
-          "How quickly can a local provider come out for an on-site estimate in Lancaster?",
+          "How quickly can a local provider come out for an on site estimate in Lancaster?",
         answer:
-          "Timing depends on the provider's schedule and the season, and it is not something we can promise. After you submit a request, the provider contacts you to talk about timing for an on-site visit.",
+          "Timing depends on the provider's schedule and the season, and it is not something we can promise. After you submit a request, the provider contacts you to talk about timing for an on site visit.",
       },
       {
         question:
@@ -187,7 +187,7 @@ const records: readonly LocationServiceRecord[] = [
         question:
           "Is the price final before a site visit?",
         answer:
-          "Usually not. The base, the drainage, and the finish all affect cost, so an on-site review is normally needed before a final figure.",
+          "Usually not. The base, the drainage, and the finish all affect cost, so an on site review is normally needed before a final figure.",
       },
     ],
   },
@@ -239,9 +239,9 @@ const records: readonly LocationServiceRecord[] = [
       },
       {
         question:
-          "How quickly can a local provider come out for an on-site estimate in Lancaster?",
+          "How quickly can a local provider come out for an on site estimate in Lancaster?",
         answer:
-          "Timing depends on the provider's schedule and the season, and it is not something we can promise. After you submit a request, the provider contacts you to talk about timing for an on-site visit.",
+          "Timing depends on the provider's schedule and the season, and it is not something we can promise. After you submit a request, the provider contacts you to talk about timing for an on site visit.",
       },
       {
         question:
@@ -253,7 +253,7 @@ const records: readonly LocationServiceRecord[] = [
         question:
           "Is the price final before a site visit?",
         answer:
-          "Usually not. Site conditions, the base, and the finish all affect cost, so an on-site review is normally needed before a final figure.",
+          "Usually not. Site conditions, the base, and the finish all affect cost, so an on site review is normally needed before a final figure.",
       },
     ],
   },
@@ -305,9 +305,9 @@ const records: readonly LocationServiceRecord[] = [
       },
       {
         question:
-          "How quickly can a local provider come out for an on-site estimate in Lancaster?",
+          "How quickly can a local provider come out for an on site estimate in Lancaster?",
         answer:
-          "Timing depends on the provider's schedule and the season, and it is not something we can promise. After you submit a request, the provider contacts you to talk about timing for an on-site visit.",
+          "Timing depends on the provider's schedule and the season, and it is not something we can promise. After you submit a request, the provider contacts you to talk about timing for an on site visit.",
       },
       {
         question:
@@ -319,7 +319,7 @@ const records: readonly LocationServiceRecord[] = [
         question:
           "Is the price final before a site visit?",
         answer:
-          "Usually not. Ground preparation, access, and finish all affect cost, so an on-site review is normally needed before a final figure.",
+          "Usually not. Ground preparation, access, and finish all affect cost, so an on site review is normally needed before a final figure.",
       },
     ],
   },
@@ -371,9 +371,9 @@ const records: readonly LocationServiceRecord[] = [
       },
       {
         question:
-          "How quickly can a local provider come out for an on-site estimate in Lancaster?",
+          "How quickly can a local provider come out for an on site estimate in Lancaster?",
         answer:
-          "Timing depends on the provider's schedule and the season, and it is not something we can promise. After you submit a request, the provider contacts you to talk about timing for an on-site visit.",
+          "Timing depends on the provider's schedule and the season, and it is not something we can promise. After you submit a request, the provider contacts you to talk about timing for an on site visit.",
       },
       {
         question:
@@ -385,7 +385,7 @@ const records: readonly LocationServiceRecord[] = [
         question:
           "Is the price final before a site visit?",
         answer:
-          "Usually not. The cause of the damage and the extent of the repair are usually clear only after an on-site review.",
+          "Usually not. The cause of the damage and the extent of the repair are usually clear only after an on site review.",
       },
     ],
   },
@@ -442,7 +442,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         question: "Is the price final before a site visit?",
         answer:
-          "Usually not. Excavation depth, soil conditions, and access all affect cost, so an on-site review is normally needed before a final figure.",
+          "Usually not. Excavation depth, soil conditions, and access all affect cost, so an on site review is normally needed before a final figure.",
       },
     ],
   },
@@ -499,7 +499,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         question: "Is the price final before a site visit?",
         answer:
-          "Usually not. Length, grade, demolition, and the joint layout all affect cost, so an on-site review is normally needed before a final figure.",
+          "Usually not. Length, grade, demolition, and the joint layout all affect cost, so an on site review is normally needed before a final figure.",
       },
     ],
   },
@@ -556,12 +556,12 @@ const records: readonly LocationServiceRecord[] = [
       {
         question: "Is stamped concrete slippery?",
         answer:
-          "It can be when wet. Ask about a texture or an anti-slip additive for the sealer, especially for steps, pool areas, and shaded patios.",
+          "It can be when wet. Ask about a texture or an anti slip additive for the sealer, especially for steps, pool areas, and shaded patios.",
       },
       {
         question: "Is the price final before a site visit?",
         answer:
-          "Usually not. Pattern complexity, area, and the sealing step all affect cost, so an on-site review is normally needed before a final figure.",
+          "Usually not. Pattern complexity, area, and the sealing step all affect cost, so an on site review is normally needed before a final figure.",
       },
     ],
   },
@@ -618,7 +618,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         question: "Is the price final before a site visit?",
         answer:
-          "Usually not. The number of treads, the height, access, and the footing all affect cost, so an on-site review is normally needed before a final figure.",
+          "Usually not. The number of treads, the height, access, and the footing all affect cost, so an on site review is normally needed before a final figure.",
       },
     ],
   },
@@ -712,7 +712,7 @@ const records: readonly LocationServiceRecord[] = [
       },
       {
         question: "Will a coating stop oil stains?",
-        answer: "A coating resists stains, but it does not make the floor stain-proof. Wiping spills promptly helps, and the provider explains what the chosen system resists.",
+        answer: "A coating resists stains, but it does not make the floor stain proof. Wiping spills promptly helps, and the provider explains what the chosen system resists.",
       },
       {
         question: "When can vehicles return to a coated garage?",
@@ -720,7 +720,7 @@ const records: readonly LocationServiceRecord[] = [
       },
       {
         question: "Is the price final before a site visit?",
-        answer: "Usually not. Preparation, the coating system, and the floor's condition all affect cost, so an on-site review is normally needed.",
+        answer: "Usually not. Preparation, the coating system, and the floor's condition all affect cost, so an on site review is normally needed.",
       },
     ],
   },
@@ -822,7 +822,7 @@ const records: readonly LocationServiceRecord[] = [
       },
       {
         question: "Is the price final before a site visit?",
-        answer: "Usually not. Removal, grade work, and the finish all affect cost, so an on-site review is normally needed.",
+        answer: "Usually not. Removal, grade work, and the finish all affect cost, so an on site review is normally needed.",
       },
     ],
   },
@@ -924,7 +924,7 @@ const records: readonly LocationServiceRecord[] = [
       },
       {
         question: "Is the price final before a site visit?",
-        answer: "Usually not. Stone type, area, and exposure method all affect cost, so an on-site review is normally needed.",
+        answer: "Usually not. Stone type, area, and exposure method all affect cost, so an on site review is normally needed.",
       },
     ],
   },
