@@ -12,21 +12,20 @@ export interface ServicesMenuItem {
 }
 
 /**
+ * "Services" is one link: the label and the arrow are children of the same
+ * anchor, so the whole padded area navigates, and one hover or focus state
+ * covers both. The panel opens on mouse hover and on keyboard focus.
+ *
  * A native <details> stayed open forever here: client-side navigation does not
  * reset it, and it has no Escape or outside-click behavior. This closes on
- * route change, Escape, and any pointer press outside the menu.
+ * route change, Escape, pointer press outside, scroll, and focus leaving.
  */
 export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {
   const [open, setOpen] = useState(false);
-  // A click on the caret pins the menu open for keyboard and touch use. Leaving
-  // the menu with a mouse still closes it, pinned or not, so it never lingers.
-  const [pinned, setPinned] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const toggleRef = useRef<HTMLButtonElement>(null);
+  const linkRef = useRef<HTMLAnchorElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pathname = usePathname();
-  // Stable id so `aria-expanded` can be paired with `aria-controls`, letting
-  // assistive tech locate the panel this caret owns.
   const panelId = `${useId()}-services-panel`;
 
   function cancelClose() {
@@ -47,21 +46,19 @@ export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {
   function handlePointerLeave(event: React.PointerEvent) {
     if (event.pointerType !== "mouse") return;
     cancelClose();
-    closeTimer.current = setTimeout(() => {
-      setPinned(false);
+    closeTimer.current = setTimeout(() => setOpen(false), 180);
+  }
+
+  /** Keyboard focus on the link opens the panel; tabbing out of the menu closes it. */
+  function handleBlur(event: React.FocusEvent) {
+    if (!containerRef.current?.contains(event.relatedTarget as Node | null)) {
       setOpen(false);
-    }, 180);
+    }
   }
 
   useEffect(() => cancelClose, []);
 
-  function closeAll() {
-    setPinned(false);
-    setOpen(false);
-  }
-
   useEffect(() => {
-    setPinned(false);
     setOpen(false);
   }, [pathname]);
 
@@ -69,20 +66,19 @@ export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {
     if (!open) return;
 
     function onPointerDown(event: PointerEvent) {
-      if (!containerRef.current?.contains(event.target as Node)) closeAll();
+      if (!containerRef.current?.contains(event.target as Node)) setOpen(false);
     }
     function onKeyDown(event: KeyboardEvent) {
       if (event.key !== "Escape") return;
-      closeAll();
-      // The focused link unmounts with the panel; return focus to the toggle
-      // so keyboard users are not stranded on <body>.
-      toggleRef.current?.focus();
+      setOpen(false);
+      // The focused panel links unmount with the panel; return focus to the
+      // parent link so keyboard users are not stranded on <body>.
+      linkRef.current?.focus();
     }
-
     // Scrolling moves the page under a stationary cursor, which can leave the
-    // menu open with no pointer movement to close it. Close it on scroll.
+    // menu open with no pointer movement to close it.
     function onScroll() {
-      closeAll();
+      setOpen(false);
     }
 
     document.addEventListener("pointerdown", onPointerDown);
@@ -101,46 +97,26 @@ export function ServicesMenu({ items }: { items: ServicesMenuItem[] }) {
       ref={containerRef}
       onPointerEnter={handlePointerEnter}
       onPointerLeave={handlePointerLeave}
+      onBlur={handleBlur}
     >
-      {/* One control, not two: the label and caret share a single hover fill
-          and focus ring. The children stay transparent so they read as one pill. */}
-      <div className="services-switch flex items-center rounded-[var(--radius-control)] transition-colors duration-150 hover:bg-[color:var(--color-accent-soft)] hover:text-[color:var(--color-accent)]">
-        {/* The label navigates; the caret only toggles the panel. */}
-        <Link
-          href="/services"
-          className="btn btn-ghost !bg-transparent !pr-0 text-[15px] font-medium"
-        >
-          Services
-        </Link>
-        <button
-          type="button"
-          ref={toggleRef}
-          className="btn btn-ghost !bg-transparent cursor-pointer !px-0.5"
-          aria-expanded={open}
-          // Only advertised while the panel is mounted: the dropdown is
-          // conditionally rendered, so pointing at the id when closed would be
-          // a dangling ARIA reference.
-          aria-controls={open ? panelId : undefined}
-          aria-haspopup="true"
-          aria-label={open ? "Hide services" : "Show services"}
-          onClick={() => {
-            if (pinned) {
-              closeAll();
-              return;
-            }
-            cancelClose();
-            setPinned(true);
-            setOpen(true);
-          }}
-        >
-          <Icon
-            name="arrow"
-            className={`h-3.5 w-3.5 transition-transform duration-150 ${
-              open ? "-rotate-90" : "rotate-90"
-            }`}
-          />
-        </button>
-      </div>
+      <Link
+        ref={linkRef}
+        href="/services"
+        aria-controls={open ? panelId : undefined}
+        onFocus={() => {
+          cancelClose();
+          setOpen(true);
+        }}
+        className="group btn btn-ghost pr-2.5 text-[15px] font-medium transition-colors duration-150 hover:bg-[color:var(--color-accent-soft)] hover:text-[color:var(--color-accent)] focus-visible:bg-[color:var(--color-accent-soft)]"
+      >
+        <span>Services</span>
+        <Icon
+          name="arrow"
+          className={`h-3.5 w-3.5 transition-transform duration-150 group-hover:translate-y-0.5 ${
+            open ? "-rotate-90" : "rotate-90"
+          }`}
+        />
+      </Link>
       {open ? (
         <div
           id={panelId}
