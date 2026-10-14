@@ -156,15 +156,16 @@ export default function ServicesPage() {
         <HowMatchingWorks />
       </Section>
 
-      <Section compact eyebrow="Out of scope" title="What we decline outright">
+      <Section compact eyebrow="SCOPE & SPECIALIZATION" title="Projects Outside Our Scope">
         <div className="card p-6">
           <p className="text-[color:var(--color-muted)]">
-            Foundation repair, structural engineering assessments, retaining
-            walls, slab jacking, material supply, and commercial contracts are
-            not served in Phase 1. These need separate demand, provider, and
-            compliance approval, and several of them need a licensed
-            professional outside our experienced local concrete teams. We would rather
-            tell you that up front than send your project to the wrong trade.
+            To ensure the highest quality results, our network focuses
+            specifically on residential concrete flatwork, installations, and
+            surface care. We do not provide major structural foundation
+            repairs, retaining walls, mudjacking/slab jacking, raw materials
+            delivery, or heavy commercial contracts. We believe in transparency
+            upfront so you can find the right trade specialist for your specific
+            project.
           </p>
         </div>
       </Section>
