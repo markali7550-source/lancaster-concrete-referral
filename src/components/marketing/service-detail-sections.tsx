@@ -42,8 +42,8 @@ export function MayInclude({
       </ul>
       <p className="mt-5 text-[13px] leading-relaxed text-[color:var(--color-muted)]">
         This list describes components commonly associated with {/^[aeiou]/i.test(serviceName) ? "an" : "a"} {serviceName}{" "}
-        project. It is informational only, and not every our local crew
-        offers every item. Confirm scope directly with your project manager, who contacts
+        project. It is informational only, and not every local provider
+        offers every item. Confirm scope directly with the provider who contacts
         you.
       </p>
     </div>

@@ -63,7 +63,7 @@ export async function generateMetadata({
   if (!location) return {};
   return pageMetadata({
     title: fitTitle(`Concrete Services in ${location.city}, SC`),
-    description: `Looking for concrete work in ${location.city}, SC? Call now or request a free on-site consultation. A project manager from our local team replies to each request.`,
+    description: `Looking for a concrete provider in ${location.city}, SC? Call now or request concrete service. A local contractor replies to each request. Availability varies.`,
     path: `/locations/${location.slug}`,
   });
 }
@@ -81,22 +81,22 @@ export default async function LocationPage({ params }: { params: Params }) {
   const faqs = [
     {
       question: `Which ${location.city} areas do you cover?`,
-      answer: `${location.city}, ${location.region}. We serve this area directly with our own local crew. A request from outside our service area gets a clear answer right away.`,
+      answer: `${location.city}, ${location.region}. Participating providers approve this area in writing. A request from outside them returns a clear answer that it is not covered, rather than being forwarded to someone who does not work there.`,
     },
     {
       question: `Do you employ concrete specialists in ${location.city}?`,
       answer:
-        "Yes. Our own concrete specialists handle every project, and our project managers answer for your pricing, schedule, and workmanship.",
+        "No. We are a local concrete service site. Every team that contacts you is an independent contractor responsible for their own licensing, insurance, pricing, and workmanship.",
     },
     {
-      question: `How quickly does our ${location.city} team respond?`,
+      question: `How quickly does a ${location.city} contractor respond?`,
       answer:
-        "We respond to each request promptly. If you have not heard from us, call our team and we will follow up right away.",
+        "Participating providers work to a contracted acknowledgment window. If the assigned contractor does not acknowledge in time, the request is reassigned once to an approved backup rather than sitting unattended.",
     },
     {
       question: `Is there a ${location.city} office I can visit?`,
       answer:
-        "We will not publish an address implying otherwise. Your project manager is your local point of contact for the work.",
+        "No, and we will not publish an address implying otherwise. We are an online service business. The contractor assigned to your project is the party with a local presence.",
     },
   ];
 
@@ -104,7 +104,7 @@ export default async function LocationPage({ params }: { params: Params }) {
     webPageNode(
       path,
       `Concrete service requests in ${location.city}, SC`,
-      `Concrete service in ${location.city}, ${location.county}.`,
+      `Service coverage for ${location.city}, ${location.county}.`,
     ),
     breadcrumbNode(path, [
       { name: "Home", path: "/" },
@@ -148,7 +148,7 @@ export default async function LocationPage({ params }: { params: Params }) {
         compact
         eyebrow="Service area"
         title={`${location.city} service area overview`}
-        lead="Please confirm your address when you request a quote, so we can confirm our service for your project."
+        lead="Requests are matched to providers who have approved coverage for your address, so confirm your address when you request a quote."
       >
         <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <li className="card flex h-full flex-col p-5">
@@ -182,7 +182,7 @@ export default async function LocationPage({ params }: { params: Params }) {
       <Section
         eyebrow="Local conditions"
         title={`What shapes concrete work in ${location.city}`}
-        lead="Notes from our crew's work in this market."
+        lead="Notes from participating provider conversations about this market."
       >
           {/*
             Replaces the generated shot that had red clay painted along the
@@ -218,7 +218,7 @@ export default async function LocationPage({ params }: { params: Params }) {
         tone="surface"
         eyebrow="Services"
         title={`Concrete services in ${location.city}`}
-        lead="Pick the closest match. The category helps us plan your visit. Your project manager scopes the whole job on site."
+        lead="Pick the closest match. The category only decides which participating providers are eligible. The contractor scopes the whole job on site."
       >
         <ProjectTypeChooser
           services={publishedServices.filter((service) =>
@@ -280,18 +280,18 @@ export default async function LocationPage({ params }: { params: Params }) {
               <DecisionSupport
                 items={[
                   {
-                    question: "Is my area served?",
-                    answer: `We take work in ${location.city}, ${location.region} today. Anything else gets a clear answer that we do not serve your address yet.`,
+                    question: "Is my area covered?",
+                    answer: `We take work in ${location.city}, ${location.region} today. Anything else returns a no coverage response and nothing is shared with a contractor.`,
                   },
                   {
                     question: "Will I be called repeatedly?",
                     answer:
-                      "One project manager handles your request from start to finish. We do not sell your details, and marketing contact is a separate optional consent.",
+                      "One contractor receives your request. We do not sell your details to a panel of bidders, and marketing contact is a separate optional consent.",
                   },
                   {
                     question: "What if my project is out of scope?",
                     answer:
-                      "Foundation, structural, and retaining wall work is outside our scope. We will tell you that plainly so you can plan the right next step.",
+                      "Foundation, structural, and retaining wall work is declined rather than handled. We will tell you that instead of passing it to a concrete finisher.",
                   },
                 ]}
               />
@@ -313,7 +313,7 @@ export default async function LocationPage({ params }: { params: Params }) {
 
       <CtaBand
         title={`Request concrete service in ${location.city}`}
-        body="Send your project details and a project manager from our local team will reply. No charge and no obligation."
+        body="Send your project details and a local service provider will reply. No charge and no obligation."
       />
 
     </>

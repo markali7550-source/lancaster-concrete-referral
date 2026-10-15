@@ -20,7 +20,7 @@ import { breadcrumbNode, buildGraph, faqNode, webPageNode } from "@/lib/schema/g
 
 const TITLE = "Concrete Services in Lancaster County, SC | Local Service";
 const DESCRIPTION =
-  "Driveways, patios, slabs, repair, foundations, walkways, stamped concrete, and steps in Lancaster, SC. Request a free on-site consultation today.";
+  "Driveways, patios, slabs, repair, foundations, walkways, stamped concrete, and steps in Lancaster, SC. Request a quote from a local provider.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,
@@ -32,27 +32,27 @@ const FAQS = [
   {
     question: "What concrete services do you offer in Lancaster?",
     answer:
-      "Our dedicated local crew performs residential concrete work in Lancaster, including driveways, patios, walkways, foundations, slab pouring, concrete repairs, and decorative stamped concrete.",
+      "Our network of independent local providers covers residential concrete work in Lancaster, including driveways, patios, walkways, foundations, slab pouring, concrete repairs, and decorative stamped concrete.",
   },
   {
     question: "Can I combine multiple concrete services into one project?",
     answer:
-      "Yes. Many homeowners combine services, such as a new driveway with a matching front walkway or back patio. Tell us about the full project, and we will bundle the work into a single written estimate.",
+      "Yes. Many homeowners combine services, such as a new driveway with a matching front walkway or back patio. Tell us about the full project, and we will connect you with a provider who can bundle the work into a single estimate.",
   },
   {
     question: "Are project estimates and on site visits free?",
     answer:
-      "Requesting a quote is free with no obligation. Our project managers will confirm any on site visit details with you before they come out.",
+      "Requesting a quote is 100% free with zero obligation. Local providers will confirm any on site visit details with you before they come out.",
   },
   {
     question: "Do you handle both standard and decorative/stamped concrete?",
     answer:
-      "Yes. We specialize in clean broom finish concrete as well as custom decorative options, including stamped textures, custom stains, and exposed aggregate.",
+      "Yes. Our providers specialize in clean broom-finish concrete as well as custom decorative options, including stamped textures, custom stains, and exposed aggregate.",
   },
   {
-    question: "Are you licensed and insured in South Carolina?",
+    question: "Are your providers licensed and insured in South Carolina?",
     answer:
-      "We will provide our license and insurance details before you sign. You can also verify them through SC LLR at any time.",
+      "Each independent provider is responsible for its own license and insurance. Confirm both directly with the provider and through SC LLR before you hire, since we make no representation about any provider's credentials.",
   },
 ];
 
@@ -95,7 +95,9 @@ export default function ServicesPage() {
           className="mt-4 max-w-2xl text-[17px] leading-relaxed"
           style={{ color: overlayBody }}
         >
-          Fourteen residential concrete services, each on its own page. Pick the service that fits your project and request a free consultation. A project manager from our local team reviews it and replies.
+          Fourteen residential concrete services, each on its own page. Pick
+          the service that matches your project and send a request. A local
+          provider reviews it and replies.
         </p>
       </OverlayHeader>
 
@@ -159,7 +161,7 @@ export default function ServicesPage() {
           alt: "Concrete poured from a mixer and worked with a shovel along a form board, a worker in orange coveralls and boots",
         }}
         eyebrow="Process"
-        title="How we schedule your project"
+        title="How a request reaches an independent provider"
       >
         <HowMatchingWorks />
       </Section>
@@ -167,12 +169,13 @@ export default function ServicesPage() {
       <Section compact eyebrow="SCOPE & SPECIALIZATION" title="Projects Outside Our Scope">
         <div className="card p-6">
           <p className="text-[color:var(--color-muted)]">
-            To deliver the highest quality results, our crew focuses
+            To ensure the highest quality results, our network focuses
             specifically on residential concrete flatwork, installations, and
             surface care. We do not provide major structural foundation
             repairs, retaining walls, mudjacking/slab jacking, raw materials
             delivery, or heavy commercial contracts. We believe in being upfront,
-            so you know exactly what we can and cannot take on for your project.
+            so you can find the right trade specialist for your specific
+            project.
           </p>
         </div>
       </Section>
@@ -186,7 +189,7 @@ export default function ServicesPage() {
       <CtaBand
         tone="section"
         title="Not sure which service fits?"
-        body="Tell us about your concrete project to request a free, no-obligation on-site consultation from our local team, or give us a call to discuss your project today."
+        body="Tell us about your concrete project to get connected with a qualified local specialist for a free, no-obligation quote, or give us a call to discuss your project today."
         formHref="/contact#quote-form"
       />
 

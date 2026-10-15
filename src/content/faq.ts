@@ -166,8 +166,8 @@ export const faqCategories: readonly FaqCategory[] = [
     "name": "Quotes, Pricing & Project Logistics",
     "faqs": [
       {
-        "question": "How does the free estimate process work?",
-        "answer": "Submit your project scope through our quick online request form or call our team directly. We review your specific project needs (dimensions, service type, location) with one of our experienced local project managers. They will contact you to confirm details, visit the site if necessary, and provide an upfront, transparent written estimate.",
+        "question": "How does the contractor matching and free estimate process work?",
+        "answer": "Submit your project scope through our quick online request form or call our team directly. We match your specific project needs (dimensions, service type, location) with an experienced, independent local concrete specialist who will contact you to confirm details, conduct an on site evaluation if necessary, and provide an upfront, transparent quote.",
         "links": [
           {
             "text": "quick online request form",
@@ -177,12 +177,12 @@ export const faqCategories: readonly FaqCategory[] = [
       },
       {
         "question": "Who handles local building permits for residential concrete flatwork in Lancaster County?",
-        "answer": "While minor flatwork repairs or ground level patio extensions often do not require complex permitting, structural foundations, public right of way driveway aprons, and large detached additions may require municipal approval. Your project manager will review your project scope and confirm all necessary Lancaster City or County building permit requirements before pouring.",
+        "answer": "While minor flatwork repairs or ground level patio extensions often do not require complex permitting, structural foundations, public right of way driveway aprons, and large detached additions may require municipal approval. Your assigned local service provider will review your project scope and confirm all necessary Lancaster City or County building permit requirements before pouring.",
         "links": []
       },
       {
         "question": "Do you serve my area?",
-        "answer": "We proudly serve homeowners and businesses in the City of Lancaster, SC, and nearby communities including Kershaw, Heath Springs, Van Wyck, and Buford, where our crew is ready to serve you.",
+        "answer": "We proudly serve homeowners and businesses in the City of Lancaster, SC, and nearby communities including Kershaw, Heath Springs, Van Wyck, and Buford, where a participating provider has approved coverage in writing.",
         "links": [
           {
             "text": "City of Lancaster, SC",
@@ -191,8 +191,8 @@ export const faqCategories: readonly FaqCategory[] = [
         ]
       },
       {
-        "question": "Are your crews licensed and insured?",
-        "answer": "Our own local concrete crews perform your work and build to South Carolina codes and industry standards. We will provide our licensing and insurance details before you sign, and you can verify them through SC LLR.",
+        "question": "Are all contractors licensed and insured?",
+        "answer": "Work is performed by independent local concrete providers, not by us. Each provider is responsible for its own licensing, bonding, and insurance, and for building to South Carolina codes and industry standards. Ask any provider for proof before you sign.",
         "links": []
       }
     ]

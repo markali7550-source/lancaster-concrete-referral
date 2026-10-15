@@ -299,9 +299,9 @@ export const overlayBody = "rgba(255,255,255,0.86)";
 export const overlayMuted = "rgba(255,255,255,0.80)";
 
 const HERO_TRUST = [
-  "Our own local crew, start to finish",
-  "Free on-site consultations",
-  "Transparent, no-hidden-fee estimates",
+  "No-obligation estimates",
+  "One independent provider, not five",
+  "Written coverage areas only",
 ];
 
 export function Hero({
@@ -567,20 +567,20 @@ export function ProjectTypeChooser({
 
 const SERVICE_AREA_CONTROLS = [
   {
-    title: "Confirmed service area",
-    body: "We confirm in writing which areas we serve. Service is never inferred from a radius drawn on a map.",
+    title: "Written coverage area",
+    body: "Participating providers confirm in writing which areas they accept work in. Coverage is never inferred from a radius drawn on a map.",
   },
   {
-    title: "Dedicated local team",
-    body: "Every request is handled by our own local concrete specialists, who respond to you directly.",
+    title: "Signed team agreement",
+    body: "Requests are only passed to independent local concrete specialists that have agreed in writing to documented response expectations.",
   },
   {
     title: "Project type",
-    body: "We confirm your project type against the work our crew performs. Anything outside that work gets a clear answer.",
+    body: "Your project type is checked against the categories a local team has agreed to take. A category nobody has accepted gets a clear answer that it is not covered.",
   },
   {
-    title: "One team, one point of contact",
-    body: "Your details stay with one project manager who works with you from the first call to the final inspection.",
+    title: "One request at a time",
+    body: "Your details go to a single participating provider rather than a list of companies bidding against each other.",
   },
 ];
 
@@ -617,9 +617,9 @@ export function ServiceAreaControls() {
       </ul>
       <p className="mt-6 text-[13.5px] leading-relaxed text-[color:var(--color-muted)]">
         These are scheduling checks only. They are not a verification of any
-        crew&apos;s license, insurance, or workmanship, and they are not a
+        provider&apos;s license, insurance, or workmanship, and they are not a
         warranty, an endorsement, or a substitute for your own checks. Confirm
-        license status, insurance, and credentials directly with our crew
+        license status, insurance, and credentials directly with the provider
         and through SC LLR before you hire.
       </p>
     </>
@@ -630,20 +630,17 @@ export function ServiceAreaControls() {
 
 const STEPS = [
   {
-    verb: "Free on-site consultation",
-    body: "Tell us what you need and where the property is. A project manager visits your property, reviews the site, and answers your questions at no cost.",
+    verb: "Tell us the project and location",
+    body: "Two fields to start: what you need poured or repaired, and where the property is.",
   },
   {
-    verb: "Transparent custom estimate",
-    body: "You receive a clear, written estimate with no hidden fees, so you know the price before any work begins.",
+    // Heading wording is fixed by the brief and must stay exact.
+    verb: "We check coverage, project type, team agreement, and current capacity.",
+    body: "Eligibility is confirmed before anything is sent, and nothing is sent if no participating provider covers the area.",
   },
   {
-    verb: "Expert concrete pour and finish",
-    body: "Our crew handles excavation, forming, the pour, and the finish, built to withstand Lancaster's heat, heavy storms, and clay soil.",
-  },
-  {
-    verb: "Final quality inspection",
-    body: "We inspect the finished work with you, complete the site cleanup, and make sure you are fully satisfied before we close the job.",
+    verb: "The independent provider contacts you",
+    body: "One independent provider follows up directly to inspect, scope, and quote. You deal with them, not with us.",
   },
 ];
 
@@ -761,8 +758,10 @@ export function AdjacentAreas({
       <div className="card p-6">
         <p className="font-semibold">Lancaster only, for now</p>
         <p className="mt-2.5 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
-          We add new South Carolina areas one at a time, once our team is ready to serve them well.
-          We would rather publish one honest service area than a map we cannot support.
+          Additional South Carolina areas are added one at a time, and only
+          once a participating provider has approved coverage there in writing.
+          We would rather publish one honest service area than a coverage map we
+          cannot support.
         </p>
       </div>
     );

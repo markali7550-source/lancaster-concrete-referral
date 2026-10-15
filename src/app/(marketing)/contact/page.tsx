@@ -64,7 +64,8 @@ export default function ContactPage() {
             Contact Our Lancaster, SC Concrete Team
           </h1>
           <p className="lede mt-5 max-w-2xl">
-            Our local project managers will confirm whether we serve your area and answer your questions before you go any further.
+            We can confirm whether we have approved coverage for your area
+            before you go any further.
           </p>
         </div>
       </div>
@@ -73,7 +74,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-10">
           <div className="text-left">
             <p className="lede max-w-prose">
-              Your inquiry goes directly to our local project managers. They can tell you whether we serve your area, what happens after you submit a request, and answer questions about your quote, schedule, or completed work.
+              Our team can tell you whether we have a local team for your area and what happens after you submit a request. Questions about a quote, a schedule, or completed work belong with the contractor assigned to you.
             </p>
             <dl className="mt-8 space-y-5">
               <div>
@@ -104,7 +105,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <dt className="eyebrow">
-                  Service area today
+                  Coverage today
                 </dt>
                 <dd className="mt-1">
                   <span className="-my-2 inline-block py-2 text-lg">

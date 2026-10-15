@@ -128,7 +128,7 @@ export async function POST(request: Request) {
       {
         result: "no_coverage",
         message:
-          "We do not serve that area yet. Nothing was sent.",
+          "No participating provider covers that area yet. Nothing was sent.",
       },
       { status: 422, headers: noStore },
     );
@@ -160,7 +160,7 @@ export async function POST(request: Request) {
       {
         result: "no_coverage",
         message:
-          "We cannot schedule that project right now. Nothing was sent.",
+          "No eligible contractor is available for that project right now. Nothing was sent to a contractor.",
       },
       { status: 422, headers: noStore },
     );

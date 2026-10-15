@@ -322,7 +322,7 @@ export function ServicePageTemplate({
                     </div>
                     <div className="mt-10">
                       <h3 className="h3">
-                        Typical specifications to confirm with your project manager
+                        Typical specifications to confirm with your provider
                       </h3>
                       <p className="mt-2 max-w-prose text-[15px] leading-relaxed text-[color:var(--color-muted)]">
                         Final mix, reinforcement, and joint layout are set for
@@ -417,7 +417,7 @@ export function ServicePageTemplate({
                   <Icon name="shield" className="h-[18px] w-[18px]" />
                 </span>
                 <p className="text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
-                  Before a request moves forward, we check the service area, the project type, and crew availability.{" "}
+                  Before a request moves forward, we check the service area, the project type, and provider availability.{" "}
                   <Link
                     href="/how-it-works"
                     className="font-semibold underline underline-offset-4"

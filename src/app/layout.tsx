@@ -13,11 +13,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.brand} | Concrete Quotes in Lancaster, SC`,
+    default: `${site.brand} | Concrete Contractor Quotes in Lancaster, SC`,
     template: `%s`,
   },
   description:
-    "Local concrete service for Lancaster, South Carolina homeowners: driveways, patios, slabs, and repair, done by our dedicated local concrete team.",
+    "Local concrete service for Lancaster, South Carolina homeowners: driveways, patios, slabs, and repair, done by independent local concrete specialists.",
   icons: { icon: "/favicon.webp", apple: "/apple-icon.webp" },
 };
 
