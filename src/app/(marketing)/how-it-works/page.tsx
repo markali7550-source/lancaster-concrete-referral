@@ -97,7 +97,7 @@ export default function HowItWorksPage() {
       </Section>
       <Section eyebrow="Our role" title="How we work">
         <div className="card p-7">
-          <p className="eyebrow-plain">Required disclosure</p>
+          <p className="eyebrow-plain text-[color:var(--color-ink)]">Required disclosure</p>
           {PUBLIC_DISCLOSURE_PARAGRAPHS.map((paragraph) => (
             <p
               key={paragraph}
