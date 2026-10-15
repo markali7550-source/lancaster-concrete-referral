@@ -3,7 +3,7 @@ import { Logo } from "@/components/layout/Logo";
 import { publishedLocations } from "@/content/locations";
 import { publishedServices } from "@/content/services";
 import { site } from "@/lib/env";
-import { SC_LLR_URL } from "@/lib/seo/disclosure";
+import { FOOTER_DISCLOSURE, SC_LLR_URL } from "@/lib/seo/disclosure";
 
 /** Main services shown in the footer. The full list lives at /services. */
 const FOOTER_SERVICE_SLUGS = [
@@ -150,6 +150,12 @@ export function ComplianceFooter() {
           </nav>
         </div>
 
+        <p
+          className="mt-12 rounded-[12px] border p-4 text-[13px] font-medium leading-relaxed"
+          style={{ borderColor: "var(--color-line)" }}
+        >
+          {FOOTER_DISCLOSURE}
+        </p>
 
         <div className="mt-8 flex flex-col gap-2 text-[13px] text-[color:var(--color-muted)] lg:flex-row lg:items-center lg:justify-between">
           <p>
