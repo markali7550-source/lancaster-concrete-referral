@@ -289,8 +289,9 @@ export function QuoteForm({
           Your request is with our team
         </h3>
         <p className="mt-3 text-[color:var(--color-muted)]">
-          An independent local service provider serving your area will contact you
-          directly to discuss pricing and scheduling.
+          Thank you! Our team has received your request and is coordinating with a
+          trusted local Lancaster concrete contractor. They will contact you shortly
+          to provide your free estimate.
         </p>
         <a href="/thank-you" className="btn btn-primary mt-6 w-full sm:w-auto">
           What happens next
