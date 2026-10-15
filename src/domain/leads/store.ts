@@ -46,11 +46,28 @@ export interface LeadRecord {
   routing: RoutingDecision | null;
 }
 
-const HASH_SECRET = process.env.LEAD_HASH_SECRET ?? "dev-only-hash-secret";
+const DEV_HASH_SECRET = "dev-only-hash-secret";
+
+/**
+ * Resolved per call, not at module load: `next build` runs with
+ * NODE_ENV=production, and a load-time throw would fail the build even though
+ * no lead is hashed there. In production an unset secret fails the request
+ * instead of silently hashing contact details with a public value.
+ */
+function hashSecret(): string {
+  const secret = process.env.LEAD_HASH_SECRET;
+  if (secret && secret.length > 0) return secret;
+  if (process.env.NODE_ENV === "production") {
+    throw new Error(
+      "LEAD_HASH_SECRET is not set. Set a long random value in the hosting environment before accepting leads (see DEPLOY-GUIDE.md).",
+    );
+  }
+  return DEV_HASH_SECRET;
+}
 
 export function hashContact(value: string | null | undefined): string | null {
   if (!value) return null;
-  return createHash("sha256").update(`${HASH_SECRET}:${value}`).digest("hex");
+  return createHash("sha256").update(`${hashSecret()}:${value}`).digest("hex");
 }
 
 /**

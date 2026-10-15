@@ -28,12 +28,20 @@ const nextConfig: NextConfig = {
         headers: [
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-          // X-Frame-Options is intentionally omitted: it has no allowlist and
-          // blocks the sandbox preview iframe. frame-ancestors is the modern
-          // equivalent and accepts a list. Tighten to 'self' before launch.
+          // Clickjacking protection. Only this site may frame its own pages.
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
           {
             key: "Content-Security-Policy",
-            value: "frame-ancestors 'self' https://*.e2b.app",
+            value: "frame-ancestors 'self'",
+          },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=31536000; includeSubDomains",
+          },
+          // Features this site does not use are switched off for every visitor.
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=(), payment=()",
           },
         ],
       },

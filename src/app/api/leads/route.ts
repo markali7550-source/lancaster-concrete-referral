@@ -1,3 +1,4 @@
+import { isIP } from "node:net";
 import { NextResponse } from "next/server";
 import { approvedZips } from "@/content/locations";
 import { intakeEnabled } from "@/lib/env/flags";
@@ -34,6 +35,22 @@ function rateLimited(key: string): boolean {
 
 const noStore = { "Cache-Control": "no-store" } as const;
 
+/**
+ * Rate-limit key. Only headers the Vercel edge sets are trusted:
+ * `x-vercel-forwarded-for` and `x-real-ip` are written by the platform, while
+ * a client can send any `x-forwarded-for` it likes. Each value must parse as an
+ * IP address before it is used as a key. If neither header is present (for
+ * example, self-hosted behind an untrusted proxy), every such request shares
+ * one "unknown" bucket. That is strict, not spoofable.
+ */
+function clientIp(request: Request): string {
+  for (const name of ["x-vercel-forwarded-for", "x-real-ip"]) {
+    const candidate = request.headers.get(name)?.split(",")[0]?.trim();
+    if (candidate && isIP(candidate) !== 0) return candidate;
+  }
+  return "unknown";
+}
+
 export async function POST(request: Request) {
   if (!intakeEnabled()) {
     return NextResponse.json(
@@ -46,8 +63,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const clientKey =
-    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "local";
+  const clientKey = clientIp(request);
   if (rateLimited(clientKey)) {
     return NextResponse.json(
       { error: "rate_limited" },
