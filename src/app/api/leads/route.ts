@@ -10,6 +10,12 @@ import {
 } from "@/domain/leads/store";
 import { routeLead } from "@/domain/routing/engine";
 import {
+  sendLeadNotification,
+  type LeadEmailInput,
+  type LeadOutcome,
+} from "@/domain/notifications/lead-email";
+import { randomUUID } from "node:crypto";
+import {
   leadRequestSchema,
   normalizeEmail,
   normalizePhone,
@@ -122,8 +128,29 @@ export async function POST(request: Request) {
   }
 
   const data = parsed.data;
+  const submittedAt = new Date();
+
+  // Every valid submission reaches the owner, including ones with no coverage.
+  // Duplicates and replays are skipped below, so one visitor cannot flood the inbox.
+  const notify = (outcome: LeadOutcome, leadId: string) =>
+    sendLeadNotification({
+      leadId,
+      submittedAt,
+      outcome,
+      serviceSlug: data.serviceSlug,
+      postalCode: data.postalCode,
+      fullName: data.fullName,
+      contactPreference: data.contactPreference,
+      phone: data.phone,
+      email: data.email,
+      note: data.note,
+      marketingConsent: data.marketingConsent,
+      consentVersion: data.consentVersion,
+      sourcePath: data.sourcePath,
+    } satisfies LeadEmailInput);
 
   if (!approvedZips.has(data.postalCode)) {
+    await notify("no_coverage", `nocov-${randomUUID()}`);
     return NextResponse.json(
       {
         result: "no_coverage",
@@ -156,6 +183,7 @@ export async function POST(request: Request) {
   });
 
   if (!decision.assignedPartnerId) {
+    await notify("no_coverage", `nocov-${randomUUID()}`);
     return NextResponse.json(
       {
         result: "no_coverage",
@@ -186,6 +214,8 @@ export async function POST(request: Request) {
       routing: decision,
     },
   });
+
+  await notify("routed", record.id);
 
   return NextResponse.json(
     { leadId: record.id, state: record.state },
