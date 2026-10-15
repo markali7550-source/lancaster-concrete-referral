@@ -150,7 +150,7 @@ export default async function LocationPage({ params }: { params: Params }) {
         title={`${location.city} service area overview`}
         lead="Requests are matched to providers who have approved coverage for your address, so confirm your address when you request a quote."
       >
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <li className="card flex h-full flex-col p-5">
             <h3 className="font-semibold">Communities</h3>
             <p className="mt-1.5 text-sm leading-relaxed text-[color:var(--color-muted)]">
@@ -201,7 +201,7 @@ export default async function LocationPage({ params }: { params: Params }) {
             sizes="(min-width: 1024px) 80rem, 100vw"
             className="mb-8 h-56 w-full rounded-[12px] object-cover md:h-72"
           />
-        <ul className="grid gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
           {location.localEvidence.map((item) => (
             <li
               key={item}
@@ -260,7 +260,7 @@ export default async function LocationPage({ params }: { params: Params }) {
         eyebrow="Request Concrete Service"
         title={`Tell us about your ${location.city} project`}
       >
-        <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
           <div className="w-full max-w-xl">
             <QuoteForm
               services={publishedServices.map((s) => ({

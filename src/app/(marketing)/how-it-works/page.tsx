@@ -107,7 +107,7 @@ export default function HowItWorksPage() {
             </p>
           ))}
         </div>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="card p-6">
             <p className="font-semibold">We do</p>
             <ul className="mt-2 inline-block list-disc space-y-1.5 pl-5 text-left text-sm text-[color:var(--color-muted)] lg:block">

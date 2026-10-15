@@ -71,7 +71,7 @@ export default function ContactPage() {
       </div>
       <Section>
         <h2 className="sr-only">Contact details and service request</h2>
-        <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-10">
           <div className="text-left">
             <p className="lede max-w-prose">
               Our team can tell you whether we have a local team for your area and what happens after you submit a request. Questions about a quote, a schedule, or completed work belong with the contractor assigned to you.
@@ -97,7 +97,7 @@ export default function ContactPage() {
                 <dd className="mt-1">
                   <a
                     href={`mailto:${site.email}`}
-                    className="-my-2 inline-block py-2 text-lg"
+                    className="-my-2 inline-block py-2 text-lg [overflow-wrap:anywhere]"
                   >
                     {site.email}
                   </a>

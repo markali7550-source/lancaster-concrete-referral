@@ -19,7 +19,7 @@ export function FaqAccordion({ faqs }: { faqs: readonly FaqAccordionItem[] }) {
   const baseId = useId();
 
   return (
-    <div className="grid gap-2">
+    <div className="grid grid-cols-1 gap-2">
       {faqs.map((faq, index) => {
         const isOpen = openIndex === index;
         const buttonId = `${baseId}-question-${index}`;
@@ -57,7 +57,7 @@ export function FaqAccordion({ faqs }: { faqs: readonly FaqAccordionItem[] }) {
               role="region"
               aria-labelledby={buttonId}
               inert={!isOpen}
-              className={`grid transition-[grid-template-rows] duration-300 ease-out motion-reduce:transition-none ${
+              className={`grid grid-cols-1 transition-[grid-template-rows] duration-300 ease-out motion-reduce:transition-none ${
                 isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
               }`}
             >

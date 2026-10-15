@@ -45,7 +45,7 @@ export function LegalPage({
       </div>
 
       <div className="container-page py-14">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,44rem)_1fr]">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,44rem)_1fr]">
           <article className="space-y-6 text-[15.5px] leading-relaxed text-[color:var(--color-muted)] [&_a]:underline [&_a]:underline-offset-4 [&_h2]:mt-12 [&_h2]:text-[1.25rem] [&_h2]:font-semibold [&_h2]:text-[color:var(--color-ink)] [&_li]:ml-5 [&_li]:list-disc [&_ul]:space-y-2">
             {children}
           </article>

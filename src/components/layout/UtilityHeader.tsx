@@ -115,7 +115,7 @@ export function UtilityHeader() {
               <Link href="/contact" className="block rounded-[10px] px-3 py-2.5 text-[15px]">
                 Contact
               </Link>
-              <div className="mt-2 grid gap-2 border-t p-2 hairline">
+              <div className="mt-2 grid grid-cols-1 gap-2 border-t p-2 hairline">
                 <DynamicPhone
                   fallbackDisplay={site.phoneDisplay}
                   fallbackE164={site.phoneE164}

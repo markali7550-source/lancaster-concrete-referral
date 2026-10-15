@@ -126,7 +126,7 @@ export function ServiceHero({
       </ul>
       <div
         id="hero-actions"
-        className="mt-7 grid w-full max-w-sm gap-3 lg:max-w-none lg:grid-cols-[repeat(2,minmax(0,15rem))]"
+        className="mt-7 grid grid-cols-1 w-full max-w-sm gap-3 lg:max-w-none lg:grid-cols-[repeat(2,minmax(0,15rem))]"
       >
         <DynamicPhone
           fallbackDisplay={site.phoneDisplay}
@@ -155,7 +155,7 @@ export function KeyFacts({ facts }: { facts: { label: string; value: string }[] 
       style={{ borderColor: "var(--color-line)", backgroundColor: "var(--color-surface)" }}
     >
       <div className="container-page">
-        <dl className="grid auto-rows-fr gap-3 py-6 sm:grid-cols-2 lg:grid-cols-4">
+        <dl className="grid grid-cols-1 auto-rows-fr gap-3 py-6 sm:grid-cols-2 lg:grid-cols-4">
           {facts.map((fact) => (
             <div
               key={fact.label}
@@ -224,8 +224,8 @@ export function ScopeColumns({
   // 1440px — three words a line. The list stays single-column from lg up; only
   // the list/aside split happens at xl.
   return (
-    <div className="grid gap-6 xl:grid-cols-[1.6fr_1fr]">
-      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+    <div className="grid grid-cols-1 gap-6 xl:grid-cols-[1.6fr_1fr]">
+      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
         {covered.map((item) => (
           <li key={item.title} className="card p-6">
             <div className="flex flex-col items-center gap-2.5 text-center lg:flex-row lg:items-stretch lg:gap-3 lg:text-left">
@@ -271,7 +271,7 @@ export function OptionsList({
   options: { name: string; description: string }[];
 }) {
   return (
-    <dl className="grid gap-x-10 gap-y-6 sm:grid-cols-2">
+    <dl className="grid grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-2">
       {options.map((option) => (
         <div
           key={option.name}
@@ -299,7 +299,7 @@ export function Timeline({
     /* Two-column grid per row: a fixed marker track and the card. The rail is a
        single element spanning the whole list, centered on the marker track, so
        every circle lands on the same axis at every width. */
-    <ol className="relative grid gap-5">
+    <ol className="relative grid grid-cols-1 gap-5">
       <span
         aria-hidden="true"
         className="absolute bottom-0 left-[0.75rem] top-0 w-px -translate-x-1/2"
@@ -406,7 +406,7 @@ export function PrepColumns({
   questions: string[];
 }) {
   return (
-    <div className="grid gap-6 sm:grid-cols-2">
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
       <div className="card p-6">
         <p className="font-semibold">Before the estimate visit</p>
         <ul className="mt-4 space-y-3 text-sm">
@@ -475,7 +475,7 @@ export function RelatedServices({
   // column count goes straight from 1 to 3. A 2-column step stranded the third
   // card beside an empty cell on every tablet-width screen.
   return (
-    <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {others.map((service) => (
         <li key={service.slug}>
           <Link

@@ -227,7 +227,7 @@ export function ServicePageTemplate({
       <InPageNav items={navItems} />
 
       <div className="container-page">
-        <div className="grid gap-6 lg:grid-cols-12 lg:gap-12">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-12">
           {/* ---------------------------------------------------- Main column */}
           <div className="min-w-0 lg:col-span-7 xl:col-span-8">
             {locationLayout ? (
@@ -287,7 +287,7 @@ export function ServicePageTemplate({
                     </div>
                     <div className="mt-10">
                       <h3 className="h3">What we include</h3>
-                      <ol className="mt-5 grid gap-3 sm:grid-cols-2">
+                      <ol className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
                         {service.workIncluded.map((step, index) => (
                           <li
                             key={step}
@@ -328,7 +328,7 @@ export function ServicePageTemplate({
                         Final mix, reinforcement, and joint layout are set for
                         each job during the site visit.
                       </p>
-                      <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+                      <ul className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
                         {service.tradeSpecs.map((spec) => (
                           <li
                             key={spec}

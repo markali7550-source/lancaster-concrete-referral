@@ -374,7 +374,7 @@ export function Hero({
 
             <div
               id="hero-actions"
-              className="mt-8 grid w-full max-w-sm gap-3 lg:max-w-none lg:grid-cols-[repeat(2,minmax(0,15rem))]"
+              className="mt-8 grid grid-cols-1 w-full max-w-sm gap-3 lg:max-w-none lg:grid-cols-[repeat(2,minmax(0,15rem))]"
             >
               <DynamicPhone
                 fallbackDisplay={site.phoneDisplay}
@@ -418,7 +418,7 @@ export function Hero({
         backgroundColor: "var(--color-surface)",
       }}
     >
-      <div className="container-page grid items-center gap-10 py-14 md:py-20 lg:grid-cols-12 lg:gap-16 lg:py-24">
+      <div className="container-page grid grid-cols-1 items-center gap-10 py-14 md:py-20 lg:grid-cols-12 lg:gap-16 lg:py-24">
         <div className="lg:col-span-7">
           <p className="eyebrow">
             {locationCue}
@@ -428,7 +428,7 @@ export function Hero({
 
           <div
             id="hero-actions"
-            className="mt-8 grid w-full max-w-sm gap-3 lg:max-w-none lg:grid-cols-2"
+            className="mt-8 grid grid-cols-1 w-full max-w-sm gap-3 lg:max-w-none lg:grid-cols-2"
           >
             <DynamicPhone
               fallbackDisplay={site.phoneDisplay}
@@ -502,7 +502,7 @@ export function ProjectTypeChooser({
   images?: ProjectTypeImageMap;
 }) {
   return (
-    <ul className="grid gap-5 sm:grid-cols-2">
+    <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2">
       {services.map((service) => {
         const image = images?.[service.slug];
 
@@ -587,7 +587,7 @@ const SERVICE_AREA_CONTROLS = [
 export function ServiceAreaControls() {
   return (
     <>
-      <ul className="grid gap-px overflow-hidden rounded-[var(--radius-card)] border sm:grid-cols-2"
+      <ul className="grid grid-cols-1 gap-px overflow-hidden rounded-[var(--radius-card)] border sm:grid-cols-2"
         style={{
           borderColor: "var(--color-line-soft)",
           backgroundColor: "var(--color-line-soft)",

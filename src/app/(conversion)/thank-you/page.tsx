@@ -29,7 +29,7 @@ const STEPS = [
 export default function ThankYouPage() {
   return (
     <div className="container-page py-16 md:py-24">
-      <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
         <div className="text-center lg:text-left">
           <p className="eyebrow">Request received</p>
           <h1 className="h1 mt-4">Thank you! Your request has been received.</h1>

@@ -72,7 +72,7 @@ export default function LocationsPage() {
         title="Where we currently take quote requests"
         lead="Every area below has a participating provider who has confirmed in writing that they accept work there."
       >
-        <div className="grid gap-x-12 gap-y-6 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-x-12 gap-y-6 sm:grid-cols-2">
           <div>
             <h3 className="text-[22px] font-semibold leading-snug">
               How an area gets added
@@ -107,7 +107,7 @@ export default function LocationsPage() {
             <li key={location.slug}>
               <Link
                 href={`/locations/${location.slug}`}
-                className="group card card-interactive grid overflow-hidden transition-colors duration-300 hover:border-[var(--color-accent)] sm:grid-cols-[minmax(0,300px)_1fr]"
+                className="group card card-interactive grid grid-cols-1 overflow-hidden transition-colors duration-300 hover:border-[var(--color-accent)] sm:grid-cols-[minmax(0,300px)_1fr]"
               >
                 {/*
                   Same file as the hero on /locations/[city] (location.heroImage),

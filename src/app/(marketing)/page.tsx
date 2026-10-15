@@ -248,7 +248,7 @@ export default function HomePage() {
           {SERVICE_DISCLOSURE}
         </p>
 
-        <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
           <div className="w-full max-w-xl">
             <QuoteForm
               headingLevel="h2"
