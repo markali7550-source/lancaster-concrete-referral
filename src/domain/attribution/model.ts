@@ -2,8 +2,8 @@
  * §5.2 attribution contract — every field the lead request may carry.
  *
  * Plain type on purpose: this module is imported by client code (the attribution
- * bootstrap and the quote form), so it must not pull in zod. The zod schema that
- * validates the same shape lives in `snapshot-schema.ts`, server side only.
+ * bootstrap and the quote form), so it must not pull in zod. Server-side
+ * validation of the lead request lives in `src/lib/validation/lead.ts`.
  */
 export interface AttributionSnapshot {
   visitorId?: string;

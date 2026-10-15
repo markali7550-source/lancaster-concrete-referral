@@ -138,17 +138,3 @@ export function commitLead({ idempotencyKey, lead }: CommitInput): LeadRecord {
   }
   return record;
 }
-
-export function outboxSnapshot(): readonly OutboxEvent[] {
-  return outbox;
-}
-
-export function leadCount(): number {
-  return leads.size;
-}
-
-export function resetStoreForTests(): void {
-  leads.clear();
-  idempotency.clear();
-  outbox.length = 0;
-}
