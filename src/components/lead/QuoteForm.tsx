@@ -303,12 +303,12 @@ export function QuoteForm({
   if (status === "no_coverage") {
     return (
       <div id={formId} className="card scroll-mt-32 p-6 md:p-8" role="status">
-        <p className="eyebrow">No provider covers that area yet</p>
+        <p className="eyebrow">No contractor covers that area yet</p>
         <h3 className="mt-2 text-2xl font-semibold">
           Your area isn&apos;t covered yet
         </h3>
         <p className="mt-3 text-[color:var(--color-muted)]">
-          Nothing was sent to a contractor. We only send requests to providers
+          Nothing was sent to a contractor. We only send requests to contractors
           who have confirmed in writing that they cover your area, so we would rather tell you
           plainly than pass your details to someone who cannot help.
         </p>
@@ -486,7 +486,7 @@ export function QuoteForm({
                   notification it could never send now says what is true. */}
               <p className="text-sm font-semibold">Not covered yet</p>
               <p className="mt-1.5 text-sm text-[color:var(--color-muted)]">
-                No participating provider has confirmed that area in writing,
+                No partner contractor has confirmed that area in writing,
                 so a request there cannot be served today. You can still
                 continue, coverage is rechecked on submit and nothing is sent
                 to a contractor unless it passes, or call {fallbackDisplay} to

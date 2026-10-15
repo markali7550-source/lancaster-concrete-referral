@@ -132,7 +132,7 @@ export default function FaqPage() {
 
       <CtaBand
         title="Still have questions?"
-        body="Call our team and we will answer directly, or submit a request and let one eligible contractor take it from there."
+        body="Call our team and we will answer directly, or submit a request and let one available contractor take it from there."
         showFormLink={false}
       />
     </>

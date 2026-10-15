@@ -140,7 +140,7 @@ export function ServiceHero({
         </a>
       </div>
       <p className="mt-3 text-xs" style={{ color: overlayMuted }}>
-        No charge to request a quote. Independent local providers set their own prices.
+        No charge to request a quote. Independent local contractors set their own prices.
       </p>
     </OverlayHeader>
   );
@@ -450,7 +450,7 @@ export function PrepColumns({
         </ul>
         <p className="mt-5 border-t pt-4 text-xs leading-relaxed text-[color:var(--color-muted)] hairline">
           Pricing, specification, scheduling, and warranty sit with the
-          independent contractor assigned to your project.
+          licensed local contractor assigned to your project.
         </p>
       </div>
     </div>

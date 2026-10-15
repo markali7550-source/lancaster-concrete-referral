@@ -75,7 +75,7 @@ export default async function ComboPage({ params }: { params: Params }) {
   const locationLayout: LocationLayout = {
     quoteTitle: "Request a quote",
     quoteBody:
-      "Tell us about your project and where it is. A local provider contacts you to confirm the scope and give you a quote directly.",
+      "Tell us about your project and where it is. A local contractor contacts you to confirm the scope and give you a quote directly.",
     climateTitle: soil.title,
     climate: soil.paragraphs,
     neighborhoodsTitle: "Communities near Lancaster",
@@ -156,7 +156,7 @@ export default async function ComboPage({ params }: { params: Params }) {
         ctaBody={serviceRecord.ctaLead}
         defaultServiceSlug={serviceRecord.slug}
         callCardTitle="Questions before you request a quote?"
-        callCardBody={`Call to ask whether a local provider serves your address in ${location.city}, ${location.region}.`}
+        callCardBody={`Call to ask whether a local contractor serves your address in ${location.city}, ${location.region}.`}
       />
       </div>
     </>

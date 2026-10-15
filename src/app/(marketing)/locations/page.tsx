@@ -70,7 +70,7 @@ export default function LocationsPage() {
       <Section
         eyebrow="Coverage"
         title="Where we currently take quote requests"
-        lead="Every area below has a participating provider who has confirmed in writing that they accept work there."
+        lead="Every area below is served by a licensed local contractor our team has reviewed."
       >
         <div className="grid grid-cols-1 gap-x-12 gap-y-6 sm:grid-cols-2">
           <div>
@@ -78,7 +78,7 @@ export default function LocationsPage() {
               How an area gets added
             </h3>
             <p className="mt-1.5 max-w-[48ch] text-[16px] leading-relaxed text-[color:var(--color-muted)]">
-              A city appears here only once a provider has approved it in
+              A city appears here only once a contractor has approved it in
               writing and the page has its own local content. We do not draw a
               radius on a map and call it coverage.
             </p>
@@ -89,7 +89,7 @@ export default function LocationsPage() {
             </h3>
             <p className="mt-1.5 max-w-[48ch] text-[16px] leading-relaxed text-[color:var(--color-muted)]">
               Submit a request anyway. If nobody covers your address we tell you
-              plainly rather than passing your details to a provider who cannot
+              plainly rather than passing your details to a contractor who cannot
               help.
             </p>
           </div>
@@ -128,7 +128,7 @@ export default function LocationsPage() {
                   </h3>
                   <p className="mt-2 flex-1 text-[14px] leading-relaxed text-[color:var(--color-muted)]">
                     Driveways, patios, slabs and repair served by independent
-                    providers covering {location.city}.
+                    contractors covering {location.city}.
                   </p>
                   <span
                     className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold"
@@ -146,7 +146,7 @@ export default function LocationsPage() {
       </Section>
       <CtaBand
         title="Ready to request concrete service?"
-        body="Choose your city above, or send your project details and we will check whether a local independent provider covers your area."
+        body="Choose your city above, or send your project details and we will check whether a licensed local contractor covers your area."
         formHref="/contact#quote-form"
       />
     </>

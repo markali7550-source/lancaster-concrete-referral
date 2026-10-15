@@ -14,7 +14,7 @@ export const metadata: Metadata = pageMetadata({
 const STEPS = [
   {
     title: "Request reviewed",
-    body: "We check your location and project type against participating providers with approved coverage.",
+    body: "Our team reviews your location and project type.",
   },
   {
     title: "Local specialist contacts you",
@@ -22,7 +22,7 @@ const STEPS = [
   },
   {
     title: "Site visit and quote",
-    body: "The contractor matched to your area arranges a site visit and gives you a quote. Pricing and the contract are between you and that contractor.",
+    body: "A matched local contractor contacts you directly to schedule a free on-site consultation and provide a clear estimate.",
   },
 ];
 
@@ -34,8 +34,7 @@ export default function ThankYouPage() {
           <p className="eyebrow">Request received</p>
           <h1 className="h1 mt-4">Thank you! Your request has been received.</h1>
           <p className="lede mt-5">
-            One independent local service provider will contact you directly. We are not a
-            call center, and we do not act as the provider.
+            Our team coordinates your request and connects you with a licensed local contractor, who will reach out directly.
           </p>
           <div className="mx-auto mt-8 flex w-full max-w-sm flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center lg:mx-0 lg:justify-start">
             <a href={`tel:${site.phoneE164}`} className="btn btn-primary">
@@ -69,9 +68,7 @@ export default function ThankYouPage() {
             ))}
           </ol>
           <p className="mt-6 text-sm text-[color:var(--color-muted)]">
-            If the provider does not acknowledge within our contracted window, the request is
-            reassigned once to an approved backup. The team that does the work is independent
-            and contracts with you directly.
+            If we cannot reach you promptly, our team follows up. Your contractor contracts with you directly for the work.
           </p>
         </div>
       </div>

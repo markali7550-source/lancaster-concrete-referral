@@ -63,7 +63,7 @@ export const LOCAL_SOIL_BY_SERVICE: Record<string, { title: string; paragraphs: 
     "title": "Walkways in Lancaster: heave and edge movement",
     "paragraphs": [
       "A walk on red clay moves with the ground. When the soil wets and dries, the slab can rise at the joints or sink where water sits. A grade that sends runoff away from the path does more than any change in thickness.",
-      "Edge restraints keep lawn soil from pushing the slab out of line. Control joints spaced as the provider recommends let the walk crack along planned lines instead of at random."
+      "Edge restraints keep lawn soil from pushing the slab out of line. Control joints spaced as the contractor recommends let the walk crack along planned lines instead of at random."
     ]
   },
   "stamped-concrete": {
@@ -90,15 +90,15 @@ export const LOCAL_SOIL_BY_SERVICE: Record<string, { title: string; paragraphs: 
   "concrete-garage-coatings": {
     "title": "Garage floors in Lancaster: moisture from the clay below",
     "paragraphs": [
-      "Red clay beside and under many Lancaster garages holds water after storms, and that moisture can move up through a slab. Coatings can bubble or peel when moisture is trapped beneath them, so the provider tests the slab before coating.",
-      "Humid summers slow some coatings and speed up others. The provider chooses a system and a cure schedule that suit the temperatures and humidity expected during the job."
+      "Red clay beside and under many Lancaster garages holds water after storms, and that moisture can move up through a slab. Coatings can bubble or peel when moisture is trapped beneath them, so the contractor tests the slab before coating.",
+      "Humid summers slow some coatings and speed up others. The contractor chooses a system and a cure schedule that suit the temperatures and humidity expected during the job."
     ]
   },
   "concrete-resurfacing": {
     "title": "Resurfacing in Lancaster: check the slab under the overlay",
     "paragraphs": [
-      "A thin overlay is only as stable as the slab beneath it. Red clay that swells and shrinks can move an old slab, and that movement can crack a new overlay, so the provider checks for cracks and movement first.",
-      "Lancaster's summer rain and heat can also affect how an overlay sets, so the provider plans the placement around the forecast and the surface temperature."
+      "A thin overlay is only as stable as the slab beneath it. Red clay that swells and shrinks can move an old slab, and that movement can crack a new overlay, so the contractor checks for cracks and movement first.",
+      "Lancaster's summer rain and heat can also affect how an overlay sets, so the contractor plans the placement around the forecast and the surface temperature."
     ]
   },
   "concrete-aprons": {
@@ -119,7 +119,7 @@ export const LOCAL_SOIL_BY_SERVICE: Record<string, { title: string; paragraphs: 
     "title": "Exposed aggregate in Lancaster: a stable base under the stone",
     "paragraphs": [
       "A decorative surface is only as good as the base under it. Red clay that swells and shrinks can crack the slab, so the base is compacted and drainage is set before the pour.",
-      "Hot summer days can speed the set, so the stone is spread and exposed at the time the provider sets for the day's temperatures."
+      "Hot summer days can speed the set, so the stone is spread and exposed at the time the contractor sets for the day's temperatures."
     ]
   }
 } as const;
@@ -151,7 +151,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         heading: "Who actually does the work",
         body:
-          "Local concrete providers do the pouring. After you submit a request, a local provider contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set directly between you and that provider, and finish, thickness, and reinforcement are decided with them after they inspect your property.",
+          "Local concrete contractors do the pouring. After you submit a request, a local contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set directly between you and that contractor, and finish, thickness, and reinforcement are decided with them after they inspect your property.",
       },
       {
         heading: "Weather and timing",
@@ -169,19 +169,19 @@ const records: readonly LocationServiceRecord[] = [
         question:
           "Do I need a Lancaster County permit for a new driveway?",
         answer:
-          "It depends on the work and the property. Check with Lancaster County's planning or building department before you order work, and ask your provider who handles any permit paperwork.",
+          "It depends on the work and the property. Check with Lancaster County's planning or building department before you order work, and ask your contractor who handles any permit paperwork.",
       },
       {
         question:
-          "How quickly can a local provider come out for an on site estimate in Lancaster?",
+          "How quickly can a local contractor come out for an on site estimate in Lancaster?",
         answer:
-          "Timing depends on the provider's schedule and the season, and it is not something we can promise. After you submit a request, the provider contacts you to talk about timing for an on site visit.",
+          "Timing depends on the contractor's schedule and the season, and it is not something we can promise. After you submit a request, the contractor contacts you to talk about timing for an on site visit.",
       },
       {
         question:
           "Do Lancaster driveway quotes include removing the old slab?",
         answer:
-          "Demolition and haul away are often quoted as separate line items. Ask the provider to itemize removal so you can compare quotes on the same basis.",
+          "Demolition and haul away are often quoted as separate line items. Ask the contractor to itemize removal so you can compare quotes on the same basis.",
       },
       {
         question:
@@ -227,7 +227,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         heading: "Communities near Lancaster",
         body:
-          "Patio requests on this page are matched to addresses in the City of Lancaster. Kershaw, Heath Springs, Van Wyck, and Buford are nearby county communities, and each address is checked before a provider replies.",
+          "Patio requests on this page are matched to addresses in the City of Lancaster. Kershaw, Heath Springs, Van Wyck, and Buford are nearby county communities, and each address is checked before a contractor replies.",
       },
     ],
     localFaqs: [
@@ -235,19 +235,19 @@ const records: readonly LocationServiceRecord[] = [
         question:
           "Do I need a Lancaster County permit for this project?",
         answer:
-          "It depends on the work and the property. Check with Lancaster County's planning or building department before you start, and ask your provider who handles any permit paperwork.",
+          "It depends on the work and the property. Check with Lancaster County's planning or building department before you start, and ask your contractor who handles any permit paperwork.",
       },
       {
         question:
-          "How quickly can a local provider come out for an on site estimate in Lancaster?",
+          "How quickly can a local contractor come out for an on site estimate in Lancaster?",
         answer:
-          "Timing depends on the provider's schedule and the season, and it is not something we can promise. After you submit a request, the provider contacts you to talk about timing for an on site visit.",
+          "Timing depends on the contractor's schedule and the season, and it is not something we can promise. After you submit a request, the contractor contacts you to talk about timing for an on site visit.",
       },
       {
         question:
           "Does shade change the finish I should choose?",
         answer:
-          "Yes. A patio under mature trees stays damp longer, so a broom or exposed aggregate finish usually holds grip better than a smooth trowel. Settle the finish with the provider before the slab is ordered.",
+          "Yes. A patio under mature trees stays damp longer, so a broom or exposed aggregate finish usually holds grip better than a smooth trowel. Settle the finish with the contractor before the slab is ordered.",
       },
       {
         question:
@@ -301,19 +301,19 @@ const records: readonly LocationServiceRecord[] = [
         question:
           "Do I need a Lancaster County permit for this project?",
         answer:
-          "It depends on the work and the property. Check with Lancaster County's planning or building department before you start, and ask your provider who handles any permit paperwork.",
+          "It depends on the work and the property. Check with Lancaster County's planning or building department before you start, and ask your contractor who handles any permit paperwork.",
       },
       {
         question:
-          "How quickly can a local provider come out for an on site estimate in Lancaster?",
+          "How quickly can a local contractor come out for an on site estimate in Lancaster?",
         answer:
-          "Timing depends on the provider's schedule and the season, and it is not something we can promise. After you submit a request, the provider contacts you to talk about timing for an on site visit.",
+          "Timing depends on the contractor's schedule and the season, and it is not something we can promise. After you submit a request, the contractor contacts you to talk about timing for an on site visit.",
       },
       {
         question:
           "Does red clay soil affect a new slab?",
         answer:
-          "It can. Clay holds moisture, so providers often plan a compacted base, control joints, and drainage at the edges. Ask how they will prepare the ground under your slab.",
+          "It can. Clay holds moisture, so contractors often plan a compacted base, control joints, and drainage at the edges. Ask how they will prepare the ground under your slab.",
       },
       {
         question:
@@ -359,7 +359,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         heading: "Communities near Lancaster",
         body:
-          "Repair requests on this page cover the City of Lancaster. Nearby county communities include Kershaw, Heath Springs, Van Wyck, and Buford, and each address is confirmed before a provider is assigned.",
+          "Repair requests on this page cover the City of Lancaster. Nearby county communities include Kershaw, Heath Springs, Van Wyck, and Buford, and each address is confirmed before a contractor is assigned.",
       },
     ],
     localFaqs: [
@@ -367,19 +367,19 @@ const records: readonly LocationServiceRecord[] = [
         question:
           "Do I need a Lancaster County permit for this project?",
         answer:
-          "It depends on the work and the property. Check with Lancaster County's planning or building department before you start, and ask your provider who handles any permit paperwork.",
+          "It depends on the work and the property. Check with Lancaster County's planning or building department before you start, and ask your contractor who handles any permit paperwork.",
       },
       {
         question:
-          "How quickly can a local provider come out for an on site estimate in Lancaster?",
+          "How quickly can a local contractor come out for an on site estimate in Lancaster?",
         answer:
-          "Timing depends on the provider's schedule and the season, and it is not something we can promise. After you submit a request, the provider contacts you to talk about timing for an on site visit.",
+          "Timing depends on the contractor's schedule and the season, and it is not something we can promise. After you submit a request, the contractor contacts you to talk about timing for an on site visit.",
       },
       {
         question:
           "Can a cracked slab be repaired instead of replaced?",
         answer:
-          "Sometimes. It depends on crack width, whether the slab is still moving, and what caused the damage. The provider assesses this on site before recommending a repair or replacement.",
+          "Sometimes. It depends on crack width, whether the slab is still moving, and what caused the damage. The contractor assesses this on site before recommending a repair or replacement.",
       },
       {
         question:
@@ -410,12 +410,12 @@ const records: readonly LocationServiceRecord[] = [
       {
         heading: "Inspections happen before the pour",
         body:
-          "Foundation work is usually inspected before concrete is placed, while the forms and rebar are still visible. Schedule the inspection around the pour, not after it. Ask the provider who requests the inspection and who handles the permit paperwork.",
+          "Foundation work is usually inspected before concrete is placed, while the forms and rebar are still visible. Schedule the inspection around the pour, not after it. Ask the contractor who requests the inspection and who handles the permit paperwork.",
       },
       {
         heading: "Pour timing in heat and storms",
         body:
-          "Afternoon thunderstorms and summer heat both affect a foundation pour. Rain on fresh concrete can wash the surface, and hot weather can cure it too fast. Providers often schedule pours for the morning and protect the surface until it has set.",
+          "Afternoon thunderstorms and summer heat both affect a foundation pour. Rain on fresh concrete can wash the surface, and hot weather can cure it too fast. Contractors often schedule pours for the morning and protect the surface until it has set.",
       },
       {
         heading: "Weather and timing",
@@ -437,7 +437,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         question: "Does the clay soil change the footing?",
         answer:
-          "It can. Clay that stays wet or dries and shrinks can change the bearing conditions, so the provider should check the soil before the footing depth is set.",
+          "It can. Clay that stays wet or dries and shrinks can change the bearing conditions, so the contractor should check the soil before the footing depth is set.",
       },
       {
         question: "Is the price final before a site visit?",
@@ -489,7 +489,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         question: "Can a cracked front walk be patched, or does it need replacing?",
         answer:
-          "It depends on how much the slab has moved. A small crack in a level slab can often be sealed. A lifted or sunken section that creates a trip hazard usually needs to be raised or replaced. The provider assesses the walk on site.",
+          "It depends on how much the slab has moved. A small crack in a level slab can often be sealed. A lifted or sunken section that creates a trip hazard usually needs to be raised or replaced. The contractor assesses the walk on site.",
       },
       {
         question: "What finish is best for a front entry?",
@@ -524,7 +524,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         heading: "Sealing and upkeep",
         body:
-          "The sealer is what keeps a stamped surface from staining and wearing. Ask the provider for the sealer type and a recommended schedule. Sun, traffic, pollen, and red clay tracked onto the surface all affect how quickly the sealer wears.",
+          "The sealer is what keeps a stamped surface from staining and wearing. Ask the contractor for the sealer type and a recommended schedule. Sun, traffic, pollen, and red clay tracked onto the surface all affect how quickly the sealer wears.",
       },
       {
         heading: "Joints and cracking",
@@ -539,19 +539,19 @@ const records: readonly LocationServiceRecord[] = [
       {
         heading: "Communities near Lancaster",
         body:
-          "Stamped concrete on this page is offered to City of Lancaster addresses. Kershaw, Heath Springs, Van Wyck, and Buford are nearby county communities, and each address is checked before a provider replies.",
+          "Stamped concrete on this page is offered to City of Lancaster addresses. Kershaw, Heath Springs, Van Wyck, and Buford are nearby county communities, and each address is checked before a contractor replies.",
       },
     ],
     localFaqs: [
       {
         question: "Does stamped concrete crack?",
         answer:
-          "It can. Control joints guide where cracks form, and the provider should set them before the pattern is stamped. Cracks are not a guarantee either way, so ask how the joints are laid out.",
+          "It can. Control joints guide where cracks form, and the contractor should set them before the pattern is stamped. Cracks are not a guarantee either way, so ask how the joints are laid out.",
       },
       {
         question: "How often does stamped concrete need sealing?",
         answer:
-          "It depends on sun exposure, foot traffic, and cleaning. Ask the provider for a schedule that fits the surface, and keep up with it.",
+          "It depends on sun exposure, foot traffic, and cleaning. Ask the contractor for a schedule that fits the surface, and keep up with it.",
       },
       {
         question: "Is stamped concrete slippery?",
@@ -581,7 +581,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         heading: "Rise, run, and handrails",
         body:
-          "The rise and run of each tread, and whether a handrail is required, come from the building code and the height of the step set. Ask the provider how those rules apply to your steps before the forms are built, since changing the layout afterward costs more.",
+          "The rise and run of each tread, and whether a handrail is required, come from the building code and the height of the step set. Ask the contractor how those rules apply to your steps before the forms are built, since changing the layout afterward costs more.",
       },
       {
         heading: "Forms and the pour",
@@ -608,7 +608,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         question: "Do new steps in Lancaster County need a permit?",
         answer:
-          "It depends on the height, the work, and the property. Check with Lancaster County's building department before you start, and ask your provider who handles any permit paperwork.",
+          "It depends on the height, the work, and the property. Check with Lancaster County's building department before you start, and ask your contractor who handles any permit paperwork.",
       },
       {
         question: "Can damaged steps be repaired, or do they need replacing?",
@@ -631,11 +631,11 @@ const records: readonly LocationServiceRecord[] = [
     localBody: [
       {
         heading: "Why slabs sink here",
-        body: "Most sunken slabs in Lancaster settle at an edge, at a joint, or beside a downspout where water keeps soaking the same clay. The provider looks for that cause before recommending a lift, because lifting a slab over a soft spot just moves the problem.",
+        body: "Most sunken slabs in Lancaster settle at an edge, at a joint, or beside a downspout where water keeps soaking the same clay. The contractor looks for that cause before recommending a lift, because lifting a slab over a soft spot just moves the problem.",
       },
       {
         heading: "Lifting or replacing",
-        body: "A slab that has dropped as one piece and is still sound is often a leveling candidate. A slab cracked through or broken into pieces usually needs replacement, so the provider checks the condition before quoting either route.",
+        body: "A slab that has dropped as one piece and is still sound is often a leveling candidate. A slab cracked through or broken into pieces usually needs replacement, so the contractor checks the condition before quoting either route.",
       },
       {
         heading: "Access and drainage",
@@ -647,7 +647,7 @@ const records: readonly LocationServiceRecord[] = [
       },
       {
         heading: "Who does the work",
-        body: "Local concrete providers do the work. After you submit a request, a local provider contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that provider after they see the property.",
+        body: "Local concrete contractors do the work. After you submit a request, a local contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that contractor after they see the property.",
       },
       {
         heading: "Communities near Lancaster",
@@ -657,15 +657,15 @@ const records: readonly LocationServiceRecord[] = [
     localFaqs: [
       {
         question: "Can a sunken slab in Lancaster be lifted instead of replaced?",
-        answer: "Often, yes, if the slab is still in one piece. The provider checks for cracks and the cause of settling before recommending a lift or a replacement.",
+        answer: "Often, yes, if the slab is still in one piece. The contractor checks for cracks and the cause of settling before recommending a lift or a replacement.",
       },
       {
         question: "Will leveling hold through a wet season?",
-        answer: "It depends on the cause of the settling. If the soil under the slab keeps softening, the slab can move again, so the provider explains what must change to help the lift last.",
+        answer: "It depends on the cause of the settling. If the soil under the slab keeps softening, the slab can move again, so the contractor explains what must change to help the lift last.",
       },
       {
         question: "How long before I can walk on a leveled slab?",
-        answer: "The wait depends on the material used. The provider gives the wait time for the product chosen before the work starts.",
+        answer: "The wait depends on the material used. The contractor gives the wait time for the product chosen before the work starts.",
       },
       {
         question: "Is the price final before a site visit?",
@@ -682,7 +682,7 @@ const records: readonly LocationServiceRecord[] = [
     localBody: [
       {
         heading: "Moisture comes first",
-        body: "Before coating, the provider checks the slab for moisture and looks for cracks and old coatings that could fail. A coating over a damp slab can look fine for a while and then lift, so this check decides whether the job goes ahead as planned.",
+        body: "Before coating, the contractor checks the slab for moisture and looks for cracks and old coatings that could fail. A coating over a damp slab can look fine for a while and then lift, so this check decides whether the job goes ahead as planned.",
       },
       {
         heading: "Surface preparation",
@@ -694,11 +694,11 @@ const records: readonly LocationServiceRecord[] = [
       },
       {
         heading: "Choosing a system",
-        body: "Epoxy is common for garages, and polyurea cures faster. Flake and solid finishes look and wear differently, so the provider explains the trade-offs with you before the order is placed.",
+        body: "Epoxy is common for garages, and polyurea cures faster. Flake and solid finishes look and wear differently, so the contractor explains the trade-offs with you before the order is placed.",
       },
       {
         heading: "Who does the work",
-        body: "Local concrete providers do the work. After you submit a request, a local provider contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that provider after they see the property.",
+        body: "Local concrete contractors do the work. After you submit a request, a local contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that contractor after they see the property.",
       },
       {
         heading: "Communities near Lancaster",
@@ -708,15 +708,15 @@ const records: readonly LocationServiceRecord[] = [
     localFaqs: [
       {
         question: "Can a garage floor in Lancaster be coated in summer?",
-        answer: "Often, yes, but humidity and heat change the cure. The provider picks a system and schedule that suit the conditions on the day of the job.",
+        answer: "Often, yes, but humidity and heat change the cure. The contractor picks a system and schedule that suit the conditions on the day of the job.",
       },
       {
         question: "Will a coating stop oil stains?",
-        answer: "A coating resists stains, but it does not make the floor stain proof. Wiping spills promptly helps, and the provider explains what the chosen system resists.",
+        answer: "A coating resists stains, but it does not make the floor stain proof. Wiping spills promptly helps, and the contractor explains what the chosen system resists.",
       },
       {
         question: "When can vehicles return to a coated garage?",
-        answer: "Most systems need several days before vehicles return. The provider gives the wait for the product used.",
+        answer: "Most systems need several days before vehicles return. The contractor gives the wait for the product used.",
       },
       {
         question: "Is the price final before a site visit?",
@@ -733,7 +733,7 @@ const records: readonly LocationServiceRecord[] = [
     localBody: [
       {
         heading: "Is the old slab sound",
-        body: "Resurfacing works best over a slab that is cracked only on the surface. Slabs that are heaving, sinking, or breaking into pieces need repair or replacement first, and the provider says so at the visit.",
+        body: "Resurfacing works best over a slab that is cracked only on the surface. Slabs that are heaving, sinking, or breaking into pieces need repair or replacement first, and the contractor says so at the visit.",
       },
       {
         heading: "Bonding the overlay",
@@ -745,11 +745,11 @@ const records: readonly LocationServiceRecord[] = [
       },
       {
         heading: "Choosing texture",
-        body: "Broom, smooth, and stamped finishes give different traction. Lancaster driveways see wet weather often, so the provider recommends a texture that gives grip when wet.",
+        body: "Broom, smooth, and stamped finishes give different traction. Lancaster driveways see wet weather often, so the contractor recommends a texture that gives grip when wet.",
       },
       {
         heading: "Who does the work",
-        body: "Local concrete providers do the work. After you submit a request, a local provider contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that provider after they see the property.",
+        body: "Local concrete contractors do the work. After you submit a request, a local contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that contractor after they see the property.",
       },
       {
         heading: "Communities near Lancaster",
@@ -759,19 +759,19 @@ const records: readonly LocationServiceRecord[] = [
     localFaqs: [
       {
         question: "Will an overlay in Lancaster crack?",
-        answer: "It can, if the slab underneath moves. Crack repair and control joints reduce the risk, and the provider explains what an overlay can and cannot prevent.",
+        answer: "It can, if the slab underneath moves. Crack repair and control joints reduce the risk, and the contractor explains what an overlay can and cannot prevent.",
       },
       {
         question: "Can I resurface over an old patio?",
-        answer: "Sometimes, if the surface is sound and bonds well. The provider checks the existing finish before recommending an overlay.",
+        answer: "Sometimes, if the surface is sound and bonds well. The contractor checks the existing finish before recommending an overlay.",
       },
       {
         question: "How soon can I drive on a resurfaced driveway?",
-        answer: "It depends on the product and the weather. The provider gives the wait time before vehicles use the surface.",
+        answer: "It depends on the product and the weather. The contractor gives the wait time before vehicles use the surface.",
       },
       {
         question: "Is resurfacing cheaper than replacement?",
-        answer: "It can be, when the slab is sound. A failing slab usually needs replacement, and the provider advises on that at the visit.",
+        answer: "It can be, when the slab is sound. A failing slab usually needs replacement, and the contractor advises on that at the visit.",
       },
     ],
   },
@@ -784,15 +784,15 @@ const records: readonly LocationServiceRecord[] = [
     localBody: [
       {
         heading: "Grade decides the job",
-        body: "The apron should slope toward the gutter so water leaves the driveway. The provider measures the existing grade before the forms go in, because a flat or sunken apron is the usual reason water collects.",
+        body: "The apron should slope toward the gutter so water leaves the driveway. The contractor measures the existing grade before the forms go in, because a flat or sunken apron is the usual reason water collects.",
       },
       {
         heading: "Removal and replacement",
-        body: "Replacing an old apron means breaking out and hauling away the old concrete, which is often quoted as a separate line. Ask the provider to itemize removal so quotes compare on the same basis.",
+        body: "Replacing an old apron means breaking out and hauling away the old concrete, which is often quoted as a separate line. Ask the contractor to itemize removal so quotes compare on the same basis.",
       },
       {
         heading: "Permits near the street",
-        body: "Work at the street edge can need a permit from the local authority. The provider confirms whether one applies before the work is scheduled.",
+        body: "Work at the street edge can need a permit from the local authority. The contractor confirms whether one applies before the work is scheduled.",
       },
       {
         heading: "Weather and timing",
@@ -800,7 +800,7 @@ const records: readonly LocationServiceRecord[] = [
       },
       {
         heading: "Who does the work",
-        body: "Local concrete providers do the work. After you submit a request, a local provider contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that provider after they see the property.",
+        body: "Local concrete contractors do the work. After you submit a request, a local contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that contractor after they see the property.",
       },
       {
         heading: "Communities near Lancaster",
@@ -810,7 +810,7 @@ const records: readonly LocationServiceRecord[] = [
     localFaqs: [
       {
         question: "Do I need a permit for a Lancaster apron?",
-        answer: "It can depend on whether the work is near the street. The provider confirms whether one applies before the job is scheduled.",
+        answer: "It can depend on whether the work is near the street. The contractor confirms whether one applies before the job is scheduled.",
       },
       {
         question: "Will my apron match the driveway?",
@@ -818,7 +818,7 @@ const records: readonly LocationServiceRecord[] = [
       },
       {
         question: "Why does water sit at my apron?",
-        answer: "A flat or sunken apron can trap water in red clay soil. The provider checks the slope and recommends a grade correction when needed.",
+        answer: "A flat or sunken apron can trap water in red clay soil. The contractor checks the slope and recommends a grade correction when needed.",
       },
       {
         question: "Is the price final before a site visit?",
@@ -835,15 +835,15 @@ const records: readonly LocationServiceRecord[] = [
     localBody: [
       {
         heading: "Cleaning before sealing",
-        body: "Sealer bonds only to a clean, dry surface. Red clay stains and tracked-in dirt are removed first, and the provider checks for old sealer that must come off before the new coat goes on.",
+        body: "Sealer bonds only to a clean, dry surface. Red clay stains and tracked-in dirt are removed first, and the contractor checks for old sealer that must come off before the new coat goes on.",
       },
       {
         heading: "Choosing a sealer",
-        body: "Penetrating sealers keep the natural look, while film-forming sealers add sheen and color depth. The provider recommends one based on the surface and how it is used.",
+        body: "Penetrating sealers keep the natural look, while film-forming sealers add sheen and color depth. The contractor recommends one based on the surface and how it is used.",
       },
       {
         heading: "Sun and rain",
-        body: "Heavy summer sun and July storms wear sealer down, so the recoat schedule matters in Lancaster. The provider gives the schedule for the product recommended.",
+        body: "Heavy summer sun and July storms wear sealer down, so the recoat schedule matters in Lancaster. The contractor gives the schedule for the product recommended.",
       },
       {
         heading: "Weather and timing",
@@ -851,7 +851,7 @@ const records: readonly LocationServiceRecord[] = [
       },
       {
         heading: "Who does the work",
-        body: "Local concrete providers do the work. After you submit a request, a local provider contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that provider after they see the property.",
+        body: "Local concrete contractors do the work. After you submit a request, a local contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that contractor after they see the property.",
       },
       {
         heading: "Communities near Lancaster",
@@ -861,7 +861,7 @@ const records: readonly LocationServiceRecord[] = [
     localFaqs: [
       {
         question: "How often should concrete in Lancaster be sealed?",
-        answer: "It depends on sun, traffic, and the sealer used. The provider gives the recoat interval for the product recommended.",
+        answer: "It depends on sun, traffic, and the sealer used. The contractor gives the recoat interval for the product recommended.",
       },
       {
         question: "Does sealing stop cracks?",
@@ -869,7 +869,7 @@ const records: readonly LocationServiceRecord[] = [
       },
       {
         question: "Can I seal new concrete right away?",
-        answer: "New concrete usually needs to cure first. The provider confirms how long to wait for the mix used.",
+        answer: "New concrete usually needs to cure first. The contractor confirms how long to wait for the mix used.",
       },
       {
         question: "Is the price final before a site visit?",
@@ -886,15 +886,15 @@ const records: readonly LocationServiceRecord[] = [
     localBody: [
       {
         heading: "Stone and look",
-        body: "Stone type, size, and exposure depth change the finish. The provider shows samples, and the stone is chosen before the pour because it cannot be changed afterward.",
+        body: "Stone type, size, and exposure depth change the finish. The contractor shows samples, and the stone is chosen before the pour because it cannot be changed afterward.",
       },
       {
         heading: "Timing the exposure",
-        body: "Stones are exposed once the surface has set enough. Heat, rain, and humidity all change that window, so the provider watches the surface rather than the calendar.",
+        body: "Stones are exposed once the surface has set enough. Heat, rain, and humidity all change that window, so the contractor watches the surface rather than the calendar.",
       },
       {
         heading: "Heat and rain on fresh concrete",
-        body: "Fresh concrete needs protection from sun and storms. Rain on the surface can wash out the fines and mar the look, so the provider plans the pour around the forecast.",
+        body: "Fresh concrete needs protection from sun and storms. Rain on the surface can wash out the fines and mar the look, so the contractor plans the pour around the forecast.",
       },
       {
         heading: "Base and drainage",
@@ -902,7 +902,7 @@ const records: readonly LocationServiceRecord[] = [
       },
       {
         heading: "Who does the work",
-        body: "Local concrete providers do the work. After you submit a request, a local provider contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that provider after they see the property.",
+        body: "Local concrete contractors do the work. After you submit a request, a local contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that contractor after they see the property.",
       },
       {
         heading: "Communities near Lancaster",
@@ -912,15 +912,15 @@ const records: readonly LocationServiceRecord[] = [
     localFaqs: [
       {
         question: "Is exposed aggregate slippery in Lancaster?",
-        answer: "The stones add grip, but very smooth stones can be slick when wet. The provider chooses stone size and exposure with traction in mind.",
+        answer: "The stones add grip, but very smooth stones can be slick when wet. The contractor chooses stone size and exposure with traction in mind.",
       },
       {
         question: "Can I see stone samples before the pour?",
-        answer: "Yes. Ask the provider for samples so you can see the stone and exposure before the job is scheduled.",
+        answer: "Yes. Ask the contractor for samples so you can see the stone and exposure before the job is scheduled.",
       },
       {
         question: "Does exposed aggregate crack?",
-        answer: "It can, if the base or slab moves. Control joints and proper base preparation reduce the risk, and the provider explains what can and cannot be prevented.",
+        answer: "It can, if the base or slab moves. Control joints and proper base preparation reduce the risk, and the contractor explains what can and cannot be prevented.",
       },
       {
         question: "Is the price final before a site visit?",

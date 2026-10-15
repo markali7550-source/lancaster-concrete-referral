@@ -20,7 +20,7 @@ import { breadcrumbNode, buildGraph, faqNode, webPageNode } from "@/lib/schema/g
 
 const TITLE = "Concrete Services in Lancaster County, SC | Local Service";
 const DESCRIPTION =
-  "Driveways, patios, slabs, repair, foundations, walkways, stamped concrete, and steps in Lancaster, SC. Request a quote from a local provider.";
+  "Driveways, patios, slabs, repair, foundations, walkways, stamped concrete, and steps in Lancaster, SC. Request a quote from a local contractor.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,
@@ -32,27 +32,27 @@ const FAQS = [
   {
     question: "What concrete services do you offer in Lancaster?",
     answer:
-      "Our network of independent local providers covers residential concrete work in Lancaster, including driveways, patios, walkways, foundations, slab pouring, concrete repairs, and decorative stamped concrete.",
+      "Our partner contractors cover residential concrete work in Lancaster, including driveways, patios, walkways, foundations, slab pouring, concrete repairs, and decorative stamped concrete.",
   },
   {
     question: "Can I combine multiple concrete services into one project?",
     answer:
-      "Yes. Many homeowners combine services, such as a new driveway with a matching front walkway or back patio. Tell us about the full project, and we will connect you with a provider who can bundle the work into a single estimate.",
+      "Yes. Many homeowners combine services, such as a new driveway with a matching front walkway or back patio. Tell us about the full project, and we will connect you with a contractor who can bundle the work into a single estimate.",
   },
   {
     question: "Are project estimates and on site visits free?",
     answer:
-      "Requesting a quote is 100% free with zero obligation. Local providers will confirm any on site visit details with you before they come out.",
+      "Requesting a quote is completely free for homeowners, with no obligation. Your contractor will confirm any on site visit details with you before they come out.",
   },
   {
-    question: "Do you handle both standard and decorative/stamped concrete?",
+    question: "Do you handle both standard and decorative concrete?",
     answer:
-      "Yes. Our providers specialize in clean broom-finish concrete as well as custom decorative options, including stamped textures, custom stains, and exposed aggregate.",
+      "Yes. Our contractors work in clean broom finish concrete as well as custom decorative options, including stamped textures, custom stains, and exposed aggregate.",
   },
   {
-    question: "Are your providers licensed and insured in South Carolina?",
+    question: "Are your contractors licensed and insured in South Carolina?",
     answer:
-      "Each independent provider is responsible for its own license and insurance. Confirm both directly with the provider and through SC LLR before you hire, since we make no representation about any provider's credentials.",
+      "Yes. Our partner contractors are licensed and insured, and our team verifies their credentials before connecting them with your project. You can also confirm any license through SC LLR.",
   },
 ];
 
@@ -97,7 +97,7 @@ export default function ServicesPage() {
         >
           Fourteen residential concrete services, each on its own page. Pick
           the service that matches your project and send a request. A local
-          provider reviews it and replies.
+          contractor reviews it and replies.
         </p>
       </OverlayHeader>
 
@@ -149,7 +149,7 @@ export default function ServicesPage() {
         The owner reviewed that finding and
         chose to keep the image, so it stands.
 
-        It shows a provider assessing and quoting on site rather than any one
+        It shows a contractor assessing and quoting on site rather than any one
         finished product, which matches this band's subject and does not
         favor driveways, patios, slabs or repair on the page that lists all
         four. The alt claims no location.
@@ -161,7 +161,7 @@ export default function ServicesPage() {
           alt: "Concrete poured from a mixer and worked with a shovel along a form board, a worker in orange coveralls and boots",
         }}
         eyebrow="Process"
-        title="How a request reaches an independent provider"
+        title="How a request reaches a licensed local contractor"
       >
         <HowMatchingWorks />
       </Section>

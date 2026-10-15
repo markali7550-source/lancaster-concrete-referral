@@ -51,10 +51,10 @@ export const locations: readonly LocationRecord[] = [
     localEvidence: [
       "Lancaster County sits on the Carolina Slate Belt, so subbase prep and drainage handling vary noticeably between in town lots and rural parcels off Highway 9.",
       "Older in town properties near Main Street frequently have narrow drive access, which affects truck staging and pour sequencing.",
-      "Red clay subsoil common through the county holds water, so participating providers are asked about drainage handling before a driveway or slab quote is confirmed.",
+      "Red clay subsoil common through the county holds water, so partner contractors are asked about drainage handling before a driveway or slab quote is confirmed.",
     ],
     intro:
-      "Lancaster is the only area this service covers right now. Every request is checked against providers who have approved that coverage in writing, which is why the list here is short and why it grows slowly. If nobody covers your address, we say so instead of passing your details along anyway.",
+      "Lancaster is the only area this service covers right now. Every request is checked against contractors who have approved that coverage in writing, which is why the list here is short and why it grows slowly. If nobody covers your address, we say so instead of passing your details along anyway.",
     heroImage: "/images/locations/lancaster-sc/lancaster-sc-hero.webp",
     heroImageAlt:
       "Quiet residential street of brick ranch houses and pines, with red clay verges and concrete driveways",
@@ -121,7 +121,7 @@ export const serviceAreaOptions: readonly ServiceAreaOption[] = [
     .filter((l) => l.zips.length > 0)
     .map((l) => ({
       // One entry per served place. The wire value stays a ZIP code the
-      // participating provider registry already approves, so routing is unchanged.
+      // partner contractor registry already approves, so routing is unchanged.
       value: l.zips[0] as string,
       label: `${l.city}, ${l.region}`,
     })),
@@ -140,7 +140,7 @@ export const gatedRouteInventory: readonly GatedRouteRecord[] = [
     path: "/locations/indian-land-sc",
     state: "gated",
     requirement:
-      "Fresh demand data, verified city record, unique copy, participating provider coverage.",
+      "Fresh demand data, verified city record, unique copy, partner contractor coverage.",
   },
   {
     path: "/locations/elgin-sc",

@@ -64,8 +64,7 @@ export default function ContactPage() {
             Contact Our Lancaster, SC Concrete Team
           </h1>
           <p className="lede mt-5 max-w-2xl">
-            We can confirm whether we have approved coverage for your area
-            before you go any further.
+            Our local team can confirm whether we serve your area and walk you through the next steps.
           </p>
         </div>
       </div>

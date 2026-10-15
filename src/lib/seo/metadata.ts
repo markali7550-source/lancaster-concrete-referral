@@ -72,33 +72,33 @@ export function pageMetadata({
  * `openGraph.siteName` and the JSON-LD graph. */
 const COMBO_DESCRIPTIONS: Record<string, (city: string) => string> = {
   "concrete-driveways": (city) =>
-    `Planning a concrete driveway in ${city}, SC? Tell us about the project and a local provider will reply to your request. Ask for a free quote.`,
+    `Planning a concrete driveway in ${city}, SC? Tell us about the project and a local contractor will reply to your request. Ask for a free quote.`,
   "concrete-patios": (city) =>
-    `Thinking about a concrete patio in ${city}, SC? Share a few details and a local provider will reply with next steps. Request a free quote today.`,
+    `Thinking about a concrete patio in ${city}, SC? Share a few details and a local contractor will reply with next steps. Request a free quote today.`,
   "concrete-slabs": (city) =>
-    `Need a concrete slab or pad in ${city}, SC? Tell us what it will support and a local provider will reply to your request. Get a free quote.`,
+    `Need a concrete slab or pad in ${city}, SC? Tell us what it will support and a local contractor will reply to your request. Get a free quote.`,
   "concrete-repair": (city) =>
-    `Have cracked or settled concrete in ${city}, SC? Describe the problem and a local provider will reply to your request. Request a free quote.`,
+    `Have cracked or settled concrete in ${city}, SC? Describe the problem and a local contractor will reply to your request. Request a free quote.`,
   "concrete-foundations": (city) =>
-    `Planning a foundation or footing in ${city}, SC? Describe the project and a local provider will reply to your request. Get a free quote today.`,
+    `Planning a foundation or footing in ${city}, SC? Describe the project and a local contractor will reply to your request. Get a free quote today.`,
   "concrete-walkways": (city) =>
-    `Thinking about a front walk or entry path in ${city}, SC? Share a few details and a local provider will reply. Request a free quote today.`,
+    `Thinking about a front walk or entry path in ${city}, SC? Share a few details and a local contractor will reply. Request a free quote today.`,
   "stamped-concrete": (city) =>
-    `Interested in stamped concrete in ${city}, SC? Tell us the area and pattern you have in mind, and a local provider can reply to your request.`,
+    `Interested in stamped concrete in ${city}, SC? Tell us the area and pattern you have in mind, and a local contractor can reply to your request.`,
   "concrete-steps": (city) =>
-    `Planning new or repaired steps in ${city}, SC? Tell us about the rise and location, and a local provider will reply. Ask for a free quote.`,
+    `Planning new or repaired steps in ${city}, SC? Tell us about the rise and location, and a local contractor will reply. Ask for a free quote.`,
   "concrete-leveling": (city) =>
-    `Sunken slab in ${city}, SC? Tell us where it dropped and a local provider will reply to your request about leveling options. Get a free quote.`,
+    `Sunken slab in ${city}, SC? Tell us where it dropped and a local contractor will reply to your request about leveling options. Get a free quote.`,
   "concrete-garage-coatings": (city) =>
-    `Planning a garage floor coating in ${city}, SC? Tell us the garage size and floor condition, and a local provider can reply to your request.`,
+    `Planning a garage floor coating in ${city}, SC? Tell us the garage size and floor condition, and a local contractor can reply to your request.`,
   "concrete-resurfacing": (city) =>
-    `Worn driveway or patio in ${city}, SC? Tell us about the surface and a local provider will reply about a thin overlay. Ask for a free quote.`,
+    `Worn driveway or patio in ${city}, SC? Tell us about the surface and a local contractor will reply about a thin overlay. Ask for a free quote.`,
   "concrete-aprons": (city) =>
-    `Need a concrete apron in ${city}, SC? Tell us where the driveway meets the street and a local provider will reply. Request a free quote today.`,
+    `Need a concrete apron in ${city}, SC? Tell us where the driveway meets the street and a local contractor will reply. Request a free quote today.`,
   "concrete-sealing": (city) =>
-    `Want to seal concrete in ${city}, SC? Tell us the surface and its size, and a local provider can reply to your request about cleaning and sealer.`,
+    `Want to seal concrete in ${city}, SC? Tell us the surface and its size, and a local contractor can reply to your request about cleaning and sealer.`,
   "concrete-exposed-aggregate": (city) =>
-    `Want an exposed aggregate driveway or patio in ${city}, SC? Tell us the area and the look you want, and a local provider can reply to your request.`
+    `Want an exposed aggregate driveway or patio in ${city}, SC? Tell us the area and the look you want, and a local contractor can reply to your request.`
 };
 
 /*
@@ -138,7 +138,7 @@ export const comboMeta = {
     fitTitle(`${city}, SC ${serviceName}`),
   description: (serviceSlug: string, city: string) =>
     COMBO_DESCRIPTIONS[serviceSlug]?.(city) ??
-    `Tell us about your ${serviceSlug.replace(/-/g, " ")} project in ${city}, SC and a local provider can reply to your request.`,
+    `Tell us about your ${serviceSlug.replace(/-/g, " ")} project in ${city}, SC and a local contractor can reply to your request.`,
   h1: (serviceSlug: string, city: string) =>
     COMBO_H1[serviceSlug]?.(city) ?? `Concrete Services in ${city}, SC`,
 };

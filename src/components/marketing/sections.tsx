@@ -299,9 +299,9 @@ export const overlayBody = "rgba(255,255,255,0.86)";
 export const overlayMuted = "rgba(255,255,255,0.80)";
 
 const HERO_TRUST = [
-  "No-obligation estimates",
-  "One independent provider, not five",
-  "Written coverage areas only",
+  "100% free service for homeowners",
+  "No obligation quotes",
+  "Licensed & insured local partners",
 ];
 
 export function Hero({
@@ -567,20 +567,20 @@ export function ProjectTypeChooser({
 
 const SERVICE_AREA_CONTROLS = [
   {
-    title: "Written coverage area",
-    body: "Participating providers confirm in writing which areas they accept work in. Coverage is never inferred from a radius drawn on a map.",
+    title: "Confirmed service area",
+    body: "We confirm each address before we schedule anything, so you hear quickly whether a local contractor can take your project.",
   },
   {
-    title: "Signed team agreement",
-    body: "Requests are only passed to independent local concrete specialists that have agreed in writing to documented response expectations.",
+    title: "Licensed and insured partners",
+    body: "Every contractor we work with is licensed and insured, and our team verifies those credentials before a project is connected.",
   },
   {
-    title: "Project type",
-    body: "Your project type is checked against the categories a local team has agreed to take. A category nobody has accepted gets a clear answer that it is not covered.",
+    title: "Matched to your project type",
+    body: "We match your project to a contractor who specializes in that work, so your estimate comes from the right specialist.",
   },
   {
-    title: "One request at a time",
-    body: "Your details go to a single participating provider rather than a list of companies bidding against each other.",
+    title: "One team, one point of contact",
+    body: "Your details go to one available contractor at a time, rather than to a list of companies bidding against each other.",
   },
 ];
 
@@ -617,9 +617,9 @@ export function ServiceAreaControls() {
       </ul>
       <p className="mt-6 text-[13.5px] leading-relaxed text-[color:var(--color-muted)]">
         These are scheduling checks only. They are not a verification of any
-        provider&apos;s license, insurance, or workmanship, and they are not a
+        contractor&apos;s license, insurance, or workmanship, and they are not a
         warranty, an endorsement, or a substitute for your own checks. Confirm
-        license status, insurance, and credentials directly with the provider
+        license status, insurance, and credentials directly with the contractor
         and through SC LLR before you hire.
       </p>
     </>
@@ -630,17 +630,20 @@ export function ServiceAreaControls() {
 
 const STEPS = [
   {
-    verb: "Tell us the project and location",
-    body: "Two fields to start: what you need poured or repaired, and where the property is.",
+    verb: "Submit Your Project",
+    body: "Tell us about your concrete needs and property details.",
   },
   {
-    // Heading wording is fixed by the brief and must stay exact.
-    verb: "We check coverage, project type, team agreement, and current capacity.",
-    body: "Eligibility is confirmed before anything is sent, and nothing is sent if no participating provider covers the area.",
+    verb: "We Review & Coordinate",
+    body: "Our team reviews your request and connects with an available, licensed local concrete specialist in Lancaster County.",
   },
   {
-    verb: "The independent provider contacts you",
-    body: "One independent provider follows up directly to inspect, scope, and quote. You deal with them, not with us.",
+    verb: "Get Your Free Quote",
+    body: "The matched local contractor contacts you directly to provide a free on-site consultation and clear estimate.",
+  },
+  {
+    verb: "Quality Concrete Done Right",
+    body: "Your project gets poured, cured, and finished by experienced local pros.",
   },
 ];
 
@@ -759,7 +762,7 @@ export function AdjacentAreas({
         <p className="font-semibold">Lancaster only, for now</p>
         <p className="mt-2.5 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
           Additional South Carolina areas are added one at a time, and only
-          once a participating provider has approved coverage there in writing.
+          once a partner contractor has approved coverage there in writing.
           We would rather publish one honest service area than a coverage map we
           cannot support.
         </p>

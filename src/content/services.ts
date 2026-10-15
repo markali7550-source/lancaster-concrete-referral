@@ -34,7 +34,7 @@ export interface ServiceRecord {
   summary: string;
   /** Short scope line shown on the service card, e.g. the main jobs covered. */
   cardScope: string;
-  /** Steps the provider's work typically includes, shown under What We Include. */
+  /** Steps the contractor's work typically includes, shown under What We Include. */
   workIncluded: readonly string[];
   /** Hero paragraph on the service hub. */
   heroSummary: string;
@@ -90,7 +90,7 @@ export interface ServiceRecord {
   outOfScope: string[];
   /** Specification choices the contractor will raise. */
   options: { name: string; description: string }[];
-  /** Construction specifications presented as items to confirm with the provider. */
+  /** Construction specifications presented as items to confirm with the contractor. */
   tradeSpecs: readonly string[];
   /** Typical project sequence. Durations are ranges, never promises. */
   process: { phase: string; duration: string; detail: string }[];
@@ -119,7 +119,7 @@ const coreServices: readonly ServiceRecord[] = [
     summary:
       "Tear-out, replacement, and new pours on a 4,000 PSI high-strength mix with rebar reinforcement and a broom finish.",
     heroSummary:
-      "A driveway carries vehicles every day, so the details matter. Requests cover tear-out and removal of a failed slab, full replacement, and expansions of an existing drive. Typical specifications include a 4,000 PSI high-strength mix, steel rebar reinforcement, and a broom finish for traction. Request a quote and a local provider will confirm the scope, mix, and joint layout at a site visit.",
+      "A driveway carries vehicles every day, so the details matter. Requests cover tear-out and removal of a failed slab, full replacement, and expansions of an existing drive. Typical specifications include a 4,000 PSI high-strength mix, steel rebar reinforcement, and a broom finish for traction. Request a quote and a local contractor will confirm the scope, mix, and joint layout at a site visit.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "What counts as a driveway job",
@@ -137,7 +137,7 @@ const coreServices: readonly ServiceRecord[] = [
     costLead:
       "Nobody can price a driveway from an address. Square footage is only the start of it. What the old slab costs to break up and haul away, and whether a truck can reach the pour, often move the number more.",
     ctaLead:
-      "Share the length of the drive and whether the old slab has to come out. A local provider will confirm the scope at a site visit.",
+      "Share the length of the drive and whether the old slab has to come out. A local contractor will confirm the scope at a site visit.",
     cardScope: "Tear-out, replacement, and expansions",
     workIncluded: [
       "Grading and excavation to the planned subgrade",
@@ -147,7 +147,7 @@ const coreServices: readonly ServiceRecord[] = [
       "Site clean-up and haul-away of debris",
     ],
     tradeSpecs: [
-      "High-strength concrete mix, commonly 4,000 PSI for residential work. Your provider confirms the mix for your project.",
+      "High-strength concrete mix, commonly 4,000 PSI for residential work. Your contractor confirms the mix for your project.",
       "Steel rebar or welded wire reinforcement placed to help limit cracking.",
       "Compacted gravel subbase and a planned drainage slope set before the forms go in.",
       "Control and expansion joints laid out for South Carolina's seasonal heat, rain, and clay soil movement.",
@@ -161,7 +161,7 @@ const coreServices: readonly ServiceRecord[] = [
       { label: "Coverage today", value: "Lancaster, SC" },
       {
         label: "Site visit",
-        value: "Response timing confirmed by the local provider",
+        value: "Response timing confirmed by the local contractor",
       },
       { label: "Cost to you", value: "No charge for the quote request" },
     ],
@@ -172,7 +172,7 @@ const coreServices: readonly ServiceRecord[] = [
       },
       {
         title: "Full replacement",
-        body: "Demolition and haul away of a failed slab, regrading, and a new pour. Local providers quote demolition separately so you can see what you are paying for.",
+        body: "Demolition and haul away of a failed slab, regrading, and a new pour. Local contractors quote demolition separately so you can see what you are paying for.",
       },
       {
         title: "Widening and extensions",
@@ -208,7 +208,7 @@ const coreServices: readonly ServiceRecord[] = [
       {
         name: "Exposed aggregate or stamped edge",
         description:
-          "Decorative options are only offered when a local provider has confirmed that capability. Otherwise the job is quoted as a standard pour.",
+          "Decorative options are only offered when a local contractor has confirmed that capability. Otherwise the job is quoted as a standard pour.",
       },
     ],
     process: [
@@ -307,7 +307,7 @@ const coreServices: readonly ServiceRecord[] = [
       {
         question: "Do you pour the driveway yourselves?",
         answer:
-          "No. Excavation, subbase preparation, forming, and the pour are carried out by the local provider who takes your request. Confirm their insurance and license status with the provider and on the SC LLR website before work begins.",
+          "No. Excavation, subbase preparation, forming, and the pour are carried out by the local contractor who takes your request. Confirm their insurance and license status with the contractor and on the SC LLR website before work begins.",
       },
       {
         question: "How long does a residential driveway pour take?",
@@ -342,7 +342,7 @@ const coreServices: readonly ServiceRecord[] = [
     summary:
       "Backyard patios and outdoor living spaces, poured with a broom or smooth finish and sealed for weather.",
     heroSummary:
-      "A backyard patio is an outdoor room, so layout, grade, and drainage matter as much as the finish. Requests cover new backyard patios, patio replacement, and extensions of an existing patio. Typical work includes a compacted base, a planned drainage slope away from the house, and control joints. Request a concrete service and a local provider will confirm the layout and sealing plan at a site visit.",
+      "A backyard patio is an outdoor room, so layout, grade, and drainage matter as much as the finish. Requests cover new backyard patios, patio replacement, and extensions of an existing patio. Typical work includes a compacted base, a planned drainage slope away from the house, and control joints. Request a concrete service and a local contractor will confirm the layout and sealing plan at a site visit.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "Where patio work starts and stops",
@@ -360,7 +360,7 @@ const coreServices: readonly ServiceRecord[] = [
     costLead:
       "Patios are the project people most often price before they commit, so it is worth knowing what actually moves the figure. Finish and shape change it far more than size does.",
     ctaLead:
-      "Send the rough size and say whether it ties into an existing porch or stoop. A local provider will review it and reply.",
+      "Send the rough size and say whether it ties into an existing porch or stoop. A local contractor will review it and reply.",
     cardScope: "Backyard patios, patio replacements, and extensions",
     workIncluded: [
       "Grading and excavation to the planned subgrade",
@@ -370,7 +370,7 @@ const coreServices: readonly ServiceRecord[] = [
       "Site clean-up and haul-away of debris",
     ],
     tradeSpecs: [
-      "High-strength concrete mix, commonly 4,000 PSI for residential work. Your provider confirms the mix for your project.",
+      "High-strength concrete mix, commonly 4,000 PSI for residential work. Your contractor confirms the mix for your project.",
       "Steel rebar or welded wire reinforcement placed to help limit cracking.",
       "Compacted gravel subbase and a planned drainage slope set before the forms go in.",
       "Control and expansion joints laid out for South Carolina's seasonal heat, rain, and clay soil movement.",
@@ -387,7 +387,7 @@ const coreServices: readonly ServiceRecord[] = [
       { label: "Coverage today", value: "Lancaster, SC" },
       {
         label: "Decorative work",
-        value: "Only where a local provider confirms the capability",
+        value: "Only where a local contractor confirms the capability",
       },
       { label: "Cost to you", value: "No charge for the quote request" },
     ],
@@ -434,7 +434,7 @@ const coreServices: readonly ServiceRecord[] = [
       {
         name: "Curing and release",
         description:
-          "Curing protects the surface in the first days after the pour. Discuss the curing method and timing with the provider.",
+          "Curing protects the surface in the first days after the pour. Discuss the curing method and timing with the contractor.",
       },
       {
         name: "Sealing",
@@ -526,7 +526,7 @@ const coreServices: readonly ServiceRecord[] = [
       {
         question: "Who designs and builds the patio?",
         answer:
-          "The contractor confirms the scope on site. Layout, finish selection, scheduling, and construction are carried out by the local provider who takes your request, and availability depends on local providers in your area.",
+          "The contractor confirms the scope on site. Layout, finish selection, scheduling, and construction are carried out by the local contractor who takes your request, and availability depends on local contractors in your area.",
       },
       {
         question: "Which finishes are available for a backyard patio?",
@@ -561,7 +561,7 @@ const coreServices: readonly ServiceRecord[] = [
     summary:
       "Garage slabs, shed pads, and equipment pads on a compacted gravel base, with a vapor barrier where needed.",
     heroSummary:
-      "A slab stays level only if what sits under it is right. Requests cover garage slabs, shed pads, workshop floors, and equipment pads. Typical specifications include a compacted gravel base, a vapor barrier under the slab to limit moisture rising from the ground, and reinforcement sized to the load. Request a concrete service and a local provider will confirm base depth, drainage, and thickness at a site visit.",
+      "A slab stays level only if what sits under it is right. Requests cover garage slabs, shed pads, workshop floors, and equipment pads. Typical specifications include a compacted gravel base, a vapor barrier under the slab to limit moisture rising from the ground, and reinforcement sized to the load. Request a concrete service and a local contractor will confirm base depth, drainage, and thickness at a site visit.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "Pads this category covers",
@@ -579,7 +579,7 @@ const coreServices: readonly ServiceRecord[] = [
     costLead:
       "Pricing comes last here for a reason: until the load, the access and the base are known, any number is a guess. Once those are settled a contractor can quote a pad quickly.",
     ctaLead:
-      "Say what the pad has to carry and roughly where it goes. A local provider will review it and reply.",
+      "Say what the pad has to carry and roughly where it goes. A local contractor will review it and reply.",
     cardScope: "Garage slabs, shed pads, workshop floors, and equipment pads",
     workIncluded: [
       "Grading and excavation to the planned subgrade",
@@ -589,7 +589,7 @@ const coreServices: readonly ServiceRecord[] = [
       "Site clean-up and haul-away of debris",
     ],
     tradeSpecs: [
-      "High-strength concrete mix, commonly 4,000 PSI for residential work. Your provider confirms the mix for your project.",
+      "High-strength concrete mix, commonly 4,000 PSI for residential work. Your contractor confirms the mix for your project.",
       "Steel rebar or welded wire reinforcement placed to help limit cracking.",
       "Compacted gravel subbase and a planned drainage slope set before the forms go in.",
       "Control and expansion joints laid out for South Carolina's seasonal heat, rain, and clay soil movement.",
@@ -740,7 +740,7 @@ const coreServices: readonly ServiceRecord[] = [
       {
         question: "Is the slab poured by your own team?",
         answer:
-          "Requirements vary by project type, scope, and total cost. Confirm licensing, insurance, and eligibility with the provider you hire, and verify credentials through SC LLR before you hire.",
+          "Requirements vary by project type, scope, and total cost. Confirm licensing, insurance, and eligibility with the contractor you hire, and verify credentials through SC LLR before you hire.",
       },
       {
         question: "Do you handle structural or load bearing slabs?",
@@ -775,7 +775,7 @@ const coreServices: readonly ServiceRecord[] = [
     summary:
       "Crack repair, joint restoration, and patching of damaged or sunken concrete to keep water out.",
     heroSummary:
-      "Small cracks and worn joints cost less to fix early, and water getting into them is the usual cause of further damage. Requests cover crack repair, joint restoration, and patching of damaged or sunken concrete. Every repair starts with finding the source of the damage before a method is recommended. Request a concrete service and a local provider will assess the surface at a site visit.",
+      "Small cracks and worn joints cost less to fix early, and water getting into them is the usual cause of further damage. Requests cover crack repair, joint restoration, and patching of damaged or sunken concrete. Every repair starts with finding the source of the damage before a method is recommended. Request a concrete service and a local contractor will assess the surface at a site visit.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "Responsibility for damage",
@@ -793,7 +793,7 @@ const coreServices: readonly ServiceRecord[] = [
     costLead:
       "Repair quotes vary more than any other concrete work, because two slabs with identical cracks can need completely different work underneath. These are the things that move it.",
     ctaLead:
-      "Describe the damage and where it is. A local provider looks at it on site before anyone talks about price.",
+      "Describe the damage and where it is. A local contractor looks at it on site before anyone talks about price.",
     cardScope: "Crack repair, joint restoration, and damaged sections",
     workIncluded: [
       "Surface preparation and cleaning",
@@ -946,7 +946,7 @@ const coreServices: readonly ServiceRecord[] = [
       {
         question: "Do you carry out the repair?",
         answer:
-          "No. Repairs are carried out by a local provider who takes your request. The assessment, method, and result are that provider's responsibility under your agreement with them.",
+          "No. Repairs are carried out by a local contractor who takes your request. The assessment, method, and result are that contractor's responsibility under your agreement with them.",
       },
       {
         question: "What counts as nonstructural?",
