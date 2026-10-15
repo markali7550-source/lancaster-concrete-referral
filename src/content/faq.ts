@@ -30,12 +30,12 @@ export const faqCategories: readonly FaqCategory[] = [
     "faqs": [
       {
         "question": "How long should I wait before parking or driving on a newly poured concrete driveway?",
-        "answer": "Foot traffic is typically safe after 24 to 48 hours. Light passenger vehicles should wait at least 7 full days, while heavy trucks or RVs require the full 28-day cure cycle to reach maximum compressive strength (typically 3,500 to 4,000 PSI).",
+        "answer": "Foot traffic is typically safe after 24 to 48 hours. Light passenger vehicles should wait at least 7 full days, while heavy trucks or RVs require the full 28 day cure cycle to reach maximum compressive strength (typically 3,500 to 4,000 PSI).",
         "links": []
       },
       {
         "question": "What is a driveway apron, and how does it differ from the main driveway?",
-        "answer": "The apron is the transitional section connecting your private driveway to the public roadway or curb. Aprons often require reinforced thickness (typically 6 inches) to endure heavy curb-transition stress and must comply with local municipality right-of-way guidelines.",
+        "answer": "The apron is the transitional section connecting your private driveway to the public roadway or curb. Aprons often require reinforced thickness (typically 6 inches) to endure heavy curb transition stress and must comply with local municipality right of way guidelines.",
         "links": [
           {
             "text": "apron",
@@ -56,7 +56,7 @@ export const faqCategories: readonly FaqCategory[] = [
     "faqs": [
       {
         "question": "What are the key differences between standard poured concrete, stamped concrete, and exposed aggregate?",
-        "answer": "Standard broom-finish concrete offers a clean, non-slip utility surface. Stamped concrete replicates high-end natural stone, slate, or wood planking with custom color hardeners and release agents. Exposed aggregate washes away the top slurry layer to reveal embedded decorative stone aggregates, providing a rustic, highly durable, slip-resistant texture ideal for pool decks and walkways.",
+        "answer": "Standard broom finish concrete offers a clean, non slip utility surface. Stamped concrete replicates high end natural stone, slate, or wood planking with custom color hardeners and release agents. Exposed aggregate washes away the top slurry layer to reveal embedded decorative stone aggregates, providing a rustic, highly durable, slip resistant texture ideal for pool decks and walkways.",
         "links": [
           {
             "text": "Stamped concrete",
@@ -108,8 +108,8 @@ export const faqCategories: readonly FaqCategory[] = [
         ]
       },
       {
-        "question": "How do installers account for Lancaster's dense red clay soil during sub-base prep?",
-        "answer": "South Carolina red clay expands significantly when wet and shrinks when dry. Proper sub-base preparation requires excavating organic topsoil, mechanically compacting the subgrade, and installing a 4-inch layer of crushed stone (such as ABC / crusher run aggregate) to ensure proper load distribution and prevent uneven settling.",
+        "question": "How do installers account for Lancaster's dense red clay soil during sub base prep?",
+        "answer": "South Carolina red clay expands significantly when wet and shrinks when dry. Proper sub base preparation requires excavating organic topsoil, mechanically compacting the subgrade, and installing a 4 inch layer of crushed stone (such as ABC / crusher run aggregate) to ensure proper load distribution and prevent uneven settling.",
         "links": []
       }
     ]
@@ -119,8 +119,8 @@ export const faqCategories: readonly FaqCategory[] = [
     "name": "Repair, Resurfacing & Leveling",
     "faqs": [
       {
-        "question": "When is decorative resurfacing preferred over full tear-out and replacement?",
-        "answer": "Resurfacing is ideal when concrete has minor surface scaling, cosmetic spalling, or micro-cracks but remains structurally level and stable. If the slab has extensive heaving, structural sub-base failure, or severe deep-seated settlement, full demolition and replacement is required.",
+        "question": "When is decorative resurfacing preferred over full tear out and replacement?",
+        "answer": "Resurfacing is ideal when concrete has minor surface scaling, cosmetic spalling, or micro cracks but remains structurally level and stable. If the slab has extensive heaving, structural sub base failure, or severe deep seated settlement, full demolition and replacement is required.",
         "links": [
           {
             "text": "Resurfacing",
@@ -130,7 +130,7 @@ export const faqCategories: readonly FaqCategory[] = [
       },
       {
         "question": "How does concrete leveling work for sunken slabs and trip hazards?",
-        "answer": "Concrete leveling (polyurethane foam injection or traditional stone slurry leveling) involves drilling small penny-sized access holes and pumping a high-density expanding material underneath the sunken slab to raise it back into alignment with surrounding walkways.",
+        "answer": "Concrete leveling (polyurethane foam injection or traditional stone slurry leveling) involves drilling small penny sized access holes and pumping a high density expanding material underneath the sunken slab to raise it back into alignment with surrounding walkways.",
         "links": [
           {
             "text": "Concrete leveling",
@@ -145,13 +145,13 @@ export const faqCategories: readonly FaqCategory[] = [
     "name": "Floor Coatings & Sealing",
     "faqs": [
       {
-        "question": "What makes professional multi-layer garage coatings superior to DIY retail epoxy kits?",
-        "answer": "Commercial systems utilize industrial mechanical diamond grinding to open concrete pores, followed by a high-solid moisture-mitigating primer, a 100% broadcast vinyl flake layer, and a UV-stable polyaspartic clear topcoat. This creates a chemical-resistant, hot-tire pickup resistant surface that lasts 15+ years compared to water-based DIY paints that often peel within 1 to 2 years.",
+        "question": "What makes professional multi layer garage coatings superior to DIY retail epoxy kits?",
+        "answer": "Commercial systems utilize industrial mechanical diamond grinding to open concrete pores, followed by a high solid moisture mitigating primer, a 100% broadcast vinyl flake layer, and a UV stable polyaspartic clear topcoat. This creates a chemical resistant, hot tire pickup resistant surface that lasts 15+ years compared to water based DIY paints that often peel within 1 to 2 years.",
         "links": []
       },
       {
         "question": "How often should exterior concrete and stamped patios be resealed in South Carolina?",
-        "answer": "High-traffic and decorative stamped surfaces should generally be resealed every 2 to 3 years with a breathable, UV-resistant solvent-based or acrylic penetrating sealer to protect against UV fading, oil staining, and moisture penetration.",
+        "answer": "High traffic and decorative stamped surfaces should generally be resealed every 2 to 3 years with a breathable, UV resistant solvent based or acrylic penetrating sealer to protect against UV fading, oil staining, and moisture penetration.",
         "links": [
           {
             "text": "penetrating sealer",
@@ -167,7 +167,7 @@ export const faqCategories: readonly FaqCategory[] = [
     "faqs": [
       {
         "question": "How does the contractor matching and free estimate process work?",
-        "answer": "Submit your project scope through our quick online request form or call our team directly. We match your specific project needs (dimensions, service type, location) with an experienced, independent local concrete specialist who will contact you to confirm details, conduct an on-site evaluation if necessary, and provide an upfront, transparent quote.",
+        "answer": "Submit your project scope through our quick online request form or call our team directly. We match your specific project needs (dimensions, service type, location) with an experienced, independent local concrete specialist who will contact you to confirm details, conduct an on site evaluation if necessary, and provide an upfront, transparent quote.",
         "links": [
           {
             "text": "quick online request form",
@@ -177,7 +177,7 @@ export const faqCategories: readonly FaqCategory[] = [
       },
       {
         "question": "Who handles local building permits for residential concrete flatwork in Lancaster County?",
-        "answer": "While minor flatwork repairs or ground-level patio extensions often do not require complex permitting, structural foundations, public right-of-way driveway aprons, and large detached additions may require municipal approval. Your assigned local service provider will review your project scope and confirm all necessary Lancaster City or County building permit requirements before pouring.",
+        "answer": "While minor flatwork repairs or ground level patio extensions often do not require complex permitting, structural foundations, public right of way driveway aprons, and large detached additions may require municipal approval. Your assigned local service provider will review your project scope and confirm all necessary Lancaster City or County building permit requirements before pouring.",
         "links": []
       },
       {
