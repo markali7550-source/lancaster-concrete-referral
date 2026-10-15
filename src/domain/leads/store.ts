@@ -46,33 +46,30 @@ export interface LeadRecord {
   routing: RoutingDecision | null;
 }
 
-const DEV_HASH_SECRET = "dev-only-hash-secret";
-
 let fallbackSecret: string | null = null;
+let warnedMissingSecret = false;
 
 /**
  * Resolved per call, not at module load, so `next build` (which runs with
  * NODE_ENV=production) never fails on a missing secret.
  *
- * In production, a missing LEAD_HASH_SECRET must not fail the customer's
- * request. It falls back to a random per-process secret, which is never the
- * public dev value, and logs a warning once. Duplicate detection then only
- * holds within one running instance. Set LEAD_HASH_SECRET to make it durable.
+ * A missing LEAD_HASH_SECRET never fails a customer's request, and it never
+ * falls back to a published string. Both production and non-production use a
+ * random per-process secret. Production logs a warning once. Duplicate
+ * detection then only holds within one running instance. Set LEAD_HASH_SECRET
+ * to make it durable.
  */
 function hashSecret(): string {
   const secret = process.env.LEAD_HASH_SECRET;
   if (secret && secret.length > 0) return secret;
-  if (process.env.NODE_ENV === "production") {
-    if (!fallbackSecret) {
-      console.warn(
-        "[leads] LEAD_HASH_SECRET is not set. Using a random per-process secret, so duplicate detection will not persist across restarts. Set LEAD_HASH_SECRET in the hosting environment.",
-      );
-      fallbackSecret = randomBytes(32).toString("hex");
-    }
-    return fallbackSecret;
+  if (!fallbackSecret) fallbackSecret = randomBytes(32).toString("hex");
+  if (process.env.NODE_ENV === "production" && !warnedMissingSecret) {
+    warnedMissingSecret = true;
+    console.warn(
+      "[leads] LEAD_HASH_SECRET is not set. Using a random per-process secret, so duplicate detection will not persist across restarts. Set LEAD_HASH_SECRET in the hosting environment.",
+    );
   }
-  return DEV_HASH_SECRET;
-
+  return fallbackSecret;
 }
 
 export function hashContact(value: string | null | undefined): string | null {

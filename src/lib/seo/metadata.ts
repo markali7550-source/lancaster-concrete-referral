@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { absoluteUrl, site } from "@/lib/env";
+import { SEARCH_INDEXING_ENABLED } from "@/lib/env/indexing";
 
 const OG_ALT = `${site.brand}, concrete service in Lancaster, South Carolina`;
 
@@ -18,14 +19,17 @@ interface PageMetaInput {
   noindex?: boolean;
 }
 
-/** Public pages are indexable by default; transactional confirmation pages opt out explicitly. */
-export const DEMO_NOINDEX = false;
+/**
+ * Pages are noindex until ALLOW_SEARCH_INDEXING=true is set for the launch build.
+ * Transactional confirmation pages opt out explicitly as well.
+ */
+export const DEFAULT_NOINDEX = !SEARCH_INDEXING_ENABLED;
 
 export function pageMetadata({
   title,
   description,
   path,
-  noindex = DEMO_NOINDEX,
+  noindex = DEFAULT_NOINDEX,
 }: PageMetaInput): Metadata {
   const canonical = absoluteUrl(path);
   return {

@@ -104,12 +104,33 @@ PARTNER_WEBHOOK_SECRET   <long random string>
 LEAD_HASH_SECRET         <long random string>
 ```
 
-Without these the code falls back to `dev-only-*` defaults, which are published
-in the public repository — anyone could forge webhook calls. Generate each with:
+Production behaviour:
+
+- `CALL_WEBHOOK_SECRET` and `PARTNER_WEBHOOK_SECRET`: if either is unset in
+  production, its webhook endpoint throws an explicit error and refuses the
+  request. There is no fallback value. Outside production, a random per-process
+  secret is used, so real provider signatures will not verify locally.
+- `LEAD_HASH_SECRET`: if unset in production, the site still accepts quote
+  requests. It uses a random per-process secret and logs a warning. Duplicate
+  detection then only holds within one running instance, so set this value
+  before launch. No published fallback string is used.
+
+Generate each with:
 
 ```bash
 openssl rand -hex 32
 ```
+
+**Search indexing (off by default):**
+
+```
+ALLOW_SEARCH_INDEXING    true  (set only for the production launch build)
+```
+
+Unless this is exactly `true`, every page sends `X-Robots-Tag: noindex, nofollow`,
+`robots.txt` disallows all crawlers, and the sitemap is empty. Previews and
+staging therefore stay out of search results. The flag is read at build time, so
+redeploy after changing it.
 
 **Optional — kill switches:**
 

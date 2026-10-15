@@ -10,7 +10,18 @@ const nextConfig: NextConfig = {
   // collapses slash variants, so no hand-written case redirects are needed.
   // Removed-route 301/410 handling lives in middleware when a route retires.
   async headers() {
+    // Same switch as src/lib/env/indexing.ts. Until launch, every response tells
+    // crawlers not to index it, including previews and staging.
+    const indexingOff = process.env.ALLOW_SEARCH_INDEXING !== "true";
     return [
+      ...(indexingOff
+        ? [
+            {
+              source: "/(.*)",
+              headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+            },
+          ]
+        : []),
       {
         source: "/:path*\\.webp",
         headers: [
