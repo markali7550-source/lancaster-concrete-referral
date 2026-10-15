@@ -103,7 +103,6 @@ export function QuoteForm({
     return () => window.removeEventListener("hashchange", focusFirstField);
   }, []);
   const [errors, setErrors] = useState<Errors>({});
-  const [leadId, setLeadId] = useState<string | null>(null);
   const summaryRef = useRef<HTMLDivElement>(null);
   const idempotencyKey = useRef<string>(newIdempotencyKey());
 
@@ -236,7 +235,6 @@ export function QuoteForm({
 
       if (response.status === 202) {
         const data = (await response.json()) as { leadId: string };
-        setLeadId(data.leadId);
         setStatus("success");
         track("lead_accepted", { lead_id: data.leadId });
         return;
@@ -293,12 +291,6 @@ export function QuoteForm({
         <p className="mt-3 text-[color:var(--color-muted)]">
           An independent local service provider serving your area will contact you
           directly to discuss pricing and scheduling.
-        </p>
-        <p className="mt-4 text-sm text-[color:var(--color-muted)]">
-          Reference:{" "}
-          <span className="font-semibold tabular-nums tracking-wide break-all text-[color:var(--color-ink)]">
-            {leadId}
-          </span>
         </p>
         <a href="/thank-you" className="btn btn-primary mt-6 w-full sm:w-auto">
           What happens next
