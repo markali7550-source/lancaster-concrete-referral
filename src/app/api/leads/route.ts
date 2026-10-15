@@ -101,7 +101,7 @@ export async function POST(request: Request) {
   const replay = findByIdempotencyKey(idempotencyKey);
   if (replay) {
     return NextResponse.json(
-      { leadId: replay.id, state: replay.state, replay: true },
+      { success: true, leadId: replay.id, state: replay.state, replay: true },
       { status: 202, headers: noStore },
     );
   }
@@ -145,7 +145,7 @@ export async function POST(request: Request) {
   });
   if (duplicate) {
     return NextResponse.json(
-      { leadId: duplicate.id, state: duplicate.state, duplicate: true },
+      { success: true, leadId: duplicate.id, state: duplicate.state, duplicate: true },
       { status: 202, headers: noStore },
     );
   }
@@ -188,7 +188,7 @@ export async function POST(request: Request) {
   });
 
   return NextResponse.json(
-    { leadId: record.id, state: record.state },
+    { success: true, leadId: record.id, state: record.state },
     { status: 202, headers: noStore },
   );
 }
