@@ -108,7 +108,7 @@ export default function ContactPage() {
                   Coverage today
                 </dt>
                 <dd className="mt-1">
-                  <span className="-my-2 inline-block py-2 text-lg text-white">
+                  <span className="-my-2 inline-block py-2 text-lg">
                     Lancaster, SC
                   </span>
                 </dd>
