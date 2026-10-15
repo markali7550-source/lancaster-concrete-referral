@@ -293,7 +293,7 @@ export default function HomePage() {
           Full detail on how we are paid and what we do not do is on the{" "}
           <Link
             href="/service-disclosure"
-            className="font-medium text-[color:var(--color-ink)] underline underline-offset-4"
+            className="font-medium text-[color:var(--color-accent)] underline underline-offset-4 decoration-[color:var(--color-accent)]/40 transition-colors duration-150 hover:decoration-[color:var(--color-accent)]"
           >
             service disclosure page
           </Link>
