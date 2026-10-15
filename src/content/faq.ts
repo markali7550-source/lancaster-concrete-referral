@@ -30,7 +30,7 @@ export const faqCategories: readonly FaqCategory[] = [
     "faqs": [
       {
         "question": "How long should I wait before parking or driving on a newly poured concrete driveway?",
-        "answer": "Foot traffic is typically safe after 24 to 48 hours. Light passenger vehicles should wait at least 7 full days, while heavy trucks or RVs require the full 28-day cure cycle to reach maximum compressive strength (typically 3,500–4,000 PSI).",
+        "answer": "Foot traffic is typically safe after 24 to 48 hours. Light passenger vehicles should wait at least 7 full days, while heavy trucks or RVs require the full 28-day cure cycle to reach maximum compressive strength (typically 3,500 to 4,000 PSI).",
         "links": []
       },
       {
@@ -146,7 +146,7 @@ export const faqCategories: readonly FaqCategory[] = [
     "faqs": [
       {
         "question": "What makes professional multi-layer garage coatings superior to DIY retail epoxy kits?",
-        "answer": "Commercial systems utilize industrial mechanical diamond grinding to open concrete pores, followed by a high-solid moisture-mitigating primer, a 100% broadcast vinyl flake layer, and a UV-stable polyaspartic clear topcoat. This creates a chemical-resistant, hot-tire pickup resistant surface that lasts 15+ years compared to water-based DIY paints that often peel within 1–2 years.",
+        "answer": "Commercial systems utilize industrial mechanical diamond grinding to open concrete pores, followed by a high-solid moisture-mitigating primer, a 100% broadcast vinyl flake layer, and a UV-stable polyaspartic clear topcoat. This creates a chemical-resistant, hot-tire pickup resistant surface that lasts 15+ years compared to water-based DIY paints that often peel within 1 to 2 years.",
         "links": []
       },
       {
