@@ -107,8 +107,10 @@ export default function ContactPage() {
                 <dt className="eyebrow">
                   Coverage today
                 </dt>
-                <dd className="mt-1 text-[color:var(--color-muted)]">
-                  Lancaster, SC
+                <dd className="mt-1">
+                  <span className="-my-2 inline-block py-2 text-lg text-white">
+                    Lancaster, SC
+                  </span>
                 </dd>
               </div>
             </dl>
