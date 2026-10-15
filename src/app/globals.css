@@ -185,6 +185,25 @@
     text-decoration-thickness: from-font;
   }
 
+  /* Running-copy links: a plain link inside a paragraph, definition, table
+     cell or quote in <main> or the footer takes the brand accent, underlined,
+     and darkens on hover. The accent token is already the mint inside dark
+     bands and the footer, so one rule covers light and dark pages. Buttons,
+     cards, navigation and breadcrumbs carry their own classes and are not
+     matched here. Classed links (FAQ answers and similar) keep their
+     existing styling. */
+  :where(main, footer) :where(p, dd, td, blockquote) a:not([class]) {
+    color: var(--color-accent);
+    text-decoration-line: underline;
+    text-decoration-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
+    transition: color 150ms ease, text-decoration-color 150ms ease;
+  }
+
+  :where(main, footer) :where(p, dd, td, blockquote) a:not([class]):hover {
+    color: var(--color-accent-hover);
+    text-decoration-color: var(--color-accent-hover);
+  }
+
   /* Headings.
    *
    * Two changes from before, both about restraint. Weight came down from 800
