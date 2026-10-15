@@ -16,9 +16,6 @@ export const siteConfig = {
   phoneDisplay: "(803) 555-0123",
   /** Placeholder mailbox. */
   email: "contact@lancasterconcreteconnect.com",
-  /** Owner inbox that receives an email for every quote-form submission.
-   *  Override with LEAD_NOTIFICATION_EMAIL (server-side only). */
-  leadNotificationEmail: "markali7550@gmail.com",
   serviceArea: { city: "Lancaster", region: "SC", country: "US" },
   /** Street address and ZIP code are optional. Leave them empty until verified:
    *  the schema then carries city, region and country only. */
