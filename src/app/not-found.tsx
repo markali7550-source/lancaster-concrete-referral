@@ -6,8 +6,8 @@ export default function NotFound() {
       <p className="eyebrow">404</p>
       <h1 className="h1 mt-4">We couldn&apos;t find that page</h1>
       <p className="lede mt-5 max-w-prose">
-        Service areas are published one at a time, only after a contractor has
-        approved coverage there. If you were looking for a city page, it may not
+        Service areas are added one at a time, once our team is ready to serve them
+        well. If you were looking for a city page, it may not
         be live yet.
       </p>
       <div className="mt-6 flex flex-wrap gap-3">

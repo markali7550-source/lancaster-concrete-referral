@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: `${site.brand} | Concrete Quotes in Lancaster, SC`,
     short_name: site.brand,
     description:
-      "Local concrete service for Lancaster, South Carolina homeowners, with work done by independent local concrete specialists.",
+      "Local concrete service for Lancaster, South Carolina homeowners, with work done by our dedicated local concrete team.",
     start_url: "/",
     display: "browser",
     background_color: "#f6f4f1",

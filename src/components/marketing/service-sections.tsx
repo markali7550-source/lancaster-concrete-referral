@@ -140,7 +140,7 @@ export function ServiceHero({
         </a>
       </div>
       <p className="mt-3 text-xs" style={{ color: overlayMuted }}>
-        No charge to request a quote. Independent local providers set their own prices.
+        No charge to request a quote. Every price is written out in your estimate before work begins.
       </p>
     </OverlayHeader>
   );
@@ -255,7 +255,7 @@ export function ScopeColumns({
           ))}
         </ul>
         <p className="mt-5 border-t pt-4 text-xs leading-relaxed text-[color:var(--color-muted)] hairline">
-          These requests are declined rather than forwarded to a contractor who
+          These requests are outside our scope, and we will tell you so plainly rather than pass them along to someone who
           should not be taking them on.
         </p>
       </aside>
@@ -355,7 +355,7 @@ export function CostTable({
     >
       <table className="w-full min-w-[34rem] border-collapse text-left text-sm">
         <caption className="sr-only">
-          Factors that affect the price quoted by the contractor
+          Factors that affect the price quoted by our project manager
         </caption>
         <thead>
           <tr style={{ backgroundColor: "var(--color-surface)" }}>
@@ -427,7 +427,7 @@ export function PrepColumns({
         </ul>
       </div>
       <div className="card p-6">
-        <p className="font-semibold">Ask the contractor, not us</p>
+        <p className="font-semibold">Ask your project manager, not us</p>
         <ul className="mt-4 space-y-3 text-sm">
           {questions.map((item) => (
             <li key={item} className="flex gap-3">
@@ -450,7 +450,7 @@ export function PrepColumns({
         </ul>
         <p className="mt-5 border-t pt-4 text-xs leading-relaxed text-[color:var(--color-muted)] hairline">
           Pricing, specification, scheduling, and warranty sit with the
-          independent contractor assigned to your project.
+          our concrete specialist assigned to your project.
         </p>
       </div>
     </div>

@@ -17,7 +17,7 @@ import { PUBLIC_DISCLOSURE_PARAGRAPHS } from "@/lib/seo/disclosure";
 
 const TITLE = `How Our Concrete Service Works | ${site.brand}`;
 const DESCRIPTION =
-  "How a request is validated, checked against the teams that serve your area, passed to one independent contractor, and what our role is and is not.";
+  "How our concrete service works, from your free on-site consultation and transparent estimate through the final quality inspection.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,
@@ -60,12 +60,10 @@ export default function HowItWorksPage() {
           className="lede mt-5 max-w-2xl"
           style={{ color: overlayBody }}
         >
-          What happens between the moment you submit a request and the
-          moment an independent contractor calls you, including the checks
-          that stop a request from going any further.
+          What happens from your first request to the final quality inspection, and how you work directly with our dedicated concrete team at every step.
         </p>
       </OverlayHeader>
-      <Section tone="soft" eyebrow="Eligibility" title="What blocks a provider from receiving your request">
+      <Section tone="soft" eyebrow="Scheduling" title="How we confirm we can serve your project">
         <ServiceAreaControls />
       </Section>
 
@@ -91,7 +89,7 @@ export default function HowItWorksPage() {
             alt: "Wet concrete pouring from a chute onto a fresh slab, with a worker's boots visible in the background",
         }}
         eyebrow="Process"
-        title="Three steps, no obligation"
+        title="Four steps, no obligation"
       >
         <HowMatchingWorks />
       </Section>
@@ -111,19 +109,19 @@ export default function HowItWorksPage() {
           <div className="card p-6">
             <p className="font-semibold">We do</p>
             <ul className="mt-2 inline-block list-disc space-y-1.5 pl-5 text-left text-sm text-[color:var(--color-muted)] lg:block">
-              <li>Collect and validate your request</li>
-              <li>Match your request to a participating provider with written coverage</li>
-              <li>Send the request to one eligible contractor</li>
-              <li>Reassign once if the first contractor does not acknowledge</li>
+              <li>Finish, inspect, and clean up the site after every project</li>
+              <li>Meet you for a free on-site consultation</li>
+              <li>Prepare a transparent, written estimate with no hidden fees</li>
+              <li>Excavate, form, and pour with our own crew</li>
             </ul>
           </div>
           <div className="card p-6">
-            <p className="font-semibold">Your local provider handles</p>
+            <p className="font-semibold">What you decide with us</p>
             <ul className="mt-2 inline-block list-disc space-y-1.5 pl-5 text-left text-sm text-[color:var(--color-muted)] lg:block">
-              <li>Pouring, supervision, inspection, and workmanship</li>
-              <li>Pricing, scheduling, and project scope</li>
-              <li>Your contract, which is between you and that provider</li>
-              <li>Confirming contractor availability in your area</li>
+              <li>Scope, mix, finish, and layout choices</li>
+              <li>Pour date and schedule</li>
+              <li>Payment terms as stated in your written estimate</li>
+              <li>Final walkthrough and sign-off</li>
             </ul>
           </div>
         </div>
@@ -131,7 +129,7 @@ export default function HowItWorksPage() {
 
       <CtaBand
         title="Ready to start?"
-        body="Submit a request and we will send it to one eligible independent contractor, or call our team first to check coverage."
+        body="Request your free on-site consultation, or call our team to talk through your project today."
         showFormLink={false}
       />
 

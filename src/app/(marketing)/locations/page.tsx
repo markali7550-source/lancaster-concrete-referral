@@ -23,7 +23,7 @@ import { breadcrumbNode, buildGraph, webPageNode } from "@/lib/schema/graph";
  */
 const TITLE = fitTitle("Concrete Service Areas in South Carolina");
 const DESCRIPTION =
-  "The South Carolina areas we currently serve. Coverage is added only once a local team confirms it can take work there. Check whether we serve your city today.";
+  "The South Carolina areas our local crew serves today. We add new areas one at a time. Check whether we serve your city.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,
@@ -63,14 +63,13 @@ export default function LocationsPage() {
           Concrete Service Areas in South Carolina
         </h1>
         <p className="lede mt-5 max-w-2xl" style={{ color: overlayBody }}>
-          One service area today. Additional South Carolina cities appear
-          here only after coverage, content, and compliance gates pass.
+          One service area today. Additional South Carolina cities are added here as our local team expands.
         </p>
       </OverlayHeader>
       <Section
-        eyebrow="Coverage"
-        title="Where we currently take quote requests"
-        lead="Every area below has a participating provider who has confirmed in writing that they accept work there."
+        eyebrow="Service area"
+        title="Where we currently schedule projects"
+        lead="Every area below is served directly by our local concrete team."
       >
         <div className="grid grid-cols-1 gap-x-12 gap-y-6 sm:grid-cols-2">
           <div>
@@ -78,9 +77,7 @@ export default function LocationsPage() {
               How an area gets added
             </h3>
             <p className="mt-1.5 max-w-[48ch] text-[16px] leading-relaxed text-[color:var(--color-muted)]">
-              A city appears here only once a provider has approved it in
-              writing and the page has its own local content. We do not draw a
-              radius on a map and call it coverage.
+              A city appears here once our team is ready to serve it and the page has its own local content. We do not draw a radius on a map and call it a service area.
             </p>
           </div>
           <div>
@@ -88,9 +85,7 @@ export default function LocationsPage() {
               If your area is not listed
             </h3>
             <p className="mt-1.5 max-w-[48ch] text-[16px] leading-relaxed text-[color:var(--color-muted)]">
-              Submit a request anyway. If nobody covers your address we tell you
-              plainly rather than passing your details to a provider who cannot
-              help.
+              Submit a request anyway. If we do not serve your address, we tell you plainly and right away.
             </p>
           </div>
         </div>
@@ -127,8 +122,7 @@ export default function LocationsPage() {
                     Concrete quotes in {location.city}, {location.region}
                   </h3>
                   <p className="mt-2 flex-1 text-[14px] leading-relaxed text-[color:var(--color-muted)]">
-                    Driveways, patios, slabs and repair served by independent
-                    providers covering {location.city}.
+                    Driveways, patios, slabs and repair from our local crew in {location.city}.
                   </p>
                   <span
                     className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold"
@@ -146,7 +140,7 @@ export default function LocationsPage() {
       </Section>
       <CtaBand
         title="Ready to request concrete service?"
-        body="Choose your city above, or send your project details and we will check whether a local independent provider covers your area."
+        body="Choose your city above, or send your project details and we will confirm whether our team serves your area."
         formHref="/contact#quote-form"
       />
     </>

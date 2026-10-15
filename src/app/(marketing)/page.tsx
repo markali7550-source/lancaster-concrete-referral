@@ -25,7 +25,7 @@ import { buildGraph, faqNode, webPageNode } from "@/lib/schema/graph";
 
 const TITLE = `Lancaster, SC Concrete Quotes | ${site.brand}`;
 const DESCRIPTION =
-  "Local concrete service in Lancaster, SC for driveways, patios, slabs and repair. Work is done by independent local concrete specialists, not by this website.";
+  "Concrete driveways, patios, slabs and repair from our dedicated local team in Lancaster, SC. Free on-site consultations and transparent estimates.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,
@@ -37,22 +37,22 @@ const DECISION_ITEMS = [
   {
     question: "Repair the slab or replace it?",
     answer:
-      "Isolated surface cracking on an otherwise sound slab is usually a repair conversation. Settlement across a whole panel, heaving, or a failing subbase usually is not. Only the independent provider who inspects the slab can tell you which one you have.",
+      "Isolated surface cracking on an otherwise sound slab is usually a repair conversation. Settlement across a whole panel, heaving, or a failing subbase usually is not. Our project manager inspects the slab on site and tells you which one you have.",
   },
   {
     question: "What changes the price of a Lancaster pour?",
     answer:
-      "Access for a mixer, demolition and haul away of the old slab, subbase preparation on clay soil, thickness, reinforcement, and finish. Square footage alone is a poor predictor, which is why we publish no price ranges.",
+      "Access for a mixer, demolition and haul away of the old slab, subbase preparation on clay soil, thickness, reinforcement, and finish. Square footage alone is a poor predictor, which is why we write a transparent estimate for your exact project.",
   },
   {
     question: "Do I need more than one quote?",
     answer:
-      "Comparing quotes is sensible. We send your request to one participating provider at a time so you are not called by five companies, and you remain completely free to seek other quotes independently.",
+      "Comparing quotes is sensible. Our on site consultation and written estimate are free, so you can compare them with any other quote and ask us to walk through every line.",
   },
   {
     question: "What does this service cost me?",
     answer:
-      "Nothing. We are paid by the service provider on completed and collected work. That arrangement does not change the price you negotiate, and it does not make us a party to your contract.",
+      "Our consultation and estimate are free. You pay only for the work described in your written estimate, with no hidden fees.",
   },
 ];
 
@@ -62,27 +62,27 @@ const FAQS = [
   {
     question: "Do you perform concrete work?",
     answer:
-      "Independent local concrete specialists do the work. We match your request with one eligible provider serving your area.",
+      "Yes. Our own concrete crew performs every project we sell, from excavation and forming through the pour, finish, and cleanup.",
   },
   {
     question: "Who performs the work?",
     answer:
-      "An independent provider serving your area. They hold the relationship, the contract, and the responsibility for the work.",
+      "Our dedicated concrete team. You work directly with our project managers from your first call to the final inspection.",
   },
   {
     question: "Which areas can you take work in right now?",
     answer:
-      "Lancaster, South Carolina. Service availability depends on participating providers, so requests outside covered areas receive a clear answer that we do not cover them, instead of being forwarded to a provider who does not serve the area.",
+      "Lancaster, South Carolina. If your address is outside our service area, we will tell you plainly and right away.",
   },
   {
-    question: "Are the service providers licensed and insured?",
+    question: "Are you licensed and insured?",
     answer:
-      "Licensing and insurance are the responsibility of each independent provider, and we make no representation about any provider's credentials. Confirm license status, insurance, and credentials directly with the provider and through SC LLR before you hire.",
+      "We will provide our license and insurance details before you sign. You can also verify them directly through SC LLR at any time.",
   },
   {
     question: "What happens to my details?",
     answer:
-      "Your request is stored by us and shared with the independent provider covering your area so they can contact you. Marketing contact is a separate, optional consent. See the Privacy Policy for retention and your choices.",
+      "Your request goes to our local project managers, who use it to contact you about your project. Marketing contact is a separate, optional consent. See the Privacy Policy for retention and your choices.",
   },
 ];
 
@@ -103,8 +103,8 @@ export default function HomePage() {
       */}
       <Hero
         locationCue="Lancaster County, South Carolina"
-        h1="Connect With a Local Concrete Service Provider in Lancaster, SC"
-        summary="Tell us what you need and where the property is. We will match your request with one eligible independent concrete service provider serving your area."
+        h1="Lancaster's Dedicated Concrete Professionals, Built to Last"
+        summary="Serving Lancaster homeowners and businesses with pride, precision, and lasting quality. From your free on-site estimate to the final pour and cleanup, you work directly with our dedicated concrete team."
         imageSrc="/images/home/home-hero-float.webp"
         imageAlt="Worker in a high-visibility vest and cap hand-floating freshly poured concrete beside timber forms"
         overlay
@@ -129,7 +129,7 @@ export default function HomePage() {
         tone="surface"
         eyebrow="Project types"
         title="Where we can take work in Lancaster today"
-        lead="Fourteen residential concrete services, each on its own page. Each request goes to a local provider who confirms the scope, and foundation repair, structural engineering, and retaining walls sit outside these services."
+        lead="Fourteen residential concrete services, each on its own page. Every project starts with a free on-site consultation from our team. Foundation repair, structural engineering, and retaining walls sit outside these services."
       >
         <ProjectTypeChooser images={serviceCardImageMap} />
         <p className="mt-8 text-sm">
@@ -181,10 +181,9 @@ export default function HomePage() {
           <div className="container-page relative z-30">
             <div className="text-left">
               <p className="eyebrow">Process</p>
-              <h2 className="h2 mt-3">Three steps, no obligation</h2>
+              <h2 className="h2 mt-3">Four steps, no obligation</h2>
               <p className="lede mt-4">
-                You are never passed to a call center, and your details are
-                never sold to a list of providers who bid against each other.
+                You work directly with our crew from the first consultation to the final inspection. No call centers and no bidding wars.
               </p>
             </div>
             <div className="mt-7">
@@ -197,17 +196,17 @@ export default function HomePage() {
 
       <Section
         tone="soft"
-        eyebrow="How requests are checked"
-        title="How your request reaches an independent provider"
-        lead="These are scheduling checks, not credential verification. License, insurance, and workmanship remain matters to confirm directly with the independent provider who contacts you."
+        eyebrow="How we schedule your project"
+        title="How we confirm your project"
+        lead="These checks confirm we can take your project on schedule. We are glad to share our license and insurance details before you sign."
       >
         <ServiceAreaControls />
       </Section>
 
       <Section
         eyebrow="Before you call"
-        title="Four things worth deciding yourself"
-        lead="None of these need a contractor to answer, and knowing them makes the first conversation shorter."
+        title="Four things to think through before your consultation"
+        lead="None of these need a long answer from us, and knowing them makes your free consultation shorter."
       >
         <DecisionSupport items={DECISION_ITEMS} />
       </Section>
@@ -219,13 +218,12 @@ export default function HomePage() {
         }}
         eyebrow="Service area"
         title="Areas we currently serve"
-        lead="Every area we currently serve. Service availability depends on participating providers."
+        lead="Every area we currently serve, each with a dedicated local crew."
       >
         <AdjacentAreas locations={publishedLocations} />
 
         <p className="mt-7 text-center text-[14px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
-          Additional South Carolina areas are added one at a time, and only once
-          a participating provider has approved coverage there in writing.
+          We add new South Carolina areas one at a time, once our crew is ready to serve them well.
         </p>
       </Section>
 
@@ -233,7 +231,7 @@ export default function HomePage() {
         tone="surface"
         eyebrow="Request Concrete Service"
         title="What we need from you"
-        lead="Two short steps. A participating service provider may contact you, and if no provider covering your area can take it, we will say so plainly."
+        lead="Two short steps. A project manager from our team will contact you, and if we cannot serve your area, we will say so plainly."
       >
         <p
           className="mb-8 rounded-[12px] border p-4 text-[13.5px] leading-relaxed"
@@ -266,12 +264,12 @@ export default function HomePage() {
           <div className="lg:pt-4">
             <p className="eyebrow-plain">What happens after you submit</p>
             <p className="mt-4 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
-              Your location and project type are checked against the teams that work in your area. One local team receives the request and may contact you. If they do not respond in time, it goes to the next team once, and if nobody covers your area we tell you so.
+              We check your location and project type so we can plan your visit. A project manager from our local team contacts you to schedule your free on-site consultation. If your area is outside our service area, we tell you so right away.
             </p>
             <div className="card mt-8 p-5">
               <p className="text-sm font-semibold">Prefer to talk?</p>
               <p className="mt-1.5 text-[14px] text-[color:var(--color-muted)]">
-                Call our team and we will quickly tell you whether a local team covers your area.
+                Call our team and we will answer your questions and book your free on-site consultation.
               </p>
               <a
                 href={`tel:${site.phoneE164}`}
@@ -287,7 +285,7 @@ export default function HomePage() {
 
       <SectionDivider />
 
-      <Section compact eyebrow="FAQ" title="How this service works">
+      <Section compact eyebrow="FAQ" title="How we work with you">
         <FaqSection faqs={FAQS} name="home-faq" />
         <p className="mt-6 text-sm text-[color:var(--color-muted)]">
           Full detail on how we are paid and what we do not do is on the{" "}
@@ -303,7 +301,7 @@ export default function HomePage() {
 
       <CtaBand
         title="Ready to request concrete service?"
-        body="Send your project details and a local service provider will reply. No charge to you and no obligation to proceed."
+        body="Send your project details and a project manager from our local team will reply. Your consultation is free, with no obligation to proceed."
       />
 
 

@@ -9,7 +9,7 @@ import type { ServiceSlug } from "@/content/services";
  * - No specific prices, no guaranteed timelines, no licensing, insurance,
  *   certification, or outcome guarantees.
  * - Scope language stays conditional ("may include", "can involve") because
- *   participating providers differ in what they take on.
+ *   our crews differ in what they take on.
  */
 export interface ServiceDetail {
   /** Common project components. Rendered under an explicit "may include" caveat. */

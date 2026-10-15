@@ -42,7 +42,7 @@ function titleFor(name: string) {
  * between /services/[service] and /locations/lancaster-sc/[service].
  */
 function descriptionFor(nameLower: string, projectNoun: string) {
-  const base = `What ${nameLower} covers in Lancaster, SC, what falls outside it, and how ${/^[aeiou]/i.test(projectNoun) ? "an" : "a"} ${projectNoun} request is handled by a local concrete provider.`;
+  const base = `What ${nameLower} covers in Lancaster, SC, what falls outside it, and how ${/^[aeiou]/i.test(projectNoun) ? "an" : "a"} ${projectNoun} request is handled by our local concrete team.`;
   // Short descriptions get a call to action so they land in the 140-160 range.
   return base.length < 140 ? `${base} Request a free quote.` : base;
 }
@@ -131,7 +131,7 @@ export default async function ServicePage({ params }: { params: Params }) {
         ctaBody={service.ctaLead}
         defaultServiceSlug={service.slug}
         callCardTitle="Prefer to talk it through?"
-        callCardBody="Our team can confirm whether we have approved coverage for your area before you go any further."
+        callCardBody="Our team can confirm whether we serve your area before you go any further."
       />
     </>
   );

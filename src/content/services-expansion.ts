@@ -28,25 +28,25 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Site clean-up and haul-away of debris",
     ],
     heroSummary:
-      "Stamped concrete is a decorative finish pressed into freshly placed concrete. Requests cover slate, stone, and plank patterns, integral color, and texture for patios and entries. The pattern is set in a short window while the slab is still workable, so the design, color, and sealing plan are decided before the forms go in. Request a concrete service and a local provider will confirm the pattern and color at a site visit.",
+      "Stamped concrete is a decorative finish pressed into freshly placed concrete. Requests cover slate, stone, and plank patterns, integral color, and texture for patios and entries. The pattern is set in a short window while the slab is still workable, so the design, color, and sealing plan are decided before the forms go in. Request a concrete service and our local crew will confirm the pattern and color at a site visit.",
     sectionOrder: [...STANDARD_SECTIONS],
     headings: {
       scope: "What a stamped finish includes",
       options: "Pattern, color, and texture choices",
       process: "How a stamped pour is sequenced",
       cost: "What moves the price of stamped work",
-      prepare: "Before the provider visits",
+      prepare: "Before our crew visits",
       faq: "Stamped concrete questions",
       cta: "Ready to choose a stamped finish?",
     },
     optionsLead:
       "Pattern, color, and texture are chosen together. Each one changes how the finish looks and how much work it takes.",
     processLead:
-      "Stamping is time sensitive. The sequence below shows the order decorative work usually follows; the provider sets the actual dates.",
+      "Stamping is time sensitive. The sequence below shows the order decorative work usually follows; our crew sets the actual dates.",
     costLead:
       "Stamped work costs more than a broom finish because it takes more labor, more material, and a sealing step. Area is only part of the figure.",
     ctaLead:
-      "Send the pattern you have in mind, the area, and any photos. A local provider will confirm what is achievable on your slab.",
+      "Send the pattern you have in mind, the area, and any photos. our local crew will confirm what is achievable on your slab.",
     image: "/images/services/stamped-concrete/stamped-concrete-hero.webp",
     imageAlt:
       "Worker's hands and a red-handled finishing tool on freshly placed gray concrete",
@@ -97,7 +97,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       },
     ],
     tradeSpecs: [
-      "High-strength concrete mix, commonly 4,000 PSI for residential work. Your provider confirms the mix for your project.",
+      "High-strength concrete mix, commonly 4,000 PSI for residential work. Your project manager confirms the mix for your project.",
       "Welded wire or fiber reinforcement placed to help limit cracking.",
       "Compacted gravel subbase and a planned drainage slope set before the forms go in.",
       "Control joints laid out along pattern lines, with the sealer schedule confirmed before the work starts.",
@@ -105,9 +105,9 @@ export const expansionServices: readonly ServiceRecord[] = [
     process: [
       {
         phase: "Site visit and measurement",
-        duration: "Scheduled by provider",
+        duration: "Scheduled by crew",
         detail:
-          "The provider measures the area, checks drainage away from the house, and reviews pattern and color samples.",
+          "Our crew measures the area, checks drainage away from the house, and reviews pattern and color samples.",
       },
       {
         phase: "Subbase and forms",
@@ -123,7 +123,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         phase: "Cure and seal",
         duration: "Several days to weeks",
-        detail: "The slab cures under protection, then the sealer goes on as the provider schedules it.",
+        detail: "The slab cures under protection, then the sealer goes on as our crew schedules it.",
       },
     ],
     costFactors: [
@@ -164,17 +164,17 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         question: "Will stamped concrete crack?",
         answer:
-          "Concrete can crack. Control joints placed along pattern lines and proper base preparation reduce the risk, and the provider explains what a finish can and cannot prevent.",
+          "Concrete can crack. Control joints placed along pattern lines and proper base preparation reduce the risk, and our crew explains what a finish can and cannot prevent.",
       },
       {
         question: "How often does stamped concrete need sealing?",
         answer:
-          "Sealer is usually reapplied on a regular schedule that depends on traffic, sun exposure, and the product. Your provider confirms the interval for the sealer chosen.",
+          "Sealer is usually reapplied on a regular schedule that depends on traffic, sun exposure, and the product. Your project manager confirms the interval for the sealer chosen.",
       },
       {
         question: "Can stamped concrete go over an old patio?",
         answer:
-          "Sometimes, but an overlay needs a sound surface to bond to. Most stamped work is a new pour, so the provider assesses the existing slab before recommending a method.",
+          "Sometimes, but an overlay needs a sound surface to bond to. Most stamped work is a new pour, so our crew assesses the existing slab before recommending a method.",
       },
       {
         question: "Is stamped concrete slippery?",
@@ -203,7 +203,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Site clean-up and haul-away of spoil",
     ],
     heroSummary:
-      "Foundations carry the weight of the whole structure, so they are specified by an engineer and built to code and the soil conditions on site. Requests cover footings and stem walls for new homes and additions. Every foundation starts from the engineer's drawings and the soil report. Request a concrete service and a local provider will confirm the requirements for your site at a site visit.",
+      "Foundations carry the weight of the whole structure, so they are specified by an engineer and built to code and the soil conditions on site. Requests cover footings and stem walls for new homes and additions. Every foundation starts from the engineer's drawings and the soil report. Request a concrete service and our local crew will confirm the requirements for your site at a site visit.",
     sectionOrder: [...STANDARD_SECTIONS],
     headings: {
       scope: "What a foundation pour includes",
@@ -215,13 +215,13 @@ export const expansionServices: readonly ServiceRecord[] = [
       cta: "Need a foundation quoted?",
     },
     optionsLead:
-      "Foundation specifications come from the engineer's drawings and the soil report. These are the items the provider checks against them.",
+      "Foundation specifications come from the engineer's drawings and the soil report. These are the items our crew checks against them.",
     processLead:
       "A foundation follows the engineer's sequence: layout, excavation, forming, reinforcement inspection, then the pour.",
     costLead:
       "Foundation cost follows depth, length, soil conditions, and the engineered reinforcement. Access and excavation often move the figure more than concrete volume does.",
     ctaLead:
-      "Send the plan set, the soil report if you have one, and the location. A local provider will confirm what the engineer requires.",
+      "Send the plan set, the soil report if you have one, and the location. our local crew will confirm what the engineer requires.",
     image: "/images/services/concrete-foundations/concrete-foundations-hero.webp",
     imageAlt:
       "Worker's boots beside a concrete vibrator pipe on fresh concrete over a steel rebar grid",
@@ -269,7 +269,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       },
     ],
     tradeSpecs: [
-      "Concrete strength and mix set by the engineer's drawings and confirmed by the provider before the pour.",
+      "Concrete strength and mix set by the engineer's drawings and confirmed by our crew before the pour.",
       "Steel rebar placed to the engineer's schedule, with the required cover maintained.",
       "Excavation to the depth on the drawings, with a compacted base where the soil requires one.",
       "Anchor bolts and sleeves set during the pour as the framing requires.",
@@ -277,9 +277,9 @@ export const expansionServices: readonly ServiceRecord[] = [
     process: [
       {
         phase: "Layout and inspection",
-        duration: "Scheduled by provider",
+        duration: "Scheduled by crew",
         detail:
-          "The provider sets layout lines from the plan and checks the excavation against the drawings.",
+          "Our crew sets layout lines from the plan and checks the excavation against the drawings.",
       },
       {
         phase: "Excavation and forming",
@@ -335,7 +335,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         question: "Do I need an engineer for a foundation?",
         answer:
-          "Foundation work is built to engineered drawings and local code. The provider confirms the requirements for your site before work begins.",
+          "Foundation work is built to engineered drawings and local code. Our crew confirms the requirements for your site before work begins.",
       },
       {
         question: "How deep do footings need to be?",
@@ -345,7 +345,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         question: "Can you repair an existing foundation?",
         answer:
-          "Foundation repair and underpinning are outside this page's scope. Ask a local provider about that work separately.",
+          "Foundation repair and underpinning are outside this page's scope. Ask our local crew about that work separately.",
       },
       {
         question: "Is a foundation the same as a slab?",
@@ -374,25 +374,25 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Site clean-up and haul-away of debris",
     ],
     heroSummary:
-      "A front walkway is the first thing guests see, and it gets walked on every day. Requests cover new front walks from the driveway or sidewalk to the door, replacement of cracked walks, and individual sidewalk sections. Typical work includes a compacted base, control joints, a broom finish, and edges set to grade. Request a concrete service and a local provider will confirm the path, slope, and joint layout at a site visit.",
+      "A front walkway is the first thing guests see, and it gets walked on every day. Requests cover new front walks from the driveway or sidewalk to the door, replacement of cracked walks, and individual sidewalk sections. Typical work includes a compacted base, control joints, a broom finish, and edges set to grade. Request a concrete service and our local crew will confirm the path, slope, and joint layout at a site visit.",
     sectionOrder: [...STANDARD_SECTIONS],
     headings: {
       scope: "What a walkway project includes",
       options: "Walkway finish and layout choices",
       process: "How a walkway pour is sequenced",
       cost: "What moves the price of a walkway",
-      prepare: "Before the provider visits",
+      prepare: "Before our crew visits",
       faq: "Walkway questions",
       cta: "Ready to plan a walkway?",
     },
     optionsLead:
       "Walkway choices affect safety, appearance, and how the slab handles rain and daily foot traffic.",
     processLead:
-      "A walkway is a short, precise pour. The sequence below is typical; the provider sets the dates and the layout.",
+      "A walkway is a short, precise pour. The sequence below is typical; our crew sets the dates and the layout.",
     costLead:
       "Walkway cost follows length, width, grade changes, and removal of the old walk. Short walks cost more per foot because setup stays the same.",
     ctaLead:
-      "Send the path, the approximate length, and photos. A local provider will confirm the grade and joint layout.",
+      "Send the path, the approximate length, and photos. our local crew will confirm the grade and joint layout.",
     image: "/images/services/concrete-walkways/concrete-walkways-hero.webp",
     imageAlt:
       "Poured concrete walkway curving between trees, with sand and rock borders beside it",
@@ -440,7 +440,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       },
     ],
     tradeSpecs: [
-      "High-strength concrete mix, commonly 4,000 PSI for residential work. Your provider confirms the mix for your project.",
+      "High-strength concrete mix, commonly 4,000 PSI for residential work. Your project manager confirms the mix for your project.",
       "Welded wire or fiber reinforcement placed to help limit cracking.",
       "Compacted gravel subbase and a planned drainage slope set before the forms go in.",
       "Control joints spaced to guide cracking, with edges tooled at the finish.",
@@ -448,8 +448,8 @@ export const expansionServices: readonly ServiceRecord[] = [
     process: [
       {
         phase: "Site visit and layout",
-        duration: "Scheduled by provider",
-        detail: "The provider checks the path, the grade to the door, and drainage away from the house.",
+        duration: "Scheduled by crew",
+        detail: "Our crew checks the path, the grade to the door, and drainage away from the house.",
       },
       {
         phase: "Removal and base",
@@ -464,7 +464,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         phase: "Cure and joint sealing",
         duration: "Several days",
-        detail: "The walk cures under protection, and joints are sealed on the provider's schedule.",
+        detail: "The walk cures under protection, and joints are sealed on our crew's schedule.",
       },
     ],
     costFactors: [
@@ -505,22 +505,22 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         question: "How long before I can walk on a new walkway?",
         answer:
-          "Foot traffic is usually possible after a short cure, but the provider gives the figure for your pour, mix, and weather.",
+          "Foot traffic is usually possible after a short cure, but our crew gives the figure for your pour, mix, and weather.",
       },
       {
         question: "Will my walkway crack?",
         answer:
-          "Concrete can crack. Control joints and proper base preparation guide where cracks form, and the provider explains how the layout handles movement.",
+          "Concrete can crack. Control joints and proper base preparation guide where cracks form, and our crew explains how the layout handles movement.",
       },
       {
         question: "Do I need a permit for a sidewalk?",
         answer:
-          "Sidewalk work in the public right of way may need approval from the local authority. Confirm permitting with the provider and the authority before work starts.",
+          "Sidewalk work in the public right of way may need approval from the local authority. Confirm permitting with our crew and the authority before work starts.",
       },
       {
         question: "Can new concrete match an existing walk?",
         answer:
-          "Color and texture can differ between pours. The provider shows what a close match is likely to look like before work begins.",
+          "Color and texture can differ between pours. Our crew shows what a close match is likely to look like before work begins.",
       },
     ],
   },
@@ -544,30 +544,30 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Site clean-up and haul-away of debris",
     ],
     heroSummary:
-      "Steps are the part of a front entry that gets used most, and they cause the most trouble when the rise and run are off. Requests cover new concrete steps, porch landings, and replacement of cracked or uneven steps. Typical work includes a compacted base, a consistent rise and run, and a finish chosen with slip resistance in mind. Request a concrete service and a local provider will confirm the layout and any code requirements at a site visit.",
+      "Steps are the part of a front entry that gets used most, and they cause the most trouble when the rise and run are off. Requests cover new concrete steps, porch landings, and replacement of cracked or uneven steps. Typical work includes a compacted base, a consistent rise and run, and a finish chosen with slip resistance in mind. Request a concrete service and our local crew will confirm the layout and any code requirements at a site visit.",
     sectionOrder: [...STANDARD_SECTIONS],
     headings: {
       scope: "What a steps project includes",
       options: "Step and landing choices",
       process: "How concrete steps are built",
       cost: "What moves the price of steps",
-      prepare: "Before the provider visits",
+      prepare: "Before our crew visits",
       faq: "Step and porch questions",
       cta: "Ready to replace or add steps?",
     },
     optionsLead:
       "Step dimensions, landings, and finish are set together, because they decide how comfortable and safe the steps are to use.",
     processLead:
-      "Steps are formed and poured in a set sequence. The provider sets the actual dates and the layout for your entry.",
+      "Steps are formed and poured in a set sequence. Our crew sets the actual dates and the layout for your entry.",
     costLead:
       "Steps are priced by the number of risers, the landing size, and the work to remove or form the existing entry. A small set of steps costs more per step than the count suggests.",
     ctaLead:
-      "Send the number of steps, the height to the door, and photos. A local provider will confirm the rise, run, and code requirements.",
+      "Send the number of steps, the height to the door, and photos. our local crew will confirm the rise, run, and code requirements.",
     image: "/images/services/concrete-steps/concrete-steps-hero.webp",
     imageAlt:
       "Concrete front steps with a finished surface at a home entrance beside white siding",
     imageCaption:
-      "Example photo of concrete steps. Work is performed by independent local providers, not by this site.",
+      "Example photo of concrete steps. Work is performed by our local crews, not by this site.",
     projectTypes: ["Front steps", "Porch landing", "Step replacement"],
     keyFacts: [
       { label: "Scope", value: "Front steps and porch landings" },
@@ -611,7 +611,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       },
     ],
     tradeSpecs: [
-      "High-strength concrete mix, commonly 4,000 PSI for residential work. Your provider confirms the mix for your project.",
+      "High-strength concrete mix, commonly 4,000 PSI for residential work. Your project manager confirms the mix for your project.",
       "Steel rebar or welded wire reinforcement placed to help limit cracking.",
       "Compacted gravel base set before the forms go in, with drainage away from the house.",
       "Nosing and broom finish specified for traction, with control joints laid out for the landing.",
@@ -619,8 +619,8 @@ export const expansionServices: readonly ServiceRecord[] = [
     process: [
       {
         phase: "Site visit and measurement",
-        duration: "Scheduled by provider",
-        detail: "The provider measures the total rise, the run, and the door height.",
+        duration: "Scheduled by crew",
+        detail: "Our crew measures the total rise, the run, and the door height.",
       },
       {
         phase: "Removal and base",
@@ -676,22 +676,22 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         question: "Do steps need a handrail?",
         answer:
-          "Many steps need handrails under code, depending on height and use. The provider confirms what your jurisdiction requires before the layout is set.",
+          "Many steps need handrails under code, depending on height and use. Our crew confirms what your jurisdiction requires before the layout is set.",
       },
       {
         question: "Why do steps crack?",
         answer:
-          "Steps crack when the base settles or the rise and run are uneven. A proper base and joint layout reduce that risk, and the provider explains the choice for your site.",
+          "Steps crack when the base settles or the rise and run are uneven. A proper base and joint layout reduce that risk, and our crew explains the choice for your site.",
       },
       {
         question: "Can you add steps to an existing porch?",
         answer:
-          "Sometimes. The provider checks the existing slab, the door height, and the drainage before recommending a layout.",
+          "Sometimes. Our crew checks the existing slab, the door height, and the drainage before recommending a layout.",
       },
       {
         question: "How long before the steps can be used?",
         answer:
-          "Light use is usually possible after a short cure, but the provider gives the figure for your pour and the weather.",
+          "Light use is usually possible after a short cure, but our crew gives the figure for your pour and the weather.",
       },
     ],
   },
@@ -715,25 +715,25 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Site clean-up and haul-away of debris",
     ],
     heroSummary:
-      "Concrete leveling lifts a settled slab back toward its original height by injecting a filler through small holes drilled in the surface. It is often less disruptive than replacing a slab that has sunk at one edge, but the provider confirms whether a slab can be lifted at the site visit, and checks the cause of settling first. Request a concrete service and a local provider will look at the slab with you.",
+      "Concrete leveling lifts a settled slab back toward its original height by injecting a filler through small holes drilled in the surface. It is often less disruptive than replacing a slab that has sunk at one edge, but our crew confirms whether a slab can be lifted at the site visit, and checks the cause of settling first. Request a concrete service and our local crew will look at the slab with you.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "What slab leveling can address",
       options: "Leveling method and material choices",
       process: "How a leveling job is sequenced",
       cost: "What moves the price of leveling",
-      prepare: "Before the provider visits",
+      prepare: "Before our crew visits",
       faq: "Concrete leveling questions",
       cta: "Have a sunken slab?",
     },
     optionsLead:
-      "Leveling methods differ in the material used and the number of holes. The provider chooses based on the slab and the cause of settling.",
+      "Leveling methods differ in the material used and the number of holes. Our crew chooses based on the slab and the cause of settling.",
     processLead:
-      "Leveling is usually quick once the holes are placed. The sequence below shows the order the work usually follows; the provider sets the actual dates.",
+      "Leveling is usually quick once the holes are placed. The sequence below shows the order the work usually follows; our crew sets the actual dates.",
     costLead:
       "Leveling is often compared against replacement. The number of injection points and the size of the slab are the main drivers.",
     ctaLead:
-      "Send photos of the sunken area and tell us where it sits. A local provider will confirm whether leveling is suitable.",
+      "Send photos of the sunken area and tell us where it sits. our local crew will confirm whether leveling is suitable.",
     image: "/images/services/concrete-leveling/concrete-leveling-hero.webp",
     imageAlt:
       "Workers pulling a screed bar across wet grey concrete to level the surface",
@@ -765,7 +765,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         name: "Injection material",
         description:
-          "Polyurethane foam or cement-based slurry. The provider chooses based on load, cure speed, and the soil.",
+          "Polyurethane foam or cement-based slurry. Our crew chooses based on load, cure speed, and the soil.",
       },
       {
         name: "Number of injection points",
@@ -786,9 +786,9 @@ export const expansionServices: readonly ServiceRecord[] = [
     process: [
       {
         phase: "Site visit and assessment",
-        duration: "Scheduled by provider",
+        duration: "Scheduled by crew",
         detail:
-          "The provider checks the slab, the cause of settling, and where the holes will go.",
+          "Our crew checks the slab, the cause of settling, and where the holes will go.",
       },
       {
         phase: "Drilling and injection",
@@ -803,7 +803,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       },
       {
         phase: "Final check",
-        duration: "Scheduled by provider",
+        duration: "Scheduled by crew",
         detail: "Height and drainage are checked before the area is used again.",
       },
     ],
@@ -845,22 +845,22 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         question: "Will the slab stay level?",
         answer:
-          "Leveling can correct settling, but the cause must be addressed or the slab may settle again. The provider explains this risk before the work starts.",
+          "Leveling can correct settling, but the cause must be addressed or the slab may settle again. Our crew explains this risk before the work starts.",
       },
       {
         question: "Is leveling cheaper than replacing?",
         answer:
-          "It is often less disruptive than replacement, but the right choice depends on the slab. The provider compares the options at the visit.",
+          "It is often less disruptive than replacement, but the right choice depends on the slab. Our crew compares the options at the visit.",
       },
       {
         question: "Can leveling fix a cracked slab?",
         answer:
-          "Cracks can be brought back into alignment, but a slab cracked through may need replacement. The provider checks the condition first.",
+          "Cracks can be brought back into alignment, but a slab cracked through may need replacement. Our crew checks the condition first.",
       },
       {
         question: "When can I walk on it again?",
         answer:
-          "The wait depends on the material used. The provider gives the wait time for the product chosen.",
+          "The wait depends on the material used. Our crew gives the wait time for the product chosen.",
       },
     ],
   },
@@ -884,25 +884,25 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Clean-up and cure-time guidance",
     ],
     heroSummary:
-      "A garage floor coating puts a protective layer over the slab. Epoxy and polyurea systems resist oil, salt, and staining, and decorative flakes or color give the floor a finished look. Surface preparation decides how well a coating bonds, so the provider checks the slab, moisture, and any existing coating before quoting. Request a concrete service and a local provider will confirm the right system for your garage.",
+      "A garage floor coating puts a protective layer over the slab. Epoxy and polyurea systems resist oil, salt, and staining, and decorative flakes or color give the floor a finished look. Surface preparation decides how well a coating bonds, so our crew checks the slab, moisture, and any existing coating before quoting. Request a concrete service and our local crew will confirm the right system for your garage.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "What a garage coating covers",
       options: "Coating system and finish choices",
       process: "How a coating job is sequenced",
       cost: "What moves the price of a garage coating",
-      prepare: "Before the provider visits",
+      prepare: "Before our crew visits",
       faq: "Garage coating questions",
       cta: "Ready to coat your garage floor?",
     },
     optionsLead:
       "Coating systems differ in hardness, look, and cure time. The choice affects how the floor handles cars, heat, and chemicals.",
     processLead:
-      "Coatings only bond to a properly prepared surface, so preparation takes most of the time. The sequence below shows the usual order; the provider sets the actual dates.",
+      "Coatings only bond to a properly prepared surface, so preparation takes most of the time. The sequence below shows the usual order; our crew sets the actual dates.",
     costLead:
       "Garage coatings cost more per square foot than bare concrete. Preparation and the system chosen are the main drivers.",
     ctaLead:
-      "Send the garage size, the current floor condition, and any photos. A local provider will confirm the system and the preparation it needs.",
+      "Send the garage size, the current floor condition, and any photos. our local crew will confirm the system and the preparation it needs.",
     image: "/images/services/concrete-garage-coatings/concrete-garage-coatings-hero.webp",
     imageAlt:
       "Clean two-car garage floor with a glossy grey epoxy coating and light decorative flakes",
@@ -956,9 +956,9 @@ export const expansionServices: readonly ServiceRecord[] = [
     process: [
       {
         phase: "Assessment and moisture check",
-        duration: "Scheduled by provider",
+        duration: "Scheduled by crew",
         detail:
-          "The provider checks the slab, cracks, existing coatings, and moisture.",
+          "Our crew checks the slab, cracks, existing coatings, and moisture.",
       },
       {
         phase: "Surface preparation",
@@ -1027,7 +1027,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         question: "Can I park on it right away?",
         answer:
-          "Most systems need several days before vehicles return. The provider gives the wait time for the product used.",
+          "Most systems need several days before vehicles return. Our crew gives the wait time for the product used.",
       },
       {
         question: "Is epoxy slippery?",
@@ -1037,7 +1037,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         question: "Does a coating need maintenance?",
         answer:
-          "Regular sweeping and occasional recoating keep the finish looking good. The provider explains the schedule for the system chosen.",
+          "Regular sweeping and occasional recoating keep the finish looking good. Our crew explains the schedule for the system chosen.",
       },
     ],
   },
@@ -1061,25 +1061,25 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Texturing and curing of the new surface",
     ],
     heroSummary:
-      "Concrete resurfacing covers a worn slab with a thin new concrete layer. It can renew the look of a driveway, patio, or walk without full removal, when the existing slab is sound enough to bond to. The provider checks the slab first, because loose or moving slabs need repair or replacement instead. Request a concrete service and a local provider will confirm whether an overlay suits your slab.",
+      "Concrete resurfacing covers a worn slab with a thin new concrete layer. It can renew the look of a driveway, patio, or walk without full removal, when the existing slab is sound enough to bond to. Our crew checks the slab first, because loose or moving slabs need repair or replacement instead. Request a concrete service and our local crew will confirm whether an overlay suits your slab.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "What a resurfacing job covers",
       options: "Overlay finish and texture choices",
       process: "How a resurfacing job is sequenced",
       cost: "What moves the price of resurfacing",
-      prepare: "Before the provider visits",
+      prepare: "Before our crew visits",
       faq: "Resurfacing questions",
       cta: "Want to renew a worn surface?",
     },
     optionsLead:
       "Overlay finishes change the look and the traction. Texture and color are chosen together.",
     processLead:
-      "The bond depends on preparation, so the existing surface is cleaned and roughened before the overlay goes on. The sequence below shows the usual order; the provider sets the actual dates.",
+      "The bond depends on preparation, so the existing surface is cleaned and roughened before the overlay goes on. The sequence below shows the usual order; our crew sets the actual dates.",
     costLead:
       "Resurfacing usually costs less than replacement, but the condition of the existing surface decides how much preparation is needed.",
     ctaLead:
-      "Send photos of the worn surface and its size. A local provider will tell you whether an overlay will bond.",
+      "Send photos of the worn surface and its size. our local crew will tell you whether an overlay will bond.",
     image: "/images/services/concrete-resurfacing/concrete-resurfacing-hero.webp",
     imageAlt:
       "Aging concrete driveway with a fresh, smooth, light-grey overlay",
@@ -1133,9 +1133,9 @@ export const expansionServices: readonly ServiceRecord[] = [
     process: [
       {
         phase: "Site visit and bond check",
-        duration: "Scheduled by provider",
+        duration: "Scheduled by crew",
         detail:
-          "The provider checks the slab for cracks, movement, and likely bond strength.",
+          "Our crew checks the slab for cracks, movement, and likely bond strength.",
       },
       {
         phase: "Cleaning and roughening",
@@ -1153,7 +1153,7 @@ export const expansionServices: readonly ServiceRecord[] = [
         phase: "Cure and seal",
         duration: "Several days",
         detail:
-          "The overlay cures under protection, then a sealer goes on if the provider recommends one.",
+          "The overlay cures under protection, then a sealer goes on if our crew recommends one.",
       },
     ],
     costFactors: [
@@ -1194,22 +1194,22 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         question: "Will the overlay crack?",
         answer:
-          "Thin overlays can crack if the old slab moves. Crack repair and control joints reduce this risk, and the provider explains what an overlay can and cannot prevent.",
+          "Thin overlays can crack if the old slab moves. Crack repair and control joints reduce this risk, and our crew explains what an overlay can and cannot prevent.",
       },
       {
         question: "How long does an overlay last?",
         answer:
-          "Lifespan depends on the surface condition, traffic, and maintenance. The provider gives an estimate for your slab.",
+          "Lifespan depends on the surface condition, traffic, and maintenance. Our crew gives an estimate for your slab.",
       },
       {
         question: "Is resurfacing cheaper than replacement?",
         answer:
-          "It can be, when the slab is sound. A failing slab usually needs replacement, and the provider will advise on that.",
+          "It can be, when the slab is sound. A failing slab usually needs replacement, and our crew will advise on that.",
       },
       {
         question: "Can I resurface a stamped patio?",
         answer:
-          "Sometimes. The provider checks the existing finish before recommending an overlay.",
+          "Sometimes. Our crew checks the existing finish before recommending an overlay.",
       },
     ],
   },
@@ -1234,25 +1234,25 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Site clean-up and haul-away of debris",
     ],
     heroSummary:
-      "A concrete apron is the slab that joins a driveway to the street or to the garage floor. Its slope decides whether water runs off the driveway or pools at the edge, so the grade is planned before the forms go in. Request a concrete service and a local provider will check the grade, the curb, and the existing driveway at a site visit.",
+      "A concrete apron is the slab that joins a driveway to the street or to the garage floor. Its slope decides whether water runs off the driveway or pools at the edge, so the grade is planned before the forms go in. Request a concrete service and our local crew will check the grade, the curb, and the existing driveway at a site visit.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "What an apron project covers",
       options: "Finish and grade choices",
       process: "How an apron pour is sequenced",
       cost: "What moves the price of an apron",
-      prepare: "Before the provider visits",
+      prepare: "Before our crew visits",
       faq: "Concrete apron questions",
       cta: "Need a new apron?",
     },
     optionsLead:
       "Aprons are usually finished to match the driveway, but finish and grade still need to be chosen before the pour.",
     processLead:
-      "The grade is set before the concrete goes in. The sequence below shows the order the work usually follows; the provider sets the actual dates.",
+      "The grade is set before the concrete goes in. The sequence below shows the order the work usually follows; our crew sets the actual dates.",
     costLead:
       "Aprons are small slabs, so the cost depends more on access, the grade work, and the finish than on area alone.",
     ctaLead:
-      "Send photos of the driveway edge, the curb, and the gutter. A local provider will confirm the grade and the finish.",
+      "Send photos of the driveway edge, the curb, and the gutter. our local crew will confirm the grade and the finish.",
     image: "/images/services/concrete-aprons/concrete-aprons-hero.webp",
     imageAlt:
       "Newly poured grey concrete sidewalk and apron with orange traffic cones along an open street edge",
@@ -1306,9 +1306,9 @@ export const expansionServices: readonly ServiceRecord[] = [
     process: [
       {
         phase: "Site visit and grade check",
-        duration: "Scheduled by provider",
+        duration: "Scheduled by crew",
         detail:
-          "The provider measures the apron, checks the slope to the street, and confirms the finish.",
+          "Our crew measures the apron, checks the slope to the street, and confirms the finish.",
       },
       {
         phase: "Excavation and forms",
@@ -1364,12 +1364,12 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         question: "Will an apron crack?",
         answer:
-          "Concrete can crack. Control joints and proper base preparation reduce the risk, and the provider explains what can and cannot be prevented.",
+          "Concrete can crack. Control joints and proper base preparation reduce the risk, and our crew explains what can and cannot be prevented.",
       },
       {
         question: "Do I need a permit?",
         answer:
-          "Work near the street may need a permit from the local authority. The provider confirms whether one applies.",
+          "Work near the street may need a permit from the local authority. Our crew confirms whether one applies.",
       },
       {
         question: "Can an apron be matched to my driveway color?",
@@ -1379,7 +1379,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         question: "Why does my apron hold water?",
         answer:
-          "A flat or sunken apron can trap water. The provider checks the slope and recommends a grade correction when needed.",
+          "A flat or sunken apron can trap water. Our crew checks the slope and recommends a grade correction when needed.",
       },
     ],
   },
@@ -1403,25 +1403,25 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Recoat schedule and care instructions",
     ],
     heroSummary:
-      "Concrete sealing puts a protective layer over a clean slab. Penetrating sealers soak into the surface, while film-forming sealers sit on top. Cleaning comes first, since sealer bonds only to a clean, dry surface. Request a concrete service and a local provider will confirm the sealer and the cleaning method for your surface.",
+      "Concrete sealing puts a protective layer over a clean slab. Penetrating sealers soak into the surface, while film-forming sealers sit on top. Cleaning comes first, since sealer bonds only to a clean, dry surface. Request a concrete service and our local crew will confirm the sealer and the cleaning method for your surface.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "What a sealing job covers",
       options: "Sealer type and finish choices",
       process: "How a sealing job is sequenced",
       cost: "What moves the price of sealing",
-      prepare: "Before the provider visits",
+      prepare: "Before our crew visits",
       faq: "Concrete sealing questions",
       cta: "Ready to seal your concrete?",
     },
     optionsLead:
       "Sealers differ in how they bond, how they look, and how often they need recoating. Cleaning method also changes with the surface.",
     processLead:
-      "Cleaning and drying take as much attention as the sealer. The sequence below shows the usual order; the provider sets the actual dates.",
+      "Cleaning and drying take as much attention as the sealer. The sequence below shows the usual order; our crew sets the actual dates.",
     costLead:
       "Sealing is usually priced by area, with cleaning and any crack repair added. The surface condition decides how much cleaning it needs.",
     ctaLead:
-      "Send the area, the surface type, and photos. A local provider will confirm the cleaning and the sealer.",
+      "Send the area, the surface type, and photos. our local crew will confirm the cleaning and the sealer.",
     image: "/images/services/concrete-sealing/concrete-sealing-hero.webp",
     imageAlt:
       "Worker in a safety vest applying black sealant along a crack in a concrete slab",
@@ -1475,8 +1475,8 @@ export const expansionServices: readonly ServiceRecord[] = [
     process: [
       {
         phase: "Site visit and surface check",
-        duration: "Scheduled by provider",
-        detail: "The provider checks the surface, any existing sealer, and the cleaning needed.",
+        duration: "Scheduled by crew",
+        detail: "Our crew checks the surface, any existing sealer, and the cleaning needed.",
       },
       {
         phase: "Cleaning",
@@ -1532,7 +1532,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         question: "How often should concrete be sealed?",
         answer:
-          "The interval depends on traffic, sun, and the sealer used. The provider gives the schedule for the product recommended.",
+          "The interval depends on traffic, sun, and the sealer used. Our crew gives the schedule for the product recommended.",
       },
       {
         question: "Will sealing make concrete slippery?",
@@ -1542,7 +1542,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         question: "Can I seal new concrete right away?",
         answer:
-          "New concrete usually needs to cure first. The provider confirms how long to wait for the mix used.",
+          "New concrete usually needs to cure first. Our crew confirms how long to wait for the mix used.",
       },
       {
         question: "Does sealing stop all cracking?",
@@ -1568,28 +1568,28 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Subbase preparation and form setting",
       "Placing the concrete and spreading the aggregate",
       "Exposing the stones by washing or grinding at the planned time",
-      "Sealing, if the provider recommends it",
+      "Sealing, if our crew recommends it",
     ],
     heroSummary:
-      "Exposed aggregate concrete shows the stones in the mix. After the surface sets, the top layer is removed to expose the aggregate, giving a textured, decorative finish. Stone choice, depth of exposure, and timing decide how the finished surface looks. Request a concrete service and a local provider will confirm the stone and the finish for your project.",
+      "Exposed aggregate concrete shows the stones in the mix. After the surface sets, the top layer is removed to expose the aggregate, giving a textured, decorative finish. Stone choice, depth of exposure, and timing decide how the finished surface looks. Request a concrete service and our local crew will confirm the stone and the finish for your project.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "What an exposed aggregate finish covers",
       options: "Stone, exposure, and finish choices",
       process: "How an exposed aggregate pour is sequenced",
       cost: "What moves the price of exposed aggregate",
-      prepare: "Before the provider visits",
+      prepare: "Before our crew visits",
       faq: "Exposed aggregate questions",
       cta: "Want a textured finish?",
     },
     optionsLead:
       "Stone type, size, and the depth of exposure change the look and the traction. Samples help before the pour.",
     processLead:
-      "Timing matters when the stones are exposed. The sequence below shows the usual order; the provider sets the actual dates.",
+      "Timing matters when the stones are exposed. The sequence below shows the usual order; our crew sets the actual dates.",
     costLead:
       "Exposed aggregate costs more than a plain broom finish, because of the stone, the extra steps, and the timing needed.",
     ctaLead:
-      "Send the area and the look you like, and ask for stone samples. A local provider will confirm the finish on your slab.",
+      "Send the area and the look you like, and ask for stone samples. our local crew will confirm the finish on your slab.",
     image: "/images/services/concrete-exposed-aggregate/concrete-exposed-aggregate-hero.webp",
     imageAlt:
       "Residential exposed aggregate concrete driveway with mixed tan and grey stones across the surface",
@@ -1636,15 +1636,15 @@ export const expansionServices: readonly ServiceRecord[] = [
     ],
     tradeSpecs: [
       "Aggregate spread evenly into the surface before it sets.",
-      "Surface exposed by washing or grinding at the time the provider sets.",
+      "Surface exposed by washing or grinding at the time our crew sets.",
       "Control joints placed to limit cracking in the textured slab.",
-      "Sealer applied only when the provider recommends one for the stone.",
+      "Sealer applied only when our crew recommends one for the stone.",
     ],
     process: [
       {
         phase: "Site visit and sample review",
-        duration: "Scheduled by provider",
-        detail: "The provider reviews stone samples, the area, and the drainage.",
+        duration: "Scheduled by crew",
+        detail: "Our crew reviews stone samples, the area, and the drainage.",
       },
       {
         phase: "Subbase and forms",
@@ -1700,17 +1700,17 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         question: "Is exposed aggregate slippery?",
         answer:
-          "The stones add grip, but very smooth stones can be slick when wet. The provider chooses stone size and exposure with traction in mind.",
+          "The stones add grip, but very smooth stones can be slick when wet. Our crew chooses stone size and exposure with traction in mind.",
       },
       {
         question: "Does exposed aggregate crack?",
         answer:
-          "Concrete can crack. Control joints and proper base preparation reduce the risk, and the provider explains what can and cannot be prevented.",
+          "Concrete can crack. Control joints and proper base preparation reduce the risk, and our crew explains what can and cannot be prevented.",
       },
       {
         question: "Can exposed aggregate be done over an old slab?",
         answer:
-          "Sometimes, but an overlay needs a sound surface to bond to. The provider checks the existing slab first.",
+          "Sometimes, but an overlay needs a sound surface to bond to. Our crew checks the existing slab first.",
       },
       {
         question: "How is it maintained?",
