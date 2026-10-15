@@ -100,3 +100,8 @@ Some slots are smaller than the usual size, because each image was reduced until
 - `public/images/services/concrete-driveways/concrete-driveways-detail.webp`: restored to the approved original (98,698 bytes, 944x531) from commit 0d3231f. Owner approved it over the cap.
 - Foundations: owner-approved swap. The pump photo (`concrete-foundations-process.webp`) now fills the detail band, and the rebar-grid photo (`concrete-foundations-band.webp`) now fills the process section. Alt text follows each photo.
 - Sealing hero: kept as the owner's `sealing.jpg` (612x344). No higher-resolution source is available.
+
+## /services hero replacement (2026-10-15)
+
+- `public/images/services/services-index-hero.webp`: replaced with the owner-supplied upload `services hero.jpg` (612x408, source file kept at native size, WebP quality 89, 98,108 bytes). Source: Owner-supplied upload. The photo shows a concrete pump hose over a rebar grid. The alt text was updated to match.
+- Resolution note: the upload is smaller than the other hero images. It was not upscaled.

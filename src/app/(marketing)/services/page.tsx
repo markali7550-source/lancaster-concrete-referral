@@ -77,7 +77,7 @@ export default function ServicesPage() {
           />
         }
         imageSrc="/images/services/services-index-hero.webp"
-        imageAlt="Broom finished residential concrete walkway with a tooled control joint and radiused edge beside a lawn"
+        imageAlt="Workers in hard hats guiding a concrete pump hose over a steel rebar grid during a pour"
       >
         <p
           className="eyebrow"
