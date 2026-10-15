@@ -92,3 +92,11 @@ Generated with the image tool at the owner's request for three new service pages
 Some slots are smaller than the usual size, because each image was reduced until it met the 150 KB limit at quality 89 or higher.
 
 - **Correction:** The files were uploaded by the owner, but the source photos are iStock images. The iStock license details are the final record.
+
+## Image restoration (2026-10-15)
+
+- `public/images/locations/lancaster-sc/lancaster-sc-slabs.webp`: restored to the approved original (92,916 bytes, 1024x559) from commit f2cc748. The q89 re-encode had replaced it.
+- `public/images/locations/lancaster-sc/lancaster-sc-driveways.webp`: restored to the owner-approved q89 version (159,506 bytes, 1024x559 before resize) from commit c32f792. The owner approved this file over the 150 KB cap.
+- `public/images/services/concrete-driveways/concrete-driveways-detail.webp`: restored to the approved original (98,698 bytes, 944x531) from commit 0d3231f. Owner approved it over the cap.
+- Foundations: owner-approved swap. The pump photo (`concrete-foundations-process.webp`) now fills the detail band, and the rebar-grid photo (`concrete-foundations-band.webp`) now fills the process section. Alt text follows each photo.
+- Sealing hero: kept as the owner's `sealing.jpg` (612x344). No higher-resolution source is available.
