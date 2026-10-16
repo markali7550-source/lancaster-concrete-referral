@@ -151,7 +151,10 @@ export function ComplianceFooter() {
         </div>
 
 
-        <div className="mt-8 flex flex-col gap-2 text-[13px] text-[color:var(--color-muted)] lg:flex-row lg:items-center lg:justify-between">
+        <div
+          className="mt-8 flex flex-col gap-2 border-t pt-8 text-[13px] text-[color:var(--color-muted)] lg:flex-row lg:items-center lg:justify-between"
+          style={{ borderColor: "var(--color-line)" }}
+        >
           <p>
             © {new Date().getFullYear()} {site.brand}. All rights reserved.
           </p>
