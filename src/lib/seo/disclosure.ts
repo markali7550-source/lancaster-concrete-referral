@@ -1,5 +1,5 @@
 /** Single approved disclosure source. Compliance gate 24 asserts one origin. */
-export const FULL_DISCLOSURE = `This website is a local concrete service site, not a concrete contractor, residential builder, general contractor, engineer, or government agency. We do not perform, supervise, warrant, or guarantee construction work. Requests may be shared with independent third party service providers serving your area. Contractor availability, licensing, insurance, pricing, and project eligibility must be confirmed with the assigned contractor. South Carolina requirements vary by project type, scope, and total cost. Verify credentials through SC LLR before hiring.`;
+export const FULL_DISCLOSURE = `Lancaster Concrete Connect is a dedicated project coordination service that connects homeowners with trusted, licensed local concrete contractors across Lancaster County, South Carolina. We are not a concrete contractor and do not perform concrete work directly. All estimates, contracts, and concrete work are performed by the licensed local concrete contractors in our network. We are not a residential builder, general contractor, engineer, or government agency, and we do not supervise, warrant, or guarantee construction work. Requests may be shared with the trusted local contractors serving your area. Contractor availability, licensing, insurance, pricing, and project eligibility must be confirmed with the assigned contractor. South Carolina requirements vary by project type, scope, and total cost. Verify credentials through SC LLR before hiring.`;
 
 /** Footer disclosure. Required verbatim on every page. */
 /**
@@ -13,11 +13,8 @@ export const FULL_DISCLOSURE_PARAGRAPHS: readonly string[] = [
   FULL_DISCLOSURE.slice(FULL_DISCLOSURE.indexOf(FULL_DISCLOSURE_SPLIT_AT)).trim(),
 ];
 
-/** FULL_DISCLOSURE_PARAGRAPHS for non-legal pages (how-it-works): same text, banned phrase replaced. */
-const PUBLIC_FULL_DISCLOSURE = FULL_DISCLOSURE.replace(
-  "independent third party service providers",
-  "independent local service providers",
-);
+/** FULL_DISCLOSURE_PARAGRAPHS for non-legal pages (how-it-works): same text. */
+const PUBLIC_FULL_DISCLOSURE = FULL_DISCLOSURE;
 export const PUBLIC_DISCLOSURE_PARAGRAPHS: readonly string[] = [
   PUBLIC_FULL_DISCLOSURE.slice(0, PUBLIC_FULL_DISCLOSURE.indexOf(FULL_DISCLOSURE_SPLIT_AT)).trim(),
   PUBLIC_FULL_DISCLOSURE.slice(PUBLIC_FULL_DISCLOSURE.indexOf(FULL_DISCLOSURE_SPLIT_AT)).trim(),
