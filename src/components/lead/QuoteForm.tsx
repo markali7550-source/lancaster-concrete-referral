@@ -660,8 +660,8 @@ export function QuoteForm({
         {LEAD_FORM_DISCLOSURE}
       </p>
       <p className="mt-2 text-xs leading-relaxed text-[color:var(--color-muted)]">
-        Submitting this form does not create a contract, a price, or a booking.
-        We are a project coordination service, not a concrete contractor.
+        Submitting creates no contract, price, or booking. We are not a concrete
+        contractor.
       </p>
     </form>
   );
