@@ -31,7 +31,7 @@ export function ComplianceFooter() {
               <Logo height={52} />
             </div>
             <p className="mt-4 text-[13.5px] leading-relaxed text-[color:var(--color-muted)]">
-              A local concrete service site for South Carolina homeowners. Work is done by licensed local concrete contractors. We hold no contractor license and perform no concrete work.
+              A local concrete service site for South Carolina homeowners. Work is done by licensed local concrete contractors. Lancaster Concrete Connect is a dedicated project coordination service helping Lancaster County homeowners connect directly with trusted local concrete contractors for free estimates and quality workmanship.
             </p>
             <div className="mt-5 space-y-1.5 text-sm">
               <a href={`tel:${site.phoneE164}`} className="block font-semibold">
