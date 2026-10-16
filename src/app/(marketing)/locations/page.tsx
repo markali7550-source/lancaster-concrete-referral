@@ -127,7 +127,7 @@ export default function LocationsPage() {
                     Concrete quotes in {location.city}, {location.region}
                   </h3>
                   <p className="mt-2 flex-1 text-[14px] leading-relaxed text-[color:var(--color-muted)]">
-                    Driveways, patios, slabs and repair served by independent
+                    Driveways, patios, slabs and repair served by our trusted local
                     contractors covering {location.city}.
                   </p>
                   <span

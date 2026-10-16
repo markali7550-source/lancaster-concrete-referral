@@ -110,7 +110,7 @@ export default function HowItWorksPage() {
             <p className="font-semibold">We do</p>
             <ul className="mt-2 inline-block list-disc space-y-1.5 pl-5 text-left text-sm text-[color:var(--color-muted)] lg:block">
               <li>Collect and validate your request</li>
-              <li>Match your project with a partner contractor who serves your area</li>
+              <li>Match your project with one of our trusted contractors who serves your area</li>
               <li>Introduce you to one available contractor</li>
               <li>Follow up if the first contractor cannot reach you</li>
             </ul>

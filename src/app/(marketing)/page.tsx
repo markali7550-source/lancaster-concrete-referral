@@ -82,7 +82,7 @@ const FAQS = [
   {
     question: "Are the contractors licensed and insured?",
     answer:
-      "Yes. Our partner contractors are licensed and insured, and our team verifies their credentials before we connect them with your project. You can also confirm any license through SC LLR.",
+      "Yes. Our trusted local contractors are licensed and insured, and our team verifies their credentials before we connect them with your project. You can also confirm any license through SC LLR.",
   },
   {
     question: "What happens to my details?",
@@ -224,13 +224,13 @@ export default function HomePage() {
         }}
         eyebrow="Service area"
         title="Areas we currently serve"
-        lead="Every area we currently serve. Service availability depends on partner contractors."
+        lead="Every area we currently serve. Service availability depends on our trusted contractor network."
       >
         <AdjacentAreas locations={publishedLocations} />
 
         <p className="mt-7 text-center text-[14px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
           Additional South Carolina areas are added one at a time, and only once
-          a partner contractor has approved coverage there in writing.
+          one of our trusted contractors has approved coverage there in writing.
         </p>
       </Section>
 
@@ -238,7 +238,7 @@ export default function HomePage() {
         tone="surface"
         eyebrow="Request Concrete Service"
         title="What we need from you"
-        lead="Two short steps. A participating service contractor may contact you, and if no contractor covering your area can take it, we will say so plainly."
+        lead="Two short steps. One of our trusted local contractors may contact you, and if no contractor covering your area can take it, we will say so plainly."
       >
         <p
           className="mb-8 rounded-[12px] border p-4 text-[13.5px] leading-relaxed"

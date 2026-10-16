@@ -487,7 +487,7 @@ export function QuoteForm({
                   notification it could never send now says what is true. */}
               <p className="text-sm font-semibold">Not covered yet</p>
               <p className="mt-1.5 text-sm text-[color:var(--color-muted)]">
-                No partner contractor has confirmed that area in writing,
+                None of our trusted contractors has confirmed that area in writing,
                 so a request there cannot be served today. You can still
                 continue, coverage is rechecked on submit and nothing is sent
                 to a contractor unless it passes, or call {fallbackDisplay} to

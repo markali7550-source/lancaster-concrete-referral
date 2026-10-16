@@ -32,7 +32,7 @@ const FAQS = [
   {
     question: "What concrete services do you offer in Lancaster?",
     answer:
-      "Our partner contractors cover residential concrete work in Lancaster, including driveways, patios, walkways, foundations, slab pouring, concrete repairs, and decorative stamped concrete.",
+      "Our trusted local contractors cover residential concrete work in Lancaster, including driveways, patios, walkways, foundations, slab pouring, concrete repairs, and decorative stamped concrete.",
   },
   {
     question: "Can I combine multiple concrete services into one project?",
@@ -52,7 +52,7 @@ const FAQS = [
   {
     question: "Are your contractors licensed and insured in South Carolina?",
     answer:
-      "Yes. Our partner contractors are licensed and insured, and our team verifies their credentials before connecting them with your project. You can also confirm any license through SC LLR.",
+      "Yes. Our trusted local contractors are licensed and insured, and our team verifies their credentials before connecting them with your project. You can also confirm any license through SC LLR.",
   },
 ];
 

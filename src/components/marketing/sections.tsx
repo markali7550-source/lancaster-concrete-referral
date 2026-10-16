@@ -301,7 +301,7 @@ export const overlayMuted = "rgba(255,255,255,0.80)";
 const HERO_TRUST = [
   "100% free service for homeowners",
   "No obligation quotes",
-  "Licensed & insured local partners",
+  "Licensed and insured local specialists",
 ];
 
 export function Hero({
@@ -571,7 +571,7 @@ const SERVICE_AREA_CONTROLS = [
     body: "We confirm each address before we schedule anything, so you hear quickly whether a local contractor can take your project.",
   },
   {
-    title: "Licensed and insured partners",
+    title: "Licensed and insured specialists",
     body: "Every contractor we work with is licensed and insured, and our team verifies those credentials before a project is connected.",
   },
   {
@@ -762,7 +762,7 @@ export function AdjacentAreas({
         <p className="font-semibold">Lancaster only, for now</p>
         <p className="mt-2.5 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
           Additional South Carolina areas are added one at a time, and only
-          once a partner contractor has approved coverage there in writing.
+          once one of our trusted contractors has approved coverage there in writing.
           We would rather publish one honest service area than a coverage map we
           cannot support.
         </p>

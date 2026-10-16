@@ -129,6 +129,8 @@ const COMBO_H1: Record<string, (city: string) => string> = {
 
 /** Shared 50-60 character title rule: the long suffix when it fits, else the short one. */
 export function fitTitle(base: string): string {
+  const brand = `${base} | ${site.brand}`;
+  if (brand.length <= 60) return brand;
   const long = `${base} | Local Concrete Service`;
   return long.length <= 60 ? long : `${base} | Local Service`;
 }

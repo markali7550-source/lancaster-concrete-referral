@@ -43,7 +43,7 @@ export function Logo({
     <span className="relative inline-block" style={{ height, width }}>
       <Image
         src="/logo-2026.webp"
-        alt="Lancaster Concrete"
+        alt="Lancaster Concrete Connect"
         width={LOGO_WIDTH}
         height={LOGO_HEIGHT}
         sizes={sizes}
@@ -52,7 +52,7 @@ export function Logo({
       />
       <Image
         src="/logo-dark-2026.webp"
-        alt="Lancaster Concrete"
+        alt="Lancaster Concrete Connect"
         width={LOGO_WIDTH}
         height={LOGO_HEIGHT}
         sizes={sizes}

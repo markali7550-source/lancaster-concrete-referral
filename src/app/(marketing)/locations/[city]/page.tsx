@@ -81,17 +81,17 @@ export default async function LocationPage({ params }: { params: Params }) {
   const faqs = [
     {
       question: `Which ${location.city} areas do you cover?`,
-      answer: `${location.city}, ${location.region}. Partner contractors approve this area in writing. A request from outside them returns a clear answer that it is not covered, rather than being forwarded to someone who does not work there.`,
+      answer: `${location.city}, ${location.region}. Our trusted contractors approve this area in writing. A request from outside them returns a clear answer that it is not covered, rather than being forwarded to someone who does not work there.`,
     },
     {
-      question: `Do you employ concrete specialists in ${location.city}?`,
+      question: `Do you have concrete specialists in ${location.city}?`,
       answer:
         "Yes. We connect you with licensed local contractors in " + location.city + ". Each one carries their own license and insurance, which our team verifies before connecting you.",
     },
     {
       question: `How quickly does a ${location.city} contractor respond?`,
       answer:
-        "Partner contractors work to a contracted acknowledgment window. If the assigned contractor does not acknowledge in time, the request is reassigned once to an approved backup rather than sitting unattended.",
+        "Our contractors work to an agreed acknowledgment window. If the assigned contractor does not acknowledge in time, the request is reassigned once to an approved backup rather than sitting unattended.",
     },
     {
       question: `Is there a ${location.city} office I can visit?`,
@@ -182,7 +182,7 @@ export default async function LocationPage({ params }: { params: Params }) {
       <Section
         eyebrow="Local conditions"
         title={`What shapes concrete work in ${location.city}`}
-        lead="Notes from partner contractor conversations about this market."
+        lead="Notes from our conversations with local contractors about this market."
       >
           {/*
             Replaces the generated shot that had red clay painted along the
@@ -218,7 +218,7 @@ export default async function LocationPage({ params }: { params: Params }) {
         tone="surface"
         eyebrow="Services"
         title={`Concrete services in ${location.city}`}
-        lead="Pick the closest match. The category only decides which partner contractors are eligible. The contractor scopes the whole job on site."
+        lead="Pick the closest match. The category only decides which of our trusted contractors can take the job. The contractor scopes the whole job on site."
       >
         <ProjectTypeChooser
           services={publishedServices.filter((service) =>

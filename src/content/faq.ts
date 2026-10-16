@@ -182,7 +182,7 @@ export const faqCategories: readonly FaqCategory[] = [
       },
       {
         "question": "Do you serve my area?",
-        "answer": "We proudly serve homeowners and businesses in the City of Lancaster, SC, and nearby communities including Kershaw, Heath Springs, Van Wyck, and Buford, where a partner contractor has approved coverage in writing.",
+        "answer": "We proudly serve homeowners and businesses in the City of Lancaster, SC, and nearby communities including Kershaw, Heath Springs, Van Wyck, and Buford, where one of our trusted contractors has approved coverage in writing.",
         "links": [
           {
             "text": "City of Lancaster, SC",
@@ -192,7 +192,7 @@ export const faqCategories: readonly FaqCategory[] = [
       },
       {
         "question": "Are all contractors licensed and insured?",
-        "answer": "Work is performed by independent local concrete contractors, not by us. Each contractor is responsible for its own licensing, bonding, and insurance, and for building to South Carolina codes and industry standards. Ask any contractor for proof before you sign.",
+        "answer": "Work is performed by our trusted local concrete contractors, not by us. Each contractor is responsible for its own licensing, bonding, and insurance, and for building to South Carolina codes and industry standards. Ask any contractor for proof before you sign.",
         "links": []
       }
     ]

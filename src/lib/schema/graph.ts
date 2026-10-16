@@ -7,7 +7,7 @@ const SITE_ID = () => `${absoluteUrl("/")}/#website`;
 const LOCAL_ID = () => `${absoluteUrl("/")}/#localbusiness`;
 
 const BUSINESS_DESCRIPTION =
-  "Local concrete service site for South Carolina homeowners, with work done by independent concrete contractors. Not a contractor.";
+  "Lancaster Concrete Connect is a project coordination service for South Carolina homeowners. We connect you with trusted local concrete contractors, who perform the work. We are not a contractor.";
 
 /**
  * Root publisher is an OnlineBusiness. The LocalBusiness node below describes
