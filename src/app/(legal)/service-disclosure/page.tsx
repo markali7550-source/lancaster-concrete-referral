@@ -10,7 +10,7 @@ const PATH = "/service-disclosure";
 export const metadata: Metadata = pageMetadata({
   title: `${TITLE} | ${site.brand}`,
   description:
-    "How we work with independent concrete service providers in Lancaster, SC, what we do and do not do, and how we are compensated. Read before you request a quote.",
+    "How we work with our trusted local concrete contractors in Lancaster, SC, what we do and do not do, and how we are compensated. Read before you request a quote.",
   path: PATH,
 });
 
@@ -26,24 +26,24 @@ export default function ServiceDisclosurePage() {
       <h2>How your request is handled</h2>
       <p>
         Our local team checks each project request against the areas and
-        service types that an independent provider has agreed to cover. When a
-        request fits, we send your details to one independent concrete service
-        provider, who contacts you to schedule the project. Each provider works
-        under its own license, insurance and contract with you.
+        service types that one of our trusted local concrete contractors has
+        agreed to cover. When a request fits, we send your details to one local
+        concrete specialist, who contacts you to schedule the project. Each
+        contractor works under its own license, insurance and contract with you.
       </p>
 
       <h2>What we do not do</h2>
       <ul>
         <li>We do not perform, supervise, inspect, or manage construction work.</li>
-        <li>We do not warrant or guarantee any provider&apos;s work, pricing, or timeline.</li>
+        <li>We do not warrant or guarantee any contractor&apos;s work, pricing, or timeline.</li>
         <li>We do not hold a contractor license and do not act as a general contractor.</li>
-        <li>We are not a party to the contract you sign with a provider.</li>
+        <li>We are not a party to the contract you sign with your contractor.</li>
       </ul>
 
       <h2>How we are compensated</h2>
       <p>
-        Participating providers pay us a commission on revenue they collect from
-        completed projects that began through this site. The commission is
+        Contractors in our network pay us a commission on revenue they collect
+        from completed projects that began through this site. The commission is
         calculated on collected revenue after contractually excluded taxes,
         refunds and chargebacks. Nothing is charged to the homeowner, and no
         commission is based on a call, an inquiry, an estimate or an unpaid
@@ -53,7 +53,7 @@ export default function ServiceDisclosurePage() {
       <h2>Verification is your right</h2>
       <p>
         Our coverage checks are internal and are not an endorsement of any
-        provider. South Carolina requirements vary by project type, scope, and
+        contractor. South Carolina requirements vary by project type, scope, and
         total cost. Verify license and registration status directly through{" "}
         <a href={SC_LLR_URL} rel="noopener noreferrer nofollow" target="_blank">
           SC LLR
