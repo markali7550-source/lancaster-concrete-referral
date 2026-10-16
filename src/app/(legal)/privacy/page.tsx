@@ -6,13 +6,13 @@ import { site } from "@/lib/env";
 export const metadata: Metadata = pageMetadata({
   title: `Privacy Policy | ${site.brand}`,
   description:
-    "What we collect, why we share requests with independent contractors, how consent is recorded, and how to exercise your choices. Contact us with questions.",
+    "What we collect, why we share your request with a trusted local concrete contractor, how consent is recorded, and how to exercise your choices. Contact us with questions.",
   path: "/privacy",
 });
 
 export default function PrivacyPage() {
   return (
-    <LegalPage title="Privacy policy" updated="September 24, 2026" currentPath="/privacy">
+    <LegalPage title="Privacy policy" updated="October 15, 2026" currentPath="/privacy">
       <h2>What we collect</h2>
       <ul>
         <li>Project details you submit: project type, location, name, contact method, and any note.</li>
@@ -21,11 +21,20 @@ export default function PrivacyPage() {
         <li>Call events where phone tracking is active: time, duration, and call result.</li>
       </ul>
 
+      <h2>Why we collect it</h2>
+      <p>
+        Your project and contact details are collected solely to coordinate your
+        quote request with a trusted local concrete specialist in Lancaster
+        County, South Carolina.
+      </p>
+
       <h2>Why we share it</h2>
       <p>
-        Your request is shared with the independent contractor assigned to your
-        area so that they can contact you about your project. That contractor is
-        a separate business and handles your information under their own policy.
+        Your request is shared with the licensed local contractor assigned to
+        your area so that they can contact you about your project. That
+        contractor is a separate business and handles your information under its
+        own policy. We never sell your project or contact details, and we do not
+        share them with unrelated third parties for their marketing.
       </p>
 
       <h2>Consent</h2>
@@ -41,7 +50,7 @@ export default function PrivacyPage() {
       <ul>
         <li>Contact values are stored with access controls and hashed for duplicate detection.</li>
         <li>Raw contact fields are not written to application logs.</li>
-        <li>Provider tokens and secrets remain server side only.</li>
+        <li>Integration tokens and secrets remain server side only.</li>
       </ul>
 
       <h2>Retention</h2>

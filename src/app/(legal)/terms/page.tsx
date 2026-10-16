@@ -6,18 +6,28 @@ import { site } from "@/lib/env";
 export const metadata: Metadata = pageMetadata({
   title: `Terms of Use | ${site.brand}`,
   description:
-    "Terms governing use of this Lancaster Concrete website, including the limits of our role and the absence of any warranty on contractor work.",
+    "Terms governing use of the Lancaster Concrete Connect website, including the limits of our role and the absence of any warranty on contractor work.",
   path: "/terms",
 });
 
 export default function TermsPage() {
   return (
-    <LegalPage title="Terms of use" updated="September 24, 2026" currentPath="/terms">
+    <LegalPage title="Terms of use" updated="October 15, 2026" currentPath="/terms">
       <h2>Service scope</h2>
       <p>
-        {site.brand} provides introductions to independent contractors. We are
-        not a contractor, builder, engineer, or government agency, and we are
-        not a party to any agreement you enter into with a contractor.
+        {site.brand} is a project coordination service that connects homeowners
+        with trusted, licensed local concrete contractors in Lancaster County,
+        South Carolina. We facilitate initial project coordination and free
+        estimate requests. We are not a concrete contractor, builder, engineer,
+        or government agency, and we are not a party to any agreement you enter
+        into with a contractor.
+      </p>
+
+      <h2>Contracts for concrete work</h2>
+      <p>
+        The contractual agreement for concrete work is made directly between you
+        and the licensed local contractor. Pricing, scope, schedule, workmanship,
+        and payment terms are set in that agreement, not by {site.brand}.
       </p>
 
       <h2>No warranty</h2>
