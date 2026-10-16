@@ -23,9 +23,9 @@ export default function PrivacyPage() {
 
       <h2>Why we collect it</h2>
       <p>
-        Your project and contact details are collected solely to coordinate your
-        quote request with a trusted local concrete specialist in Lancaster
-        County, South Carolina.
+        Customer project information is collected strictly to coordinate your
+        free estimate with a trusted local Lancaster County concrete contractor.
+        It is never sold to unrelated third-party marketers.
       </p>
 
       <h2>Why we share it</h2>

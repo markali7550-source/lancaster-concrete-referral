@@ -17,8 +17,8 @@ export default function TermsPage() {
       <p>
         {site.brand} is a project coordination service that connects homeowners
         with trusted, licensed local concrete contractors in Lancaster County,
-        South Carolina. We facilitate initial project coordination and free
-        estimate requests. We are not a concrete contractor, builder, engineer,
+        South Carolina. We provide project coordination and free estimate
+        routing. We are not a concrete contractor, builder, engineer,
         or government agency, and we are not a party to any agreement you enter
         into with a contractor.
       </p>
@@ -27,14 +27,16 @@ export default function TermsPage() {
       <p>
         The contractual agreement for concrete work is made directly between you
         and the licensed local contractor. Pricing, scope, schedule, workmanship,
-        and payment terms are set in that agreement, not by {site.brand}.
+        and payment terms are set in that agreement, not by {site.brand}. The
+        construction contract, and any liability arising from the construction
+        work, remain between you and the licensed local contractor.
       </p>
 
       <h2>No warranty</h2>
       <p>
         We make no warranty, express or implied, regarding any contractor&apos;s
         licensing status, insurance, availability, pricing, workmanship, or
-        timeline. Information on this site is general and is not professional,
+        timeline. Information on the Lancaster Concrete Connect website is general and is not professional,
         legal, or engineering advice.
       </p>
 
