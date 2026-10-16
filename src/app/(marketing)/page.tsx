@@ -109,7 +109,7 @@ export default function HomePage() {
       <Hero
         locationCue="Lancaster County, South Carolina"
         h1="Lancaster's Trusted Concrete Connection"
-        summary="Taking the hassle out of finding reliable concrete pros. We connect you directly with top-rated, licensed local contractors for driveways, patios, walkways, and foundations."
+        summary="Taking the hassle out of finding reliable concrete pros. We connect you directly with top rated, licensed local contractors for driveways, patios, walkways, and foundations."
         imageSrc="/images/home/home-hero-float.webp"
         imageAlt="Worker in a high-visibility vest and cap hand-floating freshly poured concrete beside timber forms"
         overlay

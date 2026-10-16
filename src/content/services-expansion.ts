@@ -25,7 +25,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Placing the concrete with the color and release agents specified",
       "Stamping the pattern while the surface is still workable",
       "Joint layout that follows the pattern lines",
-      "Site clean-up and haul-away of debris",
+      "Site clean up and haul away of debris",
     ],
     heroSummary:
       "Stamped concrete is a decorative finish pressed into freshly placed concrete. Requests cover slate, stone, and plank patterns, integral color, and texture for patios and entries. The pattern is set in a short window while the slab is still workable, so the design, color, and sealing plan are decided before the forms go in. Request a concrete service and a local contractor will confirm the pattern and color at a site visit.",
@@ -93,11 +93,11 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         name: "Sealer",
         description:
-          "Film-forming or penetrating sealer. Sealing protects color and needs a recoat schedule.",
+          "Film forming or penetrating sealer. Sealing protects color and needs a recoat schedule.",
       },
     ],
     tradeSpecs: [
-      "High-strength concrete mix, commonly 4,000 PSI for residential work. Your contractor confirms the mix for your project.",
+      "High strength concrete mix, commonly 4,000 PSI for residential work. Your contractor confirms the mix for your project.",
       "Welded wire or fiber reinforcement placed to help limit cracking.",
       "Compacted gravel subbase and a planned drainage slope set before the forms go in.",
       "Control joints laid out along pattern lines, with the sealer schedule confirmed before the work starts.",
@@ -200,7 +200,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Forming and bracing to the engineer's dimensions",
       "Reinforcement placed to the engineer's schedule and inspected before the pour",
       "Placing and consolidating the concrete",
-      "Site clean-up and haul-away of spoil",
+      "Site clean up and haul away of spoil",
     ],
     heroSummary:
       "Foundations carry the weight of the whole structure, so they are specified by an engineer and built to code and the soil conditions on site. Requests cover footings and stem walls for new homes and additions. Every foundation starts from the engineer's drawings and the soil report. Request a concrete service and a local contractor will confirm the requirements for your site at a site visit.",
@@ -371,7 +371,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Base excavation and compaction to the planned grade",
       "Forms set to the path and the drainage slope",
       "Placing, edging, and broom finishing the concrete",
-      "Site clean-up and haul-away of debris",
+      "Site clean up and haul away of debris",
     ],
     heroSummary:
       "A front walkway is the first thing guests see, and it gets walked on every day. Requests cover new front walks from the driveway or sidewalk to the door, replacement of cracked walks, and individual sidewalk sections. Typical work includes a compacted base, control joints, a broom finish, and edges set to grade. Request a concrete service and a local contractor will confirm the path, slope, and joint layout at a site visit.",
@@ -404,7 +404,7 @@ export const expansionServices: readonly ServiceRecord[] = [
     covered: [
       {
         title: "New front walks",
-        body: "First-time walkways from the driveway, sidewalk, or parking area to the front door, with a planned grade.",
+        body: "First time walkways from the driveway, sidewalk, or parking area to the front door, with a planned grade.",
       },
       {
         title: "Walk replacement",
@@ -440,7 +440,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       },
     ],
     tradeSpecs: [
-      "High-strength concrete mix, commonly 4,000 PSI for residential work. Your contractor confirms the mix for your project.",
+      "High strength concrete mix, commonly 4,000 PSI for residential work. Your contractor confirms the mix for your project.",
       "Welded wire or fiber reinforcement placed to help limit cracking.",
       "Compacted gravel subbase and a planned drainage slope set before the forms go in.",
       "Control joints spaced to guide cracking, with edges tooled at the finish.",
@@ -476,7 +476,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         factor: "Removal of the old walk",
         impact: "High",
-        note: "Demolition and haul-away are separate from the new pour.",
+        note: "Demolition and haul away are separate from the new pour.",
       },
       {
         factor: "Grade changes",
@@ -541,7 +541,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Base excavation and compaction under the steps and landing",
       "Forms set to the planned rise and run",
       "Placing, nosing, and broom finishing the steps and landing",
-      "Site clean-up and haul-away of debris",
+      "Site clean up and haul away of debris",
     ],
     heroSummary:
       "Steps are the part of a front entry that gets used most, and they cause the most trouble when the rise and run are off. Requests cover new concrete steps, porch landings, and replacement of cracked or uneven steps. Typical work includes a compacted base, a consistent rise and run, and a finish chosen with slip resistance in mind. Request a concrete service and a local contractor will confirm the layout and any code requirements at a site visit.",
@@ -611,7 +611,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       },
     ],
     tradeSpecs: [
-      "High-strength concrete mix, commonly 4,000 PSI for residential work. Your contractor confirms the mix for your project.",
+      "High strength concrete mix, commonly 4,000 PSI for residential work. Your contractor confirms the mix for your project.",
       "Steel rebar or welded wire reinforcement placed to help limit cracking.",
       "Compacted gravel base set before the forms go in, with drainage away from the house.",
       "Nosing and broom finish specified for traction, with control joints laid out for the landing.",
@@ -647,7 +647,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         factor: "Removal of existing steps",
         impact: "High",
-        note: "Demolition and haul-away are separate from the new pour.",
+        note: "Demolition and haul away are separate from the new pour.",
       },
       {
         factor: "Landing size",
@@ -712,7 +712,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Drilling small holes at planned points under the slab",
       "Injecting a leveling material while the slab height is checked",
       "Patching the holes after the lift",
-      "Site clean-up and haul-away of debris",
+      "Site clean up and haul away of debris",
     ],
     heroSummary:
       "Concrete leveling lifts a settled slab back toward its original height by injecting a filler through small holes drilled in the surface. It is often less disruptive than replacing a slab that has sunk at one edge, but the contractor confirms whether a slab can be lifted at the site visit, and checks the cause of settling first. Request a concrete service and a local contractor will look at the slab with you.",
@@ -765,7 +765,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         name: "Injection material",
         description:
-          "Polyurethane foam or cement-based slurry. The contractor chooses based on load, cure speed, and the soil.",
+          "Polyurethane foam or cement based slurry. The contractor chooses based on load, cure speed, and the soil.",
       },
       {
         name: "Number of injection points",
@@ -881,7 +881,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Grinding or etching to open the surface for bonding",
       "Crack and joint repair before coating",
       "Primer and coating applied in the planned coats",
-      "Clean-up and cure-time guidance",
+      "Clean up and cure time guidance",
     ],
     heroSummary:
       "A garage floor coating puts a protective layer over the slab. Epoxy and polyurea systems resist oil, salt, and staining, and decorative flakes or color give the floor a finished look. Surface preparation decides how well a coating bonds, so the contractor checks the slab, moisture, and any existing coating before quoting. Request a concrete service and a local contractor will confirm the right system for your garage.",
@@ -906,7 +906,7 @@ export const expansionServices: readonly ServiceRecord[] = [
     image: "/images/services/concrete-garage-coatings/concrete-garage-coatings-hero.webp",
     imageAlt:
       "Clean two-car garage floor with a glossy grey epoxy coating and light decorative flakes",
-    projectTypes: ["Two-car garage", "Single-car garage", "Workshop floor"],
+    projectTypes: ["Two car garage", "Single car garage", "Workshop floor"],
     keyFacts: [
       { label: "Coating types", value: "Epoxy, polyurea, flake systems" },
       { label: "Typical use", value: "Garages, workshops, storage" },
@@ -914,7 +914,7 @@ export const expansionServices: readonly ServiceRecord[] = [
     covered: [
       {
         title: "Epoxy floor coatings",
-        body: "Solid, chemical-resistant coatings that bond to a prepared slab.",
+        body: "Solid, chemical resistant coatings that bond to a prepared slab.",
       },
       {
         title: "Flake and decorative systems",
@@ -928,7 +928,7 @@ export const expansionServices: readonly ServiceRecord[] = [
     outOfScope: [
       "Overlay concrete resurfacing",
       "Garage slab replacement",
-      "Waterproofing of below-grade walls",
+      "Waterproofing of below grade walls",
     ],
     options: [
       {
@@ -1222,16 +1222,16 @@ export const expansionServices: readonly ServiceRecord[] = [
     nameLower: "concrete aprons",
     projectNoun: "concrete apron",
     state: "published",
-    intent: "Driveway-to-street and driveway-to-garage aprons",
+    intent: "Driveway to street and driveway to garage aprons",
     summary:
       "Concrete aprons that connect a driveway to the garage or street, graded so water runs off instead of pooling.",
-    cardScope: "Driveway-to-street and driveway-to-garage aprons",
+    cardScope: "Driveway to street and driveway to garage aprons",
     workIncluded: [
       "Measuring the apron and checking the grade toward the street or gutter",
       "Subbase preparation and form setting to the planned slope",
       "Placing and finishing the concrete to match the driveway",
       "Control joints placed to line up with the driveway joints",
-      "Site clean-up and haul-away of debris",
+      "Site clean up and haul away of debris",
     ],
     heroSummary:
       "A concrete apron is the slab that joins a driveway to the street or to the garage floor. Its slope decides whether water runs off the driveway or pools at the edge, so the grade is planned before the forms go in. Request a concrete service and a local contractor will check the grade, the curb, and the existing driveway at a site visit.",
@@ -1258,7 +1258,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Newly poured grey concrete sidewalk and apron with orange traffic cones along an open street edge",
     projectTypes: ["Street apron", "Garage apron", "Replacement apron"],
     keyFacts: [
-      { label: "Typical use", value: "Driveway-to-street and garage connections" },
+      { label: "Typical use", value: "Driveway to street and garage connections" },
       { label: "Key factor", value: "Slope toward the gutter" },
     ],
     covered: [
@@ -1393,7 +1393,7 @@ export const expansionServices: readonly ServiceRecord[] = [
     state: "published",
     intent: "Concrete sealing and cleaning",
     summary:
-      "Cleaning followed by a penetrating or film-forming sealer for driveways, patios, and walks, to help resist stains, water, and freeze-thaw damage.",
+      "Cleaning followed by a penetrating or film forming sealer for driveways, patios, and walks, to help resist stains, water, and freeze thaw damage.",
     cardScope: "Cleaning, sealing, and recoat planning for driveways, patios, and walks",
     workIncluded: [
       "Inspection of the surface and any existing sealer",
@@ -1403,7 +1403,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Recoat schedule and care instructions",
     ],
     heroSummary:
-      "Concrete sealing puts a protective layer over a clean slab. Penetrating sealers soak into the surface, while film-forming sealers sit on top. Cleaning comes first, since sealer bonds only to a clean, dry surface. Request a concrete service and a local contractor will confirm the sealer and the cleaning method for your surface.",
+      "Concrete sealing puts a protective layer over a clean slab. Penetrating sealers soak into the surface, while film forming sealers sit on top. Cleaning comes first, since sealer bonds only to a clean, dry surface. Request a concrete service and a local contractor will confirm the sealer and the cleaning method for your surface.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "What a sealing job covers",
@@ -1427,7 +1427,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Worker in a safety vest applying black sealant along a crack in a concrete slab",
     projectTypes: ["Driveway sealing", "Patio sealing", "Walkway sealing"],
     keyFacts: [
-      { label: "Sealer types", value: "Penetrating, film-forming" },
+      { label: "Sealer types", value: "Penetrating, film forming" },
       { label: "Typical use", value: "Driveways, patios, walks" },
     ],
     covered: [
@@ -1440,20 +1440,20 @@ export const expansionServices: readonly ServiceRecord[] = [
         body: "Sealers that soak into the surface and keep its natural look.",
       },
       {
-        title: "Film-forming sealers",
+        title: "Film forming sealers",
         body: "Sealers that sit on the surface and add a sheen or color depth.",
       },
     ],
     outOfScope: [
       "Garage floor epoxy and coatings",
       "Sealing of wood, brick, or stone without a specific request",
-      "Waterproofing of below-grade walls",
+      "Waterproofing of below grade walls",
     ],
     options: [
       {
         name: "Sealer type",
         description:
-          "Penetrating sealers keep the natural look. Film-forming sealers add sheen and color depth but need more upkeep.",
+          "Penetrating sealers keep the natural look. Film forming sealers add sheen and color depth but need more upkeep.",
       },
       {
         name: "Finish",
@@ -1508,7 +1508,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         factor: "Sealer type",
         impact: "Medium",
-        note: "Film-forming sealers cost more to apply and to remove.",
+        note: "Film forming sealers cost more to apply and to remove.",
       },
       {
         factor: "Crack repairs",
@@ -1595,7 +1595,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Residential exposed aggregate concrete driveway with mixed tan and grey stones across the surface",
     projectTypes: ["Exposed aggregate driveway", "Exposed aggregate patio", "Exposed aggregate walkway"],
     keyFacts: [
-      { label: "Finish", value: "Stone-textured, decorative" },
+      { label: "Finish", value: "Stone textured, decorative" },
       { label: "Typical use", value: "Driveways, patios, walks" },
     ],
     covered: [
@@ -1605,7 +1605,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       },
       {
         title: "Patios and walkways",
-        body: "Decorative patios and walks in a stone-textured finish.",
+        body: "Decorative patios and walks in a stone textured finish.",
       },
       {
         title: "Border and accent bands",

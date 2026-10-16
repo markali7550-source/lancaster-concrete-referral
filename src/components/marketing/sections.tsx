@@ -639,7 +639,7 @@ const STEPS = [
   },
   {
     verb: "Get Your Free Quote",
-    body: "The matched local contractor contacts you directly to provide a free on-site consultation and clear estimate.",
+    body: "The matched local contractor contacts you directly to provide a free on site consultation and clear estimate.",
   },
   {
     verb: "Quality Concrete Done Right",

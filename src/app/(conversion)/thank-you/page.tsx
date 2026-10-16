@@ -22,7 +22,7 @@ const STEPS = [
   },
   {
     title: "Site visit and quote",
-    body: "A matched local contractor contacts you directly to schedule a free on-site consultation and provide a clear estimate.",
+    body: "A matched local contractor contacts you directly to schedule a free on site consultation and provide a clear estimate.",
   },
 ];
 

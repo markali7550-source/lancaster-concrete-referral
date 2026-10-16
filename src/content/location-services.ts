@@ -111,7 +111,7 @@ export const LOCAL_SOIL_BY_SERVICE: Record<string, { title: string; paragraphs: 
   "concrete-sealing": {
     "title": "Sealing in Lancaster: sun, storms, and clay dust",
     "paragraphs": [
-      "Summer sun and afternoon storms wear sealer faster on driveways and patios in Lancaster. Red clay dust and tracked-in soil can also stain the surface, so cleaning comes before sealing.",
+      "Summer sun and afternoon storms wear sealer faster on driveways and patios in Lancaster. Red clay dust and tracked in soil can also stain the surface, so cleaning comes before sealing.",
       "Sealer protects against water and staining, but it does not stop slab movement. Settling in clay is a structural question, and it is worth checking before sealing."
     ]
   },
@@ -197,7 +197,7 @@ const records: readonly LocationServiceRecord[] = [
     state: "published",
     localImage: "/images/services/concrete-patios/concrete-patios-hero.webp",
     localImageAlt:
-      "Concrete patio beside a covered pergola and wicker daybed, with a brick-trimmed house and lawn",
+      "Concrete patio beside a covered pergola and wicker daybed, with a brick trimmed house and lawn",
     localBody: [
       {
         heading: "What the work usually is",
@@ -477,7 +477,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         heading: "Weather and timing",
         body:
-          "Walkways face the same summer heat, humid storms, and red clay as driveways. Freeze-thaw is light in Lancaster, but clay that stays wet or dries out can heave a walk, so the path is graded away from the house and set with an edge restraint.",
+          "Walkways face the same summer heat, humid storms, and red clay as driveways. Freeze thaw is light in Lancaster, but clay that stays wet or dries out can heave a walk, so the path is graded away from the house and set with an edge restraint.",
       },
       {
         heading: "Communities near Lancaster",
@@ -509,7 +509,7 @@ const records: readonly LocationServiceRecord[] = [
     state: "published",
     localImage: "/images/services/stamped-concrete/stamped-concrete-hero.webp",
     localImageAlt:
-      "Worker's hands and a red-handled finishing tool on freshly placed gray concrete",
+      "Worker's hands and a red handled finishing tool on freshly placed gray concrete",
     localBody: [
       {
         heading: "What stamped work involves",
@@ -678,7 +678,7 @@ const records: readonly LocationServiceRecord[] = [
     serviceSlug: "concrete-garage-coatings",
     state: "published",
     localImage: "/images/services/concrete-garage-coatings/concrete-garage-coatings-hero.webp",
-    localImageAlt: "Clean two-car garage floor with a glossy grey epoxy coating and light decorative flakes",
+    localImageAlt: "Clean two car garage floor with a glossy grey epoxy coating and light decorative flakes",
     localBody: [
       {
         heading: "Moisture comes first",
@@ -694,7 +694,7 @@ const records: readonly LocationServiceRecord[] = [
       },
       {
         heading: "Choosing a system",
-        body: "Epoxy is common for garages, and polyurea cures faster. Flake and solid finishes look and wear differently, so the contractor explains the trade-offs with you before the order is placed.",
+        body: "Epoxy is common for garages, and polyurea cures faster. Flake and solid finishes look and wear differently, so the contractor explains the trade offs with you before the order is placed.",
       },
       {
         heading: "Who does the work",
@@ -729,7 +729,7 @@ const records: readonly LocationServiceRecord[] = [
     serviceSlug: "concrete-resurfacing",
     state: "published",
     localImage: "/images/services/concrete-resurfacing/concrete-resurfacing-hero.webp",
-    localImageAlt: "Aging concrete driveway with a fresh, smooth, light-grey overlay",
+    localImageAlt: "Aging concrete driveway with a fresh, smooth, light grey overlay",
     localBody: [
       {
         heading: "Is the old slab sound",
@@ -835,11 +835,11 @@ const records: readonly LocationServiceRecord[] = [
     localBody: [
       {
         heading: "Cleaning before sealing",
-        body: "Sealer bonds only to a clean, dry surface. Red clay stains and tracked-in dirt are removed first, and the contractor checks for old sealer that must come off before the new coat goes on.",
+        body: "Sealer bonds only to a clean, dry surface. Red clay stains and tracked in dirt are removed first, and the contractor checks for old sealer that must come off before the new coat goes on.",
       },
       {
         heading: "Choosing a sealer",
-        body: "Penetrating sealers keep the natural look, while film-forming sealers add sheen and color depth. The contractor recommends one based on the surface and how it is used.",
+        body: "Penetrating sealers keep the natural look, while film forming sealers add sheen and color depth. The contractor recommends one based on the surface and how it is used.",
       },
       {
         heading: "Sun and rain",

@@ -148,8 +148,8 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
   /* ------------------------------------------------------ aprons */
   "concrete-aprons": {
     mayInclude: [
-      "Driveway-to-street aprons",
-      "Driveway-to-garage aprons",
+      "Driveway to street aprons",
+      "Driveway to garage aprons",
       "Replacement of sunken or cracked aprons",
       "Grade correction toward the gutter",
       "Joints aligned with the driveway",
@@ -159,7 +159,7 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
   /* ------------------------------------------------------ sealing */
   "concrete-sealing": {
     mayInclude: [
-      "Penetrating and film-forming sealers",
+      "Penetrating and film forming sealers",
       "Cleaning before sealing",
       "Minor crack repair before sealing",
       "Recoat planning",

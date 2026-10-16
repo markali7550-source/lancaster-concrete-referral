@@ -115,11 +115,11 @@ const coreServices: readonly ServiceRecord[] = [
     nameLower: "a concrete driveway",
     projectNoun: "driveway",
     state: "published",
-    intent: "Driveway tear-out, replacement, and new pour requests",
+    intent: "Driveway tear out, replacement, and new pour requests",
     summary:
-      "Tear-out, replacement, and new pours on a 4,000 PSI high-strength mix with rebar reinforcement and a broom finish.",
+      "Tear out, replacement, and new pours on a 4,000 PSI high strength mix with rebar reinforcement and a broom finish.",
     heroSummary:
-      "A driveway carries vehicles every day, so the details matter. Requests cover tear-out and removal of a failed slab, full replacement, and expansions of an existing drive. Typical specifications include a 4,000 PSI high-strength mix, steel rebar reinforcement, and a broom finish for traction. Request a quote and a local contractor will confirm the scope, mix, and joint layout at a site visit.",
+      "A driveway carries vehicles every day, so the details matter. Requests cover tear out and removal of a failed slab, full replacement, and expansions of an existing drive. Typical specifications include a 4,000 PSI high strength mix, steel rebar reinforcement, and a broom finish for traction. Request a quote and a local contractor will confirm the scope, mix, and joint layout at a site visit.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "What counts as a driveway job",
@@ -138,16 +138,16 @@ const coreServices: readonly ServiceRecord[] = [
       "Nobody can price a driveway from an address. Square footage is only the start of it. What the old slab costs to break up and haul away, and whether a truck can reach the pour, often move the number more.",
     ctaLead:
       "Share the length of the drive and whether the old slab has to come out. A local contractor will confirm the scope at a site visit.",
-    cardScope: "Tear-out, replacement, and expansions",
+    cardScope: "Tear out, replacement, and expansions",
     workIncluded: [
       "Grading and excavation to the planned subgrade",
       "Forming and reinforcement set to the layout",
       "Placing and pouring the concrete",
       "Finishing to the chosen texture",
-      "Site clean-up and haul-away of debris",
+      "Site clean up and haul away of debris",
     ],
     tradeSpecs: [
-      "High-strength concrete mix, commonly 4,000 PSI for residential work. Your contractor confirms the mix for your project.",
+      "High strength concrete mix, commonly 4,000 PSI for residential work. Your contractor confirms the mix for your project.",
       "Steel rebar or welded wire reinforcement placed to help limit cracking.",
       "Compacted gravel subbase and a planned drainage slope set before the forms go in.",
       "Control and expansion joints laid out for South Carolina's seasonal heat, rain, and clay soil movement.",
@@ -367,10 +367,10 @@ const coreServices: readonly ServiceRecord[] = [
       "Forming and reinforcement set to the layout",
       "Placing and pouring the concrete",
       "Finishing to the chosen texture",
-      "Site clean-up and haul-away of debris",
+      "Site clean up and haul away of debris",
     ],
     tradeSpecs: [
-      "High-strength concrete mix, commonly 4,000 PSI for residential work. Your contractor confirms the mix for your project.",
+      "High strength concrete mix, commonly 4,000 PSI for residential work. Your contractor confirms the mix for your project.",
       "Steel rebar or welded wire reinforcement placed to help limit cracking.",
       "Compacted gravel subbase and a planned drainage slope set before the forms go in.",
       "Control and expansion joints laid out for South Carolina's seasonal heat, rain, and clay soil movement.",
@@ -586,10 +586,10 @@ const coreServices: readonly ServiceRecord[] = [
       "Forming and reinforcement set to the layout",
       "Placing and pouring the concrete",
       "Finishing to the chosen texture",
-      "Site clean-up and haul-away of debris",
+      "Site clean up and haul away of debris",
     ],
     tradeSpecs: [
-      "High-strength concrete mix, commonly 4,000 PSI for residential work. Your contractor confirms the mix for your project.",
+      "High strength concrete mix, commonly 4,000 PSI for residential work. Your contractor confirms the mix for your project.",
       "Steel rebar or welded wire reinforcement placed to help limit cracking.",
       "Compacted gravel subbase and a planned drainage slope set before the forms go in.",
       "Control and expansion joints laid out for South Carolina's seasonal heat, rain, and clay soil movement.",
@@ -800,7 +800,7 @@ const coreServices: readonly ServiceRecord[] = [
       "Crack chasing and groove preparation or patch layout",
       "Repair material placement",
       "Finishing and joint sealing",
-      "Site clean-up and haul-away of debris",
+      "Site clean up and haul away of debris",
     ],
     tradeSpecs: [
       "Cracks and spalled areas cleaned and prepared before any filler or patch goes in.",
@@ -842,7 +842,7 @@ const coreServices: readonly ServiceRecord[] = [
     outOfScope: [
       "Structural assessment, engineering reports, and load calculations",
       "Structural repair and load bearing work",
-      "Below-grade waterproofing",
+      "Below grade waterproofing",
       "Anything caused by active ground movement or heave",
     ],
     options: [
@@ -864,7 +864,7 @@ const coreServices: readonly ServiceRecord[] = [
       {
         name: "Joint resealing",
         description:
-          "Low-cost preventive work that keeps water out of the base. Often the most useful thing to do on an aging slab.",
+          "Low cost preventive work that keeps water out of the base. Often the most useful thing to do on an aging slab.",
       },
     ],
     process: [
