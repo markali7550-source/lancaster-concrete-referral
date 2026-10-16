@@ -16,7 +16,7 @@ export const metadata: Metadata = pageMetadata({
 
 export default function ServiceDisclosurePage() {
   return (
-    <LegalPage title={TITLE} updated="October 12, 2026" currentPath={PATH}>
+    <LegalPage title={TITLE} updated="October 15, 2026" currentPath={PATH}>
       {FULL_DISCLOSURE_PARAGRAPHS.map((paragraph) => (
         <p key={paragraph} className="text-[color:var(--color-ink)]">
           {paragraph}

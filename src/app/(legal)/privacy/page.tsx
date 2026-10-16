@@ -62,7 +62,9 @@ export default function PrivacyPage() {
 
       <h2>Call recording</h2>
       <p>
-        Call recording is disabled. It will not be enabled until notice,
+        Call details may be recorded or logged solely for quality, customer
+        service, and project coordination purposes, where permitted. Call audio
+        recording is currently disabled. It will not be enabled until notice,
         consent, access, retention, and cross state handling have been approved.
       </p>
     </LegalPage>
