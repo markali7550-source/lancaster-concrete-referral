@@ -63,10 +63,11 @@ export default function ServiceDisclosurePage() {
 
       <h2>Photography</h2>
       <p>
-        Photographs on this site illustrate the kind of work our providers
-        perform. They do not depict jobs completed by us, and we do not perform
-        concrete work. Where a provider&apos;s own project photos appear, we
-        confirm ownership and permission first.
+        Photographs on this site illustrate the kind of work our trusted local
+        contractors perform. They do not show jobs completed by Lancaster
+        Concrete Connect, and we do not perform concrete work ourselves. Where a
+        contractor&apos;s own project photos appear, we confirm ownership and
+        permission first.
       </p>
     </LegalPage>
   );
