@@ -26,7 +26,7 @@ export const FOOTER_DISCLOSURE = `Lancaster Concrete Connect is a dedicated proj
 export const SERVICE_DISCLOSURE = `Lancaster Concrete Connect coordinates your project and free estimate. Requests are sent to licensed local concrete specialists in our network, who set their own pricing, perform the concrete work, and enter into contracts directly with you.`;
 
 /** Shown inside the lead form, visually secondary to the fields. */
-export const LEAD_FORM_DISCLOSURE = `By submitting this form, you are requesting a free estimate that Lancaster Concrete Connect coordinates with a licensed local concrete specialist in our network, who performs the concrete work. Your project information and contact details may be shared with the specialist assigned to your area for the purpose of responding to your request.`;
+export const LEAD_FORM_DISCLOSURE = `You are requesting a free estimate that Lancaster Concrete Connect coordinates with a licensed local specialist, who performs the concrete work. Your details may be shared with that specialist to respond to your request.`;
 
 /** Verbatim disclosure required on every service page. */
 export const SERVICE_PAGE_DISCLOSURE = `We are a project coordination service, not a concrete contractor. We connect homeowners with trusted local concrete contractors in our network. We do not perform, supervise, or guarantee construction work. Contracts and licensing must be verified directly with the local contractor.`;
