@@ -204,7 +204,7 @@ export default function HomePage() {
         tone="soft"
         eyebrow="How requests are checked"
         title="How your request reaches a licensed local contractor"
-        lead="These are scheduling checks, not credential verification. License, insurance, and workmanship remain matters to confirm directly with the licensed local contractor who contacts you."
+        lead="Our team confirms availability and coordinates directly with trusted, licensed local contractors to ensure your project gets handled by the right specialist for your exact needs. License, insurance, and workmanship remain matters to confirm directly with the licensed local contractor who contacts you."
       >
         <ServiceAreaControls />
       </Section>
