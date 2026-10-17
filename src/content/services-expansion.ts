@@ -28,7 +28,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Site clean up and haul away of debris",
     ],
     heroSummary:
-      "Stamped concrete is a decorative finish pressed into freshly placed concrete. Requests cover slate, stone, and plank patterns, integral color, and texture for patios and entries. The pattern is set in a short window while the slab is still workable, so the design, color, and sealing plan are decided before the forms go in. Request a concrete service and a local contractor will confirm the pattern and color at a site visit.",
+      "Custom decorative stamped patterns, rich colors, and textures that elevate your home's curb appeal. Connect with our local specialists for design options and a free quote.",
     sectionOrder: [...STANDARD_SECTIONS],
     headings: {
       scope: "What a stamped finish includes",
@@ -203,7 +203,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Site clean up and haul away of spoil",
     ],
     heroSummary:
-      "Foundations carry the weight of the whole structure, so they are specified by an engineer and built to code and the soil conditions on site. Requests cover footings and stem walls for new homes and additions. Every foundation starts from the engineer's drawings and the soil report. Request a concrete service and a local contractor will confirm the requirements for your site at a site visit.",
+      "Engineered, high-strength structural foundations poured strictly to Lancaster County building codes. Get a transparent, no-obligation estimate from our local specialists.",
     sectionOrder: [...STANDARD_SECTIONS],
     headings: {
       scope: "What a foundation pour includes",
@@ -374,7 +374,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Site clean up and haul away of debris",
     ],
     heroSummary:
-      "A front walkway is the first thing guests see, and it gets walked on every day. Requests cover new front walks from the driveway or sidewalk to the door, replacement of cracked walks, and individual sidewalk sections. Typical work includes a compacted base, control joints, a broom finish, and edges set to grade. Request a concrete service and a local contractor will confirm the path, slope, and joint layout at a site visit.",
+      "Clean, safe, and beautifully finished walkways and front entries tailored to your property. Our team connects you with trusted local pros for a fast, free quote.",
     sectionOrder: [...STANDARD_SECTIONS],
     headings: {
       scope: "What a walkway project includes",
@@ -544,7 +544,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Site clean up and haul away of debris",
     ],
     heroSummary:
-      "Steps are the part of a front entry that gets used most, and they cause the most trouble when the rise and run are off. Requests cover new concrete steps, porch landings, and replacement of cracked or uneven steps. Typical work includes a compacted base, a consistent rise and run, and a finish chosen with slip resistance in mind. Request a concrete service and a local contractor will confirm the layout and any code requirements at a site visit.",
+      "Safe, solid, and beautifully poured concrete steps and entry stairs built for lasting stability. Request a free on-site consultation with our local specialists.",
     sectionOrder: [...STANDARD_SECTIONS],
     headings: {
       scope: "What a steps project includes",
@@ -715,7 +715,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Site clean up and haul away of debris",
     ],
     heroSummary:
-      "Concrete leveling lifts a settled slab back toward its original height by injecting a filler through small holes drilled in the surface. It is often less disruptive than replacing a slab that has sunk at one edge, but the contractor confirms whether a slab can be lifted at the site visit, and checks the cause of settling first. Request a concrete service and a local contractor will look at the slab with you.",
+      "Restore sunken, uneven slabs and eliminate tripping hazards with fast, non-invasive leveling. Connect with our trusted local specialists for a free inspection.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "What slab leveling can address",
@@ -884,7 +884,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Clean up and cure time guidance",
     ],
     heroSummary:
-      "A garage floor coating puts a protective layer over the slab. Epoxy and polyurea systems resist oil, salt, and staining, and decorative flakes or color give the floor a finished look. Surface preparation decides how well a coating bonds, so the contractor checks the slab, moisture, and any existing coating before quoting. Request a concrete service and a local contractor will confirm the right system for your garage.",
+      "Durable, stain-resistant epoxy and polyaspartic garage floor finishes built to last. Connect with our local specialists for a free consultation and quote.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "What a garage coating covers",
@@ -1061,7 +1061,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Texturing and curing of the new surface",
     ],
     heroSummary:
-      "Concrete resurfacing covers a worn slab with a thin new concrete layer. It can renew the look of a driveway, patio, or walk without full removal, when the existing slab is sound enough to bond to. The contractor checks the slab first, because loose or moving slabs need repair or replacement instead. Request a concrete service and a local contractor will confirm whether an overlay suits your slab.",
+      "Give worn concrete a fresh, flawless new surface without the high cost of total replacement. Contact our team to schedule your free project estimate.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "What a resurfacing job covers",
@@ -1234,7 +1234,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Site clean up and haul away of debris",
     ],
     heroSummary:
-      "A concrete apron is the slab that joins a driveway to the street or to the garage floor. Its slope decides whether water runs off the driveway or pools at the edge, so the grade is planned before the forms go in. Request a concrete service and a local contractor will check the grade, the curb, and the existing driveway at a site visit.",
+      "Heavy-duty garage and driveway aprons built for smooth transitions and heavy vehicle loads. Request a free on-site consultation with our local concrete specialists.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "What an apron project covers",
@@ -1403,7 +1403,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Recoat schedule and care instructions",
     ],
     heroSummary:
-      "Concrete sealing puts a protective layer over a clean slab. Penetrating sealers soak into the surface, while film forming sealers sit on top. Cleaning comes first, since sealer bonds only to a clean, dry surface. Request a concrete service and a local contractor will confirm the sealer and the cleaning method for your surface.",
+      "Commercial-grade sealers that protect your concrete from moisture, oil stains, and seasonal wear. Speak with our local specialists to protect your investment.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "What a sealing job covers",
@@ -1571,7 +1571,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Sealing, if the contractor recommends it",
     ],
     heroSummary:
-      "Exposed aggregate concrete shows the stones in the mix. After the surface sets, the top layer is removed to expose the aggregate, giving a textured, decorative finish. Stone choice, depth of exposure, and timing decide how the finished surface looks. Request a concrete service and a local contractor will confirm the stone and the finish for your project.",
+      "Rugged, slip-resistant decorative concrete finishes featuring natural stone textures. Get a free, transparent estimate from our trusted local specialists.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "What an exposed aggregate finish covers",

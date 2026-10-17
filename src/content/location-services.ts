@@ -4,6 +4,8 @@ import { getService, type ServiceSlug } from "./services";
 export interface LocationServiceRecord {
   locationSlug: string;
   serviceSlug: ServiceSlug;
+  /** Two-sentence hero description for the combo page. */
+  heroSummary: string;
   state: "published" | "gated";
   /**
    * Locally specific copy. City-name substitution alone fails the build gate.
@@ -128,6 +130,7 @@ const records: readonly LocationServiceRecord[] = [
   {
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-driveways",
+    heroSummary: "Custom-poured concrete driveways engineered for Lancaster County homes and soil conditions. Connect with trusted local specialists for a free, upfront estimate.",
     state: "published",
     localImage: "/images/locations/lancaster-sc/lancaster-sc-driveways.webp",
     localImageAlt:
@@ -194,6 +197,7 @@ const records: readonly LocationServiceRecord[] = [
   {
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-patios",
+    heroSummary: "Beautiful, long-lasting concrete patios designed for Lancaster outdoor entertaining. Contact our team to schedule your free consultation with a local pro.",
     state: "published",
     localImage: "/images/services/concrete-patios/concrete-patios-hero.webp",
     localImageAlt:
@@ -260,6 +264,7 @@ const records: readonly LocationServiceRecord[] = [
   {
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-slabs",
+    heroSummary: "Precision-poured concrete slabs for sheds, garages, and additions in Lancaster, SC. Speak with a trusted local specialist for upfront pricing.",
     state: "published",
     localImage: "/images/locations/lancaster-sc/lancaster-sc-slabs.webp",
     localImageAlt:
@@ -326,6 +331,7 @@ const records: readonly LocationServiceRecord[] = [
   {
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-repair",
+    heroSummary: "Fast, dependable concrete repair solutions for cracked or sunken surfaces across Lancaster County. Request a free on-site assessment with our team.",
     state: "published",
     localImage: "/images/locations/lancaster-sc/lancaster-sc-repair.webp",
     localImageAlt:
@@ -392,6 +398,7 @@ const records: readonly LocationServiceRecord[] = [
   {
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-foundations",
+    heroSummary: "Code-compliant, high-strength structural foundations poured for builds across Lancaster County. Get a clear estimate from our local specialists.",
     state: "published",
     localImage: "/images/services/concrete-foundations/concrete-foundations-hero.webp",
     localImageAlt:
@@ -449,6 +456,7 @@ const records: readonly LocationServiceRecord[] = [
   {
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-walkways",
+    heroSummary: "Safe, clean-poured walkways and entry paths built to enhance your Lancaster home's curb appeal. Request a fast, no-obligation quote today.",
     state: "published",
     localImage: "/images/services/concrete-walkways/concrete-walkways-hero.webp",
     localImageAlt:
@@ -506,6 +514,7 @@ const records: readonly LocationServiceRecord[] = [
   {
     locationSlug: "lancaster-sc",
     serviceSlug: "stamped-concrete",
+    heroSummary: "Custom stamped patterns and rich colors that give your Lancaster property a high-end look. Connect with our local specialists for a free quote.",
     state: "published",
     localImage: "/images/services/stamped-concrete/stamped-concrete-hero.webp",
     localImageAlt:
@@ -568,6 +577,7 @@ const records: readonly LocationServiceRecord[] = [
   {
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-steps",
+    heroSummary: "Sturdy, code-compliant concrete entry steps and stairs poured for lasting safety in Lancaster. Schedule a free consultation with our team.",
     state: "published",
     localImage: "/images/services/concrete-steps/concrete-steps-hero.webp",
     localImageAlt:
@@ -625,6 +635,7 @@ const records: readonly LocationServiceRecord[] = [
   {
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-leveling",
+    heroSummary: "Quickly eliminate trip hazards and restore uneven slabs without noisy excavation. Connect with trusted Lancaster leveling specialists for a free quote.",
     state: "published",
     localImage: "/images/services/concrete-leveling/concrete-leveling-hero.webp",
     localImageAlt: "Workers pulling a screed bar across wet grey concrete to level the surface",
@@ -676,6 +687,7 @@ const records: readonly LocationServiceRecord[] = [
   {
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-garage-coatings",
+    heroSummary: "High-durability epoxy and polyaspartic garage floor coatings tailored for Lancaster homeowners. Request your free consultation and estimate.",
     state: "published",
     localImage: "/images/services/concrete-garage-coatings/concrete-garage-coatings-hero.webp",
     localImageAlt: "Clean two car garage floor with a glossy grey epoxy coating and light decorative flakes",
@@ -727,6 +739,7 @@ const records: readonly LocationServiceRecord[] = [
   {
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-resurfacing",
+    heroSummary: "Renew damaged concrete with a fresh, durable overlay at a fraction of replacement cost. Schedule your free Lancaster estimate today.",
     state: "published",
     localImage: "/images/services/concrete-resurfacing/concrete-resurfacing-hero.webp",
     localImageAlt: "Aging concrete driveway with a fresh, smooth, light grey overlay",
@@ -778,6 +791,7 @@ const records: readonly LocationServiceRecord[] = [
   {
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-aprons",
+    heroSummary: "Heavy-duty driveway and garage aprons built for smooth transitions and heavy vehicle loads. Connect with local Lancaster pros for a free estimate.",
     state: "published",
     localImage: "/images/services/concrete-aprons/concrete-aprons-hero.webp",
     localImageAlt: "Newly poured grey concrete sidewalk and apron with orange traffic cones along an open street edge",
@@ -829,6 +843,7 @@ const records: readonly LocationServiceRecord[] = [
   {
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-sealing",
+    heroSummary: "Protect your Lancaster driveway or patio from moisture, stains, and seasonal wear with premium sealers. Speak with our team for a free quote.",
     state: "published",
     localImage: "/images/services/concrete-sealing/concrete-sealing-hero.webp",
     localImageAlt: "Worker in a safety vest applying black sealant along a crack in a concrete slab",
@@ -880,6 +895,7 @@ const records: readonly LocationServiceRecord[] = [
   {
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-exposed-aggregate",
+    heroSummary: "Decorative, slip-resistant exposed aggregate surfaces perfect for Lancaster patios and driveways. Get an upfront quote from our local specialists.",
     state: "published",
     localImage: "/images/services/concrete-exposed-aggregate/concrete-exposed-aggregate-hero.webp",
     localImageAlt: "Residential exposed aggregate concrete driveway with mixed tan and grey stones across the surface",

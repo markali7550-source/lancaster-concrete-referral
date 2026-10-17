@@ -54,7 +54,7 @@ export const locations: readonly LocationRecord[] = [
       "Red clay subsoil common through the county holds water, so our contractors are asked about drainage handling before a driveway or slab quote is confirmed.",
     ],
     intro:
-      "Lancaster is the only area this service covers right now. Every request is checked against contractors who have approved that coverage in writing, which is why the list here is short and why it grows slowly. If nobody covers your address, we say so instead of passing your details along anyway.",
+      "Dedicated concrete project coordination for homeowners throughout Lancaster and surrounding communities. Connect directly with trusted local specialists for upfront pricing and quality workmanship.",
     heroImage: "/images/locations/lancaster-sc/lancaster-sc-hero.webp",
     heroImageAlt:
       "Quiet residential street of brick ranch houses and pines, with red clay verges and concrete driveways",

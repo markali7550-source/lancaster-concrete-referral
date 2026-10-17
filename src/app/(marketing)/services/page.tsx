@@ -95,9 +95,7 @@ export default function ServicesPage() {
           className="mt-4 max-w-2xl text-[17px] leading-relaxed"
           style={{ color: overlayBody }}
         >
-          Fourteen residential concrete services, each on its own page. Pick
-          the service that matches your project and send a request. A local
-          contractor reviews it and replies.
+          Explore our complete range of residential and commercial concrete solutions across Lancaster County. Connect directly with trusted, licensed local specialists for a free estimate.
         </p>
       </OverlayHeader>
 

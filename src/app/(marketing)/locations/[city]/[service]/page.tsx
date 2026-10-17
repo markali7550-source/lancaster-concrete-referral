@@ -128,7 +128,7 @@ export default async function ComboPage({ params }: { params: Params }) {
         locationLayout={locationLayout}
         cityLabel={`${location.city}, ${location.region}`}
         h1={h1}
-        summary={description}
+        summary={record.heroSummary}
         heroImage={{ src: record.localImage, alt: record.localImageAlt }}
         keyFacts={[
           { label: "Service", value: serviceRecord.name },

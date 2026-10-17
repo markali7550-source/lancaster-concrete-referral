@@ -63,8 +63,7 @@ export default function LocationsPage() {
           Concrete Service Areas in South Carolina
         </h1>
         <p className="lede mt-5 max-w-2xl" style={{ color: overlayBody }}>
-          One service area today. Additional South Carolina cities appear
-          here only after coverage, content, and compliance gates pass.
+          Connecting homeowners across Lancaster County with trusted, licensed local concrete specialists. Select your area below to request your free, no-obligation estimate.
         </p>
       </OverlayHeader>
       <Section

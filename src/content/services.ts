@@ -119,7 +119,7 @@ const coreServices: readonly ServiceRecord[] = [
     summary:
       "Tear out, replacement, and new pours on a 4,000 PSI high strength mix with rebar reinforcement and a broom finish.",
     heroSummary:
-      "A driveway carries vehicles every day, so the details matter. Requests cover tear out and removal of a failed slab, full replacement, and expansions of an existing drive. Typical specifications include a 4,000 PSI high strength mix, steel rebar reinforcement, and a broom finish for traction. Request a quote and a local contractor will confirm the scope, mix, and joint layout at a site visit.",
+      "Durable, precision-poured concrete driveways built to handle heavy vehicles and South Carolina weather. Connect directly with our trusted local specialists for a free, upfront estimate.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "What counts as a driveway job",
@@ -342,7 +342,7 @@ const coreServices: readonly ServiceRecord[] = [
     summary:
       "Backyard patios and outdoor living spaces, poured with a broom or smooth finish and sealed for weather.",
     heroSummary:
-      "A backyard patio is an outdoor room, so layout, grade, and drainage matter as much as the finish. Requests cover new backyard patios, patio replacement, and extensions of an existing patio. Typical work includes a compacted base, a planned drainage slope away from the house, and control joints. Request a concrete service and a local contractor will confirm the layout and sealing plan at a site visit.",
+      "Custom concrete patios designed for outdoor living, relaxation, and lasting durability. Speak with our local Lancaster specialists today to schedule your free consultation.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "Where patio work starts and stops",
@@ -561,7 +561,7 @@ const coreServices: readonly ServiceRecord[] = [
     summary:
       "Garage slabs, shed pads, and equipment pads on a compacted gravel base, with a vapor barrier where needed.",
     heroSummary:
-      "A slab stays level only if what sits under it is right. Requests cover garage slabs, shed pads, workshop floors, and equipment pads. Typical specifications include a compacted gravel base, a vapor barrier under the slab to limit moisture rising from the ground, and reinforcement sized to the load. Request a concrete service and a local contractor will confirm base depth, drainage, and thickness at a site visit.",
+      "Even, reinforced concrete slabs perfect for sheds, workshops, additions, and outdoor structures. Connect with an experienced local specialist for upfront pricing.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "Pads this category covers",
@@ -775,7 +775,7 @@ const coreServices: readonly ServiceRecord[] = [
     summary:
       "Crack repair, joint restoration, and patching of damaged or sunken concrete to keep water out.",
     heroSummary:
-      "Small cracks and worn joints cost less to fix early, and water getting into them is the usual cause of further damage. Requests cover crack repair, joint restoration, and patching of damaged or sunken concrete. Every repair starts with finding the source of the damage before a method is recommended. Request a concrete service and a local contractor will assess the surface at a site visit.",
+      "Fast, reliable repair solutions for cracked, sunken, or chipping residential concrete. Our team coordinates a free on-site assessment with an experienced local pro.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "Responsibility for damage",
