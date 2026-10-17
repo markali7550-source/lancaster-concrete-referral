@@ -49,7 +49,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Send the pattern you have in mind, the area, and any photos. A local contractor will confirm what is achievable on your slab.",
     image: "/images/services/stamped-concrete/stamped-concrete-hero.webp",
     imageAlt:
-      "Worker's hands and a red-handled finishing tool on freshly placed gray concrete",
+      "Worker's hands and a red handled finishing tool on freshly placed gray concrete",
     projectTypes: ["Stamped patio", "Stamped entry", "Decorative slab"],
     keyFacts: [
       { label: "Finish types", value: "Stamped, integral color, texture" },
@@ -203,7 +203,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Site clean up and haul away of spoil",
     ],
     heroSummary:
-      "Engineered, high-strength structural foundations poured strictly to Lancaster County building codes. Get a transparent, no-obligation estimate from our local specialists.",
+      "Engineered, high strength structural foundations poured strictly to Lancaster County building codes. Get a transparent, no obligation estimate from our local specialists.",
     sectionOrder: [...STANDARD_SECTIONS],
     headings: {
       scope: "What a foundation pour includes",
@@ -528,7 +528,7 @@ export const expansionServices: readonly ServiceRecord[] = [
   {
     slug: "concrete-steps",
     name: "Concrete Steps",
-    shortName: "Steps & Porches",
+    shortName: "Steps and Porches",
     nameLower: "concrete steps and porch landings",
     projectNoun: "steps",
     state: "published",
@@ -544,7 +544,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Site clean up and haul away of debris",
     ],
     heroSummary:
-      "Safe, solid, and beautifully poured concrete steps and entry stairs built for lasting stability. Request a free on-site consultation with our local specialists.",
+      "Safe, solid, and beautifully poured concrete steps and entry stairs built for lasting stability. Request a free on site consultation with our local specialists.",
     sectionOrder: [...STANDARD_SECTIONS],
     headings: {
       scope: "What a steps project includes",
@@ -715,7 +715,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Site clean up and haul away of debris",
     ],
     heroSummary:
-      "Restore sunken, uneven slabs and eliminate tripping hazards with fast, non-invasive leveling. Connect with our trusted local specialists for a free inspection.",
+      "Restore sunken, uneven slabs and eliminate tripping hazards with fast, non invasive leveling. Connect with our trusted local specialists for a free inspection.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "What slab leveling can address",
@@ -884,7 +884,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Clean up and cure time guidance",
     ],
     heroSummary:
-      "Durable, stain-resistant epoxy and polyaspartic garage floor finishes built to last. Connect with our local specialists for a free consultation and quote.",
+      "Durable, stain resistant epoxy and polyaspartic garage floor finishes built to last. Connect with our local specialists for a free consultation and quote.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "What a garage coating covers",
@@ -905,7 +905,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Send the garage size, the current floor condition, and any photos. A local contractor will confirm the system and the preparation it needs.",
     image: "/images/services/concrete-garage-coatings/concrete-garage-coatings-hero.webp",
     imageAlt:
-      "Clean two-car garage floor with a glossy grey epoxy coating and light decorative flakes",
+      "Clean two car garage floor with a glossy grey epoxy coating and light decorative flakes",
     projectTypes: ["Two car garage", "Single car garage", "Workshop floor"],
     keyFacts: [
       { label: "Coating types", value: "Epoxy, polyurea, flake systems" },
@@ -1082,7 +1082,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Send photos of the worn surface and its size. A local contractor will tell you whether an overlay will bond.",
     image: "/images/services/concrete-resurfacing/concrete-resurfacing-hero.webp",
     imageAlt:
-      "Aging concrete driveway with a fresh, smooth, light-grey overlay",
+      "Aging concrete driveway with a fresh, smooth, light grey overlay",
     projectTypes: ["Worn driveway", "Tired patio", "Faded walkway"],
     keyFacts: [
       { label: "Typical use", value: "Worn or faded concrete surfaces" },
@@ -1234,7 +1234,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Site clean up and haul away of debris",
     ],
     heroSummary:
-      "Heavy-duty garage and driveway aprons built for smooth transitions and heavy vehicle loads. Request a free on-site consultation with our local concrete specialists.",
+      "Heavy duty garage and driveway aprons built for smooth transitions and heavy vehicle loads. Request a free on site consultation with our local concrete specialists.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "What an apron project covers",
@@ -1403,7 +1403,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Recoat schedule and care instructions",
     ],
     heroSummary:
-      "Commercial-grade sealers that protect your concrete from moisture, oil stains, and seasonal wear. Speak with our local specialists to protect your investment.",
+      "Commercial grade sealers that protect your concrete from moisture, oil stains, and seasonal wear. Speak with our local specialists to protect your investment.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "What a sealing job covers",
@@ -1571,7 +1571,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Sealing, if the contractor recommends it",
     ],
     heroSummary:
-      "Rugged, slip-resistant decorative concrete finishes featuring natural stone textures. Get a free, transparent estimate from our trusted local specialists.",
+      "Rugged, slip resistant decorative concrete finishes featuring natural stone textures. Get a free, transparent estimate from our trusted local specialists.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "What an exposed aggregate finish covers",

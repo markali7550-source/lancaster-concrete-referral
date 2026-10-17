@@ -119,7 +119,7 @@ const coreServices: readonly ServiceRecord[] = [
     summary:
       "Tear out, replacement, and new pours on a 4,000 PSI high strength mix with rebar reinforcement and a broom finish.",
     heroSummary:
-      "Durable, precision-poured concrete driveways built to handle heavy vehicles and South Carolina weather. Connect directly with our trusted local specialists for a free, upfront estimate.",
+      "Durable, precision poured concrete driveways built to handle heavy vehicles and South Carolina weather. Connect directly with our trusted local specialists for a free, upfront estimate.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "What counts as a driveway job",
@@ -133,7 +133,7 @@ const coreServices: readonly ServiceRecord[] = [
     optionsLead:
       "Your contractor specifies the driveway. These are the calls they will ask you to make, so you will already know them when they arrive.",
     processLead:
-      "A driveway is a one-day pour on the end of a week of preparation. The sequence below is what that week usually looks like; your contractor sets the real dates.",
+      "A driveway is a one day pour on the end of a week of preparation. The sequence below is what that week usually looks like; your contractor sets the real dates.",
     costLead:
       "Nobody can price a driveway from an address. Square footage is only the start of it. What the old slab costs to break up and haul away, and whether a truck can reach the pour, often move the number more.",
     ctaLead:
@@ -377,7 +377,7 @@ const coreServices: readonly ServiceRecord[] = [
     ],
     image: "/images/services/concrete-patios/concrete-patios-hero.webp",
     imageAlt:
-      "Concrete patio beside a covered pergola and wicker daybed, with a brick-trimmed house and lawn",
+      "Concrete patio beside a covered pergola and wicker daybed, with a brick trimmed house and lawn",
     projectTypes: ["New patio", "Patio replacement"],
     keyFacts: [
       {
@@ -553,7 +553,7 @@ const coreServices: readonly ServiceRecord[] = [
   {
     slug: "concrete-slabs",
     name: "Concrete Slabs",
-    shortName: "Slabs & Pads",
+    shortName: "Slabs and Pads",
     nameLower: "concrete slabs and pads",
     projectNoun: "slab",
     state: "published",
@@ -775,7 +775,7 @@ const coreServices: readonly ServiceRecord[] = [
     summary:
       "Crack repair, joint restoration, and patching of damaged or sunken concrete to keep water out.",
     heroSummary:
-      "Fast, reliable repair solutions for cracked, sunken, or chipping residential concrete. Our team coordinates a free on-site assessment with an experienced local pro.",
+      "Fast, reliable repair solutions for cracked, sunken, or chipping residential concrete. Our team coordinates a free on site assessment with an experienced local pro.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "Responsibility for damage",
