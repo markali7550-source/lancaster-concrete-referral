@@ -8,8 +8,10 @@ import { publishedServices } from "../src/content/services";
  * Gate 23 — the JSON-LD graph must not contain contractor entity types or
  * unsupported claims, and FAQ schema must correspond to visible content.
  */
-const FORBIDDEN_TYPES = ["GeneralContractor", "LocalBusiness", "HomeAndConstructionBusiness"];
-const FORBIDDEN_FIELDS = ["aggregateRating", "review", "priceRange", "address", "license"];
+// LocalBusiness is allowed (owner request). Contractor types would claim construction work.
+const FORBIDDEN_TYPES = ["GeneralContractor", "HomeAndConstructionBusiness"];
+// "address" is allowed as a PostalAddress (locality/region/country). A street address is not.
+const FORBIDDEN_FIELDS = ["aggregateRating", "review", "priceRange", "streetAddress", "license"];
 
 function loadEnvFile(file: string): void {
   try {
@@ -67,20 +69,20 @@ async function main() {
   }
 
   for (const { id, graph, faqCount } of graphs) {
-    let serialised: string;
+    let serialized: string;
     try {
-      serialised = JSON.stringify(graph);
-      JSON.parse(serialised);
+      serialized = JSON.stringify(graph);
+      JSON.parse(serialized);
     } catch (error) {
       failures.push(`${id}: graph is not valid JSON (${String(error)})`);
       continue;
     }
 
     for (const type of FORBIDDEN_TYPES) {
-      if (serialised.includes(type)) failures.push(`${id}: forbidden entity type ${type}`);
+      if (serialized.includes(type)) failures.push(`${id}: forbidden entity type ${type}`);
     }
     for (const field of FORBIDDEN_FIELDS) {
-      if (serialised.includes(`"${field}"`)) failures.push(`${id}: unsupported claim field ${field}`);
+      if (serialized.includes(`"${field}"`)) failures.push(`${id}: unsupported claim field ${field}`);
     }
 
     const nodes = (graph as { "@graph": { "@id"?: string; "@type"?: unknown }[] })["@graph"];
@@ -90,7 +92,7 @@ async function main() {
       }
     }
 
-    const hasFaqNode = serialised.includes('"FAQPage"');
+    const hasFaqNode = serialized.includes('"FAQPage"');
     if (hasFaqNode && faqCount === 0) failures.push(`${id}: FAQ schema without visible FAQ`);
     if (!hasFaqNode && faqCount > 0) failures.push(`${id}: visible FAQ without FAQ schema`);
   }

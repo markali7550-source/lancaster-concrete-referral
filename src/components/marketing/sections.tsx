@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { DynamicPhone } from "@/components/lead/DynamicPhone";
+import { FaqAccordion } from "@/components/marketing/FaqAccordion";
 import { Icon } from "@/components/ui/Icon";
 import { publishedServices, type ServiceRecord } from "@/content/services";
 import type { LocationRecord } from "@/content/locations";
 import { site } from "@/lib/env";
-import { SHORT_DISCLOSURE } from "@/lib/seo/disclosure";
 
 /* ------------------------------------------------------------ Photo scrim */
 
@@ -21,7 +21,7 @@ import { SHORT_DISCLOSURE } from "@/lib/seo/disclosure";
  * 0.70 and white needs 0.57. Lower this and the eyebrow fails on the bright
  * pours.
  *
- * The colour is --color-band-deep (#0B1017), the same navy the footer, the
+ * The color is --color-band-deep (#0B1017), the same navy the footer, the
  * CTA and the header glass are built from, so a photo band reads as the same
  * material as every other heavy surface on the site rather than as a
  * separate green-black.
@@ -62,7 +62,7 @@ export const PHOTO_COPY_WASH =
  *
  * It used to ramp to FULLY OPAQUE navy at both edges, which made sense when
  * it was described as "blending into the page background" -- except the page
- * is warm off-white, so the band was blending into a colour that is nowhere
+ * is warm off-white, so the band was blending into a color that is nowhere
  * near it and the seam read as a hard black strip above the next section.
  * At 70% the vignette still does its real job (holding contrast under the
  * glass header and over the bottom edge) without stamping a black bar
@@ -76,9 +76,9 @@ export const PHOTO_EDGE_FADE =
  * ending on a visible horizontal edge.
  *
  * This ramps to FULLY opaque at both edges, which is the thing the comment
- * above says went wrong last time. The difference is the colour. The earlier
+ * above says went wrong last time. The difference is the color. The earlier
  * attempt hardcoded navy, so in light mode the band blended into a dark
- * colour the page does not use and stamped a black strip between sections.
+ * color the page does not use and stamped a black strip between sections.
  * This ramps to `var(--color-page)`, which resolves to the warm off-white in
  * light mode and to #0c1117 in dark mode, so the seam disappears in both
  * themes rather than only the one being looked at.
@@ -138,7 +138,7 @@ export function Section({
   /** Optional full bleed photograph behind the section, with a dark scrim. */
   backgroundImage?: { src: string; alt: string };
   /**
-   * Ramp the top and bottom of a photo band all the way to the page colour so
+   * Ramp the top and bottom of a photo band all the way to the page color so
    * it dissolves into the surrounding page rather than ending on a visible
    * horizontal edge. Only meaningful alongside `backgroundImage`.
    */
@@ -158,7 +158,7 @@ export function Section({
         compact
           ? "scroll-mt-32 py-10 md:py-14"
           : "scroll-mt-32 py-14 md:py-20 lg:py-24"
-      }${backgroundImage ? " cta-photo relative isolate overflow-hidden" : ""}`}
+      }${backgroundImage ? " cta-photo relative isolate overflow-hidden" : " content-section"}`}
       style={
         backgroundImage
           ? undefined
@@ -245,40 +245,50 @@ const HERO_IMAGE_FADE = `pointer-events-none absolute inset-0 z-20 ${PHOTO_EDGE_
 export function OverlayHeader({
   imageSrc,
   imageAlt,
+  imageCaption,
   children,
   breadcrumbs,
 }: {
   imageSrc: string;
   imageAlt: string;
+  imageCaption?: string;
   children: React.ReactNode;
   /** Sits over the photo instead of in a band above it. */
   breadcrumbs?: React.ReactNode;
 }) {
   return (
     <section
-      className="relative isolate overflow-hidden"
+      className={`relative isolate overflow-hidden${imageSrc ? "" : " bg-stone-900"}`}
       style={{ borderColor: "var(--color-line-soft)" }}
     >
-      <Image
-        src={imageSrc}
-        alt={imageAlt}
-        fill
-        priority
-        sizes="100vw"
-        className="-z-20 object-cover"
-      />
+      {imageSrc ? (
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          fill
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+          className="-z-20 object-cover"
+        />
+      ) : null}
       <div
         className={HERO_IMAGE_OVERLAY}
         aria-hidden="true"
       />
       <div className={HERO_IMAGE_SIDE_WASH} aria-hidden="true" />
       <div className={HERO_IMAGE_FADE} aria-hidden="true" />
-      <div className="container-page relative z-30 flex items-center py-14 md:py-20 lg:py-24">
+      <div className="container-page relative z-30 flex items-center py-12 sm:py-16 md:py-20 lg:py-24">
         <div className="w-full max-w-2xl">
           {breadcrumbs}
           {children}
         </div>
       </div>
+      {imageCaption ? (
+        <p className="absolute bottom-2 right-3 z-30 max-w-xs text-right text-xs text-white/85 drop-shadow">
+          {imageCaption}
+        </p>
+      ) : null}
     </section>
   );
 }
@@ -289,9 +299,9 @@ export const overlayBody = "rgba(255,255,255,0.86)";
 export const overlayMuted = "rgba(255,255,255,0.80)";
 
 const HERO_TRUST = [
-  "Free for homeowners",
-  "One independent provider, not five",
-  "Written coverage areas only",
+  "100% free service for homeowners",
+  "No obligation quotes",
+  "Licensed and insured local specialists",
 ];
 
 export function Hero({
@@ -327,6 +337,7 @@ export function Hero({
           alt={imageAlt}
           fill
           priority
+          fetchPriority="high"
           sizes="100vw"
           className="-z-20 object-cover"
         />
@@ -363,7 +374,7 @@ export function Hero({
 
             <div
               id="hero-actions"
-              className="mt-8 grid w-full max-w-sm gap-3 lg:max-w-none lg:grid-cols-[repeat(2,minmax(0,15rem))]"
+              className="mt-8 grid grid-cols-1 w-full max-w-sm gap-3 lg:max-w-none lg:grid-cols-[repeat(2,minmax(0,15rem))]"
             >
               <DynamicPhone
                 fallbackDisplay={site.phoneDisplay}
@@ -372,13 +383,13 @@ export function Hero({
                 className="btn btn-primary"
               />
               <a href="#quote-form" className="btn btn-secondary">
-                Request a referral
+                Request Concrete Service
                 <Icon name="arrow" />
               </a>
             </div>
 
             <ul
-              className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-[13px]"
+              className="mt-7 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[13px] lg:justify-start"
               style={{ color: "rgba(255,255,255,0.80)" }}
             >
               {HERO_TRUST.map((item) => (
@@ -392,7 +403,7 @@ export function Hero({
             </ul>
           </div>
           {aside ? (
-            <div className="mobile-sticky-form sticky bottom-0 z-40 w-full max-w-xl rounded-t-xl bg-[#0B1017] p-2 lg:static lg:max-w-xl lg:rounded-none lg:bg-transparent lg:p-0">{aside}</div>
+            <div className="gpu-layer mobile-sticky-form sticky bottom-0 z-40 w-full max-w-xl rounded-t-xl bg-[#0B1017] p-2 lg:static lg:max-w-xl lg:rounded-none lg:bg-transparent lg:p-0">{aside}</div>
           ) : null}
         </div>
       </section>
@@ -407,7 +418,7 @@ export function Hero({
         backgroundColor: "var(--color-surface)",
       }}
     >
-      <div className="container-page grid items-center gap-10 py-14 md:py-20 lg:grid-cols-12 lg:gap-16 lg:py-24">
+      <div className="container-page grid grid-cols-1 items-center gap-10 py-14 md:py-20 lg:grid-cols-12 lg:gap-16 lg:py-24">
         <div className="lg:col-span-7">
           <p className="eyebrow">
             {locationCue}
@@ -417,7 +428,7 @@ export function Hero({
 
           <div
             id="hero-actions"
-            className="mt-8 grid w-full max-w-sm gap-3 lg:max-w-none lg:grid-cols-2"
+            className="mt-8 grid grid-cols-1 w-full max-w-sm gap-3 lg:max-w-none lg:grid-cols-2"
           >
             <DynamicPhone
               fallbackDisplay={site.phoneDisplay}
@@ -426,12 +437,12 @@ export function Hero({
               className="btn btn-primary"
             />
             <a href="#quote-form" className="btn btn-secondary">
-              Request a referral
+              Request Concrete Service
               <Icon name="arrow" />
             </a>
           </div>
 
-          <ul className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-[13px] text-[color:var(--color-muted)]">
+          <ul className="mt-7 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[13px] text-[color:var(--color-muted)] lg:justify-start">
             {HERO_TRUST.map((item) => (
               <li key={item} className="flex items-center gap-1.5">
                 <span style={{ color: "var(--color-accent)" }}>
@@ -458,6 +469,7 @@ export function Hero({
                 width={1200}
                 height={800}
                 priority
+                fetchPriority="high"
                 sizes="(min-width: 1024px) 40vw, 100vw"
                 className="h-full w-full object-cover"
               />
@@ -469,35 +481,6 @@ export function Hero({
   );
 }
 
-/* -------------------------------------------------- ReferralDisclosureStrip */
-
-export function ReferralDisclosureStrip() {
-  return (
-    <div
-      className="border-b"
-      style={{
-        backgroundColor: "var(--color-accent-soft)",
-        borderColor: "var(--color-line-soft)",
-      }}
-    >
-      <div className="container-page flex flex-col gap-2 py-3.5 text-[13.5px] sm:flex-row sm:items-center sm:justify-between">
-        <p className="flex items-start gap-2.5">
-          <span style={{ color: "var(--color-accent)" }}>
-            <Icon name="shield" className="mt-px h-[18px] w-[18px]" />
-          </span>
-          <span>{SHORT_DISCLOSURE}</span>
-        </p>
-        <Link
-          href="/referral-disclosure"
-          className="shrink-0 self-center font-semibold underline underline-offset-4 sm:self-auto"
-          style={{ color: "var(--color-accent)" }}
-        >
-          Full disclosure
-        </Link>
-      </div>
-    </div>
-  );
-}
 
 /* ---------------------------------------------------- ProjectTypeChooser */
 
@@ -519,7 +502,7 @@ export function ProjectTypeChooser({
   images?: ProjectTypeImageMap;
 }) {
   return (
-    <ul className="grid gap-5 sm:grid-cols-2">
+    <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2">
       {services.map((service) => {
         const image = images?.[service.slug];
 
@@ -548,23 +531,27 @@ export function ProjectTypeChooser({
               <p className="mt-2 flex-1 text-[15px] leading-relaxed text-[color:var(--color-muted)]">
                 {service.summary}
               </p>
+              <p className="mt-4 border-t pt-4 text-[14px] leading-relaxed" style={{ borderColor: "var(--color-line)" }}>
+                <span className="font-semibold">Covers: </span>
+                {service.cardScope}
+              </p>
               <span
-                className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold"
+                className="mt-5 inline-flex items-center justify-center gap-1.5 text-[14px] font-semibold lg:justify-start"
                 style={{ color: "var(--color-accent)" }}
               >
                 {/*
                   The "in {city}" form takes the plural short name, because
-                  "View driveways in Lancaster" is correct. The referrals form
+                  "View driveways in Lancaster" is correct. The services form
                   must not: English wants a singular attributive noun, so the
-                  plural produced "View driveways referrals" and "View slabs
-                  and pads referrals". This is the same interpolation fault
-                  that produced "Concrete Driveways Referrals" in the H1, and
+                  plural produced "View driveways services" and "View slabs
+                  and pads services". This is the same interpolation fault
+                  that produced "Concrete Driveways Services" in the H1, and
                   it is fixed the same way -- from projectNoun, not by
                   slicing the plural.
                 */}
                 {cityLabel
                   ? `View ${service.shortName.toLowerCase()} in ${cityLabel}`
-                  : `View ${service.projectNoun} referrals`}
+                  : `View ${service.projectNoun} services`}
                 <Icon name="arrow" className="card-go h-4 w-4" />
               </span>
             </div>
@@ -576,37 +563,37 @@ export function ProjectTypeChooser({
   );
 }
 
-/* ---------------------------------------------------------- RoutingControls */
+/* ---------------------------------------------------------- ServiceAreaControls */
 
-const ROUTING_CONTROLS = [
+const SERVICE_AREA_CONTROLS = [
   {
-    title: "Written coverage area",
-    body: "Participating providers confirm in writing which areas they accept work in. Coverage is never inferred from a radius drawn on a map.",
+    title: "Confirmed service area",
+    body: "We confirm each address before we schedule anything, so you hear quickly whether a local contractor can take your project.",
   },
   {
-    title: "Signed referral agreement",
-    body: "Requests are only passed to independent service providers operating under an active referral agreement with documented response expectations.",
+    title: "Licensed and insured specialists",
+    body: "Every contractor we work with is licensed and insured, and our team verifies those credentials before a project is connected.",
   },
   {
-    title: "Project type match",
-    body: "Your project type is matched against the categories a provider has agreed to receive. A category nobody has accepted produces an honest no coverage answer.",
+    title: "Matched to your project type",
+    body: "We match your project to a contractor who specializes in that work, so your estimate comes from the right specialist.",
   },
   {
-    title: "One request at a time",
-    body: "Your details go to a single participating provider rather than a list of companies bidding against each other.",
+    title: "One team, one point of contact",
+    body: "Your details go to one available contractor at a time, rather than to a list of companies bidding against each other.",
   },
 ];
 
-export function RoutingControls() {
+export function ServiceAreaControls() {
   return (
     <>
-      <ul className="grid gap-px overflow-hidden rounded-[var(--radius-card)] border sm:grid-cols-2"
+      <ul className="grid grid-cols-1 gap-px overflow-hidden rounded-[var(--radius-card)] border sm:grid-cols-2"
         style={{
           borderColor: "var(--color-line-soft)",
           backgroundColor: "var(--color-line-soft)",
         }}
       >
-        {ROUTING_CONTROLS.map((check) => (
+        {SERVICE_AREA_CONTROLS.map((check) => (
           <li
             key={check.title}
             className="p-6"
@@ -629,10 +616,10 @@ export function RoutingControls() {
         ))}
       </ul>
       <p className="mt-6 text-[13.5px] leading-relaxed text-[color:var(--color-muted)]">
-        These are routing controls only. They are not a verification of any
-        provider&apos;s license, insurance, or workmanship, and they are not a
+        These are scheduling checks only. They are not a verification of any
+        contractor&apos;s license, insurance, or workmanship, and they are not a
         warranty, an endorsement, or a substitute for your own checks. Confirm
-        license status, insurance, and credentials directly with the provider
+        license status, insurance, and credentials directly with the contractor
         and through SC LLR before you hire.
       </p>
     </>
@@ -643,43 +630,52 @@ export function RoutingControls() {
 
 const STEPS = [
   {
-    verb: "Tell us the project and location",
-    body: "Two fields to start: what you need poured or repaired, and where the property is.",
+    verb: "Submit Your Project",
+    body: "Tell us about your concrete needs and property details.",
   },
   {
-    // Heading wording is fixed by the brief and must stay exact.
-    verb: "We check coverage, project type match, referral agreement, and current capacity.",
-    body: "Eligibility is confirmed before anything is sent, and nothing is sent if no participating provider covers the area.",
+    verb: "We Review & Coordinate",
+    body: "Our team reviews your request and connects with an available, licensed local concrete specialist in Lancaster County.",
   },
   {
-    verb: "The independent provider contacts you",
-    body: "One independent provider follows up directly to inspect, scope, and quote. You deal with them, not with us.",
+    verb: "Get Your Free Quote",
+    body: "The matched local contractor contacts you directly to provide a free on site consultation and clear estimate.",
+  },
+  {
+    verb: "Quality Concrete Done Right",
+    body: "Your project gets poured, cured, and finished by experienced local pros.",
   },
 ];
 
 export function HowMatchingWorks() {
-  // Three across only from lg. At md the columns fell to ~239px, which left
-  // the body copy about 25 characters wide and wrapped step 02's heading onto
-  // four lines while its neighbours used two.
+  // Every step is a card on all sizes. On mobile the steps are stacked, and
+  // the card surface keeps the text readable over the photo behind them.
+  // From lg the cards sit three across, which is the comparison the copy
+  // depends on.
   return (
-    <ol className="grid gap-5 lg:grid-cols-3">
+    <ol className="flex flex-col gap-4 lg:grid lg:grid-cols-3 lg:gap-5">
       {STEPS.map((step, index) => (
-        <li key={step.verb} className="card flex h-full flex-col p-6">
+        <li
+          key={step.verb}
+          className="card flex flex-col items-center gap-3 p-5 text-center lg:h-full lg:items-stretch lg:justify-start lg:gap-0 lg:p-6 lg:text-left"
+        >
           <span
-            className="text-[30px] font-extrabold leading-none tracking-tight md:text-[34px]"
+            className="shrink-0 text-[26px] font-extrabold leading-none tracking-tight md:text-[30px] lg:text-[34px]"
             style={{ color: "var(--color-accent)" }}
           >
             {String(index + 1).padStart(2, "0")}
           </span>
-          <span
-            className="mt-4 block h-px w-10"
-            style={{ backgroundColor: "var(--color-line)" }}
-            aria-hidden="true"
-          />
-          <p className="mt-4 text-[17px] font-semibold">{step.verb}</p>
-          <p className="mt-2 text-[14px] leading-relaxed text-[color:var(--color-muted)]">
-            {step.body}
-          </p>
+          <div className="w-full min-w-0 lg:mt-4">
+            <span
+              className="hidden lg:block lg:h-px lg:w-10"
+              style={{ backgroundColor: "var(--color-line)" }}
+              aria-hidden="true"
+            />
+            <p className="text-[17px] font-semibold leading-snug lg:mt-4">{step.verb}</p>
+            <p className="mt-2 text-[15px] leading-relaxed text-[color:var(--color-muted)] lg:text-[14px]">
+              {step.body}
+            </p>
+          </div>
         </li>
       ))}
     </ol>
@@ -726,7 +722,7 @@ export function DecisionSupport({
               }}
               aria-hidden="true"
             >
-              <Icon name="plus" className="h-4 w-4" />
+              <Icon name="chevron" className="h-4 w-4" />
             </span>
           </summary>
           <p className="px-5 py-4 text-left text-[15px] leading-relaxed text-[color:var(--color-muted)] md:px-6">
@@ -742,48 +738,15 @@ export function DecisionSupport({
 
 export function FaqSection({
   faqs,
-  name = "faq",
 }: {
   faqs: { question: string; answer: React.ReactNode }[];
   /**
-   * Shared name makes the group an exclusive accordion. Pass a distinct value
-   * when two FAQ groups render on the same page.
+   * Accepted for backward compatibility with existing callers. Each section
+   * is its own single-open accordion, so the value is no longer needed.
    */
   name?: string;
 }) {
-  return (
-    <div
-      className="grid gap-2"
-      style={{
-        backgroundColor: "transparent",
-      }}
-    >
-      {faqs.map((faq) => (
-        <details
-          key={faq.question}
-          name={name}
-          className="group card overflow-hidden"
-        >
-          <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-semibold md:px-6">
-            <span className="flex-1 text-left text-[16px]">{faq.question}</span>
-            <span
-              className="grid h-8 w-8 shrink-0 place-items-center rounded-[10px] transition-colors"
-              style={{
-                backgroundColor: "var(--color-accent-soft)",
-                color: "var(--color-accent)",
-              }}
-              aria-hidden="true"
-            >
-              <Icon name="plus" className="h-4 w-4" />
-            </span>
-          </summary>
-          <p className="px-5 py-4 text-left text-[15px] leading-relaxed text-[color:var(--color-muted)] md:px-6">
-            {faq.answer}
-          </p>
-        </details>
-      ))}
-    </div>
-  );
+  return <FaqAccordion faqs={faqs} />;
 }
 
 /* --------------------------------------------------------------- AdjacentAreas */
@@ -799,7 +762,7 @@ export function AdjacentAreas({
         <p className="font-semibold">Lancaster only, for now</p>
         <p className="mt-2.5 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
           Additional South Carolina areas are added one at a time, and only
-          once a participating provider has approved coverage there in writing.
+          once one of our trusted contractors has approved coverage there in writing.
           We would rather publish one honest service area than a coverage map we
           cannot support.
         </p>
@@ -807,7 +770,7 @@ export function AdjacentAreas({
     );
   }
   return (
-    <ul className="flex flex-wrap gap-3">
+    <ul className="flex flex-wrap justify-center gap-3 lg:justify-start">
       {locations.map((location) => (
         <li key={location.slug}>
           <Link href={`/locations/${location.slug}`} className="btn btn-secondary">

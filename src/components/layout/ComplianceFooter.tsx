@@ -3,7 +3,20 @@ import { Logo } from "@/components/layout/Logo";
 import { publishedLocations } from "@/content/locations";
 import { publishedServices } from "@/content/services";
 import { site } from "@/lib/env";
-import { FOOTER_DISCLOSURE, SC_LLR_URL } from "@/lib/seo/disclosure";
+import { SC_LLR_URL } from "@/lib/seo/disclosure";
+
+/** Main services shown in the footer. The full list lives at /services. */
+const FOOTER_SERVICE_SLUGS = [
+  "concrete-driveways",
+  "concrete-patios",
+  "concrete-slabs",
+  "concrete-repair",
+  "stamped-concrete",
+] as const;
+
+const footerServices = publishedServices.filter((service) =>
+  (FOOTER_SERVICE_SLUGS as readonly string[]).includes(service.slug),
+);
 
 export function ComplianceFooter() {
   return (
@@ -12,16 +25,13 @@ export function ComplianceFooter() {
       className="footer-band"
     >
       <div className="container-page py-14">
-        <div className="grid grid-cols-2 gap-x-6 gap-y-9 text-left sm:gap-10 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
-          <div className="col-span-2 max-w-sm lg:col-span-1">
-            <div className="flex items-center">
+        <div className="grid grid-cols-1 gap-x-6 gap-y-9 text-left sm:grid-cols-2 sm:gap-10 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
+          <div className="mx-auto max-w-sm text-center sm:col-span-2 sm:mx-0 sm:text-left lg:col-span-1">
+            <div className="flex items-center justify-center sm:justify-start">
               <Logo height={52} />
             </div>
             <p className="mt-4 text-[13.5px] leading-relaxed text-[color:var(--color-muted)]">
-              An online referral service that connects South Carolina
-              homeowners with independent third party concrete service
-              providers. We hold no contractor license and perform no
-              concrete work.
+              Lancaster Concrete Connect is a dedicated project coordination service helping Lancaster County homeowners connect directly with trusted local concrete contractors for free estimates and quality workmanship.
             </p>
             <div className="mt-5 space-y-1.5 text-sm">
               <a href={`tel:${site.phoneE164}`} className="block font-semibold">
@@ -48,7 +58,7 @@ export function ComplianceFooter() {
           <nav aria-label="Services">
             <p className="eyebrow-plain">Services</p>
             <ul className="mt-4 space-y-2.5 text-sm">
-              {publishedServices.map((service) => (
+              {footerServices.map((service) => (
                 <li key={service.slug}>
                   <Link
                     href={`/services/${service.slug}`}
@@ -114,10 +124,10 @@ export function ComplianceFooter() {
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
                 <Link
-                  href="/referral-disclosure"
+                  href="/service-disclosure"
                   className="text-[color:var(--color-muted)] hover:text-[color:var(--color-ink)]"
                 >
-                  Referral disclosure
+                  Service disclosure
                 </Link>
               </li>
               <li>
@@ -140,14 +150,11 @@ export function ComplianceFooter() {
           </nav>
         </div>
 
-        <p
-          className="mt-12 rounded-[12px] border p-4 text-[13px] font-medium leading-relaxed"
+
+        <div
+          className="mt-8 flex flex-col gap-2 border-t pt-8 text-[13px] text-[color:var(--color-muted)] lg:flex-row lg:items-center lg:justify-between"
           style={{ borderColor: "var(--color-line)" }}
         >
-          {FOOTER_DISCLOSURE}
-        </p>
-
-        <div className="mt-8 flex flex-col gap-2 text-[13px] text-[color:var(--color-muted)] lg:flex-row lg:items-center lg:justify-between">
           <p>
             © {new Date().getFullYear()} {site.brand}. All rights reserved.
           </p>

@@ -19,7 +19,7 @@
    * Three families, nothing else:
    *
    *   1. WARM NEUTRALS  page / section / surface / line
-   *      Concrete is a warm grey material, so the page runs on a warm off
+   *      Concrete is a warm gray material, so the page runs on a warm off
    *      white rather than the blue-white every template ships with. The
    *      neutrals used to carry a green tint (#f2f5f3) inherited from the
    *      accent, which made the whole site read as one washed out hue.
@@ -35,10 +35,10 @@
    *      is the same hue two stops down: it reads as the logo's serious
    *      sibling, carries white text at 6.6:1, and stays legible as link text
    *      at 6.0:1 on the page. Mint survives only ON the dark bands, where it
-   *      is the logo colour doing logo work.
+   *      is the logo color doing logo work.
    *
    * Everything else is a tint of those three. No fourth hue, no gradients
-   * beyond the photo scrims, no colour that is not doing a job. */
+   * beyond the photo scrims, no color that is not doing a job. */
 
   --color-page: #f6f4f1; /* warm off-white: the page itself */
   --color-section: #eeebe5; /* one step deeper, for alternating bands */
@@ -46,7 +46,7 @@
   --color-raised: #ffffff;
 
   --color-ink: #141a22; /* deep navy charcoal: headings and body */
-  --color-muted: #55606e; /* neutral grey: secondary copy (5.8:1 on page) */
+  --color-muted: #55606e; /* neutral gray: secondary copy (5.8:1 on page) */
   --color-subtle: #66707d; /* micro labels; still clears AA at 4.6:1 */
 
   --color-line: #cfcac2; /* warm separator */
@@ -61,19 +61,19 @@
   --color-on-accent: #ffffff;
   --color-danger: #a8231d;
 
-  /* The filled button's colour, deliberately held OUT of the rebinding that
+  /* The filled button's color, deliberately held OUT of the rebinding that
      the dark bands do to --color-accent. Accent *text* has to lighten on
      navy to stay legible; the primary button must not, or the site ends up
      with an emerald CTA on paper and a mint one on the CTA band. One primary
-     colour, every section, is the whole point. */
+     color, every section, is the whole point. */
   --color-accent-fill: #0b6b45;
   --color-accent-fill-hover: #09573a;
   --color-on-accent-fill: #ffffff;
 
-  /* The dark bands: footer, CTA, photo scrims. One colour, used everywhere,
+  /* The dark bands: footer, CTA, photo scrims. One color, used everywhere,
      so the heavy surfaces read as the same material. */
   --color-band: #10161f;
-  --color-band-deep: #0b1017; /* seam colour where a band meets the page */
+  --color-band-deep: #0b1017; /* seam color where a band meets the page */
   --color-band-ink: #f4f6f8;
   --color-band-muted: #a8b3c0;
   --color-band-line: rgba(255, 255, 255, 0.14);
@@ -85,7 +85,7 @@
   --radius-control: 10px;
 
   /* Shadows are a whisper. Structure comes from the hairline and the paper
-     colour change, not from elevation. */
+     color change, not from elevation. */
   --shadow-card: 0 1px 2px rgba(16, 24, 34, 0.05);
   --shadow-raised: 0 12px 28px rgba(16, 24, 34, 0.1),
     0 2px 6px rgba(16, 24, 34, 0.05);
@@ -174,7 +174,8 @@
     border-radius: 4px;
   }
 
-  /* Inline links. Colour is left to the component (the footer, the dark
+
+  /* Inline links. Color is left to the component (the footer, the dark
      bands and body copy each need their own), but the underline is set once
      here: the browser default sits on the baseline and cuts the descenders
      of g, y and p, which is the small thing that makes body copy look
@@ -182,6 +183,25 @@
   :where(a) {
     text-underline-offset: 0.18em;
     text-decoration-thickness: from-font;
+  }
+
+  /* Running-copy links: a plain link inside a paragraph, definition, table
+     cell or quote in <main> or the footer takes the brand accent, underlined,
+     and darkens on hover. The accent token is already the mint inside dark
+     bands and the footer, so one rule covers light and dark pages. Buttons,
+     cards, navigation and breadcrumbs carry their own classes and are not
+     matched here. Classed links (FAQ answers and similar) keep their
+     existing styling. */
+  :where(main, footer) :where(p, dd, td, blockquote) a:not([class]) {
+    color: var(--color-accent);
+    text-decoration-line: underline;
+    text-decoration-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
+    transition: color 150ms ease, text-decoration-color 150ms ease;
+  }
+
+  :where(main, footer) :where(p, dd, td, blockquote) a:not([class]):hover {
+    color: var(--color-accent-hover);
+    text-decoration-color: var(--color-accent-hover);
   }
 
   /* Headings.
@@ -213,7 +233,7 @@
   }
 
   /* Links inside running copy. Buttons and nav opt out by setting their own
-     colour, so this only ever catches real prose links. */
+     color, so this only ever catches real prose links. */
   ::selection {
     background-color: color-mix(in srgb, var(--color-accent) 22%, transparent);
   }
@@ -278,7 +298,7 @@
      So these get the same treatment as .process-step-card, which already
      solves this on the service detail pages: a mostly opaque navy panel
      plus a backdrop blur, so the photograph still shows through as tone and
-     colour but never as legible detail. Keep the two in step if either
+     color but never as legible detail. Keep the two in step if either
      changes. */
   .cta-photo .card {
     background-color: rgba(11, 16, 23, 0.72);
@@ -332,6 +352,18 @@
      the plateau (it starts 36px in, past the 22px ramp), so text contrast is
      identical to before. Only the hue moved, from the old green-black to the
      band navy. */
+  /* Light mode only: the band is a dark navy block on a light page, so its
+     top and bottom edges read as a hard dark bar. Fade the outer 24px of the
+     whole band (photo and navy) into the page color. The copy sits well
+     inside that zone, so text contrast is unchanged. Dark mode keeps the
+     hard edge because the page itself is dark there. */
+  @media (prefers-color-scheme: light) {
+    .cta-photo {
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%);
+      mask-image: linear-gradient(to bottom, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%);
+    }
+  }
+
   .cta-photo-fade {
     background-image: linear-gradient(
       to bottom,
@@ -349,10 +381,10 @@
      
      Why it flipped. A dark 50% bar over a light page is a contradiction you
      cannot design your way out of: half of a near-black tint over warm paper
-     composites to a flat mid grey, so the bar read as a muddy slab sitting on
+     composites to a flat mid gray, so the bar read as a muddy slab sitting on
      top of the site instead of part of it, and every nav label had to be
      propped up with a heavy backdrop dim to stay legible. Light glass over a
-     light page is the honest version -- at rest it is the page colour, one
+     light page is the honest version -- at rest it is the page color, one
      shade brighter, and what scrolls under it actually shows through.
 
      Legibility works the mirror image of the old bar. The ink is the page's
@@ -376,17 +408,15 @@
     --color-line: rgba(20, 26, 34, 0.18);
     color: var(--color-ink);
 
-    background-color: rgba(246, 244, 241, 0.5);
-    -webkit-backdrop-filter: blur(18px) saturate(150%) brightness(1.8);
-    backdrop-filter: blur(18px) saturate(150%) brightness(1.8);
-    /* Hairline, not a rule: enough to separate the glass from the content
-       sliding beneath it, invisible when nothing is behind it. */
+    /* Solid, nearly opaque light bar. No backdrop-filter: blurring the page
+       behind the header repainted it on every scroll frame. */
+    background-color: rgba(246, 244, 241, 0.96);
     border-bottom-color: rgba(20, 26, 34, 0.1);
   }
 
-  /* Nav labels sit in full ink rather than the muted grey. On glass the
+  /* Nav labels sit in full ink rather than the muted gray. On glass the
      backdrop is doing enough to the contrast already; a second, lighter text
-     colour on top of that is where legibility goes to die. */
+     color on top of that is where legibility goes to die. */
   .header-band .btn-ghost {
     color: var(--color-ink);
   }
@@ -398,10 +428,8 @@
     .header-band {
       --color-surface: rgba(255, 255, 255, 0.07);
       --color-line: rgba(255, 255, 255, 0.2);
-      background-color: rgba(12, 17, 23, 0.5);
-      -webkit-backdrop-filter: blur(18px) saturate(140%) brightness(0.6);
-      backdrop-filter: blur(18px) saturate(140%) brightness(0.6);
-      border-bottom-color: rgba(255, 255, 255, 0.1);
+      background-color: rgba(10, 15, 22, 0.95);
+      border-bottom-color: rgba(30, 41, 59, 0.6);
     }
   }
 
@@ -459,7 +487,7 @@
     --color-line: var(--color-footer-line);
     --color-line-soft: var(--color-footer-line);
     /* Column labels are eyebrow-plain, which reads --color-subtle; the page
-       value is a mid grey that sinks into navy at 3.2:1. */
+       value is a mid gray that sinks into navy at 3.2:1. */
     --color-subtle: var(--color-band-muted);
     /* The deep emerald is tuned for white paper and goes muddy on navy, so
        inside the band the accent becomes the logo mint -- the same swap the
@@ -473,6 +501,12 @@
 
   .footer-band a:hover {
     color: var(--color-accent);
+  }
+
+  /* Column labels (SERVICES, SERVICE AREA, LEGAL) read as headings, so they take
+     the footer's main ink rather than the dimmer muted gray used for body copy. */
+  .footer-band .eyebrow-plain {
+    color: var(--color-footer-ink);
   }
 
   /* The wordmark ships as dark ink, so the dark band needs the light variant. */
@@ -518,15 +552,6 @@
     box-shadow: var(--shadow-card);
   }
 
-  /* Media inside an interactive card gets a gentle push-in on hover. */
-  .card-interactive img {
-    transition: transform 320ms cubic-bezier(0.2, 0.7, 0.3, 1);
-  }
-
-  .card-interactive:hover img {
-    transform: scale(1.03);
-  }
-
   /* The arrow affordance on a card slides forward with the hover. */
   .card-interactive .card-go {
     transition: transform 200ms cubic-bezier(0.2, 0.7, 0.3, 1);
@@ -543,14 +568,17 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .card-interactive:hover img {
+    .card-interactive:hover {
       transform: none;
     }
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .card-interactive:hover {
-      transform: none;
+  /* CTA photograph: viewport-locked only on desktop. At 1024px and below the
+     photo scrolls with its band (the polish-pass brief supersedes the earlier
+     site-wide parallax request). */
+  @media (min-width: 1025px) {
+    .cta-photo-fixed {
+      background-attachment: fixed;
     }
   }
 
@@ -577,7 +605,7 @@
       color 140ms ease, box-shadow 140ms ease;
   }
 
-  /* No coloured glow. The old primary carried an 18px emerald halo that
+  /* No colored glow. The old primary carried an 18px emerald halo that
      marked it as a template button from across the room; a filled 6.6:1
      emerald does not need help being seen. */
   .btn-primary {
@@ -638,9 +666,12 @@
     border: 1px solid var(--color-line-field);
     background-color: var(--color-raised);
     color: var(--color-ink);
-    font-size: 0.9375rem;
+    /* 16px at every width: iOS Safari and iPadOS zoom into any field set
+       below 16px. */
+    font-size: 1rem;
     transition: border-color 120ms ease, box-shadow 120ms ease;
   }
+
 
   .field:hover:not(:focus) {
     border-color: color-mix(
@@ -750,19 +781,18 @@
     transition: background-color 220ms ease;
   }
 
-  /* Plus becomes a minus on open. */
-  .icon-plus-upright {
+  /* Chevron flips to point up when its disclosure opens. */
+  .icon-chevron {
     transform-origin: center;
-    transition: opacity 220ms ease, transform 220ms ease;
+    transition: transform 220ms ease;
   }
 
-  details[open] .icon-plus-upright {
-    opacity: 0;
-    transform: rotate(90deg);
+  details[open] .icon-chevron {
+    transform: rotate(180deg);
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .icon-plus-upright {
+    .icon-chevron {
       transition: none;
     }
   }
@@ -778,7 +808,7 @@
   /* Short centered rule used to separate stacked sections. It was a 2px
      emerald gradient glowing across half the viewport -- the single most
      template-looking element on the page. A 1px neutral hairline does the
-     same job and lets the section's paper colour carry the rhythm. */
+     same job and lets the section's paper color carry the rhythm. */
   .divider-center {
     border: 0;
     height: 1px;
@@ -840,6 +870,13 @@
   }
 }
 
+/* Open mobile menu: freeze the page behind it. Set and cleared by the
+   MobileMenu component through the menu-open class on <html>. */
+html.menu-open {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
 /* Keep sticky mobile actions clear of device home indicators. */
 .mobile-sticky-form {
   padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
@@ -858,4 +895,135 @@
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* ------------------------------------------------- mobile alignment (<768px)
+   Mobile content is centered across the page: headings, paragraphs, buttons,
+   cards, forms, the footer and contact details. Exceptions, kept left:
+     - FAQ questions and answers, which are <details> accordions (the FAQ
+       page, service and location FAQs, and the "Before you call" panel).
+     - The site header, which is outside <main> and is not touched here.
+   Explicit text-left classes are overridden only outside accordions. */
+@media (max-width: 767px) {
+  main#main,
+  footer {
+    text-align: center;
+  }
+
+  main#main .text-left:not(details *) {
+    text-align: center !important;
+  }
+
+  main#main details,
+  main#main details * {
+    text-align: left !important;
+  }
+
+  footer .text-left {
+    text-align: center !important;
+  }
+
+  /* Quote form fields: labels and typed text are left-aligned on mobile so
+     the form reads as a column. Only the field labels and inputs change;
+     option rows, buttons and the consent text stay centered. */
+  /* Labels are inline by default, so text-align on them alone does nothing:
+     the parent's centering still places them. Block display makes the label
+     take its own line and honor the left alignment. */
+  main#main .quote-field-label {
+    display: block;
+    text-align: left !important;
+  }
+
+  main#main form input:not([type="radio"]):not([type="checkbox"]),
+  main#main form select,
+  main#main form textarea {
+    text-align: left !important;
+  }
+
+  /* Eyebrow labels (with their leading rule) sit on the center line. */
+  main#main .eyebrow,
+  footer .eyebrow {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/*
+ * Location-service polish (approved 2026-10-13). Scoped to the
+ * /locations/[city]/[service] wrapper only, so service pages keep their
+ * current type, spacing, and card styling. Layout, breakpoints, and images
+ * are unchanged.
+ */
+.location-polish {
+  --color-muted: #414b59;
+}
+
+@media (prefers-color-scheme: dark) {
+  .location-polish {
+    --color-muted: #b7c0cc;
+  }
+}
+
+.location-polish h1 {
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+
+.location-polish h2 {
+  font-weight: 650;
+  letter-spacing: -0.015em;
+}
+
+.location-polish h3 {
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.location-polish section.scroll-mt-36,
+.location-polish section.scroll-mt-32 {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .location-polish section.scroll-mt-36,
+  .location-polish section.scroll-mt-32 {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+
+.location-polish .card {
+  border-color: var(--color-line);
+  box-shadow: 0 1px 2px rgba(20, 26, 34, 0.04), 0 10px 28px -16px rgba(20, 26, 34, 0.18);
+}
+
+/*
+ * Communities block (location service pages): on phones the site centers all
+ * text, so the heading and chips are left-aligned here to line up as one
+ * column (approved 2026-10-13). Desktop is unchanged.
+ */
+@media (max-width: 767px) {
+  main#main .local-communities,
+  main#main .local-communities h3 {
+    text-align: left;
+  }
+  main#main .local-communities ul {
+    justify-content: flex-start;
+  }
+}
+
+/* Rendering performance. The sticky header and fixed bars get their own
+   compositor layer so scrolling does not repaint them. Plain sections skip
+   layout and paint until they are near the viewport. Visual output is
+   unchanged. Photo bands are excluded from content-visibility because their
+   fixed-attachment background must keep painting while scrolling. */
+.gpu-layer {
+  transform: translateZ(0);
+}
+
+.content-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
 }

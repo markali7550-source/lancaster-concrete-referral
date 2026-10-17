@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { alreadyProcessed, markProcessed } from "@/domain/leads/events";
+import { webhookSecret } from "@/lib/env/secrets";
 import { verifySignature } from "@/lib/validation/signature";
 
 export const runtime = "nodejs";
@@ -36,7 +37,7 @@ export async function POST(request: Request) {
     rawBody,
     signatureHeader: request.headers.get("x-partner-signature"),
     timestampHeader: request.headers.get("x-partner-timestamp"),
-    secret: process.env.PARTNER_WEBHOOK_SECRET ?? "dev-only-partner-secret",
+    secret: webhookSecret("PARTNER_WEBHOOK_SECRET"),
   });
 
   if (!verification.ok) {

@@ -4,6 +4,8 @@ import { z } from "zod";
  * Build-time identity values. Missing or sample values must fail the build
  * (spec 6.4). Client-safe values only — provider tokens never live here.
  */
+import { siteConfig } from "@/config/site";
+
 const publicEnvSchema = z.object({
   NEXT_PUBLIC_SITE_URL: z.string().url(),
   NEXT_PUBLIC_BRAND_NAME: z.string().min(2),
@@ -12,13 +14,16 @@ const publicEnvSchema = z.object({
   NEXT_PUBLIC_CONTACT_EMAIL: z.string().email(),
 });
 
+// Env vars win when set; otherwise the central config (src/config/site.ts) applies.
 const parsed = publicEnvSchema.safeParse({
-  NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
-  NEXT_PUBLIC_BRAND_NAME: process.env.NEXT_PUBLIC_BRAND_NAME,
-  NEXT_PUBLIC_FALLBACK_PHONE_E164: process.env.NEXT_PUBLIC_FALLBACK_PHONE_E164,
+  NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || siteConfig.domain,
+  NEXT_PUBLIC_BRAND_NAME: process.env.NEXT_PUBLIC_BRAND_NAME || siteConfig.brandName,
+  NEXT_PUBLIC_FALLBACK_PHONE_E164:
+    process.env.NEXT_PUBLIC_FALLBACK_PHONE_E164 || siteConfig.phoneE164,
   NEXT_PUBLIC_FALLBACK_PHONE_DISPLAY:
-    process.env.NEXT_PUBLIC_FALLBACK_PHONE_DISPLAY,
-  NEXT_PUBLIC_CONTACT_EMAIL: process.env.NEXT_PUBLIC_CONTACT_EMAIL,
+    process.env.NEXT_PUBLIC_FALLBACK_PHONE_DISPLAY || siteConfig.phoneDisplay,
+  NEXT_PUBLIC_CONTACT_EMAIL:
+    process.env.NEXT_PUBLIC_CONTACT_EMAIL || siteConfig.email,
 });
 
 if (!parsed.success) {
@@ -37,7 +42,10 @@ export const site = {
   phoneE164: env.NEXT_PUBLIC_FALLBACK_PHONE_E164,
   phoneDisplay: env.NEXT_PUBLIC_FALLBACK_PHONE_DISPLAY,
   email: env.NEXT_PUBLIC_CONTACT_EMAIL,
-  consentVersion: "referral-consent-2026-09-24",
+  serviceArea: siteConfig.serviceArea,
+  streetAddress: siteConfig.streetAddress,
+  postalCode: siteConfig.postalCode,
+  consentVersion: "service-consent-2026-10-15",
 } as const;
 
 export function absoluteUrl(path: string): string {

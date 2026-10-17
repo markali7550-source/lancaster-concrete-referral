@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { QuoteForm } from "@/components/lead/QuoteForm";
@@ -11,9 +10,9 @@ import {
   Hero,
   HowMatchingWorks,
   ProjectTypeChooser,
-  ReferralDisclosureStrip,
-  RoutingControls,
+  ServiceAreaControls,
   Section,
+  SectionDivider,
 } from "@/components/marketing/sections";
 import {
   Breadcrumbs,
@@ -24,7 +23,7 @@ import { OUT_OF_AREA_POSTAL_CODE, getLocation, publishedLocations, serviceAreaOp
 import { publishedServices } from "@/content/services";
 import { publishedLocationServices } from "@/content/location-services";
 import { site } from "@/lib/env";
-import { pageMetadata } from "@/lib/seo/metadata";
+import { fitTitle, pageMetadata } from "@/lib/seo/metadata";
 
 import {
   breadcrumbNode,
@@ -63,8 +62,8 @@ export async function generateMetadata({
   const location = getLocation(city);
   if (!location) return {};
   return pageMetadata({
-    title: `Concrete Contractors in ${location.city}, SC | Referral Service`,
-    description: `Looking for a concrete contractor in ${location.city}, SC? Call now or request a quote. We connect you with an independent local contractor. Availability varies.`,
+    title: fitTitle(`Concrete Services in ${location.city}, SC`),
+    description: `Looking for a concrete contractor in ${location.city}, SC? Call now or request concrete service. A local contractor replies to each request. Availability varies.`,
     path: `/locations/${location.slug}`,
   });
 }
@@ -82,30 +81,30 @@ export default async function LocationPage({ params }: { params: Params }) {
   const faqs = [
     {
       question: `Which ${location.city} areas do you cover?`,
-      answer: `${location.city}, ${location.region}. Participating providers approve this area in writing. A request from outside them returns an honest no coverage response rather than being forwarded to someone who does not work there.`,
+      answer: `${location.city}, ${location.region}. Our trusted contractors approve this area in writing. A request from outside them returns a clear answer that it is not covered, rather than being forwarded to someone who does not work there.`,
     },
     {
-      question: `Do you employ concrete crews in ${location.city}?`,
+      question: `Do you have concrete specialists in ${location.city}?`,
       answer:
-        "No. We are a referral service. Every crew that contacts you is an independent contractor responsible for their own licensing, insurance, pricing, and workmanship.",
+        "Yes. We connect you with licensed local contractors in " + location.city + ". Each one carries their own license and insurance, which our team verifies before connecting you.",
     },
     {
       question: `How quickly does a ${location.city} contractor respond?`,
       answer:
-        "Participating providers work to a contracted acknowledgment window. If the assigned contractor does not acknowledge in time, the request is reassigned once to an approved backup rather than sitting unattended.",
+        "Our contractors work to an agreed acknowledgment window. If the assigned contractor does not acknowledge in time, the request is reassigned once to an approved backup rather than sitting unattended.",
     },
     {
       question: `Is there a ${location.city} office I can visit?`,
       answer:
-        "No, and we will not publish an address implying otherwise. We are an online referral business. The contractor assigned to your project is the party with a local presence.",
+        "No, and we will not publish an address implying otherwise. We are an online service business. The contractor assigned to your project is the party with a local presence.",
     },
   ];
 
   const graph = buildGraph([
     webPageNode(
       path,
-      `Concrete contractor referrals in ${location.city}, SC`,
-      `Referral coverage for ${location.city}, ${location.county}.`,
+      `Concrete service requests in ${location.city}, SC`,
+      `Service coverage for ${location.city}, ${location.county}.`,
     ),
     breadcrumbNode(path, [
       { name: "Home", path: "/" },
@@ -130,7 +129,7 @@ export default async function LocationPage({ params }: { params: Params }) {
           />
         }
         locationCue={`${location.county}, South Carolina`}
-        h1={`Concrete Contractor Referrals in ${location.city}, SC`}
+        h1={`Concrete Services & Estimates in ${location.city}, SC`}
         summary={location.intro}
         imageSrc={location.heroImage}
         imageAlt={location.heroImageAlt}
@@ -140,16 +139,50 @@ export default async function LocationPage({ params }: { params: Params }) {
         facts={[
           { label: "Approved area", value: `${location.city}, ${location.region}` },
           { label: "County", value: location.county },
-          { label: "Services routed", value: `${publishedServices.length} residential services` },
-          { label: "Cost to you", value: "No charge for the referral" },
+          { label: "Services offered", value: `${publishedServices.length} residential services` },
+          { label: "Cost to you", value: "No charge for the quote request" },
         ]}
       />
-      <ReferralDisclosureStrip />
+
+      <Section
+        compact
+        eyebrow="Service area"
+        title={`${location.city} service area overview`}
+        lead="Requests are matched to contractors who have approved coverage for your address, so confirm your address when you request a quote."
+      >
+        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <li className="card flex h-full flex-col p-5">
+            <h3 className="font-semibold">Communities</h3>
+            <p className="mt-1.5 text-sm leading-relaxed text-[color:var(--color-muted)]">
+              The City of Lancaster and nearby Lancaster County communities,
+              including Kershaw, Heath Springs, Van Wyck, and Buford.
+            </p>
+          </li>
+          <li className="card flex h-full flex-col p-5">
+            <h3 className="font-semibold">Landmarks</h3>
+            <p className="mt-1.5 text-sm leading-relaxed text-[color:var(--color-muted)]">
+              Familiar reference points across the county include the Catawba
+              River, Forty Acre Rock Heritage Preserve, and Andrew Jackson State
+              Park.
+            </p>
+          </li>
+          <li className="card flex h-full flex-col p-5">
+            <h3 className="font-semibold">Soil and weather</h3>
+            <p className="mt-1.5 text-sm leading-relaxed text-[color:var(--color-muted)]">
+              Red clay holds water and moves through wet and dry seasons, and
+              summers are hot and humid. Both shape pour timing and drainage
+              planning.
+            </p>
+          </li>
+        </ul>
+      </Section>
+
+      <SectionDivider />
 
       <Section
         eyebrow="Local conditions"
         title={`What shapes concrete work in ${location.city}`}
-        lead="Notes from participating provider conversations about this market."
+        lead="Notes from our conversations with local contractors about this market."
       >
           {/*
             Replaces the generated shot that had red clay painted along the
@@ -157,18 +190,18 @@ export default async function LocationPage({ params }: { params: Params }) {
             here rather than filling space: the section is about subbase,
             drainage and tight lots, and the frame shows exactly that — a
             finished pad with its subbase still open around the edges on a
-            lot hemmed in by neighbours. The alt describes the soil as it
+            lot hemmed in by neighbors. The alt describes the soil as it
             actually appears, not as red clay, and claims no location.
           */}
           <Image
             src="/images/locations/lancaster-sc/lancaster-sc-site-conditions.webp"
-            alt="Freshly finished concrete pad in a fenced back yard, with bare soil and gravel still exposed around its edges and neighbouring houses close behind"
+            alt="Freshly finished concrete pad in a fenced backyard, with bare soil and gravel still exposed around its edges and neighboring houses close behind"
             width={944}
             height={531}
             sizes="(min-width: 1024px) 80rem, 100vw"
             className="mb-8 h-56 w-full rounded-[12px] object-cover md:h-72"
           />
-        <ul className="grid gap-x-10 gap-y-6 md:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
           {location.localEvidence.map((item) => (
             <li
               key={item}
@@ -184,8 +217,8 @@ export default async function LocationPage({ params }: { params: Params }) {
       <Section
         tone="surface"
         eyebrow="Services"
-        title={`Concrete services routed in ${location.city}`}
-        lead="Pick the closest match. The category only decides which participating providers are eligible. The contractor scopes the whole job on site."
+        title={`Concrete services in ${location.city}`}
+        lead="Pick the closest match. The category only decides which of our trusted contractors can take the job. The contractor scopes the whole job on site."
       >
         <ProjectTypeChooser
           services={publishedServices.filter((service) =>
@@ -199,7 +232,7 @@ export default async function LocationPage({ params }: { params: Params }) {
 
 
       {/*
-        Routing band photograph: forms and a contractor truck at a
+        Service-area band photograph: forms and a contractor truck at a
         residential street edge. Interim bytes until a real photograph
         replaces them; the subject is already the right one for this band.
       */}
@@ -209,25 +242,25 @@ export default async function LocationPage({ params }: { params: Params }) {
           alt: "Timber forms set along the edge of a residential street beside a contractor's truck, with excavated clay heaped alongside",
         }}
         eyebrow="Process"
-        title="How a Lancaster request is routed"
+        title="How a Lancaster request is handled"
       >
         <HowMatchingWorks />
       </Section>
 
       <Section
         tone="soft"
-        eyebrow="How routing works"
-        title="How a request is matched to a provider"
+        eyebrow="How requests are checked"
+        title="How a request is checked before it goes out"
       >
-        <RoutingControls />
+        <ServiceAreaControls />
       </Section>
 
       <Section
         tone="surface"
-        eyebrow="Request a referral"
+        eyebrow="Request Concrete Service"
         title={`Tell us about your ${location.city} project`}
       >
-        <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
           <div className="w-full max-w-xl">
             <QuoteForm
               services={publishedServices.map((s) => ({
@@ -248,7 +281,7 @@ export default async function LocationPage({ params }: { params: Params }) {
                 items={[
                   {
                     question: "Is my area covered?",
-                    answer: `We route ${location.city}, ${location.region} today. Anything else returns a no coverage response and nothing is shared with a contractor.`,
+                    answer: `We take work in ${location.city}, ${location.region} today. Anything else returns a no coverage response and nothing is shared with a contractor.`,
                   },
                   {
                     question: "Will I be called repeatedly?",
@@ -258,7 +291,7 @@ export default async function LocationPage({ params }: { params: Params }) {
                   {
                     question: "What if my project is out of scope?",
                     answer:
-                      "Foundation, structural, and retaining wall work is declined rather than routed. We will tell you that instead of passing it to a concrete finisher.",
+                      "Foundation, structural, and retaining wall work is declined rather than handled. We will tell you that instead of passing it to a concrete finisher.",
                   },
                 ]}
               />
@@ -279,8 +312,8 @@ export default async function LocationPage({ params }: { params: Params }) {
 
 
       <CtaBand
-        title={`Get matched with a ${location.city} concrete contractor`}
-        body="One request, one eligible independent contractor, no charge and no obligation."
+        title={`Request concrete service in ${location.city}`}
+        body="Send your project details and a local service contractor will reply. No charge and no obligation."
       />
 
     </>

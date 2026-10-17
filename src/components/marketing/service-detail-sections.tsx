@@ -28,7 +28,7 @@ export function MayInclude({
         {items.map((item) => (
           <li
             key={item}
-            className="card mb-3 flex break-inside-avoid items-start gap-3 p-4"
+            className="card mb-3 flex break-inside-avoid flex-col items-center gap-3 p-4 text-center lg:flex-row lg:items-start lg:text-left"
           >
             <span
               className="mt-0.5 shrink-0"
@@ -41,9 +41,9 @@ export function MayInclude({
         ))}
       </ul>
       <p className="mt-5 text-[13px] leading-relaxed text-[color:var(--color-muted)]">
-        This list describes components commonly associated with a {serviceName}{" "}
-        project. It is informational only, and not every participating provider
-        offers every item. Confirm scope directly with the provider who contacts
+        This list describes components commonly associated with {/^[aeiou]/i.test(serviceName) ? "an" : "a"} {serviceName}{" "}
+        project. It is informational only, and not every local contractor
+        offers every item. Confirm scope directly with the contractor who contacts
         you.
       </p>
     </div>
@@ -62,7 +62,7 @@ export function MayInclude({
 export function ServiceDisclosureBlock() {
   return (
     <section
-      aria-label="Referral disclosure"
+      aria-label="Service disclosure"
       className="border-y"
       style={{
         borderColor: "var(--color-line-soft)",
@@ -77,7 +77,7 @@ export function ServiceDisclosureBlock() {
           <span>{SERVICE_PAGE_DISCLOSURE}</span>
         </p>
         <Link
-          href="/referral-disclosure"
+          href="/service-disclosure"
           className="shrink-0 self-center font-semibold underline underline-offset-4 sm:self-auto"
           style={{ color: "var(--color-accent)" }}
         >
@@ -108,7 +108,7 @@ export function ServiceCtaBand({
     <CtaBand
       title={title}
       body={body}
-      actionLabel="Request a referral"
+      actionLabel="Request Concrete Service"
       actionIcon
     />
   );

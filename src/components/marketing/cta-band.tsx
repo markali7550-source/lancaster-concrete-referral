@@ -5,14 +5,17 @@ import { site } from "@/lib/env";
 /**
  * The closing call-to-action band, shared by every page that ends in one.
  *
- * Every band shows the same photograph (CTA_IMAGE below), viewport-locked via
- * `background-attachment: fixed`: the image holds still against the viewport
- * while the band -- and its copy -- scroll past it, so a different slice of
- * the photo shows through the band at every scroll offset. That parallax is
- * the owner's explicit choice, applied site-wide at their request; an earlier
- * version scrolled the photo with the band and gave each page its own subject.
+ * Every band shows the same photograph (CTA_IMAGE below). On desktop (above
+ * 1024px) the photo is viewport-locked via `background-attachment: fixed`
+ * (see `.cta-photo-fixed` in globals.css): the image holds still against the
+ * viewport while the band scrolls past it. On tablet and mobile the photo
+ * scrolls normally with the band, so it never moves independently.
  *
- * Consequences of the fixed attachment, kept here so they are not rediscovered:
+ * NOTE: the brief in the 2026-10 polish pass supersedes the earlier site-wide
+ * parallax request. Parallax is kept on desktop only, and the photo is static
+ * at 1024px and below.
+ *
+ * Consequences of the fixed attachment (desktop only), kept here so they are not rediscovered:
  * it forces body to use `overflow-x: clip` rather than `hidden`, because
  * `hidden` turns body into a scrolling box and breaks viewport-locked
  * backgrounds; and the visible slice is no longer one crop, so the contrast
@@ -22,7 +25,7 @@ import { site } from "@/lib/env";
  *
  * Layers, back to front:
  *
- *   z-0   the photograph        viewport-locked (fixed), at every width
+ *   z-0   the photograph        viewport-locked (fixed) above 1024px, static below
  *   z-10  50% dark overlay
  *   z-20  top/bottom fade       pointer-events-none
  *   z-30  heading and buttons
@@ -40,7 +43,7 @@ const CTA_BACKGROUND_LAYER =
  *
  * Every page shows this same image, at the owner's explicit request. It is a
  * brick ranch home with a concrete driveway -- residential and service-neutral
- * enough to close a driveway page, a patio page, or the index without favouring
+ * enough to close a driveway page, a patio page, or the index without favoring
  * one service, which is what the role needs now that the photo is shared.
  *
  * The band is a letterbox of roughly 207px, so only a thin middle slice of any
@@ -59,9 +62,10 @@ export function CtaBand({
   tone = "accent",
   imageSrc = CTA_IMAGE,
   imageAlt = CTA_IMAGE_ALT,
-  actionLabel = "Request a referral",
+  actionLabel = "Request Concrete Service",
   actionIcon = false,
   fixedBackground = true,
+  formHref = "#quote-form",
 }: {
   title: string;
   body: string;
@@ -82,10 +86,12 @@ export function CtaBand({
   /**
    * Viewport-locks this band's photograph (`background-attachment: fixed`).
    * On by default, site-wide, at the owner's request -- pass false only to
-   * restore the anchored behaviour on one band. See the header comment for
+   * restore the anchored behavior on one band. See the header comment for
    * what the fixed attachment does to the visible slice while scrolling.
    */
   fixedBackground?: boolean;
+  /** Where the form link points. Pages without the form pass its route. */
+  formHref?: string;
 }) {
   void tone;
   void imageAlt;
@@ -105,20 +111,13 @@ export function CtaBand({
           <div
             className={
               fixedBackground
-                ? "absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+                ? "cta-photo-fixed absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
                 : CTA_BACKGROUND_LAYER
             }
-            style={
-              fixedBackground
-                ? {
-                    backgroundImage: `url("${imageSrc}")`,
-                    backgroundAttachment: "fixed",
-                  }
-                : { backgroundImage: `url("${imageSrc}")` }
-            }
+            style={{ backgroundImage: `url("${imageSrc}")` }}
             aria-hidden="true"
           />
-          {/* Flat scrim. Unchanged on mobile, where the copy centres over the
+          {/* Flat scrim. Unchanged on mobile, where the copy centers over the
               whole band and there is nowhere to hide it, and much lighter from
               lg up, where the side wash below takes over behind the text. */}
           <div
@@ -129,8 +128,8 @@ export function CtaBand({
               where the words are instead of over the whole photograph. The
               copy sits left and the buttons right, so this deepens the left,
               releases the right, and lets the band read as a photograph again
-              rather than a grey panel. Desktop only -- the mobile layout
-              centres its copy, where a left-weighted wash does nothing. */}
+              rather than a gray panel. Desktop only -- the mobile layout
+              centers its copy, where a left-weighted wash does nothing. */}
           <div
             className="pointer-events-none absolute inset-0 z-10 hidden lg:block bg-gradient-to-r from-[#0B1017]/72 via-[#0B1017]/32 to-transparent"
             aria-hidden="true"
@@ -174,7 +173,7 @@ export function CtaBand({
             className="btn btn-primary"
           />
           {showFormLink ? (
-            <a href="#quote-form" className="btn btn-secondary">
+            <a href={formHref} className="btn btn-secondary">
               {actionLabel}
               {actionIcon ? <Icon name="arrow" /> : null}
             </a>

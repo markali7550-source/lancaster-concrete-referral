@@ -5,7 +5,6 @@ import {
   HowMatchingWorks,
   OverlayHeader,
   ProjectTypeChooser,
-  ReferralDisclosureStrip,
   Section,
   SectionDivider,
   overlayBody,
@@ -13,16 +12,15 @@ import {
   overlayHeading,
 } from "@/components/marketing/sections";
 import { Breadcrumbs, CtaBand } from "@/components/marketing/service-sections";
-import { publishedServices, serviceCardImages } from "@/content/services";
+import { publishedServices, serviceCardImageMap } from "@/content/services";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { breadcrumbNode, buildGraph, faqNode, webPageNode } from "@/lib/schema/graph";
-import { site } from "@/lib/env";
 
 
 
-const TITLE = "Concrete Services in Lancaster, SC | Driveways to Repair";
+const TITLE = "Concrete Services in Lancaster County, SC | Local Service";
 const DESCRIPTION =
-  "Driveways, patios, slabs and nonstructural repair in Lancaster, SC. See what each referral covers and how your request reaches an independent provider.";
+  "Driveways, patios, slabs, repair, foundations, walkways, stamped concrete, and steps in Lancaster, SC. Request a quote from a local contractor.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,
@@ -32,19 +30,29 @@ export const metadata: Metadata = pageMetadata({
 
 const FAQS = [
   {
-    question: "Why are only four services listed?",
+    question: "What concrete services do you offer in Lancaster?",
     answer:
-      "Each service here has at least one participating provider with written coverage for Lancaster areas and an approved content and compliance review. We add a service when that is true, not when there is search demand for it.",
+      "Our trusted local contractors cover residential concrete work in Lancaster, including driveways, patios, walkways, foundations, slab pouring, concrete repairs, and decorative stamped concrete.",
   },
   {
-    question: "What happens if my project spans two services?",
+    question: "Can I combine multiple concrete services into one project?",
     answer:
-      "Pick the closest match and describe the rest in the project note. The contractor scopes the whole job on site. The category only affects which participating providers are eligible to receive it.",
+      "Yes. Many homeowners combine services, such as a new driveway with a matching front walkway or back patio. Tell us about the full project, and we will connect you with a contractor who can bundle the work into a single estimate.",
   },
   {
-    question: "Do you charge for the referral?",
+    question: "Are project estimates and on site visits free?",
     answer:
-      "No. Service providers pay us a commission on revenue they actually collect from completed work. Nothing is charged to the homeowner, and that arrangement does not make us a party to your contract.",
+      "Requesting a quote is completely free for homeowners, with no obligation. Your contractor will confirm any on site visit details with you before they come out.",
+  },
+  {
+    question: "Do you handle both standard and decorative concrete?",
+    answer:
+      "Yes. Our contractors work in clean broom finish concrete as well as custom decorative options, including stamped textures, custom stains, and exposed aggregate.",
+  },
+  {
+    question: "Are your contractors licensed and insured in South Carolina?",
+    answer:
+      "Yes. Our trusted local contractors are licensed and insured, and our team verifies their credentials before connecting them with your project. You can also confirm any license through SC LLR.",
   },
 ];
 
@@ -69,50 +77,46 @@ export default function ServicesPage() {
           />
         }
         imageSrc="/images/services/services-index-hero.webp"
-        imageAlt="Broom finished residential concrete walkway with a tooled control joint and radiused edge beside a lawn"
+        imageAlt="Workers in hard hats guiding a concrete pump hose over a steel rebar grid during a pour"
       >
         <p
           className="eyebrow"
           style={{ color: overlayEyebrow }}
         >
-          Service directory
+          Our Concrete Services
         </p>
         <h1
           className="h1 mt-4 max-w-3xl"
           style={{ color: overlayHeading }}
         >
-          Concrete Services We Route in Lancaster County, SC
+          Concrete Services in Lancaster County, SC
         </h1>
         <p
           className="mt-4 max-w-2xl text-[17px] leading-relaxed"
           style={{ color: overlayBody }}
         >
-          Four residential concrete services, each with at least one
-          independent service provider holding written coverage for the
-          Lancaster area. Pick the closest match and we route your
-          request to one eligible participating provider.
+          Explore our complete range of residential and commercial concrete solutions across Lancaster County. Connect directly with trusted, licensed local specialists for a free estimate.
         </p>
       </OverlayHeader>
 
-      <ReferralDisclosureStrip />
-
-      <Section eyebrow="Choose a service" title="What we can route today">
-        <ProjectTypeChooser images={serviceCardImages} />
+      <Section eyebrow="Choose a service" title="Services we can take on today">
+        <ProjectTypeChooser images={serviceCardImageMap} />
       </Section>
 
       <Section tone="soft" eyebrow="Compare" title="Scope at a glance">
         <div
+          tabIndex={0}
           className="max-w-full overflow-x-auto rounded-[12px] border"
           style={{ borderColor: "var(--color-line)", backgroundColor: "var(--color-surface)" }}
         >
           <table className="w-full min-w-[42rem] border-collapse text-left text-sm">
             <caption className="sr-only">
-              Comparison of routed project types and scope limits by service
+              Comparison of project types served and scope limits by service
             </caption>
             <thead>
               <tr>
                 <th scope="col" className="px-4 py-3 font-semibold">Service</th>
-                <th scope="col" className="px-4 py-3 font-semibold">Routed project types</th>
+                <th scope="col" className="px-4 py-3 font-semibold">Project types served</th>
                 <th scope="col" className="px-4 py-3 font-semibold">Main scope limit</th>
               </tr>
             </thead>
@@ -139,36 +143,37 @@ export default function ServicesPage() {
 
       {/*
         Restored at the owner's explicit direction. I had cut this photograph
-        because the clipboard's clip does not resolve into a real mechanism
-        (see WEBSITE-AUDIT-2026-10-06). The owner reviewed that finding and
+        because the clipboard's clip does not resolve into a real mechanism.
+        The owner reviewed that finding and
         chose to keep the image, so it stands.
 
-        It shows a provider assessing and quoting on site rather than any one
+        It shows a contractor assessing and quoting on site rather than any one
         finished product, which matches this band's subject and does not
-        favour driveways, patios, slabs or repair on the page that lists all
+        favor driveways, patios, slabs or repair on the page that lists all
         four. The alt claims no location.
       */}
       <Section
         tone="soft"
         backgroundImage={{
           src: "/images/services/services-index-process.webp",
-          alt: "Contractor in a cap writing on a clipboard while standing on a residential concrete driveway, with a work pickup parked at the kerb behind him",
+          alt: "Concrete poured from a mixer and worked with a shovel along a form board, a worker in orange coveralls and boots",
         }}
         eyebrow="Process"
-        title="How a request reaches an independent provider"
+        title="How a request reaches a licensed local contractor"
       >
         <HowMatchingWorks />
       </Section>
 
-      <Section compact eyebrow="Out of scope" title="What we decline outright">
+      <Section compact eyebrow="SCOPE & SPECIALIZATION" title="Projects Outside Our Scope">
         <div className="card p-6">
           <p className="text-[color:var(--color-muted)]">
-            Foundation repair, structural engineering assessments, retaining
-            walls, slab jacking, material supply, and commercial contracts are
-            not routed in Phase 1. These need separate demand, provider, and
-            compliance approval, and several of them need a licensed
-            professional we do not currently work with. We would rather tell you
-            no than hand your project to the wrong trade.
+            To ensure the highest quality results, our network focuses
+            specifically on residential concrete flatwork, installations, and
+            surface care. We do not provide major structural foundation
+            repairs, retaining walls, mudjacking/slab jacking, raw materials
+            delivery, or heavy commercial contracts. We believe in being upfront,
+            so you can find the right trade specialist for your specific
+            project.
           </p>
         </div>
       </Section>
@@ -182,8 +187,8 @@ export default function ServicesPage() {
       <CtaBand
         tone="section"
         title="Not sure which service fits?"
-        body="Describe the project in the quote form and we will route it on the closest match, or call and our referral team will tell you whether we cover it at all."
-        showFormLink={false}
+        body="Tell us about your concrete project to get connected with a qualified local specialist for a free, no obligation quote, or give us a call to discuss your project today."
+        formHref="/contact#quote-form"
       />
 
     </>

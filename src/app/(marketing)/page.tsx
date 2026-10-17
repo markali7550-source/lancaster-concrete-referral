@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -10,7 +9,7 @@ import {
   Hero,
   HowMatchingWorks,
   ProjectTypeChooser,
-  RoutingControls,
+  ServiceAreaControls,
   Section,
   SectionDivider,
 } from "@/components/marketing/sections";
@@ -18,15 +17,15 @@ import {
   CtaBand,
 } from "@/components/marketing/service-sections";
 import { OUT_OF_AREA_POSTAL_CODE, publishedLocations, serviceAreaOptions } from "@/content/locations";
-import { publishedServices, serviceCardImages } from "@/content/services";
+import { publishedServices, serviceCardImageMap } from "@/content/services";
 import { site } from "@/lib/env";
-import { REFERRAL_SERVICE_DISCLOSURE } from "@/lib/seo/disclosure";
+import { SERVICE_DISCLOSURE } from "@/lib/seo/disclosure";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { buildGraph, faqNode, webPageNode } from "@/lib/schema/graph";
 
-const TITLE = `Lancaster SC Concrete Referrals | ${site.brand}`;
+const TITLE = `Lancaster, SC Concrete Quotes | ${site.brand}`;
 const DESCRIPTION =
-  "Connect with independent concrete service providers in Lancaster, SC for driveways, patios, slabs and repair. We are a referral service, not a contractor.";
+  "Local concrete service in Lancaster, SC for driveways, patios, slabs and repair. Work is done by licensed local concrete contractors, not by this website.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,
@@ -38,22 +37,22 @@ const DECISION_ITEMS = [
   {
     question: "Repair the slab or replace it?",
     answer:
-      "Isolated surface cracking on an otherwise sound slab is usually a repair conversation. Settlement across a whole panel, heaving, or a failing subbase usually is not. Only the independent provider who inspects the slab can tell you which one you have.",
+      "Isolated surface cracking on an otherwise sound slab is usually a repair conversation. Settlement across a whole panel, heaving, or a failing subbase usually is not. The contractor who inspects the slab on site can tell you which one you have.",
   },
   {
     question: "What changes the price of a Lancaster pour?",
     answer:
-      "Access for a mixer, demolition and haul away of the old slab, subbase preparation on clay soil, thickness, reinforcement, and finish. Square footage alone is a poor predictor, which is why we publish no price ranges.",
+      "Access for a mixer, demolition and haul away of the old slab, subbase preparation on clay soil, thickness, reinforcement, and finish. Square footage alone is a poor predictor, which is why every price comes from an on site estimate rather than a guess.",
   },
   {
     question: "Do I need more than one quote?",
     answer:
-      "Comparing quotes is sensible. We route your request to one participating provider at a time so you are not called by five companies, and you remain completely free to seek other quotes independently.",
+      "Comparing quotes is sensible. Our service is free, and we help you compare the estimates you receive so you can choose with confidence.",
   },
   {
     question: "What does this service cost me?",
     answer:
-      "Nothing. We are paid by the service provider on completed and collected work. That arrangement does not change the price you negotiate, and it does not make us a party to your contract.",
+      "Our service is completely free for homeowners. You pay only for the work you agree to with your contractor, and there is no obligation to proceed.",
   },
 ];
 
@@ -61,29 +60,34 @@ const DECISION_ITEMS = [
 
 const FAQS = [
   {
+    question: "Does this service cost me anything?",
+    answer:
+      "Our service is completely free for homeowners. We take your project details and connect you with an experienced local concrete contractor who specializes in your exact project type.",
+  },
+  {
     question: "Do you perform concrete work?",
     answer:
-      "No. An independent provider performs the work. We route your request and nothing else.",
+      "We do not pour concrete ourselves. We coordinate your project with a licensed local concrete contractor who specializes in your exact project type, and our team stays involved through the estimate and follow up.",
   },
   {
     question: "Who performs the work?",
     answer:
-      "An independent provider serving your area. They hold the relationship, the contract, and the responsibility for the work.",
+      "A licensed local contractor matched to your project. They hold the relationship and the contract with you for the work, and our team coordinates the estimate and the schedule.",
   },
   {
-    question: "Which areas can you route right now?",
+    question: "Which areas can you take work in right now?",
     answer:
-      "Lancaster, South Carolina. Service availability depends on participating providers, so requests outside covered areas receive an honest no coverage answer instead of being forwarded to a provider who does not serve the area.",
+      "Lancaster, South Carolina. If your address is outside our service area, we will tell you plainly and right away.",
   },
   {
-    question: "Are the service providers licensed and insured?",
+    question: "Are the contractors licensed and insured?",
     answer:
-      "Licensing and insurance are the responsibility of each independent provider, and we make no representation about any provider's credentials. Confirm license status, insurance, and credentials directly with the provider and through SC LLR before you hire.",
+      "Yes. Our trusted local contractors are licensed and insured, and our team verifies their credentials before we connect them with your project. You can also confirm any license through SC LLR.",
   },
   {
     question: "What happens to my details?",
     answer:
-      "Your request is stored by us and shared with the independent provider covering your area so they can contact you. Marketing contact is a separate, optional consent. See the Privacy Policy for retention and your choices.",
+      "Your request is shared with the licensed local contractor covering your area so they can contact you about your project. Marketing contact is a separate, optional consent. See the Privacy Policy for retention and your choices.",
   },
 ];
 
@@ -104,27 +108,42 @@ export default function HomePage() {
       */}
       <Hero
         locationCue="Lancaster County, South Carolina"
-        h1="Connect With a Local Concrete Service Provider in Lancaster, SC"
-        summary="Tell us what you need and where the property is. We will match your request with one eligible independent concrete service provider serving your area."
+        h1="Lancaster's Trusted Concrete Connection"
+        summary="Taking the hassle out of finding reliable concrete pros. We connect you directly with top rated, licensed local contractors for driveways, patios, walkways, and foundations."
         imageSrc="/images/home/home-hero-float.webp"
         imageAlt="Worker in a high-visibility vest and cap hand-floating freshly poured concrete beside timber forms"
         overlay
+        aside={
+          <QuoteForm
+            headingLevel="h2"
+            formId="hero-quote-form"
+            services={publishedServices.map((s) => ({
+              slug: s.slug,
+              name: s.name,
+            }))}
+            serviceAreas={serviceAreaOptions}
+            outOfAreaValue={OUT_OF_AREA_POSTAL_CODE}
+            consentVersion={site.consentVersion}
+            fallbackDisplay={site.phoneDisplay}
+            fallbackE164={site.phoneE164}
+          />
+        }
       />
 
       <Section
         tone="surface"
         eyebrow="Project types"
-        title="What we can route in Lancaster today"
-        lead="Four residential concrete service categories, each with at least one participating provider holding written coverage for Lancaster areas. Foundation repair, structural engineering, and retaining walls sit outside this scope."
+        title="Where we can take work in Lancaster today"
+        lead="Fourteen residential concrete services, each on its own page. Each request goes to a local contractor who confirms the scope, and foundation repair, structural engineering, and retaining walls sit outside these services."
       >
-        <ProjectTypeChooser images={serviceCardImages} />
+        <ProjectTypeChooser images={serviceCardImageMap} />
         <p className="mt-8 text-sm">
           <Link
             href="/services"
             className="font-semibold underline underline-offset-4"
             style={{ color: "var(--color-accent)" }}
           >
-            Compare all four services and their scope limits →
+            Compare all fourteen services and their scope limits →
           </Link>
         </p>
       </Section>
@@ -167,10 +186,10 @@ export default function HomePage() {
           <div className="container-page relative z-30">
             <div className="text-left">
               <p className="eyebrow">Process</p>
-              <h2 className="h2 mt-3">Three steps, no obligation</h2>
+              <h2 className="h2 mt-3">Four steps, no obligation</h2>
               <p className="lede mt-4">
                 You are never passed to a call center, and your details are
-                never sold to a list of providers who bid against each other.
+                never sold to a list of contractors who bid against each other.
               </p>
             </div>
             <div className="mt-7">
@@ -183,11 +202,11 @@ export default function HomePage() {
 
       <Section
         tone="soft"
-        eyebrow="How routing works"
-        title="How your request reaches an independent provider"
-        lead="These are routing controls, not credential verification. License, insurance, and workmanship remain matters to confirm directly with the independent provider who contacts you."
+        eyebrow="How requests are checked"
+        title="How your request reaches a licensed local contractor"
+        lead="Our team confirms availability and coordinates directly with trusted, licensed local contractors to ensure your project gets handled by the right specialist for your exact needs. License, insurance, and workmanship remain matters to confirm directly with the licensed local contractor who contacts you."
       >
-        <RoutingControls />
+        <ServiceAreaControls />
       </Section>
 
       <Section
@@ -200,26 +219,26 @@ export default function HomePage() {
 
       <Section
         backgroundImage={{
-          src: "/images/home/home-service-area.webp",
-          alt: "Single story brick ranch home behind a mature shade tree, with a curved concrete front walkway running out to the sidewalk",
+          src: "/images/locations/locations-index-hero.webp",
+          alt: "Elevated view of a suburban residential neighborhood of brick homes with concrete driveways along a curving street",
         }}
         eyebrow="Service area"
         title="Areas we currently serve"
-        lead="Every area we currently serve. Service availability depends on participating providers."
+        lead="Every area we currently serve. Service availability depends on our trusted contractor network."
       >
         <AdjacentAreas locations={publishedLocations} />
 
         <p className="mt-7 text-center text-[14px] leading-relaxed text-[color:var(--color-muted)] lg:text-left">
           Additional South Carolina areas are added one at a time, and only once
-          a participating provider has approved coverage there in writing.
+          one of our trusted contractors has approved coverage there in writing.
         </p>
       </Section>
 
       <Section
         tone="surface"
-        eyebrow="Request a referral"
+        eyebrow="Request Concrete Service"
         title="What we need from you"
-        lead="Two short steps. A participating service provider may contact you, and if no provider covering your area can take it, we will say so plainly."
+        lead="Two short steps. One of our trusted local contractors may contact you, and if no contractor covering your area can take it, we will say so plainly."
       >
         <p
           className="mb-8 rounded-[12px] border p-4 text-[13.5px] leading-relaxed"
@@ -229,17 +248,15 @@ export default function HomePage() {
           }}
         >
           <strong className="font-semibold text-[color:var(--color-ink)]">
-            Referral Service Disclosure:
+            About the work:
           </strong>{" "}
-          {REFERRAL_SERVICE_DISCLOSURE.replace(
-            "Referral Service Disclosure: ",
-            "",
-          )}
+          {SERVICE_DISCLOSURE}
         </p>
 
-        <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
           <div className="w-full max-w-xl">
             <QuoteForm
+              headingLevel="h2"
               services={publishedServices.map((s) => ({
                 slug: s.slug,
                 name: s.name,
@@ -254,17 +271,12 @@ export default function HomePage() {
           <div className="lg:pt-4">
             <p className="eyebrow-plain">What happens after you submit</p>
             <p className="mt-4 text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
-              Your location and project type are checked against participating
-              providers with written coverage. One provider receives the
-              request and may contact you. If they do not acknowledge in time
-              it is reassigned once, and if nobody covers your area we tell you
-              so rather than forwarding it anyway.
+              Your location and project type are checked against the teams that work in your area. One local team receives the request and may contact you. If they do not respond in time, it goes to the next team once, and if nobody covers your area we tell you so.
             </p>
             <div className="card mt-8 p-5">
-              <p className="text-sm font-semibold">Rather just talk?</p>
+              <p className="text-sm font-semibold">Prefer to talk?</p>
               <p className="mt-1.5 text-[14px] text-[color:var(--color-muted)]">
-                Call the referral team and we will tell you in one minute
-                whether a participating provider covers your area.
+                Call our team and we will quickly tell you whether a local team covers your area.
               </p>
               <a
                 href={`tel:${site.phoneE164}`}
@@ -284,16 +296,19 @@ export default function HomePage() {
         <FaqSection faqs={FAQS} name="home-faq" />
         <p className="mt-6 text-sm text-[color:var(--color-muted)]">
           Full detail on how we are paid and what we do not do is on the{" "}
-          <Link href="/referral-disclosure" className="underline underline-offset-4">
-            referral disclosure page
+          <Link
+            href="/service-disclosure"
+            className="font-medium text-[color:var(--color-accent)] underline underline-offset-4 decoration-[color:var(--color-accent)]/40 transition-colors duration-150 hover:decoration-[color:var(--color-accent)]"
+          >
+            service disclosure page
           </Link>
           .
         </p>
       </Section>
 
       <CtaBand
-        title="Ready to connect with an independent concrete service provider?"
-        body="One request, one independent third party service provider, no charge to you and no obligation to proceed."
+        title="Ready to request concrete service?"
+        body="Send your project details and a local service contractor will reply. No charge to you and no obligation to proceed."
       />
 
 

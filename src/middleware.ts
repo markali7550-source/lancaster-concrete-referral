@@ -8,6 +8,8 @@ const PERMANENT_REDIRECTS: Record<string, string> = {
   "/concrete-driveways": "/services/concrete-driveways",
   "/concrete-patios": "/services/concrete-patios",
   "/lancaster": "/locations/lancaster-sc",
+  // Renamed legal page: keep old links and indexed URLs working.
+  "/referral-disclosure": "/service-disclosure",
 };
 
 const GONE = new Set<string>([]);

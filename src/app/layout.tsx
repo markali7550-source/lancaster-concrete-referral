@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { UtilityHeader } from "@/components/layout/UtilityHeader";
 import { ComplianceFooter } from "@/components/layout/ComplianceFooter";
+import { MobileCallBar } from "@/components/layout/MobileCallBar";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ConsentBanner } from "@/components/consent/ConsentBanner";
 import { AttributionBootstrap } from "@/components/consent/AttributionBootstrap";
@@ -12,19 +13,22 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.brand} | Concrete Contractor Referrals in Lancaster, SC`,
+    default: `${site.brand} | Concrete Contractor Quotes in Lancaster, SC`,
     template: `%s`,
   },
   description:
-    "Referral service connecting Lancaster, South Carolina homeowners with independent concrete contractors for driveways, patios, slabs, and repair.",
+    "Local concrete service for Lancaster, South Carolina homeowners: driveways, patios, slabs, and repair, done by licensed local concrete contractors.",
   icons: { icon: "/favicon.webp", apple: "/apple-icon.webp" },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  /* Lets env(safe-area-inset-*) return real values on notched phones and
+     home-indicator iPads. The header and call bar pad for them. */
+  viewportFit: "cover",
   /* Matches the header glass at rest in each scheme, so the browser chrome on
-     mobile continues the bar instead of cutting a coloured strip above it. */
+     mobile continues the bar instead of cutting a colored strip above it. */
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#f6f4f1" },
     { media: "(prefers-color-scheme: dark)", color: "#0c1117" },
@@ -38,7 +42,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en-US" className={geistSans.variable}>
-      <body>
+      <body className="pb-[calc(6rem+env(safe-area-inset-bottom))] md:pb-0">
         <JsonLd data={{ "@context": "https://schema.org", "@graph": rootGraph() }} />
         <a
           href="#main"
@@ -49,6 +53,7 @@ export default function RootLayout({
         <UtilityHeader />
         <main id="main">{children}</main>
         <ComplianceFooter />
+        <MobileCallBar />
         <AttributionBootstrap />
         <ConsentBanner />
       </body>

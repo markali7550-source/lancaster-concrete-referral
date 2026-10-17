@@ -40,7 +40,7 @@ describe("lead validation", () => {
     phone: "8035550123",
     serviceConsent: true,
     marketingConsent: false,
-    consentVersion: "referral-consent-2026-09-24",
+    consentVersion: "service-consent-2026-09-24",
     sourcePath: "/",
   };
 

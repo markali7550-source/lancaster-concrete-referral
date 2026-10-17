@@ -3,8 +3,10 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumbs } from "@/components/marketing/service-sections";
 import { ServicePageTemplate } from "@/components/marketing/service-page-template";
+import type { LocationLayout } from "@/components/marketing/service-page-template";
 import { serviceDetails } from "@/content/service-details";
 import {
+  LOCAL_SOIL_BY_SERVICE,
   getLocationService,
   publishedLocationServices,
 } from "@/content/location-services";
@@ -69,6 +71,23 @@ export default async function ComboPage({ params }: { params: Params }) {
 
   const detail = serviceDetails[serviceRecord.slug];
 
+  const soil = LOCAL_SOIL_BY_SERVICE[serviceRecord.slug];
+  const locationLayout: LocationLayout = {
+    quoteTitle: "Request a quote",
+    quoteBody:
+      "Tell us about your project and where it is. A local contractor contacts you to confirm the scope and give you a quote directly.",
+    climateTitle: soil.title,
+    climate: soil.paragraphs,
+    neighborhoodsTitle: "Communities near Lancaster",
+    neighborhoods: [
+      "City of Lancaster",
+      "Kershaw",
+      "Heath Springs",
+      "Van Wyck",
+      "Buford",
+    ],
+  };
+
   const graph = buildGraph([
     serviceNode({
       path,
@@ -89,12 +108,12 @@ export default async function ComboPage({ params }: { params: Params }) {
   return (
     <>
       <JsonLd data={graph} />
+      <div className="location-polish">
       <ServicePageTemplate
         service={serviceRecord}
         detail={detail}
         breadcrumbs={
           <Breadcrumbs
-            overlay
             items={[
               { name: "Home", path: "/" },
               { name: "Service areas", path: "/locations" },
@@ -106,19 +125,20 @@ export default async function ComboPage({ params }: { params: Params }) {
             ]}
           />
         }
+        locationLayout={locationLayout}
         cityLabel={`${location.city}, ${location.region}`}
         h1={h1}
-        summary={description}
+        summary={record.heroSummary}
         heroImage={{ src: record.localImage, alt: record.localImageAlt }}
         keyFacts={[
           { label: "Service", value: serviceRecord.name },
           { label: "Area", value: `${location.city}, ${location.county}` },
-          { label: "Routed project types", value: serviceRecord.projectTypes.join(" · ") },
-          { label: "Cost to you", value: "No charge for the referral" },
+          { label: "Project types served", value: serviceRecord.projectTypes.join(" · ") },
+          { label: "Cost to you", value: "No charge for the quote request" },
         ]}
         localIntro={{
           eyebrow: `${serviceRecord.name} · ${location.city}`,
-          title: `What affects a ${serviceRecord.projectNoun} project in ${location.city}`,
+          title: `What affects ${/^[aeiou]/i.test(serviceRecord.projectNoun) ? "an" : "a"} ${serviceRecord.projectNoun} project in ${location.city}`,
           blocks: record.localBody,
         }}
         faqTitle={`${location.city} ${serviceRecord.projectNoun} questions`}
@@ -131,13 +151,14 @@ export default async function ComboPage({ params }: { params: Params }) {
           ),
         )}
         relatedBasePath={`/locations/${location.slug}`}
-        relatedTitle={`Also routed in ${location.city}`}
+        relatedTitle={`Also serving ${location.city}`}
         ctaTitle={serviceRecord.headings.cta}
         ctaBody={serviceRecord.ctaLead}
         defaultServiceSlug={serviceRecord.slug}
-        callCardTitle="Checking coverage first?"
-        callCardBody={`We route ${location.city}, ${location.region} today. Call and we will confirm in a minute.`}
+        callCardTitle="Questions before you request a quote?"
+        callCardBody={`Call to ask whether a local contractor serves your address in ${location.city}, ${location.region}.`}
       />
+      </div>
     </>
   );
 }

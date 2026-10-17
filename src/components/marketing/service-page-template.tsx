@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { QuoteForm } from "@/components/lead/QuoteForm";
+import { LocalContext, LocationHero } from "@/components/marketing/location-sections";
 import { Icon } from "@/components/ui/Icon";
 import {
   FaqSection,
-  ReferralDisclosureStrip,
   Section,
   SectionDivider,
 } from "@/components/marketing/sections";
@@ -42,9 +42,19 @@ import { site } from "@/lib/env";
  * somebody else's garage.
  */
 const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-aprons": { src: "/images/services/concrete-aprons/concrete-aprons-detail.webp", alt: "Edge of a grey concrete apron meeting a curb and gutter, with a neat saw-cut control joint" },
+  "concrete-sealing": { src: "/images/services/concrete-sealing/concrete-sealing-detail.webp", alt: "Sealed concrete surface with water beading on it and realistic reflections" },
+  "concrete-exposed-aggregate": { src: "/images/services/concrete-exposed-aggregate/concrete-exposed-aggregate-detail.webp", alt: "Exposed aggregate concrete with rounded river stones and a textured surface" },
+  "concrete-leveling": { src: "/images/services/concrete-leveling/concrete-leveling-detail.webp", alt: "Grey concrete patio with small grout-patched holes from slab leveling work" },
+  "concrete-garage-coatings": { src: "/images/services/concrete-garage-coatings/concrete-garage-coatings-detail.webp", alt: "Glossy speckled grey epoxy garage floor with a painted yellow parking line" },
+  "concrete-resurfacing": { src: "/images/services/concrete-resurfacing/concrete-resurfacing-detail.webp", alt: "Broom-textured thin concrete overlay with a clean edge against an older cracked slab" },
   "concrete-driveways": { src: "/images/services/concrete-driveways/concrete-driveways-detail.webp", alt: "Driveway edge pitched away from the lawn with a gravel drainage margin" },
-  "concrete-patios": { src: "/images/services/concrete-patios/concrete-patios-detail.webp", alt: "Plain concrete patio slab at the rear of a single story brick home" },
-  "concrete-slabs": { src: "/images/services/concrete-slabs/concrete-slabs-detail.webp", alt: "Concrete pad still sitting inside its timber forms on an open lot" },
+  "concrete-patios": { src: "/images/services/concrete-patios/concrete-patios-detail.webp", alt: "New concrete patio slab set between wood edge forms beside a two-story vinyl-sided house with a screened porch" },
+  "concrete-slabs": { src: "/images/services/concrete-slabs/concrete-slabs-detail.webp", alt: "Precast concrete slab panels laid over a brick base beside grass" },
+  "stamped-concrete": { src: "/images/services/stamped-concrete/stamped-concrete-band.webp", alt: "Stamped concrete surface with a paver-style pattern and curved edge beside a lawn" },
+  "concrete-foundations": { src: "/images/services/concrete-foundations/concrete-foundations-process.webp", alt: "Concrete pumped from a hose onto a steel rebar grid inside timber forms, with a worker in camouflage pants and boots standing on the steel" },
+  "concrete-walkways": { src: "/images/services/concrete-walkways/concrete-walkways-band.webp", alt: "Curved concrete walkway with saw-cut expansion joints beside a lawn" },
+  "concrete-steps": { src: "/images/services/concrete-steps/concrete-steps-detail.webp", alt: "Example photo: concrete steps formed in wood boards with a brick edge and marking tape at the base" },
   "concrete-repair": { src: "/images/services/concrete-repair/concrete-repair-detail.webp", alt: "Settled concrete walkway slab with a cracked, lifted edge" },
 };
 
@@ -55,21 +65,43 @@ const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
  * slabs; owner-supplied real photographs remain the endpoint.
  */
 const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
+  "concrete-aprons": { src: "/images/services/concrete-aprons/concrete-aprons-process.webp", alt: "Worker drawing a long screed board across freshly placed grey concrete beside a street" },
+  "concrete-sealing": { src: "/images/services/concrete-sealing/concrete-sealing-process.webp", alt: "Close-up of a white coating brushed across a grey concrete slab, meeting a darker sealed strip" },
+  "concrete-exposed-aggregate": { src: "/images/services/concrete-exposed-aggregate/concrete-exposed-aggregate-process.webp", alt: "Exposed aggregate concrete walkway partly washed to reveal the stones, with a darker wet band" },
+  "concrete-leveling": { src: "/images/services/concrete-leveling/concrete-leveling-process.webp", alt: "Spirit level resting on a concrete surface beside a red hard hat, checking that the surface is level" },
+  "concrete-garage-coatings": { src: "/images/services/concrete-garage-coatings/concrete-garage-coatings-process.webp", alt: "Garage floor partly coated with clear sealer, with roller marks and a paint tray at the edge" },
+  "concrete-resurfacing": { src: "/images/services/concrete-resurfacing/concrete-resurfacing-process.webp", alt: "Two workers guiding a walk-behind power trowel over a fresh grey concrete floor" },
   "concrete-driveways": {
     src: "/images/services/concrete-driveways/concrete-driveways-process.webp",
-    alt: "Wet concrete pouring from a mixer chute into timber forms for a residential driveway, with a screed board resting across the forms",
+    alt: "Two workers screeding fresh concrete on a residential driveway with a long straightedge, a pickup and cones at the street",
   },
   "concrete-patios": {
     src: "/images/services/concrete-patios/concrete-patios-process.webp",
-    alt: "Stone-pattern stamping mats laid on a freshly poured patio with hand trowels, a mallet and a bucket beside the forms",
+    alt: "Worker in boots moving wet concrete with a shovel into wood forms on a residential patio site",
   },
   "concrete-slabs": {
     src: "/images/services/concrete-slabs/concrete-slabs-process.webp",
-    alt: "Freshly poured concrete slab inside timber forms with a bull float resting on its surface, gravel and tools alongside",
+    alt: "Stacked precast concrete slabs with wood spacers resting on asphalt beside a grass verge",
+  },
+  "stamped-concrete": {
+    src: "/images/services/stamped-concrete/stamped-concrete-process.webp",
+    alt: "Three workers in orange shirts on a backyard patio, placing a stamped-pattern concrete border and finishing the slab beside a fence",
+  },
+  "concrete-foundations": {
+    src: "/images/services/concrete-foundations/concrete-foundations-band.webp",
+    alt: "Steel rebar grid laid over sandy ground at a foundation site, with a grey plastic sheet and a short pipe along the far edge",
+  },
+  "concrete-walkways": {
+    src: "/images/services/concrete-walkways/concrete-walkways-process.webp",
+    alt: "Example photo: crew finishing a concrete walkway edge with hand trowels beside a form board",
+  },
+  "concrete-steps": {
+    src: "/images/services/concrete-steps/concrete-steps-process.webp",
+    alt: "Concrete poured from a chute into wood forms for front steps beside a sided wall",
   },
   "concrete-repair": {
     src: "/images/services/concrete-repair/concrete-repair-process.webp",
-    alt: "Worker cutting into a concrete slab with a handheld cut off saw, throwing up a cloud of dust beside a chain link fence",
+    alt: "Worker with a pry bar beside an orange cut-off saw, cutting along the cracked edge of a concrete slab",
   },
 };
 
@@ -80,6 +112,16 @@ const MAIN_NAV_LABELS: Record<ServiceSectionId, string> = {
   cost: "What drives cost",
   prepare: "Prepare",
 };
+
+/** Location/service layout: split hero, quick quote box, local context. */
+export interface LocationLayout {
+  quoteTitle: string;
+  quoteBody: string;
+  climateTitle: string;
+  climate: string[];
+  neighborhoodsTitle: string;
+  neighborhoods: string[];
+}
 
 export interface LocalIntro {
   eyebrow: string;
@@ -118,6 +160,8 @@ export function ServicePageTemplate({
   defaultServiceSlug,
   callCardTitle,
   callCardBody,
+  locationLayout = null,
+  localLinks = [],
 }: {
   service: ServiceRecord;
   detail: ServiceDetail;
@@ -143,6 +187,9 @@ export function ServicePageTemplate({
   defaultServiceSlug?: string;
   callCardTitle: string;
   callCardBody: string;
+  locationLayout?: LocationLayout | null;
+  /** Lancaster SC location pages for this service, linked from the related section. */
+  localLinks?: { href: string; label: string }[];
 }) {
   const heroService = heroImage
     ? { ...service, image: heroImage.src, imageAlt: heroImage.alt }
@@ -150,27 +197,49 @@ export function ServicePageTemplate({
 
   const navItems = [
     ...service.sectionOrder.map((id) => ({ id, label: MAIN_NAV_LABELS[id] })),
-    { id: "quote-form", label: "Get a quote" },
+    { id: "quote-form", label: "Request Concrete Service" },
     { id: "faq", label: "FAQ" },
   ];
 
   return (
     <>
-      <ServiceHero
-        breadcrumbs={breadcrumbs}
-        service={heroService}
-        cityLabel={cityLabel}
-        h1={h1}
-        summary={summary}
-      />
+      {locationLayout ? (
+        <LocationHero
+          breadcrumbs={breadcrumbs}
+          eyebrow={cityLabel}
+          h1={h1}
+          summary={summary}
+          image={heroService.image}
+          imageAlt={heroService.imageAlt}
+          quoteTitle={locationLayout.quoteTitle}
+          quoteBody={locationLayout.quoteBody}
+        />
+      ) : (
+        <ServiceHero
+          breadcrumbs={breadcrumbs}
+          service={heroService}
+          cityLabel={cityLabel}
+          h1={h1}
+          summary={summary}
+        />
+      )}
       <KeyFacts facts={keyFacts} />
-      <ReferralDisclosureStrip />
       <InPageNav items={navItems} />
 
       <div className="container-page">
-        <div className="grid gap-6 lg:grid-cols-12 lg:gap-12">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-12">
           {/* ---------------------------------------------------- Main column */}
           <div className="min-w-0 lg:col-span-7 xl:col-span-8">
+            {locationLayout ? (
+              <LocalContext
+                cityLabel={cityLabel}
+                climateTitle={locationLayout.climateTitle}
+                climate={locationLayout.climate}
+                neighborhoodsTitle={locationLayout.neighborhoodsTitle}
+                neighborhoods={locationLayout.neighborhoods}
+              />
+            ) : null}
+
             {localIntro ? (
               <section className="scroll-mt-36 py-12 md:py-20">
                 <p className="eyebrow flex">{localIntro.eyebrow}</p>
@@ -216,6 +285,26 @@ export function ServicePageTemplate({
                         outOfScope={service.outOfScope}
                       />
                     </div>
+                    <div className="mt-10">
+                      <h3 className="h3">What we include</h3>
+                      <ol className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                        {service.workIncluded.map((step, index) => (
+                          <li
+                            key={step}
+                            className="flex items-start gap-3 text-[15px] leading-relaxed"
+                          >
+                            <span
+                              className="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[13px] font-semibold text-white"
+                              style={{ backgroundColor: "var(--color-accent)" }}
+                              aria-hidden="true"
+                            >
+                              {index + 1}
+                            </span>
+                            <span>{step}</span>
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
                   </section>
                 );
               }
@@ -230,6 +319,29 @@ export function ServicePageTemplate({
                     </p>
                     <div className="mt-8">
                       <OptionsList options={service.options} />
+                    </div>
+                    <div className="mt-10">
+                      <h3 className="h3">
+                        Typical specifications to confirm with your contractor
+                      </h3>
+                      <p className="mt-2 max-w-prose text-[15px] leading-relaxed text-[color:var(--color-muted)]">
+                        Final mix, reinforcement, and joint layout are set for
+                        each job during the site visit.
+                      </p>
+                      <ul className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                        {service.tradeSpecs.map((spec) => (
+                          <li
+                            key={spec}
+                            className="card flex items-start gap-3 p-5 text-[15px] leading-relaxed text-[color:var(--color-ink)]"
+                          >
+                            <Icon
+                              name="check"
+                              className="mt-0.5 h-5 w-5 shrink-0 text-[color:var(--color-accent)]"
+                            />
+                            <span>{spec}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </section>
                 );
@@ -293,7 +405,7 @@ export function ServicePageTemplate({
               a stray line between two rules instead of an intentional element.
             */}
             <section
-              aria-label="Routing checks"
+              aria-label="Scheduling checks"
               className="scroll-mt-36 border-t py-10"
               style={{ borderColor: "var(--color-line-soft)" }}
             >
@@ -305,14 +417,13 @@ export function ServicePageTemplate({
                   <Icon name="shield" className="h-[18px] w-[18px]" />
                 </span>
                 <p className="text-[14.5px] leading-relaxed text-[color:var(--color-muted)]">
-                  Before anything is sent we check written coverage, project
-                  type, an active referral agreement and current capacity.{" "}
+                  Before a request moves forward, we check the service area, the project type, and contractor availability.{" "}
                   <Link
                     href="/how-it-works"
                     className="font-semibold underline underline-offset-4"
                     style={{ color: "var(--color-accent)" }}
                   >
-                    How a request is checked and routed
+                    How your request is reviewed and scheduled
                   </Link>
                   .
                 </p>
@@ -358,7 +469,7 @@ export function ServicePageTemplate({
         <Section
           backgroundImage={SERVICE_DETAIL_IMAGES[service.slug]}
           eyebrow="Include"
-          title={`What a ${service.projectNoun} project may include`}
+          title={`What ${/^[aeiou]/i.test(service.projectNoun) ? "an" : "a"} ${service.projectNoun} project may include`}
         >
           <MayInclude
             items={detail.mayInclude}
@@ -383,6 +494,22 @@ export function ServicePageTemplate({
           currentSlug={service.slug}
           basePath={relatedBasePath}
         />
+        {localLinks.length > 0 ? (
+          <div className="mt-8 border-t pt-6 text-[15px] leading-relaxed" style={{ borderColor: "var(--color-line-soft)" }}>
+            <p className="text-[color:var(--color-muted)]">
+              Local pages for Lancaster, SC cover climate, soil, and nearby towns for this service.
+            </p>
+            <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
+              {localLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="font-semibold underline underline-offset-4" style={{ color: "var(--color-accent)" }}>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
       </Section>
 
       <ServiceCtaBand title={ctaTitle} body={ctaBody} />

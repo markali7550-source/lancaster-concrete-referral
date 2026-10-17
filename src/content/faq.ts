@@ -1,14 +1,12 @@
 /**
  * Content for the dedicated /faq page.
  *
- * Every answer is plain text and stays under 80 words, so the same strings
- * feed both the visible accordion and the FAQPage JSON-LD schema with no
- * drift between them. `links` mark exact substrings of `answer` that render
- * as internal links; the schema keeps the unlinked sentence, which is why
- * parity holds. Only published routes appear here.
+ * Answers are plain text. `links` marks exact substrings of an answer to
+ * render as internal links. The FAQPage schema uses the plain answer, so the
+ * visible page and the structured data match word for word.
  */
 export interface FaqLink {
-  /** Exact substring of the answer to linkify. */
+  /** Exact substring of the answer to link. */
   text: string;
   href: string;
 }
@@ -23,205 +21,183 @@ export interface FaqCategory {
   id: string;
   name: string;
   faqs: FaqItem[];
-  /** Closing link under the accordion. Present on every category. */
-  more: { text: string; href: string };
 }
 
 export const faqCategories: readonly FaqCategory[] = [
   {
-    id: "general",
-    name: "General questions",
-    more: { text: "Read our referral disclosure", href: "/referral-disclosure" },
-    faqs: [
+    "id": "driveways-aprons",
+    "name": "Driveways & Aprons",
+    "faqs": [
       {
-        question: "Do you pour concrete or employ contractors?",
-        answer:
-          "Neither. We are a referral service: we collect your project details, check them against participating providers with written coverage for your area, and route the request to one independent contractor. That contractor inspects, quotes, schedules, and performs the work under a contract with you, not with us. See how the referral process works.",
-        links: [{ text: "how the referral process works", href: "/how-it-works" }],
+        "question": "How long should I wait before parking or driving on a newly poured concrete driveway?",
+        "answer": "Foot traffic is typically safe after 24 to 48 hours. Light passenger vehicles should wait at least 7 full days, while heavy trucks or RVs require the full 28 day cure cycle to reach maximum compressive strength (typically 3,500 to 4,000 PSI).",
+        "links": []
       },
       {
-        question: "Why use a referral service instead of calling contractors directly?",
-        answer:
-          "Calling around means repeating your project to every contractor and guessing who actually covers your area. We take your details once, check them against providers with written coverage for your area, and route the request to one eligible contractor. If that contractor does not acknowledge it, the request is reassigned once.",
-        links: [{ text: "route the request", href: "/how-it-works" }],
+        "question": "What is a driveway apron, and how does it differ from the main driveway?",
+        "answer": "The apron is the transitional section connecting your private driveway to the public roadway or curb. Aprons often require reinforced thickness (typically 6 inches) to endure heavy curb transition stress and must comply with local municipality right of way guidelines.",
+        "links": [
+          {
+            "text": "apron",
+            "href": "/services/concrete-aprons"
+          }
+        ]
       },
       {
-        question: "How quickly will a provider contact me?",
-        answer:
-          "The assigned contractor contacts you directly within their contracted response window. We do not set their schedule, so timing varies by provider and workload. If the first contractor does not acknowledge your request, it is reassigned once to another eligible provider.",
-        links: [],
-      },
-    ],
+        "question": "How do control joints prevent surface cracking in South Carolina heat?",
+        "answer": "Concrete naturally expands and contracts with Lancaster's high summer temperatures and moisture shifts. Control joints are strategically cut or grooved (at depths of at least 1/4 the slab thickness) to create planned relief points, ensuring any natural shrinkage cracking occurs cleanly below the surface rather than across the visible face.",
+        "links": []
+      }
+    ]
   },
   {
-    id: "concrete-driveways",
-    name: "Concrete driveways",
-    more: { text: "Read the Concrete Driveways guide", href: "/services/concrete-driveways" },
-    faqs: [
+    "id": "patios-walkways-steps-decorative",
+    "name": "Patios, Walkways, Steps & Decorative",
+    "faqs": [
       {
-        question: "What is involved in a concrete driveway project?",
-        answer:
-          "Most driveway projects are either a first pour over gravel or a full replacement of a failed slab, including demolition and haul away. The contractor measures the site, checks mixer access and drainage, prepares the subbase, sets forms, pours, and cuts control joints. Read what counts as a driveway job for the full scope.",
-        links: [{ text: "what counts as a driveway job", href: "/services/concrete-driveways" }],
+        "question": "What are the key differences between standard poured concrete, stamped concrete, and exposed aggregate?",
+        "answer": "Standard broom finish concrete offers a clean, non slip utility surface. Stamped concrete replicates high end natural stone, slate, or wood planking with custom color hardeners and release agents. Exposed aggregate washes away the top slurry layer to reveal embedded decorative stone aggregates, providing a rustic, highly durable, slip resistant texture ideal for pool decks and walkways.",
+        "links": [
+          {
+            "text": "Stamped concrete",
+            "href": "/services/stamped-concrete"
+          },
+          {
+            "text": "Exposed aggregate",
+            "href": "/services/concrete-exposed-aggregate"
+          },
+          {
+            "text": "walkways",
+            "href": "/services/concrete-walkways"
+          }
+        ]
       },
       {
-        question: "When might a concrete driveway need replacement?",
-        answer:
-          "Replacement usually enters the conversation when cracking spreads across most panels, sections have settled unevenly, or the subbase has failed. Isolated surface cracks on a sound, level slab often do not require it. Only the contractor who inspects the slab can make that call.",
-        links: [],
+        "question": "Can damaged concrete porch steps be replaced independently without rebuilding the whole stoop?",
+        "answer": "Yes. If the underlying structural foundation and porch landing are sound, localized step replacement or recapping can be completed independently. Rebar doweling is drilled into the existing structure to tie the new pour securely to the home.",
+        "links": [
+          {
+            "text": "step replacement",
+            "href": "/services/concrete-steps"
+          }
+        ]
       },
       {
-        question: "How do I get connected with a driveway service provider?",
-        answer:
-          "Submit a request with the length of the drive and whether the old slab has to come out. We check it against participating providers with written coverage for your area and route it to one eligible contractor, who contacts you directly to inspect and quote.",
-        links: [{ text: "Submit a request", href: "/contact" }],
-      },
-    ],
+        "question": "How is proper water runoff managed for outdoor patios and walkways?",
+        "answer": "Every exterior flatwork project requires a minimum positive drainage pitch (typically 1/8 to 1/4 inch per linear foot) sloping away from the home's foundation to prevent standing water and structural moisture intrusion.",
+        "links": []
+      }
+    ]
   },
   {
-    id: "concrete-patios",
-    name: "Concrete patios",
-    more: { text: "Read the Concrete Patios guide", href: "/services/concrete-patios" },
-    faqs: [
+    "id": "slabs-foundations",
+    "name": "Slabs & Foundations",
+    "faqs": [
       {
-        question: "What should I consider before installing a concrete patio?",
-        answer:
-          "Size the footprint around furniture and door swing, note where rainwater runs, and check side access width for equipment. Decide the finish before comparing quotes, since a stamped slab and a broom finish are priced as different projects. Locate irrigation lines in the area too.",
-        links: [],
+        "question": "What is the recommended thickness for residential shed, garage, or hot tub slabs?",
+        "answer": "Standard utility slabs for pedestrian patios or light sheds are poured at 4 inches (reinforced with fiber mesh or welded wire). Slabs intended for detached garages, heavy workshop equipment, or hot tubs are typically poured at 5 to 6 inches with Grade 60 #4 rebar grid reinforcement and thickened edge footings.",
+        "links": [
+          {
+            "text": "utility slabs",
+            "href": "/services/concrete-slabs"
+          },
+          {
+            "text": "patios",
+            "href": "/services/concrete-patios"
+          }
+        ]
       },
       {
-        question: "What options are available for a concrete patio?",
-        answer:
-          "Contractors typically offer broom, smooth trowel, stamped pattern, and integrally colored finishes, plus sealing on decorative work. Stamped and colored work is only routed where a participating provider has documented that capability. Finish, color, and edge detail are priced before the pour.",
-        links: [{ text: "Stamped and colored work", href: "/services/concrete-patios" }],
-      },
-      {
-        question: "How can I request a referral for patio work?",
-        answer:
-          "Send the rough size through our contact page, and say whether the patio ties into an existing porch or stoop. Your request goes to a single participating provider with written coverage for your area, not a panel of bidders. The provider then walks the space with you and quotes directly.",
-        links: [{ text: "contact page", href: "/contact" }],
-      },
-    ],
+        "question": "How do installers account for Lancaster's dense red clay soil during sub base prep?",
+        "answer": "South Carolina red clay expands significantly when wet and shrinks when dry. Proper sub base preparation requires excavating organic topsoil, mechanically compacting the subgrade, and installing a 4 inch layer of crushed stone (such as ABC / crusher run aggregate) to ensure proper load distribution and prevent uneven settling.",
+        "links": []
+      }
+    ]
   },
   {
-    id: "concrete-slabs",
-    name: "Concrete slabs",
-    more: { text: "Read the Concrete Slabs guide", href: "/services/concrete-slabs" },
-    faqs: [
+    "id": "repair-resurfacing-leveling",
+    "name": "Repair, Resurfacing & Leveling",
+    "faqs": [
       {
-        question: "What are concrete slabs commonly used for?",
-        answer:
-          "Residential slabs and pads carry sheds, outbuildings, HVAC units, generators, and parked vehicles or trailers. We route nonstructural work only: house foundations, footings, and engineered structural slabs are declined rather than passed to a finisher.",
-        links: [{ text: "nonstructural work only", href: "/services/concrete-slabs" }],
+        "question": "When is decorative resurfacing preferred over full tear out and replacement?",
+        "answer": "Resurfacing is ideal when concrete has minor surface scaling, cosmetic spalling, or micro cracks but remains structurally level and stable. If the slab has extensive heaving, structural sub base failure, or severe deep seated settlement, full demolition and replacement is required.",
+        "links": [
+          {
+            "text": "Resurfacing",
+            "href": "/services/concrete-resurfacing"
+          }
+        ]
       },
       {
-        question: "What should be considered before a slab project?",
-        answer:
-          "Start with the load: what sits on the pad decides thickness, reinforcement, and base depth. Confirm the exact footprint plus required overhang, check ground fall and access width, and locate buried utilities. Share any supplier base requirements with the contractor.",
-        links: [],
-      },
-      {
-        question: "How can I get connected with a qualified service provider?",
-        answer:
-          "Submit a request saying what the pad has to carry and roughly where it goes. We route it to one provider with written coverage for your area, who confirms the specification on site. We never specify thickness or reinforcement ourselves.",
-        links: [{ text: "Submit a request", href: "/contact" }],
-      },
-    ],
+        "question": "How does concrete leveling work for sunken slabs and trip hazards?",
+        "answer": "Concrete leveling (polyurethane foam injection or traditional stone slurry leveling) involves drilling small penny sized access holes and pumping a high density expanding material underneath the sunken slab to raise it back into alignment with surrounding walkways.",
+        "links": [
+          {
+            "text": "Concrete leveling",
+            "href": "/services/concrete-leveling"
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "concrete-repair",
-    name: "Concrete repair",
-    more: { text: "Read the Concrete Repair guide", href: "/services/concrete-repair" },
-    faqs: [
+    "id": "floor-coatings-sealing",
+    "name": "Floor Coatings & Sealing",
+    "faqs": [
       {
-        question: "What types of concrete problems may need repair?",
-        answer:
-          "We route nonstructural problems on otherwise sound slabs: shrinkage cracks, surface spalling, crazing, worn finishes, and failing joint sealant. Movement, heaving, height differences across cracks, and load failure need a licensed professional assessment instead.",
-        links: [{ text: "nonstructural problems", href: "/services/concrete-repair" }],
+        "question": "What makes professional multi layer garage coatings superior to DIY retail epoxy kits?",
+        "answer": "Commercial systems utilize industrial mechanical diamond grinding to open concrete pores, followed by a high solid moisture mitigating primer, a 100% broadcast vinyl flake layer, and a UV stable polyaspartic clear topcoat. This creates a chemical resistant, hot tire pickup resistant surface that lasts 15+ years compared to water based DIY paints that often peel within 1 to 2 years.",
+        "links": []
       },
       {
-        question: "When should concrete be repaired instead of replaced?",
-        answer:
-          "Repair suits a sound, stable slab with surface damage. Once cracking is widespread, panels have settled relative to each other, or the base has failed, repeated repairs usually cost more over time than replacing the slab once. The contractor confirms which situation applies.",
-        links: [],
-      },
-      {
-        question: "How can I request a referral for concrete repair?",
-        answer:
-          "Describe the damage and where it is, with daylight photos, wide and close up. The assigned provider inspects it on site and diagnoses the cause before anyone talks about price, since the right fix depends on why the concrete failed. Start with a referral request.",
-        links: [{ text: "referral request", href: "/contact" }],
-      },
-    ],
+        "question": "How often should exterior concrete and stamped patios be resealed in South Carolina?",
+        "answer": "High traffic and decorative stamped surfaces should generally be resealed every 2 to 3 years with a breathable, UV resistant solvent based or acrylic penetrating sealer to protect against UV fading, oil staining, and moisture penetration.",
+        "links": [
+          {
+            "text": "penetrating sealer",
+            "href": "/services/concrete-sealing"
+          }
+        ]
+      }
+    ]
   },
   {
-    id: "referral-process",
-    name: "Referral process",
-    more: { text: "How it works in detail", href: "/how-it-works" },
-    faqs: [
+    "id": "quotes-pricing-logistics",
+    "name": "Quotes, Pricing & Project Logistics",
+    "faqs": [
       {
-        question: "What is Lancaster Concrete Referral?",
-        answer:
-          "This website. It is a referral service that connects Lancaster homeowners with independent concrete service providers. We are not a contractor, we employ no crews, and we perform no work. Our only role is taking your request once and routing it to one eligible provider.",
-        links: [{ text: "referral service", href: "/referral-disclosure" }],
+        "question": "How does the free estimate process work?",
+        "answer": "Submit your project scope through our quick online request form or call our team directly. We match your specific project needs (dimensions, service type, location) with an experienced, independent local concrete specialist who will contact you to confirm details, conduct an on site evaluation if necessary, and provide an upfront, transparent quote.",
+        "links": [
+          {
+            "text": "quick online request form",
+            "href": "/contact"
+          }
+        ]
       },
       {
-        question: "How does the referral process work?",
-        answer:
-          "You submit one request with your project details and location. We validate it, check it against participating providers with written coverage for your area, and route it to one eligible contractor. That contractor contacts you directly to inspect, quote, and schedule. If they do not acknowledge it, the request is reassigned once.",
-        links: [{ text: "submit one request", href: "/contact" }],
+        "question": "Who handles local building permits for residential concrete flatwork in Lancaster County?",
+        "answer": "While minor flatwork repairs or ground level patio extensions often do not require complex permitting, structural foundations, public right of way driveway aprons, and large detached additions may require municipal approval. Your assigned local service contractor will review your project scope and confirm all necessary Lancaster City or County building permit requirements before pouring.",
+        "links": []
       },
       {
-        question: "Is there a charge to request a referral?",
-        answer:
-          "No. Requesting a referral costs you nothing. You pay only the contractor you choose to hire, under a contract entirely between you and them. We never add fees to your project.",
-        links: [],
+        "question": "Do you serve my area?",
+        "answer": "We proudly serve homeowners and businesses in the City of Lancaster, SC, and nearby communities including Kershaw, Heath Springs, Van Wyck, and Buford, where one of our trusted contractors has approved coverage in writing.",
+        "links": [
+          {
+            "text": "City of Lancaster, SC",
+            "href": "/locations/lancaster-sc"
+          }
+        ]
       },
       {
-        question: "Am I obligated to hire a service provider?",
-        answer:
-          "No. A referral creates no obligation. The contractor inspects your project and quotes it, and you decide whether to hire them. You can decline the quote with nothing owed to us.",
-        links: [],
-      },
-      {
-        question: "Who actually performs the concrete work?",
-        answer:
-          "An independent third party contractor, never us. Excavation, forming, pouring, and finishing are carried out by the provider you engage, and your contract is with them. We do not supervise, inspect, or warrant their work.",
-        links: [],
-      },
-      {
-        question: "How does the service provider contact me?",
-        answer:
-          "Directly, using the phone number or email from your request. We pass your details only to the one assigned provider, never to a panel of bidders, and only after your area clears the coverage check.",
-        links: [],
-      },
-    ],
-  },
-  {
-    id: "service-areas",
-    name: "Service areas",
-    more: { text: "Lancaster, SC coverage", href: "/locations/lancaster-sc" },
-    faqs: [
-      {
-        question: "What areas do you serve?",
-        answer:
-          "Lancaster, South Carolina, including ZIP codes 29720 and 29721. Coverage is checked against providers who have approved each area in writing, which is why the list is short. New areas are added only when a provider approves them.",
-        links: [{ text: "Lancaster, South Carolina", href: "/locations/lancaster-sc" }],
-      },
-      {
-        question: "How do I know whether my location is covered?",
-        answer:
-          "Submit a request with your address, or call and we will confirm in a minute. If your address sits inside an approved ZIP, the request is routed; if not, you get an honest no coverage answer instead of being passed along anyway.",
-        links: [{ text: "Submit a request", href: "/contact" }],
-      },
-      {
-        question: "What happens if my location is outside the current service area?",
-        answer:
-          "Nothing is routed. Out of area requests are declined with an honest no coverage answer rather than passed to a contractor who does not serve the address. The quote form includes a My area is not listed option for exactly this case.",
-        links: [{ text: "quote form", href: "/contact" }],
-      },
-    ],
-  },
-] as const;
+        "question": "Are all contractors licensed and insured?",
+        "answer": "Work is performed by our trusted local concrete contractors, not by us. Each contractor is responsible for its own licensing, bonding, and insurance, and for building to South Carolina codes and industry standards. Ask any contractor for proof before you sign.",
+        "links": []
+      }
+    ]
+  }
+];
 
 /** Plain-text flattening for the FAQPage schema. Same strings, no markup. */
 export const allFaqsPlain: { question: string; answer: string }[] =

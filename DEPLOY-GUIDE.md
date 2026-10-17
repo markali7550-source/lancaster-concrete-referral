@@ -104,12 +104,33 @@ PARTNER_WEBHOOK_SECRET   <long random string>
 LEAD_HASH_SECRET         <long random string>
 ```
 
-Without these the code falls back to `dev-only-*` defaults, which are published
-in the public repository — anyone could forge webhook calls. Generate each with:
+Production behaviour:
+
+- `CALL_WEBHOOK_SECRET` and `PARTNER_WEBHOOK_SECRET`: if either is unset in
+  production, its webhook endpoint throws an explicit error and refuses the
+  request. There is no fallback value. Outside production, a random per-process
+  secret is used, so real provider signatures will not verify locally.
+- `LEAD_HASH_SECRET`: if unset in production, the site still accepts quote
+  requests. It uses a random per-process secret and logs a warning. Duplicate
+  detection then only holds within one running instance, so set this value
+  before launch. No published fallback string is used.
+
+Generate each with:
 
 ```bash
 openssl rand -hex 32
 ```
+
+**Search indexing (off by default):**
+
+```
+ALLOW_SEARCH_INDEXING    true  (set only for the production launch build)
+```
+
+Unless this is exactly `true`, every page sends `X-Robots-Tag: noindex, nofollow`,
+`robots.txt` disallows all crawlers, and the sitemap is empty. Previews and
+staging therefore stay out of search results. The flag is read at build time, so
+redeploy after changing it.
 
 **Optional — kill switches:**
 
@@ -142,7 +163,7 @@ are usually consequences of it.
 
 1. In your Vercel project: **Settings → Domains**
 2. Type your domain, e.g. `yourdomain.com`, click **Add**
-3. Choose the redirect behaviour when prompted. **Recommended:** add
+3. Choose the redirect behavior when prompted. **Recommended:** add
    `yourdomain.com` as primary and let Vercel redirect `www` to it. Pick one and
    redirect the other — serving both as canonical splits your SEO.
 4. Vercel now displays the DNS records you must create. **Leave this tab open.**
@@ -212,7 +233,7 @@ curl -s https://yourdomain.com | grep -o '<link rel="canonical"[^>]*>'
 curl -s https://yourdomain.com/sitemap.xml | head -20
 ```
 
-Every URL must show your real domain. If you see `example-referral-brand.com`,
+Every URL must show your real domain. If you see `lancasterconcreteconnect.com`,
 the redeploy did not pick up the change — confirm the variable is set for the
 **Production** environment specifically, then redeploy again.
 
@@ -233,7 +254,7 @@ the redeploy did not pick up the change — confirm the variable is set for the
 
 ## Still outstanding before this is a real business site
 
-Deployment does not resolve these. From `REMAINING-WORK.md`:
+Deployment does not resolve these. Known open items:
 
 - **Leads are stored in memory.** They are lost on every redeploy and are not
   shared between server instances. Needs Postgres.
