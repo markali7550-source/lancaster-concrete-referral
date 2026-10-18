@@ -56,7 +56,7 @@ export const faqCategories: readonly FaqCategory[] = [
     "faqs": [
       {
         "question": "What are the key differences between standard poured concrete, stamped concrete, and exposed aggregate?",
-        "answer": "Standard broom finish concrete offers a clean, non slip utility surface. Stamped concrete replicates high end natural stone, slate, or wood planking with custom color hardeners and release agents. Exposed aggregate washes away the top slurry layer to reveal embedded decorative stone aggregates, providing a rustic, highly durable, slip resistant texture ideal for pool decks and walkways.",
+        "answer": "Standard broom finish concrete offers a clean, non slip utility surface. Stamped concrete replicates high end natural stone, slate, or wood planking with custom color hardeners and release agents. Exposed aggregate washes away the top slurry layer to reveal embedded decorative stone aggregates, providing a rustic, highly durable, slip resistant texture ideal for patios and walkways.",
         "links": [
           {
             "text": "Stamped concrete",
@@ -146,7 +146,7 @@ export const faqCategories: readonly FaqCategory[] = [
     "faqs": [
       {
         "question": "What makes professional multi layer garage coatings superior to DIY retail epoxy kits?",
-        "answer": "Commercial systems utilize industrial mechanical diamond grinding to open concrete pores, followed by a high solid moisture mitigating primer, a 100% broadcast vinyl flake layer, and a UV stable polyaspartic clear topcoat. This creates a chemical resistant, hot tire pickup resistant surface that lasts 15+ years compared to water based DIY paints that often peel within 1 to 2 years.",
+        "answer": "Professional grade systems use industrial mechanical diamond grinding to open concrete pores, followed by a high solid moisture mitigating primer, a 100% broadcast vinyl flake layer, and a UV stable polyaspartic clear topcoat. This creates a chemical resistant, hot tire pickup resistant surface that lasts 15+ years compared to water based DIY paints that often peel within 1 to 2 years.",
         "links": []
       },
       {
@@ -167,7 +167,7 @@ export const faqCategories: readonly FaqCategory[] = [
     "faqs": [
       {
         "question": "How does the free estimate process work?",
-        "answer": "Submit your project scope through our quick online request form or call our team directly. We match your specific project needs (dimensions, service type, location) with an experienced, independent local concrete specialist who will contact you to confirm details, conduct an on site evaluation if necessary, and provide an upfront, transparent quote.",
+        "answer": "Submit your project scope through our quick online request form or call our team directly. We match your specific project needs (dimensions, service type, location) with an experienced, trusted local concrete specialist who will contact you to confirm details, conduct an on site evaluation if necessary, and provide an upfront, transparent quote.",
         "links": [
           {
             "text": "quick online request form",

@@ -32,7 +32,7 @@ const FAQS = [
   {
     question: "What concrete services do you offer in Lancaster?",
     answer:
-      "Our trusted local contractors cover residential concrete work in Lancaster, including driveways, patios, walkways, foundations, slab pouring, concrete repairs, and decorative stamped concrete.",
+      "Our trusted local contractors cover residential concrete work in Lancaster, including driveways, patios, walkways, foundations, slabs, garage coatings, repair, and decorative stamped concrete.",
   },
   {
     question: "Can I combine multiple concrete services into one project?",

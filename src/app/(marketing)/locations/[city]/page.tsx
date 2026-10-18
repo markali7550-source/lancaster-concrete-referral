@@ -291,7 +291,7 @@ export default async function LocationPage({ params }: { params: Params }) {
                   {
                     question: "What if my project is out of scope?",
                     answer:
-                      "Foundation, structural, and retaining wall work is declined rather than handled. We will tell you that instead of passing it to a concrete finisher.",
+                      "Retaining walls and other work outside our concrete services are declined rather than handled. We will tell you that instead of passing it along.",
                   },
                 ]}
               />

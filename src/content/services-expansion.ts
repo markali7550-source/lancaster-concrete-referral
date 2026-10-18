@@ -179,7 +179,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       {
         question: "Is stamped concrete slippery?",
         answer:
-          "Texture and sealer affect slip resistance. A lighter texture and a sealer with an anti slip additive are common choices near pools and steps.",
+          "Texture and sealer affect slip resistance. A lighter texture and a sealer with an anti slip additive are common choices near steps and entries.",
       },
     ],
   },

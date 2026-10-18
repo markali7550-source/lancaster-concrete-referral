@@ -565,7 +565,7 @@ const records: readonly LocationServiceRecord[] = [
       {
         question: "Is stamped concrete slippery?",
         answer:
-          "It can be when wet. Ask about a texture or an anti slip additive for the sealer, especially for steps, pool areas, and shaded patios.",
+          "It can be when wet. Ask about a texture or an anti slip additive for the sealer, especially for steps, entries, and shaded patios.",
       },
       {
         question: "Is the price final before a site visit?",
