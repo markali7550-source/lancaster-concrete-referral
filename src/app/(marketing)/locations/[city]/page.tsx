@@ -86,7 +86,7 @@ export default async function LocationPage({ params }: { params: Params }) {
     {
       question: `Do you have concrete specialists in ${location.city}?`,
       answer:
-        "Yes. We connect you with licensed local contractors in " + location.city + ". Each one carries their own license and insurance, which our team verifies before connecting you.",
+        "Yes. We connect you with licensed local contractors in " + location.city + ". Our team connects you directly with established, licensed local concrete specialists who carry their own trade licensing and insurance.",
     },
     {
       question: `How quickly does a ${location.city} contractor respond?`,

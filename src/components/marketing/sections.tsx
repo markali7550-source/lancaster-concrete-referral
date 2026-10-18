@@ -572,7 +572,7 @@ const SERVICE_AREA_CONTROLS = [
   },
   {
     title: "Licensed and insured specialists",
-    body: "Every contractor we work with is licensed and insured, and our team verifies those credentials before a project is connected.",
+    body: "Our team connects you directly with established, licensed local concrete specialists who carry their own trade licensing and insurance.",
   },
   {
     title: "Matched to your project type",

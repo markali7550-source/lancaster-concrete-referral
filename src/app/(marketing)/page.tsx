@@ -82,7 +82,7 @@ const FAQS = [
   {
     question: "Are the contractors licensed and insured?",
     answer:
-      "Yes. Our trusted local contractors are licensed and insured, and our team verifies their credentials before we connect them with your project. You can also confirm any license through SC LLR.",
+      "Yes. Our team connects you directly with established, licensed local concrete specialists who carry their own trade licensing and insurance. You can also confirm any license through SC LLR.",
   },
   {
     question: "What happens to my details?",

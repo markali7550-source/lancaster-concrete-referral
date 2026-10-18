@@ -52,7 +52,7 @@ const FAQS = [
   {
     question: "Are your contractors licensed and insured in South Carolina?",
     answer:
-      "Yes. Our trusted local contractors are licensed and insured, and our team verifies their credentials before connecting them with your project. You can also confirm any license through SC LLR.",
+      "Yes. Our team connects you directly with established, licensed local concrete specialists who carry their own trade licensing and insurance. You can also confirm any license through SC LLR.",
   },
 ];
 
@@ -95,7 +95,7 @@ export default function ServicesPage() {
           className="mt-4 max-w-2xl text-[17px] leading-relaxed"
           style={{ color: overlayBody }}
         >
-          Explore our complete range of residential and commercial concrete solutions across Lancaster County. Connect directly with trusted, licensed local specialists for a free estimate.
+          Explore our complete range of comprehensive residential concrete solutions across Lancaster County. Connect directly with trusted, licensed local specialists for a free estimate.
         </p>
       </OverlayHeader>
 
