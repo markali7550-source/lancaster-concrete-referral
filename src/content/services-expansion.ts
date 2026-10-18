@@ -1403,7 +1403,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Recoat schedule and care instructions",
     ],
     heroSummary:
-      "Professional-grade, heavy-duty sealers that protect your concrete from moisture, oil stains, and seasonal wear. Speak with our local specialists to protect your investment.",
+      "Professional grade, heavy duty sealers that protect your concrete from moisture, oil stains, and seasonal wear. Speak with our local specialists to protect your investment.",
     sectionOrder: ["scope", "options", "process", "cost", "prepare"],
     headings: {
       scope: "What a sealing job covers",
