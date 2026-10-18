@@ -259,19 +259,13 @@ export function ServicePageTemplate({
               </section>
             ) : null}
 
-            {service.sectionOrder.map((id, index) => {
+            {service.sectionOrder.map((id) => {
               /*
-               * The first master section carries no top rule only when no
-               * local intro precedes it; otherwise every master section is
-               * separated by one.
+               * Same divider and spacing as the location pages' local context
+               * section: a bottom rule in the soft line color, py-12 md:py-16.
                */
-              const first = index === 0 && !localIntro;
-              const cls = first
-                ? "scroll-mt-36 py-12 md:py-20"
-                : "scroll-mt-36 border-t py-12 md:py-20";
-              const style = first
-                ? undefined
-                : { borderColor: "var(--color-line-soft)" };
+              const cls = "scroll-mt-36 border-b py-12 md:py-16";
+              const style = { borderColor: "var(--color-line-soft)" };
 
               if (id === "scope") {
                 return (
@@ -406,7 +400,7 @@ export function ServicePageTemplate({
             */}
             <section
               aria-label="Scheduling checks"
-              className="scroll-mt-36 border-t py-10"
+              className="scroll-mt-36 py-12 md:py-16"
               style={{ borderColor: "var(--color-line-soft)" }}
             >
               <div className="card flex items-start gap-3 p-5">
