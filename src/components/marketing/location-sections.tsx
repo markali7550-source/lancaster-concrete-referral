@@ -113,7 +113,7 @@ export function LocalContext({
           </div>
         </div>
 
-        <div className="local-communities border-t border-[var(--color-line-soft)] pt-6 lg:border-t-0 lg:pt-0">
+        <div className="local-communities border-t border-[var(--color-line-soft)] pt-6 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
           <h3 className="text-[20px] font-semibold leading-snug">
             {neighborhoodsTitle}
           </h3>
