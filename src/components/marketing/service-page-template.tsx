@@ -248,7 +248,7 @@ export function ServicePageTemplate({
                   {localIntro.blocks.map((block) => (
                     <div
                       key={block.heading}
-                      className="border-b border-[var(--color-line-soft)] pb-6 last:border-b-0 last:pb-0 md:border-b-0 md:pb-0"
+                      className="border-b border-[var(--color-line-soft)] pb-6 last:border-b-0 last:pb-0"
                     >
                       <h3 className="text-[22px] font-semibold leading-snug">
                         {block.heading}
