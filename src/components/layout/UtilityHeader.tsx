@@ -8,6 +8,10 @@ import { ServicesMenu } from "@/components/layout/ServicesMenu";
 import { publishedServices } from "@/content/services";
 import { site } from "@/lib/env";
 
+/** Solid, full-width tap target for the mobile menu: white text, solid hover. */
+const MENU_LINK =
+  "flex w-full items-center rounded-lg px-3.5 py-2.5 text-[15px] font-medium text-zinc-100 transition-colors hover:bg-zinc-900 hover:text-white active:bg-zinc-900";
+
 function Wordmark() {
   return (
     <Link href="/" className="flex shrink-0 items-center" aria-label={site.brand}>
@@ -67,61 +71,63 @@ export function UtilityHeader() {
             </RequestFormLink>
           </div>
 
-          {/* Mobile menu — native <details>, closed on navigation by MobileMenu */}
+          {/* Mobile menu: native <details>, closed on navigation by MobileMenu */}
           <MobileMenu>
             <summary
-              className="btn btn-secondary list-none cursor-pointer px-3"
+              className="btn btn-secondary shrink-0 cursor-pointer list-none px-3 [&::-webkit-details-marker]:hidden [&::marker]:hidden"
               aria-label="Open menu"
             >
               <Icon name="menu" />
             </summary>
             <div
-              className="card absolute right-0 top-14 max-h-[calc(100svh-4.5rem)] w-[17rem] overflow-y-auto overscroll-contain p-3"
-              style={{ boxShadow: "var(--shadow-raised)" }}
+              className="absolute right-0 top-full z-50 mt-2 max-h-[calc(100svh-6rem)] w-[min(20rem,calc(100vw-2rem))] overflow-y-auto overscroll-contain rounded-2xl border border-zinc-800 bg-zinc-950 p-3 shadow-2xl shadow-black sm:p-4"
+              style={{ backgroundColor: "#09090b", opacity: 1 }}
             >
-              <p className="eyebrow-plain px-3 pb-1 pt-2">Services</p>
-              {publishedServices.map((service) => (
-                <Link
-                  key={service.slug}
-                  href={`/services/${service.slug}`}
-                  className="block rounded-[10px] px-3 py-2.5 text-[15px]"
-                >
-                  {service.name}
+              <p className="px-3.5 pb-1 pt-2 text-[12px] font-semibold uppercase tracking-[0.12em] text-zinc-400">
+                Services
+              </p>
+              <div className="ml-1 mt-1 border-l-2 border-zinc-800 pl-2">
+                {publishedServices.map((service) => (
+                  <Link
+                    key={service.slug}
+                    href={`/services/${service.slug}`}
+                    className={MENU_LINK}
+                  >
+                    {service.name}
+                  </Link>
+                ))}
+                <Link href="/services" className={`${MENU_LINK} font-semibold`}>
+                  All services →
                 </Link>
-              ))}
-              <Link
-                href="/services"
-                className="block rounded-[10px] px-3 py-2.5 text-[15px] font-semibold"
-                style={{ color: "var(--color-accent)" }}
-              >
-                All services →
-              </Link>
-              <p className="eyebrow-plain px-3 pb-1 pt-3">Company</p>
-              <Link href="/locations" className="block rounded-[10px] px-3 py-2.5 text-[15px]">
+              </div>
+              <p className="px-3.5 pb-1 pt-4 text-[12px] font-semibold uppercase tracking-[0.12em] text-zinc-400">
+                Company
+              </p>
+              <Link href="/locations" className={MENU_LINK}>
                 Service areas
               </Link>
-              <Link
-                href="/locations/lancaster-sc"
-                className="block rounded-[10px] px-3 py-2.5 text-[15px]"
-              >
+              <Link href="/locations/lancaster-sc" className={MENU_LINK}>
                 Lancaster, SC
               </Link>
-              <Link href="/how-it-works" className="block rounded-[10px] px-3 py-2.5 text-[15px]">
+              <Link href="/how-it-works" className={MENU_LINK}>
                 How it works
               </Link>
-              <Link href="/faq/" className="block rounded-[10px] px-3 py-2.5 text-[15px]">
+              <Link href="/faq/" className={MENU_LINK}>
                 FAQ
               </Link>
-              <Link href="/contact" className="block rounded-[10px] px-3 py-2.5 text-[15px]">
+              <Link href="/contact" className={MENU_LINK}>
                 Contact
               </Link>
-              <div className="mt-2 grid grid-cols-1 gap-2 border-t p-2 hairline">
+              <div className="mt-2 grid grid-cols-1 gap-2 border-t border-zinc-800 pt-3">
                 <DynamicPhone
                   fallbackDisplay={site.phoneDisplay}
                   fallbackE164={site.phoneE164}
                   placement="mobile_menu"
                   className="btn btn-primary w-full"
                 />
+                <RequestFormLink className="btn btn-secondary w-full">
+                  Request Service
+                </RequestFormLink>
               </div>
             </div>
           </MobileMenu>
