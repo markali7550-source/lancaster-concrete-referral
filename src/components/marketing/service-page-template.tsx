@@ -246,7 +246,10 @@ export function ServicePageTemplate({
                 <h2 className="h2 mt-4">{localIntro.title}</h2>
                 <div className="mt-8 max-w-prose space-y-6">
                   {localIntro.blocks.map((block) => (
-                    <div key={block.heading}>
+                    <div
+                      key={block.heading}
+                      className="border-b border-[var(--color-line-soft)] pb-6 last:border-b-0 last:pb-0 md:border-b-0 md:pb-0"
+                    >
                       <h3 className="text-[22px] font-semibold leading-snug">
                         {block.heading}
                       </h3>
