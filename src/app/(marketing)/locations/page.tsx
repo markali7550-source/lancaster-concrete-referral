@@ -71,7 +71,7 @@ export default function LocationsPage() {
         title="Where we currently take quote requests"
         lead="Every area below is served by a licensed local contractor our team has reviewed."
       >
-        <div className="grid grid-cols-1 overflow-hidden rounded-xl border border-solid border-zinc-700 divide-y divide-solid divide-zinc-700 md:grid-cols-2 md:divide-x md:divide-y-0">
+        <div className="grid grid-cols-1 overflow-hidden rounded-xl border border-solid border-[var(--color-line)] divide-y divide-solid divide-[var(--color-line)] md:grid-cols-2 md:divide-x md:divide-y-0">
           <div className="px-5 py-6 md:px-6 md:py-8 md:first:pl-6 md:last:pr-6">
             <h3 className="text-[22px] font-semibold leading-snug">
               How an area gets added

@@ -151,7 +151,7 @@ export default async function LocationPage({ params }: { params: Params }) {
         lead="Requests are matched to contractors who have approved coverage for your address, so confirm your address when you request a quote."
       >
         <ul
-          className="grid grid-cols-1 overflow-hidden rounded-xl border border-solid border-zinc-700 divide-y divide-solid divide-zinc-700 md:grid-cols-3 md:divide-x md:divide-y-0"
+          className="grid grid-cols-1 overflow-hidden rounded-xl border border-solid border-[var(--color-line)] divide-y divide-solid divide-[var(--color-line)] md:grid-cols-3 md:divide-x md:divide-y-0"
           style={{ backgroundColor: "var(--color-surface)" }}
         >
           <li className="flex h-full flex-col px-5 py-6 md:px-6 md:py-8 md:first:pl-6 md:last:pr-6">
