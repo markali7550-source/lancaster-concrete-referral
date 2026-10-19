@@ -105,7 +105,7 @@ export function LocalContext({
             {climate.map((paragraph) => (
               <p
                 key={paragraph.slice(0, 40)}
-                className="text-[16px] leading-relaxed text-[color:var(--color-muted)]"
+                className="border-b border-[var(--color-line-soft)] pb-4 text-[16px] leading-relaxed text-[color:var(--color-muted)] last:border-b-0 last:pb-0"
               >
                 {paragraph}
               </p>
@@ -113,7 +113,7 @@ export function LocalContext({
           </div>
         </div>
 
-        <div className="local-communities">
+        <div className="local-communities border-t border-[var(--color-line-soft)] pt-6">
           <h3 className="text-[20px] font-semibold leading-snug">
             {neighborhoodsTitle}
           </h3>
