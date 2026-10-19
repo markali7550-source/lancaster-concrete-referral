@@ -8,9 +8,9 @@ import { ServicesMenu } from "@/components/layout/ServicesMenu";
 import { publishedServices } from "@/content/services";
 import { site } from "@/lib/env";
 
-/** Full-width tap target for the mobile menu, using the site's own text and hover tokens. */
+/** Full-width tap target for the mobile menu: bright text, solid hover highlight. */
 const MENU_LINK =
-  "flex w-full items-center rounded-lg px-3.5 py-2.5 text-[15px] font-medium text-[color:var(--color-ink)] transition-colors hover:bg-[color:var(--color-accent-soft)] hover:text-[color:var(--color-accent)] active:bg-[color:var(--color-accent-soft)]";
+  "flex w-full items-center rounded-lg px-3.5 py-2.5 text-[15px] font-medium text-zinc-100 transition-colors hover:bg-[#161c24] hover:text-emerald-400 active:bg-[#161c24]";
 
 function Wordmark() {
   return (
@@ -80,23 +80,13 @@ export function UtilityHeader() {
               <Icon name="menu" />
             </summary>
             <div
-              className="absolute right-0 top-full z-50 mt-2 max-h-[calc(100svh-6rem)] w-[min(20rem,calc(100vw-2rem))] overflow-y-auto overscroll-contain rounded-2xl border p-3 sm:p-4"
-              style={{
-                backgroundColor: "var(--color-surface)",
-                borderColor: "var(--color-line-soft)",
-                boxShadow: "var(--shadow-raised)",
-              }}
+              className="absolute z-50 right-0 top-full mt-2 max-h-[calc(100svh-6rem)] w-[min(20rem,calc(100vw-2rem))] overflow-y-auto overscroll-contain rounded-2xl border border-[#1f2937] bg-[#141b24] p-3 shadow-2xl shadow-black sm:p-4"
+              style={{ backgroundColor: "#141b24" }}
             >
-              <p
-                className="px-3.5 pb-1 pt-2 text-[12px] font-semibold uppercase tracking-[0.12em]"
-                style={{ color: "var(--color-subtle)" }}
-              >
+              <p className="px-3.5 pb-1 pt-2 text-[12px] font-semibold uppercase tracking-[0.12em] text-zinc-400">
                 Services
               </p>
-              <div
-                className="ml-1 mt-1 border-l-2 pl-2"
-                style={{ borderColor: "var(--color-line)" }}
-              >
+              <div className="ml-1 mt-1 border-l-2 border-[#1f2937] pl-2">
                 {publishedServices.map((service) => (
                   <Link
                     key={service.slug}
@@ -106,18 +96,11 @@ export function UtilityHeader() {
                     {service.name}
                   </Link>
                 ))}
-                <Link
-                  href="/services"
-                  className={`${MENU_LINK} font-semibold`}
-                  style={{ color: "var(--color-accent)" }}
-                >
+                <Link href="/services" className={`${MENU_LINK} font-semibold text-emerald-400`}>
                   All services →
                 </Link>
               </div>
-              <p
-                className="px-3.5 pb-1 pt-4 text-[12px] font-semibold uppercase tracking-[0.12em]"
-                style={{ color: "var(--color-subtle)" }}
-              >
+              <p className="px-3.5 pb-1 pt-4 text-[12px] font-semibold uppercase tracking-[0.12em] text-zinc-400">
                 Company
               </p>
               <Link href="/locations" className={MENU_LINK}>
@@ -135,10 +118,7 @@ export function UtilityHeader() {
               <Link href="/contact" className={MENU_LINK}>
                 Contact
               </Link>
-              <div
-                className="mt-2 grid grid-cols-1 gap-2 border-t pt-3"
-                style={{ borderColor: "var(--color-line-soft)" }}
-              >
+              <div className="mt-2 grid grid-cols-1 gap-2 border-t border-[#1f2937] pt-3">
                 <DynamicPhone
                   fallbackDisplay={site.phoneDisplay}
                   fallbackE164={site.phoneE164}
