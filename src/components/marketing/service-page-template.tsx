@@ -241,7 +241,7 @@ export function ServicePageTemplate({
             ) : null}
 
             {localIntro ? (
-              <section className="scroll-mt-36 py-12 md:py-20">
+              <section className="scroll-mt-36 border-b border-[var(--color-line-soft)] py-12 md:py-20">
                 <p className="eyebrow flex">{localIntro.eyebrow}</p>
                 <h2 className="h2 mt-4">{localIntro.title}</h2>
                 <div className="mt-8 max-w-prose space-y-6">
