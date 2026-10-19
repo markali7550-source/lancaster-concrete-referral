@@ -70,7 +70,7 @@ export function ServiceDisclosureBlock() {
       }}
     >
       <div className="container-page py-6 [text-align:left] text-[13.5px] leading-relaxed">
-        <div className="mx-auto flex max-w-3xl items-start gap-3.5 p-4 sm:gap-4 sm:p-5">
+        <div className="flex max-w-3xl items-start gap-3.5 py-4 sm:gap-4 sm:py-5">
           <span className="mt-0.5 flex-shrink-0" style={{ color: "var(--color-accent)" }}>
             <Icon name="shield" className="h-[18px] w-[18px]" />
           </span>
