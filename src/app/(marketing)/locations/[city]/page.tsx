@@ -144,38 +144,40 @@ export default async function LocationPage({ params }: { params: Params }) {
         ]}
       />
 
-      <Section
-        compact
-        eyebrow="Service area"
-        title={`${location.city} service area overview`}
-        lead="Requests are matched to contractors who have approved coverage for your address, so confirm your address when you request a quote."
-      >
-        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <li className="card flex h-full flex-col p-5">
-            <h3 className="font-semibold">Communities</h3>
-            <p className="mt-1.5 text-sm leading-relaxed text-[color:var(--color-muted)]">
-              The City of Lancaster and nearby Lancaster County communities,
-              including Kershaw, Heath Springs, Van Wyck, and Buford.
-            </p>
-          </li>
-          <li className="card flex h-full flex-col p-5">
-            <h3 className="font-semibold">Landmarks</h3>
-            <p className="mt-1.5 text-sm leading-relaxed text-[color:var(--color-muted)]">
-              Familiar reference points across the county include the Catawba
-              River, Forty Acre Rock Heritage Preserve, and Andrew Jackson State
-              Park.
-            </p>
-          </li>
-          <li className="card flex h-full flex-col p-5">
-            <h3 className="font-semibold">Soil and weather</h3>
-            <p className="mt-1.5 text-sm leading-relaxed text-[color:var(--color-muted)]">
-              Red clay holds water and moves through wet and dry seasons, and
-              summers are hot and humid. Both shape pour timing and drainage
-              planning.
-            </p>
-          </li>
-        </ul>
-      </Section>
+      <div className="border-b" style={{ borderColor: "var(--color-line-soft)" }}>
+        <Section
+          compact
+          eyebrow="Service area"
+          title={`${location.city} service area overview`}
+          lead="Requests are matched to contractors who have approved coverage for your address, so confirm your address when you request a quote."
+        >
+          <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <li className="card flex h-full flex-col p-5">
+              <h3 className="font-semibold">Communities</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-[color:var(--color-muted)]">
+                The City of Lancaster and nearby Lancaster County communities,
+                including Kershaw, Heath Springs, Van Wyck, and Buford.
+              </p>
+            </li>
+            <li className="card flex h-full flex-col p-5">
+              <h3 className="font-semibold">Landmarks</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-[color:var(--color-muted)]">
+                Familiar reference points across the county include the Catawba
+                River, Forty Acre Rock Heritage Preserve, and Andrew Jackson State
+                Park.
+              </p>
+            </li>
+            <li className="card flex h-full flex-col p-5">
+              <h3 className="font-semibold">Soil and weather</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-[color:var(--color-muted)]">
+                Red clay holds water and moves through wet and dry seasons, and
+                summers are hot and humid. Both shape pour timing and drainage
+                planning.
+              </p>
+            </li>
+          </ul>
+        </Section>
+      </div>
 
       <SectionDivider />
 
