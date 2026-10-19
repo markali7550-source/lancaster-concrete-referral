@@ -289,6 +289,7 @@ export function ServicePageTemplate({
                           <li
                             key={step}
                             className="flex items-start gap-3 text-[15px] leading-relaxed"
+                            style={{ textAlign: "left" }}
                           >
                             <span
                               className="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[13px] font-semibold text-white"
@@ -297,7 +298,7 @@ export function ServicePageTemplate({
                             >
                               {index + 1}
                             </span>
-                            <span>{step}</span>
+                            <span style={{ textAlign: "left" }}>{step}</span>
                           </li>
                         ))}
                       </ol>
