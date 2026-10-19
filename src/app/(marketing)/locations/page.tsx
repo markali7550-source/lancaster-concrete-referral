@@ -121,7 +121,7 @@ export default function LocationsPage() {
                   sizes="(min-width: 640px) 300px, 100vw"
                   className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105 sm:h-full"
                 />
-                <div className="flex flex-1 flex-col justify-center p-6 sm:p-7">
+                <div className="flex flex-1 flex-col justify-center p-6 text-center sm:p-7 sm:text-left">
                   <h3 className="text-[17px] font-semibold">
                     Concrete quotes in {location.city}, {location.region}
                   </h3>
@@ -130,7 +130,7 @@ export default function LocationsPage() {
                     contractors covering {location.city}.
                   </p>
                   <span
-                    className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold"
+                    className="mx-auto mt-5 inline-flex items-center justify-center gap-1.5 text-[14px] font-semibold sm:mx-0 sm:justify-start"
                     style={{ color: "var(--color-accent)" }}
                   >
                     View {location.city} services
