@@ -180,7 +180,7 @@ export default function ServicesPage() {
 
       <SectionDivider />
 
-      <Section compact eyebrow="FAQ" title="About these services">
+      <Section compact eyebrow="FAQ" title="About these services" leftOnMobile>
         <FaqSection faqs={FAQS} name="services-faq" />
       </Section>
 

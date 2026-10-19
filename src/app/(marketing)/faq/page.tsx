@@ -113,7 +113,7 @@ export default function FaqPage() {
       <Section tone="soft">
         <div className="mx-auto w-full max-w-3xl space-y-12">
           {faqCategories.map((category) => (
-            <section key={category.id} aria-labelledby={`faq-${category.id}`}>
+            <section key={category.id} aria-labelledby={`faq-${category.id}`} className="faq-left">
               <h2 id={`faq-${category.id}`} className="h3">
                 {category.name}
               </h2>

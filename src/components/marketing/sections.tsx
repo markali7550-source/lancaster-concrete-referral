@@ -125,6 +125,7 @@ export function Section({
   compact = false,
   backgroundImage,
   seamlessEdges = false,
+  leftOnMobile = false,
 }: {
   id?: string;
   eyebrow?: string;
@@ -143,6 +144,8 @@ export function Section({
    * horizontal edge. Only meaningful alongside `backgroundImage`.
    */
   seamlessEdges?: boolean;
+  /** Keeps the heading block left-aligned on mobile (used for FAQ sections). */
+  leftOnMobile?: boolean;
 }) {
   const background =
     tone === "soft"
@@ -198,7 +201,9 @@ export function Section({
             className={
               align === "center"
                 ? "mx-auto max-w-2xl text-center"
-                : "text-left"
+                : leftOnMobile
+                  ? "faq-left text-left"
+                  : "text-left"
             }
           >
             {eyebrow ? (
@@ -707,12 +712,12 @@ export function DecisionSupport({
 }) {
   return (
     <div
-      className="divide-y overflow-hidden rounded-[var(--radius-card)] border"
+      className="faq-left divide-y overflow-hidden rounded-[var(--radius-card)] border"
       style={{ borderColor: "var(--color-line-soft)", backgroundColor: "var(--color-surface)" }}
     >
       {items.map((item) => (
         <details key={item.question} name={name} className="group">
-          <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-medium md:px-6">
+          <summary className="disclosure-row flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 text-left font-medium md:px-6">
             <span className="flex-1 text-left">{item.question}</span>
             <span
               className="grid h-8 w-8 shrink-0 place-items-center rounded-[10px] transition-colors"

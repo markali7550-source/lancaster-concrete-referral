@@ -910,13 +910,25 @@ html.menu-open {
     text-align: center;
   }
 
-  main#main .text-left:not(details *) {
+  main#main .text-left:not(details *):not(.faq-left):not(.faq-left *) {
     text-align: center !important;
   }
 
   main#main details,
   main#main details * {
     text-align: left !important;
+  }
+
+  /* FAQ accordions built from buttons and divs (not <details>), their
+     category headings, and FAQ section intros stay left-aligned on mobile.
+     Marked with the faq-left class. */
+  main#main .faq-left,
+  main#main .faq-left * {
+    text-align: left !important;
+  }
+
+  main#main .faq-left .eyebrow {
+    justify-content: flex-start;
   }
 
   footer .text-left {

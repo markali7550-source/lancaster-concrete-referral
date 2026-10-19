@@ -19,7 +19,7 @@ export function FaqAccordion({ faqs }: { faqs: readonly FaqAccordionItem[] }) {
   const baseId = useId();
 
   return (
-    <div className="grid grid-cols-1 gap-2">
+    <div className="faq-left grid grid-cols-1 gap-2">
       {faqs.map((faq, index) => {
         const isOpen = openIndex === index;
         const buttonId = `${baseId}-question-${index}`;
@@ -36,7 +36,7 @@ export function FaqAccordion({ faqs }: { faqs: readonly FaqAccordionItem[] }) {
                 onClick={() => setOpenIndex(isOpen ? null : index)}
                 className="disclosure-row flex min-h-[48px] w-full cursor-pointer items-center justify-between gap-4 px-5 py-3 text-left font-semibold [text-wrap:wrap] md:px-6"
               >
-                <span className="flex-1 text-[16px]">{faq.question}</span>
+                <span className="flex-1 text-left text-[16px]">{faq.question}</span>
                 <span
                   className="grid h-8 w-8 shrink-0 place-items-center rounded-[10px]"
                   style={{

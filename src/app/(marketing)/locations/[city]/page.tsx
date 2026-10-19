@@ -300,7 +300,7 @@ export default async function LocationPage({ params }: { params: Params }) {
         </div>
       </Section>
 
-      <Section compact eyebrow="FAQ" title={`${location.city} questions`}>
+      <Section compact eyebrow="FAQ" title={`${location.city} questions`} leftOnMobile>
         <FaqSection faqs={faqs} name="city-faq" />
       </Section>
 
