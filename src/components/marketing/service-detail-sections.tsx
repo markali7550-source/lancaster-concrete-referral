@@ -69,8 +69,8 @@ export function ServiceDisclosureBlock() {
         backgroundColor: "var(--color-surface)",
       }}
     >
-      <div className="container-page flex flex-col items-center gap-3 py-6 text-center text-[13.5px] leading-relaxed sm:flex-row sm:items-center sm:justify-between sm:gap-2 sm:py-3.5 sm:text-left">
-        <p className="flex flex-col items-center gap-3 sm:flex-row sm:items-start sm:gap-2.5">
+      <div className="container-page flex flex-col items-center gap-3 py-6 text-center text-[13.5px] leading-relaxed">
+        <p className="mx-auto flex max-w-2xl flex-col items-center gap-3">
           <span style={{ color: "var(--color-accent)" }}>
             <Icon name="shield" className="mt-px h-[18px] w-[18px]" />
           </span>
