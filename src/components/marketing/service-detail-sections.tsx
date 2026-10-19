@@ -69,20 +69,22 @@ export function ServiceDisclosureBlock() {
         backgroundColor: "var(--color-surface)",
       }}
     >
-      <div className="container-page flex flex-col items-center gap-3 py-6 text-center text-[13.5px] leading-relaxed">
-        <p className="mx-auto flex max-w-2xl flex-col items-center gap-3">
-          <span style={{ color: "var(--color-accent)" }}>
-            <Icon name="shield" className="mt-px h-[18px] w-[18px]" />
+      <div className="container-page py-6 [text-align:left] text-[13.5px] leading-relaxed">
+        <div className="mx-auto flex max-w-3xl items-start gap-3.5 p-4 sm:gap-4 sm:p-5">
+          <span className="mt-0.5 flex-shrink-0" style={{ color: "var(--color-accent)" }}>
+            <Icon name="shield" className="h-[18px] w-[18px]" />
           </span>
-          <span>{SERVICE_PAGE_DISCLOSURE}</span>
-        </p>
-        <Link
-          href="/service-disclosure"
-          className="shrink-0 self-center font-semibold underline underline-offset-4 sm:self-auto"
-          style={{ color: "var(--color-accent)" }}
-        >
-          Full disclosure
-        </Link>
+          <div className="min-w-0">
+            <p className="[text-align:left]">{SERVICE_PAGE_DISCLOSURE}</p>
+            <Link
+              href="/service-disclosure"
+              className="mt-2 block font-semibold underline underline-offset-4 sm:inline-block"
+              style={{ color: "var(--color-accent)" }}
+            >
+              Full disclosure
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );
