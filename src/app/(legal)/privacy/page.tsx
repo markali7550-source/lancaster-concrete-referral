@@ -21,6 +21,7 @@ export default function PrivacyPage() {
         <li>Call events where phone tracking is active: time, duration, and call result.</li>
       </ul>
 
+      <hr className="my-8 border-t border-[var(--color-line-soft)] md:my-12" />
       <h2>Why we collect it</h2>
       <p>
         Customer project information is collected strictly to coordinate your
@@ -28,6 +29,7 @@ export default function PrivacyPage() {
         It is never sold to unrelated third-party marketers.
       </p>
 
+      <hr className="my-8 border-t border-[var(--color-line-soft)] md:my-12" />
       <h2>Why we share it</h2>
       <p>
         Your request is shared with the licensed local contractor assigned to
@@ -37,6 +39,7 @@ export default function PrivacyPage() {
         share them with unrelated third parties for their marketing.
       </p>
 
+      <hr className="my-8 border-t border-[var(--color-line-soft)] md:my-12" />
       <h2>Consent</h2>
       <p>
         Service consent is required so a contractor may contact you about the
@@ -46,6 +49,7 @@ export default function PrivacyPage() {
         <a href={`mailto:${site.email}`}>{site.email}</a>.
       </p>
 
+      <hr className="my-8 border-t border-[var(--color-line-soft)] md:my-12" />
       <h2>Security</h2>
       <ul>
         <li>Contact values are stored with access controls and hashed for duplicate detection.</li>
@@ -53,6 +57,7 @@ export default function PrivacyPage() {
         <li>Integration tokens and secrets remain server side only.</li>
       </ul>
 
+      <hr className="my-8 border-t border-[var(--color-line-soft)] md:my-12" />
       <h2>Retention</h2>
       <p>
         Retention is set by data class: lead and consent records, attribution
@@ -60,6 +65,7 @@ export default function PrivacyPage() {
         schedule is subject to legal and accounting review.
       </p>
 
+      <hr className="my-8 border-t border-[var(--color-line-soft)] md:my-12" />
       <h2>Call recording</h2>
       <p>
         Call details may be recorded or logged solely for quality, customer

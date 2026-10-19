@@ -23,6 +23,7 @@ export default function TermsPage() {
         into with a contractor.
       </p>
 
+      <hr className="my-8 border-t border-[var(--color-line-soft)] md:my-12" />
       <h2>Contracts for concrete work</h2>
       <p>
         The contractual agreement for concrete work is made directly between you
@@ -32,6 +33,7 @@ export default function TermsPage() {
         work, remain between you and the licensed local contractor.
       </p>
 
+      <hr className="my-8 border-t border-[var(--color-line-soft)] md:my-12" />
       <h2>No warranty</h2>
       <p>
         We make no warranty, express or implied, regarding any contractor&apos;s
@@ -40,6 +42,7 @@ export default function TermsPage() {
         legal, or engineering advice.
       </p>
 
+      <hr className="my-8 border-t border-[var(--color-line-soft)] md:my-12" />
       <h2>Your responsibilities</h2>
       <ul>
         <li>Provide accurate project and contact information.</li>
@@ -47,6 +50,7 @@ export default function TermsPage() {
         <li>Negotiate and sign your contract directly with the contractor.</li>
       </ul>
 
+      <hr className="my-8 border-t border-[var(--color-line-soft)] md:my-12" />
       <h2>Availability</h2>
       <p>
         Coverage is limited to published, approved areas. We may decline or stop
@@ -54,6 +58,7 @@ export default function TermsPage() {
         available.
       </p>
 
+      <hr className="my-8 border-t border-[var(--color-line-soft)] md:my-12" />
       <h2>Contact</h2>
       <p>
         Questions about these terms: <a href={`mailto:${site.email}`}>{site.email}</a>.

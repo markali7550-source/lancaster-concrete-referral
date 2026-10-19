@@ -32,6 +32,7 @@ export default function ServiceDisclosurePage() {
         contractor works under its own license, insurance and contract with you.
       </p>
 
+      <hr className="my-8 border-t border-[var(--color-line-soft)] md:my-12" />
       <h2>What we do not do</h2>
       <ul>
         <li>We do not perform, supervise, inspect, or manage construction work.</li>
@@ -40,6 +41,7 @@ export default function ServiceDisclosurePage() {
         <li>We are not a party to the contract you sign with your contractor.</li>
       </ul>
 
+      <hr className="my-8 border-t border-[var(--color-line-soft)] md:my-12" />
       <h2>How we are compensated</h2>
       <p>
         Contractors in our network pay us a commission on revenue they collect
@@ -50,6 +52,7 @@ export default function ServiceDisclosurePage() {
         invoice.
       </p>
 
+      <hr className="my-8 border-t border-[var(--color-line-soft)] md:my-12" />
       <h2>Verification is your right</h2>
       <p>
         Our coverage checks are internal and are not an endorsement of any
@@ -61,6 +64,7 @@ export default function ServiceDisclosurePage() {
         and request current insurance evidence before you hire anyone.
       </p>
 
+      <hr className="my-8 border-t border-[var(--color-line-soft)] md:my-12" />
       <h2>Photography</h2>
       <p>
         Photographs on this site illustrate the kind of work our trusted local
