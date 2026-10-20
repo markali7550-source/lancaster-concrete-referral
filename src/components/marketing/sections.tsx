@@ -123,6 +123,7 @@ export function Section({
   tone = "page",
   align = "left",
   compact = false,
+  tightTop = false,
   backgroundImage,
   seamlessEdges = false,
   leftOnMobile = false,
@@ -136,6 +137,8 @@ export function Section({
   align?: "left" | "center";
   /** Short sections (a single row of links) do not need full section rhythm. */
   compact?: boolean;
+  /** Smaller top padding, for a section that follows a strip of its own. */
+  tightTop?: boolean;
   /** Optional full bleed photograph behind the section, with a dark scrim. */
   backgroundImage?: { src: string; alt: string };
   /**
@@ -159,7 +162,9 @@ export function Section({
       id={id}
       className={`${
         compact
-          ? "scroll-mt-32 py-10 md:py-14"
+          ? tightTop
+            ? "scroll-mt-32 pb-10 pt-4 md:pb-14 md:pt-6"
+            : "scroll-mt-32 py-10 md:py-14"
           : "scroll-mt-32 py-14 md:py-20 lg:py-24"
       }${backgroundImage ? " cta-photo relative isolate overflow-hidden" : " content-section"}`}
       style={

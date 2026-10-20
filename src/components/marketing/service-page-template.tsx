@@ -479,7 +479,12 @@ export function ServicePageTemplate({
       <ServiceDisclosureBlock />
 
       <section id="faq" className="scroll-mt-32">
-        <Section compact eyebrow="FAQ" title={faqTitle}>
+        <Section
+          compact
+          tightTop={Boolean(locationLayout)}
+          eyebrow="FAQ"
+          title={faqTitle}
+        >
           <FaqSection faqs={faqs} name={faqName} />
         </Section>
       </section>
