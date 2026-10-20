@@ -103,6 +103,27 @@ export const LOCAL_SOIL_BY_SERVICE: Record<string, { title: string; paragraphs: 
       "Clay also moves with the seasons. A compacted base and a reinforced slab help the deck stay level, and expansion joints keep it from cracking where it meets the pool or other fixed structures."
     ]
   },
+  "concrete-retaining-walls": {
+    "title": "Retaining walls in Lancaster: red clay and water pressure",
+    "paragraphs": [
+      "Red clay in Lancaster holds water after storms, and that water pushes against a wall that is not drained. Drainage backfill and weep holes relieve that pressure so the wall does not crack or tip.",
+      "Clay also expands and shrinks with moisture. The footing is placed on compacted, undisturbed soil so the wall does not shift over time.",
+    ]
+  },
+  "equipment-pads": {
+    "title": "Equipment pads in Lancaster: a level base on clay",
+    "paragraphs": [
+      "Clay ground can soften after rain and sink under concentrated weight. A compacted gravel base under the pad keeps a hot tub, generator, or AC unit from tilting.",
+      "The contractor checks the base for level before forms go in, since a pad that starts out of level stays that way.",
+    ]
+  },
+  "concrete-demolition": {
+    "title": "Demolition in Lancaster: keeping the clay grade intact",
+    "paragraphs": [
+      "Breaking out concrete can disturb the clay below and change how water drains. The crew removes only what is needed and grades the area so runoff still moves away from the home.",
+      "Old slabs are often bedded on loose fill. After removal, the subgrade is compacted and leveled before anything new is built on it.",
+    ]
+  },
   "concrete-resurfacing": {
     "title": "Resurfacing in Lancaster: check the slab under the overlay",
     "paragraphs": [
@@ -1004,6 +1025,150 @@ const records: readonly LocationServiceRecord[] = [
       },
     ],
   },
+  {
+      locationSlug: "lancaster-sc",
+      serviceSlug: "concrete-retaining-walls",
+      heroSummary: "Poured concrete retaining walls for Lancaster yards and slopes, with drainage built in. Request your free consultation and estimate.",
+      state: "published",
+      localImage: "/images/services/concrete-foundations/concrete-foundations-hero.webp",
+      localImageAlt: "Worker's boots beside a concrete vibrator pipe on fresh concrete over a steel rebar grid",
+      localBody: [
+        {
+          heading: "Water pressure behind the wall",
+          body: "Heavy rain in Lancaster can push water against a wall that has no way to drain. Drainage backfill and weep holes relieve that pressure, which is the main reason walls crack or lean.",
+        },
+        {
+          heading: "Clay soil",
+          body: "Red clay holds water and changes volume with moisture. The footing is set on compacted, undisturbed soil so the wall does not shift as the seasons change.",
+        },
+        {
+          heading: "Slopes and terraces",
+          body: "Many Lancaster lots slope toward the house. A wall can level a yard, hold back a bank, or support a driveway edge, and the contractor sizes it to the load behind it.",
+        },
+        {
+          heading: "Who does the work",
+          body: "Local concrete contractors do the work. After you submit a request, a local contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that contractor after the site review.",
+        },
+        {
+          heading: "Communities near Lancaster",
+          body: "Quotes on this page apply to addresses in the City of Lancaster. Kershaw, Heath Springs, Van Wyck, and Buford are nearby county communities, and coverage is confirmed by address.",
+        },
+      ],
+      localFaqs: [
+        {
+          question: "How tall can a retaining wall be?",
+          answer: "Height depends on the load behind the wall and the soil. Taller walls need more engineering, and the contractor explains what your site allows.",
+        },
+        {
+          question: "Why do retaining walls fail?",
+          answer: "Water pressure and poor drainage cause most failures. A drained backfill and proper footing reduce that risk.",
+        },
+        {
+          question: "Will a wall need a permit?",
+          answer: "Requirements depend on the wall's height and location. The contractor and local office confirm what applies to your address.",
+        },
+        {
+          question: "Is the price final before a site visit?",
+          answer: "Usually not. Height, length, access, and drainage all affect cost, so an on site review is normally needed.",
+        },
+      ],
+    },
+  {
+      locationSlug: "lancaster-sc",
+      serviceSlug: "equipment-pads",
+      heroSummary: "Level, reinforced concrete pads for hot tubs, generators, and AC units in Lancaster. Request your free consultation and estimate.",
+      state: "published",
+      localImage: "/images/locations/lancaster-sc/lancaster-sc-slabs.webp",
+      localImageAlt: "Newly poured concrete slab with form lines on its edge, set in a lawn beside a house",
+      localBody: [
+        {
+          heading: "Level ground under heavy equipment",
+          body: "A hot tub, generator, or AC unit concentrates a lot of weight on a small area. A level, compacted pad keeps the equipment from tilting as the ground settles.",
+        },
+        {
+          heading: "Clay and wet weather",
+          body: "Clay ground softens after rain and can sink under concentrated weight. A gravel base under the pad helps keep it stable through wet seasons.",
+        },
+        {
+          heading: "Placement and clearance",
+          body: "The pad should sit where the equipment has the clearance it needs. The contractor checks the planned location against the equipment's clearance rules before the forms go in.",
+        },
+        {
+          heading: "Who does the work",
+          body: "Local concrete contractors do the work. After you submit a request, a local contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that contractor after the site review.",
+        },
+        {
+          heading: "Communities near Lancaster",
+          body: "Quotes on this page apply to addresses in the City of Lancaster. Kershaw, Heath Springs, Van Wyck, and Buford are nearby county communities, and coverage is confirmed by address.",
+        },
+      ],
+      localFaqs: [
+        {
+          question: "How thick should a hot tub pad be?",
+          answer: "Thickness depends on the tub's weight when full. The contractor reviews the tub's specifications and sets the pad to match.",
+        },
+        {
+          question: "Can a generator sit on a concrete pad in Lancaster?",
+          answer: "Yes. A level pad keeps the generator stable. Electrical and fuel connections are handled by licensed trades.",
+        },
+        {
+          question: "Can an old pad be replaced?",
+          answer: "Yes. The contractor removes the old pad and places a new level one, if the site allows.",
+        },
+        {
+          question: "Is the price final before a site visit?",
+          answer: "Usually not. Pad size, thickness, and base work all affect cost, so an on site review is normally needed.",
+        },
+      ],
+    },
+  {
+      locationSlug: "lancaster-sc",
+      serviceSlug: "concrete-demolition",
+      heroSummary: "Concrete removal for driveways, patios, and sidewalks in Lancaster, with haul-away of the debris. Request your free consultation and estimate.",
+      state: "published",
+      localImage: "/images/locations/lancaster-sc/lancaster-sc-repair.webp",
+      localImageAlt: "Sidewalk slab heaved and cracked by exposed tree roots beside a large oak, with a residential street behind",
+      localBody: [
+        {
+          heading: "Utilities come first",
+          body: "Before any breaking begins, buried utilities are marked so the crew knows where they run. That step protects the work and the homeowner.",
+        },
+        {
+          heading: "Keeping the clay grade",
+          body: "Removing concrete can disturb the clay below and change how water drains. The crew removes only what is needed and grades the area so runoff still moves away from the home.",
+        },
+        {
+          heading: "Old slabs on loose fill",
+          body: "Many older slabs sit on loose fill. After removal, the subgrade is compacted and leveled before anything new is built on it.",
+        },
+        {
+          heading: "Who does the work",
+          body: "Local concrete contractors do the work. After you submit a request, a local contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that contractor after the site review.",
+        },
+        {
+          heading: "Communities near Lancaster",
+          body: "Quotes on this page apply to addresses in the City of Lancaster. Kershaw, Heath Springs, Van Wyck, and Buford are nearby county communities, and coverage is confirmed by address.",
+        },
+      ],
+      localFaqs: [
+        {
+          question: "Will the crew handle the debris?",
+          answer: "Yes. The contractor plans the haul-away and explains how the debris will be removed from your property.",
+        },
+        {
+          question: "Can the old concrete be reused?",
+          answer: "Sometimes. Clean broken concrete can be crushed for base material. The contractor explains what applies to your job.",
+        },
+        {
+          question: "Is the price final before a site visit?",
+          answer: "Usually not. Volume, slab thickness, access, and haul distance all affect cost, so an on site review is normally needed.",
+        },
+        {
+          question: "Does this include new concrete?",
+          answer: "No. This service covers removal and haul-away. New concrete is quoted under the matching service.",
+        },
+      ],
+    },
 ];
 
 /** Explicit allowlist consumed by generateStaticParams. Never a Cartesian product. */

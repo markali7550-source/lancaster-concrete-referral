@@ -1896,4 +1896,498 @@ export const expansionServices: readonly ServiceRecord[] = [
       },
     ],
   },
+  {
+      slug: "concrete-retaining-walls",
+      name: "Retaining Walls & Erosion Control",
+      shortName: "Retaining Walls",
+      nameLower: "retaining walls and erosion control",
+      projectNoun: "retaining wall",
+      state: "published",
+      intent: "Poured concrete retaining walls",
+      summary: "Poured concrete retaining walls that hold back slopes, level yards, and slow erosion on sloped Lancaster lots.",
+      cardScope: "Poured walls, terrace walls, driveway support walls",
+      workIncluded: [
+        "Slope and grade survey before the wall layout",
+        "Trench excavation and compacted crushed stone base",
+        "Steel reinforcing placed in the wall footing and stem",
+        "Wall formwork and a concrete pour placed in lifts",
+        "Drainage backfill and weep holes for water relief",
+      ],
+      heroSummary: "Poured concrete retaining walls that hold back slopes and terrace Lancaster yards. Connect with our local specialists for a free consultation and quote.",
+      sectionOrder: ["scope", "options", "process", "cost", "prepare"],
+    headings: {
+        scope: "What a retaining wall project covers",
+        options: "Wall types and finish choices",
+        process: "How a retaining wall job is sequenced",
+        cost: "What moves the price of a retaining wall",
+        prepare: "Before the contractor visits",
+        faq: "Retaining wall questions",
+        cta: "Ready to hold back that slope?",
+      },
+      optionsLead: "Wall height, the load behind it, and the finish all affect the design. The contractor confirms the approach after seeing the site.",
+      processLead: "A retaining wall is only as stable as its footing and drainage. The sequence below shows the usual order; the contractor sets the actual dates.",
+      costLead: "Retaining wall pricing depends mainly on height, length, and how much excavation and drainage the site needs.",
+      ctaLead: "Send the wall length, the height of the slope, and any photos. A local contractor will confirm the design and the work it needs.",
+      image: "/images/services/concrete-foundations/concrete-foundations-hero.webp",
+      imageAlt: "Worker's boots beside a concrete vibrator pipe on fresh concrete over a steel rebar grid",
+      projectTypes: [
+        "Terrace wall",
+        "Driveway support wall",
+        "Slope wall",
+      ],
+      keyFacts: [
+        {
+          label: "Wall types",
+          value: "Poured concrete, gravity walls",
+        },
+        {
+          label: "Typical use",
+          value: "Yards, slopes, driveways",
+        },
+      ],
+      covered: [
+        {
+          title: "Poured concrete walls",
+          body: "Reinforced concrete walls built on a footing and designed for the load behind them.",
+        },
+        {
+          title: "Terrace and slope walls",
+          body: "Walls that level a sloped yard or hold back soil at a grade change.",
+        },
+        {
+          title: "Drainage and backfill",
+          body: "Drainage backfill and weep holes that relieve water pressure behind the wall.",
+        },
+      ],
+      outOfScope: [
+        "Engineered design stamps unless the contractor provides them",
+        "Pool and fence work",
+        "Grading of the whole lot",
+      ],
+      options: [
+        {
+          name: "Wall height",
+          description: "Taller walls need deeper footings, more steel, and more engineering.",
+        },
+        {
+          name: "Finish",
+          description: "Smooth, form-textured, or stone-veneer finishes change the look and the cost.",
+        },
+        {
+          name: "Drainage",
+          description: "Gravel backfill and drain pipe add labor but relieve water pressure.",
+        },
+      ],
+      tradeSpecs: [
+        "Footing placed on undisturbed or compacted soil below any loose topsoil.",
+        "Reinforcing steel placed in the footing and the wall stem.",
+        "Drainage backfill and weep holes placed behind the wall.",
+        "Concrete placed in lifts and consolidated to limit voids.",
+      ],
+      process: [
+        {
+          phase: "Site survey and layout",
+          duration: "Scheduled by contractor",
+          detail: "The contractor measures the slope, marks the wall line, and checks access.",
+        },
+        {
+          phase: "Excavation and base",
+          duration: "1 to 3 days",
+          detail: "The trench is dug and the base compacted to support the footing.",
+        },
+        {
+          phase: "Steel and forms",
+          duration: "1 to 2 days",
+          detail: "Reinforcing is set and forms are built to the planned wall height.",
+        },
+        {
+          phase: "Pour, cure, and backfill",
+          duration: "Several days",
+          detail: "The concrete is placed, the forms come off, and drainage backfill goes in behind the wall.",
+        },
+      ],
+      costFactors: [
+        {
+          factor: "Wall height",
+          impact: "High",
+          note: "Taller walls need deeper footings and more steel and concrete.",
+        },
+        {
+          factor: "Wall length",
+          impact: "High",
+          note: "Longer walls take more forms, concrete, and time.",
+        },
+        {
+          factor: "Excavation and access",
+          impact: "Medium",
+          note: "Tight access or hard soil adds labor.",
+        },
+        {
+          factor: "Drainage work",
+          impact: "Medium",
+          note: "Gravel and drain pipe add material and labor.",
+        },
+        {
+          factor: "Finish",
+          impact: "Low",
+          note: "Decorative finishes add a modest amount.",
+        },
+      ],
+      prepChecklist: [
+        "Mark the area where the wall will go",
+        "Clear plants, toys, and furniture from the work zone",
+        "Note any existing drainage problems or water spots",
+        "Share any property line details you have",
+      ],
+      quoteQuestions: [
+        "How high is the wall at its tallest point?",
+        "How will water be drained from behind the wall?",
+        "Will the design need an engineer's stamp?",
+        "How long will the work take to complete?",
+      ],
+      considerations: [
+        {
+          question: "Do retaining walls need an engineer?",
+          answer: "Taller walls and walls near structures often need engineered design. The contractor explains what your wall requires.",
+        },
+        {
+          question: "Why do walls crack?",
+          answer: "Water pressure and poor drainage are the most common causes. Good backfill and weep holes reduce that risk.",
+        },
+        {
+          question: "Can the wall be built on clay soil?",
+          answer: "Yes, with a compacted base and proper drainage. The contractor checks the soil before the design is set.",
+        },
+        {
+          question: "Does this cover yard grading?",
+          answer: "Only the wall and its backfill are included. Whole lot grading is outside this service.",
+        },
+      ],
+    },
+  {
+      slug: "equipment-pads",
+      name: "Equipment Pads",
+      shortName: "Equipment Pads",
+      nameLower: "equipment pads",
+      projectNoun: "equipment pad",
+      state: "published",
+      intent: "Concrete pads for hot tubs, generators, and HVAC units",
+      summary: "Level, reinforced concrete pads for hot tubs, backup generators, and HVAC units that stay put on Lancaster clay.",
+      cardScope: "Hot tub pads, generator pads, AC pads",
+      workIncluded: [
+        "Check of the equipment footprint and clearances",
+        "Sod removal and gravel base compaction",
+        "Forms built square and checked on the diagonals",
+        "Rebar grid placed and concrete poured",
+        "Surface leveled and control joints cut",
+      ],
+      heroSummary: "Level, reinforced concrete pads for hot tubs, backup generators, and HVAC units. Connect with our local specialists for a free consultation and quote.",
+      sectionOrder: ["scope", "options", "process", "cost", "prepare"],
+    headings: {
+        scope: "What an equipment pad covers",
+        options: "Pad size and finish choices",
+        process: "How an equipment pad job is sequenced",
+        cost: "What moves the price of an equipment pad",
+        prepare: "Before the contractor visits",
+        faq: "Equipment pad questions",
+        cta: "Ready for a pad under your equipment?",
+      },
+      optionsLead: "Pad size and thickness depend on the weight and how it sits on the base. The manufacturer's clearance rules shape the layout.",
+      processLead: "Equipment pads need a level, compacted base to stay level. The sequence below shows the usual order; the contractor sets the actual dates.",
+      costLead: "Pad pricing depends mainly on size, thickness, and how much base work the site needs.",
+      ctaLead: "Send the equipment make and model, the planned location, and any photos. A local contractor will confirm the pad size and the work it needs.",
+      image: "/images/locations/lancaster-sc/lancaster-sc-slabs.webp",
+      imageAlt: "Newly poured concrete slab with form lines on its edge, set in a lawn beside a house",
+      projectTypes: [
+        "Hot tub pad",
+        "Generator pad",
+        "HVAC pad",
+      ],
+      keyFacts: [
+        {
+          label: "Pad types",
+          value: "Hot tub, generator, HVAC",
+        },
+        {
+          label: "Typical use",
+          value: "Equipment that needs a firm, level base",
+        },
+      ],
+      covered: [
+        {
+          title: "Hot tub foundations",
+          body: "Level slabs that carry the weight of a filled hot tub.",
+        },
+        {
+          title: "Generator and HVAC pads",
+          body: "Reinforced pads that keep outdoor equipment level and off soft ground.",
+        },
+        {
+          title: "Pad replacement",
+          body: "Replacement of cracked or sunken pads with a new level slab.",
+        },
+      ],
+      outOfScope: [
+        "Electrical, gas, or plumbing connections",
+        "Equipment installation",
+        "Enclosures and screening walls",
+      ],
+      options: [
+        {
+          name: "Pad thickness",
+          description: "Heavier equipment usually calls for a thicker, more heavily reinforced pad.",
+        },
+        {
+          name: "Size",
+          description: "The pad should extend past the equipment footprint, as the manufacturer and local rules require.",
+        },
+        {
+          name: "Finish",
+          description: "A broom or smooth finish works for most pads. The contractor advises on the surface.",
+        },
+      ],
+      tradeSpecs: [
+        "Base compacted in lifts before the forms are set.",
+        "Forms checked square and level before the pour.",
+        "Rebar grid placed to support the pad's load.",
+        "Pad surface leveled and joints cut at planned intervals.",
+      ],
+      process: [
+        {
+          phase: "Equipment check and layout",
+          duration: "Scheduled by contractor",
+          detail: "The contractor confirms the equipment footprint and clearances.",
+        },
+        {
+          phase: "Excavation and base",
+          duration: "Typically 1 day",
+          detail: "Sod is removed, the area is dug, and the base is compacted.",
+        },
+        {
+          phase: "Forms and pour",
+          duration: "1 day",
+          detail: "Forms and reinforcing go in, then the concrete is placed and leveled.",
+        },
+        {
+          phase: "Cure",
+          duration: "Several days",
+          detail: "The pad cures before the equipment is set on it.",
+        },
+      ],
+      costFactors: [
+        {
+          factor: "Pad size",
+          impact: "High",
+          note: "Larger pads take more concrete and more base work.",
+        },
+        {
+          factor: "Thickness and reinforcing",
+          impact: "Medium",
+          note: "Heavier equipment calls for more steel and concrete.",
+        },
+        {
+          factor: "Base preparation",
+          impact: "Medium",
+          note: "Soft or uneven ground adds base work.",
+        },
+        {
+          factor: "Access",
+          impact: "Low",
+          note: "Tight access adds time.",
+        },
+      ],
+      prepChecklist: [
+        "Confirm the equipment make, model, and weight",
+        "Mark the planned location",
+        "Clear the area of plants and debris",
+        "Call 811 before any digging so buried utilities can be marked",
+      ],
+      quoteQuestions: [
+        "How thick will the pad be for this equipment?",
+        "How far should the pad extend past the equipment?",
+        "Who handles the buried utility marking?",
+        "How long before the equipment can be set?",
+      ],
+      considerations: [
+        {
+          question: "Will a pad crack?",
+          answer: "Pads crack most often when the base is soft or uneven. A compacted base and proper reinforcing reduce that risk.",
+        },
+        {
+          question: "Can a pad go on top of grass?",
+          answer: "Sod is usually removed and the base compacted first, so the pad sits on a stable surface.",
+        },
+        {
+          question: "Do you connect the equipment?",
+          answer: "No. Electrical, gas, and plumbing connections are handled separately by licensed trades.",
+        },
+        {
+          question: "Can an old pad be replaced?",
+          answer: "Yes. The contractor removes the old pad and places a new level one, if the site allows.",
+        },
+      ],
+    },
+  {
+      slug: "concrete-demolition",
+      name: "Concrete Demolition & Haul-Away",
+      shortName: "Demolition",
+      nameLower: "concrete demolition and haul-away",
+      projectNoun: "demolition",
+      state: "published",
+      intent: "Concrete removal and haul-away",
+      summary: "Removal of driveways, patios, sidewalks, and slabs, with haul-away of the debris.",
+      cardScope: "Driveway tear-out, patio removal, sidewalk demolition, haul-away",
+      workIncluded: [
+        "Utility locate and site access planning",
+        "Breaking and removing the existing concrete",
+        "Loading and hauling the debris off site",
+        "Subgrade leveled after removal",
+        "Site swept clean",
+      ],
+      heroSummary: "Concrete removal for driveways, patios, sidewalks, and slabs, with haul-away of the debris. Connect with our local specialists for a free consultation and quote.",
+      sectionOrder: ["scope", "options", "process", "cost", "prepare"],
+    headings: {
+        scope: "What a demolition job covers",
+        options: "Removal methods and haul-away choices",
+        process: "How a demolition job is sequenced",
+        cost: "What moves the price of a demolition",
+        prepare: "Before the contractor visits",
+        faq: "Demolition questions",
+        cta: "Ready to remove the old concrete?",
+      },
+      optionsLead: "The method depends on slab thickness, reinforcing, and how close the work sits to structures and utilities.",
+      processLead: "Demolition starts with utility marking and site access, then moves to breaking, loading, and cleanup. The sequence below shows the usual order; the contractor sets the actual dates.",
+      costLead: "Demolition pricing depends mainly on the volume of concrete, access, and how far the debris must travel.",
+      ctaLead: "Send the area to be removed, the slab thickness if known, and any photos. A local contractor will confirm the method and the haul-away.",
+      image: "/images/locations/lancaster-sc/lancaster-sc-repair.webp",
+      imageAlt: "Sidewalk slab heaved and cracked by exposed tree roots beside a large oak, with a residential street behind",
+      projectTypes: [
+        "Driveway tear-out",
+        "Patio removal",
+        "Sidewalk demolition",
+      ],
+      keyFacts: [
+        {
+          label: "Removal types",
+          value: "Driveways, patios, sidewalks, slabs",
+        },
+        {
+          label: "Haul-away",
+          value: "Debris removed from the site",
+        },
+      ],
+      covered: [
+        {
+          title: "Driveway and patio tear-out",
+          body: "Removal of old driveways and patios so the area can be rebuilt.",
+        },
+        {
+          title: "Sidewalk and slab removal",
+          body: "Breaking out cracked or heaved sections and removing them.",
+        },
+        {
+          title: "Haul-away and cleanup",
+          body: "Debris loaded and hauled off site, with the area swept clean.",
+        },
+      ],
+      outOfScope: [
+        "Replacement concrete work, quoted separately",
+        "Tree root removal",
+        "Hazardous material removal",
+      ],
+      options: [
+        {
+          name: "Breaking method",
+          description: "Jackhammers suit small areas. Machines suit larger slabs and driveways.",
+        },
+        {
+          name: "Haul-away",
+          description: "Debris is usually hauled off site. Some jobs can stage it for reuse.",
+        },
+        {
+          name: "Reuse",
+          description: "Clean broken concrete can sometimes be crushed for base material.",
+        },
+      ],
+      tradeSpecs: [
+        "Utilities marked before any breaking begins.",
+        "Debris kept separate from the clay subgrade where possible.",
+        "Subgrade leveled and cleared after removal.",
+        "Site swept of loose material and metal fragments.",
+      ],
+      process: [
+        {
+          phase: "Utility marking and access",
+          duration: "Scheduled by contractor",
+          detail: "Buried utilities are marked and the crew plans access and debris routes.",
+        },
+        {
+          phase: "Breaking and removal",
+          duration: "Varies by area",
+          detail: "The concrete is broken up and loaded for removal.",
+        },
+        {
+          phase: "Haul-away",
+          duration: "Same day or scheduled",
+          detail: "Debris is hauled off site in loads.",
+        },
+        {
+          phase: "Grade and cleanup",
+          duration: "Typically 1 day",
+          detail: "The subgrade is leveled and the site is swept clean.",
+        },
+      ],
+      costFactors: [
+        {
+          factor: "Volume of concrete",
+          impact: "High",
+          note: "More concrete means more breaking, loading, and trucking.",
+        },
+        {
+          factor: "Slab thickness and reinforcing",
+          impact: "High",
+          note: "Thick or steel-reinforced slabs take longer to break.",
+        },
+        {
+          factor: "Access",
+          impact: "Medium",
+          note: "Tight access may need smaller equipment and more hand work.",
+        },
+        {
+          factor: "Haul distance",
+          impact: "Medium",
+          note: "Longer trips add trucking cost.",
+        },
+      ],
+      prepChecklist: [
+        "Clear vehicles, furniture, and planters from the area",
+        "Mark any sprinkler lines or irrigation you know about",
+        "Note any buried items or problem spots",
+        "Decide where the debris can be staged",
+      ],
+      quoteQuestions: [
+        "How will the debris be hauled away?",
+        "Is any of the concrete reusable?",
+        "How are buried utilities handled?",
+        "What will the site look like when the crew leaves?",
+      ],
+      considerations: [
+        {
+          question: "Will the crew dig up utilities?",
+          answer: "Buried utilities are marked before any breaking begins, so the crew knows where they are.",
+        },
+        {
+          question: "Can the debris be reused?",
+          answer: "Clean broken concrete can sometimes be crushed for base. The contractor explains what applies to your job.",
+        },
+        {
+          question: "Will the ground be left level?",
+          answer: "The subgrade is leveled after removal. A new surface needs its own base and pour, quoted separately.",
+        },
+        {
+          question: "Does this include new concrete?",
+          answer: "No. This service covers removal and haul-away. New concrete is quoted under the matching service.",
+        },
+      ],
+    },
 ];

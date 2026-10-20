@@ -17,6 +17,30 @@ export interface ServiceDetail {
 }
 
 export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
+  "concrete-retaining-walls": {
+    mayInclude: [
+      "Poured concrete retaining walls",
+      "Terrace and slope walls",
+      "Driveway support walls",
+      "Drainage backfill and weep holes",
+    ],
+  },
+  "equipment-pads": {
+    mayInclude: [
+      "Hot tub foundation pads",
+      "Generator pads",
+      "AC and HVAC pads",
+      "Pad replacement",
+    ],
+  },
+  "concrete-demolition": {
+    mayInclude: [
+      "Driveway and patio tear-out",
+      "Sidewalk and slab demolition",
+      "Haul-away of debris",
+      "Subgrade leveling after removal",
+    ],
+  },
   /* ------------------------------------------------------ pool decks */
   "concrete-pool-decks": {
     mayInclude: [

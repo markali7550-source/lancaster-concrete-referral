@@ -71,6 +71,12 @@ export function pageMetadata({
  * these titles past 60 characters. The brand is still carried on each page by
  * `openGraph.siteName` and the JSON-LD graph. */
 const COMBO_DESCRIPTIONS: Record<string, (city: string) => string> = {
+  "concrete-demolition": (city) =>
+    `Bobcat and jackhammer concrete removal, slab demolition, and haul-away services in ${city}, SC.`,
+  "equipment-pads": (city) =>
+    `Level structural concrete equipment pads for hot tubs, backup generators, and HVAC units in ${city}, SC.`,
+  "concrete-retaining-walls": (city) =>
+    `Structural poured concrete and block retaining walls in ${city}, SC. Built for yard terracing and red clay erosion control.`,
   "concrete-pool-decks": (city) =>
     `Inground concrete pool deck installations, pool surrounds, and coping repairs in ${city}, SC. Heat-resistant, non-slip textured finishes.`,
   "concrete-driveways": (city) =>
@@ -82,13 +88,13 @@ const COMBO_DESCRIPTIONS: Record<string, (city: string) => string> = {
   "concrete-repair": (city) =>
     `Have cracked or settled concrete in ${city}, SC? Describe the problem and a local contractor will reply to your request. Request a free quote.`,
   "concrete-foundations": (city) =>
-    `Planning a foundation or footing in ${city}, SC? Describe the project and a local contractor will reply to your request. Get a free quote today.`,
+    `Structural concrete trench footings, grade beams, and deck post piers in ${city}, SC. Poured below clay frost depth.`,
   "concrete-walkways": (city) =>
     `Custom front entry concrete walkways, garden pathways, and HOA/city sidewalk replacement in ${city}, SC. Trip hazard removal and 4,000 PSI pours.`,
   "stamped-concrete": (city) =>
     `High-end stamped and decorative concrete in ${city}, SC. Ashlar slate, wood plank, flagstone, and cobblestone patterns with integral color sealing.`,
   "concrete-steps": (city) =>
-    `Planning new or repaired steps in ${city}, SC? Tell us about the rise and location, and a local contractor will reply. Ask for a free quote.`,
+    `Poured concrete front porches, entry steps, and stoop replacements in ${city}, SC. Rebar pinned to foundation.`,
   "concrete-leveling": (city) =>
     `Sunken slab in ${city}, SC? Tell us where it dropped and a local contractor will reply to your request about leveling options. Get a free quote.`,
   "concrete-garage-coatings": (city) =>
@@ -114,6 +120,11 @@ const COMBO_DESCRIPTIONS: Record<string, (city: string) => string> = {
  */
 /** Page titles for the services that have their own full title (used as-is). */
 const COMBO_TITLES: Record<string, (city: string) => string> = {
+  "concrete-retaining-walls": (city) => `Concrete Retaining Walls & Erosion Control in ${city}, SC`,
+  "equipment-pads": (city) => `Hot Tub, Generator & AC Concrete Pads in ${city}, SC`,
+  "concrete-demolition": (city) => `Concrete Demolition, Tear-Out & Haul-Away in ${city}, SC`,
+  "concrete-steps": (city) => `Concrete Steps, Porches & Stoops in ${city}, SC`,
+  "concrete-foundations": (city) => `Concrete Foundation Footings & Deck Piers in ${city}, SC`,
   "concrete-walkways": (city) => `Concrete Walkways & Sidewalks in ${city}, SC`,
   "concrete-garage-coatings": (city) =>
     `Garage Floor Epoxy & Concrete Coatings in ${city}, SC`,
@@ -127,6 +138,9 @@ const COMBO_TITLES: Record<string, (city: string) => string> = {
 };
 
 const COMBO_H1: Record<string, (city: string) => string> = {
+  "concrete-retaining-walls": (city) => `Concrete Retaining Wall Quotes in ${city}, SC`,
+  "equipment-pads": (city) => `Equipment Pad Quotes in ${city}, SC`,
+  "concrete-demolition": (city) => `Concrete Demolition Quotes in ${city}, SC`,
   "concrete-pool-decks": (city) => `Concrete Pool Deck Quotes in ${city}, SC`,
   "concrete-driveways": (city) => `Concrete Driveway Quotes in ${city}, SC`,
   "concrete-patios": (city) => `Concrete Patio Quotes in ${city}, SC`,

@@ -15,7 +15,10 @@ export type ServiceSlug =
   | "concrete-aprons"
   | "concrete-sealing"
   | "concrete-exposed-aggregate"
-  | "concrete-pool-decks";
+  | "concrete-pool-decks"
+  | "concrete-retaining-walls"
+  | "equipment-pads"
+  | "concrete-demolition";
 
 export type PublicationState = "published" | "gated" | "blocked";
 
