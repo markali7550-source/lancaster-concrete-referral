@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { pageMetadata } from "@/lib/seo/metadata";
-import { PHOTO_COPY_WASH, PHOTO_SCRIM } from "@/components/marketing/sections";
 import { site } from "@/lib/env";
 
 export const metadata: Metadata = pageMetadata({
@@ -40,7 +39,10 @@ export default function ThankYouPage() {
         className="-z-20 object-cover"
       />
       <div
-        className={`absolute inset-0 -z-10 ${PHOTO_SCRIM} ${PHOTO_COPY_WASH}`}
+        className="absolute inset-0 -z-10"
+        style={{
+          backgroundColor: "color-mix(in srgb, var(--color-band) 78%, transparent)",
+        }}
         aria-hidden="true"
       />
     <div className="container-page relative py-16 md:py-24">
