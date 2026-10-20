@@ -134,7 +134,7 @@ export default function HomePage() {
         tone="surface"
         eyebrow="Project types"
         title="Where we can take work in Lancaster today"
-        lead="Fourteen residential concrete services, each on its own page. Each request goes to a local contractor who confirms the scope, and foundation repair, structural engineering, and retaining walls sit outside these services."
+        lead={`${publishedServices.length} residential concrete services, each on its own page. Each request goes to a local contractor who confirms the scope, and foundation repair, structural engineering, and retaining walls sit outside these services.`}
       >
         <ProjectTypeChooser images={serviceCardImageMap} />
         <p className="mt-8 text-sm">
@@ -143,7 +143,7 @@ export default function HomePage() {
             className="font-semibold underline underline-offset-4"
             style={{ color: "var(--color-accent)" }}
           >
-            Compare all fourteen services and their scope limits →
+            Compare all {publishedServices.length} services and their scope limits →
           </Link>
         </p>
       </Section>
