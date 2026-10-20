@@ -119,7 +119,15 @@ export default async function ComboPage({ params }: { params: Params }) {
       path,
       name: `${serviceRecord.name} in ${location.city}, SC`,
       description,
-      areaServed: [location.city],
+      serviceType: `Residential ${serviceRecord.name}`,
+      areaServed: [
+        `${location.city}, SC`,
+        "Lancaster County, SC",
+        "Kershaw, SC",
+        "Heath Springs, SC",
+        "Van Wyck, SC",
+        "Buford, SC",
+      ],
     }),
     webPageNode(path, h1, description),
     breadcrumbNode(path, [

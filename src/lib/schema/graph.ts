@@ -98,6 +98,9 @@ export function serviceNode(input: {
   path: string;
   name: string;
   description: string;
+  serviceType?: string;
+  /** Entries such as "Lancaster, SC" (City) or "Lancaster County, SC"
+   *  (AdministrativeArea). */
   areaServed: string[];
 }): Node {
   return {
@@ -105,13 +108,13 @@ export function serviceNode(input: {
     "@id": `${absoluteUrl(input.path)}#service`,
     name: input.name,
     description: input.description,
-    serviceType: input.name,
+    serviceType: input.serviceType ?? input.name,
     /* The publisher arranges the request; it does not perform the work, so it
        is the broker, never the provider (schema.org Service.broker). */
     broker: { "@id": ORG_ID() },
-    areaServed: input.areaServed.map((city) => ({
-      "@type": "City",
-      name: `${city}, SC`,
+    areaServed: input.areaServed.map((area) => ({
+      "@type": area.includes("County") ? "AdministrativeArea" : "City",
+      name: area,
     })),
   };
 }

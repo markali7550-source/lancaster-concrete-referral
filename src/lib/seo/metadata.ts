@@ -70,43 +70,33 @@ export function pageMetadata({
  * descriptions 140-160. The full brand is not appended, because it would push
  * these titles past 60 characters. The brand is still carried on each page by
  * `openGraph.siteName` and the JSON-LD graph. */
-const COMBO_DESCRIPTIONS: Record<string, (city: string) => string> = {
-  "concrete-demolition": (city) =>
-    `Bobcat and jackhammer concrete removal, slab demolition, and haul-away services in ${city}, SC.`,
-  "equipment-pads": (city) =>
-    `Level structural concrete equipment pads for hot tubs, backup generators, and HVAC units in ${city}, SC.`,
-  "concrete-retaining-walls": (city) =>
-    `Structural poured concrete and block retaining walls in ${city}, SC. Built for yard terracing and red clay erosion control.`,
-  "concrete-pool-decks": (city) =>
-    `Inground concrete pool deck installations, pool surrounds, and coping repairs in ${city}, SC. Heat-resistant, non-slip textured finishes.`,
-  "concrete-driveways": (city) =>
-    `Planning a concrete driveway in ${city}, SC? Tell us about the project and a local contractor will reply to your request. Ask for a free quote.`,
-  "concrete-patios": (city) =>
-    `Custom backyard concrete patios, patio extensions, and outdoor living slabs in ${city}, SC. Built with 4,000 PSI mix and clay subbase drainage.`,
-  "concrete-slabs": (city) =>
-    `Structural concrete slabs for detached garages, storage sheds, pole barns, and equipment pads in ${city}, SC. Engineered subbase and thick perimeter edges.`,
-  "concrete-repair": (city) =>
-    `Have cracked or settled concrete in ${city}, SC? Describe the problem and a local contractor will reply to your request. Request a free quote.`,
-  "concrete-foundations": (city) =>
-    `Structural concrete trench footings, grade beams, and deck post piers in ${city}, SC. Poured below clay frost depth.`,
-  "concrete-walkways": (city) =>
-    `Custom front entry concrete walkways, garden pathways, and HOA/city sidewalk replacement in ${city}, SC. Trip hazard removal and 4,000 PSI pours.`,
-  "stamped-concrete": (city) =>
-    `High-end stamped and decorative concrete in ${city}, SC. Ashlar slate, wood plank, flagstone, and cobblestone patterns with integral color sealing.`,
-  "concrete-steps": (city) =>
-    `Poured concrete front porches, entry steps, and stoop replacements in ${city}, SC. Rebar pinned to foundation.`,
-  "concrete-leveling": (city) =>
-    `Sunken slab in ${city}, SC? Tell us where it dropped and a local contractor will reply to your request about leveling options. Get a free quote.`,
-  "concrete-garage-coatings": (city) =>
-    `High-durability polyaspartic and epoxy flake garage floor coatings in ${city}, SC. Diamond grinding surface prep and hot-tire pickup resistance.`,
-  "concrete-resurfacing": (city) =>
-    `Polymer-modified concrete resurfacing, micro-toppings, and spall restoration in ${city}, SC. Restores damaged driveways and patios without full tear-out.`,
-  "concrete-aprons": (city) =>
-    `Need a concrete apron in ${city}, SC? Tell us where the driveway meets the street and a local contractor will reply. Request a free quote today.`,
-  "concrete-sealing": (city) =>
-    `Want to seal concrete in ${city}, SC? Tell us the surface and its size, and a local contractor can reply to your request about cleaning and sealer.`,
-  "concrete-exposed-aggregate": (city) =>
-    `Want an exposed aggregate driveway or patio in ${city}, SC? Tell us the area and the look you want, and a local contractor can reply to your request.`
+/**
+ * Google title and meta-description parts, keyed by service slug.
+ *
+ * Title: `[Service] in Lancaster, SC | [Suffix]` (about 60 characters).
+ * Description: 150-160 characters, with the buyer-intent phrase, the local
+ * red clay context and a call to action. The lowercased service name is used in
+ * the description.
+ */
+const SEO_SERVICE_NAME: Record<string, [string, string]> = {
+  "concrete-driveways": ["Concrete Driveways", "Upfront Pricing & Quotes"],
+  "concrete-patios": ["Concrete Patios", "Free Estimates"],
+  "stamped-concrete": ["Stamped Concrete", "Free Estimates"],
+  "concrete-slabs": ["Concrete Slabs for Sheds", "Free Quotes"],
+  "concrete-retaining-walls": ["Concrete Retaining Walls", "Free Estimates"],
+  "concrete-demolition": ["Concrete Demolition & Tear-Out", "Free Quotes"],
+  "concrete-repair": ["Concrete Repair & Leveling", "Free Estimates"],
+  "concrete-leveling": ["Concrete Leveling", "Free Estimates"],
+  "equipment-pads": ["Equipment Pads", "Free Quotes"],
+  "concrete-pool-decks": ["Concrete Pool Decks", "Free Quotes"],
+  "concrete-foundations": ["Concrete Foundations", "Free Quotes"],
+  "concrete-walkways": ["Concrete Walkways", "Free Quotes"],
+  "concrete-steps": ["Concrete Steps", "Free Quotes"],
+  "concrete-garage-coatings": ["Garage Floor Coatings", "Free Quotes"],
+  "concrete-resurfacing": ["Concrete Resurfacing", "Free Quotes"],
+  "concrete-aprons": ["Concrete Aprons", "Free Quotes"],
+  "concrete-sealing": ["Concrete Sealing", "Free Quotes"],
+  "concrete-exposed-aggregate": ["Exposed Aggregate Concrete", "Free Quotes"],
 };
 
 /*
@@ -118,25 +108,6 @@ const COMBO_DESCRIPTIONS: Record<string, (city: string) => string> = {
  * results. A lookup keyed by slug cannot regress the same way: a missing key is
  * caught by the fallback below rather than silently reading wrong.
  */
-/** Page titles for the services that have their own full title (used as-is). */
-const COMBO_TITLES: Record<string, (city: string) => string> = {
-  "concrete-retaining-walls": (city) => `Concrete Retaining Walls & Erosion Control in ${city}, SC`,
-  "equipment-pads": (city) => `Hot Tub, Generator & AC Concrete Pads in ${city}, SC`,
-  "concrete-demolition": (city) => `Concrete Demolition, Tear-Out & Haul-Away in ${city}, SC`,
-  "concrete-steps": (city) => `Concrete Steps, Porches & Stoops in ${city}, SC`,
-  "concrete-foundations": (city) => `Concrete Foundation Footings & Deck Piers in ${city}, SC`,
-  "concrete-walkways": (city) => `Concrete Walkways & Sidewalks in ${city}, SC`,
-  "concrete-garage-coatings": (city) =>
-    `Garage Floor Epoxy & Concrete Coatings in ${city}, SC`,
-  "concrete-resurfacing": (city) => `Concrete Resurfacing & Overlays in ${city}, SC`,
-  "concrete-pool-decks": (city) => `Concrete Pool Decks & Surrounds in ${city}, SC`,
-  "concrete-patios": (city) => `Concrete Patios & Outdoor Living in ${city}, SC`,
-  "stamped-concrete": (city) =>
-    `Stamped Concrete Patios, Walkways & Driveways in ${city}, SC`,
-  "concrete-slabs": (city) =>
-    `Concrete Slabs for Sheds, Garages & Workshops in ${city}, SC`,
-};
-
 const COMBO_H1: Record<string, (city: string) => string> = {
   "concrete-retaining-walls": (city) => `Concrete Retaining Wall Quotes in ${city}, SC`,
   "equipment-pads": (city) => `Equipment Pad Quotes in ${city}, SC`,
@@ -167,13 +138,18 @@ export function fitTitle(base: string): string {
 }
 
 export const comboMeta = {
-  title: (serviceName: string, city: string, serviceSlug?: string) =>
-    serviceSlug && COMBO_TITLES[serviceSlug]
-      ? COMBO_TITLES[serviceSlug](city)
-      : fitTitle(`${city}, SC ${serviceName}`),
-  description: (serviceSlug: string, city: string) =>
-    COMBO_DESCRIPTIONS[serviceSlug]?.(city) ??
-    `Tell us about your ${serviceSlug.replace(/-/g, " ")} project in ${city}, SC and a local contractor can reply to your request.`,
+  title: (serviceName: string, city: string, serviceSlug?: string) => {
+    const parts = serviceSlug ? SEO_SERVICE_NAME[serviceSlug] : undefined;
+    return parts
+      ? `${parts[0]} in ${city}, SC | ${parts[1]}`
+      : fitTitle(`${city}, SC ${serviceName}`);
+  },
+  description: (serviceSlug: string, city: string) => {
+    const parts = SEO_SERVICE_NAME[serviceSlug];
+    return parts
+      ? `Need ${parts[0].toLowerCase()} in ${city}, SC or Lancaster County? Connect with licensed local contractors for red clay site prep, pours and fast estimates.`
+      : `Tell us about your ${serviceSlug.replace(/-/g, " ")} project in ${city}, SC and a local contractor can reply to your request.`;
+  },
   h1: (serviceSlug: string, city: string) =>
     COMBO_H1[serviceSlug]?.(city) ?? `Concrete Services in ${city}, SC`,
 };
