@@ -718,7 +718,7 @@ const records: readonly LocationServiceRecord[] = [
     heroSummary: "High durability epoxy and polyaspartic garage floor coatings tailored for Lancaster homeowners. Request your free consultation and estimate.",
     state: "published",
     localImage: "/images/services/concrete-garage-coatings/concrete-garage-coatings-hero.webp",
-    localImageAlt: "Clean two car garage floor with a glossy grey epoxy coating and light decorative flakes",
+    localImageAlt: "Full-broadcast decorative flake epoxy garage floor coating on a residential two-car garage in Lancaster, SC",
     localBody: [
       {
         heading: "Moisture comes first",
@@ -770,7 +770,7 @@ const records: readonly LocationServiceRecord[] = [
     heroSummary: "Renew damaged concrete with a fresh, durable overlay at a fraction of replacement cost. Schedule your free Lancaster estimate today.",
     state: "published",
     localImage: "/images/services/concrete-resurfacing/concrete-resurfacing-hero.webp",
-    localImageAlt: "Aging concrete driveway with a fresh, smooth, light grey overlay",
+    localImageAlt: "Polymer-modified concrete resurfacing and fresh broom overlay restoring a residential patio surface in Lancaster, SC",
     localBody: [
       {
         heading: "Is the old slab sound",
@@ -978,8 +978,8 @@ const records: readonly LocationServiceRecord[] = [
     serviceSlug: "concrete-pool-decks",
     heroSummary: "Concrete pool decks and surrounds for Lancaster homes, with textured, non-slip finishes. Request your free consultation and estimate.",
     state: "published",
-    localImage: "/images/services/concrete-patios/concrete-patios-hero.webp",
-    localImageAlt: "Concrete patio beside a covered pergola and wicker daybed, with a brick trimmed house and lawn",
+    localImage: "/images/services/concrete-pool-decks/concrete-pool-decks-hero.webp",
+    localImageAlt: "Textured non-slip concrete pool deck and inground pool surround on a residential property in Lancaster, SC",
     localBody: [
       {
         heading: "Heat and sun",
@@ -1030,8 +1030,8 @@ const records: readonly LocationServiceRecord[] = [
       serviceSlug: "concrete-retaining-walls",
       heroSummary: "Poured concrete retaining walls for Lancaster yards and slopes, with drainage built in. Request your free consultation and estimate.",
       state: "published",
-      localImage: "/images/services/concrete-foundations/concrete-foundations-hero.webp",
-      localImageAlt: "Worker's boots beside a concrete vibrator pipe on fresh concrete over a steel rebar grid",
+      localImage: "/images/services/concrete-retaining-walls/concrete-retaining-walls-hero.webp",
+      localImageAlt: "Poured concrete retaining wall providing soil retention and erosion control on a residential property in Lancaster, SC",
       localBody: [
         {
           heading: "Water pressure behind the wall",
@@ -1078,8 +1078,8 @@ const records: readonly LocationServiceRecord[] = [
       serviceSlug: "equipment-pads",
       heroSummary: "Level, reinforced concrete pads for hot tubs, generators, and AC units in Lancaster. Request your free consultation and estimate.",
       state: "published",
-      localImage: "/images/locations/lancaster-sc/lancaster-sc-slabs.webp",
-      localImageAlt: "Newly poured concrete slab with form lines on its edge, set in a lawn beside a house",
+      localImage: "/images/services/equipment-pads/equipment-pads-hero.webp",
+      localImageAlt: "Reinforced concrete equipment pad poured for a residential hot tub and outdoor generator in Lancaster, SC",
       localBody: [
         {
           heading: "Level ground under heavy equipment",
@@ -1126,8 +1126,8 @@ const records: readonly LocationServiceRecord[] = [
       serviceSlug: "concrete-demolition",
       heroSummary: "Concrete removal for driveways, patios, and sidewalks in Lancaster, with haul-away of the debris. Request your free consultation and estimate.",
       state: "published",
-      localImage: "/images/locations/lancaster-sc/lancaster-sc-repair.webp",
-      localImageAlt: "Sidewalk slab heaved and cracked by exposed tree roots beside a large oak, with a residential street behind",
+      localImage: "/images/services/concrete-demolition/concrete-demolition-hero.webp",
+      localImageAlt: "Concrete demolition and old driveway slab tear-out with heavy equipment and debris haul-away in Lancaster, SC",
       localBody: [
         {
           heading: "Utilities come first",

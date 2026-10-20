@@ -904,8 +904,7 @@ export const expansionServices: readonly ServiceRecord[] = [
     ctaLead:
       "Send the garage size, the current floor condition, and any photos. A local contractor will confirm the system and the preparation it needs.",
     image: "/images/services/concrete-garage-coatings/concrete-garage-coatings-hero.webp",
-    imageAlt:
-      "Clean two car garage floor with a glossy grey epoxy coating and light decorative flakes",
+    imageAlt: "Full-broadcast decorative flake epoxy garage floor coating on a residential two-car garage in Lancaster, SC",
     projectTypes: ["Two car garage", "Single car garage", "Workshop floor"],
     keyFacts: [
       { label: "Coating types", value: "Epoxy, polyurea, flake systems" },
@@ -1081,8 +1080,7 @@ export const expansionServices: readonly ServiceRecord[] = [
     ctaLead:
       "Send photos of the worn surface and its size. A local contractor will tell you whether an overlay will bond.",
     image: "/images/services/concrete-resurfacing/concrete-resurfacing-hero.webp",
-    imageAlt:
-      "Aging concrete driveway with a fresh, smooth, light grey overlay",
+    imageAlt: "Polymer-modified concrete resurfacing and fresh broom overlay restoring a residential patio surface in Lancaster, SC",
     projectTypes: ["Worn driveway", "Tired patio", "Faded walkway"],
     keyFacts: [
       { label: "Typical use", value: "Worn or faded concrete surfaces" },
@@ -1758,9 +1756,8 @@ export const expansionServices: readonly ServiceRecord[] = [
       "Pool deck pricing depends on size, shape, finish, and how much of the existing deck comes out.",
     ctaLead:
       "Send the pool size, the deck area, and any photos. A local contractor will confirm the finish and the work it needs.",
-    image: "/images/services/concrete-patios/concrete-patios-hero.webp",
-    imageAlt:
-      "Concrete patio beside a covered pergola and wicker daybed, with a brick trimmed house and lawn",
+    image: "/images/services/concrete-pool-decks/concrete-pool-decks-hero.webp",
+    imageAlt: "Textured non-slip concrete pool deck and inground pool surround on a residential property in Lancaster, SC",
     projectTypes: ["Inground pool deck", "Pool surround", "Sun shelf"],
     keyFacts: [
       { label: "Finishes", value: "Broom, salt, and textured non-slip" },
@@ -1928,8 +1925,8 @@ export const expansionServices: readonly ServiceRecord[] = [
       processLead: "A retaining wall is only as stable as its footing and drainage. The sequence below shows the usual order; the contractor sets the actual dates.",
       costLead: "Retaining wall pricing depends mainly on height, length, and how much excavation and drainage the site needs.",
       ctaLead: "Send the wall length, the height of the slope, and any photos. A local contractor will confirm the design and the work it needs.",
-      image: "/images/services/concrete-foundations/concrete-foundations-hero.webp",
-      imageAlt: "Worker's boots beside a concrete vibrator pipe on fresh concrete over a steel rebar grid",
+      image: "/images/services/concrete-retaining-walls/concrete-retaining-walls-hero.webp",
+      imageAlt: "Poured concrete retaining wall providing soil retention and erosion control on a residential property in Lancaster, SC",
       projectTypes: [
         "Terrace wall",
         "Driveway support wall",
@@ -2096,8 +2093,8 @@ export const expansionServices: readonly ServiceRecord[] = [
       processLead: "Equipment pads need a level, compacted base to stay level. The sequence below shows the usual order; the contractor sets the actual dates.",
       costLead: "Pad pricing depends mainly on size, thickness, and how much base work the site needs.",
       ctaLead: "Send the equipment make and model, the planned location, and any photos. A local contractor will confirm the pad size and the work it needs.",
-      image: "/images/locations/lancaster-sc/lancaster-sc-slabs.webp",
-      imageAlt: "Newly poured concrete slab with form lines on its edge, set in a lawn beside a house",
+      image: "/images/services/equipment-pads/equipment-pads-hero.webp",
+      imageAlt: "Reinforced concrete equipment pad poured for a residential hot tub and outdoor generator in Lancaster, SC",
       projectTypes: [
         "Hot tub pad",
         "Generator pad",
@@ -2259,8 +2256,8 @@ export const expansionServices: readonly ServiceRecord[] = [
       processLead: "Demolition starts with utility marking and site access, then moves to breaking, loading, and cleanup. The sequence below shows the usual order; the contractor sets the actual dates.",
       costLead: "Demolition pricing depends mainly on the volume of concrete, access, and how far the debris must travel.",
       ctaLead: "Send the area to be removed, the slab thickness if known, and any photos. A local contractor will confirm the method and the haul-away.",
-      image: "/images/locations/lancaster-sc/lancaster-sc-repair.webp",
-      imageAlt: "Sidewalk slab heaved and cracked by exposed tree roots beside a large oak, with a residential street behind",
+      image: "/images/services/concrete-demolition/concrete-demolition-hero.webp",
+      imageAlt: "Concrete demolition and old driveway slab tear-out with heavy equipment and debris haul-away in Lancaster, SC",
       projectTypes: [
         "Driveway tear-out",
         "Patio removal",
