@@ -124,7 +124,8 @@ export function LocalContext({
                 className="rounded-full border px-4 py-2 text-[15px] font-medium"
                 style={{
                   borderColor: "var(--color-line)",
-                  backgroundColor: "var(--color-surface)",
+                  backgroundColor:
+                    "color-mix(in srgb, var(--color-ink) 4%, var(--color-surface))",
                 }}
               >
                 {name}
