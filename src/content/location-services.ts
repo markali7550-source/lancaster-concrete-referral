@@ -1046,6 +1046,10 @@ const records: readonly LocationServiceRecord[] = [
           body: "Many Lancaster lots slope toward the house. A wall can level a yard, hold back a bank, or support a driveway edge, and the contractor sizes it to the load behind it.",
         },
         {
+          heading: "Choosing a wall design",
+          body: "Wall height, the load behind it, and the finish all shape the design. The contractor explains the options and what the site requires before the order is placed.",
+        },
+        {
           heading: "Who does the work",
           body: "Local concrete contractors do the work. After you submit a request, a local contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that contractor after the site review.",
         },
@@ -1094,6 +1098,10 @@ const records: readonly LocationServiceRecord[] = [
           body: "The pad should sit where the equipment has the clearance it needs. The contractor checks the planned location against the equipment's clearance rules before the forms go in.",
         },
         {
+          heading: "Choosing a pad size",
+          body: "Pad size and thickness depend on the equipment and its clearances. The contractor reviews the planned spot and explains what the pad needs before the forms are set.",
+        },
+        {
           heading: "Who does the work",
           body: "Local concrete contractors do the work. After you submit a request, a local contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that contractor after the site review.",
         },
@@ -1140,6 +1148,10 @@ const records: readonly LocationServiceRecord[] = [
         {
           heading: "Old slabs on loose fill",
           body: "Many older slabs sit on loose fill. After removal, the subgrade is compacted and leveled before anything new is built on it.",
+        },
+        {
+          heading: "Planning the haul-away",
+          body: "Debris routes, staging space, and truck access shape how the removal runs. The contractor plans the haul-away before the crew arrives.",
         },
         {
           heading: "Who does the work",

@@ -56,6 +56,10 @@ const SERVICE_DETAIL_IMAGES: Record<string, { src: string; alt: string }> = {
   "concrete-walkways": { src: "/images/services/concrete-walkways/concrete-walkways-band.webp", alt: "Curved concrete walkway with saw-cut expansion joints beside a lawn" },
   "concrete-steps": { src: "/images/services/concrete-steps/concrete-steps-detail.webp", alt: "Example photo: concrete steps formed in wood boards with a brick edge and marking tape at the base" },
   "concrete-repair": { src: "/images/services/concrete-repair/concrete-repair-detail.webp", alt: "Settled concrete walkway slab with a cracked, lifted edge" },
+  "concrete-retaining-walls": { src: "/images/services/concrete-retaining-walls/concrete-retaining-walls-detail.webp", alt: "Poured concrete retaining wall terracing a sloped residential lawn with gravel drainage at its base" },
+  "equipment-pads": { src: "/images/services/equipment-pads/equipment-pads-detail.webp", alt: "Level reinforced concrete pad beside a residential house, ready for an outdoor equipment install" },
+  "concrete-demolition": { src: "/images/services/concrete-demolition/concrete-demolition-detail.webp", alt: "Old concrete patio being broken up with a jackhammer and debris stacked beside the work area" },
+  "concrete-pool-decks": { src: "/images/services/concrete-pool-decks/concrete-pool-decks-detail.webp", alt: "Salt-finish non-slip concrete pool deck edge beside clear blue pool water" },
 };
 
 /**
@@ -103,6 +107,10 @@ const SERVICE_PROCESS_IMAGES: Record<string, { src: string; alt: string }> = {
     src: "/images/services/concrete-repair/concrete-repair-process.webp",
     alt: "Worker with a pry bar beside an orange cut-off saw, cutting along the cracked edge of a concrete slab",
   },
+  "concrete-retaining-walls": { src: "/images/services/concrete-retaining-walls/concrete-retaining-walls-process.webp", alt: "Steel rebar and wood forms set in a trench for a poured concrete retaining wall footing" },
+  "equipment-pads": { src: "/images/services/equipment-pads/equipment-pads-process.webp", alt: "Wood forms and a square rebar grid set for a small reinforced equipment pad, with a spirit level on the form" },
+  "concrete-demolition": { src: "/images/services/concrete-demolition/concrete-demolition-process.webp", alt: "Mini excavator loading broken concrete slab pieces into a dump truck on a residential driveway" },
+  "concrete-pool-decks": { src: "/images/services/concrete-pool-decks/concrete-pool-decks-process.webp", alt: "Fresh concrete finished with a broom and salt texture tool at the edge of a pool deck" },
 };
 
 const MAIN_NAV_LABELS: Record<ServiceSectionId, string> = {
