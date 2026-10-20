@@ -17,6 +17,17 @@ export interface ServiceDetail {
 }
 
 export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
+  /* ------------------------------------------------------ pool decks */
+  "concrete-pool-decks": {
+    mayInclude: [
+      "Inground pool deck replacement",
+      "Pool surround and coping area",
+      "Sun shelf and deck extensions",
+      "Textured non-slip finishes",
+      "Drainage slope away from the pool",
+    ],
+  },
+
   /* ------------------------------------------------------ driveways */
   "concrete-driveways": {
     mayInclude: [

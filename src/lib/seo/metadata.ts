@@ -71,6 +71,8 @@ export function pageMetadata({
  * these titles past 60 characters. The brand is still carried on each page by
  * `openGraph.siteName` and the JSON-LD graph. */
 const COMBO_DESCRIPTIONS: Record<string, (city: string) => string> = {
+  "concrete-pool-decks": (city) =>
+    `Inground concrete pool deck installations, pool surrounds, and coping repairs in ${city}, SC. Heat-resistant, non-slip textured finishes.`,
   "concrete-driveways": (city) =>
     `Planning a concrete driveway in ${city}, SC? Tell us about the project and a local contractor will reply to your request. Ask for a free quote.`,
   "concrete-patios": (city) =>
@@ -82,7 +84,7 @@ const COMBO_DESCRIPTIONS: Record<string, (city: string) => string> = {
   "concrete-foundations": (city) =>
     `Planning a foundation or footing in ${city}, SC? Describe the project and a local contractor will reply to your request. Get a free quote today.`,
   "concrete-walkways": (city) =>
-    `Thinking about a front walk or entry path in ${city}, SC? Share a few details and a local contractor will reply. Request a free quote today.`,
+    `Custom front entry concrete walkways, garden pathways, and HOA/city sidewalk replacement in ${city}, SC. Trip hazard removal and 4,000 PSI pours.`,
   "stamped-concrete": (city) =>
     `High-end stamped and decorative concrete in ${city}, SC. Ashlar slate, wood plank, flagstone, and cobblestone patterns with integral color sealing.`,
   "concrete-steps": (city) =>
@@ -90,9 +92,9 @@ const COMBO_DESCRIPTIONS: Record<string, (city: string) => string> = {
   "concrete-leveling": (city) =>
     `Sunken slab in ${city}, SC? Tell us where it dropped and a local contractor will reply to your request about leveling options. Get a free quote.`,
   "concrete-garage-coatings": (city) =>
-    `Planning a garage floor coating in ${city}, SC? Tell us the garage size and floor condition, and a local contractor can reply to your request.`,
+    `High-durability polyaspartic and epoxy flake garage floor coatings in ${city}, SC. Diamond grinding surface prep and hot-tire pickup resistance.`,
   "concrete-resurfacing": (city) =>
-    `Worn driveway or patio in ${city}, SC? Tell us about the surface and a local contractor will reply about a thin overlay. Ask for a free quote.`,
+    `Polymer-modified concrete resurfacing, micro-toppings, and spall restoration in ${city}, SC. Restores damaged driveways and patios without full tear-out.`,
   "concrete-aprons": (city) =>
     `Need a concrete apron in ${city}, SC? Tell us where the driveway meets the street and a local contractor will reply. Request a free quote today.`,
   "concrete-sealing": (city) =>
@@ -112,6 +114,11 @@ const COMBO_DESCRIPTIONS: Record<string, (city: string) => string> = {
  */
 /** Page titles for the services that have their own full title (used as-is). */
 const COMBO_TITLES: Record<string, (city: string) => string> = {
+  "concrete-walkways": (city) => `Concrete Walkways & Sidewalks in ${city}, SC`,
+  "concrete-garage-coatings": (city) =>
+    `Garage Floor Epoxy & Concrete Coatings in ${city}, SC`,
+  "concrete-resurfacing": (city) => `Concrete Resurfacing & Overlays in ${city}, SC`,
+  "concrete-pool-decks": (city) => `Concrete Pool Decks & Surrounds in ${city}, SC`,
   "concrete-patios": (city) => `Concrete Patios & Outdoor Living in ${city}, SC`,
   "stamped-concrete": (city) =>
     `Stamped Concrete Patios, Walkways & Driveways in ${city}, SC`,
@@ -120,6 +127,7 @@ const COMBO_TITLES: Record<string, (city: string) => string> = {
 };
 
 const COMBO_H1: Record<string, (city: string) => string> = {
+  "concrete-pool-decks": (city) => `Concrete Pool Deck Quotes in ${city}, SC`,
   "concrete-driveways": (city) => `Concrete Driveway Quotes in ${city}, SC`,
   "concrete-patios": (city) => `Concrete Patio Quotes in ${city}, SC`,
   "concrete-slabs": (city) => `Concrete Slab Quotes in ${city}, SC`,

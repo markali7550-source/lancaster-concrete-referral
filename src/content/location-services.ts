@@ -96,6 +96,13 @@ export const LOCAL_SOIL_BY_SERVICE: Record<string, { title: string; paragraphs: 
       "Humid summers slow some coatings and speed up others. The contractor chooses a system and a cure schedule that suit the temperatures and humidity expected during the job."
     ]
   },
+  "concrete-pool-decks": {
+    "title": "Pool decks in Lancaster: drainage and red clay",
+    "paragraphs": [
+      "Red clay in Lancaster holds water after storms, and a pool deck that does not slope away from the pool can leave water standing at the coping. The contractor checks the existing grade and sets the slope before the forms go in.",
+      "Clay also moves with the seasons. A compacted base and a reinforced slab help the deck stay level, and expansion joints keep it from cracking where it meets the pool or other fixed structures."
+    ]
+  },
   "concrete-resurfacing": {
     "title": "Resurfacing in Lancaster: check the slab under the overlay",
     "paragraphs": [
@@ -945,6 +952,58 @@ const records: readonly LocationServiceRecord[] = [
     ],
   },
 
+  {
+    locationSlug: "lancaster-sc",
+    serviceSlug: "concrete-pool-decks",
+    heroSummary: "Concrete pool decks and surrounds for Lancaster homes, with textured, non-slip finishes. Request your free consultation and estimate.",
+    state: "published",
+    localImage: "/images/services/concrete-patios/concrete-patios-hero.webp",
+    localImageAlt: "Concrete patio beside a covered pergola and wicker daybed, with a brick trimmed house and lawn",
+    localBody: [
+      {
+        heading: "Heat and sun",
+        body: "Lancaster summers put a lot of sun on a pool deck. Crews use finishes and lighter colors that stay more comfortable underfoot in direct heat.",
+      },
+      {
+        heading: "Drainage away from the pool",
+        body: "A pool deck has to slope away from the water and the house. The contractor checks the existing grade before setting forms, so runoff does not pool at the coping or against the home.",
+      },
+      {
+        heading: "Clay soil",
+        body: "Red clay in the Lancaster area holds water and moves with the seasons. A compacted base and reinforced slab help the deck stay level after it is in service.",
+      },
+      {
+        heading: "Choosing a finish",
+        body: "Broom, salt, and other textured finishes add grip when the deck is wet. The contractor explains the trade offs before the order is placed.",
+      },
+      {
+        heading: "Who does the work",
+        body: "Local concrete contractors do the work. After you submit a request, a local contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that contractor after the site review.",
+      },
+      {
+        heading: "Communities near Lancaster",
+        body: "Quotes on this page apply to addresses in the City of Lancaster. Kershaw, Heath Springs, Van Wyck, and Buford are nearby county communities, and coverage is confirmed by address.",
+      },
+    ],
+    localFaqs: [
+      {
+        question: "Can a pool deck be poured in Lancaster during summer?",
+        answer: "Often, yes, but heat and humidity change how fast the concrete sets. The contractor picks a schedule that suits the conditions on the day of the job.",
+      },
+      {
+        question: "Will the new deck be safe to walk on barefoot?",
+        answer: "Textured finishes feel firmer and grip better than smooth ones. The contractor recommends a finish after reviewing the deck and how it will be used.",
+      },
+      {
+        question: "Can the deck be extended around an existing pool?",
+        answer: "In many cases, yes. The contractor checks the coping, drainage, and access first, then explains what the extension will involve.",
+      },
+      {
+        question: "Is the price final before a site visit?",
+        answer: "Usually not. Deck area, removal, finish, and drainage all affect cost, so an on site review is normally needed.",
+      },
+    ],
+  },
 ];
 
 /** Explicit allowlist consumed by generateStaticParams. Never a Cartesian product. */

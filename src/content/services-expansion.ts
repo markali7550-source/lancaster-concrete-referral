@@ -1720,4 +1720,180 @@ export const expansionServices: readonly ServiceRecord[] = [
     ],
   },
 
+  {
+    slug: "concrete-pool-decks",
+    name: "Pool Decks & Surrounds",
+    shortName: "Pool Decks",
+    nameLower: "pool decks and surrounds",
+    projectNoun: "pool deck",
+    state: "published",
+    intent: "Concrete pool decks and surrounds",
+    summary:
+      "Concrete pool decks and surrounds with textured, non-slip finishes that handle sun, splashing, and bare feet.",
+    cardScope: "Pool decks, surrounds, sun shelves, equipment pads",
+    workIncluded: [
+      "Inspection of the pool edge, coping, and drainage slope",
+      "Excavation and compacted aggregate base",
+      "Forms and reinforcing placed around the pool perimeter",
+      "Concrete placed with a non-slip textured finish",
+      "Control joints cut and expansion joints sealed",
+    ],
+    heroSummary:
+      "Heat resistant, non-slip concrete pool decks and surrounds built for Lancaster summers. Connect with our local specialists for a free consultation and quote.",
+    sectionOrder: ["scope", "options", "process", "cost", "prepare"],
+    headings: {
+      scope: "What a pool deck project covers",
+      options: "Finish and deck layout choices",
+      process: "How a pool deck job is sequenced",
+      cost: "What moves the price of a pool deck",
+      prepare: "Before the contractor visits",
+      faq: "Pool deck questions",
+      cta: "Ready to replace or extend your pool deck?",
+    },
+    optionsLead:
+      "Finish and layout choices change slip resistance, comfort underfoot, and how the deck handles heat and water.",
+    processLead:
+      "Pool decks depend on correct slope and a stable base. The sequence below shows the usual order; the contractor sets the actual dates.",
+    costLead:
+      "Pool deck pricing depends on size, shape, finish, and how much of the existing deck comes out.",
+    ctaLead:
+      "Send the pool size, the deck area, and any photos. A local contractor will confirm the finish and the work it needs.",
+    image: "/images/services/concrete-patios/concrete-patios-hero.webp",
+    imageAlt:
+      "Concrete patio beside a covered pergola and wicker daybed, with a brick trimmed house and lawn",
+    projectTypes: ["Inground pool deck", "Pool surround", "Sun shelf"],
+    keyFacts: [
+      { label: "Finishes", value: "Broom, salt, and textured non-slip" },
+      { label: "Typical use", value: "Inground pools, spas, sun shelves" },
+    ],
+    covered: [
+      {
+        title: "Pool deck replacement",
+        body: "An old deck is removed and replaced with a new slab sloped away from the pool.",
+      },
+      {
+        title: "Deck extensions and sun shelves",
+        body: "Added concrete around the pool for more lounging and walking space.",
+      },
+      {
+        title: "Textured non-slip finishes",
+        body: "Broom and salt finishes that give grip when wet and feel better underfoot.",
+      },
+    ],
+    outOfScope: [
+      "Pool shell or structural repairs",
+      "Pool plumbing and equipment work",
+      "Fence and enclosure installation",
+    ],
+    options: [
+      {
+        name: "Finish",
+        description:
+          "Broom, salt, and other textured finishes add grip. Smooth finishes feel better barefoot but can be slippery when wet.",
+      },
+      {
+        name: "Color",
+        description:
+          "Integral color or a stain changes the look. Lighter shades stay cooler in direct sun.",
+      },
+      {
+        name: "Edge detail",
+        description:
+          "A cantilevered coping or a square edge changes how the deck meets the pool.",
+      },
+    ],
+    tradeSpecs: [
+      "Deck sloped to drain water away from the pool and the home.",
+      "Reinforcing placed in the slab and control joints cut at planned intervals.",
+      "Expansion joints placed where the deck meets the pool or other fixed structures.",
+      "Finish applied for slip resistance before the concrete sets.",
+    ],
+    process: [
+      {
+        phase: "Pool edge and drainage check",
+        duration: "Scheduled by contractor",
+        detail:
+          "The contractor checks the coping, the existing deck, and how water drains.",
+      },
+      {
+        phase: "Excavation and base",
+        duration: "Typically 1 to 2 days",
+        detail:
+          "Old material is removed and the base is compacted to support the new deck.",
+      },
+      {
+        phase: "Forms and pour",
+        duration: "1 to 2 days",
+        detail:
+          "Forms and reinforcing go in, then the concrete is placed and finished.",
+      },
+      {
+        phase: "Cut, seal, and cure",
+        duration: "Several days",
+        detail:
+          "Joints are cut and sealed, and the deck cures before foot traffic returns.",
+      },
+    ],
+    costFactors: [
+      {
+        factor: "Deck area",
+        impact: "High",
+        note: "Larger decks take more concrete and more finishing time.",
+      },
+      {
+        factor: "Removal of old deck",
+        impact: "High",
+        note: "Tear out and haul away can take most of the labor on a replacement.",
+      },
+      {
+        factor: "Finish and color",
+        impact: "Medium",
+        note: "Decorative finishes and color add material and time.",
+      },
+      {
+        factor: "Drainage and base work",
+        impact: "Medium",
+        note: "Extra excavation or slope correction adds labor.",
+      },
+      {
+        factor: "Edge and coping details",
+        impact: "Low",
+        note: "Custom edges add a small amount of form work.",
+      },
+    ],
+    prepChecklist: [
+      "Clear furniture, planters, and pool equipment from the work area",
+      "Note any cracks, low spots, or spots where water pools",
+      "Decide on a finish and color before the visit",
+      "Keep pool access clear for the crew",
+    ],
+    quoteQuestions: [
+      "What finish do you recommend for this pool?",
+      "How will the deck drain away from the pool?",
+      "How long before the deck can be used?",
+      "Will the existing deck need to be removed?",
+    ],
+    considerations: [
+      {
+        question: "Will the new deck be slippery?",
+        answer:
+          "Textured finishes give grip when wet. The contractor recommends a finish that fits how the deck will be used.",
+      },
+      {
+        question: "Can the work be done around the pool?",
+        answer:
+          "Yes. The contractor plans access and protects the pool and equipment during the work.",
+      },
+      {
+        question: "Does concrete get hot in the sun?",
+        answer:
+          "Concrete can get warm in direct sun. Lighter colors and textured finishes stay more comfortable underfoot.",
+      },
+      {
+        question: "Does this cover pool repairs?",
+        answer:
+          "No. This service covers the deck and surround. The pool shell and equipment are outside its scope.",
+      },
+    ],
+  },
 ];
