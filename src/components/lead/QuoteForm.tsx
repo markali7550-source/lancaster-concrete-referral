@@ -644,12 +644,27 @@ export function QuoteForm({
             >
               {status === "submitting" ? "Sending…" : "Request Concrete Service"}
             </button>
+            {/* Going back only changes the step. Every value lives in `values`,
+                so nothing typed on step 1 or step 2 is reset. */}
             <button
               type="button"
-              className="btn btn-secondary w-full sm:w-auto"
+              className="inline-flex min-h-11 items-center justify-center gap-1.5 self-center rounded-md px-3 text-sm font-medium text-[var(--color-muted)] transition-colors hover:text-[var(--color-ink)] disabled:opacity-50"
               onClick={() => setStep(1)}
               disabled={status === "submitting"}
             >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 20 20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-4 w-4 shrink-0"
+              >
+                <path d="M16 10H4M9 5l-5 5 5 5" />
+              </svg>
               Back
             </button>
           </div>
