@@ -654,7 +654,7 @@ export function QuoteForm({
             </button>
           </div>
           <p className="mt-3 text-xs leading-relaxed text-[color:var(--color-muted)]">
-            By submitting, you agree to be contacted by local concrete contractors in our network regarding your request. Message and data rates may apply.
+            By submitting this request, you agree to be contacted by local concrete contractors in our network regarding your project. Message and data rates may apply.
           </p>
         </div>
       )}

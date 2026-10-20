@@ -24,19 +24,19 @@ import {
 /** Questions every location-service page answers, added after the record's own FAQs. */
 const SHARED_FAQS: { question: string; answer: string }[] = [
   {
-    question: "How long does concrete take to cure?",
+    question: "How long does new concrete take to cure in Lancaster, SC?",
     answer:
-      "Concrete gains most of its strength over about four weeks. Light foot traffic is usually fine after 1 to 3 days, but vehicles should wait longer. Your local contractor will confirm the timing for your project on site before the pour.",
+      "Normal traffic is safe after about 7 days, and the concrete reaches full cure at about 28 days. Your local contractor will confirm the timing for your project on site.",
   },
   {
-    question: "How is the subbase prepared?",
+    question: "How do you handle Lancaster's red clay subsoil before pouring?",
     answer:
-      "The ground under the slab is cleared, compacted, and graded so water drains away from the concrete. Soft or loose soil is removed or stabilized first. Your local contractor will assess the subbase on site before the pour, so the slab has firm, even support.",
+      "Red clay holds water and moves with the seasons. The subbase is compacted crushed stone, and the edges are set up for proper drainage to keep the slab from shifting. Your local contractor will confirm the details on site before the pour.",
   },
   {
-    question: "What happens after I request an estimate?",
+    question: "How quickly can I get an on site assessment and quote?",
     answer:
-      "A local contractor contacts you to inspect the site, confirm the scope, and quote the work. Estimates are free, and nothing is booked until you agree to a price with the contractor.",
+      "A local contractor typically contacts you within 24 to 48 business hours to schedule an on site assessment and quote. Estimates are free and come with no obligation.",
   },
 ];
 
