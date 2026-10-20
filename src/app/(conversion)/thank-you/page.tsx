@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { pageMetadata } from "@/lib/seo/metadata";
+import { PHOTO_COPY_WASH, PHOTO_SCRIM } from "@/components/marketing/sections";
 import { site } from "@/lib/env";
 
 export const metadata: Metadata = pageMetadata({
@@ -31,7 +32,16 @@ export default function ThankYouPage() {
   return (
     <div className="container-page py-16 md:py-24">
       <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
-        <div className="text-center lg:text-left">
+        <div className="cta-photo relative isolate overflow-hidden rounded-[var(--radius-card)] px-6 py-10 text-center md:px-10 md:py-12 lg:text-left">
+          <Image
+            src="/images/thank-you/thank-you.webp"
+            alt="Thank you written in colorful chalk on a concrete sidewalk"
+            fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="-z-20 object-cover"
+          />
+          <div className={`absolute inset-0 -z-10 ${PHOTO_SCRIM} ${PHOTO_COPY_WASH}`} aria-hidden="true" />
+          <div className="relative">
           <p className="eyebrow">Request received</p>
           <h1 className="h1 mt-4">Thank you! Your request has been received.</h1>
           <p className="lede mt-5">
@@ -45,14 +55,7 @@ export default function ThankYouPage() {
               How it works
             </Link>
           </div>
-          <Image
-            src="/images/thank-you/thank-you.webp"
-            alt="Thank you written in colorful chalk on a concrete sidewalk"
-            width={612}
-            height={367}
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            className="mt-10 h-auto w-full rounded-[var(--radius-card)]"
-          />
+          </div>
         </div>
 
         <div>
