@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { site } from "@/lib/env";
@@ -44,6 +45,14 @@ export default function ThankYouPage() {
               How it works
             </Link>
           </div>
+          <Image
+            src="/images/thank-you/thank-you.webp"
+            alt="Thank you written in colorful chalk on a concrete sidewalk"
+            width={612}
+            height={367}
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="mt-10 h-auto w-full rounded-[var(--radius-card)]"
+          />
         </div>
 
         <div>
