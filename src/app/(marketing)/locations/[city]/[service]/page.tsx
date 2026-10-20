@@ -21,6 +21,25 @@ import {
   webPageNode,
 } from "@/lib/schema/graph";
 
+/** Questions every location-service page answers, added after the record's own FAQs. */
+const SHARED_FAQS: { question: string; answer: string }[] = [
+  {
+    question: "How long does concrete take to cure?",
+    answer:
+      "Concrete gains most of its strength over about four weeks. Light foot traffic is usually fine after 1 to 3 days, but vehicles should wait longer. Your local contractor will confirm the timing for your project on site before the pour.",
+  },
+  {
+    question: "How is the subbase prepared?",
+    answer:
+      "The ground under the slab is cleared, compacted, and graded so water drains away from the concrete. Soft or loose soil is removed or stabilized first. Your local contractor will assess the subbase on site before the pour, so the slab has firm, even support.",
+  },
+  {
+    question: "What happens after I request an estimate?",
+    answer:
+      "A local contractor contacts you to inspect the site, confirm the scope, and quote the work. Estimates are free, and nothing is booked until you agree to a price with the contractor.",
+  },
+];
+
 export const dynamicParams = false;
 
 /*
@@ -88,6 +107,13 @@ export default async function ComboPage({ params }: { params: Params }) {
     ],
   };
 
+  const pageFaqs = [
+    ...record.localFaqs,
+    ...SHARED_FAQS.filter(
+      (shared) => !record.localFaqs.some((own) => own.question === shared.question),
+    ),
+  ];
+
   const graph = buildGraph([
     serviceNode({
       path,
@@ -102,7 +128,7 @@ export default async function ComboPage({ params }: { params: Params }) {
       { name: `${location.city}, SC`, path: `/locations/${location.slug}` },
       { name: serviceRecord.name, path },
     ]),
-    faqNode(path, record.localFaqs),
+    faqNode(path, pageFaqs),
   ]);
 
   return (
@@ -142,7 +168,7 @@ export default async function ComboPage({ params }: { params: Params }) {
           blocks: record.localBody,
         }}
         faqTitle={`${location.city} ${serviceRecord.projectNoun} questions`}
-        faqs={record.localFaqs}
+        faqs={pageFaqs}
         faqName="combo-faq"
         relatedServices={publishedServices.filter((s) =>
           publishedLocationServices.some(
