@@ -16,11 +16,15 @@ import {
 export function Breadcrumbs({
   items,
   overlay = false,
+  onPhoto = false,
 }: {
   items: { name: string; path?: string }[];
   /** Rendered inside a photo header: no band, no border, light text. */
   overlay?: boolean;
+  /** Sits on a dark photo but keeps the band border. Light text in every theme. */
+  onPhoto?: boolean;
 }) {
+  const lightOnPhoto = overlay || onPhoto;
   const trail = (
     <ol
       className={`flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm lg:justify-start ${
@@ -28,7 +32,11 @@ export function Breadcrumbs({
           ? " "
           : "py-3 text-[color:var(--color-muted)]"
       }`}
-      style={overlay ? { color: "rgba(255,255,255,0.78)" } : undefined}
+      style={
+        lightOnPhoto
+          ? { color: "rgba(255,255,255,0.78)", textShadow: "0 1px 2px rgba(0,0,0,0.45)" }
+          : undefined
+      }
     >
       {items.map((item, index) => (
         <li key={item.name} className="flex items-center gap-2">
@@ -43,8 +51,8 @@ export function Breadcrumbs({
           ) : (
             <span
               aria-current="page"
-              className={overlay ? "font-medium" : "text-[color:var(--color-ink)]"}
-              style={overlay ? { color: "var(--color-band-ink)" } : undefined}
+              className={lightOnPhoto ? "font-medium" : "text-[color:var(--color-ink)]"}
+              style={lightOnPhoto ? { color: "var(--color-band-ink)" } : undefined}
             >
               {item.name}
             </span>

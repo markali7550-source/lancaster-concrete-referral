@@ -140,6 +140,7 @@ export default async function ComboPage({ params }: { params: Params }) {
         detail={detail}
         breadcrumbs={
           <Breadcrumbs
+            onPhoto
             items={[
               { name: "Home", path: "/" },
               { name: "Service areas", path: "/locations" },
