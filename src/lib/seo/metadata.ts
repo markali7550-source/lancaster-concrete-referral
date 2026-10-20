@@ -74,9 +74,9 @@ const COMBO_DESCRIPTIONS: Record<string, (city: string) => string> = {
   "concrete-driveways": (city) =>
     `Planning a concrete driveway in ${city}, SC? Tell us about the project and a local contractor will reply to your request. Ask for a free quote.`,
   "concrete-patios": (city) =>
-    `Thinking about a concrete patio in ${city}, SC? Share a few details and a local contractor will reply with next steps. Request a free quote today.`,
+    `Custom backyard concrete patios, patio extensions, and outdoor living slabs in ${city}, SC. Built with 4,000 PSI mix and clay subbase drainage.`,
   "concrete-slabs": (city) =>
-    `Need a concrete slab or pad in ${city}, SC? Tell us what it will support and a local contractor will reply to your request. Get a free quote.`,
+    `Structural concrete slabs for detached garages, storage sheds, pole barns, and equipment pads in ${city}, SC. Engineered subbase and thick perimeter edges.`,
   "concrete-repair": (city) =>
     `Have cracked or settled concrete in ${city}, SC? Describe the problem and a local contractor will reply to your request. Request a free quote.`,
   "concrete-foundations": (city) =>
@@ -84,7 +84,7 @@ const COMBO_DESCRIPTIONS: Record<string, (city: string) => string> = {
   "concrete-walkways": (city) =>
     `Thinking about a front walk or entry path in ${city}, SC? Share a few details and a local contractor will reply. Request a free quote today.`,
   "stamped-concrete": (city) =>
-    `Interested in stamped concrete in ${city}, SC? Tell us the area and pattern you have in mind, and a local contractor can reply to your request.`,
+    `High-end stamped and decorative concrete in ${city}, SC. Ashlar slate, wood plank, flagstone, and cobblestone patterns with integral color sealing.`,
   "concrete-steps": (city) =>
     `Planning new or repaired steps in ${city}, SC? Tell us about the rise and location, and a local contractor will reply. Ask for a free quote.`,
   "concrete-leveling": (city) =>
@@ -110,6 +110,15 @@ const COMBO_DESCRIPTIONS: Record<string, (city: string) => string> = {
  * results. A lookup keyed by slug cannot regress the same way: a missing key is
  * caught by the fallback below rather than silently reading wrong.
  */
+/** Page titles for the services that have their own full title (used as-is). */
+const COMBO_TITLES: Record<string, (city: string) => string> = {
+  "concrete-patios": (city) => `Concrete Patios & Outdoor Living in ${city}, SC`,
+  "stamped-concrete": (city) =>
+    `Stamped Concrete Patios, Walkways & Driveways in ${city}, SC`,
+  "concrete-slabs": (city) =>
+    `Concrete Slabs for Sheds, Garages & Workshops in ${city}, SC`,
+};
+
 const COMBO_H1: Record<string, (city: string) => string> = {
   "concrete-driveways": (city) => `Concrete Driveway Quotes in ${city}, SC`,
   "concrete-patios": (city) => `Concrete Patio Quotes in ${city}, SC`,
@@ -136,8 +145,10 @@ export function fitTitle(base: string): string {
 }
 
 export const comboMeta = {
-  title: (serviceName: string, city: string) =>
-    fitTitle(`${city}, SC ${serviceName}`),
+  title: (serviceName: string, city: string, serviceSlug?: string) =>
+    serviceSlug && COMBO_TITLES[serviceSlug]
+      ? COMBO_TITLES[serviceSlug](city)
+      : fitTitle(`${city}, SC ${serviceName}`),
   description: (serviceSlug: string, city: string) =>
     COMBO_DESCRIPTIONS[serviceSlug]?.(city) ??
     `Tell us about your ${serviceSlug.replace(/-/g, " ")} project in ${city}, SC and a local contractor can reply to your request.`,

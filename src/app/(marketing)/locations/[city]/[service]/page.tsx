@@ -68,7 +68,7 @@ export async function generateMetadata({
   const serviceRecord = getService(service);
   if (!location || !serviceRecord || !getLocationService(city, service)) return {};
   return pageMetadata({
-    title: comboMeta.title(serviceRecord.name, location.city),
+    title: comboMeta.title(serviceRecord.name, location.city, serviceRecord.slug),
     description: comboMeta.description(serviceRecord.slug, location.city),
     path: `/locations/${city}/${service}`,
   });
