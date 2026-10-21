@@ -1031,7 +1031,7 @@ const records: readonly LocationServiceRecord[] = [
       heroSummary: "Poured concrete retaining walls for Lancaster yards and slopes, with drainage built in. Request your free consultation and estimate.",
       state: "published",
       localImage: "/images/services/concrete-retaining-walls/concrete-retaining-walls-hero.webp",
-      localImageAlt: "Poured concrete retaining wall providing soil retention and erosion control on a residential property in Lancaster, SC",
+      localImageAlt: "Poured concrete retaining wall holding back a sloped residential yard, with a gravel drainage trench along its base in Lancaster, SC",
       localBody: [
         {
           heading: "Water pressure behind the wall",
@@ -1083,7 +1083,7 @@ const records: readonly LocationServiceRecord[] = [
       heroSummary: "Level, reinforced concrete pads for hot tubs, generators, and AC units in Lancaster. Request your free consultation and estimate.",
       state: "published",
       localImage: "/images/services/equipment-pads/equipment-pads-hero.webp",
-      localImageAlt: "Reinforced concrete equipment pad poured for a residential hot tub and outdoor generator in Lancaster, SC",
+      localImageAlt: "Small level reinforced concrete pad in a residential backyard with an outdoor hot tub installed on it in Lancaster, SC",
       localBody: [
         {
           heading: "Level ground under heavy equipment",
@@ -1135,7 +1135,7 @@ const records: readonly LocationServiceRecord[] = [
       heroSummary: "Concrete removal for driveways, patios, and sidewalks in Lancaster, with haul-away of the debris. Request your free consultation and estimate.",
       state: "published",
       localImage: "/images/services/concrete-demolition/concrete-demolition-hero.webp",
-      localImageAlt: "Concrete demolition and old driveway slab tear-out with heavy equipment and debris haul-away in Lancaster, SC",
+      localImageAlt: "Excavator loading broken, jackhammered concrete slab pieces into a haul-away dump truck during a residential tear-out in Lancaster, SC",
       localBody: [
         {
           heading: "Utilities come first",

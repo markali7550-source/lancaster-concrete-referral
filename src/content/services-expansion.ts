@@ -1926,7 +1926,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       costLead: "Retaining wall pricing depends mainly on height, length, and how much excavation and drainage the site needs.",
       ctaLead: "Send the wall length, the height of the slope, and any photos. A local contractor will confirm the design and the work it needs.",
       image: "/images/services/concrete-retaining-walls/concrete-retaining-walls-hero.webp",
-      imageAlt: "Poured concrete retaining wall providing soil retention and erosion control on a residential property in Lancaster, SC",
+      imageAlt: "Poured concrete retaining wall holding back a sloped residential yard, with a gravel drainage trench along its base in Lancaster, SC",
       projectTypes: [
         "Terrace wall",
         "Driveway support wall",
@@ -2094,7 +2094,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       costLead: "Pad pricing depends mainly on size, thickness, and how much base work the site needs.",
       ctaLead: "Send the equipment make and model, the planned location, and any photos. A local contractor will confirm the pad size and the work it needs.",
       image: "/images/services/equipment-pads/equipment-pads-hero.webp",
-      imageAlt: "Reinforced concrete equipment pad poured for a residential hot tub and outdoor generator in Lancaster, SC",
+      imageAlt: "Small level reinforced concrete pad in a residential backyard with an outdoor hot tub installed on it in Lancaster, SC",
       projectTypes: [
         "Hot tub pad",
         "Generator pad",
@@ -2257,7 +2257,7 @@ export const expansionServices: readonly ServiceRecord[] = [
       costLead: "Demolition pricing depends mainly on the volume of concrete, access, and how far the debris must travel.",
       ctaLead: "Send the area to be removed, the slab thickness if known, and any photos. A local contractor will confirm the method and the haul-away.",
       image: "/images/services/concrete-demolition/concrete-demolition-hero.webp",
-      imageAlt: "Concrete demolition and old driveway slab tear-out with heavy equipment and debris haul-away in Lancaster, SC",
+      imageAlt: "Excavator loading broken, jackhammered concrete slab pieces into a haul-away dump truck during a residential tear-out in Lancaster, SC",
       projectTypes: [
         "Driveway tear-out",
         "Patio removal",
