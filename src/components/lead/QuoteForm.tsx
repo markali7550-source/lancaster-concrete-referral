@@ -22,9 +22,13 @@ interface QuoteFormProps {
   /** Sentinel value for "My area is not listed", also supplied by the server. */
   outOfAreaValue: string;
   defaultServiceSlug?: string;
+  /** DOM id for the form root. Lets a second instance (the hero) coexist with the page's #quote-form. */
+  formId?: string;
   consentVersion: string;
   fallbackDisplay: string;
   fallbackE164: string;
+  /** Heading level of the step title. Defaults to h3; the homepage passes h2. Classes are unchanged, so the look does not change. */
+  headingLevel?: "h2" | "h3";
 }
 
 type Status =
@@ -52,10 +56,13 @@ export function QuoteForm({
   serviceAreas,
   outOfAreaValue,
   defaultServiceSlug,
+  formId = "quote-form",
   consentVersion,
   fallbackDisplay,
   fallbackE164,
+  headingLevel = "h3",
 }: QuoteFormProps) {
+  const StepHeading = headingLevel;
   const baseId = useId();
   const [step, setStep] = useState<1 | 2>(1);
   const [status, setStatus] = useState<Status>("idle");
@@ -80,7 +87,7 @@ export function QuoteForm({
     el.focus({ preventScroll: true });
   }, [status]);
 
-  // A "Request a referral" CTA points at #quote-form. The browser scrolls, and
+  // A "Request Concrete Service" CTA points at #quote-form. The browser scrolls, and
   // this moves keyboard focus to the first control so the jump is usable
   // without a mouse. Submission behavior is untouched.
   useEffect(() => {
@@ -96,7 +103,6 @@ export function QuoteForm({
     return () => window.removeEventListener("hashchange", focusFirstField);
   }, []);
   const [errors, setErrors] = useState<Errors>({});
-  const [leadId, setLeadId] = useState<string | null>(null);
   const summaryRef = useRef<HTMLDivElement>(null);
   const idempotencyKey = useRef<string>(newIdempotencyKey());
 
@@ -229,7 +235,6 @@ export function QuoteForm({
 
       if (response.status === 202) {
         const data = (await response.json()) as { leadId: string };
-        setLeadId(data.leadId);
         setStatus("success");
         track("lead_accepted", { lead_id: data.leadId });
         return;
@@ -273,7 +278,7 @@ export function QuoteForm({
   if (status === "success") {
     return (
       <div
-        id="quote-form"
+        id={formId}
         ref={successRef}
         tabIndex={-1}
         className="card scroll-mt-32 p-6 md:p-8 focus:outline-none"
@@ -281,18 +286,12 @@ export function QuoteForm({
       >
         <p className="eyebrow">Request received</p>
         <h3 className="mt-2 text-2xl font-semibold">
-          Your request is with our routing team
+          Your request is with our team
         </h3>
         <p className="mt-3 text-[color:var(--color-muted)]">
-          An independent contractor serving your area will contact you
-          directly. We are not the contractor and do not set pricing or
-          schedules.
-        </p>
-        <p className="mt-4 text-sm text-[color:var(--color-muted)]">
-          Reference:{" "}
-          <span className="font-semibold tabular-nums tracking-wide break-all text-[color:var(--color-ink)]">
-            {leadId}
-          </span>
+          Thank you! Our team has received your request and is coordinating with a
+          trusted local Lancaster concrete contractor. They will contact you shortly
+          to provide your free estimate.
         </p>
         <a href="/thank-you" className="btn btn-primary mt-6 w-full sm:w-auto">
           What happens next
@@ -304,13 +303,13 @@ export function QuoteForm({
 
   if (status === "no_coverage") {
     return (
-      <div id="quote-form" className="card scroll-mt-32 p-6 md:p-8" role="status">
-        <p className="eyebrow">No provider covers that area yet</p>
+      <div id={formId} className="card scroll-mt-32 p-6 md:p-8" role="status">
+        <p className="eyebrow">No contractor covers that area yet</p>
         <h3 className="mt-2 text-2xl font-semibold">
-          We do not cover that area today
+          Your area isn&apos;t covered yet
         </h3>
         <p className="mt-3 text-[color:var(--color-muted)]">
-          Nothing was sent to a contractor. We only route requests to providers
+          Nothing was sent to a contractor. We only send requests to contractors
           who have confirmed in writing that they cover your area, so we would rather tell you
           plainly than pass your details to someone who cannot help.
         </p>
@@ -343,16 +342,16 @@ export function QuoteForm({
       className="card scroll-mt-32 p-5 md:p-6"
       onSubmit={onSubmit}
       noValidate
-      id="quote-form"
+      id={formId}
     >
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
         <div>
           <p className="eyebrow">Step {step} of 2</p>
-          <h3 className="mt-1 text-xl font-semibold md:text-2xl">
+          <StepHeading className="mt-1 text-xl font-semibold md:text-2xl">
             {step === 1 ? "Your project and location" : "How to reach you"}
-          </h3>
+          </StepHeading>
         </div>
-        <div className="flex gap-1.5" aria-hidden="true">
+        <div className="flex justify-center gap-1.5 sm:justify-start" aria-hidden="true">
           <span
             className="h-1.5 w-10 rounded-full"
             style={{ backgroundColor: "var(--color-accent)" }}
@@ -406,48 +405,46 @@ export function QuoteForm({
 
       {step === 1 ? (
         <div className="mt-4 space-y-3.5">
-          <fieldset>
-            <legend className="text-sm font-semibold">Project type</legend>
-            <div className="mt-1.5 grid grid-cols-1 gap-2 min-[380px]:grid-cols-2">
-              {services.map((service) => {
-                const checked = values.serviceSlug === service.slug;
-                return (
-                  <label
-                    key={service.slug}
-                    className="flex min-h-12 cursor-pointer items-center gap-3 rounded-[12px] border p-3 text-sm font-medium"
-                    style={{
-                      borderColor: checked
-                        ? "var(--color-accent)"
-                        : "var(--color-line)",
-                      backgroundColor: checked
-                        ? "var(--color-accent-soft)"
-                        : "transparent",
-                    }}
-                  >
-                    <input
-                      type="radio"
-                      name="serviceSlug"
-                      value={service.slug}
-                      checked={checked}
-                      onChange={() => set("serviceSlug", service.slug)}
-                      className="h-5 w-5 shrink-0"
-                      id={
-                        service.slug === services[0]?.slug
-                          ? `${baseId}-serviceSlug`
-                          : undefined
-                      }
-                    />
-                    {service.name}
-                  </label>
-                );
-              })}
-            </div>
-          </fieldset>
+          <div>
+            <label
+              htmlFor={`${baseId}-serviceSlug`}
+              className="quote-field-label text-sm font-semibold"
+            >
+              Project type
+            </label>
+            <select
+              id={`${baseId}-serviceSlug`}
+              name="serviceSlug"
+              className="field mt-1.5"
+              value={values.serviceSlug}
+              aria-invalid={Boolean(errors.serviceSlug)}
+              aria-describedby={
+                errors.serviceSlug ? `${baseId}-serviceSlug-error` : undefined
+              }
+              onChange={(event) => set("serviceSlug", event.target.value)}
+            >
+              <option value="">Select a project type</option>
+              {services.map((service) => (
+                <option key={service.slug} value={service.slug}>
+                  {service.name}
+                </option>
+              ))}
+            </select>
+            {errors.serviceSlug ? (
+              <p
+                id={`${baseId}-serviceSlug-error`}
+                className="mt-1.5 text-sm"
+                style={{ color: "var(--color-danger)" }}
+              >
+                {errors.serviceSlug}
+              </p>
+            ) : null}
+          </div>
 
           <div>
             <label
               htmlFor={`${baseId}-postalCode`}
-              className="text-sm font-semibold"
+              className="quote-field-label text-sm font-semibold"
             >
               Location
             </label>
@@ -490,8 +487,8 @@ export function QuoteForm({
                   notification it could never send now says what is true. */}
               <p className="text-sm font-semibold">Not covered yet</p>
               <p className="mt-1.5 text-sm text-[color:var(--color-muted)]">
-                No participating provider has confirmed that area in writing,
-                so a request there cannot be routed today. You can still
+                None of our trusted contractors has confirmed that area in writing,
+                so a request there cannot be served today. You can still
                 continue, coverage is rechecked on submit and nothing is sent
                 to a contractor unless it passes, or call {fallbackDisplay} to
                 ask first.
@@ -513,7 +510,7 @@ export function QuoteForm({
           <div>
             <label
               htmlFor={`${baseId}-fullName`}
-              className="text-sm font-semibold"
+              className="quote-field-label text-sm font-semibold"
             >
               Full name
             </label>
@@ -534,7 +531,7 @@ export function QuoteForm({
           </div>
 
           <div>
-            <label htmlFor={`${baseId}-email`} className="text-sm font-semibold">
+            <label htmlFor={`${baseId}-email`} className="quote-field-label text-sm font-semibold">
               Email
             </label>
             <input
@@ -558,7 +555,7 @@ export function QuoteForm({
           </div>
 
           <div>
-            <label htmlFor={`${baseId}-phone`} className="text-sm font-semibold">
+            <label htmlFor={`${baseId}-phone`} className="quote-field-label text-sm font-semibold">
               Phone
             </label>
             <input
@@ -583,7 +580,7 @@ export function QuoteForm({
           </div>
 
           <div>
-            <label htmlFor={`${baseId}-note`} className="text-sm font-semibold">
+            <label htmlFor={`${baseId}-note`} className="quote-field-label text-sm font-semibold">
               Project details{" "}
               <span className="font-normal text-[color:var(--color-muted)]">
                 (optional)
@@ -599,7 +596,7 @@ export function QuoteForm({
             />
           </div>
 
-          <div id="consent-section" className="space-y-2">
+          <div id={`${baseId}-consent-section`} className="space-y-2">
             <label
               className="flex gap-3 text-sm"
               htmlFor={`${baseId}-serviceConsent`}
@@ -645,17 +642,35 @@ export function QuoteForm({
               disabled={status === "submitting"}
               aria-busy={status === "submitting"}
             >
-              {status === "submitting" ? "Sending…" : "Request a referral"}
+              {status === "submitting" ? "Sending…" : "Request Concrete Service"}
             </button>
+            {/* Going back only changes the step. Every value lives in `values`,
+                so nothing typed on step 1 or step 2 is reset. */}
             <button
               type="button"
-              className="btn btn-secondary w-full sm:w-auto"
+              className="inline-flex min-h-11 items-center justify-center gap-1.5 self-center rounded-md px-3 text-sm font-medium text-[var(--color-muted)] transition-colors hover:text-[var(--color-ink)] disabled:opacity-50"
               onClick={() => setStep(1)}
               disabled={status === "submitting"}
             >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                viewBox="0 0 20 20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-4 w-4 shrink-0"
+              >
+                <path d="M16 10H4M9 5l-5 5 5 5" />
+              </svg>
               Back
             </button>
           </div>
+          <p className="mt-3 text-xs leading-relaxed text-[color:var(--color-muted)]">
+            By submitting this request, you agree to be contacted by local concrete contractors in our network regarding your project. Message and data rates may apply.
+          </p>
         </div>
       )}
 
@@ -663,8 +678,8 @@ export function QuoteForm({
         {LEAD_FORM_DISCLOSURE}
       </p>
       <p className="mt-2 text-xs leading-relaxed text-[color:var(--color-muted)]">
-        Submitting this form does not create a contract, a price, or a booking.
-        We are a referral service, not a concrete contractor.
+        Submitting creates no contract, price, or booking. We are not a concrete
+        contractor.
       </p>
     </form>
   );

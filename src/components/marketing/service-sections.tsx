@@ -16,19 +16,27 @@ import {
 export function Breadcrumbs({
   items,
   overlay = false,
+  onPhoto = false,
 }: {
   items: { name: string; path?: string }[];
   /** Rendered inside a photo header: no band, no border, light text. */
   overlay?: boolean;
+  /** Sits on a dark photo but keeps the band border. Light text in every theme. */
+  onPhoto?: boolean;
 }) {
+  const lightOnPhoto = overlay || onPhoto;
   const trail = (
     <ol
-      className={`flex flex-wrap items-center gap-x-2 gap-y-1 text-sm ${
+      className={`flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm lg:justify-start ${
         overlay
           ? " "
           : "py-3 text-[color:var(--color-muted)]"
       }`}
-      style={overlay ? { color: "rgba(255,255,255,0.78)" } : undefined}
+      style={
+        lightOnPhoto
+          ? { color: "rgba(255,255,255,0.78)", textShadow: "0 1px 2px rgba(0,0,0,0.45)" }
+          : undefined
+      }
     >
       {items.map((item, index) => (
         <li key={item.name} className="flex items-center gap-2">
@@ -43,8 +51,8 @@ export function Breadcrumbs({
           ) : (
             <span
               aria-current="page"
-              className={overlay ? "font-medium" : "text-[color:var(--color-ink)]"}
-              style={overlay ? { color: "var(--color-band-ink)" } : undefined}
+              className={lightOnPhoto ? "font-medium" : "text-[color:var(--color-ink)]"}
+              style={lightOnPhoto ? { color: "var(--color-band-ink)" } : undefined}
             >
               {item.name}
             </span>
@@ -92,6 +100,7 @@ export function ServiceHero({
     <OverlayHeader
       imageSrc={service.image}
       imageAlt={service.imageAlt}
+      imageCaption={service.imageCaption}
       breadcrumbs={breadcrumbs}
     >
       <p
@@ -109,7 +118,7 @@ export function ServiceHero({
       >
         {summary}
       </p>
-      <ul className="mt-5 flex flex-wrap gap-2">
+      <ul className="mt-5 flex flex-wrap justify-center gap-2 lg:justify-start">
         {service.projectTypes.map((type) => (
           <li
             key={type}
@@ -125,7 +134,7 @@ export function ServiceHero({
       </ul>
       <div
         id="hero-actions"
-        className="mt-7 grid w-full max-w-sm gap-3 lg:max-w-none lg:grid-cols-[repeat(2,minmax(0,15rem))]"
+        className="mt-7 grid grid-cols-1 w-full max-w-sm gap-3 lg:max-w-none lg:grid-cols-[repeat(2,minmax(0,15rem))]"
       >
         <DynamicPhone
           fallbackDisplay={site.phoneDisplay}
@@ -134,12 +143,12 @@ export function ServiceHero({
           className="btn btn-primary"
         />
         <a href="#quote-form" className="btn btn-secondary">
-          Request a referral
+          Request Concrete Service
           <Icon name="arrow" />
         </a>
       </div>
       <p className="mt-3 text-xs" style={{ color: overlayMuted }}>
-        Free referral. We are not the contractor and do not set prices.
+        No charge to request a quote. Independent local contractors set their own prices.
       </p>
     </OverlayHeader>
   );
@@ -154,7 +163,7 @@ export function KeyFacts({ facts }: { facts: { label: string; value: string }[] 
       style={{ borderColor: "var(--color-line)", backgroundColor: "var(--color-surface)" }}
     >
       <div className="container-page">
-        <dl className="grid auto-rows-fr gap-3 py-6 sm:grid-cols-2 lg:grid-cols-4">
+        <dl className="grid grid-cols-1 auto-rows-fr gap-3 py-6 sm:grid-cols-2 lg:grid-cols-4">
           {facts.map((fact) => (
             <div
               key={fact.label}
@@ -223,11 +232,11 @@ export function ScopeColumns({
   // 1440px — three words a line. The list stays single-column from lg up; only
   // the list/aside split happens at xl.
   return (
-    <div className="grid gap-6 xl:grid-cols-[1.6fr_1fr]">
-      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+    <div className="grid grid-cols-1 gap-6 xl:grid-cols-[1.6fr_1fr]">
+      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
         {covered.map((item) => (
           <li key={item.title} className="card p-6">
-            <div className="flex flex-col gap-2.5 lg:flex-row lg:gap-3">
+            <div className="flex flex-col items-center gap-2.5 text-center lg:flex-row lg:items-stretch lg:gap-3 lg:text-left">
               <span style={{ color: "var(--color-accent)" }}>
                 <Icon name="check" className="mt-0.5 h-5 w-5" />
               </span>
@@ -245,7 +254,7 @@ export function ScopeColumns({
         className="rounded-[12px] border p-5"
         style={{ borderColor: "var(--color-line)" }}
       >
-        <p className="font-semibold">Not routed under this service</p>
+        <p className="font-semibold">Not served under this service</p>
         <ul className="mt-3 space-y-2.5 text-sm text-[color:var(--color-muted)]">
           {outOfScope.map((item) => (
             <li key={item} className="text-left">
@@ -270,7 +279,7 @@ export function OptionsList({
   options: { name: string; description: string }[];
 }) {
   return (
-    <dl className="grid gap-x-10 gap-y-6 md:grid-cols-2">
+    <dl className="grid grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-2">
       {options.map((option) => (
         <div
           key={option.name}
@@ -298,7 +307,7 @@ export function Timeline({
     /* Two-column grid per row: a fixed marker track and the card. The rail is a
        single element spanning the whole list, centered on the marker track, so
        every circle lands on the same axis at every width. */
-    <ol className="relative grid gap-5">
+    <ol className="relative grid grid-cols-1 gap-5">
       <span
         aria-hidden="true"
         className="absolute bottom-0 left-[0.75rem] top-0 w-px -translate-x-1/2"
@@ -347,7 +356,11 @@ export function CostTable({
   rows: { factor: string; impact: string; note: string }[];
 }) {
   return (
-    <div className="max-w-full overflow-x-auto rounded-[12px] border" style={{ borderColor: "var(--color-line)" }}>
+    <div
+      tabIndex={0}
+      className="max-w-full overflow-x-auto rounded-[12px] border"
+      style={{ borderColor: "var(--color-line)" }}
+    >
       <table className="w-full min-w-[34rem] border-collapse text-left text-sm">
         <caption className="sr-only">
           Factors that affect the price quoted by the contractor
@@ -401,7 +414,7 @@ export function PrepColumns({
   questions: string[];
 }) {
   return (
-    <div className="grid gap-6 md:grid-cols-2">
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
       <div className="card p-6">
         <p className="font-semibold">Before the estimate visit</p>
         <ul className="mt-4 space-y-3 text-sm">
@@ -445,7 +458,7 @@ export function PrepColumns({
         </ul>
         <p className="mt-5 border-t pt-4 text-xs leading-relaxed text-[color:var(--color-muted)] hairline">
           Pricing, specification, scheduling, and warranty sit with the
-          independent contractor assigned to your project.
+          licensed local contractor assigned to your project.
         </p>
       </div>
     </div>
@@ -470,7 +483,7 @@ export function RelatedServices({
   // column count goes straight from 1 to 3. A 2-column step stranded the third
   // card beside an empty cell on every tablet-width screen.
   return (
-    <ul className="grid gap-4 md:grid-cols-3">
+    <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {others.map((service) => (
         <li key={service.slug}>
           <Link
@@ -482,7 +495,7 @@ export function RelatedServices({
               {service.summary}
             </p>
             <span
-              className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-semibold"
+              className="mt-4 inline-flex items-center justify-center gap-1.5 text-[14px] font-semibold lg:justify-start"
               style={{ color: "var(--color-accent)" }}
             >
               View service

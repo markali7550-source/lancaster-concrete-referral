@@ -1,23 +1,25 @@
-import { z } from "zod";
-
-/** §5.2 attribution contract — every field the lead request may carry. */
-export const attributionSnapshotSchema = z.object({
-  visitorId: z.string().optional(),
-  sessionId: z.string().optional(),
-  landingPath: z.string().optional(),
-  referrer: z.string().optional(),
-  utmSource: z.string().optional(),
-  utmMedium: z.string().optional(),
-  utmCampaign: z.string().optional(),
-  utmTerm: z.string().optional(),
-  utmContent: z.string().optional(),
-  gclid: z.string().optional(),
-  gbraid: z.string().optional(),
-  wbraid: z.string().optional(),
-  msclkid: z.string().optional(),
-});
-
-export type AttributionSnapshot = z.infer<typeof attributionSnapshotSchema>;
+/**
+ * §5.2 attribution contract — every field the lead request may carry.
+ *
+ * Plain type on purpose: this module is imported by client code (the attribution
+ * bootstrap and the quote form), so it must not pull in zod. Server-side
+ * validation of the lead request lives in `src/lib/validation/lead.ts`.
+ */
+export interface AttributionSnapshot {
+  visitorId?: string;
+  sessionId?: string;
+  landingPath?: string;
+  referrer?: string;
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+  utmTerm?: string;
+  utmContent?: string;
+  gclid?: string;
+  gbraid?: string;
+  wbraid?: string;
+  msclkid?: string;
+}
 
 export const ATTRIBUTION_WINDOW_DAYS = 90;
 export const DUPLICATE_WINDOW_DAYS = 30;

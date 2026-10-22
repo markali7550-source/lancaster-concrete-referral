@@ -30,6 +30,20 @@ export function MobileMenu({
     if (el?.open) el.open = false;
   }, [pathname]);
 
+  // Lock background scroll while the panel is open. The class lives on <html>
+  // and is removed on close and on unmount, so the page can never stay frozen.
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const sync = () =>
+      document.documentElement.classList.toggle("menu-open", el.open);
+    el.addEventListener("toggle", sync);
+    return () => {
+      el.removeEventListener("toggle", sync);
+      document.documentElement.classList.remove("menu-open");
+    };
+  }, []);
+
   useEffect(() => {
     function onPointerDown(event: MouseEvent) {
       const el = ref.current;

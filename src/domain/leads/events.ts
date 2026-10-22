@@ -9,10 +9,6 @@ export function markProcessed(providerEventId: string, outcome: string): void {
   processed.set(providerEventId, outcome);
 }
 
-export function processedCount(): number {
-  return processed.size;
-}
-
 export function resetEventsForTests(): void {
   processed.clear();
 }
