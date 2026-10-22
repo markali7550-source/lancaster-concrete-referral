@@ -92,7 +92,7 @@ const CONCRETE_FAQS = [
   {
     question: "Which areas around Lancaster, SC do you serve?",
     answer:
-      "Our service area includes Lancaster, Indian Land, Heath Springs, and Kershaw, South Carolina, along with surrounding Lancaster County communities.",
+      "Our service area includes Lancaster, Kershaw, Heath Springs, Van Wyck, and Buford, South Carolina, along with surrounding Lancaster County communities.",
   },
 ];
 
