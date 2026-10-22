@@ -102,16 +102,17 @@ export default function HomePage() {
       <JsonLd data={graph} />
 
       {/*
-        Owner-supplied real photograph (source: real-photos/home-hero-source.webp,
-        committed for provenance; shipped bytes are the converted WebP below).
-        Hand-floating shot, so the alt names the act, the gear and the forms.
+        Homepage hero image: a generated concrete driveway and stamped patio
+        (public/images/hero-concrete-lancaster.webp). The earlier owner-supplied
+        photo is kept in the repo at public/images/home/home-hero-float.webp and
+        real-photos/home-hero-source.webp; it is no longer rendered here.
       */}
       <Hero
         locationCue="Lancaster County, South Carolina"
         h1="Lancaster's Trusted Concrete Connection"
         summary="Taking the hassle out of finding reliable concrete pros. We connect you directly with top rated, licensed local contractors for driveways, patios, walkways, and foundations."
-        imageSrc="/images/home/home-hero-float.webp"
-        imageAlt="Worker in a high-visibility vest and cap hand-floating freshly poured concrete beside timber forms"
+        imageSrc="/images/hero-concrete-lancaster.webp"
+        imageAlt="Professional concrete driveway and stamped patio installation in Lancaster PA"
         overlay
         aside={
           <QuoteForm
