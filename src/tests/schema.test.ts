@@ -35,7 +35,19 @@ describe("JSON-LD graph", () => {
   it("describes the brand as a LocalBusiness serving Lancaster, SC", () => {
     const local = rootGraph().find((n) => n["@type"] === "LocalBusiness");
     expect(local).toBeDefined();
-    expect(local?.areaServed).toEqual({ "@type": "City", name: "Lancaster, SC" });
+    expect(local?.areaServed).toEqual([
+      { "@type": "City", name: "Lancaster, SC" },
+      { "@type": "AdministrativeArea", name: "Lancaster County, SC" },
+      { "@type": "City", name: "Kershaw, SC" },
+      { "@type": "City", name: "Heath Springs, SC" },
+      { "@type": "City", name: "Van Wyck, SC" },
+      { "@type": "City", name: "Buford, SC" },
+    ]);
+    expect(local?.geo).toEqual({
+      "@type": "GeoCoordinates",
+      latitude: 34.7204,
+      longitude: -80.7709,
+    });
   });
 
   it("publishes no address, rating, or review on the brand", () => {

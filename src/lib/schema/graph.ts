@@ -49,10 +49,22 @@ export function rootGraph(): Node[] {
       email: site.email,
       description: BUSINESS_DESCRIPTION,
       address: postalAddress(),
-      areaServed: {
-        "@type": "City",
-        name: `${site.serviceArea.city}, ${site.serviceArea.region}`,
+      /* Geo focus: the centre of Lancaster, SC. */
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 34.7204,
+        longitude: -80.7709,
       },
+      /* Only areas the site already names as served. Indian Land is not on
+         that list, so it is not claimed here. */
+      areaServed: [
+        { "@type": "City", name: "Lancaster, SC" },
+        { "@type": "AdministrativeArea", name: "Lancaster County, SC" },
+        { "@type": "City", name: "Kershaw, SC" },
+        { "@type": "City", name: "Heath Springs, SC" },
+        { "@type": "City", name: "Van Wyck, SC" },
+        { "@type": "City", name: "Buford, SC" },
+      ],
       parentOrganization: { "@id": ORG_ID() },
     },
     {

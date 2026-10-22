@@ -32,6 +32,12 @@ export const metadata: Metadata = pageMetadata({
   title: TITLE,
   description: DESCRIPTION,
   path: "/",
+  image: {
+    url: "/images/hero-concrete-lancaster.webp",
+    width: 1200,
+    height: 675,
+    alt: "Professional concrete driveway and stamped patio installation in Lancaster, SC",
+  },
 });
 
 const DECISION_ITEMS = [

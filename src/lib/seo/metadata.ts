@@ -17,6 +17,8 @@ interface PageMetaInput {
   description: string;
   path: string;
   noindex?: boolean;
+  /** Page-specific social preview. Falls back to the site-wide image. */
+  image?: { url: string; width: number; height: number; alt: string };
 }
 
 /**
@@ -30,8 +32,12 @@ export function pageMetadata({
   description,
   path,
   noindex = DEFAULT_NOINDEX,
+  image,
 }: PageMetaInput): Metadata {
   const canonical = absoluteUrl(path);
+  const ogImages = image
+    ? [{ ...image, type: "image/webp" }]
+    : OG_IMAGES;
   return {
     title,
     description,
@@ -46,13 +52,13 @@ export function pageMetadata({
       siteName: site.brand,
       locale: "en_US",
       type: "website",
-      images: OG_IMAGES,
+      images: ogImages,
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: OG_IMAGES.map((image) => image.url),
+      images: ogImages.map((item) => item.url),
     },
   };
 }
