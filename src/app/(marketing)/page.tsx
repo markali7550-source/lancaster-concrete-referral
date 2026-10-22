@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { QuoteForm } from "@/components/lead/QuoteForm";
+import { FaqAccordion } from "@/components/marketing/FaqAccordion";
 import {
   AdjacentAreas,
   DecisionSupport,
@@ -65,6 +66,36 @@ const DECISION_ITEMS = [
 
 
 
+/* Concrete-focused questions for the bottom-of-page accordion. Shown on the
+   page and emitted in the same FAQPage schema as FAQS. */
+const CONCRETE_FAQS = [
+  {
+    question: "Do you offer concrete driveway installation in Lancaster, SC?",
+    answer:
+      "Yes. We help customers explore concrete driveway installation and replacement options throughout Lancaster, SC, and surrounding communities. Contact us today with your project details for a free estimate.",
+  },
+  {
+    question: "Do you offer stamped concrete patios?",
+    answer:
+      "Yes. Stamped and decorative concrete patio options are available with various patterns, textures, and custom colors to upgrade your outdoor living space.",
+  },
+  {
+    question: "How much does a new concrete driveway cost in Lancaster, SC?",
+    answer:
+      "Concrete driveway costs depend on dimensions, site preparation, demolition of old concrete, slab thickness, and custom finishes. Request a free on-site quote for exact project pricing.",
+  },
+  {
+    question: "Do you provide concrete slab and foundation services?",
+    answer:
+      "Yes. We provide durable concrete slab and foundation services for garages, workshops, sheds, room additions, and residential builds.",
+  },
+  {
+    question: "Which areas around Lancaster, SC do you serve?",
+    answer:
+      "Our service area includes Lancaster, Indian Land, Heath Springs, and Kershaw, South Carolina, along with surrounding Lancaster County communities.",
+  },
+];
+
 const FAQS = [
   {
     question: "Does this service cost me anything?",
@@ -101,7 +132,7 @@ const FAQS = [
 export default function HomePage() {
   const graph = buildGraph([
     webPageNode("/", TITLE, DESCRIPTION),
-    faqNode("/", FAQS),
+    faqNode("/", [...FAQS, ...CONCRETE_FAQS]),
   ]);
 
   return (
@@ -356,6 +387,15 @@ export default function HomePage() {
           </Link>
           .
         </p>
+      </Section>
+
+      <Section
+        compact
+        eyebrow="Concrete FAQ"
+        title="Frequently Asked Questions About Concrete in Lancaster, SC"
+        lead="Find clear answers to common questions about concrete installation, driveways, patios, and foundations."
+      >
+        <FaqAccordion faqs={CONCRETE_FAQS} />
       </Section>
 
       <CtaBand
