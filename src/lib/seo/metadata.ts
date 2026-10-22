@@ -143,14 +143,40 @@ export function fitTitle(base: string): string {
   return long.length <= 60 ? long : `${base} | Local Service`;
 }
 
+/** Exact page titles and descriptions for three service pages. */
+const SEO_PAGE_OVERRIDES: Record<
+  string,
+  { title: (city: string) => string; description: (city: string) => string }
+> = {
+  "concrete-driveways": {
+    title: (city) => `Concrete Driveways in ${city}, SC | Installation & Quotes`,
+    description: (city) =>
+      `Poured concrete driveway installation, replacement & repair services in ${city}, South Carolina. Request your free estimate today!`,
+  },
+  "concrete-patios": {
+    title: (city) => `Stamped Concrete Patios in ${city}, SC | Custom Designs`,
+    description: (city) =>
+      `Upgrade your outdoor backyard in ${city}, SC with durable stamped & decorative concrete patios. Free on-site design quotes.`,
+  },
+  "concrete-slabs": {
+    title: (city) => `Concrete Slab Pouring in ${city}, SC | Foundations`,
+    description: (city) =>
+      `Solid concrete slabs and foundations for garages, sheds, and additions in ${city}, SC. Reliable local concrete contractors.`,
+  },
+};
+
 export const comboMeta = {
   title: (serviceName: string, city: string, serviceSlug?: string) => {
+    const override = serviceSlug ? SEO_PAGE_OVERRIDES[serviceSlug] : undefined;
+    if (override) return override.title(city);
     const parts = serviceSlug ? SEO_SERVICE_NAME[serviceSlug] : undefined;
     return parts
       ? `${parts[0]} in ${city}, SC | ${parts[1]}`
       : fitTitle(`${city}, SC ${serviceName}`);
   },
   description: (serviceSlug: string, city: string) => {
+    const override = SEO_PAGE_OVERRIDES[serviceSlug];
+    if (override) return override.description(city);
     const parts = SEO_SERVICE_NAME[serviceSlug];
     return parts
       ? `Need ${parts[0].toLowerCase()} in ${city}, SC or Lancaster County? Connect with licensed local contractors for red clay site prep, pours and fast estimates.`

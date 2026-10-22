@@ -25,9 +25,9 @@ import { SERVICE_DISCLOSURE } from "@/lib/seo/disclosure";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { buildGraph, faqNode, webPageNode } from "@/lib/schema/graph";
 
-const TITLE = `Lancaster, SC Concrete Quotes | ${site.brand}`;
+const TITLE = "Concrete Contractors Lancaster SC | Lancaster Concrete Connect";
 const DESCRIPTION =
-  "Local concrete service in Lancaster, SC for driveways, patios, slabs and repair. Work is done by licensed local concrete contractors, not by this website.";
+  "Looking for dependable concrete contractors in Lancaster, SC? We connect you with top-rated pros for driveways, stamped patios & slabs. Request a free quote!";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,
