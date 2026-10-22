@@ -239,8 +239,8 @@ export default function HomePage() {
       <Section
         tone="soft"
         eyebrow="On the job"
-        title="Concrete crews on the job"
-        lead="Photos of crews finishing and placing concrete."
+        title="Our Team in Action | Quality Concrete Work in Lancaster, SC"
+        lead="Our dedicated local crew on site, delivering dependable concrete pouring, finishing, and repair services."
       >
         <div className="grid gap-5 md:grid-cols-2">
           {[
