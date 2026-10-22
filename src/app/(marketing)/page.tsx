@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { QuoteForm } from "@/components/lead/QuoteForm";
@@ -112,7 +113,7 @@ export default function HomePage() {
         h1="Lancaster's Trusted Concrete Connection"
         summary="Taking the hassle out of finding reliable concrete pros. We connect you directly with top rated, licensed local contractors for driveways, patios, walkways, and foundations."
         imageSrc="/images/hero-concrete-lancaster.webp"
-        imageAlt="Professional concrete driveway and stamped patio installation in Lancaster PA"
+        imageAlt="Professional concrete driveway and stamped patio installation in Lancaster, SC"
         overlay
         aside={
           <QuoteForm
@@ -233,6 +234,50 @@ export default function HomePage() {
           Additional South Carolina areas are added one at a time, and only once
           one of our trusted contractors has approved coverage there in writing.
         </p>
+      </Section>
+
+      <Section
+        tone="soft"
+        eyebrow="On the job"
+        title="Concrete crews on the job"
+        lead="Photos of crews finishing and placing concrete."
+      >
+        <div className="grid gap-5 md:grid-cols-2">
+          {[
+            {
+              src: "/images/home/crew-trowel-finish.webp",
+              alt: "Worker in a high-visibility vest and white hard hat finishing fresh concrete with a steel trowel",
+              caption: "Hand finishing on a fresh concrete surface",
+            },
+            {
+              src: "/images/home/crew-concrete-placement.webp",
+              alt: "Crew workers spreading and screeding fresh concrete on a sidewalk slab from a hose, beside a formed edge",
+              caption: "Placing and screeding a sidewalk slab",
+            },
+          ].map((photo) => (
+            <figure
+              key={photo.src}
+              className="overflow-hidden rounded-[12px] border"
+              style={{
+                borderColor: "var(--color-line-soft)",
+                background: "var(--color-surface)",
+              }}
+            >
+              <div className="relative aspect-[3/2]">
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="p-4 text-sm text-[color:var(--color-muted)]">
+                {photo.caption}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </Section>
 
       <Section
