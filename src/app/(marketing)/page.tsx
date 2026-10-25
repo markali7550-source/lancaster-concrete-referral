@@ -389,6 +389,8 @@ export default function HomePage() {
         </p>
       </Section>
 
+      <SectionDivider />
+
       <Section
         compact
         eyebrow="Concrete FAQ"
