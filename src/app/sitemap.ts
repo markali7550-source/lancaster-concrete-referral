@@ -1,11 +1,14 @@
 import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/lib/env";
+import { SEARCH_INDEXING_ENABLED } from "@/lib/env/indexing";
 import { publishedServices } from "@/content/services";
 import { publishedLocations } from "@/content/locations";
 import { publishedLocationServices } from "@/content/location-services";
 
 /** Published, indexable, 200, self-canonical URLs only. /thank-you is excluded. */
 export default function sitemap(): MetadataRoute.Sitemap {
+  // Nothing is submitted to search engines until indexing is enabled for launch.
+  if (!SEARCH_INDEXING_ENABLED) return [];
   const now = new Date();
   const paths = [
     "/",
@@ -21,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/faq",
     "/privacy",
     "/terms",
-    "/referral-disclosure",
+    "/service-disclosure",
   ];
 
   return paths.map((path) => ({

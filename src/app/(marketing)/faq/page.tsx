@@ -8,7 +8,6 @@ import {
   overlayBody,
   overlayEyebrow,
   overlayHeading,
-  ReferralDisclosureStrip,
   Section,
 } from "@/components/marketing/sections";
 import { Breadcrumbs, CtaBand } from "@/components/marketing/service-sections";
@@ -28,7 +27,7 @@ import { site } from "@/lib/env";
 
 const TITLE = `Concrete Services FAQs | ${site.brand}`;
 const DESCRIPTION =
-  "Answers about concrete driveways, patios, slabs, and repair, plus how our referral process connects you with one independent provider.";
+  "Answers about driveways, patios, slabs, repair, leveling, sealing, resurfacing, and more, plus how a request moves from your form to a local team.";
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,
@@ -37,10 +36,9 @@ export const metadata: Metadata = pageMetadata({
 });
 
 /**
- * Renders an answer with its declared link substrings wrapped in Links.
- * Each link text occurs exactly once in its answer; unmatched text passes
- * through untouched, so a bad entry degrades to plain text, never to a
- * broken render. The schema keeps the raw string, which is why parity holds.
+ * Renders an answer with its declared link substrings wrapped in internal
+ * links. Each link text occurs in its answer; unmatched text passes through
+ * as plain text. The schema keeps the raw string, so the two stay in step.
  */
 function linkify(answer: string, links: readonly FaqLink[]): ReactNode {
   let parts: ReactNode[] = [answer];
@@ -54,7 +52,7 @@ function linkify(answer: string, links: readonly FaqLink[]): ReactNode {
         <Link
           key={`${index}-${at}`}
           href={href}
-          className="underline underline-offset-4"
+          className="font-medium text-[color:var(--color-accent)] underline underline-offset-4 decoration-[color:var(--color-accent)]/40 transition-colors duration-150 hover:decoration-[color:var(--color-accent)]"
         >
           {text}
         </Link>,
@@ -105,49 +103,36 @@ export default function FaqPage() {
           Frequently Asked Questions
         </h1>
         <p className="lede mt-5 max-w-2xl" style={{ color: overlayBody }}>
-          Short answers about our concrete services and how the referral
-          process works, including what we do, what providers do, and which
-          areas are covered.
+          Find answers to common questions about our concrete services, project timelines, pricing, and process in Lancaster, SC.
         </p>
       </OverlayHeader>
-      <ReferralDisclosureStrip />
       {/*
-        One continuous accordion: all categories render as a single mixed
-        list with no headers or gaps between them, at the owner's request.
-        The guide links survive as one compact row under the list.
+        Each category is its own single-open accordion. Answers link to the
+        matching service page where a service is named.
       */}
       <Section tone="soft">
-        <div className="mx-auto w-full max-w-3xl">
-          <FaqSection
-            name="faq"
-            faqs={faqCategories.flatMap((category) =>
-              category.faqs.map((faq) => ({
-                question: faq.question,
-                answer: linkify(faq.answer, faq.links),
-              })),
-            )}
-          />
-          <p className="mt-6 text-[15px] text-[color:var(--color-muted)]">
-            Related guides:{" "}
-            {faqCategories.map((category, categoryIndex) => (
-              <span key={category.id}>
-                {categoryIndex > 0 ? " · " : null}
-                <Link
-                  href={category.more.href}
-                  className="font-semibold underline underline-offset-4"
-                  style={{ color: "var(--color-accent)" }}
-                >
-                  {category.more.text}
-                </Link>
-              </span>
-            ))}
-          </p>
+        <div className="mx-auto w-full max-w-3xl space-y-12">
+          {faqCategories.map((category) => (
+            <section key={category.id} aria-labelledby={`faq-${category.id}`} className="faq-left">
+              <h2 id={`faq-${category.id}`} className="h3">
+                {category.name}
+              </h2>
+              <div className="mt-5">
+                <FaqSection
+                  faqs={category.faqs.map((faq) => ({
+                    question: faq.question,
+                    answer: linkify(faq.answer, faq.links),
+                  }))}
+                />
+              </div>
+            </section>
+          ))}
         </div>
       </Section>
 
       <CtaBand
         title="Still have questions?"
-        body="Call the referral team and we will answer directly, or submit a request and let one eligible contractor take it from there."
+        body="Call our team and we will answer directly, or submit a request and let one available contractor take it from there."
         showFormLink={false}
       />
     </>

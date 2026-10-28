@@ -3,6 +3,10 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumbs } from "@/components/marketing/service-sections";
 import { ServicePageTemplate } from "@/components/marketing/service-page-template";
+import {
+  getLocationService,
+  publishedLocationServices,
+} from "@/content/location-services";
 import { serviceDetails } from "@/content/service-details";
 import { getService, publishedServices } from "@/content/services";
 import { pageMetadata } from "@/lib/seo/metadata";
@@ -22,8 +26,14 @@ export function generateStaticParams() {
 
 type Params = Promise<{ service: string }>;
 
+/**
+ * 50-60 characters. The long suffix fits most service names; the short suffix
+ * keeps the longest names (e.g. "Garage Floor Coatings") inside the range.
+ */
 function titleFor(name: string) {
-  return `${name} in Lancaster, SC | Contractor Referrals`;
+  const base = `${name} in Lancaster, SC`;
+  const long = `${base} | Local Concrete Service`;
+  return long.length <= 60 ? long : `${base} | Local Service`;
 }
 
 /**
@@ -32,7 +42,9 @@ function titleFor(name: string) {
  * between /services/[service] and /locations/lancaster-sc/[service].
  */
 function descriptionFor(nameLower: string, projectNoun: string) {
-  return `What ${nameLower} referral covers in Lancaster, SC, what falls outside it, and how your ${projectNoun} request reaches an independent service provider.`;
+  const base = `What ${nameLower} covers in Lancaster, SC, what falls outside it, and how ${/^[aeiou]/i.test(projectNoun) ? "an" : "a"} ${projectNoun} request is handled by a local concrete contractor.`;
+  // Short descriptions get a call to action so they land in the 140-160 range.
+  return base.length < 140 ? `${base} Request a free quote.` : base;
 }
 
 export async function generateMetadata({
@@ -56,10 +68,12 @@ export default async function ServicePage({ params }: { params: Params }) {
   if (!service) notFound();
 
   const path = `/services/${service.slug}`;
-  const h1 = `${service.name} in Lancaster County, SC`;
+  const h1 = `${service.name} in Lancaster, SC`;
   const description = descriptionFor(service.nameLower, service.projectNoun);
 
   const detail = serviceDetails[service.slug];
+  // Hero uses the Lancaster location/service page photo for this service.
+  const heroPhoto = getLocationService("lancaster-sc", service.slug);
 
   const graph = buildGraph([
     serviceNode({
@@ -85,7 +99,7 @@ export default async function ServicePage({ params }: { params: Params }) {
         detail={detail}
         breadcrumbs={
           <Breadcrumbs
-            overlay
+            onPhoto
             items={[
               { name: "Home", path: "/" },
               { name: "Services", path: "/services" },
@@ -96,17 +110,28 @@ export default async function ServicePage({ params }: { params: Params }) {
         cityLabel="Lancaster County, South Carolina"
         h1={h1}
         summary={service.heroSummary}
+        heroImage={
+          heroPhoto
+            ? { src: heroPhoto.localImage, alt: heroPhoto.localImageAlt }
+            : null
+        }
         keyFacts={service.keyFacts}
         faqTitle={service.headings.faq}
         faqs={service.considerations}
         faqName="service-faq"
         relatedServices={publishedServices}
-        relatedTitle="Also routed in Lancaster"
+        relatedTitle="Also serving Lancaster"
+        localLinks={publishedLocationServices
+          .filter((r) => r.serviceSlug === service.slug)
+          .map((r) => ({
+            href: `/locations/${r.locationSlug}/${r.serviceSlug}`,
+            label: `${service.name} in Lancaster, SC`,
+          }))}
         ctaTitle={service.headings.cta}
         ctaBody={service.ctaLead}
         defaultServiceSlug={service.slug}
         callCardTitle="Prefer to talk it through?"
-        callCardBody="Our referral team can confirm whether we have approved coverage for your area before you go any further."
+        callCardBody="Our team can confirm whether we have approved coverage for your area before you go any further."
       />
     </>
   );

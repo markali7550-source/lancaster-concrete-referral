@@ -51,10 +51,10 @@ export const locations: readonly LocationRecord[] = [
     localEvidence: [
       "Lancaster County sits on the Carolina Slate Belt, so subbase prep and drainage handling vary noticeably between in town lots and rural parcels off Highway 9.",
       "Older in town properties near Main Street frequently have narrow drive access, which affects truck staging and pour sequencing.",
-      "Red clay subsoil common through the county holds water, so participating providers are asked about drainage handling before a driveway or slab quote is confirmed.",
+      "Red clay subsoil common through the county holds water, so our contractors are asked about drainage handling before a driveway or slab quote is confirmed.",
     ],
     intro:
-      "Lancaster is the only area this service covers right now. Every request is checked against providers who have approved that coverage in writing, which is why the list here is short and why it grows slowly. If nobody covers your address, we say so instead of passing your details along anyway.",
+      "Dedicated concrete project coordination for homeowners throughout Lancaster and surrounding communities. Connect directly with trusted local specialists for upfront pricing and quality workmanship.",
     heroImage: "/images/locations/lancaster-sc/lancaster-sc-hero.webp",
     heroImageAlt:
       "Quiet residential street of brick ranch houses and pines, with red clay verges and concrete driveways",
@@ -104,13 +104,13 @@ export const approvedZips: ReadonlySet<string> = new Set(
 
 /**
  * Sentinel submitted when a visitor selects "My area is not listed".
- * It is a structurally valid postal code that is never an approved ZIP,
+ * It is a structurally valid ZIP code that is never an approved ZIP,
  * so the routing engine returns no coverage without any special casing.
  */
 export const OUT_OF_AREA_POSTAL_CODE = "00000";
 
 export interface ServiceAreaOption {
-  /** Wire value: still a postal code, so the lead contract is unchanged. */
+  /** Wire value: still a ZIP code, so the lead contract is unchanged. */
   value: string;
   label: string;
 }
@@ -120,8 +120,8 @@ export const serviceAreaOptions: readonly ServiceAreaOption[] = [
   ...publishedLocations
     .filter((l) => l.zips.length > 0)
     .map((l) => ({
-      // One entry per served place. The wire value stays a postal code the
-      // participating provider registry already approves, so routing is unchanged.
+      // One entry per served place. The wire value stays a ZIP code the
+      // partner contractor registry already approves, so routing is unchanged.
       value: l.zips[0] as string,
       label: `${l.city}, ${l.region}`,
     })),
@@ -140,7 +140,7 @@ export const gatedRouteInventory: readonly GatedRouteRecord[] = [
     path: "/locations/indian-land-sc",
     state: "gated",
     requirement:
-      "Fresh demand data, verified city record, unique copy, participating provider coverage.",
+      "Fresh demand data, verified city record, unique copy, approved contractor coverage.",
   },
   {
     path: "/locations/elgin-sc",

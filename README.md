@@ -1,4 +1,4 @@
-# Lancaster Concrete Referral Platform — Phase 1 build
+# Lancaster Concrete Connect — Phase 1 build
 
 Next.js App Router + TypeScript + Tailwind v4. Static public site, working lead
 API with in-memory canonical store (the agreed scope: UI-first, real API, no
@@ -25,18 +25,18 @@ npm run assert:geos          # excluded Phase 2 geography scan
 | `/locations/lancaster-sc/{patios,slabs,repair}` | **gated → 404** |
 | `/locations/indian-land-sc`, `/locations/elgin-sc` | **gated/blocked → 404** |
 | Charlotte / Rock Hill / Fort Mill | zero output, CI-enforced |
-| `/how-it-works`, `/contact`, `/privacy`, `/terms`, `/referral-disclosure` | published |
+| `/how-it-works`, `/contact`, `/privacy`, `/terms`, `/service-disclosure` | published |
 | `/thank-you` | published, noindex nofollow |
 
 `dynamicParams = false` everywhere; static params come from explicit allowlists
 in `src/content/*`. No Cartesian product is ever generated.
 
-## Verified behaviour (dev-server smoke test)
+## Verified behavior (dev-server smoke test)
 
 - `/locations/lancaster-sc/concrete-patios` → 404, `/locations/indian-land-sc` → 404
 - `POST /api/leads` approved ZIP → `202 {leadId, state:"routed"}`
 - Same `Idempotency-Key` → original lead ID, `replay:true`, no second delivery
-- ZIP 28211 → `422 {result:"no_coverage"}`, nothing routed
+- ZIP 28211 → `422 {result:"no_coverage"}`, nothing sent to a contractor
 - `GET /api/tracking-number` → `405` (allocation is state-creating, POST only)
 - First Load JS: 103 kB shared; 113 kB on content pages; 130 kB on the five
   pages that render the quote form (budget 120 kB — see note below)
@@ -55,7 +55,7 @@ in `src/content/*`. No Cartesian product is ever generated.
 | 14 | Accessibility | ⚠️ semantics/focus/skip-link done; axe + Playwright suites not written |
 | 15 | Form states | ✅ default/error/submitting/success/api_failure/no_coverage, values preserved |
 | 16–17 | Lead persistence, idempotency | ✅ (in-memory store, same transaction boundary as the Postgres design) |
-| 18 | Routing controls | ✅ 7 hard gates + scoring; expired-credential partner is provably blocked |
+| 18 | Scheduling checks | ✅ 7 hard gates + scoring; expired-credential partner is provably blocked |
 | 19 | Delivery resilience | ⚠️ outbox rows written; queue worker/DLQ not implemented |
 | 20–21 | Call fallback, DNI integrity | ✅ fallback in static HTML, atomic swap, `no-store`, empty pool degrades safely |
 | 22 | Webhook security | ❌ `/api/webhooks/*` not implemented |

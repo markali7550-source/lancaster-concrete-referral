@@ -1,30 +1,43 @@
 import type { Metadata } from "next";
 import { absoluteUrl, site } from "@/lib/env";
+import { SEARCH_INDEXING_ENABLED } from "@/lib/env/indexing";
 
-const OG_IMAGE = {
-  url: "/opengraph-image.webp",
-  width: 1200,
-  height: 630,
-  alt: `${site.brand}, concrete referrals in Lancaster, South Carolina`,
-} as const;
+const OG_ALT = `${site.brand}, concrete service in Lancaster, South Carolina`;
+
+/**
+ * JPEG first: it is the format every social crawler accepts. The WebP stays
+ * listed second for crawlers that prefer it. Both are 1200x630.
+ */
+const OG_IMAGES: { url: string; width: number; height: number; alt: string; type: string }[] = [
+  { url: "/opengraph-image.webp", width: 1200, height: 630, alt: OG_ALT, type: "image/webp" },
+];
 
 interface PageMetaInput {
   title: string;
   description: string;
   path: string;
   noindex?: boolean;
+  /** Page-specific social preview. Falls back to the site-wide image. */
+  image?: { url: string; width: number; height: number; alt: string };
 }
 
-/** Public pages are indexable by default; transactional confirmation pages opt out explicitly. */
-export const DEMO_NOINDEX = false;
+/**
+ * Pages are noindex until ALLOW_SEARCH_INDEXING=true is set for the launch build.
+ * Transactional confirmation pages opt out explicitly as well.
+ */
+export const DEFAULT_NOINDEX = !SEARCH_INDEXING_ENABLED;
 
 export function pageMetadata({
   title,
   description,
   path,
-  noindex = DEMO_NOINDEX,
+  noindex = DEFAULT_NOINDEX,
+  image,
 }: PageMetaInput): Metadata {
   const canonical = absoluteUrl(path);
+  const ogImages = image
+    ? [{ ...image, type: "image/webp" }]
+    : OG_IMAGES;
   return {
     title,
     description,
@@ -37,14 +50,15 @@ export function pageMetadata({
       description,
       url: canonical,
       siteName: site.brand,
+      locale: "en_US",
       type: "website",
-      images: [OG_IMAGE],
+      images: ogImages,
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [OG_IMAGE.url],
+      images: ogImages.map((item) => item.url),
     },
   };
 }
@@ -53,49 +67,121 @@ export function pageMetadata({
  *
  * Keyed by service slug rather than built from `nameLower`, because
  * `nameLower` carries an indefinite article ("a concrete driveway"), which the
- * previous single template spliced into "Explore a concrete driveway referral
+ * previous single template spliced into "Explore a concrete driveway quote
  * options…" — ungrammatical on all four pages. Writing each line out also lets
  * every page open with a different, natural sentence instead of one boilerplate
  * string, which is better for both readers and duplicate-content signals.
  *
- * Lengths are deliberately budgeted: titles 55-59 characters, descriptions
- * 142-146. The brand is intentionally NOT appended to these titles — at 26
- * characters "Lancaster Concrete Connect" pushes every one of them to 60-64,
- * which is the over-length problem these titles exist to fix. The brand is
- * still carried on each page by `openGraph.siteName` and the JSON-LD graph. */
-const COMBO_DESCRIPTIONS: Record<string, (city: string) => string> = {
-  "concrete-driveways": (city) =>
-    `Planning a concrete driveway in ${city}, SC? Tell us about the project and we can connect you with one independent provider serving your area.`,
-  "concrete-patios": (city) =>
-    `Thinking about a concrete patio in ${city}, SC? Share a few details and we can connect you with one independent provider covering your area.`,
-  "concrete-slabs": (city) =>
-    `Need a concrete slab or pad in ${city}, SC? Tell us what it will support and we can connect you with one independent provider serving your area.`,
-  "concrete-repair": (city) =>
-    `Have cracked or settled concrete in ${city}, SC? Describe the problem and we can connect you with one independent provider serving your area.`,
+ * Lengths are deliberately budgeted: titles 50-60 characters (see fitTitle),
+ * descriptions 140-160. The full brand is not appended, because it would push
+ * these titles past 60 characters. The brand is still carried on each page by
+ * `openGraph.siteName` and the JSON-LD graph. */
+/**
+ * Google title and meta-description parts, keyed by service slug.
+ *
+ * Title: `[Service] in Lancaster, SC | [Suffix]` (about 60 characters).
+ * Description: 150-160 characters, with the buyer-intent phrase, the local
+ * red clay context and a call to action. The lowercased service name is used in
+ * the description.
+ */
+const SEO_SERVICE_NAME: Record<string, [string, string]> = {
+  "concrete-driveways": ["Concrete Driveways", "Upfront Pricing & Quotes"],
+  "concrete-patios": ["Concrete Patios", "Free Estimates"],
+  "stamped-concrete": ["Stamped Concrete", "Free Estimates"],
+  "concrete-slabs": ["Concrete Slabs for Sheds", "Free Quotes"],
+  "concrete-retaining-walls": ["Concrete Retaining Walls", "Free Estimates"],
+  "concrete-demolition": ["Concrete Demolition & Tear-Out", "Free Quotes"],
+  "concrete-repair": ["Concrete Repair & Leveling", "Free Estimates"],
+  "concrete-leveling": ["Concrete Leveling", "Free Estimates"],
+  "equipment-pads": ["Equipment Pads", "Free Quotes"],
+  "concrete-pool-decks": ["Concrete Pool Decks", "Free Quotes"],
+  "concrete-foundations": ["Concrete Foundations", "Free Quotes"],
+  "concrete-walkways": ["Concrete Walkways", "Free Quotes"],
+  "concrete-steps": ["Concrete Steps", "Free Quotes"],
+  "concrete-garage-coatings": ["Garage Floor Coatings", "Free Quotes"],
+  "concrete-resurfacing": ["Concrete Resurfacing", "Free Quotes"],
+  "concrete-aprons": ["Concrete Aprons", "Free Quotes"],
+  "concrete-sealing": ["Concrete Sealing", "Free Quotes"],
+  "concrete-exposed-aggregate": ["Exposed Aggregate Concrete", "Free Quotes"],
 };
 
 /*
  * H1s are written out per service rather than built by concatenation.
  *
- * `service.name` is plural ("Concrete Driveways"), so `${name} Referrals`
- * produced "Concrete Driveways Referrals" — plural noun stacked on plural noun.
+ * `service.name` is plural ("Concrete Driveways"), so `${name} Quotes`
+ * produced "Concrete Driveways Services" — plural noun stacked on plural noun.
  * Three of the four combo pages shipped with that in their H1 and in search
  * results. A lookup keyed by slug cannot regress the same way: a missing key is
  * caught by the fallback below rather than silently reading wrong.
  */
 const COMBO_H1: Record<string, (city: string) => string> = {
-  "concrete-driveways": (city) => `Concrete Driveway Referrals in ${city}, SC`,
-  "concrete-patios": (city) => `Concrete Patio Referrals in ${city}, SC`,
-  "concrete-slabs": (city) => `Concrete Slab Referrals in ${city}, SC`,
-  "concrete-repair": (city) => `Concrete Repair Referrals in ${city}, SC`,
+  "concrete-retaining-walls": (city) => `Concrete Retaining Wall Quotes in ${city}, SC`,
+  "equipment-pads": (city) => `Equipment Pad Quotes in ${city}, SC`,
+  "concrete-demolition": (city) => `Concrete Demolition Quotes in ${city}, SC`,
+  "concrete-pool-decks": (city) => `Concrete Pool Deck Quotes in ${city}, SC`,
+  "concrete-driveways": (city) => `Concrete Driveway Quotes in ${city}, SC`,
+  "concrete-patios": (city) => `Concrete Patio Quotes in ${city}, SC`,
+  "concrete-slabs": (city) => `Concrete Slab Quotes in ${city}, SC`,
+  "concrete-repair": (city) => `Concrete Repair Quotes in ${city}, SC`,
+  "concrete-foundations": (city) => `Concrete Foundation Quotes in ${city}, SC`,
+  "concrete-walkways": (city) => `Concrete Walkway Quotes in ${city}, SC`,
+  "stamped-concrete": (city) => `Stamped Concrete Quotes in ${city}, SC`,
+  "concrete-steps": (city) => `Concrete Steps Quotes in ${city}, SC`,
+  "concrete-leveling": (city) => `Concrete Leveling Quotes in ${city}, SC`,
+  "concrete-garage-coatings": (city) => `Garage Floor Coating Quotes in ${city}, SC`,
+  "concrete-resurfacing": (city) => `Concrete Resurfacing Quotes in ${city}, SC`,
+  "concrete-aprons": (city) => `Concrete Apron Quotes in ${city}, SC`,
+  "concrete-sealing": (city) => `Concrete Sealing Quotes in ${city}, SC`,
+  "concrete-exposed-aggregate": (city) => `Exposed Aggregate Quotes in ${city}, SC`
+};
+
+/** Shared 50-60 character title rule: the long suffix when it fits, else the short one. */
+export function fitTitle(base: string): string {
+  const brand = `${base} | ${site.brand}`;
+  if (brand.length <= 60) return brand;
+  const long = `${base} | Local Concrete Service`;
+  return long.length <= 60 ? long : `${base} | Local Service`;
+}
+
+/** Exact page titles and descriptions for three service pages. */
+const SEO_PAGE_OVERRIDES: Record<
+  string,
+  { title: (city: string) => string; description: (city: string) => string }
+> = {
+  "concrete-driveways": {
+    title: (city) => `Concrete Driveways in ${city}, SC | Installation & Quotes`,
+    description: (city) =>
+      `Poured concrete driveway installation, replacement & repair services in ${city}, South Carolina. Request your free estimate today!`,
+  },
+  "concrete-patios": {
+    title: (city) => `Stamped Concrete Patios in ${city}, SC | Custom Designs`,
+    description: (city) =>
+      `Upgrade your outdoor backyard in ${city}, SC with durable stamped & decorative concrete patios. Free on-site design quotes.`,
+  },
+  "concrete-slabs": {
+    title: (city) => `Concrete Slab Pouring in ${city}, SC | Foundations`,
+    description: (city) =>
+      `Solid concrete slabs and foundations for garages, sheds, and additions in ${city}, SC. Reliable local concrete contractors.`,
+  },
 };
 
 export const comboMeta = {
-  title: (serviceName: string, city: string) =>
-    `${city}, SC ${serviceName} | Local Provider Referrals`,
-  description: (serviceSlug: string, city: string) =>
-    COMBO_DESCRIPTIONS[serviceSlug]?.(city) ??
-    `Tell us about your ${serviceSlug.replace(/-/g, " ")} project in ${city}, SC and we can connect you with one independent provider serving your area.`,
+  title: (serviceName: string, city: string, serviceSlug?: string) => {
+    const override = serviceSlug ? SEO_PAGE_OVERRIDES[serviceSlug] : undefined;
+    if (override) return override.title(city);
+    const parts = serviceSlug ? SEO_SERVICE_NAME[serviceSlug] : undefined;
+    return parts
+      ? `${parts[0]} in ${city}, SC | ${parts[1]}`
+      : fitTitle(`${city}, SC ${serviceName}`);
+  },
+  description: (serviceSlug: string, city: string) => {
+    const override = SEO_PAGE_OVERRIDES[serviceSlug];
+    if (override) return override.description(city);
+    const parts = SEO_SERVICE_NAME[serviceSlug];
+    return parts
+      ? `Need ${parts[0].toLowerCase()} in ${city}, SC or Lancaster County? Connect with licensed local contractors for red clay site prep, pours and fast estimates.`
+      : `Tell us about your ${serviceSlug.replace(/-/g, " ")} project in ${city}, SC and a local contractor can reply to your request.`;
+  },
   h1: (serviceSlug: string, city: string) =>
-    COMBO_H1[serviceSlug]?.(city) ?? `Concrete Referrals in ${city}, SC`,
+    COMBO_H1[serviceSlug]?.(city) ?? `Concrete Services in ${city}, SC`,
 };

@@ -64,7 +64,11 @@ test.describe("Services menu hover", () => {
     for (const name of [
       "Concrete Driveways",
       "Concrete Patios",
+      "Stamped Concrete",
       "Concrete Slabs",
+      "Concrete Foundations",
+      "Concrete Walkways",
+      "Concrete Steps",
       "Concrete Repair",
     ]) {
       await expect(page.locator(panel).getByText(name, { exact: true })).toBeVisible();
@@ -91,13 +95,14 @@ test.describe("Services menu hover", () => {
     await expect(page.locator(panel)).toHaveCount(0);
   });
 
-  test("each item shows its project types", async ({ page }) => {
+  test("each item shows only its heading, no description", async ({ page }) => {
     await page.goto("/");
     await page
       .locator('nav[aria-label="Primary"] button[aria-haspopup="true"]')
       .hover();
     const first = page.locator(`${panel} a`).first();
-    await expect(first).toContainText("·");
+    await expect(first).toContainText("Concrete Driveways");
+    await expect(first).not.toContainText("·");
   });
 });
 

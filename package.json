@@ -1,5 +1,5 @@
 {
-  "name": "lancaster-concrete-referral",
+  "name": "lancaster-concrete",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -28,6 +28,8 @@
     "@types/node": "^26.6.2",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^15.5.27",
     "sharp": "^0.35.5",
     "tailwindcss": "^4.3.3",
     "tsx": "^4.23.15",

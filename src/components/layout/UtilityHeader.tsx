@@ -3,13 +3,18 @@ import { DynamicPhone } from "@/components/lead/DynamicPhone";
 import { Icon } from "@/components/ui/Icon";
 import { Logo } from "@/components/layout/Logo";
 import { MobileMenu } from "@/components/layout/MobileMenu";
+import { RequestFormLink } from "@/components/layout/RequestFormLink";
 import { ServicesMenu } from "@/components/layout/ServicesMenu";
 import { publishedServices } from "@/content/services";
 import { site } from "@/lib/env";
 
+/** Full-width tap target for the mobile menu: bright text, solid hover highlight. */
+const MENU_LINK =
+  "flex w-full items-center rounded-lg px-3.5 py-2.5 text-[15px] font-medium text-zinc-100 transition-colors hover:bg-[#161c24] hover:text-emerald-400 active:bg-[#161c24]";
+
 function Wordmark() {
   return (
-    <Link href="/" className="flex items-center" aria-label={site.brand}>
+    <Link href="/" className="flex shrink-0 items-center" aria-label={site.brand}>
       <Logo height={44} priority />
     </Link>
   );
@@ -25,7 +30,7 @@ function Wordmark() {
  */
 export function UtilityHeader() {
   return (
-    <header className="header-band sticky top-0 z-[100] border-b transition-colors duration-300">
+    <header className="header-band gpu-layer sticky top-0 z-[100] border-b pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)] pt-[env(safe-area-inset-top)] transition-colors duration-300">
         <div className="container-page flex h-16 items-center justify-between gap-4">
           <Wordmark />
 
@@ -54,73 +59,75 @@ export function UtilityHeader() {
             </Link>
           </nav>
 
-          <div className="hidden items-center gap-2.5 lg:flex">
+          <div className="hidden shrink-0 items-center gap-2.5 lg:flex">
             <DynamicPhone
               fallbackDisplay={site.phoneDisplay}
               fallbackE164={site.phoneE164}
               placement="header"
               className="btn btn-secondary hidden min-h-12 whitespace-nowrap px-3.5 text-[15px] xl:inline-flex"
             />
-            <Link href="/contact" className="btn btn-primary min-h-12 whitespace-nowrap px-3.5 text-[15px]">
-              Request a referral
-            </Link>
+            <RequestFormLink className="btn btn-primary min-h-12 shrink-0 whitespace-nowrap px-3.5 text-[15px]">
+              Request Service
+            </RequestFormLink>
           </div>
 
-          {/* Mobile menu — native <details>, closed on navigation by MobileMenu */}
+          {/* Mobile menu: native <details>, closed on navigation by MobileMenu */}
           <MobileMenu>
             <summary
-              className="btn btn-secondary list-none cursor-pointer px-3"
+              className="btn btn-secondary shrink-0 cursor-pointer list-none px-3 [&::-webkit-details-marker]:hidden [&::marker]:hidden"
               aria-label="Open menu"
             >
               <Icon name="menu" />
             </summary>
             <div
-              className="card absolute right-0 top-14 w-[17rem] p-2"
-              style={{ boxShadow: "var(--shadow-raised)" }}
+              className="absolute z-50 right-0 top-full mt-2 max-h-[calc(100svh-6rem)] w-[min(20rem,calc(100vw-2rem))] overflow-y-auto overscroll-contain rounded-2xl border border-[#1f2937] bg-[#141b24] p-3 shadow-2xl shadow-black sm:p-4"
+              style={{ backgroundColor: "#141b24" }}
             >
-              <p className="eyebrow-plain px-3 pb-1 pt-2">Services</p>
-              {publishedServices.map((service) => (
-                <Link
-                  key={service.slug}
-                  href={`/services/${service.slug}`}
-                  className="block rounded-[10px] px-3 py-2.5 text-[15px]"
-                >
-                  {service.name}
+              <p className="px-3.5 pb-1 pt-2 text-[12px] font-semibold uppercase tracking-[0.12em] text-zinc-400">
+                Services
+              </p>
+              <div className="ml-1 mt-1 border-l-2 border-[#1f2937] pl-2">
+                {publishedServices.map((service) => (
+                  <Link
+                    key={service.slug}
+                    href={`/services/${service.slug}`}
+                    className={MENU_LINK}
+                  >
+                    {service.name}
+                  </Link>
+                ))}
+                <Link href="/services" className={`${MENU_LINK} font-semibold text-emerald-400`}>
+                  All services →
                 </Link>
-              ))}
-              <Link
-                href="/services"
-                className="block rounded-[10px] px-3 py-2.5 text-[15px] font-semibold"
-                style={{ color: "var(--color-accent)" }}
-              >
-                All services →
-              </Link>
-              <p className="eyebrow-plain px-3 pb-1 pt-3">Company</p>
-              <Link href="/locations" className="block rounded-[10px] px-3 py-2.5 text-[15px]">
+              </div>
+              <p className="px-3.5 pb-1 pt-4 text-[12px] font-semibold uppercase tracking-[0.12em] text-zinc-400">
+                Company
+              </p>
+              <Link href="/locations" className={MENU_LINK}>
                 Service areas
               </Link>
-              <Link
-                href="/locations/lancaster-sc"
-                className="block rounded-[10px] px-3 py-2.5 text-[15px]"
-              >
+              <Link href="/locations/lancaster-sc" className={MENU_LINK}>
                 Lancaster, SC
               </Link>
-              <Link href="/how-it-works" className="block rounded-[10px] px-3 py-2.5 text-[15px]">
+              <Link href="/how-it-works" className={MENU_LINK}>
                 How it works
               </Link>
-              <Link href="/faq/" className="block rounded-[10px] px-3 py-2.5 text-[15px]">
+              <Link href="/faq/" className={MENU_LINK}>
                 FAQ
               </Link>
-              <Link href="/contact" className="block rounded-[10px] px-3 py-2.5 text-[15px]">
+              <Link href="/contact" className={MENU_LINK}>
                 Contact
               </Link>
-              <div className="mt-2 grid gap-2 border-t p-2 hairline">
+              <div className="mt-2 grid grid-cols-1 gap-2 border-t border-[#1f2937] pt-3">
                 <DynamicPhone
                   fallbackDisplay={site.phoneDisplay}
                   fallbackE164={site.phoneE164}
                   placement="mobile_menu"
                   className="btn btn-primary w-full"
                 />
+                <RequestFormLink className="btn btn-secondary w-full">
+                  Request Service
+                </RequestFormLink>
               </div>
             </div>
           </MobileMenu>

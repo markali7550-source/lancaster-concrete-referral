@@ -4,11 +4,31 @@ type Node = Record<string, unknown>;
 
 const ORG_ID = () => `${absoluteUrl("/")}/#organization`;
 const SITE_ID = () => `${absoluteUrl("/")}/#website`;
+const LOCAL_ID = () => `${absoluteUrl("/")}/#localbusiness`;
+
+const BUSINESS_DESCRIPTION =
+  "Lancaster Concrete Connect is a project coordination service for South Carolina homeowners. We connect you with trusted local concrete contractors, who perform the work. We are not a contractor.";
 
 /**
- * Root publisher is an OnlineBusiness. Never LocalBusiness,
- * HomeAndConstructionBusiness, or GeneralContractor (spec 6.1).
+ * Root publisher is an OnlineBusiness. The LocalBusiness node below describes
+ * the same brand for local search and points back to it. Neither node is a
+ * GeneralContractor or HomeAndConstructionBusiness, and neither carries an
+ * address, because no verified address is supplied in src/config/site.ts.
  */
+/** PostalAddress with locality, region and country. Street and ZIP code are
+ *  added only when the config supplies them; empty values are omitted, so a
+ *  missing street never produces an invalid or blank field. */
+function postalAddress(): Node {
+  return {
+    "@type": "PostalAddress",
+    ...(site.streetAddress ? { streetAddress: site.streetAddress } : {}),
+    addressLocality: site.serviceArea.city,
+    addressRegion: site.serviceArea.region,
+    ...(site.postalCode ? { postalCode: site.postalCode } : {}),
+    addressCountry: site.serviceArea.country,
+  };
+}
+
 export function rootGraph(): Node[] {
   return [
     {
@@ -18,8 +38,34 @@ export function rootGraph(): Node[] {
       url: absoluteUrl("/"),
       telephone: site.phoneE164,
       email: site.email,
-      description:
-        "Online referral service that connects South Carolina homeowners with independent concrete contractors. Not a contractor.",
+      description: BUSINESS_DESCRIPTION,
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": LOCAL_ID(),
+      name: site.brand,
+      url: absoluteUrl("/"),
+      telephone: site.phoneE164,
+      email: site.email,
+      description: BUSINESS_DESCRIPTION,
+      address: postalAddress(),
+      /* Geo focus: the centre of Lancaster, SC. */
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 34.7204,
+        longitude: -80.7709,
+      },
+      /* Only areas the site already names as served. Indian Land is not on
+         that list, so it is not claimed here. */
+      areaServed: [
+        { "@type": "City", name: "Lancaster, SC" },
+        { "@type": "AdministrativeArea", name: "Lancaster County, SC" },
+        { "@type": "City", name: "Kershaw, SC" },
+        { "@type": "City", name: "Heath Springs, SC" },
+        { "@type": "City", name: "Van Wyck, SC" },
+        { "@type": "City", name: "Buford, SC" },
+      ],
+      parentOrganization: { "@id": ORG_ID() },
     },
     {
       "@type": "WebSite",
@@ -64,6 +110,9 @@ export function serviceNode(input: {
   path: string;
   name: string;
   description: string;
+  serviceType?: string;
+  /** Entries such as "Lancaster, SC" (City) or "Lancaster County, SC"
+   *  (AdministrativeArea). */
   areaServed: string[];
 }): Node {
   return {
@@ -71,11 +120,13 @@ export function serviceNode(input: {
     "@id": `${absoluteUrl(input.path)}#service`,
     name: input.name,
     description: input.description,
-    serviceType: input.name,
-    provider: { "@id": ORG_ID() },
-    areaServed: input.areaServed.map((city) => ({
-      "@type": "City",
-      name: `${city}, SC`,
+    serviceType: input.serviceType ?? input.name,
+    /* The publisher arranges the request; it does not perform the work, so it
+       is the broker, never the provider (schema.org Service.broker). */
+    broker: { "@id": ORG_ID() },
+    areaServed: input.areaServed.map((area) => ({
+      "@type": area.includes("County") ? "AdministrativeArea" : "City",
+      name: area,
     })),
   };
 }

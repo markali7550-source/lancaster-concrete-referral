@@ -28,7 +28,7 @@ export function MayInclude({
         {items.map((item) => (
           <li
             key={item}
-            className="card mb-3 flex break-inside-avoid items-start gap-3 p-4"
+            className="card mb-3 flex break-inside-avoid flex-col items-center gap-3 p-4 text-center lg:flex-row lg:items-start lg:text-left"
           >
             <span
               className="mt-0.5 shrink-0"
@@ -41,9 +41,9 @@ export function MayInclude({
         ))}
       </ul>
       <p className="mt-5 text-[13px] leading-relaxed text-[color:var(--color-muted)]">
-        This list describes components commonly associated with a {serviceName}{" "}
-        project. It is informational only, and not every participating provider
-        offers every item. Confirm scope directly with the provider who contacts
+        This list describes components commonly associated with {/^[aeiou]/i.test(serviceName) ? "an" : "a"} {serviceName}{" "}
+        project. It is informational only, and not every local contractor
+        offers every item. Confirm scope directly with the contractor who contacts
         you.
       </p>
     </div>
@@ -62,27 +62,29 @@ export function MayInclude({
 export function ServiceDisclosureBlock() {
   return (
     <section
-      aria-label="Referral disclosure"
+      aria-label="Service disclosure"
       className="border-y"
       style={{
         borderColor: "var(--color-line-soft)",
         backgroundColor: "var(--color-surface)",
       }}
     >
-      <div className="container-page flex flex-col gap-2 py-3.5 text-[13.5px] leading-relaxed sm:flex-row sm:items-center sm:justify-between">
-        <p className="flex items-start gap-2.5">
-          <span style={{ color: "var(--color-accent)" }}>
-            <Icon name="shield" className="mt-px h-[18px] w-[18px]" />
+      <div className="container-page py-6 [text-align:left] text-[13.5px] leading-relaxed">
+        <div className="flex max-w-3xl items-start gap-3.5 py-4 sm:gap-4 sm:py-5">
+          <span className="mt-0.5 flex-shrink-0" style={{ color: "var(--color-accent)" }}>
+            <Icon name="shield" className="h-[18px] w-[18px]" />
           </span>
-          <span>{SERVICE_PAGE_DISCLOSURE}</span>
-        </p>
-        <Link
-          href="/referral-disclosure"
-          className="shrink-0 self-center font-semibold underline underline-offset-4 sm:self-auto"
-          style={{ color: "var(--color-accent)" }}
-        >
-          Full disclosure
-        </Link>
+          <div className="min-w-0">
+            <p className="[text-align:left]">{SERVICE_PAGE_DISCLOSURE}</p>
+            <Link
+              href="/service-disclosure"
+              className="mt-2 block font-semibold underline underline-offset-4 sm:inline-block"
+              style={{ color: "var(--color-accent)" }}
+            >
+              Full disclosure
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -108,7 +110,7 @@ export function ServiceCtaBand({
     <CtaBand
       title={title}
       body={body}
-      actionLabel="Request a referral"
+      actionLabel="Request Concrete Service"
       actionIcon
     />
   );

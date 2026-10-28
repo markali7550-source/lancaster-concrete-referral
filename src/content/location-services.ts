@@ -4,6 +4,8 @@ import { getService, type ServiceSlug } from "./services";
 export interface LocationServiceRecord {
   locationSlug: string;
   serviceSlug: ServiceSlug;
+  /** Two-sentence hero description for the combo page. */
+  heroSummary: string;
   state: "published" | "gated";
   /**
    * Locally specific copy. City-name substitution alone fails the build gate.
@@ -21,10 +23,142 @@ export interface LocationServiceRecord {
   localFaqs: { question: string; answer: string }[];
 }
 
+
+/** Lancaster soil (red clay) copy for the Local conditions block, one entry per service. */
+export const LOCAL_SOIL_BY_SERVICE: Record<string, { title: string; paragraphs: string[] }> = {
+  "concrete-driveways": {
+    "title": "Driveways in Lancaster: clay subbase and drainage",
+    "paragraphs": [
+      "Red clay under many Lancaster County lots holds water after storms and softens the subgrade, so a driveway depends on a compacted base and drainage at the edges. Crews check the subgrade before forms go down, because a soft spot found then costs far less than one found after the pour.",
+      "Clay also moves with the seasons. It swells in wet months and shrinks in dry ones, so control joints are laid out to suit the slab size and the vehicles that will use it."
+    ]
+  },
+  "concrete-patios": {
+    "title": "Patios in Lancaster: clay, lawn runoff, and drainage",
+    "paragraphs": [
+      "Patios often sit where lawn runoff collects, and red clay underneath keeps that water in place. A patio that sits level on day one can settle at the edges if the base is thin or the surface grade sends water toward the slab.",
+      "Edge restraints and a deliberate slope matter as much as thickness here. Ask how the base will be compacted and how the finished surface will drain after a heavy storm."
+    ]
+  },
+  "concrete-slabs": {
+    "title": "Slabs in Lancaster: moisture under the pad",
+    "paragraphs": [
+      "A garage, shed, or equipment pad on red clay can draw moisture upward for weeks after a wet season. The base and the vapor barrier decide whether that moisture reaches stored equipment or flooring.",
+      "Slabs are often poured with little grade around them, so water can pond against the edge. Confirm how the pad will drain before the pour is scheduled."
+    ]
+  },
+  "concrete-repair": {
+    "title": "Repairs in Lancaster: why clay cracks return",
+    "paragraphs": [
+      "Most cracks in Lancaster clay come from water moving under the slab, which washes out fine soil and leaves a void. A patch placed without fixing that water path often returns.",
+      "Dry summers open cracks as the clay shrinks, and winter rain fills them. A sound repair starts with the drainage cause, then matches the patch material to the crack width and expected movement."
+    ]
+  },
+  "concrete-foundations": {
+    "title": "Foundations in Lancaster: bearing soil under the footing",
+    "paragraphs": [
+      "Footings rest on whatever the excavation exposes. In Lancaster clay that soil can change with the season, so the engineer's bearing assumptions have to match the soil at the cut before concrete is placed.",
+      "Water is the main risk while the trench is open. Pumping and drainage at the bottom of the excavation keep the bearing soil from softening before the pour."
+    ]
+  },
+  "concrete-walkways": {
+    "title": "Walkways in Lancaster: heave and edge movement",
+    "paragraphs": [
+      "A walk on red clay moves with the ground. When the soil wets and dries, the slab can rise at the joints or sink where water sits. A grade that sends runoff away from the path does more than any change in thickness.",
+      "Edge restraints keep lawn soil from pushing the slab out of line. Control joints spaced as the contractor recommends let the walk crack along planned lines instead of at random."
+    ]
+  },
+  "stamped-concrete": {
+    "title": "Stamped concrete in Lancaster: heat, humidity, and sealer",
+    "paragraphs": [
+      "Stamping has to happen while the surface is still workable, and summer heat in Lancaster can set a slab quickly. Humid mornings and afternoon storms shape the schedule more than the pour itself.",
+      "Clay tracked onto a stamped surface, and sun on a sealer that is not renewed, are common reasons a pattern fades. Ask about the sealer and its maintenance schedule before the job starts."
+    ]
+  },
+  "concrete-steps": {
+    "title": "Steps in Lancaster: settling at the base",
+    "paragraphs": [
+      "Steps are supported at their base, so settling in red clay is usually a footing and drainage question. Water that collects at the bottom step softens the soil under it, and the step can drop away from the one above.",
+      "Winter nights near freezing and summer storms both push water through the same joints. Ask how the footing is sized for the clay and how the landing will drain."
+    ]
+  },
+  "concrete-leveling": {
+    "title": "Leveling in Lancaster: clay that swells and settles",
+    "paragraphs": [
+      "Red clay under many Lancaster County slabs swells when wet and shrinks in dry spells. A slab can sink where the soil beneath it has softened, compacted unevenly, or lost support at an edge, so lifting works best when the cause is checked first.",
+      "Heavy summer storms and dry stretches both move this soil. A slab that dropped after a wet season should be looked at before the next one, because the gap usually grows."
+    ]
+  },
+  "concrete-garage-coatings": {
+    "title": "Garage floors in Lancaster: moisture from the clay below",
+    "paragraphs": [
+      "Red clay beside and under many Lancaster garages holds water after storms, and that moisture can move up through a slab. Coatings can bubble or peel when moisture is trapped beneath them, so the contractor tests the slab before coating.",
+      "Humid summers slow some coatings and speed up others. The contractor chooses a system and a cure schedule that suit the temperatures and humidity expected during the job."
+    ]
+  },
+  "concrete-pool-decks": {
+    "title": "Pool decks in Lancaster: drainage and red clay",
+    "paragraphs": [
+      "Red clay in Lancaster holds water after storms, and a pool deck that does not slope away from the pool can leave water standing at the coping. The contractor checks the existing grade and sets the slope before the forms go in.",
+      "Clay also moves with the seasons. A compacted base and a reinforced slab help the deck stay level, and expansion joints keep it from cracking where it meets the pool or other fixed structures."
+    ]
+  },
+  "concrete-retaining-walls": {
+    "title": "Retaining walls in Lancaster: red clay and water pressure",
+    "paragraphs": [
+      "Red clay in Lancaster holds water after storms, and that water pushes against a wall that is not drained. Drainage backfill and weep holes relieve that pressure so the wall does not crack or tip.",
+      "Clay also expands and shrinks with moisture. The footing is placed on compacted, undisturbed soil so the wall does not shift over time.",
+    ]
+  },
+  "equipment-pads": {
+    "title": "Equipment pads in Lancaster: a level base on clay",
+    "paragraphs": [
+      "Clay ground can soften after rain and sink under concentrated weight. A compacted gravel base under the pad keeps a hot tub, generator, or AC unit from tilting.",
+      "The contractor checks the base for level before forms go in, since a pad that starts out of level stays that way.",
+    ]
+  },
+  "concrete-demolition": {
+    "title": "Demolition in Lancaster: keeping the clay grade intact",
+    "paragraphs": [
+      "Breaking out concrete can disturb the clay below and change how water drains. The crew removes only what is needed and grades the area so runoff still moves away from the home.",
+      "Old slabs are often bedded on loose fill. After removal, the subgrade is compacted and leveled before anything new is built on it.",
+    ]
+  },
+  "concrete-resurfacing": {
+    "title": "Resurfacing in Lancaster: check the slab under the overlay",
+    "paragraphs": [
+      "A thin overlay is only as stable as the slab beneath it. Red clay that swells and shrinks can move an old slab, and that movement can crack a new overlay, so the contractor checks for cracks and movement first.",
+      "Lancaster's summer rain and heat can also affect how an overlay sets, so the contractor plans the placement around the forecast and the surface temperature."
+    ]
+  },
+  "concrete-aprons": {
+    "title": "Aprons in Lancaster: grade and drainage at the street",
+    "paragraphs": [
+      "Where a driveway meets the street, red clay can hold water at the edge and soften the base under the apron. The apron's slope decides whether that water runs to the gutter or sits against the slab.",
+      "Nights near freezing can freeze water in the joints at the street edge. Control joints and a good base help the apron handle the freeze and thaw cycle."
+    ]
+  },
+  "concrete-sealing": {
+    "title": "Sealing in Lancaster: sun, storms, and clay dust",
+    "paragraphs": [
+      "Summer sun and afternoon storms wear sealer faster on driveways and patios in Lancaster. Red clay dust and tracked in soil can also stain the surface, so cleaning comes before sealing.",
+      "Sealer protects against water and staining, but it does not stop slab movement. Settling in clay is a structural question, and it is worth checking before sealing."
+    ]
+  },
+  "concrete-exposed-aggregate": {
+    "title": "Exposed aggregate in Lancaster: a stable base under the stone",
+    "paragraphs": [
+      "A decorative surface is only as good as the base under it. Red clay that swells and shrinks can crack the slab, so the base is compacted and drainage is set before the pour.",
+      "Hot summer days can speed the set, so the stone is spread and exposed at the time the contractor sets for the day's temperatures."
+    ]
+  }
+} as const;
+
 const records: readonly LocationServiceRecord[] = [
   {
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-driveways",
+    heroSummary: "Custom poured concrete driveways engineered for Lancaster County homes and soil conditions. Connect with trusted local specialists for a free, upfront estimate.",
     state: "published",
     localImage: "/images/locations/lancaster-sc/lancaster-sc-driveways.webp",
     localImageAlt:
@@ -48,35 +182,54 @@ const records: readonly LocationServiceRecord[] = [
       {
         heading: "Who actually does the work",
         body:
-          "We do not pour concrete. When your request matches an approved participating provider for the Lancaster area, that independent contractor contacts you to inspect the site, confirm scope, and quote the work directly. We stay out of the pricing conversation entirely, and we do not take a position on which finish, thickness, or reinforcement your property needs.",
+          "Local concrete contractors do the pouring. After you submit a request, a local contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set directly between you and that contractor, and finish, thickness, and reinforcement are decided with them after they inspect your property.",
+      },
+      {
+        heading: "Weather and timing",
+        body:
+          "Lancaster's hot, humid summers and seasonal rainfall patterns require properly cured mix designs and strategically placed control joints. Winter nights can dip near freezing. Water that sits at a driveway edge in red clay freezes and thaws, so keep the edge graded away from the slab.",
+      },
+      {
+        heading: "Communities near Lancaster",
+        body:
+          "Driveway quotes on this page apply to addresses in the City of Lancaster. Kershaw, Heath Springs, Van Wyck, and Buford are nearby county communities, and coverage is confirmed by address.",
       },
     ],
     localFaqs: [
       {
         question:
+          "Do I need a Lancaster County permit for a new driveway?",
+        answer:
+          "It depends on the work and the property. Check with Lancaster County's planning or building department before you order work, and ask your contractor who handles any permit paperwork.",
+      },
+      {
+        question:
+          "How quickly can a local contractor come out for an on site estimate in Lancaster?",
+        answer:
+          "Timing depends on the contractor's schedule and the season, and it is not something we can promise. After you submit a request, the contractor contacts you to talk about timing for an on site visit.",
+      },
+      {
+        question:
           "Do Lancaster driveway quotes include removing the old slab?",
         answer:
-          "Demolition and haul away are usually quoted as separate line items. Ask the assigned contractor to itemize removal so you can compare quotes honestly.",
+          "Demolition and haul away are often quoted as separate line items. Ask the contractor to itemize removal so you can compare quotes on the same basis.",
       },
       {
-        question: "Which Lancaster areas can you match right now?",
+        question:
+          "Is the price final before a site visit?",
         answer:
-          "Lancaster, South Carolina is the approved coverage area at launch. Requests from outside it return an honest no coverage response rather than being routed to a contractor who does not serve the area.",
-      },
-      {
-        question: "Can you guarantee a price before anyone visits?",
-        answer:
-          "No. We are a referral service, not the contractor. Pricing, scheduling, and project eligibility are set by the independent contractor after a site visit.",
+          "Usually not. The base, the drainage, and the finish all affect cost, so an on site review is normally needed before a final figure.",
       },
     ],
   },
   {
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-patios",
+    heroSummary: "Beautiful, long lasting concrete patios designed for Lancaster outdoor entertaining. Contact our team to schedule your free consultation with a local pro.",
     state: "published",
-    localImage: "/images/locations/lancaster-sc/lancaster-sc-patios.webp",
+    localImage: "/images/services/concrete-patios/concrete-patios-hero.webp",
     localImageAlt:
-      "Stamped concrete patio with a curved edge and a metal table and chairs beside a siding house, with a mown lawn and split rail fence",
+      "Concrete patio beside a covered pergola and wicker daybed, with a brick trimmed house and lawn",
     localBody: [
       {
         heading: "What the work usually is",
@@ -98,32 +251,52 @@ const records: readonly LocationServiceRecord[] = [
         body:
           "Tying a new patio into an existing porch footing or stoop is the other detail worth raising early. The old footing and the new slab move independently unless the joint is detailed deliberately, which is why the existing structure needs looking at before anyone quotes, rather than pricing it from a square foot figure over the phone.",
       },
+      {
+        heading: "Weather and timing",
+        body:
+          "Heat and humidity set the patio schedule, since a surface can skin over before it is finished on a hot afternoon. Red clay under Lancaster lawns swells after the wet spring and summer storms and shrinks in dry spells, so a patio needs edge drainage and a plan for seasonal movement.",
+      },
+      {
+        heading: "Communities near Lancaster",
+        body:
+          "Patio requests on this page are matched to addresses in the City of Lancaster. Kershaw, Heath Springs, Van Wyck, and Buford are nearby county communities, and each address is checked before a contractor replies.",
+      },
     ],
     localFaqs: [
       {
-        question: "What patio finish holds up best in a shaded Lancaster back yard?",
+        question:
+          "Do I need a Lancaster County permit for this project?",
         answer:
-          "Textured finishes such as broom or exposed aggregate stay usable in damp shade, where a smooth troweled surface tends to grow algae and get slippery. The assigned contractor makes the call after seeing the canopy and drainage on your lot.",
+          "It depends on the work and the property. Check with Lancaster County's planning or building department before you start, and ask your contractor who handles any permit paperwork.",
       },
       {
-        question: "Can a new patio be joined to my existing porch slab?",
+        question:
+          "How quickly can a local contractor come out for an on site estimate in Lancaster?",
         answer:
-          "Often yes, but the two slabs move independently, so the joint has to be detailed for it. The contractor will inspect the existing footing before quoting rather than assuming it can simply be butted up against.",
+          "Timing depends on the contractor's schedule and the season, and it is not something we can promise. After you submit a request, the contractor contacts you to talk about timing for an on site visit.",
       },
       {
-        question: "Is summer a bad time to pour a patio here?",
+        question:
+          "Does shade change the finish I should choose?",
         answer:
-          "It is workable but less forgiving. Humidity and heat shorten finishing time, so a pour here may be scheduled for early morning or moved to a better week. That is a contractor decision, not ours.",
+          "Yes. A patio under mature trees stays damp longer, so a broom or exposed aggregate finish usually holds grip better than a smooth trowel. Settle the finish with the contractor before the slab is ordered.",
+      },
+      {
+        question:
+          "Is the price final before a site visit?",
+        answer:
+          "Usually not. Site conditions, the base, and the finish all affect cost, so an on site review is normally needed before a final figure.",
       },
     ],
   },
   {
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-slabs",
+    heroSummary: "Precision poured concrete slabs for sheds, garages, and additions in Lancaster, SC. Speak with a trusted local specialist for upfront pricing.",
     state: "published",
     localImage: "/images/locations/lancaster-sc/lancaster-sc-slabs.webp",
     localImageAlt:
-      "Newly poured concrete shed pad with form lines on its sides, surrounded by gravel and soil with a shovel, bucket and hose nearby, beside a fenced backyard",
+      "Newly poured concrete slab with form lines on its edge, set in a lawn beside a house",
     localBody: [
       {
         heading: "What pads are usually for",
@@ -145,28 +318,48 @@ const records: readonly LocationServiceRecord[] = [
         body:
           "If the building on top will be heated or used as a workshop, expect the contractor to raise a vapor barrier beneath the slab. Lancaster County clay stays wet, and moisture rising through an unprotected pad ruins stored tools and flooring. Ask whether your structure also needs a permit.",
       },
+      {
+        heading: "Weather and timing",
+        body:
+          "Summer storms bring heavy rain, and August averages about 3.6 inches. Clay that stays wet holds moisture under a slab for weeks, so a pour is planned around drainage, a moisture barrier, and curing protection from the heat. Winter nights near freezing can slow curing in the cold months.",
+      },
+      {
+        heading: "Communities near Lancaster",
+        body:
+          "Slab and pad work on this page is for the City of Lancaster. The county towns of Kershaw, Heath Springs, Van Wyck, and Buford sit nearby, and coverage is confirmed by address before a quote is given.",
+      },
     ],
     localFaqs: [
       {
-        question: "Does my shed or workshop pad need to be thicker than a standard slab?",
+        question:
+          "Do I need a Lancaster County permit for this project?",
         answer:
-          "It depends entirely on what will sit on it. Vehicles, tractors, and heavy benches typically call for thickened edges and additional reinforcement. Tell the contractor the intended use at the site visit, because changing it afterwards means removing the slab.",
+          "It depends on the work and the property. Check with Lancaster County's planning or building department before you start, and ask your contractor who handles any permit paperwork.",
       },
       {
-        question: "Will a septic field limit where my pad can go?",
+        question:
+          "How quickly can a local contractor come out for an on site estimate in Lancaster?",
         answer:
-          "It can, and so can a well head and its setback. Identify both before the site visit so the contractor can position the pad legally rather than redesigning it after the fact.",
+          "Timing depends on the contractor's schedule and the season, and it is not something we can promise. After you submit a request, the contractor contacts you to talk about timing for an on site visit.",
       },
       {
-        question: "Do I need a vapor barrier under an outbuilding slab?",
+        question:
+          "Does red clay soil affect a new slab?",
         answer:
-          "A vapor barrier is standard practice under a heated or finished space, because clay subsoil holds moisture that would otherwise rise through the slab. Under an open carport it is normally unnecessary. The assigned contractor specifies it, not us.",
+          "It can. Clay holds moisture, so contractors often plan a compacted base, control joints, and drainage at the edges. Ask how they will prepare the ground under your slab.",
+      },
+      {
+        question:
+          "Is the price final before a site visit?",
+        answer:
+          "Usually not. Ground preparation, access, and finish all affect cost, so an on site review is normally needed before a final figure.",
       },
     ],
   },
   {
     locationSlug: "lancaster-sc",
     serviceSlug: "concrete-repair",
+    heroSummary: "Fast, dependable concrete repair solutions for cracked or sunken surfaces across Lancaster County. Request a free on site assessment with our team.",
     state: "published",
     localImage: "/images/locations/lancaster-sc/lancaster-sc-repair.webp",
     localImageAlt:
@@ -192,25 +385,802 @@ const records: readonly LocationServiceRecord[] = [
         body:
           "Sometimes repair is not worth it. Once a slab is cracked across multiple panels, has lost surface depth, or sits on a compromised subbase, resurfacing buys a few seasons at a real fraction of replacement cost. Advice to replace rather than patch is usually not an upsell.",
       },
+      {
+        heading: "Weather and timing",
+        body:
+          "Patch products need dry surfaces and mild temperatures to bond. Summer heat dries a patch too fast, and winter nights near freezing can stop curing. In Lancaster clay, cracks and lifted edges often come from water moving under the slab, so the water path matters as much as the patch.",
+      },
+      {
+        heading: "Communities near Lancaster",
+        body:
+          "Repair requests on this page cover the City of Lancaster. Nearby county communities include Kershaw, Heath Springs, Van Wyck, and Buford, and each address is confirmed before a contractor is assigned.",
+      },
     ],
     localFaqs: [
       {
-        question: "Why does one section of my driveway keep sinking after it is fixed?",
+        question:
+          "Do I need a Lancaster County permit for this project?",
         answer:
-          "Usually water. If stormwater is washing fines out from under that section, leveling the surface without redirecting the water means the void reopens. Ask the contractor to explain what is being done about drainage.",
+          "It depends on the work and the property. Check with Lancaster County's planning or building department before you start, and ask your contractor who handles any permit paperwork.",
       },
       {
-        question: "Can a lifted slab near a tree be leveled without killing the tree?",
+        question:
+          "How quickly can a local contractor come out for an on site estimate in Lancaster?",
         answer:
-          "Sometimes, but cutting a structural root to level a panel can destabilize a mature oak. That tradeoff is a site specific judgment the assigned contractor will walk you through.",
+          "Timing depends on the contractor's schedule and the season, and it is not something we can promise. After you submit a request, the contractor contacts you to talk about timing for an on site visit.",
       },
       {
-        question: "When is resurfacing a waste of money?",
+        question:
+          "Can a cracked slab be repaired instead of replaced?",
         answer:
-          "When the cracking runs across several panels, the surface has lost real depth, or the subbase has failed. In those cases resurfacing buys a few seasons for a large share of the replacement price, and a straight contractor will say so.",
+          "Sometimes. It depends on crack width, whether the slab is still moving, and what caused the damage. The contractor assesses this on site before recommending a repair or replacement.",
+      },
+      {
+        question:
+          "Is the price final before a site visit?",
+        answer:
+          "Usually not. The cause of the damage and the extent of the repair are usually clear only after an on site review.",
       },
     ],
   },
+  {
+    locationSlug: "lancaster-sc",
+    serviceSlug: "concrete-foundations",
+    heroSummary: "Code compliant, high strength structural foundations poured for builds across Lancaster County. Get a clear estimate from our local specialists.",
+    state: "published",
+    localImage: "/images/services/concrete-foundations/concrete-foundations-hero.webp",
+    localImageAlt:
+      "Worker's boots beside a concrete vibrator pipe on fresh concrete over a steel rebar grid",
+    localBody: [
+      {
+        heading: "What a foundation job covers",
+        body:
+          "Foundation requests in Lancaster County usually involve footings, stem walls, or a slab on grade for an addition, a garage, or an outbuilding. The footing depth, the reinforcement, and the concrete strength come from the engineer's drawings and the county's code, not from the crew's preference. Ask for those drawings before the price is set.",
+      },
+      {
+        heading: "Clay soil and water come first",
+        body:
+          "Many Lancaster County lots sit on red clay. Clay holds water after storms and moves as it wets and dries, so the soil under a footing can change over a season. A site review before the excavation is opened shows whether the bearing soil is sound, and whether the footing needs to go deeper or wider than the plan shows.",
+      },
+      {
+        heading: "Inspections happen before the pour",
+        body:
+          "Foundation work is usually inspected before concrete is placed, while the forms and rebar are still visible. Schedule the inspection around the pour, not after it. Ask the contractor who requests the inspection and who handles the permit paperwork.",
+      },
+      {
+        heading: "Pour timing in heat and storms",
+        body:
+          "Afternoon thunderstorms and summer heat both affect a foundation pour. Rain on fresh concrete can wash the surface, and hot weather can cure it too fast. Contractors often schedule pours for the morning and protect the surface until it has set.",
+      },
+      {
+        heading: "Weather and timing",
+        body:
+          "Foundation pours are scheduled around both summer heat and winter cold, since curing depends on temperature. Red clay swells as it wets and shrinks as it dries across the year, so bearing soil is checked after heavy rain and before the footing is set.",
+      },
+      {
+        heading: "Communities near Lancaster",
+        body:
+          "Foundation work on this page is limited to addresses in the City of Lancaster. Kershaw, Heath Springs, Van Wyck, and Buford are nearby county communities, and coverage is confirmed address by address.",
+      },
+    ],
+    localFaqs: [
+      {
+        question: "Does a Lancaster County foundation project need an engineer?",
+        answer:
+          "It depends on the project and on what the county requires for the permit. Additions, garages, and some outbuildings often need engineered drawings. Confirm with the county building department before you ask for a price.",
+      },
+      {
+        question: "Does the clay soil change the footing?",
+        answer:
+          "It can. Clay that stays wet or dries and shrinks can change the bearing conditions, so the contractor should check the soil before the footing depth is set.",
+      },
+      {
+        question: "Is the price final before a site visit?",
+        answer:
+          "Usually not. Excavation depth, soil conditions, and access all affect cost, so an on site review is normally needed before a final figure.",
+      },
+    ],
+  },
+  {
+    locationSlug: "lancaster-sc",
+    serviceSlug: "concrete-walkways",
+    heroSummary: "Safe, clean poured walkways and entry paths built to enhance your Lancaster home's curb appeal. Request a fast, no obligation quote today.",
+    state: "published",
+    localImage: "/images/services/concrete-walkways/concrete-walkways-hero.webp",
+    localImageAlt:
+      "Poured concrete walkway curving between trees, with sand and rock borders beside it",
+    localBody: [
+      {
+        heading: "What a front entry path involves",
+        body:
+          "Walkway requests here usually mean a new front entry path from the driveway or sidewalk to the porch, or replacing a section that has cracked, heaved, or sunk. A new path through the lawn is a common variation. The layout is often set by the door, the approach, and where water runs off the roof.",
+      },
+      {
+        heading: "Grade and the lawn edge",
+        body:
+          "Clay soil heaves as it wets and dries, and a walk that sits on it can lift at the joints. Grade the path so water runs away from the house and off the walk, and set an edge restraint so the lawn does not push the slab out of line over time.",
+      },
+      {
+        heading: "Joints and finish",
+        body:
+          "Control joints guide where a walk cracks, which keeps the cracks straight and out of the way. A broom finish gives grip on a wet entry, and it matters more under a porch or a tree, where the surface stays damp longer.",
+      },
+      {
+        heading: "Tying into the porch",
+        body:
+          "A walk that meets a porch stoop or a step needs a deliberate joint, because the two pieces of concrete settle on their own footings. Look at the existing porch structure before the walk is priced, not after the forms are set.",
+      },
+      {
+        heading: "Weather and timing",
+        body:
+          "Walkways face the same summer heat, humid storms, and red clay as driveways. Freeze thaw is light in Lancaster, but clay that stays wet or dries out can heave a walk, so the path is graded away from the house and set with an edge restraint.",
+      },
+      {
+        heading: "Communities near Lancaster",
+        body:
+          "Walkway quotes on this page apply to the City of Lancaster. Nearby county communities such as Kershaw, Heath Springs, Van Wyck, and Buford are listed for reference, and coverage is confirmed by address.",
+      },
+    ],
+    localFaqs: [
+      {
+        question: "Can a cracked front walk be patched, or does it need replacing?",
+        answer:
+          "It depends on how much the slab has moved. A small crack in a level slab can often be sealed. A lifted or sunken section that creates a trip hazard usually needs to be raised or replaced. The contractor assesses the walk on site.",
+      },
+      {
+        question: "What finish is best for a front entry?",
+        answer:
+          "A broom finish is the common choice because it gives grip when the surface is wet. A smooth trowel finish can become slippery in shade and under trees.",
+      },
+      {
+        question: "Is the price final before a site visit?",
+        answer:
+          "Usually not. Length, grade, demolition, and the joint layout all affect cost, so an on site review is normally needed before a final figure.",
+      },
+    ],
+  },
+  {
+    locationSlug: "lancaster-sc",
+    serviceSlug: "stamped-concrete",
+    heroSummary: "Custom stamped patterns and rich colors that give your Lancaster property a high end look. Connect with our local specialists for a free quote.",
+    state: "published",
+    localImage: "/images/services/stamped-concrete/stamped-concrete-hero.webp",
+    localImageAlt:
+      "Worker's hands and a red handled finishing tool on freshly placed gray concrete",
+    localBody: [
+      {
+        heading: "What stamped work involves",
+        body:
+          "Stamped concrete is a pattern pressed into freshly placed concrete, usually with integral color and a sealer. Requests here cover patios, entries, and porch areas. The pattern is set in a short window, so the scope, the pattern, and the color should be settled before the pour is booked.",
+      },
+      {
+        heading: "Heat and humidity set the window",
+        body:
+          "Humid, hot days shorten the time the surface stays workable. A stamp that goes on too late leaves a shallow or uneven pattern. Shade under mature trees can also slow the set, so the timing has to be planned around the spot and the weather rather than the calendar alone.",
+      },
+      {
+        heading: "Sealing and upkeep",
+        body:
+          "The sealer is what keeps a stamped surface from staining and wearing. Ask the contractor for the sealer type and a recommended schedule. Sun, traffic, pollen, and red clay tracked onto the surface all affect how quickly the sealer wears.",
+      },
+      {
+        heading: "Joints and cracking",
+        body:
+          "Stamped slabs still need control joints, and cracks can occur as the concrete cures and moves. Ask where the joints will fall relative to the pattern, because a joint placed through a pattern is harder to hide than one placed along a border.",
+      },
+      {
+        heading: "Weather and timing",
+        body:
+          "Stamping has to happen before the surface sets, and summer heat can set it quickly, so crews work early in the day. Humid weather and summer storms affect the window. Sealers wear faster in strong sun, and red clay tracked onto a stamped surface makes staining more likely.",
+      },
+      {
+        heading: "Communities near Lancaster",
+        body:
+          "Stamped concrete on this page is offered to City of Lancaster addresses. Kershaw, Heath Springs, Van Wyck, and Buford are nearby county communities, and each address is checked before a contractor replies.",
+      },
+    ],
+    localFaqs: [
+      {
+        question: "Does stamped concrete crack?",
+        answer:
+          "It can. Control joints guide where cracks form, and the contractor should set them before the pattern is stamped. Cracks are not a guarantee either way, so ask how the joints are laid out.",
+      },
+      {
+        question: "How often does stamped concrete need sealing?",
+        answer:
+          "It depends on sun exposure, foot traffic, and cleaning. Ask the contractor for a schedule that fits the surface, and keep up with it.",
+      },
+      {
+        question: "Is stamped concrete slippery?",
+        answer:
+          "It can be when wet. Ask about a texture or an anti slip additive for the sealer, especially for steps, entries, and shaded patios.",
+      },
+      {
+        question: "Is the price final before a site visit?",
+        answer:
+          "Usually not. Pattern complexity, area, and the sealing step all affect cost, so an on site review is normally needed before a final figure.",
+      },
+    ],
+  },
+  {
+    locationSlug: "lancaster-sc",
+    serviceSlug: "concrete-steps",
+    heroSummary: "Sturdy, code compliant concrete entry steps and stairs poured for lasting safety in Lancaster. Schedule a free consultation with our team.",
+    state: "published",
+    localImage: "/images/services/concrete-steps/concrete-steps-hero.webp",
+    localImageAlt:
+      "Concrete front steps with four treads leading up to a sided house entry",
+    localBody: [
+      {
+        heading: "What a steps job covers",
+        body:
+          "Steps requests here usually mean new front or side steps for a porch or stoop, replacing treads that have spalled or cracked, or adding a landing. The steps are often tied to the house wall, so the existing footing and the drainage at the base need to be checked before the forms are set.",
+      },
+      {
+        heading: "Rise, run, and handrails",
+        body:
+          "The rise and run of each tread, and whether a handrail is required, come from the building code and the height of the step set. Ask the contractor how those rules apply to your steps before the forms are built, since changing the layout afterward costs more.",
+      },
+      {
+        heading: "Forms and the pour",
+        body:
+          "Steps are poured into forms, and the surface is finished tread by tread. In hot or humid weather the surface can set faster than it can be finished, so pours are often moved to the morning. The steps should cure before anyone uses them.",
+      },
+      {
+        heading: "Water at the base",
+        body:
+          "Water that runs down a wall and pools at the base of the steps can undermine the footing and cause the lowest tread to crack. Grade the ground away from the steps, and ask how the joint against the house wall will be sealed.",
+      },
+      {
+        heading: "Weather and timing",
+        body:
+          "Steps take the full range of Lancaster weather on several sides: summer heat, humid storms, and winter nights near freezing. Water that collects at the base of a step is the usual cause of settling in red clay, so the footing and drainage are planned with the steps.",
+      },
+      {
+        heading: "Communities near Lancaster",
+        body:
+          "Steps and landings on this page apply to addresses in the City of Lancaster. Nearby county communities including Kershaw, Heath Springs, Van Wyck, and Buford are listed for reference, and coverage is confirmed by address.",
+      },
+    ],
+    localFaqs: [
+      {
+        question: "Do new steps in Lancaster County need a permit?",
+        answer:
+          "It depends on the height, the work, and the property. Check with Lancaster County's building department before you start, and ask your contractor who handles any permit paperwork.",
+      },
+      {
+        question: "Can damaged steps be repaired, or do they need replacing?",
+        answer:
+          "It depends on the damage. Surface spalling on a sound tread can sometimes be resurfaced. Cracked or sunken treads, or steps that have moved away from the house, usually need to be rebuilt.",
+      },
+      {
+        question: "Is the price final before a site visit?",
+        answer:
+          "Usually not. The number of treads, the height, access, and the footing all affect cost, so an on site review is normally needed before a final figure.",
+      },
+    ],
+  },
+  {
+    locationSlug: "lancaster-sc",
+    serviceSlug: "concrete-leveling",
+    heroSummary: "Quickly eliminate trip hazards and restore uneven slabs without noisy excavation. Connect with trusted Lancaster leveling specialists for a free quote.",
+    state: "published",
+    localImage: "/images/services/concrete-leveling/concrete-leveling-hero.webp",
+    localImageAlt: "Workers pulling a screed bar across wet grey concrete to level the surface",
+    localBody: [
+      {
+        heading: "Why slabs sink here",
+        body: "Most sunken slabs in Lancaster settle at an edge, at a joint, or beside a downspout where water keeps soaking the same clay. The contractor looks for that cause before recommending a lift, because lifting a slab over a soft spot just moves the problem.",
+      },
+      {
+        heading: "Lifting or replacing",
+        body: "A slab that has dropped as one piece and is still sound is often a leveling candidate. A slab cracked through or broken into pieces usually needs replacement, so the contractor checks the condition before quoting either route.",
+      },
+      {
+        heading: "Access and drainage",
+        body: "Small drilled holes are placed where the lift is needed. Access matters, and so does the water that runs toward the slab, since grading that drains away from the slab helps the lift last.",
+      },
+      {
+        heading: "Weather and timing",
+        body: "Lancaster's hot, humid summers and seasonal rainfall patterns require properly cured mix designs and strategically placed control joints. Nights near freezing still freeze and thaw water in the joints.",
+      },
+      {
+        heading: "Who does the work",
+        body: "Local concrete contractors do the work. After you submit a request, a local contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that contractor after they see the property.",
+      },
+      {
+        heading: "Communities near Lancaster",
+        body: "Quotes on this page apply to addresses in the City of Lancaster. Kershaw, Heath Springs, Van Wyck, and Buford are nearby county communities, and coverage is confirmed by address.",
+      },
+    ],
+    localFaqs: [
+      {
+        question: "Can a sunken slab in Lancaster be lifted instead of replaced?",
+        answer: "Often, yes, if the slab is still in one piece. The contractor checks for cracks and the cause of settling before recommending a lift or a replacement.",
+      },
+      {
+        question: "Will leveling hold through a wet season?",
+        answer: "It depends on the cause of the settling. If the soil under the slab keeps softening, the slab can move again, so the contractor explains what must change to help the lift last.",
+      },
+      {
+        question: "How long before I can walk on a leveled slab?",
+        answer: "The wait depends on the material used. The contractor gives the wait time for the product chosen before the work starts.",
+      },
+      {
+        question: "Is the price final before a site visit?",
+        answer: "Usually not. The number of holes, the slab size, and the cause of settling all affect cost, so a site visit is normally needed before a final figure.",
+      },
+    ],
+  },
+  {
+    locationSlug: "lancaster-sc",
+    serviceSlug: "concrete-garage-coatings",
+    heroSummary: "High durability epoxy and polyaspartic garage floor coatings tailored for Lancaster homeowners. Request your free consultation and estimate.",
+    state: "published",
+    localImage: "/images/services/concrete-garage-coatings/concrete-garage-coatings-hero.webp",
+    localImageAlt: "Full-broadcast decorative flake epoxy garage floor coating on a residential two-car garage in Lancaster, SC",
+    localBody: [
+      {
+        heading: "Moisture comes first",
+        body: "Before coating, the contractor checks the slab for moisture and looks for cracks and old coatings that could fail. A coating over a damp slab can look fine for a while and then lift, so this check decides whether the job goes ahead as planned.",
+      },
+      {
+        heading: "Surface preparation",
+        body: "Coatings bond to a prepared surface, so the floor is ground or etched and cleaned. Oil stains and old sealers take the most time, and they change how many passes the work needs.",
+      },
+      {
+        heading: "Heat and humidity",
+        body: "Hot, humid afternoons in Lancaster can change how fast a coating sets. Crews schedule the coats for drier, cooler parts of the day where the product allows.",
+      },
+      {
+        heading: "Choosing a system",
+        body: "Epoxy is common for garages, and polyurea cures faster. Flake and solid finishes look and wear differently, so the contractor explains the trade offs with you before the order is placed.",
+      },
+      {
+        heading: "Who does the work",
+        body: "Local concrete contractors do the work. After you submit a request, a local contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that contractor after they see the property.",
+      },
+      {
+        heading: "Communities near Lancaster",
+        body: "Quotes on this page apply to addresses in the City of Lancaster. Kershaw, Heath Springs, Van Wyck, and Buford are nearby county communities, and coverage is confirmed by address.",
+      },
+    ],
+    localFaqs: [
+      {
+        question: "Can a garage floor in Lancaster be coated in summer?",
+        answer: "Often, yes, but humidity and heat change the cure. The contractor picks a system and schedule that suit the conditions on the day of the job.",
+      },
+      {
+        question: "Will a coating stop oil stains?",
+        answer: "A coating resists stains, but it does not make the floor stain proof. Wiping spills promptly helps, and the contractor explains what the chosen system resists.",
+      },
+      {
+        question: "When can vehicles return to a coated garage?",
+        answer: "Most systems need several days before vehicles return. The contractor gives the wait for the product used.",
+      },
+      {
+        question: "Is the price final before a site visit?",
+        answer: "Usually not. Preparation, the coating system, and the floor's condition all affect cost, so an on site review is normally needed.",
+      },
+    ],
+  },
+  {
+    locationSlug: "lancaster-sc",
+    serviceSlug: "concrete-resurfacing",
+    heroSummary: "Renew damaged concrete with a fresh, durable overlay at a fraction of replacement cost. Schedule your free Lancaster estimate today.",
+    state: "published",
+    localImage: "/images/services/concrete-resurfacing/concrete-resurfacing-hero.webp",
+    localImageAlt: "Polymer-modified concrete resurfacing and fresh broom overlay restoring a residential patio surface in Lancaster, SC",
+    localBody: [
+      {
+        heading: "Is the old slab sound",
+        body: "Resurfacing works best over a slab that is cracked only on the surface. Slabs that are heaving, sinking, or breaking into pieces need repair or replacement first, and the contractor says so at the visit.",
+      },
+      {
+        heading: "Bonding the overlay",
+        body: "The old surface is cleaned and roughened so the new layer can bond. A weak bond is the usual reason overlays lift, so this step gets more attention than the finish.",
+      },
+      {
+        heading: "Heat, rain, and timing",
+        body: "Lancaster's hot, humid summers and seasonal rainfall patterns require properly cured mix designs and strategically placed control joints. Nights near freezing still freeze and thaw water in the joints.",
+      },
+      {
+        heading: "Choosing texture",
+        body: "Broom, smooth, and stamped finishes give different traction. Lancaster driveways see wet weather often, so the contractor recommends a texture that gives grip when wet.",
+      },
+      {
+        heading: "Who does the work",
+        body: "Local concrete contractors do the work. After you submit a request, a local contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that contractor after they see the property.",
+      },
+      {
+        heading: "Communities near Lancaster",
+        body: "Quotes on this page apply to addresses in the City of Lancaster. Kershaw, Heath Springs, Van Wyck, and Buford are nearby county communities, and coverage is confirmed by address.",
+      },
+    ],
+    localFaqs: [
+      {
+        question: "Will an overlay in Lancaster crack?",
+        answer: "It can, if the slab underneath moves. Crack repair and control joints reduce the risk, and the contractor explains what an overlay can and cannot prevent.",
+      },
+      {
+        question: "Can I resurface over an old patio?",
+        answer: "Sometimes, if the surface is sound and bonds well. The contractor checks the existing finish before recommending an overlay.",
+      },
+      {
+        question: "How soon can I drive on a resurfaced driveway?",
+        answer: "It depends on the product and the weather. The contractor gives the wait time before vehicles use the surface.",
+      },
+      {
+        question: "Is resurfacing cheaper than replacement?",
+        answer: "It can be, when the slab is sound. A failing slab usually needs replacement, and the contractor advises on that at the visit.",
+      },
+    ],
+  },
+  {
+    locationSlug: "lancaster-sc",
+    serviceSlug: "concrete-aprons",
+    heroSummary: "Heavy duty driveway and garage aprons built for smooth transitions and heavy vehicle loads. Connect with local Lancaster pros for a free estimate.",
+    state: "published",
+    localImage: "/images/services/concrete-aprons/concrete-aprons-hero.webp",
+    localImageAlt: "Newly poured grey concrete sidewalk and apron with orange traffic cones along an open street edge",
+    localBody: [
+      {
+        heading: "Grade decides the job",
+        body: "The apron should slope toward the gutter so water leaves the driveway. The contractor measures the existing grade before the forms go in, because a flat or sunken apron is the usual reason water collects.",
+      },
+      {
+        heading: "Removal and replacement",
+        body: "Replacing an old apron means breaking out and hauling away the old concrete, which is often quoted as a separate line. Ask the contractor to itemize removal so quotes compare on the same basis.",
+      },
+      {
+        heading: "Permits near the street",
+        body: "Work at the street edge can need a permit from the local authority. The contractor confirms whether one applies before the work is scheduled.",
+      },
+      {
+        heading: "Weather and timing",
+        body: "Lancaster's hot, humid summers and seasonal rainfall patterns require properly cured mix designs and strategically placed control joints. Nights near freezing still freeze and thaw water in the joints.",
+      },
+      {
+        heading: "Who does the work",
+        body: "Local concrete contractors do the work. After you submit a request, a local contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that contractor after they see the property.",
+      },
+      {
+        heading: "Communities near Lancaster",
+        body: "Quotes on this page apply to addresses in the City of Lancaster. Kershaw, Heath Springs, Van Wyck, and Buford are nearby county communities, and coverage is confirmed by address.",
+      },
+    ],
+    localFaqs: [
+      {
+        question: "Do I need a permit for a Lancaster apron?",
+        answer: "It can depend on whether the work is near the street. The contractor confirms whether one applies before the job is scheduled.",
+      },
+      {
+        question: "Will my apron match the driveway?",
+        answer: "Gray concrete usually matches. A colored or stamped driveway needs the finish planned before the pour.",
+      },
+      {
+        question: "Why does water sit at my apron?",
+        answer: "A flat or sunken apron can trap water in red clay soil. The contractor checks the slope and recommends a grade correction when needed.",
+      },
+      {
+        question: "Is the price final before a site visit?",
+        answer: "Usually not. Removal, grade work, and the finish all affect cost, so an on site review is normally needed.",
+      },
+    ],
+  },
+  {
+    locationSlug: "lancaster-sc",
+    serviceSlug: "concrete-sealing",
+    heroSummary: "Protect your Lancaster driveway or patio from moisture, stains, and seasonal wear with premium sealers. Speak with our team for a free quote.",
+    state: "published",
+    localImage: "/images/services/concrete-sealing/concrete-sealing-hero.webp",
+    localImageAlt: "Worker in a safety vest applying black sealant along a crack in a concrete slab",
+    localBody: [
+      {
+        heading: "Cleaning before sealing",
+        body: "Sealer bonds only to a clean, dry surface. Red clay stains and tracked in dirt are removed first, and the contractor checks for old sealer that must come off before the new coat goes on.",
+      },
+      {
+        heading: "Choosing a sealer",
+        body: "Penetrating sealers keep the natural look, while film forming sealers add sheen and color depth. The contractor recommends one based on the surface and how it is used.",
+      },
+      {
+        heading: "Sun and rain",
+        body: "Heavy summer sun and July storms wear sealer down, so the recoat schedule matters in Lancaster. The contractor gives the schedule for the product recommended.",
+      },
+      {
+        heading: "Weather and timing",
+        body: "Lancaster's hot, humid summers and seasonal rainfall patterns require properly cured mix designs and strategically placed control joints. Nights near freezing still freeze and thaw water in the joints.",
+      },
+      {
+        heading: "Who does the work",
+        body: "Local concrete contractors do the work. After you submit a request, a local contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that contractor after they see the property.",
+      },
+      {
+        heading: "Communities near Lancaster",
+        body: "Quotes on this page apply to addresses in the City of Lancaster. Kershaw, Heath Springs, Van Wyck, and Buford are nearby county communities, and coverage is confirmed by address.",
+      },
+    ],
+    localFaqs: [
+      {
+        question: "How often should concrete in Lancaster be sealed?",
+        answer: "It depends on sun, traffic, and the sealer used. The contractor gives the recoat interval for the product recommended.",
+      },
+      {
+        question: "Does sealing stop cracks?",
+        answer: "No. Sealing helps resist water and staining, but it does not stop slab movement or cracking.",
+      },
+      {
+        question: "Can I seal new concrete right away?",
+        answer: "New concrete usually needs to cure first. The contractor confirms how long to wait for the mix used.",
+      },
+      {
+        question: "Is the price final before a site visit?",
+        answer: "Usually not. Area, cleaning needs, and the sealer chosen all affect cost, so a site visit is normally needed.",
+      },
+    ],
+  },
+  {
+    locationSlug: "lancaster-sc",
+    serviceSlug: "concrete-exposed-aggregate",
+    heroSummary: "Decorative, slip resistant exposed aggregate surfaces perfect for Lancaster patios and driveways. Get an upfront quote from our local specialists.",
+    state: "published",
+    localImage: "/images/services/concrete-exposed-aggregate/concrete-exposed-aggregate-hero.webp",
+    localImageAlt: "Residential exposed aggregate concrete driveway with mixed tan and grey stones across the surface",
+    localBody: [
+      {
+        heading: "Stone and look",
+        body: "Stone type, size, and exposure depth change the finish. The contractor shows samples, and the stone is chosen before the pour because it cannot be changed afterward.",
+      },
+      {
+        heading: "Timing the exposure",
+        body: "Stones are exposed once the surface has set enough. Heat, rain, and humidity all change that window, so the contractor watches the surface rather than the calendar.",
+      },
+      {
+        heading: "Heat and rain on fresh concrete",
+        body: "Fresh concrete needs protection from sun and storms. Rain on the surface can wash out the fines and mar the look, so the contractor plans the pour around the forecast.",
+      },
+      {
+        heading: "Base and drainage",
+        body: "Clay under many Lancaster lots holds water, so the base is compacted and the surface is graded to drain. A wet base is the usual reason exposed surfaces crack.",
+      },
+      {
+        heading: "Who does the work",
+        body: "Local concrete contractors do the work. After you submit a request, a local contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that contractor after they see the property.",
+      },
+      {
+        heading: "Communities near Lancaster",
+        body: "Quotes on this page apply to addresses in the City of Lancaster. Kershaw, Heath Springs, Van Wyck, and Buford are nearby county communities, and coverage is confirmed by address.",
+      },
+    ],
+    localFaqs: [
+      {
+        question: "Is exposed aggregate slippery in Lancaster?",
+        answer: "The stones add grip, but very smooth stones can be slick when wet. The contractor chooses stone size and exposure with traction in mind.",
+      },
+      {
+        question: "Can I see stone samples before the pour?",
+        answer: "Yes. Ask the contractor for samples so you can see the stone and exposure before the job is scheduled.",
+      },
+      {
+        question: "Does exposed aggregate crack?",
+        answer: "It can, if the base or slab moves. Control joints and proper base preparation reduce the risk, and the contractor explains what can and cannot be prevented.",
+      },
+      {
+        question: "Is the price final before a site visit?",
+        answer: "Usually not. Stone type, area, and exposure method all affect cost, so an on site review is normally needed.",
+      },
+    ],
+  },
+
+  {
+    locationSlug: "lancaster-sc",
+    serviceSlug: "concrete-pool-decks",
+    heroSummary: "Concrete pool decks and surrounds for Lancaster homes, with textured, non-slip finishes. Request your free consultation and estimate.",
+    state: "published",
+    localImage: "/images/services/concrete-pool-decks/concrete-pool-decks-hero.webp",
+    localImageAlt: "Textured non-slip concrete pool deck and inground pool surround on a residential property in Lancaster, SC",
+    localBody: [
+      {
+        heading: "Heat and sun",
+        body: "Lancaster summers put a lot of sun on a pool deck. Crews use finishes and lighter colors that stay more comfortable underfoot in direct heat.",
+      },
+      {
+        heading: "Drainage away from the pool",
+        body: "A pool deck has to slope away from the water and the house. The contractor checks the existing grade before setting forms, so runoff does not pool at the coping or against the home.",
+      },
+      {
+        heading: "Clay soil",
+        body: "Red clay in the Lancaster area holds water and moves with the seasons. A compacted base and reinforced slab help the deck stay level after it is in service.",
+      },
+      {
+        heading: "Choosing a finish",
+        body: "Broom, salt, and other textured finishes add grip when the deck is wet. The contractor explains the trade offs before the order is placed.",
+      },
+      {
+        heading: "Who does the work",
+        body: "Local concrete contractors do the work. After you submit a request, a local contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that contractor after the site review.",
+      },
+      {
+        heading: "Communities near Lancaster",
+        body: "Quotes on this page apply to addresses in the City of Lancaster. Kershaw, Heath Springs, Van Wyck, and Buford are nearby county communities, and coverage is confirmed by address.",
+      },
+    ],
+    localFaqs: [
+      {
+        question: "Can a pool deck be poured in Lancaster during summer?",
+        answer: "Often, yes, but heat and humidity change how fast the concrete sets. The contractor picks a schedule that suits the conditions on the day of the job.",
+      },
+      {
+        question: "Will the new deck be safe to walk on barefoot?",
+        answer: "Textured finishes feel firmer and grip better than smooth ones. The contractor recommends a finish after reviewing the deck and how it will be used.",
+      },
+      {
+        question: "Can the deck be extended around an existing pool?",
+        answer: "In many cases, yes. The contractor checks the coping, drainage, and access first, then explains what the extension will involve.",
+      },
+      {
+        question: "Is the price final before a site visit?",
+        answer: "Usually not. Deck area, removal, finish, and drainage all affect cost, so an on site review is normally needed.",
+      },
+    ],
+  },
+  {
+      locationSlug: "lancaster-sc",
+      serviceSlug: "concrete-retaining-walls",
+      heroSummary: "Poured concrete retaining walls for Lancaster yards and slopes, with drainage built in. Request your free consultation and estimate.",
+      state: "published",
+      localImage: "/images/services/concrete-retaining-walls/concrete-retaining-walls-hero.webp",
+      localImageAlt: "Poured concrete retaining wall holding back a sloped residential yard, with a gravel drainage trench along its base in Lancaster, SC",
+      localBody: [
+        {
+          heading: "Water pressure behind the wall",
+          body: "Heavy rain in Lancaster can push water against a wall that has no way to drain. Drainage backfill and weep holes relieve that pressure, which is the main reason walls crack or lean.",
+        },
+        {
+          heading: "Clay soil",
+          body: "Red clay holds water and changes volume with moisture. The footing is set on compacted, undisturbed soil so the wall does not shift as the seasons change.",
+        },
+        {
+          heading: "Slopes and terraces",
+          body: "Many Lancaster lots slope toward the house. A wall can level a yard, hold back a bank, or support a driveway edge, and the contractor sizes it to the load behind it.",
+        },
+        {
+          heading: "Choosing a wall design",
+          body: "Wall height, the load behind it, and the finish all shape the design. The contractor explains the options and what the site requires before the order is placed.",
+        },
+        {
+          heading: "Who does the work",
+          body: "Local concrete contractors do the work. After you submit a request, a local contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that contractor after the site review.",
+        },
+        {
+          heading: "Communities near Lancaster",
+          body: "Quotes on this page apply to addresses in the City of Lancaster. Kershaw, Heath Springs, Van Wyck, and Buford are nearby county communities, and coverage is confirmed by address.",
+        },
+      ],
+      localFaqs: [
+        {
+          question: "How tall can a retaining wall be?",
+          answer: "Height depends on the load behind the wall and the soil. Taller walls need more engineering, and the contractor explains what your site allows.",
+        },
+        {
+          question: "Why do retaining walls fail?",
+          answer: "Water pressure and poor drainage cause most failures. A drained backfill and proper footing reduce that risk.",
+        },
+        {
+          question: "Will a wall need a permit?",
+          answer: "Requirements depend on the wall's height and location. The contractor and local office confirm what applies to your address.",
+        },
+        {
+          question: "Is the price final before a site visit?",
+          answer: "Usually not. Height, length, access, and drainage all affect cost, so an on site review is normally needed.",
+        },
+      ],
+    },
+  {
+      locationSlug: "lancaster-sc",
+      serviceSlug: "equipment-pads",
+      heroSummary: "Level, reinforced concrete pads for hot tubs, generators, and AC units in Lancaster. Request your free consultation and estimate.",
+      state: "published",
+      localImage: "/images/services/equipment-pads/equipment-pads-hero.webp",
+      localImageAlt: "Small level reinforced concrete pad in a residential backyard with an outdoor hot tub installed on it in Lancaster, SC",
+      localBody: [
+        {
+          heading: "Level ground under heavy equipment",
+          body: "A hot tub, generator, or AC unit concentrates a lot of weight on a small area. A level, compacted pad keeps the equipment from tilting as the ground settles.",
+        },
+        {
+          heading: "Clay and wet weather",
+          body: "Clay ground softens after rain and can sink under concentrated weight. A gravel base under the pad helps keep it stable through wet seasons.",
+        },
+        {
+          heading: "Placement and clearance",
+          body: "The pad should sit where the equipment has the clearance it needs. The contractor checks the planned location against the equipment's clearance rules before the forms go in.",
+        },
+        {
+          heading: "Choosing a pad size",
+          body: "Pad size and thickness depend on the equipment and its clearances. The contractor reviews the planned spot and explains what the pad needs before the forms are set.",
+        },
+        {
+          heading: "Who does the work",
+          body: "Local concrete contractors do the work. After you submit a request, a local contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that contractor after the site review.",
+        },
+        {
+          heading: "Communities near Lancaster",
+          body: "Quotes on this page apply to addresses in the City of Lancaster. Kershaw, Heath Springs, Van Wyck, and Buford are nearby county communities, and coverage is confirmed by address.",
+        },
+      ],
+      localFaqs: [
+        {
+          question: "How thick should a hot tub pad be?",
+          answer: "Thickness depends on the tub's weight when full. The contractor reviews the tub's specifications and sets the pad to match.",
+        },
+        {
+          question: "Can a generator sit on a concrete pad in Lancaster?",
+          answer: "Yes. A level pad keeps the generator stable. Electrical and fuel connections are handled by licensed trades.",
+        },
+        {
+          question: "Can an old pad be replaced?",
+          answer: "Yes. The contractor removes the old pad and places a new level one, if the site allows.",
+        },
+        {
+          question: "Is the price final before a site visit?",
+          answer: "Usually not. Pad size, thickness, and base work all affect cost, so an on site review is normally needed.",
+        },
+      ],
+    },
+  {
+      locationSlug: "lancaster-sc",
+      serviceSlug: "concrete-demolition",
+      heroSummary: "Concrete removal for driveways, patios, and sidewalks in Lancaster, with haul-away of the debris. Request your free consultation and estimate.",
+      state: "published",
+      localImage: "/images/services/concrete-demolition/concrete-demolition-hero.webp",
+      localImageAlt: "Excavator loading broken, jackhammered concrete slab pieces into a haul-away dump truck during a residential tear-out in Lancaster, SC",
+      localBody: [
+        {
+          heading: "Utilities come first",
+          body: "Before any breaking begins, buried utilities are marked so the crew knows where they run. That step protects the work and the homeowner.",
+        },
+        {
+          heading: "Keeping the clay grade",
+          body: "Removing concrete can disturb the clay below and change how water drains. The crew removes only what is needed and grades the area so runoff still moves away from the home.",
+        },
+        {
+          heading: "Old slabs on loose fill",
+          body: "Many older slabs sit on loose fill. After removal, the subgrade is compacted and leveled before anything new is built on it.",
+        },
+        {
+          heading: "Planning the haul-away",
+          body: "Debris routes, staging space, and truck access shape how the removal runs. The contractor plans the haul-away before the crew arrives.",
+        },
+        {
+          heading: "Who does the work",
+          body: "Local concrete contractors do the work. After you submit a request, a local contractor contacts you to inspect the site, confirm scope, and quote the work directly. Pricing is set between you and that contractor after the site review.",
+        },
+        {
+          heading: "Communities near Lancaster",
+          body: "Quotes on this page apply to addresses in the City of Lancaster. Kershaw, Heath Springs, Van Wyck, and Buford are nearby county communities, and coverage is confirmed by address.",
+        },
+      ],
+      localFaqs: [
+        {
+          question: "Will the crew handle the debris?",
+          answer: "Yes. The contractor plans the haul-away and explains how the debris will be removed from your property.",
+        },
+        {
+          question: "Can the old concrete be reused?",
+          answer: "Sometimes. Clean broken concrete can be crushed for base material. The contractor explains what applies to your job.",
+        },
+        {
+          question: "Is the price final before a site visit?",
+          answer: "Usually not. Volume, slab thickness, access, and haul distance all affect cost, so an on site review is normally needed.",
+        },
+        {
+          question: "Does this include new concrete?",
+          answer: "No. This service covers removal and haul-away. New concrete is quoted under the matching service.",
+        },
+      ],
+    },
 ];
 
 /** Explicit allowlist consumed by generateStaticParams. Never a Cartesian product. */
@@ -226,11 +1196,4 @@ export function getLocationService(
   return publishedLocationServices.find(
     (r) => r.locationSlug === locationSlug && r.serviceSlug === serviceSlug,
   );
-}
-
-export function publishedServicesForLocation(locationSlug: string) {
-  return publishedLocationServices
-    .filter((r) => r.locationSlug === locationSlug)
-    .map((r) => getService(r.serviceSlug)!)
-    .filter(Boolean);
 }

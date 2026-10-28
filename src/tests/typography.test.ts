@@ -35,7 +35,7 @@ describe("typography: Geist Sans is the locked site font", () => {
     expect(fontModule).toContain('weight: "400 800"');
   });
 
-  it("keeps font loading behaviour intact (preloaded, swap, no layout shift)", () => {
+  it("keeps font loading behavior intact (preloaded, swap, no layout shift)", () => {
     expect(fontModule).toContain("display: \"swap\"");
     expect(fontModule).toContain("preload: true");
     // Metric matched fallback. This is NOT a replacement typeface: it only

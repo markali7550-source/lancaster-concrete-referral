@@ -10,7 +10,18 @@ const nextConfig: NextConfig = {
   // collapses slash variants, so no hand-written case redirects are needed.
   // Removed-route 301/410 handling lives in middleware when a route retires.
   async headers() {
+    // Same switch as src/lib/env/indexing.ts. Until launch, every response tells
+    // crawlers not to index it, including previews and staging.
+    const indexingOff = process.env.ALLOW_SEARCH_INDEXING !== "true";
     return [
+      ...(indexingOff
+        ? [
+            {
+              source: "/(.*)",
+              headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+            },
+          ]
+        : []),
       {
         source: "/:path*\\.webp",
         headers: [
@@ -28,12 +39,20 @@ const nextConfig: NextConfig = {
         headers: [
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-          // X-Frame-Options is intentionally omitted: it has no allowlist and
-          // blocks the sandbox preview iframe. frame-ancestors is the modern
-          // equivalent and accepts a list. Tighten to 'self' before launch.
+          // Clickjacking protection. Only this site may frame its own pages.
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
           {
             key: "Content-Security-Policy",
-            value: "frame-ancestors 'self' https://*.e2b.app",
+            value: "frame-ancestors 'self'",
+          },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=31536000; includeSubDomains",
+          },
+          // Features this site does not use are switched off for every visitor.
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=(), payment=()",
           },
         ],
       },
