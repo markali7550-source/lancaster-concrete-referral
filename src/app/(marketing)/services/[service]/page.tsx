@@ -99,7 +99,7 @@ export default async function ServicePage({ params }: { params: Params }) {
         detail={detail}
         breadcrumbs={
           <Breadcrumbs
-            overlay
+            onPhoto
             items={[
               { name: "Home", path: "/" },
               { name: "Services", path: "/services" },
